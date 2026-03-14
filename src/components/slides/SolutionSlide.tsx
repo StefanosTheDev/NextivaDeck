@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { Phone, MessageCircle, Mail, Video, Flag, Users, Database, FileText, Settings, BookOpen, Brain } from "lucide-react";
+import { Phone, MessageCircle, Mail, Video, Flag, Users, Database, FileText, Settings, BookOpen, Brain, Zap, Workflow, Target, Activity, CheckCircle } from "lucide-react";
 
 const leftIcons = [Phone, MessageCircle, Mail, Video, Flag];
 const rightIcons = [Users, Database, FileText, Settings, BookOpen];
+const bottomIcons = [Zap, Workflow, Target, Activity, CheckCircle];
 
 const outcomes = [
   "Better experiences",
@@ -13,13 +14,18 @@ const outcomes = [
   "AI that improves with every interaction",
 ];
 
+const DIAMOND = { w: 880, h: 390 };
+const AI = { x: 440, y: 70 };
+const LEFT = { x: 130, y: 195 };
+const RIGHT = { x: 750, y: 195 };
+const BOTTOM = { x: 440, y: 340 };
+
 export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: number }) {
   return (
     <div className="slide slide--cream" style={{ justifyContent: "space-between" }}>
-      {/* Header */}
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "56px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p style={{
           fontFamily: "'Space Grotesk', sans-serif",
@@ -28,79 +34,147 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
         }}>
           OUR SOLUTION
         </p>
-        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#1A447C", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
-          Agentic CX that always delivers immediate outcomes.
+        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#1A447C", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
+          Nextiva Agentic CX Always<br />Delivers Immediate Outcomes.
         </h1>
       </motion.header>
 
-      {/* Pyramid graphic */}
+      {/* Diamond graphic */}
       <motion.main
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.2 }}
-        style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "0 80px" }}
+        style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 80px" }}
       >
-        {/* AI circle — top of pyramid */}
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 8 }}>
+        <div style={{ position: "relative", width: DIAMOND.w, height: DIAMOND.h }}>
+          {/* SVG connecting lines */}
+          <svg
+            width={DIAMOND.w} height={DIAMOND.h}
+            viewBox={`0 0 ${DIAMOND.w} ${DIAMOND.h}`}
+            style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+          >
+            <defs>
+              <marker id="arrowThin" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6" fill="none" stroke="#2860B2" strokeWidth="1" opacity="0.5" />
+              </marker>
+              <marker id="arrowThick" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                <path d="M0,0 L10,4 L0,8" fill="#2860B2" stroke="none" />
+              </marker>
+            </defs>
+
+            {/* Customer Conversations → AI (thin dotted, arrow at AI end) */}
+            <line
+              x1={LEFT.x + 130} y1={LEFT.y - 20}
+              x2={AI.x - 70} y2={AI.y + 55}
+              stroke="#2860B2" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4"
+              markerEnd="url(#arrowThin)"
+            />
+
+            {/* Context from Siloed Systems → AI (thin dotted, arrow at AI end) */}
+            <line
+              x1={RIGHT.x - 130} y1={RIGHT.y - 20}
+              x2={AI.x + 70} y2={AI.y + 55}
+              stroke="#2860B2" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4"
+              markerEnd="url(#arrowThin)"
+            />
+
+            {/* AI → Real-time Actions (thick solid, arrow at bottom end) */}
+            <line
+              x1={AI.x} y1={AI.y + 100}
+              x2={BOTTOM.x} y2={BOTTOM.y - 55}
+              stroke="#2860B2" strokeWidth="2.5" opacity="0.8"
+              markerEnd="url(#arrowThick)"
+            />
+          </svg>
+
+          {/* AI circle — top center */}
           <div style={{
-            width: 200, height: 200, borderRadius: "50%",
-            background: "rgba(204,199,195,0.12)",
+            position: "absolute",
+            top: AI.y - 80, left: AI.x - 90,
+            width: 180, height: 180,
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
             <div style={{
-              width: 160, height: 160, borderRadius: "50%",
-              background: "#FFFFFF",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+              width: 180, height: 180, borderRadius: "50%",
+              background: "rgba(204,199,195,0.12)",
               display: "flex", alignItems: "center", justifyContent: "center",
             }}>
               <div style={{
-                width: 120, height: 120, borderRadius: "50%",
-                background: "radial-gradient(circle at 50% 40%, #2860B2 0%, #1A447C 100%)",
-                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                color: "#FFFFFF",
+                width: 144, height: 144, borderRadius: "50%",
+                background: "#FFFFFF",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+                display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <Brain size={30} color="#FFFFFF" strokeWidth={1.5} style={{ marginBottom: 4 }} />
-                <span style={{ fontSize: 36, fontWeight: 700, lineHeight: 1, letterSpacing: "0.02em" }}>
-                  AI
-                </span>
+                <div style={{
+                  width: 108, height: 108, borderRadius: "50%",
+                  background: "radial-gradient(circle at 50% 40%, #2860B2 0%, #1A447C 100%)",
+                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+                  color: "#FFFFFF",
+                }}>
+                  <Brain size={26} color="#FFFFFF" strokeWidth={1.5} style={{ marginBottom: 3 }} />
+                  <span style={{ fontSize: 32, fontWeight: 700, lineHeight: 1, letterSpacing: "0.02em" }}>
+                    AI
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Connecting lines — V shape from AI down to two bases */}
-        <svg width="500" height="40" viewBox="0 0 500 40" style={{ flexShrink: 0 }}>
-          <line x1="250" y1="0" x2="100" y2="38" stroke="#2860B2" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4" />
-          <line x1="250" y1="0" x2="400" y2="38" stroke="#2860B2" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4" />
-        </svg>
-
-        {/* Two base pillars */}
-        <div style={{ display: "flex", gap: 120, justifyContent: "center", alignItems: "flex-start" }}>
-          {/* Customer Conversations */}
-          <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 300 }}>
-            <div style={{ display: "flex", gap: 10, marginBottom: 14 }}>
+          {/* Customer Conversations — left */}
+          <div style={{
+            position: "absolute",
+            top: LEFT.y - 50, left: LEFT.x - 130,
+            width: 260, textAlign: "center",
+            display: "flex", flexDirection: "column", alignItems: "center",
+          }}>
+            <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {leftIcons.map((Icon, i) => (
-                <Icon key={i} size={20} color="#A29E9B" strokeWidth={1.75} />
+                <Icon key={i} size={18} color="#A29E9B" strokeWidth={1.75} />
               ))}
             </div>
-            <h3 className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#1A447C", margin: "0 0 8px", lineHeight: 1.2 }}>
+            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#1A447C", margin: "0 0 6px", lineHeight: 1.2 }}>
               Customer Conversations
             </h3>
-            <p style={{ fontSize: 16, color: "#6C6967", lineHeight: 1.5 }}>
-              The most recent conversation, intent, and behavior
+            <p style={{ fontSize: 14, color: "#6C6967", lineHeight: 1.5, margin: 0 }}>
+              Current and historical conversations, intent and behavior.
             </p>
           </div>
 
-          {/* Context from Siloed Systems */}
-          <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 300 }}>
-            <div style={{ display: "flex", gap: 10, marginBottom: 14 }}>
+          {/* Context from Siloed Systems — right */}
+          <div style={{
+            position: "absolute",
+            top: RIGHT.y - 50, left: RIGHT.x - 130,
+            width: 260, textAlign: "center",
+            display: "flex", flexDirection: "column", alignItems: "center",
+          }}>
+            <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {rightIcons.map((Icon, i) => (
-                <Icon key={i} size={20} color="#A29E9B" strokeWidth={1.75} />
+                <Icon key={i} size={18} color="#A29E9B" strokeWidth={1.75} />
               ))}
             </div>
-            <h3 className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#1A447C", margin: "0 0 8px", lineHeight: 1.2 }}>
+            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#1A447C", margin: "0 0 6px", lineHeight: 1.2 }}>
               Context from Siloed Systems
             </h3>
-            <p style={{ fontSize: 16, color: "#6C6967", lineHeight: 1.5 }}>
+            <p style={{ fontSize: 14, color: "#6C6967", lineHeight: 1.5, margin: 0 }}>
               CRM, transactions, service history, preferences, and workflow data
+            </p>
+          </div>
+
+          {/* Real-time Actions — bottom center */}
+          <div style={{
+            position: "absolute",
+            top: BOTTOM.y - 40, left: BOTTOM.x - 150,
+            width: 300, textAlign: "center",
+            display: "flex", flexDirection: "column", alignItems: "center",
+          }}>
+            <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+              {bottomIcons.map((Icon, i) => (
+                <Icon key={i} size={18} color="#A29E9B" strokeWidth={1.75} />
+              ))}
+            </div>
+            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#1A447C", margin: "0 0 6px", lineHeight: 1.2 }}>
+              Real-time Actions
+            </h3>
+            <p style={{ fontSize: 14, color: "#6C6967", lineHeight: 1.5, margin: 0 }}>
+              Ability to synthesize and drive workflows based on full context.
             </p>
           </div>
         </div>

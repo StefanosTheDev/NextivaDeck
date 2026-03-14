@@ -25,6 +25,7 @@ import LeadershipSlide from "./slides/LeadershipSlide";
 import SummarySlide from "./slides/SummarySlide";
 import ClosingSlide from "./slides/ClosingSlide";
 import ProductPortfolioSlide from "./slides/ProductPortfolioSlide";
+import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
 
 type SlideTheme = "light" | "dark";
 
@@ -48,6 +49,7 @@ const slides: { id: string; label: string; component: React.ComponentType<{ slid
   { id: "closing", label: "Closing", component: ClosingSlide, theme: "dark" },
   { id: "appendix-customers", label: "Customers", component: ScaleSlide, theme: "dark" },
   { id: "appendix-products", label: "Products", component: ProductPortfolioSlide, theme: "light" },
+  { id: "ai-gateways-revenue", label: "AI Gateways Revenue", component: AIGatewaysRevenueSlide, theme: "light" },
 ];
 
 export default function InvestorDeck() {
