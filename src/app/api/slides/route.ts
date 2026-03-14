@@ -5,8 +5,8 @@ import path from "path";
 
 const BLOB_FILENAME = "slide-order.json";
 const LOCAL_FILE = path.join(process.cwd(), "slide-order.json");
-const IS_VERCEL = !!process.env.VERCEL;
 const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN || process.env.NEXTIVASTORAGE_READ_WRITE_TOKEN || "";
+const IS_VERCEL = !!process.env.VERCEL;
 
 const DEFAULT_ORDER = [
   "cover",
