@@ -19,7 +19,7 @@ import {
   rectSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Save, Check, RotateCcw, ArrowLeft, Download, Loader2, Plus, X, Eye, ArrowRight } from "lucide-react";
+import { Save, Check, RotateCcw, ArrowLeft, Download, Loader2, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
 
 import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
 import SortableSlideCard from "./SortableSlideCard";
@@ -249,6 +249,30 @@ export default function CatalogPage() {
     }
   }, []);
 
+  const [pptxStatus, setPptxStatus] = useState<"idle" | "generating" | "done">("idle");
+
+  const downloadPptx = useCallback(async () => {
+    setPptxStatus("generating");
+    try {
+      const res = await fetch("/api/generate-pptx");
+      if (!res.ok) throw new Error("PPTX generation failed");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Nextiva-Investor-Deck-2026.pptx";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      setPptxStatus("done");
+      setTimeout(() => setPptxStatus("idle"), 3000);
+    } catch {
+      setPptxStatus("idle");
+      alert("Failed to generate PowerPoint. Please try again.");
+    }
+  }, []);
+
   const gridSensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
@@ -355,6 +379,15 @@ export default function CatalogPage() {
           >
             {pdfStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pdfStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <Download size={15} style={{ flexShrink: 0 }} />}
             {pdfStatus === "generating" ? "Generating…" : pdfStatus === "done" ? "Downloaded!" : "Generate PDF"}
+          </button>
+          <button
+            onClick={downloadPptx}
+            disabled={pptxStatus === "generating"}
+            className="catalog-btn-outline"
+            style={{ opacity: pptxStatus === "generating" ? 0.6 : 1 }}
+          >
+            {pptxStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pptxStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <FileDown size={15} style={{ flexShrink: 0 }} />}
+            {pptxStatus === "generating" ? "Generating…" : pptxStatus === "done" ? "Downloaded!" : "Generate PPTX"}
           </button>
           {hasChanges && (
             <button onClick={() => { if (window.confirm("Undo all unsaved changes? This will revert slide order and visibility back to the last saved state.")) resetAll(); }} className="catalog-btn-outline">
