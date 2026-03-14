@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --cream: #FEFAF5;
+  --navy: #1A447C;
+  --navy-dark: #061A37;
+  --navy-deep: #0F2C59;
+  --blue: #2860B2;
+  --blue-dusk: #235289;
+  --blue-steel: #31659A;
+  --charcoal: #2E2D2C;
+  --gray-dark: #4A4846;
+  --gray-mid: #6C6967;
+  --gray-warm: #A29E9B;
+  --gray-light: #CCC7C3;
+  --gray-pale: #E0DEDA;
+  --white: #FFFFFF;
+  --near-black: #000208;
+
+  --background: var(--cream);
+  --foreground: var(--navy-dark);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Space Grotesk', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow: hidden; }
+
+body {
+  background: #000208;
+  color: var(--navy-dark);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.font-heading {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.font-body {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+
+/* Canvas scaling container */
+.deck-viewport {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000208;
+  position: relative;
+}
+
+/* Slide base — fills the viewport */
+.slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.slide--cream {
+  background: #FEFAF5;
+  color: #061A37;
+}
+
+.slide--dark {
+  background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 50%, #000208 100%);
+  color: #FFFFFF;
+}
+
+.slide--blue {
+  background: #2860B2;
+  color: #FFFFFF;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2860B2;
+}
+
+.eyebrow--light {
+  color: #CCC7C3;
+}
+
+/* Navigation */
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.nav-dot.active {
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Light nav (for cream slides) */
+.nav-light .nav-label { color: rgba(6, 26, 55, 0.35); }
+.nav-light .nav-arrow {
+  background: rgba(6, 26, 55, 0.06);
+  color: rgba(6, 26, 55, 0.3);
+}
+.nav-light .nav-arrow:hover {
+  background: rgba(6, 26, 55, 0.1);
+  color: rgba(6, 26, 55, 0.6);
+}
+.nav-light .nav-dot { background: rgba(6, 26, 55, 0.12); }
+.nav-light .nav-dot:hover { background: rgba(6, 26, 55, 0.25); }
+.nav-light .nav-dot.active { background: #2860B2; }
+.nav-light .nav-pill {
+  background: rgba(6, 26, 55, 0.04);
+  backdrop-filter: blur(12px);
+}
+
+/* Dark nav (for dark/blue slides) */
+.nav-dark .nav-label { color: rgba(255, 255, 255, 0.35); }
+.nav-dark .nav-arrow {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.4);
+}
+.nav-dark .nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+}
+.nav-dark .nav-dot { background: rgba(255, 255, 255, 0.2); }
+.nav-dark .nav-dot:hover { background: rgba(255, 255, 255, 0.4); }
+.nav-dark .nav-dot.active { background: #2860B2; }
+.nav-dark .nav-pill {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+/* Card styling */
+.card {
+  background: #FFFFFF;
+  border: 1px solid #E0DEDA;
+  border-radius: 16px;
+  padding: 40px 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.card--dark {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card--accent {
+  border-top: 3px solid #2860B2;
+}
+
+.card--accent-left {
+  border-left: 3px solid #2860B2;
+}
+
+/* Scrollbar hidden */
+::-webkit-scrollbar { display: none; }
