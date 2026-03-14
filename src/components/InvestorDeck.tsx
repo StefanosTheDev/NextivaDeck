@@ -26,6 +26,8 @@ import SummarySlide from "./slides/SummarySlide";
 import ClosingSlide from "./slides/ClosingSlide";
 import ProductPortfolioSlide from "./slides/ProductPortfolioSlide";
 import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
+import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
+import LaborCostSavingsSlide from "./slides/LaborCostSavingsSlide";
 
 type SlideTheme = "light" | "dark";
 
@@ -39,9 +41,11 @@ const slides: { id: string; label: string; component: React.ComponentType<{ slid
   { id: "problem", label: "Problem", component: ProblemSlide, theme: "dark" },
   { id: "platform", label: "Platform", component: PlatformSlide, theme: "dark" },
   { id: "solution", label: "Solution", component: SolutionSlide, theme: "light" },
-  { id: "ai-tandem", label: "AI + Human", component: AiTandemSlide, theme: "light" },
   { id: "market", label: "Market", component: MarketSlide, theme: "dark" },
   { id: "agentic-opp", label: "AI Opportunity", component: AgenticOpportunitySlide, theme: "dark" },
+  { id: "ai-tandem", label: "AI + Human", component: AiTandemSlide, theme: "light" },
+  { id: "cx-market-sizing", label: "CX Market Sizing", component: CXMarketSizingSlide, theme: "dark" },
+  { id: "labor-cost-savings", label: "Labor Cost Savings", component: LaborCostSavingsSlide, theme: "dark" },
   { id: "ai-tailwind", label: "AI Tailwind", component: AiTailwindSlide, theme: "dark" },
   { id: "win", label: "Right to Win", component: RightToWinSlide, theme: "dark" },
   { id: "leadership", label: "Leadership", component: LeadershipSlide, theme: "light" },
