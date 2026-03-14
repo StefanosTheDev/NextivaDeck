@@ -34,14 +34,16 @@ function PersonCard({ name, role, photo, objectPosition = "center center", needs
     <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
       <div style={{
         width: 68, height: 68, borderRadius: 10, overflow: "hidden", flexShrink: 0,
-        background: needsFrame ? "transparent" : "#0a1628",
-        padding: needsFrame ? 5 : 0,
+        background: "#0a1628",
+        padding: needsFrame ? "8px 13px" : 0,
         boxSizing: "border-box" as const,
       }}>
         <div style={{
-          width: "100%", height: "100%", borderRadius: needsFrame ? 6 : 0,
-          overflow: "hidden", background: needsFrame ? "#f0eeec" : "transparent",
-          boxShadow: needsFrame ? "0 1px 4px rgba(0,0,0,0.15)" : "none",
+          width: "100%", height: "100%",
+          borderRadius: needsFrame ? 3 : 0,
+          overflow: "hidden",
+          border: needsFrame ? "1px solid rgba(255,255,255,0.85)" : "none",
+          boxSizing: "border-box" as const,
         }}>
           <img
             src={photo} alt={name}
@@ -115,14 +117,16 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
               <div key={p.name} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
                 <div style={{
                   width: 64, height: 64, borderRadius: 10, overflow: "hidden", marginBottom: 8,
-                  background: p.needsFrame ? "transparent" : "#0a1628",
-                  padding: p.needsFrame ? 5 : 0,
+                  background: "#0a1628",
+                  padding: p.needsFrame ? "7px 12px" : 0,
                   boxSizing: "border-box" as const,
                 }}>
                   <div style={{
-                    width: "100%", height: "100%", borderRadius: p.needsFrame ? 6 : 0,
-                    overflow: "hidden", background: p.needsFrame ? "#f0eeec" : "transparent",
-                    boxShadow: p.needsFrame ? "0 1px 4px rgba(0,0,0,0.15)" : "none",
+                    width: "100%", height: "100%",
+                    borderRadius: p.needsFrame ? 3 : 0,
+                    overflow: "hidden",
+                    border: p.needsFrame ? "1px solid rgba(255,255,255,0.85)" : "none",
+                    boxSizing: "border-box" as const,
                   }}>
                     <img
                       src={p.photo} alt={p.name}
