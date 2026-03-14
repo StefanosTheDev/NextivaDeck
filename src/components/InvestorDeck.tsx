@@ -2,75 +2,75 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
 
-import CoverSlide from "./slides/CoverSlide";
-import SafeHarborSlide from "./slides/SafeHarborSlide";
-import AtAGlanceSlide from "./slides/AtAGlanceSlide";
-import FounderSlide from "./slides/FounderSlide";
-import WhoWeServeSlide from "./slides/WhoWeServeSlide";
-import ScaleSlide from "./slides/ScaleSlide";
-import JourneySlide from "./slides/JourneySlide";
-import ProblemSlide from "./slides/ProblemSlide";
-import SolutionSlide from "./slides/SolutionSlide";
-import PlatformSlide from "./slides/PlatformSlide";
-import AiTandemSlide from "./slides/AiTandemSlide";
-import AiUseCasesSlide from "./slides/AiUseCasesSlide";
-import MarketSlide from "./slides/MarketSlide";
-import AgenticOpportunitySlide from "./slides/AgenticOpportunitySlide";
-import AiTailwindSlide from "./slides/AiTailwindSlide";
-import RightToWinSlide from "./slides/RightToWinSlide";
-import FinancialsSlide from "./slides/FinancialsSlide";
-import LeadershipSlide from "./slides/LeadershipSlide";
-import SummarySlide from "./slides/SummarySlide";
-import ClosingSlide from "./slides/ClosingSlide";
-import ProductPortfolioSlide from "./slides/ProductPortfolioSlide";
-import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
-import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
-import LaborCostSavingsSlide from "./slides/LaborCostSavingsSlide";
-
-type SlideTheme = "light" | "dark";
-
-const slides: { id: string; label: string; component: React.ComponentType<{ slideNumber: number }>; theme: SlideTheme }[] = [
-  { id: "cover", label: "Cover", component: CoverSlide, theme: "dark" },
-  { id: "safe-harbor", label: "Safe Harbor", component: SafeHarborSlide, theme: "light" },
-  { id: "glance", label: "At a Glance", component: AtAGlanceSlide, theme: "light" },
-  { id: "founder", label: "Founder", component: FounderSlide, theme: "dark" },
-  { id: "who", label: "Who We Serve", component: WhoWeServeSlide, theme: "dark" },
-  { id: "journey", label: "Journey", component: JourneySlide, theme: "dark" },
-  { id: "problem", label: "Problem", component: ProblemSlide, theme: "dark" },
-  { id: "platform", label: "Platform", component: PlatformSlide, theme: "dark" },
-  { id: "solution", label: "Solution", component: SolutionSlide, theme: "light" },
-  { id: "market", label: "Market", component: MarketSlide, theme: "dark" },
-  { id: "agentic-opp", label: "AI Opportunity", component: AgenticOpportunitySlide, theme: "dark" },
-  { id: "ai-tandem", label: "AI + Human", component: AiTandemSlide, theme: "light" },
-  { id: "cx-market-sizing", label: "CX Market Sizing", component: CXMarketSizingSlide, theme: "dark" },
-  { id: "labor-cost-savings", label: "Labor Cost Savings", component: LaborCostSavingsSlide, theme: "dark" },
-  { id: "ai-tailwind", label: "AI Tailwind", component: AiTailwindSlide, theme: "dark" },
-  { id: "win", label: "Right to Win", component: RightToWinSlide, theme: "dark" },
-  { id: "leadership", label: "Leadership", component: LeadershipSlide, theme: "light" },
-  { id: "summary", label: "Summary", component: SummarySlide, theme: "dark" },
-  { id: "closing", label: "Closing", component: ClosingSlide, theme: "dark" },
-  { id: "appendix-customers", label: "Customers", component: ScaleSlide, theme: "dark" },
-  { id: "appendix-products", label: "Products", component: ProductPortfolioSlide, theme: "light" },
-  { id: "ai-gateways-revenue", label: "AI Gateways Revenue", component: AIGatewaysRevenueSlide, theme: "light" },
-];
+import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "./slideRegistry";
 
 export default function InvestorDeck() {
-  const [cur, setCur] = useState(0);
+  const [slides, setSlides] = useState<SlideDef[]>(() => resolveSlides(DEFAULT_SLIDE_ORDER));
+  const [isPreview, setIsPreview] = useState(false);
+  const [cur, setCur] = useState(() => {
+    if (typeof window !== "undefined") {
+      const param = new URLSearchParams(window.location.search).get("slide");
+      if (param) {
+        const n = parseInt(param, 10);
+        if (!isNaN(n) && n >= 1) return n - 1;
+      }
+    }
+    return 0;
+  });
   const [nav, setNav] = useState(true);
   const [transitioning, setTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const preview = params.get("preview") === "true";
+    setIsPreview(preview);
+
+    if (preview) {
+      const stored = localStorage.getItem("previewDeckData");
+      if (stored) {
+        try {
+          const data = JSON.parse(stored);
+          const previewOrder: string[] = data.order || DEFAULT_SLIDE_ORDER;
+          const previewHidden: string[] = data.hiddenSlides || [];
+          const visible = previewOrder.filter((id: string) => !previewHidden.includes(id));
+          const resolved = resolveSlides(visible);
+          if (resolved.length > 0) {
+            setSlides(resolved);
+            if (cur >= resolved.length) setCur(0);
+            return;
+          }
+        } catch {
+          // fall through to API
+        }
+      }
+    }
+
+    fetch("/api/slides")
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data.order)) {
+          const hidden: string[] = Array.isArray(data.hiddenSlides) ? data.hiddenSlides : [];
+          const visibleOrder = data.order.filter((id: string) => !hidden.includes(id));
+          const resolved = resolveSlides(visibleOrder);
+          setSlides(resolved);
+          if (cur >= resolved.length) setCur(0);
+        }
+      })
+      .catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const go = useCallback((i: number) => {
     if (i < 0 || i >= slides.length || i === cur || transitioning) return;
     setTransitioning(true);
-    // Short delay for fade out, then switch
     setTimeout(() => {
       setCur(i);
       setTimeout(() => setTransitioning(false), 50);
     }, 300);
-  }, [cur, transitioning]);
+  }, [cur, transitioning, slides.length]);
 
   const next = useCallback(() => go(cur + 1), [cur, go]);
   const prev = useCallback(() => go(cur - 1), [cur, go]);
@@ -100,19 +100,63 @@ export default function InvestorDeck() {
   }, [next, prev]);
 
   useEffect(() => {
+    if (isPreview) return;
     let t: NodeJS.Timeout;
     const show = () => { setNav(true); clearTimeout(t); t = setTimeout(() => setNav(false), 3000); };
     window.addEventListener("mousemove", show);
     t = setTimeout(() => setNav(false), 5000);
     return () => { window.removeEventListener("mousemove", show); clearTimeout(t); };
-  }, []);
+  }, [isPreview]);
 
   const Slide = slides[cur].component;
   const navTheme = slides[cur].theme === "dark" ? "nav-dark" : "nav-light";
 
   return (
     <div ref={containerRef} className="deck-viewport">
-      {/* Slide layer with CSS transition */}
+      {/* Preview banner */}
+      {isPreview && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 60,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 16,
+            padding: "10px 24px",
+            background: "rgba(217,119,6,0.9)",
+            backdropFilter: "blur(8px)",
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 14,
+            fontWeight: 600,
+            color: "#fff",
+          }}
+        >
+          <span>Preview Mode — Changes not published</span>
+          <span style={{ fontSize: 13, fontWeight: 400, opacity: 0.7 }}>
+            Slide {cur + 1} of {slides.length}
+          </span>
+          <a
+            href="/catalog"
+            style={{
+              marginLeft: "auto",
+              display: "flex", alignItems: "center", gap: 6,
+              padding: "5px 14px", borderRadius: 6,
+              background: "rgba(0,0,0,0.2)",
+              color: "#fff", textDecoration: "none",
+              fontSize: 13, fontWeight: 500,
+            }}
+          >
+            <ArrowLeft size={14} />
+            Back to Catalog
+          </a>
+        </div>
+      )}
+
+      {/* Slide layer */}
       <div
         style={{
           position: "absolute",
@@ -148,6 +192,7 @@ export default function InvestorDeck() {
                 <button key={s.id} onClick={() => go(i)} className={`nav-dot ${i === cur ? "active" : ""}`} title={s.label} />
               ))}
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>

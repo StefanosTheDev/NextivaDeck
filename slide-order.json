@@ -1,0 +1,43 @@
+{
+  "order": [
+    "cover",
+    "safe-harbor",
+    "glance",
+    "founder",
+    "who",
+    "journey",
+    "problem",
+    "platform",
+    "solution",
+    "market",
+    "agentic-opp",
+    "ai-tandem",
+    "cx-market-sizing",
+    "labor-cost-savings",
+    "ai-tailwind",
+    "win",
+    "leadership",
+    "summary",
+    "closing",
+    "appendix-customers",
+    "appendix-products",
+    "ai-gateways-revenue",
+    "financial-divider",
+    "arr-gross-margin",
+    "ebitda",
+    "nrr-churn",
+    "expansion-retention",
+    "target-model",
+    "operating-leverage",
+    "customer-base",
+    "revenue-visibility",
+    "cash-flow-trends"
+  ],
+  "categories": {
+    "cover": "CX Experience"
+  },
+  "categoryNames": [
+    "CX Experience"
+  ],
+  "hiddenSlides": []
+}

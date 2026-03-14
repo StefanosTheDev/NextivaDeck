@@ -137,11 +137,24 @@ export const EBITDA_FLOW_THROUGH_T6M = {
   FY25: -0.54, FY26: 7.56, FY27: 0.99, FY28: 1.01, FY29: 1.05, FY30: 1.03,
 } as const;
 
+export const UNLEVERED_FCF = {
+  FY25: -4, FY26: 15, FY27: 78, FY28: 106, FY29: 138, FY30: 170,
+} as const;
+
+export const EBITDA_UFCF_CONVERSION = {
+  FY25: null, FY26: 33, FY27: 78, FY28: 84, FY29: 89, FY30: 91,
+} as const;
+
+export const CASH_EQUIVALENTS = {
+  FY25: 27, FY26: 42, FY27: 120, FY28: 226, FY29: 364, FY30: 517,
+} as const;
+
 export const REVENUE_VISIBILITY = {
   contracted: 246,
   monthlyRenewals: 34,
   expansionBookings: 23,
   contractNetRenewals: 8,
+  newBookings: 1,
   buildUp: 312,
   subscriptionTarget: 367,
   gap: 55,
