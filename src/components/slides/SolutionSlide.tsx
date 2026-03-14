@@ -53,7 +53,7 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
           >
             <defs>
               <marker id="arrowThin" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-                <path d="M0,0 L8,3 L0,6" fill="none" stroke="#2860B2" strokeWidth="1" opacity="0.5" />
+                <path d="M0,0 L8,3 L0,6" fill="#2860B2" stroke="none" />
               </marker>
               <marker id="arrowThick" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
                 <path d="M0,0 L10,4 L0,8" fill="#2860B2" stroke="none" />

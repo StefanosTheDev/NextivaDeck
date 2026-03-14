@@ -20,8 +20,11 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
       >
         <p className="eyebrow" style={{ marginBottom: 12 }}>AI FLEXIBILITY</p>
         <h1 className="font-heading" style={{ fontSize: 68, fontWeight: 700, color: "#1A447C", margin: 0, lineHeight: 1.15 }}>
-          AI and human in tandem.
+          Our customers want choice.
         </h1>
+        <p style={{ fontSize: 24, color: "#4A4846", margin: "14px 0 0", lineHeight: 1.4 }}>
+          Ability to calibrate Human & AI collaboration over time.
+        </p>
       </motion.header>
 
       {/* Three cards */}

@@ -31,6 +31,8 @@ import OperatingLeverageSlide from "./slides/OperatingLeverageSlide";
 import CustomerBaseSlide from "./slides/CustomerBaseSlide";
 import RevenueVisibilitySlide from "./slides/RevenueVisibilitySlide";
 import CashFlowTrendsSlide from "./slides/CashFlowTrendsSlide";
+import AgenticOpportunity2Slide from "./slides/AgenticOpportunity2Slide";
+import AiTailwind2Slide from "./slides/AiTailwind2Slide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -76,6 +78,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-base":      { id: "customer-base",       label: "Customer Base",       component: CustomerBaseSlide,        theme: "light", isNew: true },
   "revenue-visibility": { id: "revenue-visibility",  label: "Revenue Visibility",  component: RevenueVisibilitySlide,   theme: "light", isNew: true },
   "cash-flow-trends":   { id: "cash-flow-trends",    label: "Cash Flow Trends",    component: CashFlowTrendsSlide,      theme: "light", isNew: true },
+  "agentic-opp-2":     { id: "agentic-opp-2",       label: "AI Opportunity (2)",  component: AgenticOpportunity2Slide, theme: "dark" },
+  "ai-tailwind-2":     { id: "ai-tailwind-2",       label: "AI Tailwind (2)",     component: AiTailwind2Slide,         theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -89,11 +93,13 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "platform",
   "solution",
   "market",
+  "agentic-opp-2",
   "agentic-opp",
   "ai-tandem",
+  "ai-tailwind",
   "cx-market-sizing",
   "labor-cost-savings",
-  "ai-tailwind",
+  "ai-tailwind-2",
   "win",
   "leadership",
   "summary",
