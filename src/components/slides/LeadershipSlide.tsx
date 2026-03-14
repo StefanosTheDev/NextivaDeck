@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
 const board = [
-  { name: "Tomas Gorny", role: "Chairman, CEO & Co-Founder", photo: "/images/headshot-tomas.png", crop: false },
-  { name: "Tracy Conrad", role: "Chief Amazing Officer, Co-Founder", photo: "/images/headshot-tracy.png", crop: false },
-  { name: "Hari Ravichandran", role: "Founder & CEO, Endurance / Aura.com", photo: "/images/headshot-hari.png", crop: true },
-  { name: "Stephen Kerns", role: "MD, Goldman Sachs Growth Equity", photo: "/images/headshot-stephen.png", crop: false },
-  { name: "Alan Black", role: "CFO, Zendesk; CFO, Openwave", photo: "/images/headshot-alan.png", crop: false },
-  { name: "Bob Beauchamp", role: "CEO, BMC Software", photo: "/images/headshot-bob.png", crop: false },
-  { name: "Karen Walker", role: "CMO, Cisco, Intel", photo: "/images/headshot-karen.png", crop: false },
+  { name: "Tomas Gorny", role: "Chairman, CEO & Co-Founder", photo: "/images/headshot-tomas.png" },
+  { name: "Tracy Conrad", role: "Chief Amazing Officer, Co-Founder", photo: "/images/headshot-tracy.png" },
+  { name: "Hari Ravichandran", role: "Founder & CEO, Endurance / Aura.com", photo: "/images/headshot-hari.png", needsFrame: true },
+  { name: "Stephen Kerns", role: "MD, Goldman Sachs Growth Equity", photo: "/images/headshot-stephen.png" },
+  { name: "Alan Black", role: "CFO, Zendesk; CFO, Openwave", photo: "/images/headshot-alan.png" },
+  { name: "Bob Beauchamp", role: "CEO, BMC Software", photo: "/images/headshot-bob.png" },
+  { name: "Karen Walker", role: "CMO, Cisco, Intel", photo: "/images/headshot-karen.png" },
 ];
 
 const management = [
@@ -19,33 +19,35 @@ const management = [
   { name: "Chris Reaburn", role: "Chief Sales Officer", photo: "/images/headshot-chris.png" },
   { name: "Senthil Velayutham", role: "Chief Technology & Product Officer", photo: "/images/headshot-senthil.png" },
   { name: "Ken McMahon", role: "Chief Customer Officer", photo: "/images/headshot-ken.png" },
-  { name: "Seksom Suriyapa", role: "Chief Transformation Officer", photo: "/images/headshot-seksom.jpg", crop: true },
+  { name: "Seksom Suriyapa", role: "Chief Transformation Officer", photo: "/images/headshot-seksom.jpg", needsFrame: true, objectPosition: "center 15%" },
 ];
 
 const advisors = [
-  { name: "John Connolly", role: "Founder/MD, Eaglehead Capital; Advisor, Bain Capital & Sixth Street", photo: "/images/headshot-john.png", crop: false },
-  { name: "Alex Pinchev", role: "President & CRO, RedHat, Rackspace", photo: "/images/headshot-alex.png", crop: true },
+  { name: "John Connolly", role: "Founder/MD, Eaglehead Capital; Advisor, Bain Capital & Sixth Street", photo: "/images/headshot-john.png" },
+  { name: "Alex Pinchev", role: "President & CRO, RedHat, Rackspace", photo: "/images/headshot-alex.png", needsFrame: true },
 ];
 
-function PersonCard({ name, role, photo, crop = false }: { name: string; role: string; photo: string; crop?: boolean }) {
+function PersonCard({ name, role, photo, objectPosition = "center center", needsFrame = false }: {
+  name: string; role: string; photo: string; objectPosition?: string; needsFrame?: boolean;
+}) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
       <div style={{
         width: 68, height: 68, borderRadius: 10, overflow: "hidden", flexShrink: 0,
-        background: "#0a1628", position: "relative",
+        background: needsFrame ? "transparent" : "#0a1628",
+        padding: needsFrame ? 5 : 0,
+        boxSizing: "border-box" as const,
       }}>
-        <img
-          src={photo} alt={name}
-          style={crop ? {
-            position: "absolute",
-            width: "180%", height: "180%",
-            top: "-40%", left: "-40%",
-            objectFit: "cover",
-            objectPosition: "center 30%",
-          } : {
-            width: "100%", height: "100%", objectFit: "cover",
-          }}
-        />
+        <div style={{
+          width: "100%", height: "100%", borderRadius: needsFrame ? 6 : 0,
+          overflow: "hidden", background: needsFrame ? "#f0eeec" : "transparent",
+          boxShadow: needsFrame ? "0 1px 4px rgba(0,0,0,0.15)" : "none",
+        }}>
+          <img
+            src={photo} alt={name}
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition }}
+          />
+        </div>
       </div>
       <div>
         <p style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.25 }}>{name}</p>
@@ -86,7 +88,7 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px 24px" }}>
             {board.map((p) => (
-              <PersonCard key={p.name} name={p.name} role={p.role} photo={p.photo} crop={p.crop} />
+              <PersonCard key={p.name} {...p} />
             ))}
           </div>
         </div>
@@ -98,7 +100,7 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px 24px" }}>
             {management.map((p) => (
-              <PersonCard key={p.name} name={p.name} role={p.role} photo={p.photo} crop={p.crop} />
+              <PersonCard key={p.name} {...p} />
             ))}
           </div>
         </div>
@@ -113,20 +115,20 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
               <div key={p.name} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
                 <div style={{
                   width: 64, height: 64, borderRadius: 10, overflow: "hidden", marginBottom: 8,
-                  background: "#0a1628", position: "relative",
+                  background: p.needsFrame ? "transparent" : "#0a1628",
+                  padding: p.needsFrame ? 5 : 0,
+                  boxSizing: "border-box" as const,
                 }}>
-                  <img
-                    src={p.photo} alt={p.name}
-                    style={p.crop ? {
-                      position: "absolute",
-                      width: "180%", height: "180%",
-                      top: "-40%", left: "-40%",
-                      objectFit: "cover",
-                      objectPosition: "center 30%",
-                    } : {
-                      width: "100%", height: "100%", objectFit: "cover",
-                    }}
-                  />
+                  <div style={{
+                    width: "100%", height: "100%", borderRadius: p.needsFrame ? 6 : 0,
+                    overflow: "hidden", background: p.needsFrame ? "#f0eeec" : "transparent",
+                    boxShadow: p.needsFrame ? "0 1px 4px rgba(0,0,0,0.15)" : "none",
+                  }}>
+                    <img
+                      src={p.photo} alt={p.name}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
                 </div>
                 <p style={{ fontSize: 14, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.25 }}>{p.name}</p>
                 <p style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", margin: "3px 0 0", lineHeight: 1.3 }}>{p.role}</p>
