@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+---
+
+## Vercel deployment test (main → main)
+
+**Purpose:** Confirm pushes to `main` trigger Vercel production deploys.
+
+| Field | Value |
+|-------|--------|
+| Branch | `main` |
+| Test commit | README update — CI/CD smoke test |
+| Date | 2025-03-13 |
+| Last test push | 2025-03-13 — verify Vercel build on `main` |
+
+If this table is visible on GitHub `main`, the push worked. Check **Vercel → Deployments** for a new production build for this commit. Vercel should show a new deployment for this commit in the project dashboard.
