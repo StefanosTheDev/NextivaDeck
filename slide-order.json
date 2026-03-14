@@ -35,5 +35,8 @@
   ],
   "categories": {},
   "categoryNames": [],
-  "hiddenSlides": []
+  "hiddenSlides": [
+    "cover",
+    "safe-harbor"
+  ]
 }
