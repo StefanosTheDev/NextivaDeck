@@ -33,6 +33,10 @@ import RevenueVisibilitySlide from "./slides/RevenueVisibilitySlide";
 import CashFlowTrendsSlide from "./slides/CashFlowTrendsSlide";
 import AgenticOpportunity2Slide from "./slides/AgenticOpportunity2Slide";
 import AiTailwind2Slide from "./slides/AiTailwind2Slide";
+import DurableEdgeSlide from "./slides/DurableEdgeSlide";
+import MarketTAMSlide from "./slides/MarketTAMSlide";
+import CompetitiveMoatSlide from "./slides/CompetitiveMoatSlide";
+import UnifiedDataModelSlide from "./slides/UnifiedDataModelSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -80,6 +84,10 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cash-flow-trends":   { id: "cash-flow-trends",    label: "Cash Flow Trends",    component: CashFlowTrendsSlide,      theme: "light", isNew: true },
   "agentic-opp-2":     { id: "agentic-opp-2",       label: "AI Opportunity (2)",  component: AgenticOpportunity2Slide, theme: "dark" },
   "ai-tailwind-2":     { id: "ai-tailwind-2",       label: "AI Tailwind (2)",     component: AiTailwind2Slide,         theme: "dark" },
+  "durable-edge":      { id: "durable-edge",        label: "Durable Edge",        component: DurableEdgeSlide,         theme: "light" },
+  "market-tam":        { id: "market-tam",          label: "Market TAM",          component: MarketTAMSlide,           theme: "dark" },
+  "competitive-moat":  { id: "competitive-moat",    label: "Competitive Moat",    component: CompetitiveMoatSlide,     theme: "dark" },
+  "unified-data-model":{ id: "unified-data-model",  label: "Unified Data Model",  component: UnifiedDataModelSlide,    theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -117,6 +125,10 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "customer-base",
   "revenue-visibility",
   "cash-flow-trends",
+  "durable-edge",
+  "market-tam",
+  "competitive-moat",
+  "unified-data-model",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
