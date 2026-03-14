@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server";
-import { put, list } from "@vercel/blob";
 import fs from "fs/promises";
 import path from "path";
 
-const BLOB_FILENAME = "slide-order.json";
-const LOCAL_FILE = path.join(process.cwd(), "slide-order.json");
-const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN || process.env.NEXTIVASTORAGE_READ_WRITE_TOKEN || "";
+const DATA_FILE = path.join(process.cwd(), "slide-order.json");
 const IS_VERCEL = !!process.env.VERCEL;
 
 const DEFAULT_ORDER = [
@@ -43,13 +40,6 @@ const DEFAULT_ORDER = [
   "cash-flow-trends",
 ];
 
-const DEFAULT_DATA: SlideData = {
-  order: DEFAULT_ORDER,
-  categories: {},
-  categoryNames: [],
-  hiddenSlides: [],
-};
-
 interface SlideData {
   order: string[];
   categories: Record<string, string>;
@@ -57,8 +47,16 @@ interface SlideData {
   hiddenSlides: string[];
 }
 
-function parseData(raw: string): SlideData {
+const DEFAULT_DATA: SlideData = {
+  order: DEFAULT_ORDER,
+  categories: {},
+  categoryNames: [],
+  hiddenSlides: [],
+};
+
+async function readData(): Promise<SlideData> {
   try {
+    const raw = await fs.readFile(DATA_FILE, "utf-8");
     const parsed = JSON.parse(raw);
 
     if (Array.isArray(parsed)) {
@@ -79,41 +77,8 @@ function parseData(raw: string): SlideData {
   }
 }
 
-async function readData(): Promise<SlideData> {
-  if (IS_VERCEL) {
-    try {
-      const { blobs } = await list({ prefix: BLOB_FILENAME, token: BLOB_TOKEN });
-      if (blobs.length > 0) {
-        const res = await fetch(blobs[0].url);
-        const raw = await res.text();
-        return parseData(raw);
-      }
-    } catch {
-      // blob doesn't exist yet
-    }
-    return { ...DEFAULT_DATA };
-  }
-
-  try {
-    const raw = await fs.readFile(LOCAL_FILE, "utf-8");
-    return parseData(raw);
-  } catch {
-    return { ...DEFAULT_DATA };
-  }
-}
-
 async function writeData(data: SlideData): Promise<void> {
-  const json = JSON.stringify(data, null, 2);
-
-  if (IS_VERCEL) {
-    await put(BLOB_FILENAME, json, {
-      access: "public",
-      addRandomSuffix: false,
-      token: BLOB_TOKEN,
-    });
-  } else {
-    await fs.writeFile(LOCAL_FILE, json, "utf-8");
-  }
+  await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2), "utf-8");
 }
 
 export async function GET() {
@@ -122,6 +87,12 @@ export async function GET() {
 }
 
 export async function PUT(request: Request) {
+  // In prod, the filesystem is read-only — changes are made locally and pushed via Git
+  if (IS_VERCEL) {
+    const data = await readData();
+    return NextResponse.json(data);
+  }
+
   try {
     const body = await request.json();
     const current = await readData();

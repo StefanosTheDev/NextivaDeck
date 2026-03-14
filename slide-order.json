@@ -33,11 +33,10 @@
     "revenue-visibility",
     "cash-flow-trends"
   ],
-  "categories": {
-    "cover": "CX Experience"
-  },
-  "categoryNames": [
-    "CX Experience"
-  ],
-  "hiddenSlides": []
+  "categories": {},
+  "categoryNames": [],
+  "hiddenSlides": [
+    "safe-harbor",
+    "cover"
+  ]
 }
