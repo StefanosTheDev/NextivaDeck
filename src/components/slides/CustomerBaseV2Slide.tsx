@@ -28,7 +28,7 @@ export default function CustomerBaseV2Slide({ slideNumber = 30 }: { slideNumber?
         style={{ padding: "48px 100px 0", flexShrink: 0 }}
       >
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#7EB3E8", margin: "0 0 10px" }}>Our Customers</p>
-        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
           A diversified, sticky<br />customer base.
         </h1>
       </motion.header>

@@ -61,11 +61,11 @@ export default function RevenueOpportunitySlide({
           <h1
             className="font-heading"
             style={{
-              fontSize: 34,
-              fontWeight: 700,
+              fontSize: 60,
+              fontWeight: 500,
               color: "#FFFFFF",
               margin: 0,
-              lineHeight: 1.2,
+              lineHeight: 1.15,
             }}
           >
             Our Substantial Revenue Opportunity

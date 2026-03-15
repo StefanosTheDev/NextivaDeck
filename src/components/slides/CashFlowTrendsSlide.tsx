@@ -47,7 +47,7 @@ export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#CCC7C3", margin: "0 0 10px" }}>Cash Flow Trends</p>
-        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
           Adjusted EBITDA, Free Cash Flow, and Cash Projections
         </h1>
       </motion.header>

@@ -38,7 +38,7 @@ export default function PlatformSlide({ slideNumber = 10 }: { slideNumber?: numb
         <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.08em", textTransform: "uppercase", color: "#2860B2", margin: "0 0 14px" }}>
           SOLVING FOR THE FUTURE OF BUSINESS
         </p>
-        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 700, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.15, whiteSpace: "nowrap" }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.15, whiteSpace: "nowrap" }}>
           Nextiva&apos;s Agentic CX Platform.
         </h1>
         <p style={{ fontSize: 20, color: "rgba(255,255,255,0.45)", margin: "16px auto 0", lineHeight: 1.55, maxWidth: 740 }}>

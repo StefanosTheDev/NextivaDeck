@@ -49,7 +49,7 @@ export default function UnifiedDataModelSlide({ slideNumber = 20 }: { slideNumbe
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           PLATFORM ARCHITECTURE
         </p>
-        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           Unified Data & Platform Model Advantages
         </h1>
       </motion.header>

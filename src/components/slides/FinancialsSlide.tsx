@@ -27,7 +27,7 @@ export default function FinancialsSlide({ slideNumber = 15 }: { slideNumber?: nu
         style={{ padding: "56px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p className="eyebrow">Financial performance</p>
-        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#1A447C", marginTop: 10, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#1A447C", marginTop: 10, lineHeight: 1.15 }}>
           Disciplined growth. Expanding margins.
         </h1>
       </motion.header>

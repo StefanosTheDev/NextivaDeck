@@ -74,7 +74,7 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
         <p style={{ fontWeight: 700, fontSize: 16, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           LEADERSHIP
         </p>
-        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           Proven tech leaders drawn to compelling vision.
         </h1>
       </motion.header>

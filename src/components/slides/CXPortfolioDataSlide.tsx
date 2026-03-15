@@ -131,8 +131,8 @@ export default function CXPortfolioDataSlide({
         <h1
           className="font-heading"
           style={{
-            fontSize: 44,
-            fontWeight: 700,
+            fontSize: 60,
+            fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
             lineHeight: 1.15,

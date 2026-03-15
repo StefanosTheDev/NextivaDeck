@@ -21,7 +21,7 @@ export default function AtAGlanceSlide({ slideNumber = 3 }: { slideNumber?: numb
         style={{ padding: "72px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p className="eyebrow eyebrow--light">At a glance</p>
-        <h1 className="font-heading" style={{ fontSize: 80, fontWeight: 700, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
           Nextiva at a glance.
         </h1>
         <p style={{ fontSize: 28, color: "rgba(255,255,255,0.55)", margin: "12px 0 0", lineHeight: 1.4 }}>

@@ -36,7 +36,7 @@ export default function RightToWinSlide({ slideNumber = 14 }: { slideNumber?: nu
         <p style={{ fontWeight: 700, fontSize: 20, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           RIGHT TO WIN
         </p>
-        <h1 className="font-heading" style={{ fontSize: 68, fontWeight: 400, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
           Our competitive advantages.
         </h1>
       </motion.header>

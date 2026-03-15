@@ -50,7 +50,7 @@ export default function DurableEdgeSlide({ slideNumber = 20 }: { slideNumber?: n
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p className="eyebrow" style={{ color: "#2860B2" }}>Our Durable Edge</p>
-        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#1A447C", margin: "10px 0 0", lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#1A447C", margin: "10px 0 0", lineHeight: 1.15 }}>
           Massive Moats. Trusted Position. Built to Thrive.
         </h1>
         <p style={{ fontSize: 20, color: "#4A4846", margin: "12px auto 0", maxWidth: 900, lineHeight: 1.5 }}>

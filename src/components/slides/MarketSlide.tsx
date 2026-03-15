@@ -35,7 +35,7 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
         <p style={{ fontWeight: 700, fontSize: 20, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           MARKET VALIDATION
         </p>
-        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 400, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15, whiteSpace: "nowrap" }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
           The AI + CX convergence is accelerating.
         </h1>
       </motion.header>

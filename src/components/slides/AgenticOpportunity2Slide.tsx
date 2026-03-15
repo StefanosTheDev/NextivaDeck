@@ -24,7 +24,7 @@ export default function AgenticOpportunity2Slide({ slideNumber = 12 }: { slideNu
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           THE AGENTIC AI OPPORTUNITY
         </p>
-        <h1 className="font-heading" style={{ fontSize: 44, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           Contact Center Workforces Will Be Agentic.
         </h1>
         <p style={{ fontSize: 20, color: "rgba(255,255,255,0.45)", margin: "14px 0 0", lineHeight: 1.5 }}>

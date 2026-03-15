@@ -63,7 +63,7 @@ export default function AiUseCasesSlide({ slideNumber = 12 }: { slideNumber?: nu
         }}>
           INDUSTRY APPLICATIONS
         </p>
-        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#1A447C", margin: "0 auto", lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#1A447C", margin: "0 auto", lineHeight: 1.15 }}>
           XBert brings AI Agents to every Industry.
         </h1>
         <p style={{ fontSize: 18, color: "#6C6967", margin: "10px 0 0", lineHeight: 1.5 }}>

@@ -40,7 +40,7 @@ export default function ProductPortfolioSlide({ slideNumber = 19 }: { slideNumbe
         style={{ padding: "56px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p className="eyebrow">Appendix</p>
-        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 700, color: "#1A447C", marginTop: 10, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#1A447C", marginTop: 10, lineHeight: 1.15 }}>
           Nextiva product portfolio.
         </h1>
       </motion.header>

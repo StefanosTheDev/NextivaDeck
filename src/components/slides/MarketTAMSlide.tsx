@@ -23,7 +23,7 @@ export default function MarketTAMSlide({ slideNumber = 20 }: { slideNumber?: num
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           MARKET OPPORTUNITY
         </p>
-        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           CX is a large market, growing fast.
         </h1>
       </motion.header>

@@ -47,7 +47,7 @@ export default function BlueOceanSlide({ slideNumber = 12 }: { slideNumber?: num
         </p>
         <h1
           className="font-heading"
-          style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
+          style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
         >
           The Massive Middle Is Untouched
         </h1>

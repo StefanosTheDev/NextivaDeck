@@ -24,7 +24,7 @@ export default function FounderSlide({ slideNumber = 4 }: { slideNumber?: number
           <p style={{ fontWeight: 700, fontSize: 22, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
             TOMAS GORNY
           </p>
-          <h1 className="font-heading" style={{ fontSize: 76, fontWeight: 500, color: "#FFFFFF", margin: "16px 0 0", lineHeight: 1.2 }}>
+          <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "16px 0 0", lineHeight: 1.15 }}>
             Founder-led.<br />
             Operator-driven.<br />
             Proven through cycles.

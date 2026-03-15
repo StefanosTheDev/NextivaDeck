@@ -34,7 +34,7 @@ export default function SolutionDarkSlide({ slideNumber = 9 }: { slideNumber?: n
         }}>
           OUR SOLUTION
         </p>
-        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.15, maxWidth: 900 }}>
           Nextiva Agentic CX Always<br />Delivers Immediate Outcomes.
         </h1>
       </motion.header>
