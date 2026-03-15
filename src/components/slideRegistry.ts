@@ -1,6 +1,7 @@
 import CoverSlide from "./slides/CoverSlide";
 import SafeHarborSlide from "./slides/SafeHarborSlide";
 import AtAGlanceSlide from "./slides/AtAGlanceSlide";
+import AtAGlanceProjectionsSlide from "./slides/AtAGlanceProjectionsSlide";
 import FounderSlide from "./slides/FounderSlide";
 import WhoWeServeSlide from "./slides/WhoWeServeSlide";
 import ScaleSlide from "./slides/ScaleSlide";
@@ -57,6 +58,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   cover:               { id: "cover",               label: "Cover",               component: CoverSlide,               theme: "dark" },
   "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "light" },
   glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
+  "glance-projections":{ id: "glance-projections",   label: "At a Glance + Projections", component: AtAGlanceProjectionsSlide, theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
   who:                 { id: "who",                  label: "Who We Serve",        component: WhoWeServeSlide,          theme: "dark" },
   journey:             { id: "journey",              label: "Journey",             component: JourneySlide,             theme: "dark" },
@@ -104,6 +106,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "cover",
   "safe-harbor",
   "glance",
+  "glance-projections",
   "founder",
   "who",
   "journey",

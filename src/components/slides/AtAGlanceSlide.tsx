@@ -1,9 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { PNL } from "../financialData";
-
-const projectionYears = ["FY26", "FY27", "FY28", "FY30"] as const;
 
 const metrics = [
   { stat: "$353M", label: "FY26 Revenue", desc: "Full year recognized revenue" },
@@ -21,18 +18,18 @@ export default function AtAGlanceSlide({ slideNumber = 3 }: { slideNumber?: numb
     <div className="slide slide--dark">
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "72px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p className="eyebrow eyebrow--light">At a glance</p>
-        <h1 className="font-heading" style={{ fontSize: 72, fontWeight: 700, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 80, fontWeight: 700, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
           Nextiva at a glance.
         </h1>
-        <p style={{ fontSize: 26, color: "rgba(255,255,255,0.55)", margin: "8px 0 0", lineHeight: 1.4 }}>
+        <p style={{ fontSize: 28, color: "rgba(255,255,255,0.55)", margin: "12px 0 0", lineHeight: 1.4 }}>
           A durable, profitable, founder-led software business.
         </p>
       </motion.header>
 
-      <main style={{ flex: 1, padding: "20px 100px 12px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridTemplateRows: "repeat(2, 1fr)", gap: 18, alignContent: "center" }}>
+      <main style={{ flex: 1, padding: "32px 100px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridTemplateRows: "repeat(2, 1fr)", gap: 24, alignContent: "center" }}>
         {metrics.map((m, i) => (
           <motion.article
             key={`${m.label}-${m.desc}`}
@@ -42,56 +39,24 @@ export default function AtAGlanceSlide({ slideNumber = 3 }: { slideNumber?: numb
               background: "rgba(12, 30, 62, 0.6)",
               border: "1px solid rgba(40, 96, 178, 0.35)",
               borderRadius: 16,
-              padding: "28px 28px",
+              padding: "40px 32px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
             }}
           >
-            <h2 style={{ fontSize: m.stat.length > 6 ? 42 : 60, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: m.stat.length > 6 ? 48 : 72, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.1 }}>
               {m.stat}
             </h2>
-            <p style={{ fontSize: 20, fontWeight: 700, color: "#7EB4E8", margin: "6px 0 0", lineHeight: 1.3 }}>
+            <p style={{ fontSize: 22, fontWeight: 700, color: "#7EB4E8", margin: "8px 0 0", lineHeight: 1.3 }}>
               {m.label}
             </p>
-            <p style={{ fontSize: 16, fontWeight: 400, color: "rgba(255,255,255,0.45)", margin: "3px 0 0", lineHeight: 1.3 }}>
+            <p style={{ fontSize: 18, fontWeight: 400, color: "rgba(255,255,255,0.45)", margin: "4px 0 0", lineHeight: 1.3 }}>
               {m.desc}
             </p>
           </motion.article>
         ))}
       </main>
-
-      <motion.section
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        style={{ flexShrink: 0, padding: "0 100px 12px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}
-      >
-        {projectionYears.map((fy) => {
-          const rev = PNL.revenue[fy];
-          const ebitda = PNL.adjEBITDA[fy];
-          const margin = PNL.ebitdaMarginPct[fy];
-          return (
-            <div
-              key={fy}
-              style={{
-                border: "1px solid rgba(40, 96, 178, 0.35)",
-                borderRadius: 10,
-                padding: "10px 20px",
-              }}
-            >
-              <p style={{ fontSize: 13, fontWeight: 700, color: "#E8845C", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0, lineHeight: 1.3 }}>
-                {fy}
-              </p>
-              <p style={{ fontSize: 20, fontWeight: 700, color: "#FFFFFF", margin: "4px 0 0", lineHeight: 1.3 }}>
-                ${rev}M &rarr; ${ebitda}M
-              </p>
-              <p style={{ fontSize: 13, fontWeight: 400, color: "rgba(255,255,255,0.4)", margin: "2px 0 0", lineHeight: 1.3 }}>
-                {margin}% EBITDA margin
-              </p>
-            </div>
-          );
-        })}
-      </motion.section>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
