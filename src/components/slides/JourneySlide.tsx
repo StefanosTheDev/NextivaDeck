@@ -11,7 +11,7 @@ const chapters = [
     title: "Cloud communications.",
     milestone: MILESTONES.ch1Revenue,
     bullets: [
-      "Introduced businesses to cloud-based communications at scale.",
+      "Pioneered cloud communications for businesses at scale",
       "Established market leadership — no outside capital required.",
       "Won through simplicity, amazing service, and reliability.",
     ],
@@ -36,7 +36,7 @@ const chapters = [
     milestone: MILESTONES.ch3Revenue,
     bullets: [
       "Platform well-positioned for AI + CX convergence.",
-      "AI innovations tailored for busy operators with limited IT resources.",
+      "AI tailored for busy operators with limited IT resources.",
       "Sustained efficient business execution.",
     ],
     badge: "Balanced growth.",
@@ -62,13 +62,13 @@ export default function JourneySlide({ slideNumber = 7 }: { slideNumber?: number
           Always anticipating the shift.
         </h1>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "10px 0 0", lineHeight: 1.5 }}>
-          We saw the defining technology shift and delivered it to our customers. Now we&apos;re doing it again.
+          We navigate the technology inflection points that matter. That&apos;s why customers consistently trust us to guide them.
         </p>
       </motion.header>
 
       <main style={{ flex: 1, padding: "32px 80px 0", display: "flex", gap: 20, alignItems: "stretch" }}>
         {chapters.map((ch, i) => (
-          <div key={ch.number} style={{ display: "flex", alignItems: "center", flex: 1, gap: 12 }}>
+          <div key={ch.number} style={{ display: "flex", alignItems: "center", flex: "1 1 0", minWidth: 0, gap: 12 }}>
             <motion.article
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
@@ -98,12 +98,24 @@ export default function JourneySlide({ slideNumber = 7 }: { slideNumber?: number
                   </li>
                 ))}
               </ul>
-              <div style={{ marginTop: 14, display: "inline-flex", alignSelf: "flex-start", padding: "7px 18px", borderRadius: 8, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}>
+              <div
+                style={{
+                  marginTop: 14,
+                  display: "inline-flex",
+                  alignSelf: "flex-start",
+                  padding: "7px 18px",
+                  borderRadius: 8,
+                  background: ch.number === "03" ? "#2860B2" : "rgba(255,255,255,0.08)",
+                  border: ch.number === "03" ? "1px solid rgba(255,255,255,0.2)" : "1px solid rgba(255,255,255,0.12)",
+                }}
+              >
                 <span style={{ fontSize: 15, fontWeight: 700, color: "#FFFFFF" }}>{ch.badge}</span>
               </div>
             </motion.article>
-            {i < chapters.length - 1 && (
+            {i < chapters.length - 1 ? (
               <ArrowRight size={24} color="rgba(255,255,255,0.3)" strokeWidth={2} style={{ flexShrink: 0 }} />
+            ) : (
+              <div style={{ width: 24, flexShrink: 0 }} aria-hidden />
             )}
           </div>
         ))}
