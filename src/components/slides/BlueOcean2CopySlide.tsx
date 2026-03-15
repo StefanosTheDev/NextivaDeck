@@ -8,75 +8,40 @@ const cards = [
   { stat: "5–7M", label: "Agent workloads replaceable by AI" },
 ];
 
-const BLUE_DARK = "rgba(30, 80, 160, 0.35)";
-const BLUE_MED = "rgba(50, 120, 200, 0.30)";
-const BLUE_LIGHT = "rgba(60, 180, 160, 0.25)";
-const RED_TONE = "rgba(200, 60, 60, 0.28)";
-
-const BORDER_BLUE_DARK = "rgba(40, 100, 200, 0.6)";
-const BORDER_BLUE_MED = "rgba(70, 140, 220, 0.5)";
-const BORDER_BLUE_LIGHT = "rgba(70, 200, 170, 0.5)";
-const BORDER_RED = "rgba(220, 70, 70, 0.5)";
-
-const ACCENT_BLUE_DARK = "#2563EB";
-const ACCENT_BLUE_MED = "#3B82F6";
-const ACCENT_BLUE_LIGHT = "#34D399";
-const ACCENT_RED = "#EF4444";
-
-const seatBands = [
+const segments = [
   {
-    band: "1–20 seats",
-    share: "~25%",
-    seats: "~4.5M",
-    customers: "Small businesses, clinics, dealerships, service companies",
-    bg: BLUE_DARK,
-    border: BORDER_BLUE_DARK,
-    accent: ACCENT_BLUE_DARK,
-    zone: "underserved" as const,
+    segment: "<50 agents",
+    seats: "~6.3M",
+    share: "~35%",
+    bg: "rgba(34, 197, 94, 0.22)",
+    border: "rgba(34, 197, 94, 0.4)",
+    accent: "#22C55E",
   },
   {
-    band: "21–100 seats",
-    share: "~30%",
+    segment: "50–250 agents",
     seats: "~5.4M",
-    customers: "SMB contact centers, franchises, regional service orgs",
-    bg: BLUE_MED,
-    border: BORDER_BLUE_MED,
-    accent: ACCENT_BLUE_MED,
-    zone: "underserved" as const,
+    share: "~30%",
+    bg: "rgba(34, 197, 94, 0.15)",
+    border: "rgba(34, 197, 94, 0.3)",
+    accent: "#4ADE80",
   },
   {
-    band: "101–500 seats",
-    share: "~25%",
-    seats: "~4.5M",
-    customers: "Mid-market companies, distributed operations",
-    bg: BLUE_LIGHT,
-    border: BORDER_BLUE_LIGHT,
-    accent: ACCENT_BLUE_LIGHT,
-    zone: "underserved" as const,
+    segment: "250–1,000 agents",
+    seats: "~3.6M",
+    share: "~20%",
+    bg: "rgba(34, 197, 94, 0.09)",
+    border: "rgba(34, 197, 94, 0.2)",
+    accent: "#86EFAC",
   },
   {
-    band: "501–2,000 seats",
-    share: "~12%",
-    seats: "~2.1M",
-    customers: "Enterprise CX operations",
-    bg: RED_TONE,
-    border: BORDER_RED,
-    accent: ACCENT_RED,
-    zone: "crowded" as const,
-  },
-  {
-    band: "2,000+ seats",
-    share: "~8%",
-    seats: "~1.4M",
-    customers: "Global enterprises, BPO providers",
-    bg: RED_TONE,
-    border: BORDER_RED,
-    accent: ACCENT_RED,
-    zone: "crowded" as const,
+    segment: "1,000+ agents",
+    seats: "~2.7M",
+    share: "~15%",
+    bg: "rgba(239, 68, 68, 0.20)",
+    border: "rgba(239, 68, 68, 0.4)",
+    accent: "#EF4444",
   },
 ];
-
-const colWidths = ["18%", "14%", "12%", "56%"];
 
 export default function BlueOcean2CopySlide({ slideNumber = 13 }: { slideNumber?: number }) {
   return (
@@ -88,7 +53,6 @@ export default function BlueOcean2CopySlide({ slideNumber = 13 }: { slideNumber?
         justifyContent: "space-between",
       }}
     >
-      {/* ── Header ── */}
       <motion.header
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -118,7 +82,7 @@ export default function BlueOcean2CopySlide({ slideNumber = 13 }: { slideNumber?
         </p>
       </motion.header>
 
-      {/* ── Compact stat boxes ── */}
+      {/* ── Stat boxes ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -158,126 +122,104 @@ export default function BlueOcean2CopySlide({ slideNumber = 13 }: { slideNumber?
         ))}
       </motion.div>
 
-      {/* ── Color-coded seat band table ── */}
+      {/* ── Table: positioned under the first stat box ── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.35 }}
-        style={{ padding: "18px 100px 0", flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}
+        style={{
+          padding: "20px 100px 0",
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          minHeight: 0,
+        }}
       >
-        <p
-          style={{
-            fontSize: 13,
-            fontWeight: 700,
-            letterSpacing: "0.06em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.5)",
-            margin: "0 0 10px",
-          }}
-        >
-          Breakdown by Seat Band &amp; Competitive Landscape
-        </p>
+        <div style={{ maxWidth: "calc(33.333% - 8px)" }}>
+          <p
+            style={{
+              fontSize: 13,
+              fontWeight: 700,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.5)",
+              margin: "0 0 10px",
+            }}
+          >
+            Breakdown by Segment
+          </p>
 
-        {/* Table header */}
-        <div
-          style={{
-            display: "flex",
-            padding: "10px 20px",
-            borderBottom: "1px solid rgba(255,255,255,0.12)",
-          }}
-        >
-          {["Seat Band", "Share", "Seats (Est.)", "Typical Customers"].map((h, i) => (
-            <p
-              key={h}
-              style={{
-                width: colWidths[i],
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.4)",
-                margin: 0,
-              }}
-            >
-              {h}
+          {/* Table header */}
+          <div
+            style={{
+              display: "flex",
+              padding: "8px 16px",
+              borderBottom: "1px solid rgba(255,255,255,0.12)",
+            }}
+          >
+            <p style={{ flex: 2, fontSize: 11, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", margin: 0 }}>
+              Segment
             </p>
-          ))}
-        </div>
-
-        {/* Table rows */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 4, marginTop: 4 }}>
-          {seatBands.map((row, i) => (
-            <motion.div
-              key={row.band}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.35, delay: 0.4 + i * 0.07 }}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                padding: "11px 20px",
-                background: row.bg,
-                border: `1px solid ${row.border}`,
-                borderLeft: `4px solid ${row.accent}`,
-                borderRadius: 8,
-              }}
-            >
-              <p style={{ width: colWidths[0], fontSize: 15, fontWeight: 700, color: "#FFFFFF", margin: 0 }}>
-                {row.band}
-              </p>
-              <p style={{ width: colWidths[1], fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.85)", margin: 0 }}>
-                {row.share}
-              </p>
-              <p style={{ width: colWidths[2], fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.85)", margin: 0 }}>
-                {row.seats}
-              </p>
-              <p style={{ width: colWidths[3], fontSize: 14, color: "rgba(255,255,255,0.6)", margin: 0 }}>
-                {row.customers}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* ── Legend ── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.8 }}
-          style={{
-            display: "flex",
-            gap: 32,
-            marginTop: 12,
-            justifyContent: "flex-start",
-            paddingLeft: 20,
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div
-              style={{
-                width: 32,
-                height: 10,
-                borderRadius: 3,
-                background: "linear-gradient(90deg, #2563EB, #34D399)",
-              }}
-            />
-            <p style={{ fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.6)", margin: 0 }}>
-              The Underserved Middle
+            <p style={{ flex: 1, fontSize: 11, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", margin: 0, textAlign: "right" }}>
+              Seats
+            </p>
+            <p style={{ flex: 1, fontSize: 11, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", margin: 0, textAlign: "right" }}>
+              Share
             </p>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <div
-              style={{
-                width: 32,
-                height: 10,
-                borderRadius: 3,
-                background: ACCENT_RED,
-              }}
-            />
-            <p style={{ fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.6)", margin: 0 }}>
-              Crowded Enterprise Space
-            </p>
+
+          {/* Table rows */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 4, marginTop: 4 }}>
+            {segments.map((row, i) => (
+              <motion.div
+                key={row.segment}
+                initial={{ opacity: 0, x: -8 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 + i * 0.08 }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "10px 16px",
+                  background: row.bg,
+                  border: `1px solid ${row.border}`,
+                  borderLeft: `4px solid ${row.accent}`,
+                  borderRadius: 8,
+                }}
+              >
+                <p style={{ flex: 2, fontSize: 15, fontWeight: 700, color: "#FFFFFF", margin: 0 }}>
+                  {row.segment}
+                </p>
+                <p style={{ flex: 1, fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.85)", margin: 0, textAlign: "right" }}>
+                  {row.seats}
+                </p>
+                <p style={{ flex: 1, fontSize: 15, fontWeight: 600, color: "rgba(255,255,255,0.85)", margin: 0, textAlign: "right" }}>
+                  {row.share}
+                </p>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+
+          {/* Legend */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.8 }}
+            style={{ display: "flex", gap: 24, marginTop: 12, paddingLeft: 4 }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <div style={{ width: 24, height: 8, borderRadius: 2, background: "#22C55E" }} />
+              <p style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.55)", margin: 0 }}>
+                The Underserved Middle
+              </p>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <div style={{ width: 24, height: 8, borderRadius: 2, background: "#EF4444" }} />
+              <p style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.55)", margin: 0 }}>
+                Crowded Enterprise
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
 
       {/* ── Bottom callout ── */}
