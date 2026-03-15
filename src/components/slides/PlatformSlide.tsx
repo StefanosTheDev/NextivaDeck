@@ -35,13 +35,13 @@ export default function PlatformSlide({ slideNumber = 10 }: { slideNumber?: numb
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "60px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.08em", textTransform: "uppercase", color: "#2860B2", margin: "0 0 14px" }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 14px" }}>
           SOLVING FOR THE FUTURE OF BUSINESS
         </p>
-        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 700, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.15, whiteSpace: "nowrap" }}>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.15, whiteSpace: "nowrap" }}>
           Nextiva&apos;s Agentic CX Platform.
         </h1>
-        <p style={{ fontSize: 20, color: "rgba(255,255,255,0.45)", margin: "16px auto 0", lineHeight: 1.55, maxWidth: 740 }}>
+        <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "16px auto 0", lineHeight: 1.55, maxWidth: 740 }}>
           Communications, data, and AI — unified into a single architecture that turns every conversation into an outcome.
         </p>
       </motion.header>
@@ -66,7 +66,6 @@ export default function PlatformSlide({ slideNumber = 10 }: { slideNumber?: numb
               color: layer.pillColor,
               fontSize: 20,
               fontWeight: 700,
-              fontFamily: "'Georgia', 'Times New Roman', serif",
               boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
             }}>
               {layer.label}
@@ -81,7 +80,7 @@ export default function PlatformSlide({ slideNumber = 10 }: { slideNumber?: numb
               padding: "40px 36px 28px",
               textAlign: "center",
             }}>
-              <p style={{ fontSize: 24, color: "rgba(255,255,255,0.65)", margin: 0, fontFamily: "'Georgia', 'Times New Roman', serif" }}>
+              <p style={{ fontSize: 22, color: "rgba(255,255,255,0.55)", margin: 0 }} className="font-heading">
                 {layer.description}
               </p>
             </div>

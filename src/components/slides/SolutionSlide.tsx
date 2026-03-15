@@ -34,12 +34,12 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p style={{
-          fontWeight: 700, fontSize: 15, letterSpacing: "0.08em",
+          fontWeight: 700, fontSize: 18, letterSpacing: "0.05em",
           textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px",
         }}>
           OUR SOLUTION
         </p>
-        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
+        <h1 className="font-heading" style={{ fontSize: 54, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
           Nextiva Agentic CX Always<br />Delivers Immediate Outcomes.
         </h1>
       </motion.header>
@@ -135,10 +135,10 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
                 <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
               ))}
             </div>
-            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
+            <h3 className="font-heading" style={{ fontSize: 26, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
               Customer Conversations
             </h3>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
               Current and historical conversations, intent and behavior.
             </p>
           </div>
@@ -155,10 +155,10 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
                 <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
               ))}
             </div>
-            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
+            <h3 className="font-heading" style={{ fontSize: 26, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
               Context from Siloed Systems
             </h3>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
               CRM, transactions, service history, preferences, and workflow data
             </p>
           </div>
@@ -175,10 +175,10 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
                 <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
               ))}
             </div>
-            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
+            <h3 className="font-heading" style={{ fontSize: 26, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
               Real-time Actions
             </h3>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
               Ability to synthesize and drive workflows based on full context.
             </p>
           </div>
