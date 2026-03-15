@@ -64,7 +64,7 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
                 tick={({ x, y, payload }: any) => {
                   const lines = (payload.value as string).split("\n");
                   return (
-                    <text x={x} y={y + 14} textAnchor="middle" fontSize={14} fill="rgba(255,255,255,0.5)" fontFamily="'Space Grotesk', sans-serif">
+                    <text x={x} y={y + 14} textAnchor="middle" fontSize={14} fill="rgba(255,255,255,0.88)" fontFamily="'Space Grotesk', sans-serif">
                       {lines.map((line: string, i: number) => (
                         <tspan x={x} dy={i === 0 ? 0 : 16} key={i}>{line}</tspan>
                       ))}
@@ -91,7 +91,7 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
                 label={{
                   value: `$${RV.subscriptionTarget}M target`,
                   position: "insideTopLeft",
-                  fill: "rgba(255,255,255,0.4)",
+                  fill: "rgba(255,255,255,0.92)",
                   fontSize: 15,
                   fontFamily: "'Space Grotesk', sans-serif",
                   dy: -28,

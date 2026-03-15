@@ -31,7 +31,7 @@ const topCards = [
 
 export default function OperatingLeverageSlide({ slideNumber = 29 }: { slideNumber?: number }) {
   return (
-    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", display: "flex", flexDirection: "column", justifyContent: "space-between" }} data-speaker-notes="Revenue per head at $255K today, growing to $570K by FY30 — a 2.2× improvement driven by AI-powered productivity. Revenue per R&D head shows even stronger leverage, from $230K to $688K.">
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
@@ -51,7 +51,7 @@ export default function OperatingLeverageSlide({ slideNumber = 29 }: { slideNumb
             <p style={{ fontWeight: 700, fontSize: 20, color: "#7EB3E8", margin: "0 0 2px", letterSpacing: "0.02em" }}>Headcount Efficiency</p>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "0 0 4px", lineHeight: 1.4 }}>Revenue per full-time equivalent</p>
             <div style={{ flex: 1, minHeight: 0, position: "relative" }}>
-              <div style={{ position: "absolute", bottom: 52, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 18, zIndex: 1, fontSize: 16, color: "rgba(255,255,255,0.5)" }}>
+              <div style={{ position: "absolute", bottom: 52, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 18, zIndex: 1, fontSize: 16, color: "rgba(255,255,255,0.88)" }}>
                 <span style={{ display: "flex", alignItems: "center", gap: 5 }}>
                   <span style={{ width: 18, height: 3, background: "#2860B2", display: "inline-block", borderRadius: 2 }} />
                   Rev / Head
@@ -66,11 +66,11 @@ export default function OperatingLeverageSlide({ slideNumber = 29 }: { slideNumb
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={revPerHeadData} margin={{ top: 12, right: 24, left: 36, bottom: 12 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" vertical={false} />
-                  <XAxis dataKey="name" tick={{ fontSize: 20, fill: "rgba(255,255,255,0.5)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} tickLine={false} />
+                  <XAxis dataKey="name" tick={{ fontSize: 20, fill: "rgba(255,255,255,0.88)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} tickLine={false} />
                   <YAxis
                     domain={[0, 800]}
                     ticks={[200, 400, 600, 800]}
-                    tick={{ fontSize: 18, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }}
+                    tick={{ fontSize: 18, fill: "rgba(255,255,255,0.78)", fontFamily: "'Space Grotesk', sans-serif" }}
                     axisLine={false}
                     tickLine={false}
                     tickFormatter={(v: number) => v >= 1000 ? `$${(v / 1000).toFixed(1)}M` : `$${v}K`}

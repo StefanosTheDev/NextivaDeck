@@ -138,7 +138,6 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "nrr-churn",
   "expansion-retention",
   "target-model",
-  "operating-leverage",
   "customer-base",
   "revenue-visibility",
   "cash-flow-trends",
@@ -153,6 +152,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "ai-tailwind-opt-e",
   "ai-tailwind-2",
   "market-tam-lovable",
+  "operating-leverage",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

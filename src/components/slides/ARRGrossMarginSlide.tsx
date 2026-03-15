@@ -16,6 +16,7 @@ const data = ALL_YEARS.map((fy) => ({
 
 const GM_LINE_COLOR = "#E8B84D";
 const TARGET_BAR_COLOR = "#7EB3E8";
+const REVENUE_BAR_COLOR = "#2860B2";
 
 const metrics = [
   {
@@ -28,13 +29,13 @@ const metrics = [
     value: "76%",
     label: "Subscription Margin (FY26)",
     detail: "Grows to 81% by FY30.",
-    highlight: false,
+    highlight: true,
   },
   {
-    value: `${Math.round((Math.pow(PNL.revenue.FY30 / PNL.revenue.FY25, 1 / 5) - 1) * 100)}%`,
-    label: "Revenue CAGR (FY25–FY30)",
-    detail: `$${PNL.revenue.FY25}M to $${PNL.revenue.FY30}M`,
-    highlight: false,
+    value: `$${PNL.revenue.FY30}M`,
+    label: "Revenue (FY30)",
+    detail: "",
+    highlight: true,
   },
 ];
 
@@ -104,11 +105,31 @@ export default function ARRGrossMarginSlide({ slideNumber = 24 }: { slideNumber?
               </Line>
               <Legend
                 verticalAlign="bottom"
-                iconType="circle"
-                wrapperStyle={{ fontSize: 16, fontFamily: "'Space Grotesk', sans-serif", color: "rgba(255,255,255,0.5)", paddingTop: 8 }}
+                iconType="square"
+                wrapperStyle={{ fontSize: 16, fontFamily: "'Space Grotesk', sans-serif", color: "rgba(255,255,255,0.92)", paddingTop: 8 }}
+                iconSize={12}
+                content={({ payload }) => (
+                  <div style={{ display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
+                    {payload?.map((entry) => (
+                      <span key={entry.value} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                        <span
+                          style={{
+                            width: 12,
+                            height: 12,
+                            borderRadius: 2,
+                            background: entry.color,
+                            border: entry.value === "Revenue" ? "1.5px solid rgba(255,255,255,0.7)" : "none",
+                            flexShrink: 0,
+                          }}
+                        />
+                        <span style={{ color: "rgba(255,255,255,0.92)" }}>{entry.value}</span>
+                      </span>
+                    ))}
+                  </div>
+                )}
                 {...{ payload: [
-                  { value: "Revenue", type: "circle", color: "#2860B2" },
-                  { value: "Revenue (Long-Term Plan)", type: "circle", color: TARGET_BAR_COLOR },
+                  { value: "Revenue", type: "square", color: REVENUE_BAR_COLOR },
+                  { value: "Revenue (Long-Term Plan)", type: "square", color: TARGET_BAR_COLOR },
                   { value: "Gross Margin %", type: "circle", color: GM_LINE_COLOR },
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 ] } as any}

@@ -154,9 +154,9 @@ export const REVENUE_VISIBILITY = {
   monthlyRenewals: 34,
   expansionBookings: 23,
   contractNetRenewals: 8,
-  newBookings: 1,
-  buildUp: 312,
+  newBookings: 43,
+  buildUp: 354,
   subscriptionTarget: 367,
-  gap: 55,
-  gapPct: 15,
+  gap: 13,
+  gapPct: 3,
 } as const;
