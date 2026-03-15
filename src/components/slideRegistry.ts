@@ -8,6 +8,7 @@ import ScaleSlide from "./slides/ScaleSlide";
 import JourneySlide from "./slides/JourneySlide";
 import ProblemSlide from "./slides/ProblemSlide";
 import SolutionSlide from "./slides/SolutionSlide";
+import SolutionDarkSlide from "./slides/SolutionDarkSlide";
 import PlatformSlide from "./slides/PlatformSlide";
 import AiTandemSlide from "./slides/AiTandemSlide";
 import MarketSlide from "./slides/MarketSlide";
@@ -65,6 +66,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   problem:             { id: "problem",              label: "Problem",             component: ProblemSlide,             theme: "dark" },
   platform:            { id: "platform",             label: "Platform",            component: PlatformSlide,            theme: "dark" },
   solution:            { id: "solution",             label: "Solution",            component: SolutionSlide,            theme: "light" },
+  "solution-dark":     { id: "solution-dark",        label: "Solution (Dark)",     component: SolutionDarkSlide,        theme: "dark" },
   market:              { id: "market",               label: "Market",              component: MarketSlide,              theme: "dark" },
   "agentic-opp":       { id: "agentic-opp",         label: "AI Opportunity",      component: AgenticOpportunitySlide,  theme: "dark" },
   "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "light" },
@@ -113,6 +115,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "problem",
   "platform",
   "solution",
+  "solution-dark",
   "market",
   "agentic-opp-2",
   "blue-ocean",
