@@ -22,6 +22,7 @@ import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
 import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
 import LaborCostSavingsSlide from "./slides/LaborCostSavingsSlide";
 import FinancialDividerSlide from "./slides/FinancialDividerSlide";
+import CustomerUseCasesDividerSlide from "./slides/CustomerUseCasesDividerSlide";
 import ARRGrossMarginSlide from "./slides/ARRGrossMarginSlide";
 import EBITDASlide from "./slides/EBITDASlide";
 import NRRChurnSlide from "./slides/NRRChurnSlide";
@@ -82,6 +83,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
   "financial-divider":  { id: "financial-divider",   label: "Financial Overview",  component: FinancialDividerSlide,    theme: "dark", isNew: true },
+  "customer-use-cases-divider": { id: "customer-use-cases-divider", label: "Customer Use Cases", component: CustomerUseCasesDividerSlide, theme: "dark", isNew: true },
   "arr-gross-margin":   { id: "arr-gross-margin",    label: "Revenue & Margin",    component: ARRGrossMarginSlide,      theme: "dark", isNew: true },
   "ebitda":             { id: "ebitda",              label: "EBITDA",              component: EBITDASlide,              theme: "dark", isNew: true },
   "nrr-churn":          { id: "nrr-churn",           label: "Retention Trends",    component: NRRChurnSlide,            theme: "dark", isNew: true },
