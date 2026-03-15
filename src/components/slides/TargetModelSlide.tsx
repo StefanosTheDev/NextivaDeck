@@ -11,10 +11,10 @@ const columns = [
 ];
 
 const rows = [
-  { cells: ["Revenue", `$${PNL.revenue.FY26}M`, `$${PNL.revenue.FY27}M`, `$${PNL.revenue.FY30 - 9}\u2013${PNL.revenue.FY30 + 9}M`] },
+  { cells: ["Revenue", `$${PNL.revenue.FY26}M`, `$${PNL.revenue.FY27}M`, "$454\u2013$472M"] },
   { cells: ["Gross Margin", `${PNL.grossMarginPct.FY26}%`, `${PNL.grossMarginPct.FY27}%`, `${PNL.grossMarginPct.FY30 - 2}\u2013${PNL.grossMarginPct.FY30 + 2}%`] },
   { cells: ["S&M", `${OPEX_PCT.sm.FY26}%`, `${OPEX_PCT.sm.FY27}%`, `${OPEX_PCT.sm.FY30 - 2}\u2013${OPEX_PCT.sm.FY30 + 2}%`] },
-  { cells: ["R&D", `${OPEX_PCT.rd.FY26}%`, `${OPEX_PCT.rd.FY27}%`, `${OPEX_PCT.rd.FY30 - 2}\u2013${OPEX_PCT.rd.FY30 + 2}%`] },
+  { cells: ["R&D", `${OPEX_PCT.rd.FY26}%`, `${OPEX_PCT.rd.FY27}%`, "8\u201312%"] },
   { cells: ["G&A", `${OPEX_PCT.ga.FY26}%`, `${OPEX_PCT.ga.FY27}%`, `${OPEX_PCT.ga.FY30 - 2}\u2013${OPEX_PCT.ga.FY30 + 2}%`] },
   { cells: ["Adj EBITDA Margin", `${PNL.ebitdaMarginPct.FY26}%`, `${PNL.ebitdaMarginPct.FY27}%`, `${PNL.ebitdaMarginPct.FY30 - 2}\u2013${PNL.ebitdaMarginPct.FY30 + 2}%`], bold: true },
 ];
@@ -37,7 +37,7 @@ export default function TargetModelSlide({ slideNumber = 28 }: { slideNumber?: n
           initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
           style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, overflow: "hidden" }}
         >
-          <div style={{ display: "flex", padding: "20px 40px", background: "#061A37", color: "#FFFFFF" }}>
+          <div style={{ display: "flex", padding: "20px 40px", background: "rgba(10,35,70,0.5)", color: "#FFFFFF" }}>
             {columns.map((col, i) => (
               <div
                 key={i}
@@ -47,7 +47,7 @@ export default function TargetModelSlide({ slideNumber = 28 }: { slideNumber?: n
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
-                  color: col.highlight ? "#6194B5" : "#FFFFFF",
+                  color: i === 0 ? "rgba(184,168,107,0.95)" : col.highlight ? "#7EB3E8" : "rgba(255,255,255,0.85)",
                   textAlign: i === 0 ? "left" : "right",
                 }}
               >
@@ -63,7 +63,7 @@ export default function TargetModelSlide({ slideNumber = 28 }: { slideNumber?: n
                 display: "flex",
                 padding: "18px 40px",
                 borderBottom: i < rows.length - 1 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                background: r.bold ? "rgba(40,96,178,0.08)" : i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.02)",
+                background: r.bold ? "rgba(232,184,77,0.06)" : i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.02)",
               }}
             >
               {r.cells.map((cell, ci) => (
@@ -72,8 +72,12 @@ export default function TargetModelSlide({ slideNumber = 28 }: { slideNumber?: n
                   style={{
                     flex: ci === 0 ? 2 : 1,
                     fontSize: 20,
-                    fontWeight: ci === 0 && r.bold ? 700 : ci === 0 ? 600 : 400,
-                    color: ci === 0 ? "#FFFFFF" : "rgba(255,255,255,0.6)",
+                    fontWeight: ci === 0 && r.bold ? 600 : ci === 0 ? 500 : 400,
+                    color: ci === 0
+                      ? r.bold
+                        ? "rgba(232,184,77,0.9)"
+                        : "rgba(255,255,255,0.55)"
+                      : "rgba(255,255,255,0.6)",
                     textAlign: ci === 0 ? "left" : "right",
                   }}
                 >

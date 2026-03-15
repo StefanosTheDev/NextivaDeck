@@ -10,7 +10,7 @@ export const PNL = {
   grossMargin:     { FY25: 234, FY26: 248, FY27: 273, FY28: 300, FY29: 329, FY30: 359 },
   grossMarginPct:  { FY25: 67, FY26: 70, FY27: 73, FY28: 75, FY29: 76, FY30: 77 },
   adjEBITDA:       { FY25: 0, FY26: 44, FY27: 99, FY28: 124, FY29: 153, FY30: 187 },
-  ebitdaMarginPct: { FY25: 0, FY26: 13, FY27: 28, FY28: 31, FY29: 36, FY30: 40 },
+  ebitdaMarginPct: { FY25: 0, FY26: 13, FY27: 26, FY28: 31, FY29: 36, FY30: 40 },
   fcf:             { FY25: -4, FY26: 13, FY27: 74, FY28: 100, FY29: 130, FY30: 162 },
   fcfMarginPct:    { FY25: -1, FY26: 4, FY27: 20, FY28: 25, FY29: 30, FY30: 35 },
   revGrowthPct:    { FY26: 1, FY27: 6, FY28: 7, FY29: 8, FY30: 8 },
