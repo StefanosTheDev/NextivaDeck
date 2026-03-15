@@ -23,10 +23,10 @@ export default function EBITDASlide({ slideNumber = 25 }: { slideNumber?: number
       >
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#CCC7C3", margin: "0 0 10px" }}>Profitability</p>
         <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
-          Margin improves from breakeven to 22% by Q4
+          Margin improves from breakeven to 22% by Q426
         </h1>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.45)", marginTop: 10, lineHeight: 1.5 }}>
-          $75–$80M FY26 exit run rate provides near-term underwriting comfort.
+          $75–$80M FY26 exit EBITDA run rate provides near-term underwriting comfort.
         </p>
       </motion.header>
 

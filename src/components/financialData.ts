@@ -9,8 +9,8 @@ export const PNL = {
   revenue:         { FY25: 349, FY26: 353, FY27: 374, FY28: 402, FY29: 432, FY30: 465 },
   grossMargin:     { FY25: 234, FY26: 248, FY27: 273, FY28: 300, FY29: 329, FY30: 359 },
   grossMarginPct:  { FY25: 67, FY26: 70, FY27: 73, FY28: 75, FY29: 76, FY30: 77 },
-  adjEBITDA:       { FY25: 0, FY26: 45, FY27: 100, FY28: 126, FY29: 155, FY30: 189 },
-  ebitdaMarginPct: { FY25: 0, FY26: 13, FY27: 27, FY28: 31, FY29: 36, FY30: 41 },
+  adjEBITDA:       { FY25: 0, FY26: 44, FY27: 99, FY28: 124, FY29: 153, FY30: 187 },
+  ebitdaMarginPct: { FY25: 0, FY26: 13, FY27: 28, FY28: 31, FY29: 36, FY30: 40 },
   fcf:             { FY25: -4, FY26: 13, FY27: 74, FY28: 100, FY29: 130, FY30: 162 },
   fcfMarginPct:    { FY25: -1, FY26: 4, FY27: 20, FY28: 25, FY29: 30, FY30: 35 },
   revGrowthPct:    { FY26: 1, FY27: 6, FY28: 7, FY29: 8, FY30: 8 },
@@ -138,15 +138,15 @@ export const EBITDA_FLOW_THROUGH_T6M = {
 } as const;
 
 export const UNLEVERED_FCF = {
-  FY25: -4, FY26: 15, FY27: 78, FY28: 106, FY29: 138, FY30: 170,
+  FY25: -4, FY26: 15, FY27: 83, FY28: 108, FY29: 138, FY30: 170,
 } as const;
 
 export const EBITDA_UFCF_CONVERSION = {
-  FY25: null, FY26: 33, FY27: 78, FY28: 84, FY29: 89, FY30: 91,
+  FY25: null, FY26: 34, FY27: 84, FY28: 87, FY29: 90, FY30: 91,
 } as const;
 
 export const CASH_EQUIVALENTS = {
-  FY25: 27, FY26: 42, FY27: 120, FY28: 226, FY29: 364, FY30: 517,
+  FY25: 29, FY26: 42, FY27: 121, FY28: 223, FY29: 353, FY30: 517,
 } as const;
 
 export const REVENUE_VISIBILITY = {

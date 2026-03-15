@@ -76,8 +76,8 @@ export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?
             </ResponsiveContainer>
           </div>
           <div style={{ flex: "1 1 40%" }}>
-            <CardBox title="Adj. EBITDA" value="$189M by FY30">
-              Margins expand from ~0% to 41% via cost discipline and AI-driven leverage.
+            <CardBox title="Adj. EBITDA" value={`$${PNL.adjEBITDA.FY30}M by FY30`}>
+              Margins expand from ~0% to {PNL.ebitdaMarginPct.FY30}% via cost discipline and AI-driven leverage.
             </CardBox>
           </div>
         </div>
