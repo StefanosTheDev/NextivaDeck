@@ -169,7 +169,7 @@ export default function OperatingLeverageDatedSlide({ slideNumber = 29 }: { slid
                     <LabelList
                       dataKey="value"
                       position="top"
-                      formatter={(v: number) => `$${v}K`}
+                      formatter={(v) => (typeof v === "number" ? `$${v}K` : String(v ?? ""))}
                       style={{
                         fontSize: 14,
                         fontWeight: 600,
@@ -190,7 +190,7 @@ export default function OperatingLeverageDatedSlide({ slideNumber = 29 }: { slid
                     <LabelList
                       dataKey="rdValue"
                       position="top"
-                      formatter={(v: number) => (v >= 1000 ? `$${(v / 1000).toFixed(1)}M` : `$${v}K`)}
+                      formatter={(v) => (typeof v === "number" ? (v >= 1000 ? `$${(v / 1000).toFixed(1)}M` : `$${v}K`) : String(v ?? ""))}
                       style={{
                         fontSize: 14,
                         fontWeight: 600,

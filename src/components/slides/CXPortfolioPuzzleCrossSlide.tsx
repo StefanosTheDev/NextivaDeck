@@ -132,7 +132,6 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
                   style={{ overflow: "hidden" }}
                 >
                   <div
-                    xmlns="http://www.w3.org/1999/xhtml"
                     style={{
                       width: "100%",
                       height: "100%",
