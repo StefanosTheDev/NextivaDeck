@@ -74,7 +74,7 @@ export default function CustomerBaseSlide({ slideNumber = 30 }: { slideNumber?: 
           style={{ background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 12, padding: "16px 28px", width: "100%" }}
         >
           <p style={{ fontSize: 17, color: "#FFFFFF", margin: 0, lineHeight: 1.5, textAlign: "center" }}>
-            Market-agnostic. Customer diversity by size, industry, and tenure reinforces credit durability.
+            Market-agnostic: Customer diversity by size, industry, and tenure reinforces stability.
           </p>
         </motion.div>
       </div>
