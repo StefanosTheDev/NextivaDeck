@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 const CORAL = "#F0A88C";
 // Right column (XBert, Experience Center): shift tagline + bullets right to clear flap
-const RIGHT_COL_PADDING_LEFT = 22;
+const RIGHT_COL_PADDING_LEFT = 28;
 // Card fills: lighter than dark slide, each piece a distinct shade so neighbors contrast at seams
 const PIECE_FILLS = [
   "rgba(255,255,255,0.11)",     // NEXT - lightest
@@ -13,7 +13,7 @@ const PIECE_FILLS = [
 ];
 
 // Puzzle positions: TL=NEXT, TR=XBert, BL=NextOS, BR=Experience Center
-// Content from SlideCXPortfolio
+// Scaled 1.25x width (400 vs 320) so text wraps less
 const PIECES = [
   {
     name: "NEXT",
@@ -24,8 +24,8 @@ const PIECES = [
       "AI & human working in tandem",
       "Single source of customer truth",
     ],
-    path: "M 0 0 L 160 0 L 160 60 A 20 20 0 0 0 160 100 L 160 160 L 100 160 A 20 20 0 0 0 60 160 L 0 160 Z",
-    x: 0, y: 0, w: 160, h: 160,
+    path: "M 0 0 L 200 0 L 200 60 A 20 20 0 0 0 200 100 L 200 160 L 125 160 A 20 20 0 0 0 75 160 L 0 160 Z",
+    x: 0, y: 0, w: 200, h: 160,
   },
   {
     name: "XBert",
@@ -36,8 +36,8 @@ const PIECES = [
       "Autonomous handling of customer interactions 24/7",
       "Self-learning, always-improving agents",
     ],
-    path: "M 160 0 L 320 0 L 320 160 L 260 160 A 20 20 0 0 0 220 160 L 160 160 L 160 100 A 20 20 0 0 1 160 60 L 160 0 Z",
-    x: 160, y: 0, w: 160, h: 160,
+    path: "M 200 0 L 400 0 L 400 160 L 325 160 A 20 20 0 0 0 275 160 L 200 160 L 200 100 A 20 20 0 0 1 200 60 L 200 0 Z",
+    x: 200, y: 0, w: 200, h: 160,
   },
   {
     name: "NextOS",
@@ -48,8 +48,8 @@ const PIECES = [
       "Cross-product workflow automation",
       "Leverages XBert and NEXT AI capabilities",
     ],
-    path: "M 0 160 L 60 160 A 20 20 0 0 1 100 160 L 160 160 L 160 220 A 20 20 0 0 1 160 260 L 160 380 L 0 380 L 0 160 Z",
-    x: 0, y: 160, w: 160, h: 220,
+    path: "M 0 160 L 75 160 A 20 20 0 0 1 125 160 L 200 160 L 200 220 A 20 20 0 0 1 200 260 L 200 380 L 0 380 L 0 160 Z",
+    x: 0, y: 160, w: 200, h: 220,
   },
   {
     name: "Experience Center",
@@ -60,8 +60,8 @@ const PIECES = [
       "AI-assisted customer interactions",
       "Open API ecosystem & integrations",
     ],
-    path: "M 160 160 L 220 160 A 20 20 0 0 1 260 160 L 320 160 L 320 380 L 160 380 L 160 260 A 20 20 0 0 0 160 220 L 160 160 Z",
-    x: 160, y: 160, w: 160, h: 220,
+    path: "M 200 160 L 275 160 A 20 20 0 0 1 325 160 L 400 160 L 400 380 L 200 380 L 200 260 A 20 20 0 0 0 200 220 L 200 160 Z",
+    x: 200, y: 160, w: 200, h: 220,
   },
 ];
 
@@ -97,8 +97,8 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
         style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 80px", position: "relative", zIndex: 1 }}
       >
         <svg
-          viewBox="0 0 320 380"
-          style={{ width: "100%", maxWidth: 580, height: "auto", filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.4))" }}
+          viewBox="0 0 400 380"
+          style={{ width: "100%", maxWidth: 720, height: "auto", filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.4))" }}
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>
@@ -135,7 +135,7 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
                     style={{
                       width: "100%",
                       height: "100%",
-                      padding: "2px 5px",
+                      padding: "4px 6px",
                       display: "flex",
                       flexDirection: "column",
                       fontFamily: "'Space Grotesk', sans-serif",
@@ -143,37 +143,39 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
                       boxSizing: "border-box",
                     }}
                   >
-                    <div style={{ marginBottom: 2, display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    <div style={{ marginBottom: 3, display: "flex", flexDirection: "column", alignItems: "center" }}>
                       <h2 style={{
-                        fontFamily: "'Space Grotesk', sans-serif",
-                        fontSize: 12, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.15,
+                        fontFamily: "'Georgia', 'Times New Roman', serif",
+                        fontSize: 15, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.2,
+                        letterSpacing: "-0.02em",
                       }}>
                         {piece.name}
                       </h2>
                       <span style={{
-                        display: "inline-block", marginTop: 1,
-                        padding: "1px 5px", borderRadius: 6,
+                        display: "inline-block", marginTop: 2,
+                        padding: "2px 8px", borderRadius: 10,
                         background: "rgba(240,168,140,0.15)", color: CORAL,
-                        fontSize: 7, fontWeight: 600,
+                        fontSize: 9, fontWeight: 600, fontFamily: "'Space Grotesk', sans-serif",
                       }}>
                         {piece.badge}
                       </span>
                     </div>
                     <p style={{
-                      fontSize: 8, fontWeight: 700, color: "#FFFFFF", margin: "18px 0 3px 0", lineHeight: 1.15,
+                      fontSize: 10, fontWeight: 700, color: "#FFFFFF", margin: "14px 0 4px 0", lineHeight: 1.25,
+                      fontFamily: "'Space Grotesk', sans-serif",
                       paddingLeft: (piece.name === "XBert" || piece.name === "Experience Center") ? RIGHT_COL_PADDING_LEFT : 0,
                     }}>
                       {piece.tagline}
                     </p>
                     <ul style={{
                       margin: 0, paddingLeft: (piece.name === "XBert" || piece.name === "Experience Center") ? RIGHT_COL_PADDING_LEFT : 0, listStyle: "none", flex: 1,
-                      overflow: "hidden", fontSize: 7, color: "rgba(255,255,255,0.55)", lineHeight: 1.25,
-                      minHeight: 0, marginTop: 2,
+                      overflow: "hidden", fontSize: 9, color: "rgba(255,255,255,0.6)", lineHeight: 1.4,
+                      minHeight: 0, marginTop: 2, fontFamily: "'Space Grotesk', sans-serif",
                     }}>
                       {piece.bullets.map((b, j) => (
-                        <li key={j} style={{ marginBottom: 1, paddingLeft: 7, position: "relative" }}>
+                        <li key={j} style={{ marginBottom: 2, paddingLeft: 10, position: "relative" }}>
                           <span style={{
-                            position: "absolute", left: 0, top: 2, width: 2, height: 2,
+                            position: "absolute", left: 0, top: 3, width: 3, height: 3,
                             borderRadius: "50%", background: CORAL,
                           }} />
                           {b}
