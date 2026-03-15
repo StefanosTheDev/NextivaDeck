@@ -39,12 +39,14 @@
     "durable-edge",
     "unified-data-model"
   ],
-  "categories": {},
+  "categories": {
+    "safe-harbor": "CX"
+  },
   "categoryNames": [
+    "CX",
     "dividers"
   ],
   "hiddenSlides": [
-    "cover",
     "agentic-opp",
     "cx-market-sizing",
     "win",
