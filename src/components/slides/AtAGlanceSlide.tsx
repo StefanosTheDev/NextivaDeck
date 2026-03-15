@@ -1,6 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
+import { PNL } from "../financialData";
+
+const projectionYears = ["FY26", "FY27", "FY28", "FY30"] as const;
 
 const metrics = [
   { stat: "$353M", label: "FY26 Revenue", desc: "Full year recognized revenue" },
@@ -57,6 +60,38 @@ export default function AtAGlanceSlide({ slideNumber = 3 }: { slideNumber?: numb
           </motion.article>
         ))}
       </main>
+
+      <motion.section
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        style={{ flexShrink: 0, padding: "0 100px 16px", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}
+      >
+        {projectionYears.map((fy) => {
+          const rev = PNL.revenue[fy];
+          const ebitda = PNL.adjEBITDA[fy];
+          const margin = PNL.ebitdaMarginPct[fy];
+          return (
+            <div
+              key={fy}
+              style={{
+                border: "1px solid rgba(40, 96, 178, 0.35)",
+                borderRadius: 10,
+                padding: "14px 20px",
+              }}
+            >
+              <p style={{ fontSize: 13, fontWeight: 700, color: "#E8845C", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0, lineHeight: 1.3 }}>
+                {fy}
+              </p>
+              <p style={{ fontSize: 20, fontWeight: 700, color: "#FFFFFF", margin: "4px 0 0", lineHeight: 1.3 }}>
+                ${rev}M &rarr; ${ebitda}M
+              </p>
+              <p style={{ fontSize: 13, fontWeight: 400, color: "rgba(255,255,255,0.4)", margin: "2px 0 0", lineHeight: 1.3 }}>
+                {margin}% EBITDA margin
+              </p>
+            </div>
+          );
+        })}
+      </motion.section>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
