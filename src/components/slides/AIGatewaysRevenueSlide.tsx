@@ -24,9 +24,9 @@ const withActivation = CHART_DATA.map((d) => ({
 }));
 
 const COLORS = {
-  gateways: "#061A37",
+  gateways: "#4D9AE8",
   outcomes: "#2860B2",
-  embeddedActive: "#C8D3DF",
+  embeddedActive: "#9BB5CC",
 };
 
 const ProjectionDivider = (props: any) => {
@@ -45,11 +45,11 @@ const ProjectionDivider = (props: any) => {
     <g>
       <line
         x1={midX} y1={yAxis.y} x2={midX} y2={yAxis.y + yAxis.height}
-        stroke="#CCC7C3" strokeDasharray="6 4" strokeWidth={1.5}
+        stroke="rgba(255,255,255,0.3)" strokeDasharray="6 4" strokeWidth={1.5}
       />
       <text
         x={midX} y={yAxis.y + yAxis.height + 48}
-        textAnchor="middle" fontSize={12} fill="#A29E9B"
+        textAnchor="middle" fontSize={12} fill="rgba(255,255,255,0.5)"
         fontFamily="'Space Grotesk', sans-serif" fontStyle="italic"
       >
         Projected →
@@ -64,27 +64,24 @@ const targetCards = [
     range: ["93%", "98%"],
     badge: "% of Users\nAI Activated",
     desc: "AI is embedded across all surfaces — NEXT IQ, Transcription, GenAI summarization, NextIQ Analytics. Adoption projected to grow nearly 5×.",
-    borderColor: "#C8D3DF",
-    shadowColor: "rgba(0,0,0,0.06)",
-    labelColor: "#A29E9B",
+    borderColor: "rgba(155,181,204,0.6)",
+    labelColor: "#9BB5CC",
   },
   {
     label: "AI Outcomes Revenue Target Range",
     range: ["29%", "33%"],
     badge: "% of Revenue\nAI Outcomes",
     desc: "Tokenized AI Outcomes and usage-based revenue projected to reach ~30% of revenue. Agentic AI outcomes compound across the platform.",
-    borderColor: "#2860B2",
-    shadowColor: "rgba(40,96,178,0.1)",
-    labelColor: "#2860B2",
+    borderColor: "rgba(40,96,178,0.6)",
+    labelColor: "#7EB3E8",
   },
   {
     label: "AI Gateways Revenue Target Range",
     range: ["22%", "28%"],
     badge: "% of Revenue\nAI Gateways",
     desc: "XBert AI is the lead edge product for platform-agnostic AI gateway attach. New signup ARPA up 2× with XBert AI in Q2 FY26.",
-    borderColor: "#061A37",
-    shadowColor: "rgba(15,44,89,0.1)",
-    labelColor: "#061A37",
+    borderColor: "rgba(77,154,232,0.6)",
+    labelColor: "#4D9AE8",
   },
 ];
 
@@ -92,7 +89,7 @@ function LegendItem({ color, label }: { color: string; label: string }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
       <div style={{ width: 14, height: 14, borderRadius: 3, background: color, flexShrink: 0 }} />
-      <span style={{ fontSize: 13, color: "#6C6967" }}>{label}</span>
+      <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(255,255,255,0.9)" }}>{label}</span>
     </div>
   );
 }
@@ -102,29 +99,30 @@ function LegendHatched({ label }: { label: string }) {
     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
       <svg width={14} height={14}>
         <defs>
-          <pattern id="legendHatch" patternUnits="userSpaceOnUse" width={6} height={6} patternTransform="rotate(45)">
-            <rect width={6} height={6} fill="#E4E9EF" />
-            <line x1={0} y1={0} x2={0} y2={6} stroke="#C8D3DF" strokeWidth={2} />
+          <pattern id="legendHatchDark" patternUnits="userSpaceOnUse" width={6} height={6} patternTransform="rotate(45)">
+            <rect width={6} height={6} fill="rgba(255,255,255,0.08)" />
+            <line x1={0} y1={0} x2={0} y2={6} stroke="rgba(255,255,255,0.35)" strokeWidth={2} />
           </pattern>
         </defs>
-        <rect width={14} height={14} rx={3} fill="url(#legendHatch)" />
+        <rect width={14} height={14} rx={3} fill="url(#legendHatchDark)" />
       </svg>
-      <span style={{ fontSize: 13, color: "#6C6967" }}>{label}</span>
+      <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(255,255,255,0.9)" }}>{label}</span>
     </div>
   );
 }
 
 export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumber?: number }) {
   return (
-    <div className="slide slide--cream">
-      <div style={{ height: 3, background: "#2860B2", flexShrink: 0 }} />
-
+    <div
+      className="slide"
+      style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }}
+    >
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p className="eyebrow" style={{ color: "#2860B2" }}>AI Revenue Mix</p>
-        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#1A447C", marginTop: 10, lineHeight: 1.15 }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>AI REVENUE MIX</p>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
           Projecting roughly 95%+ activation on AI by FY28.
         </h1>
       </motion.header>
@@ -135,7 +133,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
       >
         {/* Chart area — 60% */}
         <div style={{ flex: 60, display: "flex", flexDirection: "column" }}>
-          <p style={{ fontSize: 20, fontWeight: 700, color: "#1A447C", margin: "12px 0 2px", lineHeight: 1.3 }}>
+          <p style={{ fontSize: 18, fontWeight: 600, color: "rgba(255,255,255,0.8)", margin: "12px 0 2px", lineHeight: 1.3 }}>
             24-Month AI Revenue Mix Evolution
           </p>
 
@@ -150,13 +148,13 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={withActivation} margin={{ top: 16, right: 16, left: 8, bottom: 16 }} barCategoryGap="14%">
                 <defs>
-                  <pattern id="hatchEmbedded" patternUnits="userSpaceOnUse" width={8} height={8} patternTransform="rotate(45)">
-                    <rect width={8} height={8} fill="#E4E9EF" />
-                    <line x1={0} y1={0} x2={0} y2={8} stroke="#C8D3DF" strokeWidth={3} />
+                  <pattern id="hatchEmbeddedDark" patternUnits="userSpaceOnUse" width={8} height={8} patternTransform="rotate(45)">
+                    <rect width={8} height={8} fill="rgba(255,255,255,0.08)" />
+                    <line x1={0} y1={0} x2={0} y2={8} stroke="rgba(255,255,255,0.35)" strokeWidth={3} />
                   </pattern>
                 </defs>
 
-                <CartesianGrid strokeDasharray="3 3" stroke="#E0DEDA" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" vertical={false} />
                 <Customized component={ProjectionDivider} />
 
                 <XAxis
@@ -164,21 +162,21 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
                   tick={({ x, y, payload }: any) => {
                     const lines = (payload.value as string).split("\n");
                     return (
-                      <text x={x} y={y + 12} textAnchor="middle" fontSize={12} fill="#4A4846" fontFamily="'Space Grotesk', sans-serif">
+                      <text x={x} y={y + 12} textAnchor="middle" fontSize={12} fill="rgba(255,255,255,0.5)" fontFamily="'Space Grotesk', sans-serif">
                         {lines.map((line: string, i: number) => (
                           <tspan x={x} dy={i === 0 ? 0 : 14} key={i}>{line}</tspan>
                         ))}
                       </text>
                     );
                   }}
-                  axisLine={{ stroke: "#E0DEDA" }}
+                  axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
                   tickLine={false}
                   interval={0}
                   height={44}
                 />
                 <YAxis
                   domain={[0, 100]}
-                  tick={{ fontSize: 13, fill: "#A29E9B", fontFamily: "'Space Grotesk', sans-serif" }}
+                  tick={{ fontSize: 13, fill: "rgba(255,255,255,0.45)", fontFamily: "'Space Grotesk', sans-serif" }}
                   axisLine={false}
                   tickLine={false}
                   tickFormatter={(v: number) => `${v}%`}
@@ -187,7 +185,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
                 <Bar dataKey="gateways" stackId="a" fill={COLORS.gateways} radius={[0, 0, 0, 0]} isAnimationActive={false} />
                 <Bar dataKey="outcomes" stackId="a" fill={COLORS.outcomes} radius={[0, 0, 0, 0]} isAnimationActive={false} />
                 <Bar dataKey="embeddedActive" stackId="a" fill={COLORS.embeddedActive} radius={[0, 0, 0, 0]} isAnimationActive={false} />
-                <Bar dataKey="embeddedInactive" stackId="a" fill="url(#hatchEmbedded)" radius={[4, 4, 0, 0]} isAnimationActive={false} />
+                <Bar dataKey="embeddedInactive" stackId="a" fill="url(#hatchEmbeddedDark)" radius={[4, 4, 0, 0]} isAnimationActive={false} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -201,11 +199,10 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
               style={{
-                background: "#FFFFFF",
-                border: `2px solid ${card.borderColor}`,
-                borderRadius: 16,
+                background: "rgba(255,255,255,0.09)",
+                border: `1px solid ${card.borderColor}`,
+                borderRadius: 12,
                 padding: "20px 28px",
-                boxShadow: `0 2px 12px ${card.shadowColor}`,
               }}
             >
               <p style={{
@@ -216,9 +213,9 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
                 <p className="font-heading" style={{
-                  fontSize: 40, fontWeight: 700, color: "#1A447C", margin: 0, lineHeight: 1,
+                  fontSize: 40, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1,
                 }}>
-                  {card.range[0]} <span style={{ fontSize: 32 }}>to</span> {card.range[1]}
+                  {card.range[0]} <span style={{ fontSize: 32, fontWeight: 500 }}>to</span> {card.range[1]}
                 </p>
                 <span style={{
                   background: "#2860B2", color: "#FFFFFF",
@@ -229,7 +226,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
                   {card.badge}
                 </span>
               </div>
-              <p style={{ fontSize: 14, color: "#4A4846", margin: "8px 0 0", lineHeight: 1.5 }}>
+              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", margin: "8px 0 0", lineHeight: 1.5 }}>
                 {card.desc}
               </p>
             </motion.div>
@@ -237,7 +234,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
         </div>
       </motion.main>
 
-      <SlideFooter slideNumber={slideNumber} variant="light" />
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }
