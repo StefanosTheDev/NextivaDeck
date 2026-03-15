@@ -6,6 +6,8 @@
     "glance-projections",
     "founder",
     "who",
+    "customer-base",
+    "customer-base-v2",
     "appendix-customers",
     "journey",
     "problem",
@@ -41,7 +43,6 @@
     "expansion-retention",
     "target-model",
     "operating-leverage",
-    "customer-base",
     "revenue-visibility",
     "cash-flow-trends",
     "durable-edge",
@@ -58,6 +59,7 @@
     "agentic-opp",
     "cx-market-sizing",
     "win",
-    "summary"
+    "summary",
+    "glance-projections"
   ]
 }

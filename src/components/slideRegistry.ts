@@ -31,6 +31,7 @@ import ExpansionRetentionSlide from "./slides/ExpansionRetentionSlide";
 import TargetModelSlide from "./slides/TargetModelSlide";
 import OperatingLeverageSlide from "./slides/OperatingLeverageSlide";
 import CustomerBaseSlide from "./slides/CustomerBaseSlide";
+import CustomerBaseV2Slide from "./slides/CustomerBaseV2Slide";
 import RevenueVisibilitySlide from "./slides/RevenueVisibilitySlide";
 import CashFlowTrendsSlide from "./slides/CashFlowTrendsSlide";
 import AgenticOpportunity2Slide from "./slides/AgenticOpportunity2Slide";
@@ -90,6 +91,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "target-model":       { id: "target-model",        label: "Target Model",        component: TargetModelSlide,         theme: "dark", isNew: true },
   "operating-leverage": { id: "operating-leverage",  label: "Operating Leverage",  component: OperatingLeverageSlide,   theme: "dark", isNew: true },
   "customer-base":      { id: "customer-base",       label: "Customer Base",       component: CustomerBaseSlide,        theme: "dark", isNew: true },
+  "customer-base-v2":   { id: "customer-base-v2",    label: "Customer Base (V2)",  component: CustomerBaseV2Slide,      theme: "dark", isNew: true },
   "revenue-visibility": { id: "revenue-visibility",  label: "Revenue Visibility",  component: RevenueVisibilitySlide,   theme: "dark", isNew: true },
   "cash-flow-trends":   { id: "cash-flow-trends",    label: "Cash Flow Trends",    component: CashFlowTrendsSlide,      theme: "dark", isNew: true },
   "agentic-opp-2":     { id: "agentic-opp-2",       label: "AI Opportunity (2)",  component: AgenticOpportunity2Slide, theme: "dark" },
