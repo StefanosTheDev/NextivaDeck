@@ -43,6 +43,7 @@ import AiTailwindOptionCSlide from "./slides/AiTailwindOptionCSlide";
 import AiTailwindOptionDSlide from "./slides/AiTailwindOptionDSlide";
 import AiTailwindOptionESlide from "./slides/AiTailwindOptionESlide";
 import AiTailwindCopySlide from "./slides/AiTailwindCopySlide";
+import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -100,6 +101,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-opt-d": { id: "ai-tailwind-opt-d",  label: "AI Tailwind Option D", component: AiTailwindOptionDSlide,  theme: "dark" },
   "ai-tailwind-opt-e": { id: "ai-tailwind-opt-e",  label: "AI Tailwind Option E", component: AiTailwindOptionESlide,  theme: "dark" },
   "ai-tailwind-copy":  { id: "ai-tailwind-copy",   label: "AI Tailwind (copy)",   component: AiTailwindCopySlide,     theme: "dark" },
+  "customer-base-lovable": { id: "customer-base-lovable", label: "Customer Base (Lovable)", component: CustomerBaseLovableSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -108,6 +110,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "glance",
   "founder",
   "who",
+  "customer-base-lovable",
   "journey",
   "problem",
   "platform",
