@@ -37,6 +37,7 @@ import DurableEdgeSlide from "./slides/DurableEdgeSlide";
 import MarketTAMSlide from "./slides/MarketTAMSlide";
 import CompetitiveMoatSlide from "./slides/CompetitiveMoatSlide";
 import UnifiedDataModelSlide from "./slides/UnifiedDataModelSlide";
+import CXPortfolioPuzzleSlide from "./slides/CXPortfolioPuzzleSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -88,6 +89,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "market-tam":        { id: "market-tam",          label: "Market TAM",          component: MarketTAMSlide,           theme: "dark" },
   "competitive-moat":  { id: "competitive-moat",    label: "Competitive Moat",    component: CompetitiveMoatSlide,     theme: "dark" },
   "unified-data-model":{ id: "unified-data-model",  label: "Unified Data Model",  component: UnifiedDataModelSlide,    theme: "dark" },
+  "cx-portfolio-puzzle":{ id: "cx-portfolio-puzzle", label: "CX Portfolio",       component: CXPortfolioPuzzleSlide,   theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -102,6 +104,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "solution",
   "market",
   "agentic-opp-2",
+  "cx-portfolio-puzzle",
   "agentic-opp",
   "ai-tandem",
   "ai-tailwind",

@@ -62,7 +62,7 @@ export default function JourneySlide({ slideNumber = 7 }: { slideNumber?: number
           Always anticipating the shift.
         </h1>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "10px 0 0", lineHeight: 1.5 }}>
-          We saw the defining technology shift and delivered it to our customers. Now we&apos;re doing it again.
+          We guide customers through every shift — that&apos;s why they trust us decade after decade.
         </p>
       </motion.header>
 
