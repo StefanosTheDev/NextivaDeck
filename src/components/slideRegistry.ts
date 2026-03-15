@@ -41,6 +41,7 @@ import CompetitiveMoatSlide from "./slides/CompetitiveMoatSlide";
 import UnifiedDataModelSlide from "./slides/UnifiedDataModelSlide";
 import CXPortfolioPuzzleSlide from "./slides/CXPortfolioPuzzleSlide";
 import BlueOceanSlide from "./slides/BlueOceanSlide";
+import BlueOcean2Slide from "./slides/BlueOcean2Slide";
 import RevenueOpportunitySlide from "./slides/RevenueOpportunitySlide";
 import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
 import ProductDataPlatformSlide from "./slides/ProductDataPlatformSlide";
@@ -99,6 +100,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "unified-data-model":{ id: "unified-data-model",  label: "Unified Data Model",  component: UnifiedDataModelSlide,    theme: "dark" },
   "cx-portfolio-puzzle":{ id: "cx-portfolio-puzzle", label: "CX Portfolio",       component: CXPortfolioPuzzleSlide,   theme: "dark" },
   "blue-ocean":         { id: "blue-ocean",          label: "Blue Ocean",         component: BlueOceanSlide,           theme: "dark" },
+  "blue-ocean-2":       { id: "blue-ocean-2",        label: "Blue Ocean (2)",     component: BlueOcean2Slide,          theme: "dark" },
   "revenue-opportunity":{ id: "revenue-opportunity",  label: "Revenue Opportunity", component: RevenueOpportunitySlide, theme: "dark" },
   "cx-portfolio-data":  { id: "cx-portfolio-data",   label: "CX Portfolio + Data", component: CXPortfolioDataSlide,    theme: "dark" },
   "product-data-platform":{ id: "product-data-platform", label: "Product + Data Platform", component: ProductDataPlatformSlide, theme: "dark" },
@@ -119,6 +121,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "market",
   "agentic-opp-2",
   "blue-ocean",
+  "blue-ocean-2",
   "cx-portfolio-puzzle",
   "cx-portfolio-data",
   "product-data-platform",
