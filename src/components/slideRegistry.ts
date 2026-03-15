@@ -47,6 +47,7 @@ import BlueOcean2CopySlide from "./slides/BlueOcean2CopySlide";
 import RevenueOpportunitySlide from "./slides/RevenueOpportunitySlide";
 import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
 import ProductDataPlatformSlide from "./slides/ProductDataPlatformSlide";
+import ProductDataPlatformCopySlide from "./slides/ProductDataPlatformCopySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -108,6 +109,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "revenue-opportunity":{ id: "revenue-opportunity",  label: "Revenue Opportunity", component: RevenueOpportunitySlide, theme: "dark" },
   "cx-portfolio-data":  { id: "cx-portfolio-data",   label: "CX Portfolio + Data", component: CXPortfolioDataSlide,    theme: "dark" },
   "product-data-platform":{ id: "product-data-platform", label: "Product + Data Platform", component: ProductDataPlatformSlide, theme: "dark" },
+  "product-data-platform-copy":{ id: "product-data-platform-copy", label: "Product + Data Platform (Copy)", component: ProductDataPlatformCopySlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

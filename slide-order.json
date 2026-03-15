@@ -24,6 +24,7 @@
     "cx-portfolio-puzzle",
     "cx-portfolio-data",
     "product-data-platform",
+    "product-data-platform-copy",
     "agentic-opp",
     "ai-tandem",
     "ai-tailwind",
@@ -63,6 +64,7 @@
     "summary",
     "glance-projections",
     "appendix-customers",
-    "customer-base"
+    "customer-base",
+    "solution"
   ]
 }

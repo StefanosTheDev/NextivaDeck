@@ -1,4 +1,5 @@
 "use client";
+import { Fragment } from "react";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { ArrowRight } from "lucide-react";
@@ -67,14 +68,15 @@ export default function JourneySlide({ slideNumber = 7 }: { slideNumber?: number
       </motion.header>
 
       <main style={{ flex: 1, padding: "32px 80px 0", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-        <div style={{ display: "flex", gap: 20, alignItems: "stretch" }}>
+        <div style={{ display: "flex", gap: 16, alignItems: "stretch" }}>
           {chapters.map((ch, i) => (
-            <div key={ch.number} style={{ display: "flex", alignItems: "stretch", flex: 1, gap: 12 }}>
+            <Fragment key={ch.number}>
               <motion.article
                 initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
                 style={{
-                  flex: 1,
+                  flex: "1 1 0",
+                  minWidth: 0,
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.1)",
                   borderTop: "3px solid #2860B2",
@@ -106,7 +108,7 @@ export default function JourneySlide({ slideNumber = 7 }: { slideNumber?: number
               {i < chapters.length - 1 && (
                 <ArrowRight size={24} color="rgba(255,255,255,0.3)" strokeWidth={2} style={{ flexShrink: 0, alignSelf: "center" }} />
               )}
-            </div>
+            </Fragment>
           ))}
         </div>
       </main>
