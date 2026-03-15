@@ -10,6 +10,7 @@
     "problem",
     "platform",
     "solution",
+    "cx-portfolio-puzzle-cross",
     "ai-tailwind-opt-a",
     "market-tam-lovable",
     "market",
@@ -50,8 +51,7 @@
     "cx-portfolio",
     "cx-portfolio-opt-a",
     "cx-portfolio-opt-b",
-    "cx-portfolio-opt-c",
-    "cx-portfolio-puzzle-cross"
+    "cx-portfolio-opt-c"
   ],
   "categories": {},
   "categoryNames": [
@@ -68,6 +68,15 @@
     "ai-tailwind-opt-c",
     "ai-tailwind-opt-d",
     "ai-tailwind-opt-e",
-    "ai-tailwind-2"
+    "ai-tailwind-2",
+    "cx-portfolio",
+    "cx-portfolio-opt-a",
+    "cx-portfolio-opt-c",
+    "cx-portfolio-opt-b",
+    "ai-tailwind-copy",
+    "market-tam",
+    "agentic-opp-2",
+    "labor-cost-savings",
+    "win"
   ]
 }
