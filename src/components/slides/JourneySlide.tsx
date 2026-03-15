@@ -11,8 +11,8 @@ const chapters = [
     title: "Cloud communications.",
     milestone: MILESTONES.ch1Revenue,
     bullets: [
-      "Pioneered cloud communications for businesses at scale",
-      "Established market leadership — no outside capital required.",
+      "Pioneered cloud communications at scale.",
+      "Market leadership — no outside capital required.",
       "Won through simplicity, amazing service, and reliability.",
     ],
     badge: "Self-funded.",
@@ -24,7 +24,7 @@ const chapters = [
     milestone: MILESTONES.ch2Revenue,
     bullets: [
       "Unified data layer across every customer conversation.",
-      "From tools to platform — one system for every interaction.",
+      "From tools to platform — one system for all interactions.",
       "Platform well-positioned for emerging customer needs.",
     ],
     badge: "Investment.",
