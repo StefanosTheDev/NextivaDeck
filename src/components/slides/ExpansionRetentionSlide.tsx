@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ReferenceLine, Legend, CartesianGrid } from "recharts";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ReferenceLine, Legend, CartesianGrid, ResponsiveContainer } from "recharts";
 
 const RAW_COHORTS = [
   [2009, 1.4563, 136], [2010, 1.3969, 173], [2011, 1.3241, 409],
@@ -43,10 +43,10 @@ const chartData = Array.from({ length: 34 }, (_, i) => ({
 }));
 
 const LINE_COLORS: Record<string, string> = {
-  "2020": "#3B7DD8",
-  "2021": "#C0592B",
-  "2022": "#1B4F72",
-  "2023": "#D4922A",
+  "2020": "#5BA0E8",
+  "2021": "#E87A50",
+  "2022": "#4D9AE8",
+  "2023": "#F0B84D",
 };
 
 const METRICS = [
@@ -57,18 +57,16 @@ const METRICS = [
 
 export default function ExpansionRetentionSlide({ slideNumber = 27 }: { slideNumber?: number }) {
   return (
-    <div className="slide slide--cream">
-      <div style={{ height: 3, background: "#2860B2", flexShrink: 0 }} />
-
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }}>
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "44px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p className="eyebrow">Customer Expansion</p>
-        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#1A447C", marginTop: 8, lineHeight: 1.15 }}>
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#CCC7C3", margin: "0 0 10px" }}>Customer Expansion</p>
+        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#FFFFFF", marginTop: 8, lineHeight: 1.15 }}>
           Customer Expansion After Signup.
         </h1>
-        <p className="font-body" style={{ fontSize: 20, color: "#4A4846", marginTop: 8, lineHeight: 1.5 }}>
+        <p style={{ fontSize: 20, color: "rgba(255,255,255,0.45)", marginTop: 8, lineHeight: 1.5 }}>
           Customers materially expand spending after signup, driven by both organic user base growth and product attach rates.
         </p>
       </motion.header>
@@ -78,36 +76,36 @@ export default function ExpansionRetentionSlide({ slideNumber = 27 }: { slideNum
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}
         style={{ display: "flex", gap: 20, padding: "16px 100px 0", flexShrink: 0 }}
       >
-        <div className="card" style={{ flex: "0 0 65%", padding: "20px 28px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <p className="font-body" style={{ fontSize: 28, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2860B2", margin: 0 }}>
+        <div style={{ flex: "0 0 65%", padding: "20px 28px", display: "flex", flexDirection: "column", justifyContent: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16 }}>
+          <p style={{ fontSize: 28, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#7EB3E8", margin: 0 }}>
             MRR Expansion Drivers
           </p>
-          <p style={{ fontSize: 20, color: "#6C6967", margin: "6px 0 14px", lineHeight: 1.5 }}>
+          <p style={{ fontSize: 20, color: "rgba(255,255,255,0.45)", margin: "6px 0 14px", lineHeight: 1.5 }}>
             Expansion comes from both adding seats (lines) and from product mix &amp; pricing — MRR grows faster than seats, indicating meaningful ARPU expansion.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 24, fontSize: 24, fontWeight: 600 }}>
             <span>
-              <span className="font-heading" style={{ fontSize: 36, color: "#2860B2" }}>1.23&times;</span>{" "}
-              <span style={{ color: "#4A4846", fontSize: 16 }}>Seats / lines</span>
+              <span className="font-heading" style={{ fontSize: 36, color: "#7EB3E8" }}>1.23&times;</span>{" "}
+              <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 16 }}>Seats / lines</span>
             </span>
-            <span style={{ color: "#A29E9B", fontSize: 28 }}>+</span>
+            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 28 }}>+</span>
             <span>
-              <span className="font-heading" style={{ fontSize: 36, color: "#2860B2" }}>20%</span>{" "}
-              <span style={{ color: "#4A4846", fontSize: 16 }}>ARPU lift</span>
+              <span className="font-heading" style={{ fontSize: 36, color: "#7EB3E8" }}>20%</span>{" "}
+              <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 16 }}>ARPU lift</span>
             </span>
-            <span style={{ color: "#A29E9B", fontSize: 28 }}>=</span>
+            <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 28 }}>=</span>
             <span>
-              <span className="font-heading" style={{ fontSize: 36, color: "#1A447C" }}>1.48&times;</span>{" "}
-              <span style={{ color: "#4A4846", fontSize: 16 }}>Total MRR</span>
+              <span className="font-heading" style={{ fontSize: 36, color: "#FFFFFF" }}>1.48&times;</span>{" "}
+              <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 16 }}>Total MRR</span>
             </span>
           </div>
         </div>
 
         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 8 }}>
           {METRICS.map((m) => (
-            <div key={m.label} className="card" style={{ flex: 1, padding: "12px 20px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <p className="font-heading" style={{ fontSize: 32, fontWeight: 700, color: "#1A447C", margin: 0, lineHeight: 1.1 }}>{m.value}</p>
-              <p style={{ fontSize: 14, color: "#4A4846", margin: "4px 0 0", fontWeight: 500 }}>{m.label}</p>
+            <div key={m.label} style={{ flex: 1, padding: "12px 20px", textAlign: "center", display: "flex", flexDirection: "column", justifyContent: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16 }}>
+              <p className="font-heading" style={{ fontSize: 32, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.1 }}>{m.value}</p>
+              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", margin: "4px 0 0", fontWeight: 500 }}>{m.label}</p>
             </div>
           ))}
         </div>
@@ -120,10 +118,10 @@ export default function ExpansionRetentionSlide({ slideNumber = 27 }: { slideNum
       >
         {/* Cohort MRR Growth bars */}
         <div style={{ flex: "0 0 30%" }}>
-          <p className="font-body" style={{ fontWeight: 700, fontSize: 16, letterSpacing: "0.04em", textTransform: "uppercase", color: "#2860B2", margin: "0 0 2px" }}>
+          <p style={{ fontWeight: 700, fontSize: 16, letterSpacing: "0.04em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 2px" }}>
             Cohort MRR Growth
           </p>
-          <p style={{ fontSize: 14, color: "#A29E9B", margin: "0 0 6px", lineHeight: 1.4 }}>
+          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", margin: "0 0 6px", lineHeight: 1.4 }}>
             Active Customer avg MRR versus avg MRR at signup by cohort
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
@@ -131,13 +129,13 @@ export default function ExpansionRetentionSlide({ slideNumber = 27 }: { slideNum
               const pct = (b.value / cohortMax) * 100;
               return (
                 <div key={b.label} style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                  <span style={{ width: 65, fontSize: 13, color: "#4A4846", textAlign: "right", flexShrink: 0, fontWeight: b.label === "Pre-2020" ? 600 : 400 }}>
+                  <span style={{ width: 65, fontSize: 13, color: "rgba(255,255,255,0.5)", textAlign: "right", flexShrink: 0, fontWeight: b.label === "Pre-2020" ? 600 : 400 }}>
                     {b.label}
                   </span>
-                  <div style={{ flex: 1, height: 14, background: "#E0DEDA", borderRadius: 3, overflow: "hidden" }}>
+                  <div style={{ flex: 1, height: 14, background: "rgba(255,255,255,0.1)", borderRadius: 3, overflow: "hidden" }}>
                     <div style={{ width: `${pct}%`, height: "100%", background: b.label === "Pre-2020" ? "#1A447C" : "#2860B2", borderRadius: 3 }} />
                   </div>
-                  <span style={{ width: 40, fontSize: 13, fontWeight: 600, color: "#1A447C", flexShrink: 0 }}>
+                  <span style={{ width: 40, fontSize: 13, fontWeight: 600, color: "#FFFFFF", flexShrink: 0 }}>
                     {b.value.toFixed(2)}&times;
                   </span>
                 </div>
@@ -149,38 +147,39 @@ export default function ExpansionRetentionSlide({ slideNumber = 27 }: { slideNum
         {/* MRR Retention Curves */}
         <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
           <div style={{ marginBottom: 4 }}>
-            <p className="font-body" style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "#2860B2", margin: 0 }}>
+            <p style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", color: "#7EB3E8", margin: 0 }}>
               36-month MRR Retention Curves
             </p>
-            <p style={{ fontSize: 14, fontWeight: 400, color: "#A29E9B", margin: "2px 0 0" }}>
+            <p style={{ fontSize: 14, fontWeight: 400, color: "rgba(255,255,255,0.35)", margin: "2px 0 0" }}>
               Cohorts by signup year. Customers above $6,000 ARR at signup.
             </p>
           </div>
 
-          <LineChart width={1060} height={320} data={chartData} margin={{ top: 8, right: 16, bottom: 4, left: 4 }}>
-            <CartesianGrid horizontal vertical={false} stroke="#E0DEDA" strokeDasharray="3 3" />
+          <ResponsiveContainer width="100%" height={320}>
+            <LineChart data={chartData} margin={{ top: 8, right: 16, bottom: 4, left: 4 }}>
+            <CartesianGrid horizontal vertical={false} stroke="rgba(255,255,255,0.08)" strokeDasharray="3 3" />
             <XAxis
               dataKey="month"
               type="number"
               domain={[3, 36]}
               ticks={[6, 12, 18, 24, 30, 36]}
-              tick={{ fontSize: 12, fill: "#6C6967", fontFamily: "'Space Grotesk', sans-serif" }}
+              tick={{ fontSize: 12, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }}
               tickLine={false}
-              axisLine={{ stroke: "#E0DEDA" }}
-              label={{ value: "Months from Signup", position: "insideBottom", offset: -2, fontSize: 11, fill: "#A29E9B", fontFamily: "'Space Grotesk', sans-serif" }}
+              axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+              label={{ value: "Months from Signup", position: "insideBottom", offset: -2, fontSize: 11, fill: "rgba(255,255,255,0.3)", fontFamily: "'Space Grotesk', sans-serif" }}
             />
             <YAxis
               domain={[95, 125]}
               ticks={[95, 100, 105, 110, 115, 120, 125]}
-              tick={{ fontSize: 12, fill: "#6C6967", fontFamily: "'Space Grotesk', sans-serif" }}
+              tick={{ fontSize: 12, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }}
               tickLine={false}
-              axisLine={{ stroke: "#E0DEDA" }}
+              axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
               tickFormatter={(v: number) => `${v}%`}
               width={44}
             />
-            <ReferenceLine y={100} stroke="#A29E9B" strokeDasharray="8 4" />
+            <ReferenceLine y={100} stroke="rgba(255,255,255,0.2)" strokeDasharray="8 4" />
             <Tooltip
-              contentStyle={{ background: "#FFFFFF", border: "1px solid #E0DEDA", borderRadius: 10, boxShadow: "0 4px 12px rgba(0,0,0,0.08)", fontFamily: "'Space Grotesk', sans-serif", fontSize: 12 }}
+              contentStyle={{ background: "rgba(10,20,40,0.95)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 10, boxShadow: "0 4px 12px rgba(0,0,0,0.08)", fontFamily: "'Space Grotesk', sans-serif", fontSize: 12 }}
               formatter={(value: any, name: any) => [`${value.toFixed(1)}%`, name]}
               labelFormatter={(label: any) => `Month ${label}`}
             />
@@ -201,17 +200,18 @@ export default function ExpansionRetentionSlide({ slideNumber = 27 }: { slideNum
               verticalAlign="bottom"
               iconType="circle"
               iconSize={8}
-              wrapperStyle={{ fontSize: 12, fontFamily: "'Space Grotesk', sans-serif", color: "#2E2D2C", paddingTop: 4 }}
+              wrapperStyle={{ fontSize: 12, fontFamily: "'Space Grotesk', sans-serif", color: "rgba(255,255,255,0.5)", paddingTop: 4 }}
             />
           </LineChart>
+          </ResponsiveContainer>
         </div>
       </motion.main>
 
-      <p style={{ textAlign: "center", fontSize: 11, color: "#A29E9B", margin: "0 100px 4px", lineHeight: 1.4 }}>
+      <p style={{ textAlign: "center", fontSize: 11, color: "rgba(255,255,255,0.3)", margin: "0 100px 4px", lineHeight: 1.4 }}>
         Trailing 3-month smoothed MRR retention. Dollar-weighted by MRR at observation. Segment fixed at signup (&gt;$500/mo &asymp; $6K ARR). Data: Jan 2020 – Jan 2026.
       </p>
 
-      <SlideFooter slideNumber={slideNumber} variant="light" />
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }

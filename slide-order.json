@@ -14,9 +14,11 @@
     "agentic-opp",
     "ai-tandem",
     "ai-tailwind",
+    "market-tam",
     "cx-market-sizing",
     "labor-cost-savings",
     "ai-tailwind-2",
+    "competitive-moat",
     "win",
     "leadership",
     "summary",
@@ -35,11 +37,17 @@
     "revenue-visibility",
     "cash-flow-trends",
     "durable-edge",
-    "market-tam",
-    "competitive-moat",
     "unified-data-model"
   ],
   "categories": {},
-  "categoryNames": [],
-  "hiddenSlides": []
+  "categoryNames": [
+    "dividers"
+  ],
+  "hiddenSlides": [
+    "cover",
+    "agentic-opp",
+    "cx-market-sizing",
+    "win",
+    "summary"
+  ]
 }

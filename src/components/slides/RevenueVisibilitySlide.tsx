@@ -28,22 +28,20 @@ const WATERFALL_DATA = [
   { name: "FY27\nRevenue\nVisible", value: RV.buildUp, base: 0, absValue: RV.buildUp, isNeg: false, isTotal: true },
 ];
 
-const POS_COLORS = ["#2860B2", "#31659A", "#7FA07E", "#1A447C", "#5B8C5A", "#061A37"];
+const POS_COLORS = ["#4D9AE8", "#5BA0E8", "#7FC7A0", "#2860B2", "#82C882", "#7EB3E8"];
 
 export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumber?: number }) {
   return (
-    <div className="slide slide--cream">
-      <div style={{ height: 3, background: "#2860B2", flexShrink: 0 }} />
-
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }}>
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "52px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p className="eyebrow">Revenue visibility</p>
-        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 700, color: "#1A447C", marginTop: 10, lineHeight: 1.15 }}>
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#CCC7C3", margin: "0 0 10px" }}>Revenue visibility</p>
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 700, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
           Majority of FY27 revenue already locked in.
         </h1>
-        <p className="font-body" style={{ fontSize: 22, color: "#4A4846", marginTop: 10, lineHeight: 1.5, maxWidth: 1200, marginLeft: "auto", marginRight: "auto" }}>
+        <p style={{ fontSize: 22, color: "rgba(255,255,255,0.45)", marginTop: 10, lineHeight: 1.5, maxWidth: 1200, marginLeft: "auto", marginRight: "auto" }}>
           ~{RV.gapPct}% of FY27 subscription revenue remains at risk — the foundation is already in place today.
         </p>
       </motion.header>
@@ -60,40 +58,40 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
               margin={{ top: 40, right: 20, left: 20, bottom: 24 }}
               barCategoryGap="18%"
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#E0DEDA" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" vertical={false} />
               <XAxis
                 dataKey="name"
                 tick={({ x, y, payload }: any) => {
                   const lines = (payload.value as string).split("\n");
                   return (
-                    <text x={x} y={y + 14} textAnchor="middle" fontSize={14} fill="#4A4846" fontFamily="'Space Grotesk', sans-serif">
+                    <text x={x} y={y + 14} textAnchor="middle" fontSize={14} fill="rgba(255,255,255,0.5)" fontFamily="'Space Grotesk', sans-serif">
                       {lines.map((line: string, i: number) => (
                         <tspan x={x} dy={i === 0 ? 0 : 16} key={i}>{line}</tspan>
                       ))}
                     </text>
                   );
                 }}
-                axisLine={{ stroke: "#E0DEDA" }}
+                axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
                 tickLine={false}
                 interval={0}
                 height={56}
               />
               <YAxis
                 domain={[0, 400]}
-                tick={{ fontSize: 16, fill: "#A29E9B", fontFamily: "'Space Grotesk', sans-serif" }}
+                tick={{ fontSize: 16, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }}
                 axisLine={false}
                 tickLine={false}
                 tickFormatter={(v: number) => `$${v}M`}
               />
               <ReferenceLine
                 y={RV.subscriptionTarget}
-                stroke="#6C6967"
+                stroke="rgba(255,255,255,0.3)"
                 strokeDasharray="6 4"
                 strokeWidth={2}
                 label={{
                   value: `$${RV.subscriptionTarget}M target`,
                   position: "insideTopLeft",
-                  fill: "#6C6967",
+                  fill: "rgba(255,255,255,0.4)",
                   fontSize: 15,
                   fontFamily: "'Space Grotesk', sans-serif",
                   dy: -28,
@@ -109,7 +107,7 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
                     const sign = entry?.isNeg ? "\u2013" : "";
                     return `${sign}$${v}M`;
                   }}
-                  style={{ fontSize: 18, fontWeight: 700, fill: "#1A447C", fontFamily: "'Space Grotesk', sans-serif" }}
+                  style={{ fontSize: 18, fontWeight: 700, fill: "#FFFFFF", fontFamily: "'Space Grotesk', sans-serif" }}
                 />
                 {WATERFALL_DATA.map((_, i) => (
                   <Cell key={i} fill={POS_COLORS[i]} />
@@ -128,14 +126,14 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
                     <g>
                       <line
                         x1={x} y1={yTop} x2={x} y2={yBottom + 58}
-                        stroke="#A29E9B"
+                        stroke="rgba(255,255,255,0.3)"
                         strokeWidth={1.5}
                         strokeDasharray="5 4"
                         opacity={0.5}
                       />
                       <text
                         x={x + 10} y={yBottom + 72}
-                        fontSize={12} fill="#A29E9B" fontFamily="'Space Grotesk', sans-serif"
+                        fontSize={12} fill="rgba(255,255,255,0.3)" fontFamily="'Space Grotesk', sans-serif"
                         textAnchor="start"
                       >
                         Projections at expected attainment →
@@ -152,48 +150,48 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
         <div style={{ flex: 35, display: "flex", flexDirection: "column", justifyContent: "center", gap: 14 }}>
           <motion.div
             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-            className="card"
             style={{
               padding: "24px 28px",
               textAlign: "center",
-              border: "2px solid #2860B2",
-              boxShadow: "0 4px 16px rgba(40,96,178,0.1)",
+              background: "rgba(40,96,178,0.12)",
+              border: "2px solid rgba(40,96,178,0.4)",
+              borderRadius: 16,
+              boxShadow: "0 4px 16px rgba(40,96,178,0.15)",
             }}
           >
-            <p className="font-body" style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "#2860B2", margin: 0 }}>
+            <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "#7EB3E8", margin: 0 }}>
               FY27 Subscription Revenue at Risk
             </p>
-            <p className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#1A447C", margin: "6px 0 0", lineHeight: 1 }}>
+            <p className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: "6px 0 0", lineHeight: 1 }}>
               Only {RV.gapPct}%
             </p>
-            <p style={{ fontSize: 18, color: "#6C6967", margin: "6px 0 0" }}>
+            <p style={{ fontSize: 18, color: "rgba(255,255,255,0.4)", margin: "6px 0 0" }}>
               ${RV.gap}M gap to plan
             </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}
-            className="card"
-            style={{ padding: "24px 28px", textAlign: "center" }}
+            style={{ padding: "24px 28px", textAlign: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16 }}
           >
-            <p className="font-body" style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "#A29E9B", margin: 0 }}>
+            <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", margin: 0 }}>
               FY27 Subscription Revenue Target
             </p>
-            <p className="font-heading" style={{ fontSize: 44, fontWeight: 700, color: "#1A447C", margin: "6px 0 0", lineHeight: 1 }}>
+            <p className="font-heading" style={{ fontSize: 44, fontWeight: 700, color: "#FFFFFF", margin: "6px 0 0", lineHeight: 1 }}>
               ${RV.subscriptionTarget}M
             </p>
-            <p style={{ fontSize: 18, color: "#6C6967", margin: "6px 0 0" }}>
+            <p style={{ fontSize: 18, color: "rgba(255,255,255,0.4)", margin: "6px 0 0" }}>
               vs ${RV.buildUp}M visibility build-up
             </p>
           </motion.div>
 
-          <p style={{ fontSize: 13, color: "#A29E9B", lineHeight: 1.5, margin: "4px 0 0" }}>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.3)", lineHeight: 1.5, margin: "4px 0 0" }}>
             Contracted = under term through FY27. Monthly renewals net of churn. Expansion bookings per model. Contract net renewals net of attrition.
           </p>
         </div>
       </motion.main>
 
-      <SlideFooter slideNumber={slideNumber} variant="light" />
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }

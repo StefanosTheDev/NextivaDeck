@@ -14,8 +14,8 @@ const data = ALL_YEARS.map((fy) => ({
   isProjection: PROJECTION_YEARS.has(fy),
 }));
 
-const GM_LINE_COLOR = "#B8860B";
-const TARGET_BAR_COLOR = "#6B9BD2";
+const GM_LINE_COLOR = "#E8B84D";
+const TARGET_BAR_COLOR = "#7EB3E8";
 
 const metrics = [
   {
@@ -53,18 +53,16 @@ const ProjectionBarShape = (props: any) => {
 
 export default function ARRGrossMarginSlide({ slideNumber = 24 }: { slideNumber?: number }) {
   return (
-    <div className="slide slide--cream">
-      <div style={{ height: 3, background: "#2860B2", flexShrink: 0 }} />
-
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }}>
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "56px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p className="eyebrow">Long-term model</p>
-        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#1A447C", marginTop: 10, lineHeight: 1.15 }}>
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#CCC7C3", margin: "0 0 10px" }}>Long-term model</p>
+        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
           Durable Top Line Momentum.
         </h1>
-        <p className="font-body" style={{ fontSize: 22, color: "#4A4846", marginTop: 10, lineHeight: 1.5 }}>
+        <p style={{ fontSize: 22, color: "rgba(255,255,255,0.45)", marginTop: 10, lineHeight: 1.5 }}>
           Revenue compounds steadily while gross margins expand toward best-in-class levels.
         </p>
       </motion.header>
@@ -76,16 +74,16 @@ export default function ARRGrossMarginSlide({ slideNumber = 24 }: { slideNumber?
         <div style={{ flex: 55, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <ResponsiveContainer width="100%" height="90%">
             <ComposedChart data={data} margin={{ top: 24, right: 20, left: 20, bottom: 40 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#E0DEDA" vertical={false} />
-              <XAxis dataKey="name" tick={{ fontSize: 20, fill: "#4A4846", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={{ stroke: "#E0DEDA" }} tickLine={false} interval={0} />
-              <YAxis yAxisId="left" domain={[0, 500]} tick={{ fontSize: 18, fill: "#A29E9B", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `$${v}M`} />
-              <YAxis yAxisId="right" orientation="right" domain={[50, 90]} tick={{ fontSize: 18, fill: "#A29E9B", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `${v}%`} />
+              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" vertical={false} />
+              <XAxis dataKey="name" tick={{ fontSize: 20, fill: "rgba(255,255,255,0.5)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} tickLine={false} interval={0} />
+              <YAxis yAxisId="left" domain={[0, 500]} tick={{ fontSize: 18, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `$${v}M`} />
+              <YAxis yAxisId="right" orientation="right" domain={[50, 90]} tick={{ fontSize: 18, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `${v}%`} />
               <Bar yAxisId="left" dataKey="revenue" name="Revenue" shape={<ProjectionBarShape />} maxBarSize={100}>
                 <LabelList
                   dataKey="revenue"
                   position="top"
                   formatter={(v: any) => (v != null ? `$${v}M` : "")}
-                  style={{ fontSize: 18, fontWeight: 700, fill: "#1A447C", fontFamily: "'Space Grotesk', sans-serif" }}
+                  style={{ fontSize: 18, fontWeight: 700, fill: "#FFFFFF", fontFamily: "'Space Grotesk', sans-serif" }}
                 />
               </Bar>
               <Line
@@ -107,7 +105,7 @@ export default function ARRGrossMarginSlide({ slideNumber = 24 }: { slideNumber?
               <Legend
                 verticalAlign="bottom"
                 iconType="circle"
-                wrapperStyle={{ fontSize: 16, fontFamily: "'Space Grotesk', sans-serif", color: "#4A4846", paddingTop: 8 }}
+                wrapperStyle={{ fontSize: 16, fontFamily: "'Space Grotesk', sans-serif", color: "rgba(255,255,255,0.5)", paddingTop: 8 }}
                 {...{ payload: [
                   { value: "Revenue", type: "circle", color: "#2860B2" },
                   { value: "Revenue (Long-Term Plan)", type: "circle", color: TARGET_BAR_COLOR },
@@ -120,27 +118,30 @@ export default function ARRGrossMarginSlide({ slideNumber = 24 }: { slideNumber?
         </div>
 
         <div style={{ flex: 45, display: "flex", flexDirection: "column", justifyContent: "center", gap: 20 }}>
-          {metrics.map((m) => (
-            <div
+          {metrics.map((m, i) => (
+            <motion.div
               key={m.label}
-              className={m.highlight ? "card card--accent" : "card"}
-              style={{
-                padding: "32px 36px",
-                textAlign: "center",
-                borderWidth: m.highlight ? 2 : 1,
-                borderColor: m.highlight ? "#2860B2" : undefined,
-                boxShadow: m.highlight ? "0 4px 16px rgba(40,96,178,0.1)" : undefined,
-              }}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
             >
-              <p className="font-body" style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: m.highlight ? "#2860B2" : "#A29E9B", margin: 0 }}>{m.label}</p>
-              <p className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#1A447C", margin: "8px 0 0", lineHeight: 1 }}>{m.value}</p>
-              {m.detail && <p style={{ fontSize: 18, color: "#6C6967", margin: "6px 0 0" }}>{m.detail}</p>}
-            </div>
+              <div
+                style={
+                  m.highlight
+                    ? { padding: "32px 36px", textAlign: "center", background: "rgba(40,96,178,0.12)", border: "2px solid rgba(40,96,178,0.4)", borderRadius: 16, boxShadow: "0 4px 16px rgba(40,96,178,0.15)" }
+                    : { padding: "32px 36px", textAlign: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16 }
+                }
+              >
+                <p style={{ fontSize: 16, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: m.highlight ? "#7EB3E8" : "rgba(255,255,255,0.4)", margin: 0 }}>{m.label}</p>
+                <p className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#FFFFFF", margin: "8px 0 0", lineHeight: 1 }}>{m.value}</p>
+                {m.detail && <p style={{ fontSize: 18, color: "rgba(255,255,255,0.4)", margin: "6px 0 0" }}>{m.detail}</p>}
+              </div>
+            </motion.div>
           ))}
         </div>
       </motion.main>
 
-      <SlideFooter slideNumber={slideNumber} variant="light" />
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }

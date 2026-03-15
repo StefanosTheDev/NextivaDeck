@@ -29,15 +29,13 @@ const cards = [
 
 export default function NRRChurnSlide({ slideNumber = 26 }: { slideNumber?: number }) {
   return (
-    <div className="slide slide--cream">
-      <div style={{ height: 3, background: "#2860B2", flexShrink: 0 }} />
-
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)" }}>
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "64px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p className="eyebrow">Retention trends</p>
-        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#1A447C", marginTop: 10, lineHeight: 1.15 }}>
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#CCC7C3", margin: "0 0 10px" }}>Retention trends</p>
+        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
           Retention improving across every metric.
         </h1>
       </motion.header>
@@ -52,31 +50,23 @@ export default function NRRChurnSlide({ slideNumber = 26 }: { slideNumber?: numb
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-            className="card card--accent"
-            style={{
-              flex: 1,
-              padding: "72px 48px",
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
+            style={{ flex: 1, padding: "72px 48px", textAlign: "center" as const, display: "flex", flexDirection: "column" as const, justifyContent: "center", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderTop: "3px solid #2860B2", borderRadius: 16 }}
           >
-            <p className="font-body" style={{ fontSize: 20, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "#2860B2", margin: 0 }}>{c.label}</p>
+            <p style={{ fontSize: 20, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "#7EB3E8", margin: 0 }}>{c.label}</p>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, margin: "24px 0" }}>
-              <span className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#A29E9B" }}>{c.from}</span>
-              <span style={{ fontSize: 40, color: c.direction === "up" ? "#2E7D32" : "#2860B2" }}>
+              <span className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "rgba(255,255,255,0.35)" }}>{c.from}</span>
+              <span style={{ fontSize: 40, color: c.direction === "up" ? "#4CAF50" : "#7EB3E8" }}>
                 {c.direction === "up" ? "\u2191" : "\u2193"}
               </span>
-              <span className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#1A447C" }}>{c.to}</span>
+              <span className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#FFFFFF" }}>{c.to}</span>
             </div>
-            <p className="font-body" style={{ fontSize: 16, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: "#A29E9B", margin: 0 }}>FY25 → FY27</p>
-            <p style={{ fontSize: 20, color: "#4A4846", margin: "14px 0 0", lineHeight: 1.5 }}>{c.detail}</p>
+            <p style={{ fontSize: 16, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", margin: 0 }}>FY25 → FY27</p>
+            <p style={{ fontSize: 20, color: "rgba(255,255,255,0.5)", margin: "14px 0 0", lineHeight: 1.5 }}>{c.detail}</p>
           </motion.article>
         ))}
       </motion.main>
 
-      <SlideFooter slideNumber={slideNumber} variant="light" />
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }

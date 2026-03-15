@@ -7,8 +7,7 @@ export default function FinancialDividerSlide({ slideNumber = 23 }: { slideNumbe
     <div
       className="slide"
       style={{
-        background: "linear-gradient(180deg, #F5F0E8 0%, #D9E6F0 100%)",
-        position: "relative",
+        background: "radial-gradient(ellipse 80% 70% at 50% 30%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 50%, #000208 100%)",
       }}
     >
       <div
@@ -28,7 +27,7 @@ export default function FinancialDividerSlide({ slideNumber = 23 }: { slideNumbe
           style={{
             fontSize: 72,
             fontWeight: 400,
-            color: "#1A447C",
+            color: "#FFFFFF",
             margin: 0,
             textAlign: "center",
             position: "relative",
@@ -39,7 +38,7 @@ export default function FinancialDividerSlide({ slideNumber = 23 }: { slideNumbe
         </motion.h1>
       </div>
 
-      <SlideFooter slideNumber={slideNumber} variant="light" />
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }
