@@ -56,7 +56,7 @@ export interface SlideDef {
 const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   cover:               { id: "cover",               label: "Cover",               component: CoverSlide,               theme: "dark" },
   "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "light" },
-  glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "light" },
+  glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
   who:                 { id: "who",                  label: "Who We Serve",        component: WhoWeServeSlide,          theme: "dark" },
   journey:             { id: "journey",              label: "Journey",             component: JourneySlide,             theme: "dark" },
