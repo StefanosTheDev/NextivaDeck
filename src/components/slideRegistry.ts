@@ -48,6 +48,7 @@ import RevenueOpportunitySlide from "./slides/RevenueOpportunitySlide";
 import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
 import ProductDataPlatformSlide from "./slides/ProductDataPlatformSlide";
 import ProductDataPlatformCopySlide from "./slides/ProductDataPlatformCopySlide";
+import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -62,6 +63,7 @@ export interface SlideDef {
 const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   cover:               { id: "cover",               label: "Cover",               component: CoverSlide,               theme: "dark" },
   "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "light" },
+  "better-outcomes":   { id: "better-outcomes",     label: "Better Business Outcomes", component: BetterOutcomesSlide,  theme: "dark" },
   glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
   "glance-projections":{ id: "glance-projections",   label: "At a Glance + Projections", component: AtAGlanceProjectionsSlide, theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
@@ -115,6 +117,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
 export const DEFAULT_SLIDE_ORDER: string[] = [
   "cover",
   "safe-harbor",
+  "better-outcomes",
   "glance",
   "glance-projections",
   "founder",
