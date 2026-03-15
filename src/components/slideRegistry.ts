@@ -23,6 +23,11 @@ import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
 import LaborCostSavingsSlide from "./slides/LaborCostSavingsSlide";
 import FinancialDividerSlide from "./slides/FinancialDividerSlide";
 import CustomerUseCasesDividerSlide from "./slides/CustomerUseCasesDividerSlide";
+import CXPortfolioSlide from "./slides/CXPortfolioSlide";
+import CXPortfolioOptionASlide from "./slides/CXPortfolioOptionASlide";
+import CXPortfolioOptionBSlide from "./slides/CXPortfolioOptionBSlide";
+import CXPortfolioOptionCSlide from "./slides/CXPortfolioOptionCSlide";
+import CXPortfolioPuzzleCrossSlide from "./slides/CXPortfolioPuzzleCrossSlide";
 import ARRGrossMarginSlide from "./slides/ARRGrossMarginSlide";
 import EBITDASlide from "./slides/EBITDASlide";
 import NRRChurnSlide from "./slides/NRRChurnSlide";
@@ -84,6 +89,11 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
   "financial-divider":  { id: "financial-divider",   label: "Financial Overview",  component: FinancialDividerSlide,    theme: "dark", isNew: true },
   "customer-use-cases-divider": { id: "customer-use-cases-divider", label: "Customer Use Cases", component: CustomerUseCasesDividerSlide, theme: "dark", isNew: true },
+  "cx-portfolio": { id: "cx-portfolio", label: "CX Platform Portfolio", component: CXPortfolioSlide, theme: "dark", isNew: true },
+  "cx-portfolio-opt-a": { id: "cx-portfolio-opt-a", label: "CX Portfolio (A: Clip-path)", component: CXPortfolioOptionASlide, theme: "dark", isNew: true },
+  "cx-portfolio-opt-b": { id: "cx-portfolio-opt-b", label: "CX Portfolio (B: Overlapping)", component: CXPortfolioOptionBSlide, theme: "dark", isNew: true },
+  "cx-portfolio-opt-c": { id: "cx-portfolio-opt-c", label: "CX Portfolio (C: Grid + Divider)", component: CXPortfolioOptionCSlide, theme: "dark", isNew: true },
+  "cx-portfolio-puzzle-cross": { id: "cx-portfolio-puzzle-cross", label: "CX Portfolio (Puzzle Cross)", component: CXPortfolioPuzzleCrossSlide, theme: "dark", isNew: true },
   "arr-gross-margin":   { id: "arr-gross-margin",    label: "Revenue & Margin",    component: ARRGrossMarginSlide,      theme: "dark", isNew: true },
   "ebitda":             { id: "ebitda",              label: "EBITDA",              component: EBITDASlide,              theme: "dark", isNew: true },
   "nrr-churn":          { id: "nrr-churn",           label: "Retention Trends",    component: NRRChurnSlide,            theme: "dark", isNew: true },

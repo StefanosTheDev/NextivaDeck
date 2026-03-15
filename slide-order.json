@@ -10,6 +10,7 @@
     "problem",
     "platform",
     "solution",
+    "ai-tailwind-opt-a",
     "market-tam-lovable",
     "market",
     "agentic-opp-2",
@@ -41,12 +42,16 @@
     "customer-base",
     "durable-edge",
     "unified-data-model",
-    "ai-tailwind-opt-a",
     "ai-tailwind-opt-b",
     "ai-tailwind-opt-c",
     "ai-tailwind-opt-d",
     "ai-tailwind-opt-e",
-    "ai-tailwind-2"
+    "ai-tailwind-2",
+    "cx-portfolio",
+    "cx-portfolio-opt-a",
+    "cx-portfolio-opt-b",
+    "cx-portfolio-opt-c",
+    "cx-portfolio-puzzle-cross"
   ],
   "categories": {},
   "categoryNames": [
@@ -57,6 +62,12 @@
     "summary",
     "appendix-products",
     "customer-base",
-    "appendix-customers"
+    "appendix-customers",
+    "ai-tailwind-opt-a",
+    "ai-tailwind-opt-b",
+    "ai-tailwind-opt-c",
+    "ai-tailwind-opt-d",
+    "ai-tailwind-opt-e",
+    "ai-tailwind-2"
   ]
 }
