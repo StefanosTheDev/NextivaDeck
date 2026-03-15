@@ -89,8 +89,8 @@ export default function CustomerBaseV2Slide({ slideNumber = 30 }: { slideNumber?
           style={{ background: "rgba(40,96,178,0.10)", border: "1px solid rgba(40,96,178,0.25)", borderRadius: 12, padding: "20px 32px", width: "100%" }}
         >
           <p style={{ fontSize: 22, color: "#FFFFFF", margin: 0, lineHeight: 1.5, textAlign: "center" }}>
-            <span style={{ fontWeight: 700, color: "#7EB3E8" }}>Market-agnostic.</span>{" "}
-            Customer diversity by size, industry, and tenure reinforces credit durability.
+            <span style={{ fontWeight: 700, color: "#7EB3E8" }}>Market-agnostic:</span>{" "}
+            Customer diversity by size, industry, and tenure reinforces stability.
           </p>
         </motion.div>
       </div>
