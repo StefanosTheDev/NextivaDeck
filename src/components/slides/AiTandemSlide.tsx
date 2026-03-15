@@ -11,18 +11,22 @@ const modes = [
 
 export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: number }) {
   return (
-    <div className="slide slide--cream">
-      <div style={{ height: 3, background: "#2860B2", flexShrink: 0 }} />
-
+    <div
+      className="slide"
+      style={{
+        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
+        justifyContent: "space-between",
+      }}
+    >
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "72px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p className="eyebrow" style={{ marginBottom: 12 }}>AI FLEXIBILITY</p>
-        <h1 className="font-heading" style={{ fontSize: 68, fontWeight: 700, color: "#1A447C", margin: 0, lineHeight: 1.15 }}>
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", marginBottom: 12 }}>AI FLEXIBILITY</p>
+        <h1 className="font-heading" style={{ fontSize: 68, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           Our customers want choice.
         </h1>
-        <p style={{ fontSize: 24, color: "#4A4846", margin: "14px 0 0", lineHeight: 1.4 }}>
+        <p style={{ fontSize: 24, color: "rgba(255,255,255,0.45)", margin: "14px 0 0", lineHeight: 1.4 }}>
           Ability to calibrate Human & AI collaboration over time.
         </p>
       </motion.header>
@@ -36,21 +40,22 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
           const Icon = m.icon;
           return (
             <div key={m.title} style={{
-              flex: 1, background: "#FFFFFF", borderRadius: 20, border: "1px solid #E0DEDA",
-              boxShadow: "0 4px 24px rgba(0,2,8,0.04)", padding: "48px 32px",
+              flex: 1, background: "rgba(255,255,255,0.04)", borderRadius: 20, border: "1px solid rgba(255,255,255,0.08)",
+              padding: "48px 32px",
               display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 20,
             }}>
               <div style={{
                 width: 80, height: 80, borderRadius: "50%",
-                background: "linear-gradient(135deg, rgba(40,96,178,0.08), rgba(40,96,178,0.16))",
+                background: "rgba(40,96,178,0.15)",
+                border: "1px solid rgba(40,96,178,0.25)",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <Icon size={38} color="#2860B2" strokeWidth={1.5} />
+                <Icon size={38} color="#7EB3E8" strokeWidth={1.5} />
               </div>
-              <h2 className="font-heading" style={{ fontSize: 36, fontWeight: 700, color: "#1A447C", margin: 0, lineHeight: 1.2 }}>
+              <h2 className="font-heading" style={{ fontSize: 36, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.2 }}>
                 {m.title}
               </h2>
-              <p style={{ fontSize: 20, color: "#6C6967", margin: 0, lineHeight: 1.4 }}>
+              <p style={{ fontSize: 20, color: "rgba(255,255,255,0.5)", margin: 0, lineHeight: 1.4 }}>
                 {m.line}
               </p>
             </div>
@@ -70,7 +75,6 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
           overflow: "hidden",
           position: "relative",
         }}>
-          {/* Left side */}
           <div style={{
             flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
             paddingLeft: 16,
@@ -84,10 +88,8 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
             </span>
           </div>
 
-          {/* Center divider */}
           <div style={{ width: 1, height: 24, background: "rgba(255,255,255,0.25)", flexShrink: 0 }} />
 
-          {/* Right side */}
           <div style={{
             flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
             paddingRight: 16,
@@ -103,7 +105,7 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
         </div>
       </motion.div>
 
-      <SlideFooter slideNumber={slideNumber} variant="light" />
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }

@@ -4,16 +4,17 @@ import SlideFooter from "../SlideFooter";
 
 export default function SafeHarborSlide({ slideNumber }: { slideNumber?: number }) {
   return (
-    <div className="slide slide--cream">
-      {/* Blue top rule */}
-      <div style={{ width: "100%", height: 3, background: "#2860B2", flexShrink: 0 }} />
-
+    <div
+      className="slide"
+      style={{
+        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
+      }}
+    >
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 100px" }}>
         <motion.p
           initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="eyebrow"
-          style={{ marginBottom: 24 }}
+          style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", marginBottom: 24 }}
         >
           Safe Harbor Statement
         </motion.p>
@@ -24,7 +25,7 @@ export default function SafeHarborSlide({ slideNumber }: { slideNumber?: number 
           style={{
             fontSize: 22,
             lineHeight: 1.8,
-            color: "#6C6967",
+            color: "rgba(255,255,255,0.55)",
             maxWidth: 1440,
           }}
         >
@@ -47,7 +48,7 @@ export default function SafeHarborSlide({ slideNumber }: { slideNumber?: number 
         </motion.div>
       </div>
 
-      <SlideFooter slideNumber={slideNumber ?? 2} variant="light" />
+      <SlideFooter slideNumber={slideNumber ?? 2} variant="dark" />
     </div>
   );
 }

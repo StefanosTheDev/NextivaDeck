@@ -37,6 +37,12 @@ import DurableEdgeSlide from "./slides/DurableEdgeSlide";
 import MarketTAMSlide from "./slides/MarketTAMSlide";
 import CompetitiveMoatSlide from "./slides/CompetitiveMoatSlide";
 import UnifiedDataModelSlide from "./slides/UnifiedDataModelSlide";
+import AiTailwindOptionASlide from "./slides/AiTailwindOptionASlide";
+import AiTailwindOptionBSlide from "./slides/AiTailwindOptionBSlide";
+import AiTailwindOptionCSlide from "./slides/AiTailwindOptionCSlide";
+import AiTailwindOptionDSlide from "./slides/AiTailwindOptionDSlide";
+import AiTailwindOptionESlide from "./slides/AiTailwindOptionESlide";
+import AiTailwindCopySlide from "./slides/AiTailwindCopySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -50,17 +56,17 @@ export interface SlideDef {
 
 const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   cover:               { id: "cover",               label: "Cover",               component: CoverSlide,               theme: "dark" },
-  "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "light" },
-  glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "light" },
+  "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "dark" },
+  glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
   who:                 { id: "who",                  label: "Who We Serve",        component: WhoWeServeSlide,          theme: "dark" },
   journey:             { id: "journey",              label: "Journey",             component: JourneySlide,             theme: "dark" },
   problem:             { id: "problem",              label: "Problem",             component: ProblemSlide,             theme: "dark" },
   platform:            { id: "platform",             label: "Platform",            component: PlatformSlide,            theme: "dark" },
-  solution:            { id: "solution",             label: "Solution",            component: SolutionSlide,            theme: "light" },
+  solution:            { id: "solution",             label: "Solution",            component: SolutionSlide,            theme: "dark" },
   market:              { id: "market",               label: "Market",              component: MarketSlide,              theme: "dark" },
   "agentic-opp":       { id: "agentic-opp",         label: "AI Opportunity",      component: AgenticOpportunitySlide,  theme: "dark" },
-  "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "light" },
+  "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "dark" },
   "cx-market-sizing":  { id: "cx-market-sizing",     label: "CX Market Sizing",    component: CXMarketSizingSlide,      theme: "dark" },
   "labor-cost-savings":{ id: "labor-cost-savings",   label: "Labor Cost Savings",  component: LaborCostSavingsSlide,    theme: "dark" },
   "ai-tailwind":       { id: "ai-tailwind",          label: "AI Tailwind",         component: AiTailwindSlide,          theme: "dark" },
@@ -88,6 +94,12 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "market-tam":        { id: "market-tam",          label: "Market TAM",          component: MarketTAMSlide,           theme: "dark" },
   "competitive-moat":  { id: "competitive-moat",    label: "Competitive Moat",    component: CompetitiveMoatSlide,     theme: "dark" },
   "unified-data-model":{ id: "unified-data-model",  label: "Unified Data Model",  component: UnifiedDataModelSlide,    theme: "dark" },
+  "ai-tailwind-opt-a": { id: "ai-tailwind-opt-a",  label: "AI Tailwind Option A", component: AiTailwindOptionASlide,  theme: "dark" },
+  "ai-tailwind-opt-b": { id: "ai-tailwind-opt-b",  label: "AI Tailwind Option B", component: AiTailwindOptionBSlide,  theme: "dark" },
+  "ai-tailwind-opt-c": { id: "ai-tailwind-opt-c",  label: "AI Tailwind Option C", component: AiTailwindOptionCSlide,  theme: "dark" },
+  "ai-tailwind-opt-d": { id: "ai-tailwind-opt-d",  label: "AI Tailwind Option D", component: AiTailwindOptionDSlide,  theme: "dark" },
+  "ai-tailwind-opt-e": { id: "ai-tailwind-opt-e",  label: "AI Tailwind Option E", component: AiTailwindOptionESlide,  theme: "dark" },
+  "ai-tailwind-copy":  { id: "ai-tailwind-copy",   label: "AI Tailwind (copy)",   component: AiTailwindCopySlide,     theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -104,10 +116,10 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "agentic-opp-2",
   "agentic-opp",
   "ai-tandem",
+  "ai-tailwind-copy",
   "ai-tailwind",
   "cx-market-sizing",
   "labor-cost-savings",
-  "ai-tailwind-2",
   "win",
   "leadership",
   "summary",
@@ -129,6 +141,12 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "market-tam",
   "competitive-moat",
   "unified-data-model",
+  "ai-tailwind-opt-a",
+  "ai-tailwind-opt-b",
+  "ai-tailwind-opt-c",
+  "ai-tailwind-opt-d",
+  "ai-tailwind-opt-e",
+  "ai-tailwind-2",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

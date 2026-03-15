@@ -22,19 +22,24 @@ const BOTTOM = { x: 440, y: 340 };
 
 export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: number }) {
   return (
-    <div className="slide slide--cream" style={{ justifyContent: "space-between" }}>
+    <div
+      className="slide"
+      style={{
+        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
+        justifyContent: "space-between",
+      }}
+    >
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p style={{
-          fontFamily: "'Space Grotesk', sans-serif",
-          fontWeight: 700, fontSize: 16, letterSpacing: "0.08em",
-          textTransform: "uppercase", color: "#2860B2", margin: "0 0 14px",
+          fontWeight: 700, fontSize: 15, letterSpacing: "0.08em",
+          textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px",
         }}>
           OUR SOLUTION
         </p>
-        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#1A447C", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
+        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
           Nextiva Agentic CX Always<br />Delivers Immediate Outcomes.
         </h1>
       </motion.header>
@@ -53,10 +58,10 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
           >
             <defs>
               <marker id="arrowThin" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-                <path d="M0,0 L8,3 L0,6" fill="#2860B2" stroke="none" />
+                <path d="M0,0 L8,3 L0,6" fill="#7EB3E8" stroke="none" />
               </marker>
               <marker id="arrowThick" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
-                <path d="M0,0 L10,4 L0,8" fill="#2860B2" stroke="none" />
+                <path d="M0,0 L10,4 L0,8" fill="#7EB3E8" stroke="none" />
               </marker>
             </defs>
 
@@ -64,7 +69,7 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
             <line
               x1={LEFT.x + 130} y1={LEFT.y - 20}
               x2={AI.x - 70} y2={AI.y + 55}
-              stroke="#2860B2" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4"
+              stroke="#7EB3E8" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.5"
               markerEnd="url(#arrowThin)"
             />
 
@@ -72,7 +77,7 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
             <line
               x1={RIGHT.x - 130} y1={RIGHT.y - 20}
               x2={AI.x + 70} y2={AI.y + 55}
-              stroke="#2860B2" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.4"
+              stroke="#7EB3E8" strokeWidth="1.5" strokeDasharray="6 4" opacity="0.5"
               markerEnd="url(#arrowThin)"
             />
 
@@ -80,7 +85,7 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
             <line
               x1={AI.x} y1={AI.y + 100}
               x2={BOTTOM.x} y2={BOTTOM.y - 55}
-              stroke="#2860B2" strokeWidth="2.5" opacity="0.8"
+              stroke="#7EB3E8" strokeWidth="2.5" opacity="0.8"
               markerEnd="url(#arrowThick)"
             />
           </svg>
@@ -94,18 +99,18 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
           }}>
             <div style={{
               width: 180, height: 180, borderRadius: "50%",
-              background: "rgba(204,199,195,0.12)",
+              background: "rgba(40,96,178,0.15)",
               display: "flex", alignItems: "center", justifyContent: "center",
             }}>
               <div style={{
                 width: 144, height: 144, borderRadius: "50%",
-                background: "#FFFFFF",
-                boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+                background: "rgba(40,96,178,0.2)",
+                border: "1px solid rgba(126,179,232,0.2)",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
                 <div style={{
                   width: 108, height: 108, borderRadius: "50%",
-                  background: "radial-gradient(circle at 50% 40%, #2860B2 0%, #1A447C 100%)",
+                  background: "radial-gradient(circle at 50% 40%, #4D9AE8 0%, #2860B2 100%)",
                   display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
                   color: "#FFFFFF",
                 }}>
@@ -127,13 +132,13 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
           }}>
             <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {leftIcons.map((Icon, i) => (
-                <Icon key={i} size={18} color="#A29E9B" strokeWidth={1.75} />
+                <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
               ))}
             </div>
-            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#1A447C", margin: "0 0 6px", lineHeight: 1.2 }}>
+            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
               Customer Conversations
             </h3>
-            <p style={{ fontSize: 14, color: "#6C6967", lineHeight: 1.5, margin: 0 }}>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
               Current and historical conversations, intent and behavior.
             </p>
           </div>
@@ -147,13 +152,13 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
           }}>
             <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {rightIcons.map((Icon, i) => (
-                <Icon key={i} size={18} color="#A29E9B" strokeWidth={1.75} />
+                <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
               ))}
             </div>
-            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#1A447C", margin: "0 0 6px", lineHeight: 1.2 }}>
+            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
               Context from Siloed Systems
             </h3>
-            <p style={{ fontSize: 14, color: "#6C6967", lineHeight: 1.5, margin: 0 }}>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
               CRM, transactions, service history, preferences, and workflow data
             </p>
           </div>
@@ -167,13 +172,13 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
           }}>
             <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {bottomIcons.map((Icon, i) => (
-                <Icon key={i} size={18} color="#A29E9B" strokeWidth={1.75} />
+                <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
               ))}
             </div>
-            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#1A447C", margin: "0 0 6px", lineHeight: 1.2 }}>
+            <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
               Real-time Actions
             </h3>
-            <p style={{ fontSize: 14, color: "#6C6967", lineHeight: 1.5, margin: 0 }}>
+            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
               Ability to synthesize and drive workflows based on full context.
             </p>
           </div>
@@ -188,20 +193,20 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
         <div style={{
           display: "flex", justifyContent: "center", alignItems: "center", gap: 12,
           padding: "18px 32px", borderRadius: 12,
-          background: "rgba(40,96,178,0.06)",
+          background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)",
         }}>
           {outcomes.map((o, i) => (
             <span key={o} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ fontSize: 16, fontWeight: 700, color: "#2860B2" }}>{o}</span>
+              <span style={{ fontSize: 16, fontWeight: 700, color: "#7EB3E8" }}>{o}</span>
               {i < outcomes.length - 1 && (
-                <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#2860B2", opacity: 0.3 }} />
+                <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#7EB3E8", opacity: 0.3 }} />
               )}
             </span>
           ))}
         </div>
       </motion.div>
 
-      <SlideFooter slideNumber={slideNumber} variant="light" />
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }
