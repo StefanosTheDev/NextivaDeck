@@ -38,6 +38,8 @@ import MarketTAMSlide from "./slides/MarketTAMSlide";
 import CompetitiveMoatSlide from "./slides/CompetitiveMoatSlide";
 import UnifiedDataModelSlide from "./slides/UnifiedDataModelSlide";
 import CXPortfolioPuzzleSlide from "./slides/CXPortfolioPuzzleSlide";
+import BlueOceanSlide from "./slides/BlueOceanSlide";
+import RevenueOpportunitySlide from "./slides/RevenueOpportunitySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -90,6 +92,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "competitive-moat":  { id: "competitive-moat",    label: "Competitive Moat",    component: CompetitiveMoatSlide,     theme: "dark" },
   "unified-data-model":{ id: "unified-data-model",  label: "Unified Data Model",  component: UnifiedDataModelSlide,    theme: "dark" },
   "cx-portfolio-puzzle":{ id: "cx-portfolio-puzzle", label: "CX Portfolio",       component: CXPortfolioPuzzleSlide,   theme: "dark" },
+  "blue-ocean":         { id: "blue-ocean",          label: "Blue Ocean",         component: BlueOceanSlide,           theme: "dark" },
+  "revenue-opportunity":{ id: "revenue-opportunity",  label: "Revenue Opportunity", component: RevenueOpportunitySlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -104,6 +108,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "solution",
   "market",
   "agentic-opp-2",
+  "blue-ocean",
   "cx-portfolio-puzzle",
   "agentic-opp",
   "ai-tandem",
