@@ -5,11 +5,11 @@ import SlideFooter from "../SlideFooter";
 const board = [
   { name: "Tomas Gorny", role: "Chairman, CEO & Co-Founder", photo: "/images/headshot-tomas.png" },
   { name: "Tracy Conrad", role: "Chief Amazing Officer, Co-Founder", photo: "/images/headshot-tracy.png" },
-  { name: "Hari Ravichandran", role: "Founder & CEO, Endurance / Aura.com", photo: "/images/headshot-hari.png", needsFrame: true },
-  { name: "Stephen Kerns", role: "MD, Goldman Sachs Growth Equity", photo: "/images/headshot-stephen.png" },
   { name: "Alan Black", role: "CFO, Zendesk; CFO, Openwave", photo: "/images/headshot-alan.png" },
-  { name: "Bob Beauchamp", role: "CEO, BMC Software", photo: "/images/headshot-bob.png" },
+  { name: "Stephen Kerns", role: "MD, Goldman Sachs Growth Equity", photo: "/images/headshot-stephen.png" },
   { name: "Karen Walker", role: "CMO, Cisco, Intel", photo: "/images/headshot-karen.png" },
+  { name: "Bob Beauchamp", role: "CEO, BMC Software", photo: "/images/headshot-bob.png" },
+  { name: "Hari Ravichandran", role: "Founder & CEO, Endurance / Aura.com", photo: "/images/headshot-hari.png", needsFrame: true },
 ];
 
 const management = [
