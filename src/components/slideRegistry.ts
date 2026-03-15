@@ -28,6 +28,7 @@ import NRRChurnSlide from "./slides/NRRChurnSlide";
 import ExpansionRetentionSlide from "./slides/ExpansionRetentionSlide";
 import TargetModelSlide from "./slides/TargetModelSlide";
 import OperatingLeverageSlide from "./slides/OperatingLeverageSlide";
+import OperatingLeverageDatedSlide from "./slides/OperatingLeverageDatedSlide";
 import CustomerBaseSlide from "./slides/CustomerBaseSlide";
 import RevenueVisibilitySlide from "./slides/RevenueVisibilitySlide";
 import CashFlowTrendsSlide from "./slides/CashFlowTrendsSlide";
@@ -87,6 +88,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "expansion-retention":{ id: "expansion-retention", label: "Customer Expansion",  component: ExpansionRetentionSlide,  theme: "dark", isNew: true },
   "target-model":       { id: "target-model",        label: "Target Model",        component: TargetModelSlide,         theme: "dark", isNew: true },
   "operating-leverage": { id: "operating-leverage",  label: "Operating Leverage",  component: OperatingLeverageSlide,   theme: "dark", isNew: true },
+  "operating-leverage-dated": { id: "operating-leverage-dated", label: "Operating Leverage (0315)", component: OperatingLeverageDatedSlide, theme: "dark", isNew: true },
   "customer-base":      { id: "customer-base",       label: "Customer Base",       component: CustomerBaseSlide,        theme: "dark", isNew: true },
   "revenue-visibility": { id: "revenue-visibility",  label: "Revenue Visibility",  component: RevenueVisibilitySlide,   theme: "dark", isNew: true },
   "cash-flow-trends":   { id: "cash-flow-trends",    label: "Cash Flow Trends",    component: CashFlowTrendsSlide,      theme: "dark", isNew: true },

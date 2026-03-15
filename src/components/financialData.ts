@@ -34,7 +34,7 @@ export const BALANCE_SHEET = {
 
 export const RETENTION = {
   mrrChurn:    { FY25: 1.6, FY26: 1.6, FY27: 1.5, FY28: 1.5, FY29: 1.5, FY30: 1.5 },
-  logoChurn:   { FY25: 5.6, FY26: 5.2, FY27: 5.1, FY28: 5.1, FY29: 5.1, FY30: 5.1 },
+  logoChurn:   { FY25: 1.9, FY26: 1.8, FY27: 1.7, FY28: 5.1, FY29: 5.1, FY30: 5.1 },
   nrr:         { FY25: 91, FY26: 93, FY27: 94, FY28: 94, FY29: 94, FY30: 94 },
   totalAccounts: { FY25: 91857, FY26: 92327, FY27: 91703, FY28: 91896, FY29: 92768, FY30: 94220 },
   totalUsers:    { FY25: 927810, FY26: 911976, FY27: 913932, FY28: 916585, FY29: 930794, FY30: 956265 },
@@ -50,11 +50,11 @@ export const OPEX_PCT = {
 
 export const HEADCOUNT = {
   total:      { FY25: 1356, FY26: 1001, FY27: 967, FY28: 925, FY29: 875, FY30: 829 },
-  revPerHead: { FY25: 255, FY26: 354, FY27: 394, FY28: 442, FY29: 502, FY30: 570 },
+  revPerHead: { FY25: 255, FY26: 343, FY27: 379, FY28: 426, FY29: 486, FY30: 553 },
 } as const;
 
 export const RD_REV_PER_HEAD = {
-  FY25: 230, FY26: 317, FY27: 385, FY28: 466, FY29: 566, FY30: 688,
+  FY25: 921, FY26: 1172, FY27: 1413, FY28: 1714, FY29: 2084, FY30: 2537,
 } as const;
 
 export const RD_HEADCOUNT = {

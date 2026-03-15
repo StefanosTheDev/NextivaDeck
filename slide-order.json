@@ -27,6 +27,7 @@
     "arr-gross-margin",
     "ai-gateways-revenue",
     "revenue-visibility",
+    "operating-leverage-dated",
     "ebitda",
     "cash-flow-trends",
     "appendix-customers",
@@ -44,8 +45,7 @@
     "ai-tailwind-opt-c",
     "ai-tailwind-opt-d",
     "ai-tailwind-opt-e",
-    "ai-tailwind-2",
-    "operating-leverage"
+    "ai-tailwind-2"
   ],
   "categories": {},
   "categoryNames": [
@@ -55,6 +55,7 @@
     "cx-market-sizing",
     "summary",
     "appendix-products",
-    "customer-base"
+    "customer-base",
+    "appendix-customers"
   ]
 }
