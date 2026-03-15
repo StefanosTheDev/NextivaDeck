@@ -40,6 +40,8 @@ import UnifiedDataModelSlide from "./slides/UnifiedDataModelSlide";
 import CXPortfolioPuzzleSlide from "./slides/CXPortfolioPuzzleSlide";
 import BlueOceanSlide from "./slides/BlueOceanSlide";
 import RevenueOpportunitySlide from "./slides/RevenueOpportunitySlide";
+import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
+import ProductDataPlatformSlide from "./slides/ProductDataPlatformSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -94,6 +96,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cx-portfolio-puzzle":{ id: "cx-portfolio-puzzle", label: "CX Portfolio",       component: CXPortfolioPuzzleSlide,   theme: "dark" },
   "blue-ocean":         { id: "blue-ocean",          label: "Blue Ocean",         component: BlueOceanSlide,           theme: "dark" },
   "revenue-opportunity":{ id: "revenue-opportunity",  label: "Revenue Opportunity", component: RevenueOpportunitySlide, theme: "dark" },
+  "cx-portfolio-data":  { id: "cx-portfolio-data",   label: "CX Portfolio + Data", component: CXPortfolioDataSlide,    theme: "dark" },
+  "product-data-platform":{ id: "product-data-platform", label: "Product + Data Platform", component: ProductDataPlatformSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -110,6 +114,8 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "agentic-opp-2",
   "blue-ocean",
   "cx-portfolio-puzzle",
+  "cx-portfolio-data",
+  "product-data-platform",
   "agentic-opp",
   "ai-tandem",
   "ai-tailwind",
