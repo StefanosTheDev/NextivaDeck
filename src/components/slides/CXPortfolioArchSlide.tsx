@@ -10,10 +10,10 @@ const cxProducts = [
 ];
 
 const platformLayers = [
-  { label: "AI Orchestration Layer", opacity: 0.18 },
-  { label: "Omnichannel Communication", opacity: 0.14 },
-  { label: "Unified Data Model", opacity: 0.10 },
-  { label: "Data & Integration Layer", opacity: 0.07 },
+  { label: "AI Orchestration Layer", opacity: 0.07 },
+  { label: "Omnichannel Communication", opacity: 0.10 },
+  { label: "Unified Data Model", opacity: 0.14 },
+  { label: "Data & Integration Layer", opacity: 0.18 },
 ];
 
 const ecosystemItems = [
@@ -105,7 +105,7 @@ export default function CXPortfolioArchSlide({
           style={{
             display: "flex",
             width: "100%",
-            maxWidth: 960,
+            maxWidth: 1040,
             border: "1.5px solid rgba(40,96,178,0.45)",
             borderRadius: 20,
             overflow: "hidden",
@@ -115,7 +115,7 @@ export default function CXPortfolioArchSlide({
           <div
             style={{
               flex: "0 0 64%",
-              background: "rgba(255,255,255,0.03)",
+              background: "rgba(255,255,255,0.06)",
               padding: "28px 32px 28px",
               display: "flex",
               flexDirection: "column",
@@ -131,11 +131,11 @@ export default function CXPortfolioArchSlide({
               <span
                 style={{
                   display: "inline-block",
-                  padding: "5px 16px",
+                  padding: "6px 18px",
                   borderRadius: 20,
-                  background: "rgba(40,96,178,0.35)",
-                  border: "1px solid rgba(40,96,178,0.5)",
-                  color: "#7EB3E8",
+                  background: "rgba(6,26,55,0.9)",
+                  border: "1px solid rgba(40,96,178,0.4)",
+                  color: "#FFFFFF",
                   fontSize: 12,
                   fontWeight: 700,
                   letterSpacing: "0.04em",
@@ -155,6 +155,7 @@ export default function CXPortfolioArchSlide({
                 fontWeight: 600,
                 color: "rgba(255,255,255,0.7)",
                 margin: 0,
+                textAlign: "center",
               }}
             >
               Pre-built CX Products
@@ -165,7 +166,7 @@ export default function CXPortfolioArchSlide({
               style={{
                 display: "flex",
                 gap: 24,
-                justifyContent: "flex-start",
+                justifyContent: "center",
                 marginBottom: 4,
               }}
             >
@@ -187,9 +188,9 @@ export default function CXPortfolioArchSlide({
                   >
                     <div
                       style={{
-                        width: 44,
-                        height: 44,
-                        borderRadius: 12,
+                        width: 52,
+                        height: 52,
+                        borderRadius: 14,
                         background: "rgba(40,96,178,0.15)",
                         border: "1px solid rgba(40,96,178,0.3)",
                         display: "flex",
@@ -197,7 +198,7 @@ export default function CXPortfolioArchSlide({
                         justifyContent: "center",
                       }}
                     >
-                      <Icon size={22} color="#7EB3E8" strokeWidth={1.75} />
+                      <Icon size={26} color="#7EB3E8" strokeWidth={1.75} />
                     </div>
                     <span
                       style={{
@@ -226,6 +227,7 @@ export default function CXPortfolioArchSlide({
                   style={{
                     background: `rgba(40,96,178,${layer.opacity})`,
                     border: "1px solid rgba(40,96,178,0.2)",
+                    borderLeft: "4px solid rgba(40,96,178,0.5)",
                     borderRadius: 10,
                     padding: "12px 20px",
                     textAlign: "center",
@@ -271,10 +273,10 @@ export default function CXPortfolioArchSlide({
             <h3
               className="font-heading"
               style={{
-                fontSize: 24,
+                fontSize: 26,
                 fontWeight: 700,
                 color: "#FFFFFF",
-                margin: "0 0 8px",
+                margin: "0 0 16px",
                 textAlign: "center",
                 lineHeight: 1.2,
               }}
@@ -311,20 +313,7 @@ export default function CXPortfolioArchSlide({
                       gap: 8,
                     }}
                   >
-                    <div
-                      style={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: 14,
-                        background: "rgba(40,96,178,0.18)",
-                        border: "1px solid rgba(40,96,178,0.3)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Icon size={24} color="#7EB3E8" strokeWidth={1.75} />
-                    </div>
+                    <Icon size={40} color="#7EB3E8" strokeWidth={1.5} />
                     <p
                       style={{
                         fontSize: 16,

@@ -49,6 +49,7 @@ import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
 import ProductDataPlatformSlide from "./slides/ProductDataPlatformSlide";
 import ProductDataPlatformCopySlide from "./slides/ProductDataPlatformCopySlide";
 import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
+import WhereWeWinSlide from "./slides/WhereWeWinSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -112,6 +113,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "product-data-platform":{ id: "product-data-platform", label: "Product + Data Platform", component: ProductDataPlatformSlide, theme: "dark" },
   "product-data-platform-copy":{ id: "product-data-platform-copy", label: "Product + Data Platform (Copy)", component: ProductDataPlatformCopySlide, theme: "dark" },
   "cx-portfolio-arch":{ id: "cx-portfolio-arch", label: "CX Portfolio Architecture", component: CXPortfolioArchSlide, theme: "dark" },
+  "where-we-win":    { id: "where-we-win",      label: "Where We Win",             component: WhereWeWinSlide,        theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
