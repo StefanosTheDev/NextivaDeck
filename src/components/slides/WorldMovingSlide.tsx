@@ -109,10 +109,10 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
-          padding: "36px 100px 0",
+          padding: "36px 100px 16px",
           display: "grid",
           gridTemplateColumns: "1fr auto 1fr auto 1fr",
-          alignItems: "stretch",
+          alignItems: "start",
         }}
       >
         {columns.map((col, i) => (
@@ -122,7 +122,7 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.1)",
                 borderRadius: 16,
-                padding: "28px 24px",
+                padding: `24px 22px ${i === 0 ? 48 : 24}px 22px`,
                 display: "flex",
                 flexDirection: "column",
               }}
@@ -173,11 +173,11 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
 
               <div
                 style={{
-                  height: 350,
+                  height: 420,
                   flexShrink: 0,
                   background: "rgba(255,255,255,0.03)",
                   borderRadius: 12,
-                  margin: "20px 0 24px",
+                  margin: "16px 0 20px",
                   border: "1px solid rgba(255,255,255,0.05)",
                   overflow: "hidden",
                   position: "relative",
@@ -194,14 +194,14 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
                 )}
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {col.bullets.map((b, j) => (
                   <div
                     key={j}
                     style={{
                       background: "rgba(255,255,255,0.06)",
                       borderRadius: 8,
-                      padding: "12px 16px",
+                      padding: "10px 14px",
                     }}
                   >
                     <p
