@@ -53,6 +53,7 @@ import AiTailwindOptionESlide from "./slides/AiTailwindOptionESlide";
 import AiTailwindCopySlide from "./slides/AiTailwindCopySlide";
 import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
 import MarketTAMLovableSlide from "./slides/MarketTAMLovableSlide";
+import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -67,6 +68,7 @@ export interface SlideDef {
 const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   cover:               { id: "cover",               label: "Cover",               component: CoverSlide,               theme: "dark" },
   "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "dark" },
+  "better-outcomes":   { id: "better-outcomes",     label: "Our Mission",         component: BetterOutcomesSlide,      theme: "dark" },
   glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
   who:                 { id: "who",                  label: "Who We Serve",        component: WhoWeServeSlide,          theme: "dark" },
@@ -125,6 +127,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
 export const DEFAULT_SLIDE_ORDER: string[] = [
   "cover",
   "safe-harbor",
+  "better-outcomes",
   "glance",
   "founder",
   "who",
