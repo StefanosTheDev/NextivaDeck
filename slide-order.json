@@ -13,14 +13,15 @@
     "problem",
     "platform",
     "solution",
-    "unified-data-model",
     "cx-portfolio-thomas",
+    "unified-data-model",
     "cx-portfolio-puzzle-cross",
     "ai-tailwind-opt-a",
     "market-tam-lovable",
     "market",
     "agentic-opp-2",
     "agentic-opp-copy",
+    "agentic-opp-copy-2",
     "agentic-opp",
     "agentic-opp-lovable",
     "ai-tailwind-copy",
@@ -88,7 +89,6 @@
     "ai-tailwind-opt-d",
     "ai-tailwind-opt-e",
     "ai-tailwind-2",
-    "cx-portfolio",
     "cx-portfolio-opt-a",
     "cx-portfolio-opt-c",
     "cx-portfolio-opt-b",
@@ -98,10 +98,9 @@
     "win",
     "agentic-opp",
     "ai-tailwind-copy",
-    "market-tam-lovable",
-    "market",
     "durable-edge",
     "customer-use-cases-divider",
-    "cx-portfolio-puzzle-cross"
+    "cx-portfolio-puzzle-cross",
+    "cx-portfolio"
   ]
 }

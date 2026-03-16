@@ -40,6 +40,7 @@ import RevenueVisibilitySlide from "./slides/RevenueVisibilitySlide";
 import CashFlowTrendsSlide from "./slides/CashFlowTrendsSlide";
 import AgenticOpportunity2Slide from "./slides/AgenticOpportunity2Slide";
 import AgenticOpportunityCopySlide from "./slides/AgenticOpportunityCopySlide";
+import AgenticOpportunityCopy2Slide from "./slides/AgenticOpportunityCopy2Slide";
 import AiTailwind2Slide from "./slides/AiTailwind2Slide";
 import DurableEdgeSlide from "./slides/DurableEdgeSlide";
 import MarketTAMSlide from "./slides/MarketTAMSlide";
@@ -90,6 +91,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   market:              { id: "market",               label: "Market",              component: MarketSlide,              theme: "dark" },
   "agentic-opp":       { id: "agentic-opp",         label: "AI Opportunity",      component: AgenticOpportunitySlide,  theme: "dark" },
   "agentic-opp-copy":   { id: "agentic-opp-copy",   label: "AI Opportunity (copy)", component: AgenticOpportunityCopySlide, theme: "dark" },
+  "agentic-opp-copy-2": { id: "agentic-opp-copy-2", label: "AI Opportunity (copy 2)", component: AgenticOpportunityCopy2Slide, theme: "dark" },
   "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "dark" },
   "cx-market-sizing":  { id: "cx-market-sizing",     label: "CX Market Sizing",    component: CXMarketSizingSlide,      theme: "dark" },
   "labor-cost-savings":{ id: "labor-cost-savings",   label: "Labor Cost Savings",  component: LaborCostSavingsSlide,    theme: "dark" },

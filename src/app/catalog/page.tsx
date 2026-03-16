@@ -599,28 +599,42 @@ export default function CatalogPage() {
                   gap: 24,
                 }}
               >
-                {order.map((id) => {
-                  const slide = SLIDE_COMPONENTS[id];
-                  if (!slide) return null;
-                  const isHidden = hiddenSlides.includes(id);
-                  if (viewFilter === "published" && isHidden) return null;
-                  if (viewFilter === "hidden" && !isHidden) return null;
-                  const globalIndex = order.indexOf(id);
-                  return (
-                    <SortableSlideCard
-                      key={id}
-                      slide={slide}
-                      index={globalIndex}
-                      isActive={activeId === id}
-                      isHidden={isHidden}
-                      onToggleHide={() => toggleHideSlide(id)}
-                      category={categories[id] || null}
-                      categoryColor={categories[id] ? getColorForCategory(categories[id], uniqueCategories) : null}
-                      allCategories={uniqueCategories}
-                      onAssignCategory={(cat) => assignCategory(id, cat)}
-                    />
-                  );
-                })}
+                {(() => {
+                  const hiddenSet = new Set(hiddenSlides);
+                  const publishedIndexMap = new Map<string, number>();
+                  let pubIdx = 0;
+                  for (const id of order) {
+                    if (!hiddenSet.has(id)) {
+                      publishedIndexMap.set(id, pubIdx);
+                      pubIdx++;
+                    }
+                  }
+
+                  return order.map((id) => {
+                    const slide = SLIDE_COMPONENTS[id];
+                    if (!slide) return null;
+                    const isHidden = hiddenSet.has(id);
+                    if (viewFilter === "published" && isHidden) return null;
+                    if (viewFilter === "hidden" && !isHidden) return null;
+                    const displayIndex = viewFilter === "published"
+                      ? (publishedIndexMap.get(id) ?? order.indexOf(id))
+                      : order.indexOf(id);
+                    return (
+                      <SortableSlideCard
+                        key={id}
+                        slide={slide}
+                        index={displayIndex}
+                        isActive={activeId === id}
+                        isHidden={isHidden}
+                        onToggleHide={() => toggleHideSlide(id)}
+                        category={categories[id] || null}
+                        categoryColor={categories[id] ? getColorForCategory(categories[id], uniqueCategories) : null}
+                        allCategories={uniqueCategories}
+                        onAssignCategory={(cat) => assignCategory(id, cat)}
+                      />
+                    );
+                  });
+                })()}
               </div>
             </SortableContext>
 
