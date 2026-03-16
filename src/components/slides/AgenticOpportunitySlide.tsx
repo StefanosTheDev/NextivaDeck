@@ -1,11 +1,12 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
-const topStats = [
-  { stat: "18M", label: "Contact center agents globally", sub: "~3M in the U.S. alone" },
-  { stat: "85%", label: "Routine inquiries automatable", sub: "Tier-1 service, scheduling, payments" },
-  { stat: "5–7M", label: "Agent workloads replaceable by AI", sub: "30–40% interaction shift over next decade" },
+const topCards = [
+  { stat: "18M", label: "Contact center seats total" },
+  { stat: "18M", label: "contact center seats" },
+  { stat: "7M", label: "businesses doing CX without calling it a contact center" },
 ];
 
 const marketBullets = [
@@ -53,21 +54,99 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
         </p>
       </motion.header>
 
-      {/* Top stats row */}
+      {/* Stat cards (18M = 6M+12M + 7M) - same space as prior 18M/85%/5-7M row */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.15 }}
-        style={{ display: "flex", gap: 16, padding: "20px 80px 0" }}
+        style={{ padding: "20px 80px 0", position: "relative" }}
       >
-        {topStats.map((s) => (
-          <div key={s.stat} style={{
-            flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 14, padding: "24px 28px",
+        <div style={{ width: "100%", position: "relative", paddingBottom: 6 }}>
+          {/* Nextiva blue ocean - above oval */}
+          <p className="font-heading" style={{
+            fontSize: 28, fontWeight: 700, color: "#2860B2", marginBottom: 16, marginTop: 0,
+            textAlign: "center", letterSpacing: "0.02em",
+            textShadow: "0 0 24px rgba(40,96,178,0.5)",
+            marginLeft: "calc((100% - 112px) / 2 + 64px)",
+            width: "calc((100% - 112px) / 2 - 8px)",
           }}>
-            <p className="font-heading" style={{ fontSize: 44, fontWeight: 700, color: "#CCC7C3", margin: 0, lineHeight: 1 }}>{s.stat}</p>
-            <p style={{ fontSize: 15, fontWeight: 700, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.3 }}>{s.label}</p>
-            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>{s.sub}</p>
+            Nextiva &quot;blue ocean&quot; opportunity
+          </p>
+          {/* Gold oval */}
+          <svg
+            style={{
+              position: "absolute",
+              left: "calc((100% - 112px) / 2 + 64px)",
+              top: 52,
+              width: "calc((100% - 112px) / 2 - 8px)",
+              height: 158,
+              pointerEvents: "none",
+            }}
+            viewBox="0 0 200 100"
+            preserveAspectRatio="none"
+          >
+            <ellipse cx="100" cy="50" rx="97" ry="47" fill="none" stroke="#FFB800" strokeWidth="2.5" />
+          </svg>
+          <div style={{ display: "flex", alignItems: "stretch", width: "100%", gap: 0 }}>
+            {topCards.map((card, i) => (
+              <React.Fragment key={i}>
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.25 + i * 0.05 }}
+                  style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", alignItems: "center" }}
+                >
+                  {i === 0 ? (
+                    <p className="font-heading" style={{
+                      fontSize: 16, fontWeight: 700, color: "#F0A88C", margin: "0 0 10px", lineHeight: 1.2,
+                      letterSpacing: "0.04em", textTransform: "uppercase", textShadow: "0 0 20px rgba(240,168,140,0.4)",
+                      textAlign: "center",
+                    }}>
+                      A market primed for disruption
+                    </p>
+                  ) : (
+                    <div style={{ height: 20, marginBottom: 10 }} />
+                  )}
+                  <div style={{
+                    flex: 1, width: "100%",
+                    background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: 14, padding: "24px 16px",
+                    display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+                  }}>
+                    {i === 1 ? (
+                      <>
+                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", flex: 1 }}>
+                          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minWidth: 0 }}>
+                            <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1, flexShrink: 0, fontVariantNumeric: "tabular-nums" }}>6M</p>
+                            <p style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.6)", margin: "6px 0 0", lineHeight: 1.2 }}>greater than 250 agents</p>
+                          </div>
+                          <span className="font-heading" style={{ flexShrink: 0, fontSize: 48, fontWeight: 700, color: "#FFFFFF", lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>+</span>
+                          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minWidth: 0 }}>
+                            <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1, flexShrink: 0, fontVariantNumeric: "tabular-nums" }}>12M</p>
+                            <p style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.6)", margin: "6px 0 0", lineHeight: 1.2 }}>less than 250 agents</p>
+                          </div>
+                        </div>
+                        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "12px 0 0", lineHeight: 1.35 }}>{card.label}</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1, minHeight: 48, fontVariantNumeric: "tabular-nums" }}>{card.stat}</p>
+                        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "12px 0 0", lineHeight: 1.35 }}>{card.label}</p>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+                {i === 0 && (
+                  <div style={{ flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", minWidth: 56 }}>
+                    <span className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>=</span>
+                  </div>
+                )}
+                {i === 1 && (
+                  <div style={{ flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", minWidth: 56 }}>
+                    <span className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>+</span>
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
           </div>
-        ))}
+        </div>
       </motion.div>
 
       {/* Three detail cards */}
