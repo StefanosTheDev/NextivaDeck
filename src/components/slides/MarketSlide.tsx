@@ -13,6 +13,11 @@ const quotes = [
     text: "Agentic AI will autonomously resolve 80% of common customer service issues without human intervention by 2029.",
     source: "Gartner, March 2025",
   },
+  {
+    stat: "70%",
+    text: "of customers will use a conversational AI interface to start their service journey by 2028.",
+    source: "Gartner, 2025",
+  },
 ];
 
 export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number }) {
@@ -88,6 +93,34 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
             </p>
             <p style={{ fontSize: 15, color: "rgba(255,255,255,0.4)", margin: "10px 0 0", fontWeight: 600 }}>
               — {quotes[1].source}
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Quote 3 — white stat, subtle card */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          style={{
+            display: "flex", alignItems: "center", gap: 40,
+            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 16, padding: "40px 48px",
+          }}
+        >
+          <span className="font-heading" style={{
+            fontSize: 72, fontWeight: 700, color: "#FFFFFF",
+            lineHeight: 1, flexShrink: 0, minWidth: 160, textAlign: "center",
+          }}>
+            {quotes[2].stat}
+          </span>
+          <div style={{ width: 1, height: 64, background: "rgba(255,255,255,0.12)", flexShrink: 0 }} />
+          <div>
+            <p style={{ fontSize: 22, color: "rgba(255,255,255,0.7)", margin: 0, lineHeight: 1.45 }}>
+              {quotes[2].text}
+            </p>
+            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.35)", margin: "10px 0 0", fontWeight: 600 }}>
+              — {quotes[2].source}
             </p>
           </div>
         </motion.div>
