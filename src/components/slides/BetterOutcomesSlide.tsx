@@ -35,7 +35,7 @@ export default function BetterOutcomesSlide({ slideNumber = 3 }: { slideNumber?:
             margin: 0,
           }}
         >
-          Our Mission
+          Our Purpose
         </motion.p>
 
         <motion.h1
