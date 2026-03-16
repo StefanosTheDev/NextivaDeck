@@ -29,9 +29,9 @@ const segments = [
     segment: "250–1,000 agents",
     seats: "~3.6M",
     share: "~20%",
-    bg: "rgba(34, 197, 94, 0.09)",
-    border: "rgba(34, 197, 94, 0.2)",
-    accent: "#86EFAC",
+    bg: "rgba(239, 68, 68, 0.10)",
+    border: "rgba(239, 68, 68, 0.22)",
+    accent: "#F87171",
   },
   {
     segment: "1,000+ agents",
@@ -99,22 +99,22 @@ export default function BlueOcean2CopySlide({ slideNumber = 13 }: { slideNumber?
               flex: 1,
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.08)",
-              borderLeft: "4px solid #2860B2",
-              borderRadius: 12,
-              padding: "22px 28px",
+              borderLeft: "5px solid #2860B2",
+              borderRadius: 14,
+              padding: "30px 34px",
               display: "flex",
               alignItems: "baseline",
-              gap: 14,
+              gap: 16,
             }}
           >
             <p
               className="font-heading"
-              style={{ fontSize: 40, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1 }}
+              style={{ fontSize: 46, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1 }}
             >
               {c.stat}
             </p>
             <p
-              style={{ fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.65)", margin: 0, lineHeight: 1.3 }}
+              style={{ fontSize: 16, fontWeight: 600, color: "rgba(255,255,255,0.65)", margin: 0, lineHeight: 1.3 }}
             >
               {c.label}
             </p>
@@ -204,18 +204,18 @@ export default function BlueOcean2CopySlide({ slideNumber = 13 }: { slideNumber?
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.8 }}
-            style={{ display: "flex", gap: 24, marginTop: 12, paddingLeft: 4 }}
+            style={{ display: "flex", gap: 32, marginTop: 16, paddingLeft: 4 }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <div style={{ width: 24, height: 8, borderRadius: 2, background: "#22C55E" }} />
-              <p style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.55)", margin: 0 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <div style={{ width: 32, height: 12, borderRadius: 3, background: "#22C55E" }} />
+              <p style={{ fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.6)", margin: 0 }}>
                 The Underserved Middle
               </p>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <div style={{ width: 24, height: 8, borderRadius: 2, background: "#EF4444" }} />
-              <p style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.55)", margin: 0 }}>
-                Crowded Enterprise
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <div style={{ width: 32, height: 12, borderRadius: 3, background: "#EF4444" }} />
+              <p style={{ fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.6)", margin: 0 }}>
+                Crowded Enterprise Space
               </p>
             </div>
           </motion.div>
@@ -242,7 +242,7 @@ export default function BlueOcean2CopySlide({ slideNumber = 13 }: { slideNumber?
         >
           <p style={{ fontSize: 17, fontWeight: 700, color: "#FFFFFF", margin: 0, textAlign: "center" }}>
             ~9.9M seats in the 1–100 range alone are underserved.
-            Enterprise (500+) is where everyone fights — we own the massive middle.
+            Enterprise (1,000+) is where everyone fights — we own the massive middle.
           </p>
         </div>
       </motion.div>

@@ -4,19 +4,17 @@ import SlideFooter from "../SlideFooter";
 
 const quotes = [
   {
-    stat: "98%",
-    text: "of enterprise contact centers have adopted AI in customer service workflows.",
-    source: "Salesforce, Feb 2026",
+    stat: "$41.4B",
+    text: "Conversational AI market by 2030",
+    subtext: "23.7% CAGR",
   },
   {
-    stat: "91%",
-    text: "of customer service leaders are under pressure to implement AI in 2026.",
-    source: "Gartner, Feb 2026",
+    stat: "44.5%",
+    text: "CAGR — Agentic AI in contact centers — the fastest growing segment",
   },
   {
     stat: "80%",
-    text: "Agentic AI will autonomously resolve 80% of common customer service issues without human intervention by 2029.",
-    source: "Gartner, March 2025",
+    text: "of customer service issues will be resolved autonomously by AI by 2029",
   },
 ];
 
@@ -36,12 +34,11 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
           MARKET VALIDATION
         </p>
         <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
-          The AI + CX convergence is accelerating.
+          The AI + CX convergence is accelerating
         </h1>
       </motion.header>
 
       <main style={{ flex: 1, padding: "36px 100px 0", display: "flex", flexDirection: "column", gap: 24, justifyContent: "center" }}>
-        {/* Quote 1 — 98% — white stat, subtle card */}
         <motion.div
           initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -54,7 +51,7 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
         >
           <span className="font-heading" style={{
             fontSize: 64, fontWeight: 700, color: "#FFFFFF",
-            lineHeight: 1, flexShrink: 0, minWidth: 150, textAlign: "center",
+            lineHeight: 1, flexShrink: 0, minWidth: 180, textAlign: "center",
           }}>
             {quotes[0].stat}
           </span>
@@ -63,13 +60,12 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
             <p style={{ fontSize: 20, color: "rgba(255,255,255,0.7)", margin: 0, lineHeight: 1.45 }}>
               {quotes[0].text}
             </p>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", margin: "8px 0 0", fontWeight: 600 }}>
-              — {quotes[0].source}
+            <p style={{ fontSize: 16, color: "#5BA0E0", margin: "8px 0 0", fontWeight: 700, letterSpacing: "0.03em" }}>
+              {quotes[0].subtext}
             </p>
           </div>
         </motion.div>
 
-        {/* Quote 2 — 91% — blue stat, blue-tinted card */}
         <motion.div
           initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -82,7 +78,7 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
         >
           <span className="font-heading" style={{
             fontSize: 64, fontWeight: 700, color: "#5BA0E0",
-            lineHeight: 1, flexShrink: 0, minWidth: 150, textAlign: "center",
+            lineHeight: 1, flexShrink: 0, minWidth: 180, textAlign: "center",
           }}>
             {quotes[1].stat}
           </span>
@@ -91,13 +87,9 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
             <p style={{ fontSize: 20, color: "rgba(255,255,255,0.8)", margin: 0, lineHeight: 1.45 }}>
               {quotes[1].text}
             </p>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.4)", margin: "8px 0 0", fontWeight: 600 }}>
-              — {quotes[1].source}
-            </p>
           </div>
         </motion.div>
 
-        {/* Quote 3 — 80% — white stat, subtle card */}
         <motion.div
           initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -110,7 +102,7 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
         >
           <span className="font-heading" style={{
             fontSize: 64, fontWeight: 700, color: "#FFFFFF",
-            lineHeight: 1, flexShrink: 0, minWidth: 150, textAlign: "center",
+            lineHeight: 1, flexShrink: 0, minWidth: 180, textAlign: "center",
           }}>
             {quotes[2].stat}
           </span>
@@ -118,9 +110,6 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
           <div>
             <p style={{ fontSize: 20, color: "rgba(255,255,255,0.7)", margin: 0, lineHeight: 1.45 }}>
               {quotes[2].text}
-            </p>
-            <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", margin: "8px 0 0", fontWeight: 600 }}>
-              — {quotes[2].source}
             </p>
           </div>
         </motion.div>

@@ -25,7 +25,7 @@ export default function CustomerBaseV2Slide({ slideNumber = 30 }: { slideNumber?
     <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)" }}>
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "48px 100px 0", flexShrink: 0 }}
+        style={{ padding: "48px clamp(32px, 6vw, 100px) 0", flexShrink: 0 }}
       >
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#7EB3E8", margin: "0 0 10px" }}>Our Customers</p>
         <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
@@ -35,11 +35,11 @@ export default function CustomerBaseV2Slide({ slideNumber = 30 }: { slideNumber?
 
       <motion.main
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-        style={{ flex: 1, padding: "28px 100px 0", display: "flex", gap: 56 }}
+        style={{ flex: 1, padding: "28px clamp(32px, 6vw, 100px) 0", display: "flex", gap: 56 }}
       >
-        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+        <div style={{ flex: 1.4, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <p className="font-body" style={{ fontSize: 16, fontWeight: 700, color: "rgba(255,255,255,0.5)", margin: "0 0 20px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Industry distribution</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {industries.map((ind) => (
               <div key={ind.name}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 6 }}>
@@ -59,7 +59,7 @@ export default function CustomerBaseV2Slide({ slideNumber = 30 }: { slideNumber?
           </div>
         </div>
 
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 16, justifyContent: "center" }}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 14, justifyContent: "center" }}>
           {rightMetrics.map((m, i) => (
             <motion.article
               key={m.label}
@@ -67,7 +67,7 @@ export default function CustomerBaseV2Slide({ slideNumber = 30 }: { slideNumber?
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
               style={{
-                padding: "24px 28px",
+                padding: "20px 24px",
                 display: "flex",
                 alignItems: "baseline",
                 gap: 20,
@@ -76,19 +76,19 @@ export default function CustomerBaseV2Slide({ slideNumber = 30 }: { slideNumber?
                 borderRadius: 14,
               }}
             >
-              <span className="font-heading" style={{ fontSize: 44, fontWeight: 700, color: "#7EB3E8", minWidth: 110, flexShrink: 0 }}>{m.stat}</span>
-              <span style={{ fontSize: 18, color: "rgba(255,255,255,0.5)", lineHeight: 1.4 }}>{m.label}</span>
+              <span className="font-heading" style={{ fontSize: 38, fontWeight: 700, color: "#7EB3E8", minWidth: 90, flexShrink: 0 }}>{m.stat}</span>
+              <span style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", lineHeight: 1.4 }}>{m.label}</span>
             </motion.article>
           ))}
         </div>
       </motion.main>
 
-      <div style={{ padding: "0 100px 0", flexShrink: 0 }}>
+      <div style={{ padding: "0 clamp(32px, 6vw, 100px) 0", flexShrink: 0 }}>
         <motion.div
           initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }}
           style={{ background: "rgba(40,96,178,0.10)", border: "1px solid rgba(40,96,178,0.25)", borderRadius: 12, padding: "20px 32px", width: "100%" }}
         >
-          <p style={{ fontSize: 22, color: "#FFFFFF", margin: 0, lineHeight: 1.5, textAlign: "center" }}>
+          <p style={{ fontSize: 20, color: "#FFFFFF", margin: 0, lineHeight: 1.5, textAlign: "center" }}>
             <span style={{ fontWeight: 700, color: "#7EB3E8" }}>Market-agnostic:</span>{" "}
             Customer diversity by size, industry, and tenure reinforces stability.
           </p>

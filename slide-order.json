@@ -2,7 +2,6 @@
   "order": [
     "cover",
     "safe-harbor",
-    "better-outcomes",
     "glance",
     "glance-projections",
     "founder",
@@ -24,6 +23,7 @@
     "revenue-opportunity",
     "cx-portfolio-puzzle",
     "cx-portfolio-data",
+    "cx-portfolio-arch",
     "product-data-platform",
     "product-data-platform-copy",
     "agentic-opp",
