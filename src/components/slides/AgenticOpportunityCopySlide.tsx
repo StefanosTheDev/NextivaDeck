@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
 const tableData = [
-  { seats1: "<250", pctCenters: "~90%", seats2: "12 million", pctSeats: "65%", label: "Nextiva's market opportunity" },
-  { seats1: ">250", pctCenters: "~10%", seats2: "6 million", pctSeats: "35%", label: "Enterprise incumbent" },
+  { seats1: "<250", pctCenters: "~90%", seats2: "12 million", pctSeats: "65%", label: "Nextiva Greenfield Market" },
+  { seats1: ">250", pctCenters: "~10%", seats2: "6 million", pctSeats: "35%", label: "Enterprise Incumbents Battle" },
 ];
 
 export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slideNumber?: number }) {
@@ -64,12 +64,14 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
                     paddingRight: 24,
                     fontStyle: i === 0 ? "normal" : "italic",
                     fontWeight: i === 0 ? 700 : 400,
-                    color: i === 0 ? "#FFFFFF" : "rgba(255,255,255,0.5)",
+                    color: i === 0 ? "#FFFFFF" : "#E57373",
                     fontSize: i === 0 ? 17 : 15,
                     lineHeight: 1.4,
                     minHeight: 56,
                     display: "flex",
                     alignItems: "center",
+                    justifyContent: i === 1 ? "center" : "flex-start",
+                    textAlign: i === 1 ? "center" : "left",
                     borderBottom: i < tableData.length - 1 ? "1px solid transparent" : "none",
                     borderLeft: i === 0 ? "4px solid #7EB3E8" : "4px solid transparent",
                     paddingLeft: i === 0 ? 12 : 4,
@@ -115,7 +117,7 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
                     }}>
                       <td style={{
                         padding: "18px 24px",
-                        color: i === 0 ? "#FFFFFF" : "#FFFFFF",
+                        color: i === 0 ? "#FFFFFF" : "#E57373",
                         fontWeight: i === 0 ? 700 : 600,
                         fontSize: i === 0 ? 18 : 16,
                         textAlign: "center",
@@ -125,7 +127,7 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
                       </td>
                       <td style={{
                         padding: "18px 24px",
-                        color: i === 0 ? "#7EB3E8" : "rgba(255,255,255,0.8)",
+                        color: i === 0 ? "#7EB3E8" : "#E57373",
                         fontWeight: i === 0 ? 700 : 400,
                         fontSize: i === 0 ? 18 : 16,
                         textAlign: "center",
@@ -135,7 +137,7 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
                       </td>
                       <td style={{
                         padding: "18px 24px",
-                        color: i === 0 ? "#FFFFFF" : "#FFFFFF",
+                        color: i === 0 ? "#FFFFFF" : "#E57373",
                         fontWeight: i === 0 ? 700 : 600,
                         fontSize: i === 0 ? 18 : 16,
                         textAlign: "center",
@@ -145,7 +147,7 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
                       </td>
                       <td style={{
                         padding: "18px 24px",
-                        color: i === 0 ? "#7EB3E8" : "rgba(255,255,255,0.8)",
+                        color: i === 0 ? "#7EB3E8" : "#E57373",
                         fontWeight: i === 0 ? 700 : 400,
                         fontSize: i === 0 ? 18 : 16,
                         textAlign: "center",
