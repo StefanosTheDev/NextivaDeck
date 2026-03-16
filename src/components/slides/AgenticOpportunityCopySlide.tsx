@@ -21,6 +21,7 @@ const whyNextiva = [
   "Agentic & Human in Tandem",
   "Go-to-Market Moat",
   "Product Led Motion",
+  "Quick Time to Value",
 ];
 
 export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slideNumber?: number }) {
@@ -120,9 +121,13 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
                 <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>5</span>
                 <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{whyNextiva[4]}</span>
               </div>
-              <div style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
                 <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>3</span>
                 <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{whyNextiva[2]}</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
+                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>6</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{whyNextiva[5]}</span>
               </div>
             </div>
           </div>
