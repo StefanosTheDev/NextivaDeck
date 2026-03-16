@@ -16,10 +16,11 @@ const competitiveBullets = [
 ];
 
 const whyNextiva = [
-  "Unified CX platform replacing fragmented stacks",
-  "AI embedded across every interaction",
-  "Rapid deployment and time to value",
-  "Built for operators, not IT departments",
+  "Unified Customer Interactions",
+  "Unified Customer Data",
+  "Agentic & Human In Tandem",
+  "Go-to-Market Moat",
+  "Product-Led Motion",
 ];
 
 export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slideNumber?: number }) {
@@ -102,7 +103,7 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
             <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
               The complete Agentic CX platform
             </h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, flex: 1, minHeight: 0, alignContent: "start" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "auto auto auto", gridAutoFlow: "column", gap: 8, flex: 1, minHeight: 0, alignContent: "start" }}>
               {whyNextiva.map((b, i) => (
                 <div key={b} style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
                   <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>{i + 1}</span>
