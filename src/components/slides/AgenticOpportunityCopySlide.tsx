@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
 const topCards = [
-  { stat: "25M", label: "under 25 million customer-facing businesses" },
+  { stat: "18M", label: "Contact center seats total" },
   { stat: "18M", label: "contact center seats" },
   { stat: "7M", label: "businesses doing CX without calling it a contact center" },
 ];
@@ -129,13 +129,37 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
           </div>
         </motion.div>
 
-        {/* Stat cards (25M = 18M + 7M) */}
+        {/* Stat cards (18M = 6M+12M + 7M) */}
         <div style={{
           width: "100%",
           flexShrink: 0,
           marginTop: 20,
           paddingBottom: 6,
+          position: "relative",
         }}>
+          {/* Oval highlight around 12M and 7M only - bright amber for contrast */}
+          <svg
+            style={{
+              position: "absolute",
+              left: "calc((100% - 112px) / 2 + 64px)",
+              top: 10,
+              width: "calc((100% - 112px) / 2 - 8px)",
+              height: 158,
+              pointerEvents: "none",
+            }}
+            viewBox="0 0 200 100"
+            preserveAspectRatio="none"
+          >
+            <ellipse
+              cx="100"
+              cy="50"
+              rx="97"
+              ry="47"
+              fill="none"
+              stroke="#FFB800"
+              strokeWidth="2.5"
+            />
+          </svg>
           <div style={{
             display: "flex",
             alignItems: "stretch",
@@ -181,14 +205,14 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
                     {i === 1 ? (
                       <>
                         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", flex: 1 }}>
-                          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                            <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1 }}>6M</p>
-                            <p style={{ fontSize: 11, fontWeight: 600, color: "#E57373", margin: "6px 0 0", lineHeight: 1.2 }}>&gt;250</p>
+                          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minWidth: 0 }}>
+                            <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1, flexShrink: 0 }}>6M</p>
+                            <p style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.6)", margin: "6px 0 0", lineHeight: 1.2 }}>greater than 250 agents</p>
                           </div>
                           <span className="font-heading" style={{ flexShrink: 0, fontSize: 44, fontWeight: 700, color: "#FFFFFF", lineHeight: 1 }}>+</span>
-                          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                            <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1 }}>12M</p>
-                            <p style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF", margin: "6px 0 0", lineHeight: 1.2 }}>&lt;250</p>
+                          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", minWidth: 0 }}>
+                            <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1, flexShrink: 0 }}>12M</p>
+                            <p style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.6)", margin: "6px 0 0", lineHeight: 1.2 }}>less than 250 agents</p>
                           </div>
                         </div>
                         <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "12px 0 0", lineHeight: 1.35 }}>
@@ -232,6 +256,15 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
               </React.Fragment>
             ))}
           </div>
+          <p className="font-heading" style={{
+            fontSize: 28, fontWeight: 700, color: "#2860B2", marginTop: 20,
+            textAlign: "center", letterSpacing: "0.02em",
+            textShadow: "0 0 24px rgba(40,96,178,0.5)",
+            marginLeft: "calc((100% - 112px) / 2 + 64px)",
+            width: "calc((100% - 112px) / 2 - 8px)",
+          }}>
+            Nextiva &quot;blue ocean&quot; opportunity
+          </p>
         </div>
 
       </motion.main>
