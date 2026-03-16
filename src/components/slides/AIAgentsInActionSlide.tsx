@@ -50,7 +50,7 @@ export default function AIAgentsInActionSlide({ slideNumber = 20 }: { slideNumbe
         </h1>
         <p style={{
           fontSize: 20, color: "rgba(255,255,255,0.5)", margin: "12px 0 0",
-          lineHeight: 1.5, maxWidth: 900,
+          lineHeight: 1.5, maxWidth: 900, whiteSpace: "nowrap",
         }}>
           From first contact to resolution — autonomous AI agents powering every customer conversation.
         </p>
