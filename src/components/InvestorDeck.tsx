@@ -100,6 +100,12 @@ export default function InvestorDeck() {
   }, [next, prev]);
 
   useEffect(() => {
+    if (slides.length > 0 && cur >= slides.length) {
+      setCur(slides.length - 1);
+    }
+  }, [slides, cur]);
+
+  useEffect(() => {
     if (isPreview) return;
     let t: NodeJS.Timeout;
     const show = () => { setNav(true); clearTimeout(t); t = setTimeout(() => setNav(false), 3000); };
@@ -108,8 +114,13 @@ export default function InvestorDeck() {
     return () => { window.removeEventListener("mousemove", show); clearTimeout(t); };
   }, [isPreview]);
 
-  const Slide = slides[cur].component;
-  const navTheme = slides[cur].theme === "dark" ? "nav-dark" : "nav-light";
+  const safeCur = slides.length > 0 ? Math.min(cur, slides.length - 1) : 0;
+  const currentSlide = slides[safeCur];
+
+  if (!currentSlide) return null;
+
+  const Slide = currentSlide.component;
+  const navTheme = currentSlide.theme === "dark" ? "nav-dark" : "nav-light";
 
   return (
     <div ref={containerRef} className="deck-viewport">
@@ -137,7 +148,7 @@ export default function InvestorDeck() {
         >
           <span>Preview Mode — Changes not published</span>
           <span style={{ fontSize: 13, fontWeight: 400, opacity: 0.7 }}>
-            Slide {cur + 1} of {slides.length}
+            Slide {safeCur + 1} of {slides.length}
           </span>
           <a
             href="/catalog"
@@ -165,7 +176,7 @@ export default function InvestorDeck() {
           transition: "opacity 0.3s ease-in-out",
         }}
       >
-        <Slide slideNumber={cur + 1} />
+        <Slide slideNumber={safeCur + 1} />
       </div>
 
       {/* Navigation overlay */}
@@ -174,13 +185,13 @@ export default function InvestorDeck() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}
             className={`absolute inset-0 pointer-events-none z-50 ${navTheme}`}>
 
-            {cur > 0 && (
+            {safeCur > 0 && (
               <button onClick={prev}
                 className="nav-arrow absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all pointer-events-auto cursor-pointer">
                 <ChevronLeft className="w-5 h-5" />
               </button>
             )}
-            {cur < slides.length - 1 && (
+            {safeCur < slides.length - 1 && (
               <button onClick={next}
                 className="nav-arrow absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all pointer-events-auto cursor-pointer">
                 <ChevronRight className="w-5 h-5" />
@@ -189,7 +200,7 @@ export default function InvestorDeck() {
 
             <div className="nav-pill absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full pointer-events-auto">
               {slides.map((s, i) => (
-                <button key={s.id} onClick={() => go(i)} className={`nav-dot ${i === cur ? "active" : ""}`} title={s.label} />
+                <button key={s.id} onClick={() => go(i)} className={`nav-dot ${i === safeCur ? "active" : ""}`} title={s.label} />
               ))}
             </div>
 
