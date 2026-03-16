@@ -21,6 +21,7 @@ const whyNextiva = [
   "Agentic & Human In Tandem",
   "Go-to-Market Moat",
   "Product-Led Motion",
+  "Quick Time to Value",
 ];
 
 export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slideNumber?: number }) {
