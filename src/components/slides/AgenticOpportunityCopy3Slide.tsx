@@ -69,7 +69,7 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
             marginLeft: "calc((100% - 112px) / 2 + 64px)",
             width: "calc((100% - 112px) / 2 - 8px)",
           }}>
-            Nextiva &quot;blue ocean&quot; opportunity
+            Nextiva&apos;s &quot;white space&quot; opportunity
           </p>
           {/* Oval highlight around 12M and 7M only - bright amber for contrast */}
           <svg
