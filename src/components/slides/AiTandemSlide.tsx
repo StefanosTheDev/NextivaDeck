@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { BrainCog, Plane, Bot } from "lucide-react";
+import { BrainCog, Plane, Briefcase } from "lucide-react";
 
 const modes = [
   { icon: BrainCog, title: "Agent Assist", line: "AI supports. Humans lead." },
   { icon: Plane, title: "Autopilot", line: "AI drives. Humans oversee." },
-  { icon: Bot, title: "Autonomous", line: "AI handles end-to-end." },
+  { icon: Briefcase, title: "Autonomous", line: "AI handles end-to-end." },
 ];
 
 export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: number }) {
@@ -34,7 +34,7 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
       {/* Three cards */}
       <motion.main
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-        style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "40px 100px 0", gap: 32 }}
+        style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 100px 0", gap: 32 }}
       >
         {modes.map((m) => {
           const Icon = m.icon;
