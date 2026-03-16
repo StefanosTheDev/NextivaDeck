@@ -40,7 +40,7 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
           OUR SOLUTION
         </p>
         <h1 className="font-heading" style={{ fontSize: 54, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
-          CX that delivers business outcomes at the moment of interaction.
+          Delivering business outcomes at moments of interaction.
         </h1>
       </motion.header>
 

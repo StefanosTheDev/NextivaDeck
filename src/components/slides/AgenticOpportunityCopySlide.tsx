@@ -7,6 +7,12 @@ const tableData = [
   { seats1: ">250", pctCenters: "~10%", seats2: "6 million", pctSeats: "35%", label: "Enterprise Incumbents Battle" },
 ];
 
+const topCards = [
+  { stat: "25M", label: "businesses that are customer-facing" },
+  { stat: "18M", label: "contact center seats" },
+  { stat: "7M", label: "businesses doing CX without calling it a contact center" },
+];
+
 export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slideNumber?: number }) {
   return (
     <div
@@ -32,13 +38,64 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
 
       <motion.main
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
-        style={{ flex: 1, padding: "16px 80px 0", display: "flex", flexDirection: "column", minHeight: 0 }}
+        style={{ flex: 1, padding: "12px 80px 0", display: "flex", flexDirection: "column", minHeight: 0 }}
       >
+        {/* Three stat cards above the chart */}
+        <div style={{
+          width: "100%",
+          flexShrink: 0,
+          marginTop: 40,
+          paddingBottom: 6,
+        }}>
+          <div style={{
+            display: "flex",
+            gap: 16,
+            width: "100%",
+          }}>
+            {topCards.map((card, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.25 + i * 0.05 }}
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: 14,
+                  padding: "24px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                {i === 0 && (
+                  <p className="font-heading" style={{
+                    fontSize: 16, fontWeight: 700, color: "#F0A88C", margin: "0 0 12px", lineHeight: 1.2,
+                    letterSpacing: "0.04em", textTransform: "uppercase", textShadow: "0 0 20px rgba(240,168,140,0.4)",
+                  }}>
+                    Large market opportunity
+                  </p>
+                )}
+                <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1, minHeight: 48 }}>
+                  {card.stat}
+                </p>
+                <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "12px 0 0", lineHeight: 1.35 }}>
+                  {card.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         <div style={{
           flex: 1,
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
+          paddingTop: 6,
+          minHeight: 0,
         }}>
           <div style={{
             display: "flex",
@@ -163,10 +220,17 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
           </div>
         </div>
 
+        {/* Reserved space for future third row of cards (same size as top cards) */}
+        <div style={{
+          flexShrink: 0,
+          minHeight: 130,
+          marginTop: "auto",
+        }} />
+
         <div style={{
           flexShrink: 0,
           display: "flex", alignItems: "center", justifyContent: "center",
-          padding: "16px 32px", marginTop: "auto",
+          padding: "16px 32px",
           background: "rgba(40,96,178,0.2)", border: "1px solid rgba(40,96,178,0.35)",
         }}>
           <p className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: 0 }}>
