@@ -115,8 +115,8 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
                 >
                   {i === 0 ? (
                     <p className="font-heading" style={{
-                      fontSize: 16, fontWeight: 700, color: "#F0A88C", margin: "0 0 10px", lineHeight: 1.2,
-                      letterSpacing: "0.04em", textTransform: "uppercase", textShadow: "0 0 20px rgba(240,168,140,0.4)",
+                      fontSize: 16, fontWeight: 700, color: "#7EB8E0", margin: "0 0 10px", lineHeight: 1.2,
+                      letterSpacing: "0.04em", textTransform: "uppercase", textShadow: "0 0 20px rgba(126,184,224,0.4)",
                       textAlign: "center",
                     }}>
                       A market primed for disruption
