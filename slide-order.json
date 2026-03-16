@@ -2,14 +2,19 @@
   "order": [
     "cover",
     "safe-harbor",
+    "better-outcomes",
     "glance",
     "founder",
     "who",
+    "what-we-are-close-thomas",
     "customer-base-lovable",
     "journey",
+    "world-moving-thomas",
     "problem",
     "platform",
     "solution",
+    "unified-data-model",
+    "cx-portfolio-thomas",
     "cx-portfolio-puzzle-cross",
     "ai-tailwind-opt-a",
     "market-tam-lovable",
@@ -17,9 +22,10 @@
     "agentic-opp-2",
     "agentic-opp-copy",
     "agentic-opp",
-    "ai-tandem",
     "ai-tailwind-copy",
     "ai-tailwind",
+    "ai-agents-in-action",
+    "ai-tandem",
     "market-tam",
     "cx-market-sizing",
     "labor-cost-savings",
@@ -43,7 +49,6 @@
     "appendix-products",
     "customer-base",
     "durable-edge",
-    "unified-data-model",
     "ai-tailwind-opt-b",
     "ai-tailwind-opt-c",
     "ai-tailwind-opt-d",
@@ -54,9 +59,14 @@
     "cx-portfolio-opt-b",
     "cx-portfolio-opt-c"
   ],
-  "categories": {},
+  "categories": {
+    "world-moving-thomas": "from Thomas",
+    "what-we-are-close-thomas": "from Thomas",
+    "cx-portfolio-thomas": "from Thomas"
+  },
   "categoryNames": [
-    "dividers"
+    "dividers",
+    "from Thomas"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
@@ -81,6 +91,9 @@
     "agentic-opp",
     "ai-tailwind-copy",
     "market-tam-lovable",
-    "market"
+    "market",
+    "durable-edge",
+    "customer-use-cases-divider",
+    "cx-portfolio-puzzle-cross"
   ]
 }

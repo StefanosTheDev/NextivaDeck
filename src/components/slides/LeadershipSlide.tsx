@@ -17,9 +17,10 @@ const management = [
   { name: "Yaniv Masjedi", role: "Chief Marketing Officer", photo: "/images/headshot-yaniv.png" },
   { name: "Josh Lesavoy", role: "Chief Information Officer", photo: "/images/headshot-josh.png" },
   { name: "Chris Reaburn", role: "Chief Sales Officer", photo: "/images/headshot-chris.png" },
-  { name: "Senthil Velayutham", role: "Chief Technology & Product Officer", photo: "/images/headshot-senthil.png" },
+  { name: "Senthil Velayutham", role: "Chief Product Officer", photo: "/images/headshot-senthil.png" },
   { name: "Ken McMahon", role: "Chief Customer Officer", photo: "/images/headshot-ken.png" },
   { name: "Seksom Suriyapa", role: "Chief Transformation Officer", photo: "/images/headshot-seksom.jpg", needsFrame: true, objectPosition: "center 15%" },
+  { name: "Ran Ezerzer", role: "Chief Technology Officer", photo: "/images/headshot-ran.jpg", needsFrame: true, objectPosition: "center 15%", framePadding: "6px 10px" },
 ];
 
 const advisors = [
@@ -27,15 +28,15 @@ const advisors = [
   { name: "Alex Pinchev", role: "President & CRO, RedHat, Rackspace", photo: "/images/headshot-alex.png", needsFrame: true },
 ];
 
-function PersonCard({ name, role, photo, objectPosition = "center center", needsFrame = false }: {
-  name: string; role: string; photo: string; objectPosition?: string; needsFrame?: boolean;
+function PersonCard({ name, role, photo, objectPosition = "center center", needsFrame = false, framePadding, imgInset }: {
+  name: string; role: string; photo: string; objectPosition?: string; needsFrame?: boolean; framePadding?: string; imgInset?: string;
 }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
       <div style={{
         width: 68, height: 68, borderRadius: 10, overflow: "hidden", flexShrink: 0,
         background: "#0a1628",
-        padding: needsFrame ? "8px 13px" : 0,
+        padding: needsFrame ? (framePadding || "8px 13px") : 0,
         boxSizing: "border-box" as const,
       }}>
         <div style={{
@@ -44,10 +45,16 @@ function PersonCard({ name, role, photo, objectPosition = "center center", needs
           overflow: "hidden",
           border: needsFrame ? "1px solid rgba(255,255,255,0.85)" : "none",
           boxSizing: "border-box" as const,
+          position: "relative" as const,
         }}>
           <img
             src={photo} alt={name}
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition }}
+            style={{
+              ...(imgInset
+                ? { position: "absolute" as const, inset: imgInset, width: "auto", height: "auto" }
+                : { width: "100%", height: "100%" }),
+              objectFit: "cover", objectPosition,
+            }}
           />
         </div>
       </div>

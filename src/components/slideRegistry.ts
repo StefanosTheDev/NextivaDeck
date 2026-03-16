@@ -53,6 +53,11 @@ import AiTailwindOptionESlide from "./slides/AiTailwindOptionESlide";
 import AiTailwindCopySlide from "./slides/AiTailwindCopySlide";
 import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
 import MarketTAMLovableSlide from "./slides/MarketTAMLovableSlide";
+import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
+import WorldMovingSlide from "./slides/WorldMovingSlide";
+import WhatWeAreCloseSlide from "./slides/WhatWeAreCloseSlide";
+import CXPortfolioThomasSlide from "./slides/CXPortfolioThomasSlide";
+import AIAgentsInActionSlide from "./slides/AIAgentsInActionSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -67,6 +72,7 @@ export interface SlideDef {
 const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   cover:               { id: "cover",               label: "Cover",               component: CoverSlide,               theme: "dark" },
   "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "dark" },
+  "better-outcomes":   { id: "better-outcomes",     label: "Our Mission",         component: BetterOutcomesSlide,      theme: "dark" },
   glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
   who:                 { id: "who",                  label: "Who We Serve",        component: WhoWeServeSlide,          theme: "dark" },
@@ -120,11 +126,16 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-copy":  { id: "ai-tailwind-copy",   label: "AI Tailwind (copy)",   component: AiTailwindCopySlide,     theme: "dark" },
   "customer-base-lovable": { id: "customer-base-lovable", label: "Customer Base (Lovable)", component: CustomerBaseLovableSlide, theme: "dark" },
   "market-tam-lovable": { id: "market-tam-lovable", label: "Market TAM (Lovable)", component: MarketTAMLovableSlide, theme: "dark" },
+  "world-moving-thomas": { id: "world-moving-thomas", label: "#4 World Moving to Unified CX (Thomas · SlideWorldMoving)", component: WorldMovingSlide, theme: "dark", isNew: true },
+  "what-we-are-close-thomas": { id: "what-we-are-close-thomas", label: "#6 What We Are Close (Thomas · SlideWhatWeAreClose)", component: WhatWeAreCloseSlide, theme: "dark", isNew: true },
+  "cx-portfolio-thomas": { id: "cx-portfolio-thomas", label: "#15 CX Platform Portfolio (Thomas · SlideCXPortfolio)", component: CXPortfolioThomasSlide, theme: "dark", isNew: true },
+  "ai-agents-in-action": { id: "ai-agents-in-action", label: "AI Agents in Action", component: AIAgentsInActionSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
   "cover",
   "safe-harbor",
+  "better-outcomes",
   "glance",
   "founder",
   "who",
@@ -170,6 +181,10 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "ai-tailwind-2",
   "market-tam-lovable",
   "operating-leverage",
+  "world-moving-thomas",
+  "what-we-are-close-thomas",
+  "cx-portfolio-thomas",
+  "ai-agents-in-action",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
