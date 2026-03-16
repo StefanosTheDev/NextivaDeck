@@ -16,12 +16,10 @@ const competitiveBullets = [
 ];
 
 const whyNextiva = [
-  "Unified Customer Interactions",
-  "Unified Customer Data",
-  "Agentic and Human in Tandem",
-  "Go-to-Market Mode",
-  "Product-Lead Motion",
-  "Quick Time-to-Value",
+  "Unified CX platform replacing fragmented stacks",
+  "AI embedded across every interaction",
+  "Rapid deployment and time to value",
+  "Built for operators, not IT departments",
 ];
 
 export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slideNumber?: number }) {
