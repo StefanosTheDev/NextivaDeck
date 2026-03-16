@@ -102,14 +102,14 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
             <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
               The complete Agentic CX platform
             </h3>
-            <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-              {whyNextiva.map((b) => (
-                <li key={b} style={{ fontSize: 13, color: "rgba(255,255,255,0.78)", lineHeight: 1.45, marginBottom: 4, paddingLeft: 12, position: "relative" }}>
-                  <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.5)" }}>•</span>
-                  {b}
-                </li>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, flex: 1, minHeight: 0, alignContent: "start" }}>
+              {whyNextiva.map((b, i) => (
+                <div key={b} style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
+                  <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>{i + 1}</span>
+                  <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{b}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </motion.div>
 
