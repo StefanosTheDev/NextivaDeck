@@ -29,6 +29,7 @@ const columns: ColumnData[] = [
       "Personalized two-way conversations on channel of choice",
       "Convergence of front office and back office into a seamless unified platform",
     ],
+    image: "/images/world-moving-contact-center.png",
   },
   {
     era: "THE FUTURE",
