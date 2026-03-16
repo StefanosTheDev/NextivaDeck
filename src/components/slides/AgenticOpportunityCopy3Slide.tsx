@@ -52,7 +52,7 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
         style={{ flex: 1, padding: "12px 80px 0", display: "flex", flexDirection: "column", minHeight: 0 }}
       >
         {/* Spacer to push stat cards halfway down */}
-        <div style={{ minHeight: 95 }} />
+        <div style={{ minHeight: 40 }} />
         {/* Stat cards (18M = 6M+12M + 7M) */}
         <div style={{
           width: "100%",
@@ -195,7 +195,7 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
         {/* Three detail cards - moved to bottom */}
         <motion.div
           initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
-          style={{ display: "flex", gap: 16, marginTop: 52, flexShrink: 0, alignItems: "stretch" }}
+          style={{ display: "flex", gap: 16, marginTop: 24, flexShrink: 0, alignItems: "stretch" }}
         >
           {/* Market Context */}
           <div style={{
