@@ -120,7 +120,7 @@ export default function AgenticOpportunityV2Slide({ slideNumber = 20 }: { slideN
             COMPETITIVE LANDSCAPE
           </p>
           <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 16px", lineHeight: 1.25 }}>
-            The Massive Middle Is Underserved
+            The Massive Middle of CX Is Underserved
           </h3>
           <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
             {competitiveBullets.map((b) => (

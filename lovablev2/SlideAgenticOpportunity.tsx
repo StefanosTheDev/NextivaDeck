@@ -147,7 +147,7 @@ const SlideAgenticOpportunity = ({ slideNumber = "" }: { slideNumber?: string })
           }}>COMPETITIVE LANDSCAPE</p>
           <p style={{
             fontSize: 24, fontWeight: 700, color: COLORS.pureWhite, margin: "0 0 16px",
-          }}>The Massive Middle Is Underserved</p>
+          }}>The Massive Middle of CX Is Underserved</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {futureItems.map((item) => (
               <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>

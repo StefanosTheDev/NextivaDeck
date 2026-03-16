@@ -10,7 +10,6 @@ const topCards = [
 ];
 
 const competitiveBullets = [
-  "The Massive Middle of CX is underserved",
   "Most CX platforms are built for enterprises",
   "Millions of growing businesses are left behind",
   "Solutions are expensive and complex to deploy",
@@ -81,7 +80,7 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
               COMPETITIVE LANDSCAPE
             </p>
             <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
-              The Massive Middle Is Underserved
+              The Massive Middle of CX Is Underserved
             </h3>
             <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
               {competitiveBullets.map((b) => (
