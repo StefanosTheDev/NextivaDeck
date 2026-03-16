@@ -23,6 +23,7 @@
     "agentic-opp-copy",
     "agentic-opp-copy-2",
     "agentic-opp",
+    "agentic-opp-v2-thomas",
     "agentic-opp-lovable",
     "ai-tailwind-copy",
     "ai-tailwind",
@@ -48,7 +49,6 @@
     "customer-use-cases-divider",
     "summary",
     "closing",
-    "agentic-opp-v2-thomas",
     "appendix-products",
     "customer-base",
     "durable-edge",
@@ -101,6 +101,12 @@
     "durable-edge",
     "customer-use-cases-divider",
     "cx-portfolio-puzzle-cross",
-    "cx-portfolio"
+    "cx-portfolio",
+    "agentic-opp-lovable",
+    "cx-portfolio-thomas-a",
+    "cx-portfolio-thomas-b",
+    "cx-portfolio-thomas-c",
+    "cx-portfolio-thomas-d",
+    "contact-center-market-opportunity"
   ]
 }

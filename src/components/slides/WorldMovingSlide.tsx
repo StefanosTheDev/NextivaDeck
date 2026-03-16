@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SlideFooter from "../SlideFooter";
 
 const ACCENT = "#5BA0E0";
@@ -8,6 +9,7 @@ interface ColumnData {
   era: string;
   title: string;
   bullets: string[];
+  image?: string;
 }
 
 const columns: ColumnData[] = [
@@ -18,6 +20,7 @@ const columns: ColumnData[] = [
       "Disjointed one-way notifications across multiple channels",
       "Disparate systems and point solutions",
     ],
+    image: "/images/world-moving-accountant.png",
   },
   {
     era: "TODAY",
@@ -34,6 +37,7 @@ const columns: ColumnData[] = [
       "Agentic first experiences across the voice and digital channels",
       "Integrated customer interaction ecosystem leveraging AI to enable engagement at scale",
     ],
+    image: "/images/world-moving-ai-employee.png",
   },
 ];
 
@@ -105,7 +109,8 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
         style={{
           flex: 1,
           padding: "36px 100px 0",
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr auto 1fr",
           alignItems: "stretch",
         }}
       >
@@ -113,7 +118,6 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
           <div key={col.era} style={{ display: "contents" }}>
             <div
               style={{
-                flex: 1,
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.1)",
                 borderRadius: 16,
@@ -122,7 +126,7 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
                 flexDirection: "column",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 8 }}>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 14, height: 90, flexShrink: 0 }}>
                 <div
                   style={{
                     width: 52,
@@ -138,7 +142,7 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
                 >
                   {icons[i]}
                 </div>
-                <div>
+                <div style={{ flex: 1 }}>
                   <p
                     style={{
                       fontSize: 13,
@@ -168,16 +172,28 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
 
               <div
                 style={{
-                  flex: 1,
-                  minHeight: 160,
+                  height: 350,
+                  flexShrink: 0,
                   background: "rgba(255,255,255,0.03)",
                   borderRadius: 12,
-                  margin: "16px 0",
+                  margin: "20px 0 24px",
                   border: "1px solid rgba(255,255,255,0.05)",
+                  overflow: "hidden",
+                  position: "relative",
                 }}
-              />
+              >
+                {col.image && (
+                  <Image
+                    src={col.image}
+                    alt={col.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 1920px) 33vw, 500px"
+                  />
+                )}
+              </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 {col.bullets.map((b, j) => (
                   <div
                     key={j}
