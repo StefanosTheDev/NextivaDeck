@@ -59,6 +59,10 @@ import WhatWeAreCloseSlide from "./slides/WhatWeAreCloseSlide";
 import CXPortfolioThomasSlide from "./slides/CXPortfolioThomasSlide";
 import AIAgentsInActionSlide from "./slides/AIAgentsInActionSlide";
 import AgenticOpportunityV2Slide from "./slides/AgenticOpportunityV2Slide";
+import CXPortfolioThomasConnectedASlide from "./slides/CXPortfolioThomasConnectedASlide";
+import CXPortfolioThomasConnectedBSlide from "./slides/CXPortfolioThomasConnectedBSlide";
+import CXPortfolioThomasConnectedCSlide from "./slides/CXPortfolioThomasConnectedCSlide";
+import CXPortfolioThomasConnectedDSlide from "./slides/CXPortfolioThomasConnectedDSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -132,6 +136,10 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cx-portfolio-thomas": { id: "cx-portfolio-thomas", label: "#15 CX Platform Portfolio (Thomas · SlideCXPortfolio)", component: CXPortfolioThomasSlide, theme: "dark", isNew: true },
   "ai-agents-in-action": { id: "ai-agents-in-action", label: "AI Agents in Action", component: AIAgentsInActionSlide, theme: "dark", isNew: true },
   "agentic-opp-v2-thomas": { id: "agentic-opp-v2-thomas", label: "AI Opportunity (Thomas · SlideAgenticOpportunity)", component: AgenticOpportunityV2Slide, theme: "dark", isNew: true },
+  "cx-portfolio-thomas-a": { id: "cx-portfolio-thomas-a", label: "#15 CX Portfolio (A: Puzzle-Tab Connectors)", component: CXPortfolioThomasConnectedASlide, theme: "dark", isNew: true },
+  "cx-portfolio-thomas-b": { id: "cx-portfolio-thomas-b", label: "#15 CX Portfolio (B: Connection Bridges)", component: CXPortfolioThomasConnectedBSlide, theme: "dark", isNew: true },
+  "cx-portfolio-thomas-c": { id: "cx-portfolio-thomas-c", label: "#15 CX Portfolio (C: Shared Foundation)", component: CXPortfolioThomasConnectedCSlide, theme: "dark", isNew: true },
+  "cx-portfolio-thomas-d": { id: "cx-portfolio-thomas-d", label: "#15 CX Portfolio (D: Puzzle 2x2 Grid)", component: CXPortfolioThomasConnectedDSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -188,6 +196,10 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "cx-portfolio-thomas",
   "ai-agents-in-action",
   "agentic-opp-v2-thomas",
+  "cx-portfolio-thomas-a",
+  "cx-portfolio-thomas-b",
+  "cx-portfolio-thomas-c",
+  "cx-portfolio-thomas-d",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

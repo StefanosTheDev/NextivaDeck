@@ -53,7 +53,7 @@ const products = [
   },
 ];
 
-export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumber?: number }) {
+export default function CXPortfolioThomasConnectedCSlide({ slideNumber = 59 }: { slideNumber?: number }) {
   return (
     <div
       className="slide"
@@ -104,6 +104,9 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
         >
           Nextiva&apos;s CX Platform Portfolio.
         </h1>
+        <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", marginTop: 10, lineHeight: 1.5 }}>
+          Four products. One integrated platform.
+        </p>
       </motion.header>
 
       <motion.main
@@ -112,75 +115,6 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{ flex: 1, padding: "24px 100px 0", display: "flex", flexDirection: "column", justifyContent: "center", position: "relative", zIndex: 1 }}
       >
-        {/* Foundation platform strip */}
-        <div
-          style={{
-            width: "100%",
-            background: `linear-gradient(180deg, rgba(40,96,178,0.15) 0%, rgba(6,26,55,0.4) 100%)`,
-            border: `1px solid rgba(126,179,232,0.2)`,
-            borderRadius: 12,
-            padding: "16px 32px 18px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 14,
-          }}
-        >
-          <h3
-            className="font-heading"
-            style={{
-              fontSize: 22,
-              fontWeight: 600,
-              fontStyle: "italic",
-              color: ACCENT,
-              margin: 0,
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Intelligent Data Platform
-          </h3>
-          <div style={{ display: "flex", gap: 14, width: "100%" }}>
-            {[
-              "Unified Structured & Unstructured Data",
-              "Agentic AI",
-              "Unified Front & Back Office",
-            ].map((label) => (
-              <div
-                key={label}
-                style={{
-                  flex: 1,
-                  padding: "10px 16px",
-                  borderRadius: 24,
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  background: "rgba(0,2,8,0.5)",
-                  textAlign: "center",
-                  fontSize: 14,
-                  fontWeight: 500,
-                  color: "rgba(255,255,255,0.75)",
-                }}
-              >
-                {label}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Vertical connector lines from platform strip down into each card */}
-        <div style={{ width: "100%", display: "flex", gap: 20, height: 20 }}>
-          {products.map((p) => (
-            <div key={p.name} style={{ flex: 1, display: "flex", justifyContent: "center" }}>
-              <div
-                style={{
-                  width: 2,
-                  height: 20,
-                  background: `linear-gradient(180deg, ${ACCENT} 0%, ${ACCENT_STRONG} 100%)`,
-                  opacity: 0.6,
-                }}
-              />
-            </div>
-          ))}
-        </div>
-
         {/* Product cards row */}
         <div
           style={{
@@ -198,9 +132,9 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
                   flex: 1,
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.08)",
-                  borderBottom: `3px solid ${ACCENT_STRONG}`,
-                  borderRadius: "0 0 14px 14px",
-                  padding: "20px 22px 24px",
+                  borderTop: `3px solid ${ACCENT_STRONG}`,
+                  borderRadius: "14px 14px 0 0",
+                  padding: "24px 22px 20px",
                   display: "flex",
                   flexDirection: "column",
                   position: "relative",
@@ -275,6 +209,48 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
               </article>
             );
           })}
+        </div>
+
+        {/* Vertical connector lines from each card into the foundation */}
+        <div style={{ width: "100%", display: "flex", gap: 20, height: 20 }}>
+          {products.map((p) => (
+            <div key={p.name} style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+              <div
+                style={{
+                  width: 2,
+                  height: 20,
+                  background: `linear-gradient(180deg, ${ACCENT_STRONG} 0%, ${ACCENT} 100%)`,
+                  opacity: 0.6,
+                }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Foundation platform strip */}
+        <div
+          style={{
+            width: "100%",
+            background: `linear-gradient(90deg, ${ACCENT_STRONG} 0%, rgba(40,96,178,0.7) 50%, ${ACCENT_STRONG} 100%)`,
+            border: `1px solid rgba(126,179,232,0.25)`,
+            borderRadius: 10,
+            padding: "14px 32px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+          }}
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="2" width="16" height="16" rx="3" stroke={ACCENT} strokeWidth="1.5" opacity="0.7" />
+            <rect x="6" y="6" width="8" height="8" rx="1.5" fill={ACCENT} opacity="0.4" />
+          </svg>
+          <p style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", margin: 0, letterSpacing: "0.04em" }}>
+            ONE UNIFIED PLATFORM
+          </p>
+          <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", margin: 0 }}>
+            &mdash; Built once, delivered everywhere
+          </span>
         </div>
       </motion.main>
 
