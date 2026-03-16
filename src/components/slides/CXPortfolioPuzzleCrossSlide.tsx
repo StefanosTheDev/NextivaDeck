@@ -128,7 +128,7 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
                   x={piece.x + 12}
                   y={piece.y + 12}
                   width={Math.max(0, piece.w - 24)}
-                  height={Math.max(0, piece.h - 24)}
+                  height={Math.max(0, piece.h - (piece.y === 0 ? 36 : 24))}
                   style={{ overflow: "hidden" }}
                 >
                   <div
@@ -136,6 +136,7 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
                       width: "100%",
                       height: "100%",
                       padding: "4px 6px",
+                      paddingBottom: piece.y === 0 ? 12 : 0,
                       display: "flex",
                       flexDirection: "column",
                       fontFamily: "'Space Grotesk', sans-serif",
@@ -143,7 +144,7 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
                       boxSizing: "border-box",
                     }}
                   >
-                    <div style={{ marginBottom: 3, display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    <div style={{ marginBottom: piece.y === 0 ? 2 : 3, display: "flex", flexDirection: "column", alignItems: "center" }}>
                       <h2 style={{
                         fontFamily: "'Georgia', 'Times New Roman', serif",
                         fontSize: 15, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.2,
@@ -161,7 +162,7 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
                       </span>
                     </div>
                     <p style={{
-                      fontSize: 10, fontWeight: 700, color: "#FFFFFF", margin: "14px 0 4px 0", lineHeight: 1.25,
+                      fontSize: 10, fontWeight: 700, color: "#FFFFFF", margin: piece.y === 0 ? "8px 0 2px 0" : "14px 0 4px 0", lineHeight: 1.25,
                       fontFamily: "'Space Grotesk', sans-serif",
                       paddingLeft: (piece.name === "XBert" || piece.name === "Experience Center") ? RIGHT_COL_PADDING_LEFT : 0,
                     }}>
@@ -170,7 +171,7 @@ export default function CXPortfolioPuzzleCrossSlide({ slideNumber = 40 }: { slid
                     <ul style={{
                       margin: 0, paddingLeft: (piece.name === "XBert" || piece.name === "Experience Center") ? RIGHT_COL_PADDING_LEFT : 0, listStyle: "none", flex: 1,
                       overflow: "hidden", fontSize: 9, color: "rgba(255,255,255,0.6)", lineHeight: 1.4,
-                      minHeight: 0, marginTop: 2, fontFamily: "'Space Grotesk', sans-serif",
+                      minHeight: 0, marginTop: piece.y === 0 ? 0 : 2, fontFamily: "'Space Grotesk', sans-serif",
                     }}>
                       {piece.bullets.map((b, j) => (
                         <li key={j} style={{ marginBottom: 2, paddingLeft: 10, position: "relative" }}>

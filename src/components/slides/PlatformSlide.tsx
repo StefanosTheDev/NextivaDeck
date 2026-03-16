@@ -17,7 +17,7 @@ const layers = [
   },
   {
     label: "Communications",
-    description: "Voice, web, SMS, social, chat",
+    description: "Voice, Messaging, Social, Live Chat, Web",
     pillBg: "#2860B2",
     pillColor: "#FFFFFF",
   },

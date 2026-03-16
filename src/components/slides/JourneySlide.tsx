@@ -12,7 +12,7 @@ const chapters = [
     milestone: MILESTONES.ch1Revenue,
     bullets: [
       "Pioneered cloud communications at scale.",
-      "Market leadership — no outside capital required.",
+      "Market leaders without outside capital.",
       "Won through simplicity, amazing service, and reliability.",
       "Scaled operations while maintaining customer-first culture.",
     ],
@@ -55,12 +55,12 @@ export default function JourneySlide({ slideNumber = 7 }: { slideNumber?: number
     >
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "48px 80px 0", flexShrink: 0 }}
+        style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           OUR JOURNEY
         </p>
-        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 54, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18 }}>
           Always anticipating the shift.
         </h1>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "10px 0 0", lineHeight: 1.5 }}>
