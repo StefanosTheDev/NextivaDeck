@@ -39,6 +39,7 @@ import CustomerBaseSlide from "./slides/CustomerBaseSlide";
 import RevenueVisibilitySlide from "./slides/RevenueVisibilitySlide";
 import CashFlowTrendsSlide from "./slides/CashFlowTrendsSlide";
 import AgenticOpportunity2Slide from "./slides/AgenticOpportunity2Slide";
+import AgenticOpportunityCopySlide from "./slides/AgenticOpportunityCopySlide";
 import AiTailwind2Slide from "./slides/AiTailwind2Slide";
 import DurableEdgeSlide from "./slides/DurableEdgeSlide";
 import MarketTAMSlide from "./slides/MarketTAMSlide";
@@ -75,6 +76,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   solution:            { id: "solution",             label: "Solution",            component: SolutionSlide,            theme: "dark" },
   market:              { id: "market",               label: "Market",              component: MarketSlide,              theme: "dark" },
   "agentic-opp":       { id: "agentic-opp",         label: "AI Opportunity",      component: AgenticOpportunitySlide,  theme: "dark" },
+  "agentic-opp-copy":   { id: "agentic-opp-copy",   label: "AI Opportunity (copy)", component: AgenticOpportunityCopySlide, theme: "dark" },
   "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "dark" },
   "cx-market-sizing":  { id: "cx-market-sizing",     label: "CX Market Sizing",    component: CXMarketSizingSlide,      theme: "dark" },
   "labor-cost-savings":{ id: "labor-cost-savings",   label: "Labor Cost Savings",  component: LaborCostSavingsSlide,    theme: "dark" },
@@ -134,6 +136,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "market",
   "agentic-opp-2",
   "agentic-opp",
+  "agentic-opp-copy",
   "ai-tandem",
   "ai-tailwind-copy",
   "ai-tailwind",
