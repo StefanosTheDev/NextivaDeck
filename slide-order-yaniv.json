@@ -1,0 +1,53 @@
+{
+  "order": [
+    "cover",
+    "safe-harbor",
+    "glance",
+    "founder",
+    "who",
+    "journey",
+    "problem",
+    "platform",
+    "solution",
+    "market",
+    "agentic-opp-2",
+    "agentic-opp",
+    "ai-tandem",
+    "ai-tailwind",
+    "market-tam",
+    "cx-market-sizing",
+    "labor-cost-savings",
+    "ai-tailwind-2",
+    "competitive-moat",
+    "win",
+    "leadership",
+    "summary",
+    "closing",
+    "appendix-customers",
+    "appendix-products",
+    "ai-gateways-revenue",
+    "financial-divider",
+    "arr-gross-margin",
+    "ebitda",
+    "nrr-churn",
+    "expansion-retention",
+    "target-model",
+    "operating-leverage",
+    "customer-base",
+    "revenue-visibility",
+    "cash-flow-trends",
+    "durable-edge",
+    "unified-data-model"
+  ],
+  "categories": {},
+  "categoryNames": [
+    "dividers"
+  ],
+  "hiddenSlides": [
+    "cover",
+    "agentic-opp",
+    "cx-market-sizing",
+    "win",
+    "summary"
+  ]
+}

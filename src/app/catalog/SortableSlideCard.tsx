@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { EyeOff } from "lucide-react";
+import { EyeOff, Trash2 } from "lucide-react";
 import type { SlideDef } from "@/components/slideRegistry";
 import SlideCardContent from "./SlideCardContent";
 
@@ -17,12 +17,15 @@ interface Props {
   categoryColor: { bg: string; text: string; dot: string } | null;
   allCategories: string[];
   onAssignCategory: (category: string | null) => void;
+  sourceBadge?: "main" | "yaniv";
+  onRemove?: () => void;
 }
 
 export default function SortableSlideCard({
   slide, index, isActive, isHidden, onToggleHide,
   category, categoryColor,
   allCategories, onAssignCategory,
+  sourceBadge, onRemove,
 }: Props) {
   const {
     attributes, listeners, setNodeRef, transform, transition, isDragging,
@@ -103,7 +106,7 @@ export default function SortableSlideCard({
           categoryColor={categoryColor}
         />
 
-        {/* Bottom bar: category + hide toggle */}
+        {/* Bottom bar: source badge + category + hide toggle + remove */}
         <div
           style={{
             display: "flex", alignItems: "center", gap: 8,
@@ -113,7 +116,15 @@ export default function SortableSlideCard({
           onClick={(e) => e.stopPropagation()}
           onPointerDown={(e) => e.stopPropagation()}
         >
-          {allCategories.length > 0 && (
+          {sourceBadge && (
+            <span
+              className={`source-badge source-badge-${sourceBadge}`}
+              style={{ flexShrink: 0 }}
+            >
+              {sourceBadge === "main" ? "Main" : "Yaniv"}
+            </span>
+          )}
+          {!sourceBadge && allCategories.length > 0 && (
             <select
               value={category || ""}
               onChange={(e) => onAssignCategory(e.target.value || null)}
@@ -136,6 +147,7 @@ export default function SortableSlideCard({
               ))}
             </select>
           )}
+          <div style={{ flex: 1 }} />
           <button
             onClick={onToggleHide}
             title={isHidden ? "Show in deck" : "Hide from deck"}
@@ -153,6 +165,27 @@ export default function SortableSlideCard({
             <EyeOff size={12} />
             {isHidden ? "Show" : "Hide"}
           </button>
+          {onRemove && (
+            <button
+              onClick={onRemove}
+              title="Remove from Final"
+              style={{
+                display: "flex", alignItems: "center", gap: 5,
+                padding: "4px 10px", borderRadius: 6, border: "none",
+                background: "rgba(239,68,68,0.1)",
+                color: "rgba(255,255,255,0.35)",
+                fontSize: 11, fontWeight: 500,
+                fontFamily: "'Space Grotesk', sans-serif",
+                cursor: "pointer", transition: "all 0.15s",
+                flexShrink: 0,
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#f87171"; e.currentTarget.style.background = "rgba(239,68,68,0.2)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.35)"; e.currentTarget.style.background = "rgba(239,68,68,0.1)"; }}
+            >
+              <Trash2 size={12} />
+              Remove
+            </button>
+          )}
         </div>
       </div>
     </div>

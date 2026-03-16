@@ -19,13 +19,21 @@ import {
   rectSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Save, Check, RotateCcw, ArrowLeft, Download, Loader2, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
+import { Save, Check, RotateCcw, ArrowLeft, Download, Loader2, Plus, X, Eye, ArrowRight, FileDown, Trash2 } from "lucide-react";
 
-import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
+import { SLIDE_COMPONENTS, SLIDE_COMPONENTS_MAIN, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
+import { SLIDE_COMPONENTS_YANIV, DEFAULT_SLIDE_ORDER_YANIV } from "@/components/slideRegistryYaniv";
 import SortableSlideCard from "./SortableSlideCard";
 import SlideCardContent from "./SlideCardContent";
 import SidebarSlideRow from "./SidebarSlideRow";
 import CategoryInput from "./CategoryInput";
+
+type CatalogTab = "main" | "yaniv" | "final";
+
+interface FinalSlideEntry {
+  id: string;
+  source: "main" | "yaniv";
+}
 
 const CATEGORY_COLORS = [
   { bg: "rgba(40,96,178,0.18)",  text: "#5b9cf5", dot: "#2860B2"  },
@@ -43,15 +51,32 @@ export function getColorForCategory(name: string, allCategories: string[]) {
   return CATEGORY_COLORS[idx % CATEGORY_COLORS.length];
 }
 
+function getRegistryForSource(source: "main" | "yaniv"): Record<string, SlideDef> {
+  return source === "yaniv" ? SLIDE_COMPONENTS_YANIV : SLIDE_COMPONENTS_MAIN;
+}
+
+function resolveFinalSlide(entry: FinalSlideEntry): SlideDef | null {
+  const registry = getRegistryForSource(entry.source);
+  return registry[entry.id] ?? SLIDE_COMPONENTS_MAIN[entry.id] ?? null;
+}
+
 export default function CatalogPage() {
-  const [order, setOrder] = useState<string[]>(DEFAULT_SLIDE_ORDER);
-  const [savedOrder, setSavedOrder] = useState<string[]>(DEFAULT_SLIDE_ORDER);
-  const [categories, setCategories] = useState<Record<string, string>>({});
-  const [savedCategories, setSavedCategories] = useState<Record<string, string>>({});
-  const [categoryNames, setCategoryNames] = useState<string[]>([]);
-  const [savedCategoryNames, setSavedCategoryNames] = useState<string[]>([]);
-  const [hiddenSlides, setHiddenSlides] = useState<string[]>([]);
-  const [savedHiddenSlides, setSavedHiddenSlides] = useState<string[]>([]);
+  const [activeTab, setActiveTab] = useState<CatalogTab>("main");
+
+  // Main branch data (read-only)
+  const [mainOrder, setMainOrder] = useState<string[]>([]);
+  const [mainHidden, setMainHidden] = useState<string[]>([]);
+
+  // Yaniv branch data (read-only)
+  const [yanivOrder, setYanivOrder] = useState<string[]>([]);
+  const [yanivHidden, setYanivHidden] = useState<string[]>([]);
+
+  // Final deliverable data (editable)
+  const [finalOrder, setFinalOrder] = useState<FinalSlideEntry[]>([]);
+  const [savedFinalOrder, setSavedFinalOrder] = useState<FinalSlideEntry[]>([]);
+  const [finalHidden, setFinalHidden] = useState<string[]>([]);
+  const [savedFinalHidden, setSavedFinalHidden] = useState<string[]>([]);
+
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -61,90 +86,50 @@ export default function CatalogPage() {
   const savedTimeout = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
-    fetch("/api/slides")
-      .then((r) => r.json())
-      .then((data) => {
-        if (Array.isArray(data.order)) {
-          setSavedOrder(data.order);
-        }
-        if (data.categories && typeof data.categories === "object") {
-          setCategories(data.categories);
-          setSavedCategories(data.categories);
-        }
-        const savedNames: string[] = Array.isArray(data.categoryNames) ? data.categoryNames : [];
-        const namesFromAssignments = data.categories ? Object.values(data.categories) as string[] : [];
-        const merged = Array.from(new Set([...savedNames, ...namesFromAssignments])).sort();
-        setCategoryNames(merged);
-        setSavedCategoryNames(merged);
-        if (Array.isArray(data.hiddenSlides)) {
-          setSavedHiddenSlides(data.hiddenSlides);
-        }
+    Promise.all([
+      fetch("/api/slides?source=main").then((r) => r.json()),
+      fetch("/api/slides?source=yaniv").then((r) => r.json()),
+      fetch("/api/slides?source=final").then((r) => r.json()),
+    ])
+      .then(([mainData, yanivData, finalData]) => {
+        setMainOrder(Array.isArray(mainData.order) ? mainData.order : DEFAULT_SLIDE_ORDER);
+        setMainHidden(Array.isArray(mainData.hiddenSlides) ? mainData.hiddenSlides : []);
 
-        // Restore pending changes from localStorage, or use saved values
-        try {
-          const pending = localStorage.getItem("catalogPendingChanges");
-          if (pending) {
-            const p = JSON.parse(pending);
-            setOrder(Array.isArray(p.order) ? p.order : data.order);
-            setHiddenSlides(Array.isArray(p.hiddenSlides) ? p.hiddenSlides : (data.hiddenSlides || []));
-            if (p.categories && typeof p.categories === "object" && !Array.isArray(p.categories)) {
-              setCategories(p.categories);
-            }
-            if (Array.isArray(p.categoryNames)) {
-              setCategoryNames(p.categoryNames);
-            }
-          } else {
-            setOrder(data.order);
-            setHiddenSlides(data.hiddenSlides || []);
-          }
-        } catch {
-          setOrder(data.order);
-          setHiddenSlides(data.hiddenSlides || []);
-        }
+        setYanivOrder(Array.isArray(yanivData.order) ? yanivData.order : DEFAULT_SLIDE_ORDER_YANIV);
+        setYanivHidden(Array.isArray(yanivData.hiddenSlides) ? yanivData.hiddenSlides : []);
+
+        const rawFinal: FinalSlideEntry[] = Array.isArray(finalData.order)
+          ? finalData.order.map((e: string | FinalSlideEntry) =>
+              typeof e === "string" ? { id: e, source: "main" as const } : e
+            )
+          : [];
+        setFinalOrder(rawFinal);
+        setSavedFinalOrder(rawFinal);
+        setFinalHidden(Array.isArray(finalData.hiddenSlides) ? finalData.hiddenSlides : []);
+        setSavedFinalHidden(Array.isArray(finalData.hiddenSlides) ? finalData.hiddenSlides : []);
 
         setLoaded(true);
       })
       .catch(() => setLoaded(true));
   }, []);
 
-  // Persist all pending changes to localStorage so they survive refreshes
-  useEffect(() => {
-    if (!loaded) return;
-    const orderChanged = JSON.stringify(order) !== JSON.stringify(savedOrder);
-    const hiddenChanged = JSON.stringify(hiddenSlides) !== JSON.stringify(savedHiddenSlides);
-    const catsChanged = JSON.stringify(categories) !== JSON.stringify(savedCategories);
-    const catNamesChanged = JSON.stringify(categoryNames) !== JSON.stringify(savedCategoryNames);
-    if (orderChanged || hiddenChanged || catsChanged || catNamesChanged) {
-      localStorage.setItem("catalogPendingChanges", JSON.stringify({ order, hiddenSlides, categories, categoryNames }));
-    } else {
-      localStorage.removeItem("catalogPendingChanges");
-    }
-  }, [order, hiddenSlides, categories, categoryNames, savedOrder, savedHiddenSlides, savedCategories, savedCategoryNames, loaded]);
+  const finalOrderIds = finalOrder.map((e) => `${e.source}::${e.id}`);
 
-  const uniqueCategories = categoryNames;
+  const hasChanges =
+    JSON.stringify(finalOrder) !== JSON.stringify(savedFinalOrder) ||
+    JSON.stringify(finalHidden) !== JSON.stringify(savedFinalHidden);
 
-  const hasOrderChanges = JSON.stringify(order) !== JSON.stringify(savedOrder);
-  const hasHiddenChanges = JSON.stringify(hiddenSlides) !== JSON.stringify(savedHiddenSlides);
-  const hasCategoryChanges =
-    JSON.stringify(categories) !== JSON.stringify(savedCategories) ||
-    JSON.stringify(categoryNames) !== JSON.stringify(savedCategoryNames);
-  const hasDeckChanges = hasOrderChanges || hasHiddenChanges || hasCategoryChanges;
-  const hasChanges = hasDeckChanges;
-
-  const saveAll = useCallback(async () => {
+  const saveFinal = useCallback(async () => {
     setSaving(true);
     try {
-      const res = await fetch("/api/slides", {
+      const res = await fetch("/api/slides?source=final", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ order, categories, categoryNames, hiddenSlides }),
+        body: JSON.stringify({ order: finalOrder, hiddenSlides: finalHidden }),
       });
       if (res.ok) {
-        setSavedOrder([...order]);
-        setSavedCategories({ ...categories });
-        setSavedCategoryNames([...categoryNames]);
-        setSavedHiddenSlides([...hiddenSlides]);
-        localStorage.removeItem("catalogPendingChanges");
+        setSavedFinalOrder([...finalOrder]);
+        setSavedFinalHidden([...finalHidden]);
         setSaved(true);
         clearTimeout(savedTimeout.current);
         savedTimeout.current = setTimeout(() => setSaved(false), 2000);
@@ -152,80 +137,79 @@ export default function CatalogPage() {
     } finally {
       setSaving(false);
     }
-  }, [order, categories, categoryNames, hiddenSlides]);
+  }, [finalOrder, finalHidden]);
 
-  const resetToDefault = useCallback(async () => {
-    const defaultData = {
-      order: DEFAULT_SLIDE_ORDER,
-      categories: {},
-      categoryNames: [],
-      hiddenSlides: [],
-    };
-    const res = await fetch("/api/slides", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(defaultData),
-    });
-    if (res.ok) {
-      setOrder([...DEFAULT_SLIDE_ORDER]);
-      setSavedOrder([...DEFAULT_SLIDE_ORDER]);
-      setCategories({});
-      setSavedCategories({});
-      setCategoryNames([]);
-      setSavedCategoryNames([]);
-      setHiddenSlides([]);
-      setSavedHiddenSlides([]);
-      localStorage.removeItem("catalogPendingChanges");
-      setSaved(true);
-      clearTimeout(savedTimeout.current);
-      savedTimeout.current = setTimeout(() => setSaved(false), 2000);
-    }
-  }, []);
+  const resetFinal = useCallback(() => {
+    setFinalOrder([...savedFinalOrder]);
+    setFinalHidden([...savedFinalHidden]);
+  }, [savedFinalOrder, savedFinalHidden]);
 
-  const resetAll = useCallback(() => {
-    setOrder([...savedOrder]);
-    setCategories({ ...savedCategories });
-    setCategoryNames([...savedCategoryNames]);
-    setHiddenSlides([...savedHiddenSlides]);
-    localStorage.removeItem("catalogPendingChanges");
-  }, [savedOrder, savedCategories, savedCategoryNames, savedHiddenSlides]);
-
-  const assignCategory = useCallback((slideId: string, category: string | null) => {
-    setCategories((prev) => {
-      const next = { ...prev };
-      if (category === null) {
-        delete next[slideId];
-      } else {
-        next[slideId] = category;
-      }
-      return next;
+  const addToFinal = useCallback((id: string, source: "main" | "yaniv") => {
+    setFinalOrder((prev) => {
+      const exists = prev.some((e) => e.id === id && e.source === source);
+      if (exists) return prev;
+      return [...prev, { id, source }];
     });
   }, []);
 
-  const createCategory = useCallback((name: string) => {
-    setCategoryNames((prev) => [...prev, name].sort());
+  const removeFromFinal = useCallback((compositeKey: string) => {
+    setFinalOrder((prev) => prev.filter((e) => `${e.source}::${e.id}` !== compositeKey));
   }, []);
 
-  const deleteCategory = useCallback((catName: string) => {
-    setCategoryNames((prev) => prev.filter((n) => n !== catName));
-    setCategories((prev) => {
-      const next = { ...prev };
-      for (const key of Object.keys(next)) {
-        if (next[key] === catName) delete next[key];
-      }
-      return next;
-    });
-  }, []);
-
-  const toggleHideSlide = useCallback((slideId: string) => {
-    setHiddenSlides((prev) =>
-      prev.includes(slideId)
-        ? prev.filter((id) => id !== slideId)
-        : [...prev, slideId]
+  const toggleFinalHide = useCallback((compositeKey: string) => {
+    setFinalHidden((prev) =>
+      prev.includes(compositeKey)
+        ? prev.filter((k) => k !== compositeKey)
+        : [...prev, compositeKey]
     );
   }, []);
 
+  const gridSensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
+  );
+
+  const sidebarSensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 3 } }),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
+  );
+
+  function handleDragStart(event: DragStartEvent) {
+    setActiveId(event.active.id as string);
+  }
+
+  function handleFinalGridDragEnd(event: DragEndEvent) {
+    setActiveId(null);
+    const { active, over } = event;
+    if (over && active.id !== over.id) {
+      setFinalOrder((prev) => {
+        const keys = prev.map((e) => `${e.source}::${e.id}`);
+        const oldIndex = keys.indexOf(active.id as string);
+        const newIndex = keys.indexOf(over.id as string);
+        return arrayMove(prev, oldIndex, newIndex);
+      });
+    }
+  }
+
+  function handleFinalSidebarDragEnd(event: DragEndEvent) {
+    const { active, over } = event;
+    if (over && active.id !== over.id) {
+      setFinalOrder((prev) => {
+        const keys = prev.map((e) => `${e.source}::${e.id}`);
+        const oldIndex = keys.indexOf(active.id as string);
+        const newIndex = keys.indexOf(over.id as string);
+        return arrayMove(prev, oldIndex, newIndex);
+      });
+    }
+  }
+
+  const activeFinalEntry = activeId
+    ? finalOrder.find((e) => `${e.source}::${e.id}` === activeId)
+    : null;
+  const activeFinalSlide = activeFinalEntry ? resolveFinalSlide(activeFinalEntry) : null;
+
   const [pdfStatus, setPdfStatus] = useState<"idle" | "generating" | "done">("idle");
+  const [pptxStatus, setPptxStatus] = useState<"idle" | "generating" | "done">("idle");
 
   const downloadPdf = useCallback(async () => {
     setPdfStatus("generating");
@@ -249,8 +233,6 @@ export default function CatalogPage() {
     }
   }, []);
 
-  const [pptxStatus, setPptxStatus] = useState<"idle" | "generating" | "done">("idle");
-
   const downloadPptx = useCallback(async () => {
     setPptxStatus("generating");
     try {
@@ -273,47 +255,6 @@ export default function CatalogPage() {
     }
   }, []);
 
-  const gridSensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
-  );
-
-  const sidebarSensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 3 } }),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
-  );
-
-  function handleDragStart(event: DragStartEvent) {
-    setActiveId(event.active.id as string);
-  }
-
-  function handleGridDragEnd(event: DragEndEvent) {
-    setActiveId(null);
-    const { active, over } = event;
-    if (over && active.id !== over.id) {
-      setOrder((prev) => {
-        const oldIndex = prev.indexOf(active.id as string);
-        const newIndex = prev.indexOf(over.id as string);
-        return arrayMove(prev, oldIndex, newIndex);
-      });
-    }
-  }
-
-  function handleSidebarDragEnd(event: DragEndEvent) {
-    const { active, over } = event;
-    if (over && active.id !== over.id) {
-      setOrder((prev) => {
-        const oldIndex = prev.indexOf(active.id as string);
-        const newIndex = prev.indexOf(over.id as string);
-        return arrayMove(prev, oldIndex, newIndex);
-      });
-    }
-  }
-
-  const activeSlide = activeId ? SLIDE_COMPONENTS[activeId] : null;
-
-  const uncategorizedSlides = order.filter((id) => !categories[id]);
-
   if (!loaded) {
     return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", background: "#0a0f1a" }}>
@@ -321,6 +262,12 @@ export default function CatalogPage() {
       </div>
     );
   }
+
+  const TAB_CONFIG: { key: CatalogTab; label: string; count: number }[] = [
+    { key: "main", label: "Main (Seksom)", count: mainOrder.filter((id) => !mainHidden.includes(id)).length },
+    { key: "yaniv", label: "Yaniv", count: yanivOrder.filter((id) => !yanivHidden.includes(id)).length },
+    { key: "final", label: "Final Deliverable", count: finalOrder.length },
+  ];
 
   return (
     <div
@@ -366,494 +313,148 @@ export default function CatalogPage() {
           <div>
             <h1 style={{ fontSize: 20, fontWeight: 600, color: "#fff", margin: 0 }}>Slide Catalog</h1>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: 0, marginTop: 2 }}>
-              {order.length} slides · Drag to reorder
+              Browse developer decks and build the final deliverable
             </p>
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <button
-            onClick={downloadPdf}
-            disabled={pdfStatus === "generating"}
-            className="catalog-btn-outline"
-            style={{ opacity: pdfStatus === "generating" ? 0.6 : 1 }}
-          >
-            {pdfStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pdfStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <Download size={15} style={{ flexShrink: 0 }} />}
-            {pdfStatus === "generating" ? "Generating…" : pdfStatus === "done" ? "Downloaded!" : "Generate PDF"}
-          </button>
-          <button
-            onClick={downloadPptx}
-            disabled={pptxStatus === "generating"}
-            className="catalog-btn-outline"
-            style={{ opacity: pptxStatus === "generating" ? 0.6 : 1 }}
-          >
-            {pptxStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pptxStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <FileDown size={15} style={{ flexShrink: 0 }} />}
-            {pptxStatus === "generating" ? "Generating…" : pptxStatus === "done" ? "Downloaded!" : "Generate PPTX"}
-          </button>
-          {hasChanges && (
-            <button onClick={() => { if (window.confirm("Undo all unsaved changes? This will revert slide order and visibility back to the last saved state.")) resetAll(); }} className="catalog-btn-outline">
-              <RotateCcw size={15} style={{ flexShrink: 0 }} />
-              Undo Changes
-            </button>
+          {activeTab === "final" && (
+            <>
+              <button
+                onClick={downloadPdf}
+                disabled={pdfStatus === "generating"}
+                className="catalog-btn-outline"
+                style={{ opacity: pdfStatus === "generating" ? 0.6 : 1 }}
+              >
+                {pdfStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pdfStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <Download size={15} style={{ flexShrink: 0 }} />}
+                {pdfStatus === "generating" ? "Generating…" : pdfStatus === "done" ? "Downloaded!" : "Generate PDF"}
+              </button>
+              <button
+                onClick={downloadPptx}
+                disabled={pptxStatus === "generating"}
+                className="catalog-btn-outline"
+                style={{ opacity: pptxStatus === "generating" ? 0.6 : 1 }}
+              >
+                {pptxStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pptxStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <FileDown size={15} style={{ flexShrink: 0 }} />}
+                {pptxStatus === "generating" ? "Generating…" : pptxStatus === "done" ? "Downloaded!" : "Generate PPTX"}
+              </button>
+              {hasChanges && (
+                <button onClick={() => { if (window.confirm("Undo all unsaved changes?")) resetFinal(); }} className="catalog-btn-outline">
+                  <RotateCcw size={15} style={{ flexShrink: 0 }} />
+                  Undo Changes
+                </button>
+              )}
+              <button
+                onClick={saveFinal}
+                disabled={!hasChanges || saving}
+                className="catalog-btn-primary"
+                style={{
+                  background: saved ? "#059669" : hasChanges ? "#2860B2" : "rgba(255,255,255,0.08)",
+                  color: hasChanges || saved ? "#fff" : "rgba(255,255,255,0.3)",
+                  cursor: hasChanges ? "pointer" : "default",
+                  opacity: saving ? 0.6 : 1,
+                }}
+              >
+                {saved ? <Check size={15} style={{ flexShrink: 0 }} /> : <Save size={15} style={{ flexShrink: 0 }} />}
+                {saving ? "Saving…" : saved ? "Saved!" : "Save Final"}
+              </button>
+            </>
           )}
-          {hasDeckChanges && (
-            <button onClick={() => setShowPreview(true)} className="catalog-btn-outline">
-              <Eye size={15} style={{ flexShrink: 0 }} />
-              Preview Changes
-            </button>
-          )}
-          <button
-            onClick={hasDeckChanges ? () => setShowPreview(true) : saveAll}
-            disabled={!hasChanges || saving}
-            className="catalog-btn-primary"
-            style={{
-              background: saved ? "#059669" : hasChanges ? "#2860B2" : "rgba(255,255,255,0.08)",
-              color: hasChanges || saved ? "#fff" : "rgba(255,255,255,0.3)",
-              cursor: hasChanges ? "pointer" : "default",
-              opacity: saving ? 0.6 : 1,
-            }}
-          >
-            {saved ? <Check size={15} style={{ flexShrink: 0 }} /> : <Save size={15} style={{ flexShrink: 0 }} />}
-            {saving ? "Saving…" : saved ? "Saved!" : "Save Order"}
-          </button>
         </div>
       </header>
 
-      <div style={{ display: "flex", flex: 1, minHeight: 0, overflow: "hidden" }}>
-        {/* Left sidebar — category overview, scrolls independently */}
-        <aside
-          style={{
-            width: 340,
-            minWidth: 340,
-            borderRight: "1px solid rgba(255,255,255,0.08)",
-            background: "rgba(0,0,0,0.15)",
-            overflowY: "auto",
-            padding: "24px 20px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 16,
-            height: "100%",
-          }}
-        >
-          <CategoryInput existingNames={uniqueCategories} onCreateCategory={createCategory} />
-
-          {/* Category headers (non-draggable) */}
-          {uniqueCategories.map((cat) => {
-            const color = getColorForCategory(cat, uniqueCategories);
-            const count = order.filter((id) => categories[id] === cat).length;
-            return (
-              <div key={`cat-header-${cat}`} style={{
-                display: "flex", alignItems: "center", gap: 8,
-                padding: "6px 8px", borderRadius: 6, marginBottom: 4, marginTop: 8,
-              }}>
-                <div style={{ width: 10, height: 10, borderRadius: "50%", background: color.dot, flexShrink: 0 }} />
-                <span style={{ fontSize: 14, fontWeight: 600, color: color.text, flex: 1 }}>{cat}</span>
-                <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginRight: 4 }}>{count}</span>
-                <button
-                  onClick={() => {
-                    if (window.confirm(`Delete category "${cat}"? All slides in this category will be moved to Uncategorized.`)) {
-                      deleteCategory(cat);
-                    }
-                  }}
-                  title={`Delete "${cat}"`}
-                  style={{
-                    background: "none", border: "none", padding: 2,
-                    color: "rgba(255,255,255,0.2)", cursor: "pointer",
-                    flexShrink: 0, display: "flex", alignItems: "center",
-                    borderRadius: 4, transition: "color 0.15s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.2)")}
-                >
-                  <X size={13} />
-                </button>
-              </div>
-            );
-          })}
-
-          {/* Slide order list — draggable */}
-          <div style={{ marginTop: 16 }}>
-            <div style={{
-              display: "flex", alignItems: "center", gap: 8,
-              padding: "6px 8px", marginBottom: 6,
-            }}>
-              <span style={{ fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                Slide Order
-              </span>
-              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.2)" }}>Drag to reorder</span>
-            </div>
-
-            <DndContext
-              sensors={sidebarSensors}
-              collisionDetection={closestCenter}
-              onDragEnd={handleSidebarDragEnd}
-            >
-              <SortableContext items={order} strategy={verticalListSortingStrategy}>
-                {order.map((id) => {
-                  const slide = SLIDE_COMPONENTS[id];
-                  if (!slide) return null;
-                  const pos = order.indexOf(id) + 1;
-                  const savedPos = savedOrder.indexOf(id) + 1;
-                  const cat = categories[id] || null;
-                  const catColor = cat ? getColorForCategory(cat, uniqueCategories) : null;
-
-                  return (
-                    <SidebarSlideRow
-                      key={id}
-                      id={id}
-                      slide={slide}
-                      position={pos}
-                      savedPosition={savedPos > 0 ? savedPos : null}
-                      isHidden={hiddenSlides.includes(id)}
-                      color={catColor}
-                      onToggleHide={() => toggleHideSlide(id)}
-                      onRemoveCategory={cat ? () => {
-                        if (window.confirm(`Remove "${slide.label}" from "${cat}"?`)) {
-                          assignCategory(id, null);
-                        }
-                      } : undefined}
-                      categoryAssignDropdown={!cat && uniqueCategories.length > 0 ? (
-                        <select
-                          value=""
-                          onClick={(e) => e.stopPropagation()}
-                          onChange={(e) => {
-                            if (e.target.value) assignCategory(id, e.target.value);
-                          }}
-                          style={{
-                            padding: "1px 2px", borderRadius: 4, fontSize: 11,
-                            background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)",
-                            color: "rgba(255,255,255,0.4)", cursor: "pointer", outline: "none",
-                            fontFamily: "'Space Grotesk', sans-serif", flexShrink: 0,
-                            maxWidth: 80,
-                          }}
-                        >
-                          <option value="" style={{ background: "#1a1f2e" }}>Assign…</option>
-                          {uniqueCategories.map((c) => (
-                            <option key={c} value={c} style={{ background: "#1a1f2e", color: "#fff" }}>{c}</option>
-                          ))}
-                        </select>
-                      ) : undefined}
-                    />
-                  );
-                })}
-              </SortableContext>
-            </DndContext>
-          </div>
-        </aside>
-
-        {/* Main grid — scrolls independently */}
-        <main style={{ flex: 1, overflowY: "auto", height: "100%", display: "flex", flexDirection: "column" }}>
-          {/* View filter tabs */}
-          <div style={{
-            display: "flex", alignItems: "center", gap: 6,
-            padding: "20px 32px 0",
-            flexShrink: 0,
-          }}>
-            {([
-              { key: "all" as const, label: "All Slides", count: order.length },
-              { key: "published" as const, label: "Published", count: order.filter((id) => !hiddenSlides.includes(id)).length },
-              { key: "hidden" as const, label: "Hidden", count: hiddenSlides.length },
-            ]).map((tab) => (
-              <button
-                key={tab.key}
-                onClick={() => setViewFilter(tab.key)}
-                style={{
-                  padding: "8px 18px",
-                  borderRadius: 8,
-                  border: "none",
-                  fontSize: 13,
-                  fontWeight: viewFilter === tab.key ? 600 : 400,
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  cursor: "pointer",
-                  transition: "all 0.15s",
-                  background: viewFilter === tab.key ? "rgba(40,96,178,0.2)" : "transparent",
-                  color: viewFilter === tab.key ? "#5b9cf5" : "rgba(255,255,255,0.4)",
-                }}
-              >
-                {tab.label}
-                <span style={{
-                  marginLeft: 8,
-                  fontSize: 12,
-                  padding: "1px 7px",
-                  borderRadius: 10,
-                  background: viewFilter === tab.key ? "rgba(40,96,178,0.25)" : "rgba(255,255,255,0.06)",
-                  color: viewFilter === tab.key ? "#5b9cf5" : "rgba(255,255,255,0.3)",
-                }}>
-                  {tab.count}
-                </span>
-              </button>
-            ))}
-          </div>
-
-          <div style={{ padding: "20px 32px 60px", flex: 1 }}>
-          <DndContext
-            sensors={gridSensors}
-            collisionDetection={closestCenter}
-            onDragStart={handleDragStart}
-            onDragEnd={handleGridDragEnd}
-          >
-            <SortableContext items={order} strategy={rectSortingStrategy}>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-                  gap: 24,
-                }}
-              >
-                {order.map((id) => {
-                  const slide = SLIDE_COMPONENTS[id];
-                  if (!slide) return null;
-                  const isHidden = hiddenSlides.includes(id);
-                  if (viewFilter === "published" && isHidden) return null;
-                  if (viewFilter === "hidden" && !isHidden) return null;
-                  const globalIndex = order.indexOf(id);
-                  return (
-                    <SortableSlideCard
-                      key={id}
-                      slide={slide}
-                      index={globalIndex}
-                      isActive={activeId === id}
-                      isHidden={isHidden}
-                      onToggleHide={() => toggleHideSlide(id)}
-                      category={categories[id] || null}
-                      categoryColor={categories[id] ? getColorForCategory(categories[id], uniqueCategories) : null}
-                      allCategories={uniqueCategories}
-                      onAssignCategory={(cat) => assignCategory(id, cat)}
-                    />
-                  );
-                })}
-              </div>
-            </SortableContext>
-
-            <DragOverlay adjustScale={false}>
-              {activeSlide ? (
-                <SlideCardOverlay
-                  slide={activeSlide}
-                  index={order.indexOf(activeSlide.id)}
-                  category={categories[activeSlide.id] || null}
-                  categoryColor={categories[activeSlide.id] ? getColorForCategory(categories[activeSlide.id], uniqueCategories) : null}
-                />
-              ) : null}
-            </DragOverlay>
-          </DndContext>
-          </div>
-        </main>
-      </div>
-
-      {/* Preview Changes Modal */}
-      {showPreview && (
-        <div
-          style={{
-            position: "fixed", inset: 0, zIndex: 1000,
-            background: "rgba(0,0,0,0.7)", backdropFilter: "blur(8px)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            padding: 40,
-          }}
-          onClick={() => setShowPreview(false)}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
+      {/* Tab bar */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 0,
+          padding: "0 32px",
+          background: "rgba(0,0,0,0.2)",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
+          flexShrink: 0,
+        }}
+      >
+        {TAB_CONFIG.map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
             style={{
-              background: "#111827", border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: 16, width: "100%", maxWidth: 700, maxHeight: "80vh",
-              display: "flex", flexDirection: "column",
-              boxShadow: "0 24px 80px rgba(0,0,0,0.6)",
+              padding: "14px 24px",
+              border: "none",
+              borderBottom: activeTab === tab.key ? "2px solid #5b9cf5" : "2px solid transparent",
+              fontSize: 14,
+              fontWeight: activeTab === tab.key ? 600 : 400,
               fontFamily: "'Space Grotesk', sans-serif",
+              cursor: "pointer",
+              transition: "all 0.15s",
+              background: "transparent",
+              color: activeTab === tab.key ? "#fff" : "rgba(255,255,255,0.4)",
             }}
           >
-            {/* Modal header */}
-            <div style={{
-              padding: "24px 28px 16px", borderBottom: "1px solid rgba(255,255,255,0.08)",
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-            }}>
-              <div>
-                <h2 style={{ fontSize: 20, fontWeight: 600, color: "#fff", margin: 0 }}>Preview Slide Order Changes</h2>
-                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>
-                  Review your changes before saving. Slides that moved are highlighted.
-                </p>
-              </div>
-              <button
-                onClick={() => setShowPreview(false)}
-                style={{ background: "none", border: "none", color: "rgba(255,255,255,0.4)", cursor: "pointer", padding: 4 }}
-              >
-                <X size={20} />
-              </button>
-            </div>
+            {tab.label}
+            <span
+              style={{
+                marginLeft: 8,
+                fontSize: 12,
+                padding: "2px 8px",
+                borderRadius: 10,
+                background: activeTab === tab.key
+                  ? tab.key === "final" ? "rgba(5,150,105,0.25)" : "rgba(40,96,178,0.25)"
+                  : "rgba(255,255,255,0.06)",
+                color: activeTab === tab.key
+                  ? tab.key === "final" ? "#34d399" : "#5b9cf5"
+                  : "rgba(255,255,255,0.3)",
+              }}
+            >
+              {tab.count}
+            </span>
+          </button>
+        ))}
+      </div>
 
-            {/* Change list */}
-            <div style={{ flex: 1, overflowY: "auto", padding: "16px 28px" }}>
-              {/* Summary counts */}
-              {(() => {
-                const movedSlides = order.filter((id, i) => savedOrder[i] !== id);
-                const newlyHidden = hiddenSlides.filter((id) => !savedHiddenSlides.includes(id));
-                const newlyShown = savedHiddenSlides.filter((id) => !hiddenSlides.includes(id));
-                const catChanges = order.filter((id) => (categories[id] || "") !== (savedCategories[id] || "")).length;
-                return (
-                  <div style={{
-                    display: "flex", gap: 16, marginBottom: 20, padding: "12px 16px",
-                    background: "rgba(217,119,6,0.08)", borderRadius: 10, border: "1px solid rgba(217,119,6,0.15)",
-                    flexWrap: "wrap",
-                  }}>
-                    {movedSlides.length > 0 && (
-                      <div style={{ textAlign: "center" }}>
-                        <div style={{ fontSize: 24, fontWeight: 700, color: "#fbbf24" }}>{movedSlides.length}</div>
-                        <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>moved</div>
-                      </div>
-                    )}
-                    {newlyHidden.length > 0 && (
-                      <>
-                        {movedSlides.length > 0 && <div style={{ width: 1, background: "rgba(255,255,255,0.08)" }} />}
-                        <div style={{ textAlign: "center" }}>
-                          <div style={{ fontSize: 24, fontWeight: 700, color: "#ef4444" }}>{newlyHidden.length}</div>
-                          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>hidden</div>
-                        </div>
-                      </>
-                    )}
-                    {newlyShown.length > 0 && (
-                      <>
-                        <div style={{ width: 1, background: "rgba(255,255,255,0.08)" }} />
-                        <div style={{ textAlign: "center" }}>
-                          <div style={{ fontSize: 24, fontWeight: 700, color: "#34d399" }}>{newlyShown.length}</div>
-                          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>restored</div>
-                        </div>
-                      </>
-                    )}
-                    {catChanges > 0 && (
-                      <>
-                        <div style={{ width: 1, background: "rgba(255,255,255,0.08)" }} />
-                        <div style={{ textAlign: "center" }}>
-                          <div style={{ fontSize: 24, fontWeight: 700, color: "#a78bfa" }}>{catChanges}</div>
-                          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>recategorized</div>
-                        </div>
-                      </>
-                    )}
-                    <div style={{ width: 1, background: "rgba(255,255,255,0.08)" }} />
-                    <div style={{ textAlign: "center" }}>
-                      <div style={{ fontSize: 24, fontWeight: 700, color: "rgba(255,255,255,0.5)" }}>{order.filter((id) => !hiddenSlides.includes(id)).length}</div>
-                      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>published</div>
-                    </div>
-                  </div>
-                );
-              })()}
-
-              {/* New order with change indicators */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {order.map((id, newIdx) => {
-                  const slide = SLIDE_COMPONENTS[id];
-                  if (!slide) return null;
-                  const oldIdx = savedOrder.indexOf(id);
-                  const moved = oldIdx !== newIdx;
-                  const diff = oldIdx - newIdx;
-                  const cat = categories[id] || null;
-                  const savedCat = savedCategories[id] || null;
-                  const catChanged = cat !== savedCat;
-                  const catColor = cat ? getColorForCategory(cat, uniqueCategories) : null;
-                  const isHidden = hiddenSlides.includes(id);
-                  const hasAnyChange = moved || catChanged;
-
-                  return (
-                    <div
-                      key={id}
-                      style={{
-                        display: "flex", alignItems: "center", gap: 12,
-                        padding: "8px 12px",
-                        borderRadius: 8,
-                        background: hasAnyChange ? "rgba(217,119,6,0.06)" : "transparent",
-                        borderLeft: hasAnyChange ? "3px solid #d97706" : "3px solid transparent",
-                        opacity: isHidden ? 0.4 : 1,
-                      }}
-                    >
-                      {/* New position */}
-                      <span style={{
-                        fontSize: 14, fontWeight: 700, minWidth: 28, textAlign: "right",
-                        color: moved ? "#fbbf24" : "rgba(255,255,255,0.3)",
-                      }}>
-                        {newIdx + 1}
-                      </span>
-
-                      {/* Category dot */}
-                      {catColor && (
-                        <div style={{ width: 8, height: 8, borderRadius: "50%", background: catColor.dot, flexShrink: 0 }} />
-                      )}
-
-                      {/* Slide name */}
-                      <span style={{
-                        flex: 1, fontSize: 14, color: moved ? "#fff" : "rgba(255,255,255,0.5)",
-                        fontWeight: moved ? 500 : 400,
-                        textDecoration: isHidden ? "line-through" : "none",
-                      }}>
-                        {slide.label}
-                      </span>
-
-                      {/* Movement indicator */}
-                      {moved && (
-                        <span style={{
-                          display: "flex", alignItems: "center", gap: 4,
-                          fontSize: 12, fontWeight: 600, flexShrink: 0,
-                          color: diff > 0 ? "#34d399" : "#f87171",
-                        }}>
-                          was {oldIdx + 1}
-                          <ArrowRight size={12} />
-                          {newIdx + 1}
-                          <span style={{
-                            marginLeft: 4, padding: "1px 6px", borderRadius: 4,
-                            background: diff > 0 ? "rgba(5,150,105,0.15)" : "rgba(239,68,68,0.15)",
-                            fontSize: 11,
-                          }}>
-                            {diff > 0 ? `↑${diff}` : `↓${Math.abs(diff)}`}
-                          </span>
-                        </span>
-                      )}
-                      {/* Category change indicator */}
-                      {catChanged && (
-                        <span style={{
-                          fontSize: 11, fontWeight: 500, flexShrink: 0,
-                          color: "#a78bfa", padding: "2px 8px", borderRadius: 4,
-                          background: "rgba(167,139,250,0.12)",
-                        }}>
-                          {savedCat ? cat ? `${savedCat} → ${cat}` : `removed from ${savedCat}` : `→ ${cat}`}
-                        </span>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Modal footer */}
-            <div style={{
-              padding: "16px 28px 20px",
-              borderTop: "1px solid rgba(255,255,255,0.08)",
-              display: "flex", alignItems: "center", gap: 12,
-            }}>
-              <button
-                onClick={() => {
-                  localStorage.setItem("previewDeckData", JSON.stringify({ order, hiddenSlides }));
-                  window.open("/?preview=true", "_blank");
-                }}
-                className="catalog-btn-outline"
-                style={{ marginRight: "auto" }}
-              >
-                <Eye size={15} style={{ flexShrink: 0 }} />
-                Preview Deck
-              </button>
-              <button
-                onClick={() => setShowPreview(false)}
-                className="catalog-btn-outline"
-              >
-                Go Back
-              </button>
-              <button
-                onClick={() => { setShowPreview(false); saveAll(); }}
-                className="catalog-btn-primary"
-                style={{ background: "#2860B2", color: "#fff", cursor: "pointer" }}
-              >
-                <Check size={15} style={{ flexShrink: 0 }} />
-                Confirm &amp; Save
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Tab content */}
+      <div style={{ flex: 1, minHeight: 0, overflow: "hidden" }}>
+        {activeTab === "main" && (
+          <ReadOnlySlideGrid
+            order={mainOrder}
+            hiddenSlides={mainHidden}
+            registry={SLIDE_COMPONENTS_MAIN}
+            source="main"
+            onAddToFinal={addToFinal}
+            finalOrder={finalOrder}
+          />
+        )}
+        {activeTab === "yaniv" && (
+          <ReadOnlySlideGrid
+            order={yanivOrder}
+            hiddenSlides={yanivHidden}
+            registry={SLIDE_COMPONENTS_YANIV}
+            source="yaniv"
+            onAddToFinal={addToFinal}
+            finalOrder={finalOrder}
+          />
+        )}
+        {activeTab === "final" && (
+          <FinalDeliverableTab
+            finalOrder={finalOrder}
+            setFinalOrder={setFinalOrder}
+            finalHidden={finalHidden}
+            toggleFinalHide={toggleFinalHide}
+            removeFromFinal={removeFromFinal}
+            gridSensors={gridSensors}
+            sidebarSensors={sidebarSensors}
+            onDragStart={handleDragStart}
+            onGridDragEnd={handleFinalGridDragEnd}
+            onSidebarDragEnd={handleFinalSidebarDragEnd}
+            activeId={activeId}
+            activeFinalSlide={activeFinalSlide}
+            activeFinalEntry={activeFinalEntry ?? null}
+            viewFilter={viewFilter}
+            setViewFilter={setViewFilter}
+          />
+        )}
+      </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -890,7 +491,464 @@ export default function CatalogPage() {
         .sidebar-icon-btn:disabled {
           opacity: 0.2; cursor: default;
         }
+        .source-badge {
+          display: inline-flex; align-items: center; gap: 4px;
+          padding: 2px 8px; border-radius: 4px;
+          font-size: 11px; font-weight: 600;
+          font-family: 'Space Grotesk', sans-serif;
+        }
+        .source-badge-main {
+          background: rgba(40,96,178,0.2); color: #5b9cf5;
+        }
+        .source-badge-yaniv {
+          background: rgba(168,85,247,0.2); color: #c084fc;
+        }
+        .add-to-final-btn {
+          display: flex; align-items: center; gap: 6px;
+          padding: 6px 14px; border-radius: 6px; border: none;
+          font-size: 12px; font-weight: 600;
+          font-family: 'Space Grotesk', sans-serif;
+          cursor: pointer; transition: all 0.15s;
+          background: rgba(5,150,105,0.15); color: #34d399;
+        }
+        .add-to-final-btn:hover { background: rgba(5,150,105,0.3); }
+        .add-to-final-btn:disabled {
+          opacity: 0.4; cursor: default;
+          background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.3);
+        }
       `}} />
+    </div>
+  );
+}
+
+/* ──────────────────────────────────────────────
+   Read-only grid for Main / Yaniv tabs
+   ────────────────────────────────────────────── */
+
+function ReadOnlySlideGrid({
+  order,
+  hiddenSlides,
+  registry,
+  source,
+  onAddToFinal,
+  finalOrder,
+}: {
+  order: string[];
+  hiddenSlides: string[];
+  registry: Record<string, SlideDef>;
+  source: "main" | "yaniv";
+  onAddToFinal: (id: string, source: "main" | "yaniv") => void;
+  finalOrder: FinalSlideEntry[];
+}) {
+  const [filter, setFilter] = useState<"all" | "published" | "hidden">("all");
+
+  const published = order.filter((id) => !hiddenSlides.includes(id));
+  const hidden = order.filter((id) => hiddenSlides.includes(id));
+
+  const displayOrder =
+    filter === "published" ? published :
+    filter === "hidden" ? hidden :
+    order;
+
+  return (
+    <div style={{ height: "100%", overflowY: "auto", display: "flex", flexDirection: "column" }}>
+      {/* Filter bar */}
+      <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "20px 32px 0", flexShrink: 0 }}>
+        {([
+          { key: "all" as const, label: "All Slides", count: order.length },
+          { key: "published" as const, label: "Published", count: published.length },
+          { key: "hidden" as const, label: "Hidden", count: hidden.length },
+        ]).map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setFilter(tab.key)}
+            style={{
+              padding: "8px 18px", borderRadius: 8, border: "none",
+              fontSize: 13,
+              fontWeight: filter === tab.key ? 600 : 400,
+              fontFamily: "'Space Grotesk', sans-serif",
+              cursor: "pointer", transition: "all 0.15s",
+              background: filter === tab.key ? "rgba(40,96,178,0.2)" : "transparent",
+              color: filter === tab.key ? "#5b9cf5" : "rgba(255,255,255,0.4)",
+            }}
+          >
+            {tab.label}
+            <span style={{
+              marginLeft: 8, fontSize: 12, padding: "1px 7px", borderRadius: 10,
+              background: filter === tab.key ? "rgba(40,96,178,0.25)" : "rgba(255,255,255,0.06)",
+              color: filter === tab.key ? "#5b9cf5" : "rgba(255,255,255,0.3)",
+            }}>
+              {tab.count}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      {/* Grid */}
+      <div style={{ padding: "20px 32px 60px", flex: 1 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+            gap: 24,
+          }}
+        >
+          {displayOrder.map((id, idx) => {
+            const slide = registry[id];
+            if (!slide) return null;
+            const isHidden = hiddenSlides.includes(id);
+            const alreadyInFinal = finalOrder.some((e) => e.id === id && e.source === source);
+
+            return (
+              <div
+                key={id}
+                style={{
+                  borderRadius: 12,
+                  overflow: "hidden",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "#111827",
+                  opacity: isHidden ? 0.5 : 1,
+                  transition: "all 0.2s",
+                }}
+              >
+                <SlideCardContent
+                  slide={slide}
+                  index={order.indexOf(id)}
+                  category={null}
+                  categoryColor={null}
+                />
+                <div
+                  style={{
+                    padding: "10px 14px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    borderTop: "1px solid rgba(255,255,255,0.06)",
+                    background: "rgba(0,0,0,0.2)",
+                  }}
+                >
+                  <span className={`source-badge source-badge-${source}`}>
+                    {source === "main" ? "Main" : "Yaniv"}
+                  </span>
+                  <button
+                    className="add-to-final-btn"
+                    onClick={() => onAddToFinal(id, source)}
+                    disabled={alreadyInFinal}
+                  >
+                    {alreadyInFinal ? (
+                      <><Check size={12} /> In Final</>
+                    ) : (
+                      <><Plus size={12} /> Add to Final</>
+                    )}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ──────────────────────────────────────────────
+   Final Deliverable tab (editable with DnD)
+   ────────────────────────────────────────────── */
+
+function FinalDeliverableTab({
+  finalOrder,
+  setFinalOrder,
+  finalHidden,
+  toggleFinalHide,
+  removeFromFinal,
+  gridSensors,
+  sidebarSensors,
+  onDragStart,
+  onGridDragEnd,
+  onSidebarDragEnd,
+  activeId,
+  activeFinalSlide,
+  activeFinalEntry,
+  viewFilter,
+  setViewFilter,
+}: {
+  finalOrder: FinalSlideEntry[];
+  setFinalOrder: React.Dispatch<React.SetStateAction<FinalSlideEntry[]>>;
+  finalHidden: string[];
+  toggleFinalHide: (compositeKey: string) => void;
+  removeFromFinal: (compositeKey: string) => void;
+  gridSensors: ReturnType<typeof useSensors>;
+  sidebarSensors: ReturnType<typeof useSensors>;
+  onDragStart: (event: DragStartEvent) => void;
+  onGridDragEnd: (event: DragEndEvent) => void;
+  onSidebarDragEnd: (event: DragEndEvent) => void;
+  activeId: string | null;
+  activeFinalSlide: SlideDef | null;
+  activeFinalEntry: FinalSlideEntry | null;
+  viewFilter: "all" | "published" | "hidden";
+  setViewFilter: (f: "all" | "published" | "hidden") => void;
+}) {
+  const compositeKeys = finalOrder.map((e) => `${e.source}::${e.id}`);
+
+  if (finalOrder.length === 0) {
+    return (
+      <div style={{
+        display: "flex", alignItems: "center", justifyContent: "center",
+        height: "100%", flexDirection: "column", gap: 16,
+      }}>
+        <div style={{
+          fontSize: 48, opacity: 0.2,
+        }}>
+          📋
+        </div>
+        <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 16, margin: 0 }}>
+          No slides in the Final Deliverable yet
+        </p>
+        <p style={{ color: "rgba(255,255,255,0.25)", fontSize: 14, margin: 0 }}>
+          Switch to the Main or Yaniv tabs and add slides using the &quot;Add to Final&quot; button
+        </p>
+      </div>
+    );
+  }
+
+  const publishedCount = finalOrder.filter((e) => !finalHidden.includes(`${e.source}::${e.id}`)).length;
+  const hiddenCount = finalOrder.filter((e) => finalHidden.includes(`${e.source}::${e.id}`)).length;
+
+  return (
+    <div style={{ display: "flex", flex: 1, minHeight: 0, overflow: "hidden", height: "100%" }}>
+      {/* Sidebar */}
+      <aside
+        style={{
+          width: 340, minWidth: 340,
+          borderRight: "1px solid rgba(255,255,255,0.08)",
+          background: "rgba(0,0,0,0.15)",
+          overflowY: "auto", padding: "24px 20px",
+          display: "flex", flexDirection: "column", gap: 4,
+          height: "100%",
+        }}
+      >
+        <div style={{
+          display: "flex", alignItems: "center", gap: 8,
+          padding: "6px 8px", marginBottom: 6,
+        }}>
+          <span style={{ fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            Final Order
+          </span>
+          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.2)" }}>Drag to reorder</span>
+        </div>
+
+        <DndContext
+          sensors={sidebarSensors}
+          collisionDetection={closestCenter}
+          onDragEnd={onSidebarDragEnd}
+        >
+          <SortableContext items={compositeKeys} strategy={verticalListSortingStrategy}>
+            {finalOrder.map((entry, idx) => {
+              const key = `${entry.source}::${entry.id}`;
+              const slide = resolveFinalSlide(entry);
+              if (!slide) return null;
+              const isHidden = finalHidden.includes(key);
+              return (
+                <FinalSidebarRow
+                  key={key}
+                  id={key}
+                  slide={slide}
+                  position={idx + 1}
+                  source={entry.source}
+                  isHidden={isHidden}
+                  onToggleHide={() => toggleFinalHide(key)}
+                  onRemove={() => removeFromFinal(key)}
+                />
+              );
+            })}
+          </SortableContext>
+        </DndContext>
+      </aside>
+
+      {/* Main grid */}
+      <main style={{ flex: 1, overflowY: "auto", height: "100%", display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "20px 32px 0", flexShrink: 0 }}>
+          {([
+            { key: "all" as const, label: "All Slides", count: finalOrder.length },
+            { key: "published" as const, label: "Published", count: publishedCount },
+            { key: "hidden" as const, label: "Hidden", count: hiddenCount },
+          ]).map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setViewFilter(tab.key)}
+              style={{
+                padding: "8px 18px", borderRadius: 8, border: "none",
+                fontSize: 13,
+                fontWeight: viewFilter === tab.key ? 600 : 400,
+                fontFamily: "'Space Grotesk', sans-serif",
+                cursor: "pointer", transition: "all 0.15s",
+                background: viewFilter === tab.key ? "rgba(5,150,105,0.2)" : "transparent",
+                color: viewFilter === tab.key ? "#34d399" : "rgba(255,255,255,0.4)",
+              }}
+            >
+              {tab.label}
+              <span style={{
+                marginLeft: 8, fontSize: 12, padding: "1px 7px", borderRadius: 10,
+                background: viewFilter === tab.key ? "rgba(5,150,105,0.25)" : "rgba(255,255,255,0.06)",
+                color: viewFilter === tab.key ? "#34d399" : "rgba(255,255,255,0.3)",
+              }}>
+                {tab.count}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <div style={{ padding: "20px 32px 60px", flex: 1 }}>
+          <DndContext
+            sensors={gridSensors}
+            collisionDetection={closestCenter}
+            onDragStart={onDragStart}
+            onDragEnd={onGridDragEnd}
+          >
+            <SortableContext items={compositeKeys} strategy={rectSortingStrategy}>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+                  gap: 24,
+                }}
+              >
+                {finalOrder.map((entry) => {
+                  const key = `${entry.source}::${entry.id}`;
+                  const slide = resolveFinalSlide(entry);
+                  if (!slide) return null;
+                  const isHidden = finalHidden.includes(key);
+                  if (viewFilter === "published" && isHidden) return null;
+                  if (viewFilter === "hidden" && !isHidden) return null;
+                  const globalIndex = compositeKeys.indexOf(key);
+
+                  return (
+                    <SortableSlideCard
+                      key={key}
+                      slide={{ ...slide, id: key }}
+                      index={globalIndex}
+                      isActive={activeId === key}
+                      isHidden={isHidden}
+                      onToggleHide={() => toggleFinalHide(key)}
+                      category={null}
+                      categoryColor={null}
+                      allCategories={[]}
+                      onAssignCategory={() => {}}
+                      sourceBadge={entry.source}
+                      onRemove={() => removeFromFinal(key)}
+                    />
+                  );
+                })}
+              </div>
+            </SortableContext>
+
+            <DragOverlay adjustScale={false}>
+              {activeFinalSlide && activeFinalEntry ? (
+                <div
+                  style={{
+                    borderRadius: 12, overflow: "hidden",
+                    border: "2px solid #059669",
+                    boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(5,150,105,0.3)",
+                    background: "#111827", cursor: "grabbing", transform: "scale(1.03)",
+                  }}
+                >
+                  <SlideCardContent slide={activeFinalSlide} index={0} category={null} categoryColor={null} />
+                </div>
+              ) : null}
+            </DragOverlay>
+          </DndContext>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+/* ──────────────────────────────────────────────
+   Final sidebar row (draggable)
+   ────────────────────────────────────────────── */
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+
+function FinalSidebarRow({
+  id,
+  slide,
+  position,
+  source,
+  isHidden,
+  onToggleHide,
+  onRemove,
+}: {
+  id: string;
+  slide: SlideDef;
+  position: number;
+  source: "main" | "yaniv";
+  isHidden: boolean;
+  onToggleHide: () => void;
+  onRemove: () => void;
+}) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.4 : isHidden ? 0.4 : 1,
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={{
+        ...style,
+        display: "flex",
+        alignItems: "center",
+        gap: 8,
+        padding: "6px 8px",
+        borderRadius: 6,
+        cursor: "grab",
+        userSelect: "none",
+      }}
+      {...attributes}
+      {...listeners}
+    >
+      <span style={{
+        fontSize: 12, fontWeight: 600, minWidth: 22, textAlign: "right",
+        color: "rgba(255,255,255,0.3)",
+      }}>
+        {position}
+      </span>
+      <span className={`source-badge source-badge-${source}`} style={{ fontSize: 9, padding: "1px 5px" }}>
+        {source === "main" ? "M" : "Y"}
+      </span>
+      <span style={{
+        flex: 1, fontSize: 13, color: "rgba(255,255,255,0.6)",
+        textDecoration: isHidden ? "line-through" : "none",
+        overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
+      }}>
+        {slide.label}
+      </span>
+      <button
+        className="sidebar-icon-btn"
+        onClick={(e) => { e.stopPropagation(); onToggleHide(); }}
+        title={isHidden ? "Show" : "Hide"}
+      >
+        <Eye size={12} />
+      </button>
+      <button
+        className="sidebar-icon-btn"
+        onClick={(e) => { e.stopPropagation(); onRemove(); }}
+        title="Remove from Final"
+        onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
+        onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.2)")}
+      >
+        <Trash2 size={12} />
+      </button>
     </div>
   );
 }

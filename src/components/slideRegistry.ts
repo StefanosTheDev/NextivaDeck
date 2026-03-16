@@ -183,3 +183,6 @@ export function getAllSlideIds(): string[] {
 }
 
 export { SLIDE_COMPONENTS };
+
+export const SLIDE_COMPONENTS_MAIN = SLIDE_COMPONENTS;
+export const DEFAULT_SLIDE_ORDER_MAIN = DEFAULT_SLIDE_ORDER;

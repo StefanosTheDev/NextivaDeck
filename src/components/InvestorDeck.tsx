@@ -4,7 +4,25 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
 
-import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "./slideRegistry";
+import { SLIDE_COMPONENTS, resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "./slideRegistry";
+import { SLIDE_COMPONENTS_YANIV } from "./slideRegistryYaniv";
+
+interface FinalSlideEntry {
+  id: string;
+  source: "main" | "yaniv";
+}
+
+function resolveFinalOrder(entries: FinalSlideEntry[], hidden: string[]): SlideDef[] {
+  return entries
+    .filter((e) => !hidden.includes(`${e.source}::${e.id}`))
+    .map((e) => {
+      const registry = e.source === "yaniv" ? SLIDE_COMPONENTS_YANIV : SLIDE_COMPONENTS;
+      const def = registry[e.id];
+      if (!def) return null;
+      return { ...def, id: `${e.source}::${e.id}` };
+    })
+    .filter((s): s is SlideDef => s != null);
+}
 
 export default function InvestorDeck() {
   const [slides, setSlides] = useState<SlideDef[]>(() => resolveSlides(DEFAULT_SLIDE_ORDER));
@@ -33,14 +51,26 @@ export default function InvestorDeck() {
       if (stored) {
         try {
           const data = JSON.parse(stored);
-          const previewOrder: string[] = data.order || DEFAULT_SLIDE_ORDER;
+          const previewOrder = data.order || [];
           const previewHidden: string[] = data.hiddenSlides || [];
-          const visible = previewOrder.filter((id: string) => !previewHidden.includes(id));
-          const resolved = resolveSlides(visible);
-          if (resolved.length > 0) {
-            setSlides(resolved);
-            if (cur >= resolved.length) setCur(0);
-            return;
+          if (Array.isArray(previewOrder) && previewOrder.length > 0) {
+            const isFinalFormat = typeof previewOrder[0] === "object" && previewOrder[0].source;
+            if (isFinalFormat) {
+              const resolved = resolveFinalOrder(previewOrder as FinalSlideEntry[], previewHidden);
+              if (resolved.length > 0) {
+                setSlides(resolved);
+                if (cur >= resolved.length) setCur(0);
+                return;
+              }
+            } else {
+              const visible = (previewOrder as string[]).filter((id: string) => !previewHidden.includes(id));
+              const resolved = resolveSlides(visible);
+              if (resolved.length > 0) {
+                setSlides(resolved);
+                if (cur >= resolved.length) setCur(0);
+                return;
+              }
+            }
           }
         } catch {
           // fall through to API
@@ -48,16 +78,41 @@ export default function InvestorDeck() {
       }
     }
 
-    fetch("/api/slides")
+    fetch("/api/slides?source=final")
       .then((r) => r.json())
       .then((data) => {
-        if (Array.isArray(data.order)) {
+        if (Array.isArray(data.order) && data.order.length > 0) {
           const hidden: string[] = Array.isArray(data.hiddenSlides) ? data.hiddenSlides : [];
-          const visibleOrder = data.order.filter((id: string) => !hidden.includes(id));
-          const resolved = resolveSlides(visibleOrder);
-          setSlides(resolved);
-          if (cur >= resolved.length) setCur(0);
+          const isFinalFormat = typeof data.order[0] === "object" && data.order[0].source;
+          if (isFinalFormat) {
+            const resolved = resolveFinalOrder(data.order as FinalSlideEntry[], hidden);
+            if (resolved.length > 0) {
+              setSlides(resolved);
+              if (cur >= resolved.length) setCur(0);
+              return;
+            }
+          } else {
+            const visibleOrder = (data.order as string[]).filter((id: string) => !hidden.includes(id));
+            const resolved = resolveSlides(visibleOrder);
+            if (resolved.length > 0) {
+              setSlides(resolved);
+              if (cur >= resolved.length) setCur(0);
+              return;
+            }
+          }
         }
+        // Fallback: if final is empty, load from main
+        return fetch("/api/slides?source=main")
+          .then((r) => r.json())
+          .then((mainData) => {
+            if (Array.isArray(mainData.order)) {
+              const hidden: string[] = Array.isArray(mainData.hiddenSlides) ? mainData.hiddenSlides : [];
+              const visibleOrder = mainData.order.filter((id: string) => !hidden.includes(id));
+              const resolved = resolveSlides(visibleOrder);
+              setSlides(resolved);
+              if (cur >= resolved.length) setCur(0);
+            }
+          });
       })
       .catch(() => {});
   // eslint-disable-next-line react-hooks/exhaustive-deps
