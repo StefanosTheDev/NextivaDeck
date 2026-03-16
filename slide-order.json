@@ -46,6 +46,7 @@
     "customer-use-cases-divider",
     "summary",
     "closing",
+    "agentic-opp-v2-thomas",
     "appendix-products",
     "customer-base",
     "durable-edge",
@@ -62,7 +63,8 @@
   "categories": {
     "world-moving-thomas": "from Thomas",
     "what-we-are-close-thomas": "from Thomas",
-    "cx-portfolio-thomas": "from Thomas"
+    "cx-portfolio-thomas": "from Thomas",
+    "agentic-opp-v2-thomas": "from Thomas"
   },
   "categoryNames": [
     "dividers",

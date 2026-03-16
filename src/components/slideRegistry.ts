@@ -58,6 +58,7 @@ import WorldMovingSlide from "./slides/WorldMovingSlide";
 import WhatWeAreCloseSlide from "./slides/WhatWeAreCloseSlide";
 import CXPortfolioThomasSlide from "./slides/CXPortfolioThomasSlide";
 import AIAgentsInActionSlide from "./slides/AIAgentsInActionSlide";
+import AgenticOpportunityV2Slide from "./slides/AgenticOpportunityV2Slide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -130,6 +131,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "what-we-are-close-thomas": { id: "what-we-are-close-thomas", label: "#6 What We Are Close (Thomas · SlideWhatWeAreClose)", component: WhatWeAreCloseSlide, theme: "dark", isNew: true },
   "cx-portfolio-thomas": { id: "cx-portfolio-thomas", label: "#15 CX Platform Portfolio (Thomas · SlideCXPortfolio)", component: CXPortfolioThomasSlide, theme: "dark", isNew: true },
   "ai-agents-in-action": { id: "ai-agents-in-action", label: "AI Agents in Action", component: AIAgentsInActionSlide, theme: "dark", isNew: true },
+  "agentic-opp-v2-thomas": { id: "agentic-opp-v2-thomas", label: "AI Opportunity (Thomas · SlideAgenticOpportunity)", component: AgenticOpportunityV2Slide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -185,6 +187,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "what-we-are-close-thomas",
   "cx-portfolio-thomas",
   "ai-agents-in-action",
+  "agentic-opp-v2-thomas",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
