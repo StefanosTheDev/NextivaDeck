@@ -41,6 +41,7 @@ import CashFlowTrendsSlide from "./slides/CashFlowTrendsSlide";
 import AgenticOpportunity2Slide from "./slides/AgenticOpportunity2Slide";
 import AgenticOpportunityCopySlide from "./slides/AgenticOpportunityCopySlide";
 import AgenticOpportunityCopy2Slide from "./slides/AgenticOpportunityCopy2Slide";
+import AgenticOpportunityCopy3Slide from "./slides/AgenticOpportunityCopy3Slide";
 import AiTailwind2Slide from "./slides/AiTailwind2Slide";
 import DurableEdgeSlide from "./slides/DurableEdgeSlide";
 import MarketTAMSlide from "./slides/MarketTAMSlide";
@@ -54,6 +55,7 @@ import AiTailwindOptionESlide from "./slides/AiTailwindOptionESlide";
 import AiTailwindCopySlide from "./slides/AiTailwindCopySlide";
 import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
 import MarketTAMLovableSlide from "./slides/MarketTAMLovableSlide";
+import MarketTAMLovableCopySlide from "./slides/MarketTAMLovableCopySlide";
 import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
 import WorldMovingSlide from "./slides/WorldMovingSlide";
 import WhatWeAreCloseSlide from "./slides/WhatWeAreCloseSlide";
@@ -92,6 +94,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "agentic-opp":       { id: "agentic-opp",         label: "AI Opportunity",      component: AgenticOpportunitySlide,  theme: "dark" },
   "agentic-opp-copy":   { id: "agentic-opp-copy",   label: "AI Opportunity (copy)", component: AgenticOpportunityCopySlide, theme: "dark" },
   "agentic-opp-copy-2": { id: "agentic-opp-copy-2", label: "AI Opportunity (copy 2)", component: AgenticOpportunityCopy2Slide, theme: "dark" },
+  "agentic-opp-copy-3": { id: "agentic-opp-copy-3", label: "Tomorrow's Agentic Workforce (copy)", component: AgenticOpportunityCopy3Slide, theme: "dark" },
   "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "dark" },
   "cx-market-sizing":  { id: "cx-market-sizing",     label: "CX Market Sizing",    component: CXMarketSizingSlide,      theme: "dark" },
   "labor-cost-savings":{ id: "labor-cost-savings",   label: "Labor Cost Savings",  component: LaborCostSavingsSlide,    theme: "dark" },
@@ -135,6 +138,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-copy":  { id: "ai-tailwind-copy",   label: "AI Tailwind (copy)",   component: AiTailwindCopySlide,     theme: "dark" },
   "customer-base-lovable": { id: "customer-base-lovable", label: "Customer Base (Lovable)", component: CustomerBaseLovableSlide, theme: "dark" },
   "market-tam-lovable": { id: "market-tam-lovable", label: "Market TAM (Lovable)", component: MarketTAMLovableSlide, theme: "dark" },
+  "market-tam-lovable-copy": { id: "market-tam-lovable-copy", label: "Market TAM (Lovable copy)", component: MarketTAMLovableCopySlide, theme: "dark" },
   "world-moving-thomas": { id: "world-moving-thomas", label: "#4 World Moving to Unified CX (Thomas · SlideWorldMoving)", component: WorldMovingSlide, theme: "dark", isNew: true },
   "what-we-are-close-thomas": { id: "what-we-are-close-thomas", label: "#6 What We Are Close (Thomas · SlideWhatWeAreClose)", component: WhatWeAreCloseSlide, theme: "dark", isNew: true },
   "cx-portfolio-thomas": { id: "cx-portfolio-thomas", label: "#15 CX Platform Portfolio (Thomas · SlideCXPortfolio)", component: CXPortfolioThomasSlide, theme: "dark", isNew: true },

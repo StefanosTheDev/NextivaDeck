@@ -22,7 +22,7 @@ const whyNextiva = [
   "Built for operators, not IT departments",
 ];
 
-export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slideNumber?: number }) {
+export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { slideNumber?: number }) {
   return (
     <div
       className="slide"
@@ -49,75 +49,11 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
         style={{ flex: 1, padding: "12px 80px 0", display: "flex", flexDirection: "column", minHeight: 0 }}
       >
-        {/* Three detail cards - moved to top */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
-          style={{ display: "flex", gap: 16, marginTop: 24, flexShrink: 0, alignItems: "stretch" }}
-        >
-          {/* Market Context */}
-          <div style={{
-            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 14, padding: "20px 20px", minHeight: 0,
-          }}>
-            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
-              MARKET CONTEXT
-            </p>
-            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
-              Enterprise Contact Centers Market
-            </h3>
-            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.78)", margin: 0, lineHeight: 1.4 }}>
-              Fierce battle amongst incumbents to address one-third of available contact center seats and less than 10% of global contact centers.
-            </p>
-          </div>
-
-          {/* Competitive Landscape */}
-          <div style={{
-            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 14, padding: "20px 20px", minHeight: 0,
-          }}>
-            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
-              COMPETITIVE LANDSCAPE
-            </p>
-            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
-              The Massive Middle of CX Is Underserved
-            </h3>
-            <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-              {competitiveBullets.map((b) => (
-                <li key={b} style={{ fontSize: 13, color: "rgba(255,255,255,0.78)", lineHeight: 1.45, marginBottom: 4, paddingLeft: 12, position: "relative" }}>
-                  <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.5)" }}>•</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Why Nextiva Wins */}
-          <div style={{
-            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 14, padding: "20px 20px", minHeight: 0,
-          }}>
-            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
-              WHY NEXTIVA WINS
-            </p>
-            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
-              The complete Agentic CX platform
-            </h3>
-            <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-              {whyNextiva.map((b) => (
-                <li key={b} style={{ fontSize: 13, color: "rgba(255,255,255,0.78)", lineHeight: 1.45, marginBottom: 4, paddingLeft: 12, position: "relative" }}>
-                  <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.5)" }}>•</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-
-        {/* Stat cards (18M = 6M+12M + 7M) */}
+        {/* Stat cards (18M = 6M+12M + 7M) - moved to top */}
         <div style={{
           width: "100%",
           flexShrink: 0,
-          marginTop: 20,
+          marginTop: 24,
           paddingBottom: 6,
           position: "relative",
         }}>
@@ -251,6 +187,70 @@ export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slid
             ))}
           </div>
         </div>
+
+        {/* Three detail cards - moved to bottom */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
+          style={{ display: "flex", gap: 16, marginTop: 52, flexShrink: 0, alignItems: "stretch" }}
+        >
+          {/* Market Context */}
+          <div style={{
+            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 14, padding: "20px 20px", minHeight: 0,
+          }}>
+            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
+              MARKET CONTEXT
+            </p>
+            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+              Enterprise Contact Centers Market
+            </h3>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.78)", margin: 0, lineHeight: 1.4 }}>
+              Fierce battle amongst incumbents to address one-third of available contact center seats and less than 10% of global contact centers.
+            </p>
+          </div>
+
+          {/* Competitive Landscape */}
+          <div style={{
+            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 14, padding: "20px 20px", minHeight: 0,
+          }}>
+            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
+              COMPETITIVE LANDSCAPE
+            </p>
+            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+              The Massive Middle of CX Is Underserved
+            </h3>
+            <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+              {competitiveBullets.map((b) => (
+                <li key={b} style={{ fontSize: 13, color: "rgba(255,255,255,0.78)", lineHeight: 1.45, marginBottom: 4, paddingLeft: 12, position: "relative" }}>
+                  <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.5)" }}>•</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Why Nextiva Wins */}
+          <div style={{
+            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 14, padding: "20px 20px", minHeight: 0,
+          }}>
+            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
+              WHY NEXTIVA WINS
+            </p>
+            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+              The complete Agentic CX platform
+            </h3>
+            <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+              {whyNextiva.map((b) => (
+                <li key={b} style={{ fontSize: 13, color: "rgba(255,255,255,0.78)", lineHeight: 1.45, marginBottom: 4, paddingLeft: 12, position: "relative" }}>
+                  <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.5)" }}>•</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
 
       </motion.main>
 
