@@ -22,6 +22,7 @@
     "agentic-opp-2",
     "agentic-opp-copy",
     "agentic-opp",
+    "agentic-opp-lovable",
     "ai-tailwind-copy",
     "ai-tailwind",
     "ai-agents-in-action",
@@ -62,7 +63,8 @@
     "cx-portfolio-thomas-a",
     "cx-portfolio-thomas-b",
     "cx-portfolio-thomas-c",
-    "cx-portfolio-thomas-d"
+    "cx-portfolio-thomas-d",
+    "contact-center-market-opportunity"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",

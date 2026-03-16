@@ -1,407 +1,240 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
-const stats = [
-  { value: "25M+", label: "businesses with\ncustomer-facing teams" },
-  { value: "18M", label: "traditional contact\ncenter seats" },
-  { value: "7M", label: "businesses doing CX\nwithout calling it contact center" },
+const topCards = [
+  { stat: "25M", label: "under 25 million customer-facing businesses" },
+  { stat: "18M", label: "contact center seats" },
+  { stat: "7M", label: "businesses doing CX without calling it a contact center" },
 ];
 
-const pyramidSegments = [
-  {
-    label: "Enterprise (1,000+ seats)",
-    annotation: "Where competitors fight",
-    width: "55%",
-    bg: "rgba(232,116,97,0.18)",
-    border: "rgba(232,116,97,0.35)",
-    accent: "#E87461",
-  },
-  {
-    label: "Mid-market (50–1,000 seats)",
-    annotation: "Underserved",
-    width: "72%",
-    bg: "rgba(40,96,178,0.10)",
-    border: "rgba(40,96,178,0.22)",
-    accent: "#5BA0E0",
-  },
-  {
-    label: "SMB & Massive Middle (<50 seats) — 70% of all centers",
-    annotation: "← NEXTIVA'S MARKET",
-    width: "100%",
-    bg: "rgba(40,96,178,0.18)",
-    border: "rgba(40,96,178,0.35)",
-    accent: "#2860B2",
-    highlight: true,
-  },
+const competitiveBullets = [
+  "The Massive Middle of CX is underserved",
+  "Most CX platforms are built for enterprises",
+  "Millions of growing businesses are left behind",
+  "Solutions are expensive and complex to deploy",
 ];
 
-const marketGapItems = [
-  "Legacy platforms require large IT teams to deploy",
-  "6-figure implementation budgets out of reach",
-  "12–18 month deployment cycles",
-  "Software not designed for self-service",
+const whyNextiva = [
+  "Unified Customer Interactions",
+  "Unified Customer Data",
+  "Agentic & Human in Tandem",
+  "Go-to-Market Moat",
+  "Product Led Motion",
 ];
 
-const purposeBuiltItems = [
-  { keyword: "self-serve", desc: "No IT team or integrators required" },
-  { keyword: "affordable", desc: "Enterprise-grade tools at accessible pricing" },
-  { keyword: "fast", desc: "Designed for immediate time to value" },
-  { keyword: "unified", desc: "All channels & data, one platform" },
-];
-
-export default function AgenticOpportunityCopySlide({ slideNumber = 17 }: { slideNumber?: number }) {
+export default function AgenticOpportunityCopySlide({ slideNumber = 12 }: { slideNumber?: number }) {
   return (
     <div
       className="slide"
       style={{
-        background:
-          "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
-        justifyContent: "space-between",
+        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
       }}
     >
-      {/* Header */}
       <motion.header
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        style={{ padding: "36px 100px 0", flexShrink: 0 }}
+        initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+        style={{ padding: "40px 80px 0", flexShrink: 0 }}
       >
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 15,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            color: "#CCC7C3",
-            margin: "0 0 8px",
-          }}
-        >
-          WHERE WE WIN
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 8px" }}>
+          THE AGENTIC AI OPPORTUNITY
         </p>
-        <h1
-          className="font-heading"
-          style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
-        >
-          A massive market hiding in plain sight.
+        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+          Tomorrow&apos;s Agentic Workforce.
         </h1>
-        <p
-          style={{
-            fontSize: 18,
-            color: "rgba(255,255,255,0.45)",
-            margin: "10px 0 0",
-            lineHeight: 1.5,
-            maxWidth: 640,
-          }}
-        >
-          Millions of businesses need enterprise-grade CX — but legacy vendors only serve the top of the pyramid.
+        <p style={{ fontSize: 18, color: "rgba(255,255,255,0.45)", margin: "10px 0 0", lineHeight: 1.5 }}>
+          30 to 50% of interactions expected to be automated within five years.
         </p>
       </motion.header>
 
-      {/* Two-column body */}
       <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        style={{
-          flex: 1,
-          display: "flex",
-          gap: 28,
-          padding: "20px 100px 0",
-          minHeight: 0,
-        }}
+        initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
+        style={{ flex: 1, padding: "12px 80px 0", display: "flex", flexDirection: "column", minHeight: 0 }}
       >
-        {/* Left column: stats + pyramid */}
-        <div style={{ flex: 1.15, display: "flex", flexDirection: "column", gap: 18, minWidth: 0 }}>
-          <p
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: "0.07em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.45)",
-              margin: 0,
-            }}
-          >
-            THE FULL OPPORTUNITY
-          </p>
+        {/* Three detail cards - moved to top */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.15 }}
+          style={{ display: "flex", gap: 16, marginTop: 24, flexShrink: 0, alignItems: "stretch" }}
+        >
+          {/* Market Context */}
+          <div style={{
+            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 14, padding: "20px 20px", minHeight: 0,
+          }}>
+            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
+              MARKET CONTEXT
+            </p>
+            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+              Enterprise Contact Centers Market
+            </h3>
+            <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", margin: 0, lineHeight: 1.4 }}>
+              Fierce battle amongst incumbents to address one-third of available contact center seats and less than 10% of global contact centers.
+            </p>
+          </div>
 
-          {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            style={{ display: "flex", gap: 16 }}
-          >
-            {stats.map((s, i) => (
-              <motion.div
-                key={s.value}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.25 + i * 0.08 }}
-                style={{
-                  flex: 1,
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 12,
-                  padding: "18px 20px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 6,
-                }}
-              >
-                <p
-                  className="font-heading"
-                  style={{
-                    fontSize: 38,
-                    fontWeight: 700,
-                    color: "#FFFFFF",
-                    margin: 0,
-                    lineHeight: 1,
-                  }}
-                >
-                  {s.value}
-                </p>
-                <p
-                  style={{
-                    fontSize: 12,
-                    fontWeight: 500,
-                    color: "rgba(255,255,255,0.5)",
-                    margin: 0,
-                    lineHeight: 1.35,
-                    whiteSpace: "pre-line",
-                  }}
-                >
-                  {s.label}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* Competitive Landscape */}
+          <div style={{
+            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 14, padding: "20px 20px", minHeight: 0,
+          }}>
+            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
+              COMPETITIVE LANDSCAPE
+            </p>
+            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+              The Massive Middle Is Underserved
+            </h3>
+            <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+              {competitiveBullets.map((b) => (
+                <li key={b} style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.45, marginBottom: 4, paddingLeft: 12, position: "relative" }}>
+                  <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.3)" }}>•</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* Pyramid */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 8,
-              flex: 1,
-              justifyContent: "center",
-            }}
-          >
-            {pyramidSegments.map((seg, i) => (
-              <motion.div
-                key={seg.label}
-                initial={{ opacity: 0, scaleX: 0.85 }}
-                animate={{ opacity: 1, scaleX: 1 }}
-                transition={{ duration: 0.45, delay: 0.5 + i * 0.12 }}
-                style={{
-                  width: seg.width,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 16,
-                }}
-              >
-                <div
+          {/* Why Nextiva Wins */}
+          <div style={{
+            flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 14, padding: "20px 20px", minHeight: 0,
+          }}>
+            <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
+              WHY NEXTIVA WINS
+            </p>
+            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+              The complete Agentic CX platform
+            </h3>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "auto auto auto", gap: 8, flex: 1, minHeight: 0, alignContent: "start" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
+                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>1</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{whyNextiva[0]}</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
+                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>4</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{whyNextiva[3]}</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
+                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>2</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{whyNextiva[1]}</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
+                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>5</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{whyNextiva[4]}</span>
+              </div>
+              <div style={{ gridColumn: "1 / -1", display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
+                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>3</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{whyNextiva[2]}</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Stat cards (25M = 18M + 7M) */}
+        <div style={{
+          width: "100%",
+          flexShrink: 0,
+          marginTop: 20,
+          paddingBottom: 6,
+        }}>
+          <div style={{
+            display: "flex",
+            alignItems: "stretch",
+            width: "100%",
+            gap: 0,
+          }}>
+            {topCards.map((card, i) => (
+              <React.Fragment key={i}>
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.25 + i * 0.05 }}
                   style={{
                     flex: 1,
-                    background: seg.bg,
-                    border: `1px solid ${seg.border}`,
-                    borderLeft: `4px solid ${seg.accent}`,
-                    borderRadius: 10,
-                    padding: "12px 20px",
+                    minWidth: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  {i === 0 ? (
+                    <p className="font-heading" style={{
+                      fontSize: 16, fontWeight: 700, color: "#F0A88C", margin: "0 0 10px", lineHeight: 1.2,
+                      letterSpacing: "0.04em", textTransform: "uppercase", textShadow: "0 0 20px rgba(240,168,140,0.4)",
+                      textAlign: "center",
+                    }}>
+                      Large market opportunity
+                    </p>
+                  ) : (
+                    <div style={{ height: 20, marginBottom: 10 }} />
+                  )}
+                  <div style={{
+                    flex: 1,
+                    width: "100%",
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: 14,
+                    padding: "24px 16px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
                     textAlign: "center",
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: seg.highlight ? 14 : 13,
-                      fontWeight: 700,
-                      color: "#FFFFFF",
-                      margin: 0,
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {seg.label}
-                  </p>
-                </div>
-                <p
-                  style={{
-                    fontSize: 12,
-                    fontWeight: 600,
-                    color: seg.highlight ? "#7EB3E8" : "rgba(255,255,255,0.4)",
-                    margin: 0,
-                    whiteSpace: "nowrap",
-                    fontStyle: seg.highlight ? "normal" : "italic",
-                    letterSpacing: seg.highlight ? "0.03em" : undefined,
+                  }}>
+                    {i === 1 ? (
+                      <>
+                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", flex: 1 }}>
+                          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                            <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1 }}>6M</p>
+                            <p style={{ fontSize: 11, fontWeight: 600, color: "#E57373", margin: "6px 0 0", lineHeight: 1.2 }}>&gt;250</p>
+                          </div>
+                          <span className="font-heading" style={{ flexShrink: 0, fontSize: 44, fontWeight: 700, color: "#FFFFFF", lineHeight: 1 }}>+</span>
+                          <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                            <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1 }}>12M</p>
+                            <p style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF", margin: "6px 0 0", lineHeight: 1.2 }}>&lt;250</p>
+                          </div>
+                        </div>
+                        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "12px 0 0", lineHeight: 1.35 }}>
+                          {card.label}
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1, minHeight: 48 }}>
+                          {card.stat}
+                        </p>
+                        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.7)", margin: "12px 0 0", lineHeight: 1.35 }}>
+                          {card.label}
+                        </p>
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+                {i === 0 && (
+                  <div style={{
                     flexShrink: 0,
-                  }}
-                >
-                  {seg.annotation}
-                </p>
-              </motion.div>
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    minWidth: 56,
+                  }}>
+                    <span className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", lineHeight: 1 }}>=</span>
+                  </div>
+                )}
+                {i === 1 && (
+                  <div style={{
+                    flexShrink: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    minWidth: 56,
+                  }}>
+                    <span className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", lineHeight: 1 }}>+</span>
+                  </div>
+                )}
+              </React.Fragment>
             ))}
-          </motion.div>
+          </div>
         </div>
 
-        {/* Right column: two cards */}
-        <div style={{ flex: 0.85, display: "flex", flexDirection: "column", gap: 16, minWidth: 0 }}>
-          {/* The Market Gap */}
-          <motion.div
-            initial={{ opacity: 0, x: 12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            style={{
-              background: "rgba(232,116,97,0.06)",
-              border: "1px solid rgba(232,116,97,0.18)",
-              borderTop: "3px solid #E87461",
-              borderRadius: 14,
-              padding: "22px 26px",
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <p
-              style={{
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: "0.07em",
-                textTransform: "uppercase",
-                color: "#E87461",
-                margin: "0 0 14px",
-              }}
-            >
-              THE MARKET GAP
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
-              {marketGapItems.map((item, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                  <span
-                    style={{
-                      color: "#E87461",
-                      fontSize: 14,
-                      fontWeight: 700,
-                      lineHeight: 1.4,
-                      flexShrink: 0,
-                    }}
-                  >
-                    ✕
-                  </span>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: "rgba(255,255,255,0.65)",
-                      margin: 0,
-                      lineHeight: 1.4,
-                    }}
-                  >
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <p
-              style={{
-                fontSize: 13,
-                fontStyle: "italic",
-                color: "rgba(255,255,255,0.35)",
-                margin: "12px 0 0",
-                lineHeight: 1.45,
-              }}
-            >
-              Most businesses simply can&apos;t afford what legacy vendors charge.
-            </p>
-          </motion.div>
-
-          {/* Nextiva Is Purpose-Built */}
-          <motion.div
-            initial={{ opacity: 0, x: 12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.45 }}
-            style={{
-              background: "rgba(40,96,178,0.08)",
-              border: "1px solid rgba(40,96,178,0.2)",
-              borderTop: "3px solid #2860B2",
-              borderRadius: 14,
-              padding: "22px 26px",
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <p
-              style={{
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: "0.07em",
-                textTransform: "uppercase",
-                color: "#7EB3E8",
-                margin: "0 0 14px",
-              }}
-            >
-              NEXTIVA IS PURPOSE-BUILT FOR THIS
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
-              {purposeBuiltItems.map((item) => (
-                <div key={item.keyword} style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
-                  <p
-                    className="font-heading"
-                    style={{
-                      fontSize: 18,
-                      fontWeight: 700,
-                      color: "#FFFFFF",
-                      margin: 0,
-                      minWidth: 100,
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {item.keyword}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: "rgba(255,255,255,0.55)",
-                      margin: 0,
-                      lineHeight: 1.4,
-                    }}
-                  >
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
       </motion.main>
-
-      {/* Bottom banner */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        style={{ padding: "16px 100px 12px", flexShrink: 0 }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "16px 32px",
-            borderRadius: 14,
-            background: "rgba(40,96,178,0.12)",
-            border: "1px solid rgba(40,96,178,0.2)",
-          }}
-        >
-          <p style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", margin: 0, textAlign: "center" }}>
-            Enterprise-grade CX for every business&ensp;·&ensp;Purpose-built, not dumbed down&ensp;·&ensp;
-            <span style={{ color: "#7EB3E8" }}>This is Nextiva&apos;s space to win</span>
-          </p>
-        </div>
-      </motion.div>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>

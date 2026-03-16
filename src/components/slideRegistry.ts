@@ -63,6 +63,8 @@ import CXPortfolioThomasConnectedASlide from "./slides/CXPortfolioThomasConnecte
 import CXPortfolioThomasConnectedBSlide from "./slides/CXPortfolioThomasConnectedBSlide";
 import CXPortfolioThomasConnectedCSlide from "./slides/CXPortfolioThomasConnectedCSlide";
 import CXPortfolioThomasConnectedDSlide from "./slides/CXPortfolioThomasConnectedDSlide";
+import AgenticOpportunityLovableSlide from "./slides/AgenticOpportunityLovableSlide";
+import ContactCenterMarketOpportunitySlide from "./slides/ContactCenterMarketOpportunitySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -140,6 +142,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cx-portfolio-thomas-b": { id: "cx-portfolio-thomas-b", label: "#15 CX Portfolio (B: Connection Bridges)", component: CXPortfolioThomasConnectedBSlide, theme: "dark", isNew: true },
   "cx-portfolio-thomas-c": { id: "cx-portfolio-thomas-c", label: "#15 CX Portfolio (C: Shared Foundation)", component: CXPortfolioThomasConnectedCSlide, theme: "dark", isNew: true },
   "cx-portfolio-thomas-d": { id: "cx-portfolio-thomas-d", label: "#15 CX Portfolio (D: Puzzle 2x2 Grid)", component: CXPortfolioThomasConnectedDSlide, theme: "dark", isNew: true },
+  "agentic-opp-lovable": { id: "agentic-opp-lovable", label: "AI Opportunity (Lovable)", component: AgenticOpportunityLovableSlide, theme: "dark", isNew: true },
+  "contact-center-market-opportunity": { id: "contact-center-market-opportunity", label: "Contact Center Market Opportunity", component: ContactCenterMarketOpportunitySlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
