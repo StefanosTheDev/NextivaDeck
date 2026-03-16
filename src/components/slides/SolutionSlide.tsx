@@ -40,7 +40,7 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
           OUR SOLUTION
         </p>
         <h1 className="font-heading" style={{ fontSize: 54, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
-          Nextiva Agentic CX Always<br />Delivers Immediate Outcomes.
+          CX that delivers business outcomes<br />at the moment of interaction.
         </h1>
       </motion.header>
 
