@@ -21,6 +21,7 @@ const whyNextiva = [
   "Agentic & Human In Tandem",
   "Go-to-Market Moat",
   "Product-Led Motion",
+  "Quick Time to Value",
 ];
 
 export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { slideNumber?: number }) {
@@ -241,14 +242,14 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
             <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
               WHY NEXTIVA WINS
             </p>
-            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+            <h3 className="font-heading" style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", margin: "0 0 8px", lineHeight: 1.25 }}>
               The complete Agentic CX platform
             </h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "auto auto auto", gridAutoFlow: "column", gap: 8, flex: 1, minHeight: 0, alignContent: "start" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "auto auto auto", gridAutoFlow: "column", gap: 6, flex: 1, minHeight: 0, alignContent: "start" }}>
               {whyNextiva.map((b, i) => (
-                <div key={b} style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "6px 10px" }}>
-                  <span style={{ width: 18, height: 18, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>{i + 1}</span>
-                  <span style={{ fontSize: 12, fontWeight: 600, color: "#FFFFFF" }}>{b}</span>
+                <div key={b} style={{ display: "flex", alignItems: "center", gap: 6, background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 8, padding: "5px 8px" }}>
+                  <span style={{ width: 16, height: 16, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, fontWeight: 700, color: "#FFFFFF", flexShrink: 0 }}>{i + 1}</span>
+                  <span style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF" }}>{b}</span>
                 </div>
               ))}
             </div>
