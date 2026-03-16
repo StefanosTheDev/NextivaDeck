@@ -27,7 +27,7 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
           AI and humans in tandem
         </h1>
         <p style={{ fontSize: 24, color: "rgba(255,255,255,0.45)", margin: "14px 0 0", lineHeight: 1.4 }}>
-          Customers may calibrate how agents collaborate over time.
+          Full range of agentic experiences, from assist to autonomous.
         </p>
       </motion.header>
 
