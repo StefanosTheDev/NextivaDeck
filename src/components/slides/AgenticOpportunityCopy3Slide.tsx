@@ -16,10 +16,12 @@ const competitiveBullets = [
 ];
 
 const whyNextiva = [
-  "Unified CX platform replacing fragmented stacks",
-  "AI embedded across every interaction",
-  "Rapid deployment and time to value",
-  "Built for operators, not IT departments",
+  "Unified Customer Interactions",
+  "Unified Customer Data",
+  "Agentic and Human in Tandem",
+  "Go-to-Market Mode",
+  "Product-Lead Motion",
+  "Quick Time-to-Value",
 ];
 
 export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { slideNumber?: number }) {
@@ -49,11 +51,13 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
         style={{ flex: 1, padding: "12px 80px 0", display: "flex", flexDirection: "column", minHeight: 0 }}
       >
-        {/* Stat cards (18M = 6M+12M + 7M) - moved to top */}
+        {/* Spacer to push stat cards halfway down */}
+        <div style={{ minHeight: 95 }} />
+        {/* Stat cards (18M = 6M+12M + 7M) */}
         <div style={{
           width: "100%",
           flexShrink: 0,
-          marginTop: 24,
+          marginTop: 0,
           paddingBottom: 6,
           position: "relative",
         }}>
