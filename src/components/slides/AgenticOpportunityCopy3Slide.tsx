@@ -40,10 +40,10 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
           THE AGENTIC AI OPPORTUNITY
         </p>
         <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
-          Tomorrow&apos;s Agentic Workforce.
+          The next workforce is Agentic
         </h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.45)", margin: "10px 0 0", lineHeight: 1.5 }}>
-          30 to 50% of interactions expected to be automated within five years.
+          Millions of contact center interactions will be handled by AI employees — not tools.
         </p>
       </motion.header>
 
