@@ -6,7 +6,7 @@ import { MILESTONES, RETENTION } from "../financialData";
 const rightMetrics = [
   { stat: MILESTONES.topCustomerPctARR, label: "Top customer share of ARR — no concentration" },
   { stat: `${Math.round(RETENTION.totalAccounts.FY26 / 1000)}K+`, label: "Accounts, all US" },
-  { stat: `${RETENTION.pctIn12moContracts}%`, label: "In 12mo+ contracts" },
+  { stat: `${RETENTION.pctIn12moContracts}%`, label: "In multi-year contracts" },
   { stat: `${MILESTONES.pctSeatBased}%`, label: "Subscription Recurring Revenue" },
 ];
 
