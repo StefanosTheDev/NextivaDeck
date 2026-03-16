@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { Phone, Headphones, Bot, Layers } from "lucide-react";
 
-const CORAL = "#F0A88C";
+const ACCENT = "#7EB3E8";
+const ACCENT_STRONG = "#2860B2";
 
 const products = [
   {
@@ -74,7 +75,7 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
           width: 1000,
           height: 1000,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(240,168,140,0.05) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(40,96,178,0.05) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -91,7 +92,7 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
             fontSize: 15,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: CORAL,
+            color: ACCENT,
             margin: "0 0 10px",
           }}
         >
@@ -134,7 +135,7 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
                   flex: 1,
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.08)",
-                  borderTop: `3px solid ${CORAL}`,
+                  borderTop: `3px solid ${ACCENT_STRONG}`,
                   borderRadius: 14,
                   padding: "24px 22px",
                   display: "flex",
@@ -146,14 +147,14 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
                     width: 44,
                     height: 44,
                     borderRadius: 10,
-                    background: "rgba(240,168,140,0.12)",
+                    background: "rgba(40,96,178,0.12)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     marginBottom: 14,
                   }}
                 >
-                  <Icon size={22} color={CORAL} strokeWidth={1.75} />
+                  <Icon size={22} color={ACCENT} strokeWidth={1.75} />
                 </div>
                 <h2
                   className="font-heading"
@@ -168,8 +169,8 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
                     marginTop: 8,
                     padding: "4px 12px",
                     borderRadius: 20,
-                    background: "rgba(240,168,140,0.15)",
-                    color: CORAL,
+                    background: "rgba(40,96,178,0.15)",
+                    color: ACCENT,
                     fontSize: 13,
                     fontWeight: 600,
                   }}
@@ -200,7 +201,7 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
                           width: 5,
                           height: 5,
                           borderRadius: "50%",
-                          background: CORAL,
+                          background: ACCENT,
                         }}
                       />
                       {b}
@@ -216,8 +217,8 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
       <div style={{ padding: "0 100px 24px", position: "relative", zIndex: 1 }}>
         <div
           style={{
-            background: "rgba(240,168,140,0.06)",
-            border: "1px solid rgba(240,168,140,0.15)",
+            background: "rgba(40,96,178,0.06)",
+            border: "1px solid rgba(40,96,178,0.15)",
             borderRadius: 14,
             padding: "16px 40px",
             textAlign: "center",
