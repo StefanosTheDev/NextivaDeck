@@ -15,7 +15,7 @@ interface ColumnData {
 const columns: ColumnData[] = [
   {
     era: "YESTERDAY / TODAY",
-    title: "Transaction communication experiences",
+    title: "Transactional communication experiences",
     bullets: [
       "Disjointed one-way notifications across multiple channels",
       "Disparate systems and point solutions",
