@@ -1,18 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { PNL } from "../financialData";
 import { ComposedChart, Bar, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LabelList, Legend } from "recharts";
 
-const ALL_YEARS = ["FY25", "FY26", "FY27", "FY28", "FY29", "FY30"] as const;
-const PROJECTION_YEARS = new Set(["FY28", "FY29", "FY30"]);
-
-const data = ALL_YEARS.map((fy) => ({
-  name: fy,
-  revenue: PNL.revenue[fy],
-  gm: PNL.grossMarginPct[fy],
-  isProjection: PROJECTION_YEARS.has(fy),
-}));
+const data = [
+  { name: "FY25", revenue: 349, gm: 67, isProjection: false },
+  { name: "FY26", revenue: 353, gm: 70, isProjection: false },
+  { name: "FY27", revenue: 373, gm: 73, isProjection: false },
+  { name: "FY28", revenue: 399, gm: 75, isProjection: true },
+  { name: "FY29", revenue: 430, gm: 76, isProjection: true },
+  { name: "FY30", revenue: 463, gm: 77, isProjection: true },
+];
 
 const GM_LINE_COLOR = "#E8B84D";
 const TARGET_BAR_COLOR = "#7EB3E8";
@@ -20,9 +18,9 @@ const REVENUE_BAR_COLOR = "#2860B2";
 
 const metrics = [
   {
-    value: `${PNL.grossMarginPct.FY26}%`,
+    value: "70%",
     label: "Gross Margin (FY26)",
-    detail: `Up ~${PNL.grossMarginPct.FY26 - PNL.grossMarginPct.FY25}00bps y/y. Targeting ${PNL.grossMarginPct.FY30}% by FY30.`,
+    detail: "Up ~300bps y/y. Targeting 77% by FY30.",
     highlight: true,
   },
   {
@@ -32,9 +30,9 @@ const metrics = [
     highlight: true,
   },
   {
-    value: `$${PNL.revenue.FY30}M`,
+    value: "$463M",
     label: "Revenue (FY30)",
-    detail: "",
+    detail: "Long-term revenue target",
     highlight: true,
   },
 ];

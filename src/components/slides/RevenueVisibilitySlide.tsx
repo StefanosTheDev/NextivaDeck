@@ -1,20 +1,27 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { REVENUE_VISIBILITY } from "../financialData";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
   ResponsiveContainer, LabelList, ReferenceLine, Cell, Customized,
 } from "recharts";
 
-const RV = REVENUE_VISIBILITY;
+const SUBSCRIPTION_TARGET = 366;
+const CONTRACTED = 246;
+const MONTHLY_RENEWALS = 34;
+const EXPANSION = 23;
+const CONTRACT_NET_RENEWALS = 8;
+const NEW_BOOKINGS = 43;
+const BUILD_UP = 354;
+const GAP = 12;
+const GAP_PCT = 3;
 
 const waterfallRaw = [
-  { name: "Contracted\nThrough FY27",      value: RV.contracted },
-  { name: "Monthly\nRenewals",             value: RV.monthlyRenewals },
-  { name: "Expansion\nBookings",           value: RV.expansionBookings },
-  { name: "Contract Net\nRenewals",        value: RV.contractNetRenewals },
-  { name: "New\nBookings",                 value: RV.newBookings },
+  { name: "Contracted\nThrough FY27", value: CONTRACTED },
+  { name: "Monthly\nRenewals", value: MONTHLY_RENEWALS },
+  { name: "Expansion\nBookings", value: EXPANSION },
+  { name: "Contract Net\nRenewals", value: CONTRACT_NET_RENEWALS },
+  { name: "New\nBookings", value: NEW_BOOKINGS },
 ];
 
 let running = 0;
@@ -25,14 +32,14 @@ const WATERFALL_DATA = [
     running += d.value;
     return { ...d, base, absValue: Math.abs(d.value), isNeg, isTotal: false };
   }),
-  { name: "FY27\nRevenue\nVisible", value: RV.buildUp, base: 0, absValue: RV.buildUp, isNeg: false, isTotal: true },
+  { name: "FY27\nRevenue\nVisible", value: BUILD_UP, base: 0, absValue: BUILD_UP, isNeg: false, isTotal: true },
 ];
 
 const POS_COLORS = ["#4D9AE8", "#5BA0E8", "#7FC7A0", "#2860B2", "#82C882", "#7EB3E8"];
 
 export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumber?: number }) {
   return (
-    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }}>
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }} data-speaker-notes={`Majority of FY27 subscription revenue already locked in. Only ~${GAP_PCT}% remains at risk. Target: $${SUBSCRIPTION_TARGET}M.`}>
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
@@ -42,7 +49,7 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
           Majority of FY27 revenue already locked in.
         </h1>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.45)", marginTop: 10, lineHeight: 1.5, maxWidth: 1200, marginLeft: "auto", marginRight: "auto" }}>
-          ~{RV.gapPct}% of FY27 subscription revenue remains at risk — the foundation is already in place today.
+          ~{GAP_PCT}% of FY27 subscription revenue remains at risk — the foundation is already in place today.
         </p>
       </motion.header>
 
@@ -84,12 +91,12 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
                 tickFormatter={(v: number) => `$${v}M`}
               />
               <ReferenceLine
-                y={RV.subscriptionTarget}
+                y={SUBSCRIPTION_TARGET}
                 stroke="rgba(255,255,255,0.3)"
                 strokeDasharray="6 4"
                 strokeWidth={2}
                 label={{
-                  value: `$${RV.subscriptionTarget}M target`,
+                  value: `$${SUBSCRIPTION_TARGET}M target`,
                   position: "insideTopLeft",
                   fill: "rgba(255,255,255,0.92)",
                   fontSize: 15,
@@ -163,10 +170,10 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
               FY27 Subscription Revenue at Risk
             </p>
             <p className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: "6px 0 0", lineHeight: 1 }}>
-              Only {RV.gapPct}%
+              Only {GAP_PCT}%
             </p>
             <p style={{ fontSize: 18, color: "rgba(255,255,255,0.4)", margin: "6px 0 0" }}>
-              ${RV.gap}M gap to plan
+              ${GAP}M gap to plan
             </p>
           </motion.div>
 
@@ -178,10 +185,10 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
               FY27 Subscription Revenue Target
             </p>
             <p className="font-heading" style={{ fontSize: 44, fontWeight: 700, color: "#FFFFFF", margin: "6px 0 0", lineHeight: 1 }}>
-              ${RV.subscriptionTarget}M
+              ${SUBSCRIPTION_TARGET}M
             </p>
             <p style={{ fontSize: 18, color: "rgba(255,255,255,0.4)", margin: "6px 0 0" }}>
-              vs ${RV.buildUp}M visibility build-up
+              vs ${BUILD_UP}M visibility build-up
             </p>
           </motion.div>
 

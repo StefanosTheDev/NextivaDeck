@@ -1,17 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { PNL, RETENTION } from "../financialData";
 
 const metrics = [
   { stat: "$353M", label: "FY26 Revenue", desc: "Full year recognized revenue" },
-  { stat: `${PNL.grossMarginPct.FY26}%`, label: "Q4 FY26 Gross Margin", desc: `Up ~${PNL.grossMarginPct.FY26 - PNL.grossMarginPct.FY25}00bps y/y` },
+  { stat: "70%", label: "Q4 FY26 Gross Margin", desc: "Up ~300bps y/y" },
   { stat: "$44M", label: "Adj EBITDA", desc: "FY26 projected" },
-  { stat: "$99M", label: "Adj EBITDA", desc: "FY27 projected" },
-  { stat: `~${RETENTION.mrrChurn.FY26}%`, label: "MRR churn", desc: "Durable SMB retention" },
+  { stat: "$94M", label: "Adj EBITDA", desc: "FY27 projected" },
+  { stat: "~1.6%", label: "MRR churn", desc: "Durable SMB retention" },
   { stat: "92K+", label: "Customers", desc: "All US, all industries" },
   { stat: "$15M", label: "FY26 FCF", desc: "projected" },
-  { stat: "$83M", label: "FY27 FCF", desc: "projected" },
+  { stat: "$75M", label: "FY27 FCF", desc: "projected" },
 ];
 
 export default function AtAGlanceSlide({ slideNumber = 3 }: { slideNumber?: number }) {

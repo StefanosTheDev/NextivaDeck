@@ -1,23 +1,37 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { FISCAL_YEARS, PNL, UNLEVERED_FCF, EBITDA_UFCF_CONVERSION, CASH_EQUIVALENTS } from "../financialData";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer,
   LabelList, Line, ComposedChart,
 } from "recharts";
 
-const YEARS = [...FISCAL_YEARS];
+const ebitdaData = [
+  { year: "FY25", value: 0, margin: 0 },
+  { year: "FY26", value: 44, margin: 13 },
+  { year: "FY27", value: 94, margin: 25 },
+  { year: "FY28", value: 122, margin: 31 },
+  { year: "FY29", value: 151, margin: 35 },
+  { year: "FY30", value: 185, margin: 40 },
+];
 
-const ebitdaData = YEARS.map(fy => ({ year: fy, value: PNL.adjEBITDA[fy], margin: PNL.ebitdaMarginPct[fy] }));
+const fcfData = [
+  { year: "FY25", fcf: -4, conversion: null as number | null },
+  { year: "FY26", fcf: 15, conversion: 34 },
+  { year: "FY27", fcf: 75, conversion: 80 },
+  { year: "FY28", fcf: 104, conversion: 85 },
+  { year: "FY29", fcf: 129, conversion: 85 },
+  { year: "FY30", fcf: 166, conversion: 90 },
+];
 
-const fcfData = YEARS.map(fy => ({
-  year: fy,
-  fcf: UNLEVERED_FCF[fy],
-  conversion: EBITDA_UFCF_CONVERSION[fy],
-}));
-
-const cashData = YEARS.map(fy => ({ year: fy, value: CASH_EQUIVALENTS[fy] }));
+const cashData = [
+  { year: "FY25", value: 29 },
+  { year: "FY26", value: 42 },
+  { year: "FY27", value: 113 },
+  { year: "FY28", value: 211 },
+  { year: "FY29", value: 332 },
+  { year: "FY30", value: 491 },
+];
 
 const CHART_HEIGHT = 210;
 const BAR_BLUE = "#2860B2";
@@ -41,7 +55,7 @@ function CardBox({ title, value, children }: { title: string; value: string; chi
 
 export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?: number }) {
   return (
-    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }}>
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }} data-speaker-notes="Adj. EBITDA grows to $185M at 40% margin by FY30. FCF reaches $166M with 90% conversion. Cash & equivalents build to $491M.">
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
@@ -76,16 +90,16 @@ export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?
             </ResponsiveContainer>
           </div>
           <div style={{ flex: "1 1 40%" }}>
-            <CardBox title="Adj. EBITDA" value={`$${PNL.adjEBITDA.FY30}M by FY30`}>
-              Margins expand from ~0% to {PNL.ebitdaMarginPct.FY30}% via cost discipline and AI-driven leverage.
+            <CardBox title="Adj. EBITDA" value="$185M by FY30">
+              Margins expand from ~0% to 40% via cost discipline and AI-driven leverage.
             </CardBox>
           </div>
         </div>
 
-        {/* Row 2: Unlevered FCF chart + card */}
+        {/* Row 2: Free Cash Flow chart + card */}
         <div style={{ display: "flex", gap: 36, alignItems: "center" }}>
           <div style={{ flex: "1 1 55%" }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.5)", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.04em" }}>Unlevered FCF ($M) &amp; Adj. EBITDA→uFCF Conversion</p>
+            <p style={{ fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.5)", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.04em" }}>Free Cash Flow ($M) &amp; Adj. EBITDA→FCF Conversion</p>
             <ResponsiveContainer width="100%" height={CHART_HEIGHT}>
               <ComposedChart data={fcfData} margin={MARGIN}>
                 <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
@@ -102,7 +116,7 @@ export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?
             </ResponsiveContainer>
           </div>
           <div style={{ flex: "1 1 40%" }}>
-            <CardBox title="FCF Conversion" value="91% by FY30">
+            <CardBox title="FCF Conversion" value="90% by FY30">
               Low capex and working-capital needs convert nearly all Adj. EBITDA to cash.
             </CardBox>
           </div>
@@ -125,7 +139,7 @@ export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?
             </ResponsiveContainer>
           </div>
           <div style={{ flex: "1 1 40%" }}>
-            <CardBox title="Cash Accumulation" value="$517M by FY30">
+            <CardBox title="Cash Accumulation" value="$491M by FY30">
               Cumulative cash provides ample liquidity for debt service and investment.
             </CardBox>
           </div>

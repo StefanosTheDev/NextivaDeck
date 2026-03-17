@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { PNL, OPEX_PCT } from "../financialData";
 
 const columns = [
   { label: "Metric" },
@@ -11,12 +10,12 @@ const columns = [
 ];
 
 const rows = [
-  { cells: ["Revenue", `$${PNL.revenue.FY26}M`, `$${PNL.revenue.FY27}M`, "$454\u2013$472M"] },
-  { cells: ["Gross Margin", `${PNL.grossMarginPct.FY26}%`, `${PNL.grossMarginPct.FY27}%`, `${PNL.grossMarginPct.FY30 - 2}\u2013${PNL.grossMarginPct.FY30 + 2}%`] },
-  { cells: ["S&M", `${OPEX_PCT.sm.FY26}%`, `${OPEX_PCT.sm.FY27}%`, `${OPEX_PCT.sm.FY30 - 2}\u2013${OPEX_PCT.sm.FY30 + 2}%`] },
-  { cells: ["R&D", `${OPEX_PCT.rd.FY26}%`, `${OPEX_PCT.rd.FY27}%`, "8\u201312%"] },
-  { cells: ["G&A", `${OPEX_PCT.ga.FY26}%`, `${OPEX_PCT.ga.FY27}%`, `${OPEX_PCT.ga.FY30 - 2}\u2013${OPEX_PCT.ga.FY30 + 2}%`] },
-  { cells: ["Adj EBITDA Margin", `${PNL.ebitdaMarginPct.FY26}%`, `${PNL.ebitdaMarginPct.FY27}%`, `${PNL.ebitdaMarginPct.FY30 - 2}\u2013${PNL.ebitdaMarginPct.FY30 + 2}%`], bold: true },
+  { cells: ["Revenue", "$353M", "$373M", "$454\u2013$472M"] },
+  { cells: ["Gross Margin", "70%", "73%", "75\u201379%"] },
+  { cells: ["S&M", "27%", "23%", "14\u201318%"] },
+  { cells: ["R&D", "12%", "9%", "8\u201312%"] },
+  { cells: ["G&A", "13%", "10%", "5\u20139%"] },
+  { cells: ["Adj EBITDA Margin", "13%", "25%", "38\u201342%"], bold: true },
 ];
 
 export default function TargetModelSlide({ slideNumber = 28 }: { slideNumber?: number }) {

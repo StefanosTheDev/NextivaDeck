@@ -1,22 +1,26 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { PNL, FISCAL_YEARS } from "../financialData";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LabelList } from "recharts";
 
-const fmt = (v: number) => `${Math.round(v)}`;
-
-const data = FISCAL_YEARS.map((fy) => ({ name: fy, ebitda: PNL.adjEBITDA[fy] }));
+const data = [
+  { name: "FY25", ebitda: 0 },
+  { name: "FY26", ebitda: 44 },
+  { name: "FY27", ebitda: 94 },
+  { name: "FY28", ebitda: 122 },
+  { name: "FY29", ebitda: 151 },
+  { name: "FY30", ebitda: 185 },
+];
 
 const metrics = [
-  { value: `$${fmt(PNL.adjEBITDA.FY26)}M`, label: "Adj EBITDA (FY26)", detail: "Up from breakeven in FY25" },
+  { value: "$44M", label: "Adj EBITDA (FY26)", detail: "Up from breakeven in FY25" },
   { value: "$75\u2013$80M", label: "FY26 Exit EBITDA Run Rate", detail: "Range reflects items still to be actioned", highlight: true },
-  { value: `${PNL.ebitdaMarginPct.FY30}%`, label: "Target Margin (FY30)", detail: `$${fmt(PNL.adjEBITDA.FY30)}M Adj EBITDA` },
+  { value: "40%", label: "Target Margin (FY30)", detail: "$185M Adj EBITDA" },
 ];
 
 export default function EBITDASlide({ slideNumber = 25 }: { slideNumber?: number }) {
   return (
-    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }}>
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", justifyContent: "space-between" }} data-speaker-notes="EBITDA inflection is real. $44M in FY26 at 13% margin, targeting 40% by FY30 with $185M Adj EBITDA. FY27 margin 25%. Exit EBITDA run rate of $75–$80M provides near-term underwriting comfort.">
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
@@ -39,9 +43,9 @@ export default function EBITDASlide({ slideNumber = 25 }: { slideNumber?: number
             <BarChart data={data} margin={{ top: 24, right: 20, left: 20, bottom: 20 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" vertical={false} />
               <XAxis dataKey="name" tick={{ fontSize: 20, fill: "rgba(255,255,255,0.5)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} tickLine={false} />
-              <YAxis domain={[0, 200]} tick={{ fontSize: 18, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `$${fmt(v)}M`} />
+              <YAxis domain={[0, 200]} tick={{ fontSize: 18, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `$${Math.round(v)}M`} />
               <Bar dataKey="ebitda" fill="#2860B2" radius={[8, 8, 0, 0]} maxBarSize={100}>
-                <LabelList dataKey="ebitda" position="top" formatter={(v: any) => `$${fmt(v)}M`} style={{ fontSize: 18, fontWeight: 700, fill: "#FFFFFF", fontFamily: "'Space Grotesk', sans-serif" }} />
+                <LabelList dataKey="ebitda" position="top" formatter={(v: any) => `$${Math.round(v)}M`} style={{ fontSize: 18, fontWeight: 700, fill: "#FFFFFF", fontFamily: "'Space Grotesk', sans-serif" }} />
               </Bar>
             </BarChart>
           </ResponsiveContainer>
