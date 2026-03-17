@@ -11,6 +11,13 @@ const topCards = [
 
 const marketText = "Fierce battle amongst incumbents to address one-third of available contact center seats and less than 10% of global contact centers.";
 
+const marketGaps = [
+  "Legacy platforms require large IT teams to deploy",
+  "6-figure implementation budgets out of reach",
+  "12–18 month deployment cycles",
+  "Software not designed for self-service",
+];
+
 const competitiveBullets = [
   "Most CX platforms are built for enterprises",
   "Millions of growing businesses are left behind",
@@ -18,8 +25,7 @@ const competitiveBullets = [
 ];
 
 const whyNextiva = [
-  "Unified Customer Interactions",
-  "Unified Customer Data",
+  "Unified Customer Interactions & Data",
   "Agentic & Human in Tandem",
   "Go-to-Market Moat",
   "Product Led Motion",
@@ -151,18 +157,26 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
       >
         {/* Market Context */}
         <div style={{
-          flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
+          flex: 1, background: "rgba(180,60,60,0.08)", border: "1px solid rgba(200,80,80,0.2)",
           borderRadius: 14, padding: "24px 24px",
         }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 12px" }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#E07E7E", margin: "0 0 12px" }}>
             MARKET CONTEXT
           </p>
           <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 16px", lineHeight: 1.25 }}>
-            The Agentic AI Opportunity in Customer Service
+            The Crowded Space in CX
           </h3>
-          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: 0 }}>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: "0 0 14px" }}>
             {marketText}
           </p>
+          <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+            {marketGaps.map((g) => (
+              <li key={g} style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 18, position: "relative" }}>
+                <span style={{ position: "absolute", left: 0, color: "#E07E7E", fontWeight: 700 }}>✗</span>
+                {g}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Competitive Landscape */}
