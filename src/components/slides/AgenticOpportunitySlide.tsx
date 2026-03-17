@@ -161,10 +161,10 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
           borderRadius: 14, padding: "24px 24px",
         }}>
           <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#E07E7E", margin: "0 0 12px" }}>
-            MARKET CONTEXT
+            Enterprise CX
           </p>
           <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 16px", lineHeight: 1.25 }}>
-            The Crowded Space in CX
+            The Crowded Space
           </h3>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: "0 0 14px" }}>
             {marketText}
@@ -185,10 +185,10 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
           borderRadius: 14, padding: "24px 24px",
         }}>
           <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 12px" }}>
-            MARKET GAP
+            The Massive Middle
           </p>
           <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 16px", lineHeight: 1.25 }}>
-            The Massive Middle of CX Is Underserved
+            The Underserved Market
           </h3>
           <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
             {competitiveBullets.map((b) => (
