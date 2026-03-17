@@ -69,7 +69,7 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
             marginLeft: "calc((100% - 112px) / 2 + 64px)",
             width: "calc((100% - 112px) / 2 - 8px)",
           }}>
-            Nextiva &quot;white space&quot; opportunity
+            Nextiva&apos;s &quot;white space&quot; opportunity
           </p>
           {/* Gold oval */}
           <svg
