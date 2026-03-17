@@ -68,6 +68,11 @@ import CXPortfolioThomasConnectedCSlide from "./slides/CXPortfolioThomasConnecte
 import CXPortfolioThomasConnectedDSlide from "./slides/CXPortfolioThomasConnectedDSlide";
 import AgenticOpportunityLovableSlide from "./slides/AgenticOpportunityLovableSlide";
 import ContactCenterMarketOpportunitySlide from "./slides/ContactCenterMarketOpportunitySlide";
+import ExecutiveSummarySlide from "./slides/ExecutiveSummarySlide";
+import ExecutiveSummaryCardsSlide from "./slides/ExecutiveSummaryCardsSlide";
+import ExecutiveSummary2Slide from "./slides/ExecutiveSummary2Slide";
+import ExecutiveSummaryStackSlide from "./slides/ExecutiveSummaryStackSlide";
+import ExecutiveSummary2StackSlide from "./slides/ExecutiveSummary2StackSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -150,6 +155,11 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cx-portfolio-thomas-d": { id: "cx-portfolio-thomas-d", label: "#15 CX Portfolio (D: Puzzle 2x2 Grid)", component: CXPortfolioThomasConnectedDSlide, theme: "dark", isNew: true },
   "agentic-opp-lovable": { id: "agentic-opp-lovable", label: "AI Opportunity (Lovable)", component: AgenticOpportunityLovableSlide, theme: "dark", isNew: true },
   "contact-center-market-opportunity": { id: "contact-center-market-opportunity", label: "Contact Center Market Opportunity", component: ContactCenterMarketOpportunitySlide, theme: "dark", isNew: true },
+  "executive-summary": { id: "executive-summary", label: "Executive Summary (Option 1, cards)", component: ExecutiveSummarySlide, theme: "dark" },
+  "executive-summary-cards": { id: "executive-summary-cards", label: "Executive Summary (Option 1, slide 8 style)", component: ExecutiveSummaryCardsSlide, theme: "dark" },
+  "executive-summary-2": { id: "executive-summary-2", label: "Executive Summary (Option 2, cards)", component: ExecutiveSummary2Slide, theme: "dark" },
+  "executive-summary-stack": { id: "executive-summary-stack", label: "Executive Summary (Option 1, stack)", component: ExecutiveSummaryStackSlide, theme: "dark" },
+  "executive-summary-2-stack": { id: "executive-summary-2-stack", label: "Executive Summary (Option 2, stack)", component: ExecutiveSummary2StackSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -210,6 +220,11 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "cx-portfolio-thomas-b",
   "cx-portfolio-thomas-c",
   "cx-portfolio-thomas-d",
+  "executive-summary",
+  "executive-summary-cards",
+  "executive-summary-2",
+  "executive-summary-stack",
+  "executive-summary-2-stack",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

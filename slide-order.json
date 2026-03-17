@@ -4,6 +4,7 @@
     "safe-harbor",
     "better-outcomes",
     "better-outcomes-copy",
+    "executive-summary-cards",
     "glance",
     "founder",
     "who",
@@ -67,7 +68,11 @@
     "cx-portfolio-thomas-b",
     "cx-portfolio-thomas-c",
     "cx-portfolio-thomas-d",
-    "contact-center-market-opportunity"
+    "contact-center-market-opportunity",
+    "executive-summary",
+    "executive-summary-2",
+    "executive-summary-stack",
+    "executive-summary-2-stack"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",

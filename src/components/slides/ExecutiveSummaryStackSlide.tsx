@@ -1,0 +1,56 @@
+"use client";
+import { motion } from "framer-motion";
+import SlideFooter from "../SlideFooter";
+
+const bullets = [
+  "A business positioned to benefit from and lead in the AI-driven transformation, with AI acting as a structural tailwind to growth.",
+  "A highly predictable, recurring revenue model with strong contractual commitments, delivering current profitability and a clear path to expanding margins.",
+  "Third point to come.",
+];
+
+export default function ExecutiveSummaryStackSlide({ slideNumber = 0 }: { slideNumber?: number }) {
+  return (
+    <div
+      className="slide"
+      style={{
+        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
+        justifyContent: "space-between",
+      }}
+    >
+      <motion.header
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
+      >
+        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+          Executive Summary
+        </h1>
+      </motion.header>
+
+      <motion.main
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        style={{ flex: 1, padding: "32px 100px", display: "flex", flexDirection: "column", gap: 28, justifyContent: "center", maxWidth: 1000, margin: "0 auto" }}
+      >
+        {bullets.map((text, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 + i * 0.1 }}
+            style={{ display: "flex", gap: 20, alignItems: "flex-start" }}
+          >
+            <span style={{ color: "#2860B2", fontSize: 24, lineHeight: 1.5, flexShrink: 0 }}>•</span>
+            <p style={{ fontSize: 22, color: "rgba(255,255,255,0.9)", lineHeight: 1.55, margin: 0 }}>
+              {text}
+            </p>
+          </motion.div>
+        ))}
+      </motion.main>
+
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
+    </div>
+  );
+}
