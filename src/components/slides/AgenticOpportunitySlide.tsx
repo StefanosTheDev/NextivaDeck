@@ -185,7 +185,7 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
           borderRadius: 14, padding: "24px 24px",
         }}>
           <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 12px" }}>
-            COMPETITIVE LANDSCAPE
+            MARKET GAP
           </p>
           <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 16px", lineHeight: 1.25 }}>
             The Massive Middle of CX Is Underserved
