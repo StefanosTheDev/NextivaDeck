@@ -35,7 +35,7 @@ export default function BetterOutcomesCopySlide({ slideNumber = 4 }: { slideNumb
             margin: 0,
           }}
         >
-          Our Mission
+          Our Purpose
         </motion.p>
 
         <motion.div
