@@ -9,15 +9,9 @@ const topCards = [
   { stat: "7M", label: "businesses doing CX without calling it a contact center" },
 ];
 
-const marketBullets = [
-  "17–18M contact center agents globally",
-  "~3M agents in the United States",
-  "Majority of contact centers are small (most <30 agents)",
-  "Millions of SMB and mid-market businesses still operate with limited or no automation",
-];
+const marketText = "Fierce battle amongst incumbents to address one-third of available contact center seats and less than 10% of global contact centers.";
 
 const competitiveBullets = [
-  "The Massive Middle of CX is underserved",
   "Most CX platforms are built for enterprises",
   "Millions of growing businesses are left behind",
   "Solutions are expensive and complex to deploy",
@@ -29,6 +23,7 @@ const whyNextiva = [
   "Agentic & Human in Tandem",
   "Go-to-Market Moat",
   "Product Led Motion",
+  "Quick Time to Value",
 ];
 
 export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNumber?: number }) {
@@ -95,8 +90,8 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
                 >
                   {i === 0 ? (
                     <p className="font-heading" style={{
-                      fontSize: 16, fontWeight: 700, color: "#F0A88C", margin: "0 0 10px", lineHeight: 1.2,
-                      letterSpacing: "0.04em", textTransform: "uppercase", textShadow: "0 0 20px rgba(240,168,140,0.4)",
+                      fontSize: 16, fontWeight: 700, color: "#7EB8E0", margin: "0 0 10px", lineHeight: 1.2,
+                      letterSpacing: "0.04em", textTransform: "uppercase", textShadow: "0 0 20px rgba(126,184,224,0.4)",
                       textAlign: "center",
                     }}>
                       A market primed for disruption
@@ -165,14 +160,9 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
           <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 16px", lineHeight: 1.25 }}>
             The Agentic AI Opportunity in Customer Service
           </h3>
-          <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-            {marketBullets.map((b) => (
-              <li key={b} style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 14, position: "relative" }}>
-                <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.3)" }}>•</span>
-                {b}
-              </li>
-            ))}
-          </ul>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: 0 }}>
+            {marketText}
+          </p>
         </div>
 
         {/* Competitive Landscape */}
@@ -188,7 +178,7 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
           </h3>
           <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
             {competitiveBullets.map((b) => (
-              <li key={b} style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 14, position: "relative" }}>
+              <li key={b} style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 14, position: "relative" }}>
                 <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.3)" }}>•</span>
                 {b}
               </li>
