@@ -34,15 +34,15 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
     >
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "40px 80px 0", flexShrink: 0 }}
+        style={{ padding: "48px 80px 0", flexShrink: 0 }}
       >
-        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 8px" }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           THE AGENTIC AI OPPORTUNITY
         </p>
-        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           The next workforce is Agentic
         </h1>
-        <p style={{ fontSize: 18, color: "rgba(255,255,255,0.45)", margin: "10px 0 0", lineHeight: 1.5 }}>
+        <p style={{ fontSize: 20, color: "rgba(255,255,255,0.45)", margin: "10px 0 0", lineHeight: 1.5 }}>
           Millions of contact center interactions will be handled by AI employees — not tools.
         </p>
       </motion.header>
@@ -205,7 +205,7 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
             <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
               MARKET CONTEXT
             </p>
-            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+            <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
               Enterprise Contact Centers Market
             </h3>
             <p style={{ fontSize: 16, color: "rgba(255,255,255,0.78)", margin: 0, lineHeight: 1.4 }}>
@@ -221,7 +221,7 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
             <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
               COMPETITIVE LANDSCAPE
             </p>
-            <h3 className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+            <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
               The Massive Middle of CX Is Underserved
             </h3>
             <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
@@ -242,7 +242,7 @@ export default function AgenticOpportunityCopy3Slide({ slideNumber = 24 }: { sli
             <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
               WHY NEXTIVA WINS
             </p>
-            <h3 className="font-heading" style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", margin: "0 0 8px", lineHeight: 1.25 }}>
+            <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
               The complete Agentic CX platform
             </h3>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "auto auto auto", gridAutoFlow: "column", gap: 6, flex: 1, minHeight: 0, alignContent: "start" }}>
