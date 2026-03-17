@@ -15,6 +15,7 @@ const chapters = [
       "Market leaders without outside capital.",
       "Won through simplicity, amazing service, and reliability.",
       "Scaled operations while maintaining customer-first culture.",
+      "",
     ],
     badge: "Self-funded.",
   },
@@ -27,6 +28,7 @@ const chapters = [
       "Unified data layer across every customer conversation.",
       "From tools to platform — one system for all interactions.",
       "Platform well-positioned for emerging customer needs.",
+      "",
     ],
     badge: "Investment.",
   },
@@ -93,12 +95,16 @@ export default function JourneySlide({ slideNumber = 7 }: { slideNumber?: number
               <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.15)", marginBottom: 14 }} />
               <p className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#CCC7C3", margin: "0 0 14px" }}>{ch.milestone}</p>
               <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-                {ch.bullets.map((b) => (
-                  <li key={b} style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 14, position: "relative" }}>
-                    <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.3)" }}>&rsaquo;</span>
-                    {b}
-                  </li>
-                ))}
+                {ch.bullets.map((b, idx) =>
+                  b === "" ? (
+                    <li key={`${ch.number}-spacer-${idx}`} style={{ lineHeight: 1.5, marginBottom: 6, minHeight: 24 }} aria-hidden />
+                  ) : (
+                    <li key={b} style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 14, position: "relative" }}>
+                      <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.3)" }}>&rsaquo;</span>
+                      {b}
+                    </li>
+                  )
+                )}
               </ul>
               <div
                 style={{

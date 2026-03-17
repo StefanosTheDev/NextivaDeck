@@ -56,6 +56,7 @@ import AiTailwindCopySlide from "./slides/AiTailwindCopySlide";
 import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
 import MarketTAMLovableSlide from "./slides/MarketTAMLovableSlide";
 import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
+import BetterOutcomesCopySlide from "./slides/BetterOutcomesCopySlide";
 import WorldMovingSlide from "./slides/WorldMovingSlide";
 import WhatWeAreCloseSlide from "./slides/WhatWeAreCloseSlide";
 import CXPortfolioThomasSlide from "./slides/CXPortfolioThomasSlide";
@@ -82,6 +83,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   cover:               { id: "cover",               label: "Cover",               component: CoverSlide,               theme: "dark" },
   "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "dark" },
   "better-outcomes":   { id: "better-outcomes",     label: "Our Mission",         component: BetterOutcomesSlide,      theme: "dark" },
+  "better-outcomes-copy": { id: "better-outcomes-copy", label: "Our Mission (copy)", component: BetterOutcomesCopySlide, theme: "dark" },
   glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
   who:                 { id: "who",                  label: "Who We Serve",        component: WhoWeServeSlide,          theme: "dark" },
