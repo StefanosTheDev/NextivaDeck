@@ -99,7 +99,7 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
             maxWidth: 1400,
           }}
         >
-          The world is moving from transactional to intelligent relationships
+          The world is moving to intelligent relationships
         </h1>
       </motion.header>
 
