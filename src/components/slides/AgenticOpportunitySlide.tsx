@@ -51,7 +51,7 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
           The next workforce is Agentic
         </h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.45)", margin: "10px 0 0", lineHeight: 1.5 }}>
-          Millions of contact center interactions will be handled by AI employees — not tools.
+          Millions of customer interactions will be handled by AI employees — not people.
         </p>
       </motion.header>
 
@@ -63,13 +63,13 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
         <div style={{ width: "100%", position: "relative", paddingBottom: 6 }}>
           {/* Nextiva blue ocean - above oval */}
           <p className="font-heading" style={{
-            fontSize: 28, fontWeight: 700, color: "#2860B2", marginBottom: 16, marginTop: 0,
+            fontSize: 28, fontWeight: 700, color: "#FFFFFF", marginBottom: 16, marginTop: 0,
             textAlign: "center", letterSpacing: "0.02em",
-            textShadow: "0 0 24px rgba(40,96,178,0.5)",
+            textShadow: "0 0 24px rgba(255,255,255,0.3)",
             marginLeft: "calc((100% - 112px) / 2 + 64px)",
             width: "calc((100% - 112px) / 2 - 8px)",
           }}>
-            Nextiva &quot;blue ocean&quot; opportunity
+            Nextiva &quot;white space&quot; opportunity
           </p>
           {/* Gold oval */}
           <svg
@@ -179,12 +179,12 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
           </ul>
         </div>
 
-        {/* Competitive Landscape */}
+        {/* The Massive Middle */}
         <div style={{
-          flex: 1, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
+          flex: 1, background: "rgba(40,96,178,0.08)", border: "1px solid rgba(40,96,178,0.2)",
           borderRadius: 14, padding: "24px 24px",
         }}>
-          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 12px" }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#7EB8E0", margin: "0 0 12px" }}>
             The Massive Middle
           </p>
           <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 16px", lineHeight: 1.25 }}>
@@ -193,7 +193,7 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
           <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
             {competitiveBullets.map((b) => (
               <li key={b} style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 14, position: "relative" }}>
-                <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.3)" }}>•</span>
+                <span style={{ position: "absolute", left: 0, color: "#7EB8E0" }}>•</span>
                 {b}
               </li>
             ))}
