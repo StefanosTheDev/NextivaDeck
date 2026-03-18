@@ -14,7 +14,9 @@
     "world-moving-thomas",
     "problem",
     "platform",
+    "platform-copy",
     "solution",
+    "solution-copy",
     "cx-portfolio-thomas",
     "unified-data-model",
     "cx-portfolio-puzzle-cross",
@@ -72,7 +74,8 @@
     "executive-summary",
     "executive-summary-2",
     "executive-summary-stack",
-    "executive-summary-2-stack"
+    "executive-summary-2-stack",
+    "executive-summary-cards-copy"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",

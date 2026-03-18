@@ -7,7 +7,9 @@ import ScaleSlide from "./slides/ScaleSlide";
 import JourneySlide from "./slides/JourneySlide";
 import ProblemSlide from "./slides/ProblemSlide";
 import SolutionSlide from "./slides/SolutionSlide";
+import SolutionCopySlide from "./slides/SolutionCopySlide";
 import PlatformSlide from "./slides/PlatformSlide";
+import PlatformCopySlide from "./slides/PlatformCopySlide";
 import AiTandemSlide from "./slides/AiTandemSlide";
 import MarketSlide from "./slides/MarketSlide";
 import AgenticOpportunitySlide from "./slides/AgenticOpportunitySlide";
@@ -70,6 +72,7 @@ import AgenticOpportunityLovableSlide from "./slides/AgenticOpportunityLovableSl
 import ContactCenterMarketOpportunitySlide from "./slides/ContactCenterMarketOpportunitySlide";
 import ExecutiveSummarySlide from "./slides/ExecutiveSummarySlide";
 import ExecutiveSummaryCardsSlide from "./slides/ExecutiveSummaryCardsSlide";
+import ExecutiveSummaryCardsCopySlide from "./slides/ExecutiveSummaryCardsCopySlide";
 import ExecutiveSummary2Slide from "./slides/ExecutiveSummary2Slide";
 import ExecutiveSummaryStackSlide from "./slides/ExecutiveSummaryStackSlide";
 import ExecutiveSummary2StackSlide from "./slides/ExecutiveSummary2StackSlide";
@@ -95,7 +98,9 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   journey:             { id: "journey",              label: "Journey",             component: JourneySlide,             theme: "dark" },
   problem:             { id: "problem",              label: "Problem",             component: ProblemSlide,             theme: "dark" },
   platform:            { id: "platform",             label: "Platform",            component: PlatformSlide,            theme: "dark" },
+  "platform-copy":    { id: "platform-copy",       label: "Platform (copy)",     component: PlatformCopySlide,        theme: "dark" },
   solution:            { id: "solution",             label: "Solution",            component: SolutionSlide,            theme: "dark" },
+  "solution-copy":     { id: "solution-copy",       label: "Solution (copy)",     component: SolutionCopySlide,       theme: "dark" },
   market:              { id: "market",               label: "Market",              component: MarketSlide,              theme: "dark" },
   "agentic-opp":       { id: "agentic-opp",         label: "AI Opportunity",      component: AgenticOpportunitySlide,  theme: "dark" },
   "agentic-opp-copy":   { id: "agentic-opp-copy",   label: "AI Opportunity (copy)", component: AgenticOpportunityCopySlide, theme: "dark" },
@@ -157,6 +162,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "contact-center-market-opportunity": { id: "contact-center-market-opportunity", label: "Contact Center Market Opportunity", component: ContactCenterMarketOpportunitySlide, theme: "dark", isNew: true },
   "executive-summary": { id: "executive-summary", label: "Executive Summary (Option 1, cards)", component: ExecutiveSummarySlide, theme: "dark" },
   "executive-summary-cards": { id: "executive-summary-cards", label: "Executive Summary (Option 1, slide 8 style)", component: ExecutiveSummaryCardsSlide, theme: "dark" },
+  "executive-summary-cards-copy": { id: "executive-summary-cards-copy", label: "Executive Summary (copy)", component: ExecutiveSummaryCardsCopySlide, theme: "dark" },
   "executive-summary-2": { id: "executive-summary-2", label: "Executive Summary (Option 2, cards)", component: ExecutiveSummary2Slide, theme: "dark" },
   "executive-summary-stack": { id: "executive-summary-stack", label: "Executive Summary (Option 1, stack)", component: ExecutiveSummaryStackSlide, theme: "dark" },
   "executive-summary-2-stack": { id: "executive-summary-2-stack", label: "Executive Summary (Option 2, stack)", component: ExecutiveSummary2StackSlide, theme: "dark" },
@@ -225,6 +231,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "executive-summary-2",
   "executive-summary-stack",
   "executive-summary-2-stack",
+  "executive-summary-cards-copy",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
