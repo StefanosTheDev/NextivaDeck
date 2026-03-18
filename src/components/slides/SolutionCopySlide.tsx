@@ -43,7 +43,8 @@ export default function SolutionCopySlide({ slideNumber = 9 }: { slideNumber?: n
           Delivering business outcomes at moments of interaction.
         </h1>
         <p style={{ fontSize: 20, color: "rgba(255,255,255,0.55)", margin: "14px 0 0", lineHeight: 1.5, maxWidth: 1000, marginLeft: "auto", marginRight: "auto" }}>
-          Secret sauce: We own live conversation. Other mission-critical systems just hold static data—providing added context. Only we can deliver when it matters.
+          We combine live front office conversation with static back office data for added context.<br />
+          Only Nextiva delivers at the moment of truth.
         </p>
       </motion.header>
 
@@ -133,6 +134,9 @@ export default function SolutionCopySlide({ slideNumber = 9 }: { slideNumber?: n
             width: 260, textAlign: "center",
             display: "flex", flexDirection: "column", alignItems: "center",
           }}>
+            <p style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 10px", fontFamily: "inherit" }}>
+              Front office
+            </p>
             <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {leftIcons.map((Icon, i) => (
                 <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
@@ -153,6 +157,9 @@ export default function SolutionCopySlide({ slideNumber = 9 }: { slideNumber?: n
             width: 260, textAlign: "center",
             display: "flex", flexDirection: "column", alignItems: "center",
           }}>
+            <p style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 10px", fontFamily: "inherit" }}>
+              Back office
+            </p>
             <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {rightIcons.map((Icon, i) => (
                 <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
@@ -173,6 +180,9 @@ export default function SolutionCopySlide({ slideNumber = 9 }: { slideNumber?: n
             width: 300, textAlign: "center",
             display: "flex", flexDirection: "column", alignItems: "center",
           }}>
+            <p style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 10px", fontFamily: "inherit" }}>
+              Operational execution
+            </p>
             <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
               {bottomIcons.map((Icon, i) => (
                 <Icon key={i} size={18} color="rgba(255,255,255,0.4)" strokeWidth={1.75} />
