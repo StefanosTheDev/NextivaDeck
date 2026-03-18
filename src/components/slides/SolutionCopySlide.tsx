@@ -43,8 +43,8 @@ export default function SolutionCopySlide({ slideNumber = 9 }: { slideNumber?: n
           Delivering business outcomes at moments of interaction.
         </h1>
         <p style={{ fontSize: 20, color: "rgba(255,255,255,0.55)", margin: "14px 0 0", lineHeight: 1.5, maxWidth: 1000, marginLeft: "auto", marginRight: "auto" }}>
-          We combine live front office conversation with static back office data for added context.<br />
-          Only Nextiva delivers at the moment of truth.
+          A.I. drives action by combining live front office conversation with static back office data.<br />
+          Our ability to deliver instant outcomes positions us to thrive through the AI era.
         </p>
       </motion.header>
 
