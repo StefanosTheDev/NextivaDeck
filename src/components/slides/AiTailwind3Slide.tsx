@@ -2,16 +2,17 @@
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { Server, Database, Layers, ShieldCheck } from "lucide-react";
+import type { ReactNode } from "react";
 
-const cards = [
+const cards: { icon: typeof Server; title: string; body: ReactNode }[] = [
   {
     icon: Server,
-    title: "Deep infrastructure stack",
+    title: "Deep communications infrastructure stack",
     body: "Telephony, real-time routing, carrier interconnects, and physical network endpoints. LLMs operate above the app layer — they cannot replicate what lives below it.",
   },
   {
     icon: Database,
-    title: "Proprietary real-time data",
+    title: "Proprietary real-time data on the edge",
     body: "Billions of always-fresh conversations generate a data moat that static models cannot reproduce. Our AI is trained on live interaction data, not synthetic benchmarks.",
   },
   {
@@ -21,13 +22,13 @@ const cards = [
   },
   {
     icon: ShieldCheck,
-    title: "Regulated industry",
-    body: "HIPAA, PCI, TCPA, and carrier compliance create barriers no vibe-coded alternative can clear. Regulation protects incumbents with certified infrastructure.",
+    title: "Highly regulated industry",
+    body: (<>HIPAA, PCI, TCPA, and carrier compliance create barriers no vibe-coded alternative can clear. Regulation protects incumbents with certified infrastructure.<br /><span style={{ visibility: "hidden" }}>.</span></>),
   },
 ];
 
 const bottomStats = [
-  { stat: "Additive", label: "AI revenue is net new — not cannibalization" },
+  { stat: "Additive", label: "Net new AI revenue — not cannibalization" },
   { stat: "22%", label: "AI-attached bookings (FY26)" },
   { stat: "50%+", label: "AI bookings CAGR" },
   { stat: "92%", label: "Net dollar retention" },
@@ -60,7 +61,7 @@ export default function AiTailwind3Slide({ slideNumber = 13 }: { slideNumber?: n
       {/* Four cards */}
       <motion.main
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-        style={{ flex: 1, display: "flex", gap: 16, padding: "28px 80px 0", alignItems: "stretch" }}
+        style={{ display: "flex", gap: 16, padding: "28px 80px 0", alignItems: "stretch" }}
       >
         {cards.map((c) => {
           const Icon = c.icon;
