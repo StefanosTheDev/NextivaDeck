@@ -65,7 +65,7 @@ export default function CompetitiveMoat2Slide({ slideNumber = 20 }: { slideNumbe
       >
         {moats.map((m, i) => (
           <motion.article
-            key={m.title}
+            key={m.metricLabel}
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 + i * 0.1 }}
             style={{
