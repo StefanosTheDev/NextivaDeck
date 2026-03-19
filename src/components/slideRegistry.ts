@@ -10,6 +10,7 @@ import SolutionSlide from "./slides/SolutionSlide";
 import SolutionCopySlide from "./slides/SolutionCopySlide";
 import PlatformSlide from "./slides/PlatformSlide";
 import PlatformCopySlide from "./slides/PlatformCopySlide";
+import PlatformCopy2Slide from "./slides/PlatformCopy2Slide";
 import AiTandemSlide from "./slides/AiTandemSlide";
 import MarketSlide from "./slides/MarketSlide";
 import AgenticOpportunitySlide from "./slides/AgenticOpportunitySlide";
@@ -102,6 +103,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   problem:             { id: "problem",              label: "Problem",             component: ProblemSlide,             theme: "dark" },
   platform:            { id: "platform",             label: "Platform",            component: PlatformSlide,            theme: "dark" },
   "platform-copy":    { id: "platform-copy",       label: "Platform (copy)",     component: PlatformCopySlide,        theme: "dark" },
+  "platform-copy-2":  { id: "platform-copy-2",     label: "Platform (defensive)", component: PlatformCopy2Slide,     theme: "dark" },
   solution:            { id: "solution",             label: "Solution",            component: SolutionSlide,            theme: "dark" },
   "solution-copy":     { id: "solution-copy",       label: "Solution (copy)",     component: SolutionCopySlide,       theme: "dark" },
   market:              { id: "market",               label: "Market",              component: MarketSlide,              theme: "dark" },
