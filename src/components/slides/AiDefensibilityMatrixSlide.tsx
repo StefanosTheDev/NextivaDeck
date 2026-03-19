@@ -93,10 +93,11 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
           flex: 1,
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
           padding: "20px 80px 0",
         }}
       >
-        <div style={{ flex: 1, position: "relative" }}>
+        <div style={{ flex: 0.75, position: "relative", width: "75%" }}>
           {/* Axis labels positioned on grid divider lines */}
 
           {/* "Thin Application Layer" — centered between two bottom boxes */}
@@ -106,15 +107,15 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
               bottom: 0,
               left: "50%",
               transform: "translate(-50%, 50%)",
-              fontSize: 11,
-              fontWeight: 600,
+              fontSize: 13,
+              fontWeight: 700,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.35)",
+              color: "#7EB3E8",
               whiteSpace: "nowrap",
               zIndex: 2,
-              background: "rgba(0,2,8,0.85)",
-              padding: "2px 10px",
+              background: "rgba(0,2,8,0.9)",
+              padding: "3px 12px",
             }}
           >
             Thin Application Layer
@@ -127,15 +128,15 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
               top: 0,
               left: "50%",
               transform: "translate(-50%, -50%)",
-              fontSize: 11,
-              fontWeight: 600,
+              fontSize: 13,
+              fontWeight: 700,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.35)",
+              color: "#7EB3E8",
               whiteSpace: "nowrap",
               zIndex: 2,
-              background: "rgba(0,2,8,0.85)",
-              padding: "2px 10px",
+              background: "rgba(0,2,8,0.9)",
+              padding: "3px 12px",
             }}
           >
             Deep Infrastructure Stack
@@ -148,15 +149,15 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
               top: "50%",
               left: 0,
               transform: "translate(-40%, -50%)",
-              fontSize: 11,
-              fontWeight: 600,
+              fontSize: 13,
+              fontWeight: 700,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.35)",
+              color: "#7EB3E8",
               whiteSpace: "nowrap",
               zIndex: 2,
-              background: "rgba(0,2,8,0.85)",
-              padding: "2px 10px",
+              background: "rgba(0,2,8,0.9)",
+              padding: "3px 12px",
             }}
           >
             Static / Replicable Data
@@ -169,15 +170,15 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
               top: "50%",
               right: 0,
               transform: "translate(40%, -50%)",
-              fontSize: 11,
-              fontWeight: 600,
+              fontSize: 13,
+              fontWeight: 700,
               letterSpacing: "0.06em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.35)",
+              color: "#7EB3E8",
               whiteSpace: "nowrap",
               zIndex: 2,
-              background: "rgba(0,2,8,0.85)",
-              padding: "2px 10px",
+              background: "rgba(0,2,8,0.9)",
+              padding: "3px 12px",
             }}
           >
             Proprietary Real-Time Data
@@ -433,7 +434,7 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
       <div style={{ padding: "14px 80px 0", textAlign: "center" }}>
         <p
           style={{
-            fontSize: 15,
+            fontSize: 18,
             fontWeight: 700,
             color: "#7EB3E8",
             margin: 0,
