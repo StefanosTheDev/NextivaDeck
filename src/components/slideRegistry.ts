@@ -49,6 +49,7 @@ import AiTailwind2Slide from "./slides/AiTailwind2Slide";
 import DurableEdgeSlide from "./slides/DurableEdgeSlide";
 import MarketTAMSlide from "./slides/MarketTAMSlide";
 import CompetitiveMoatSlide from "./slides/CompetitiveMoatSlide";
+import CompetitiveMoat2Slide from "./slides/CompetitiveMoat2Slide";
 import UnifiedDataModelSlide from "./slides/UnifiedDataModelSlide";
 import AiTailwindOptionASlide from "./slides/AiTailwindOptionASlide";
 import AiTailwindOptionBSlide from "./slides/AiTailwindOptionBSlide";
@@ -143,6 +144,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "durable-edge":      { id: "durable-edge",        label: "Durable Edge",        component: DurableEdgeSlide,         theme: "light" },
   "market-tam":        { id: "market-tam",          label: "Market TAM",          component: MarketTAMSlide,           theme: "dark" },
   "competitive-moat":  { id: "competitive-moat",    label: "Competitive Moat",    component: CompetitiveMoatSlide,     theme: "dark" },
+  "competitive-moat-2": { id: "competitive-moat-2", label: "Competitive Moat (defensive)", component: CompetitiveMoat2Slide, theme: "dark" },
   "unified-data-model":{ id: "unified-data-model",  label: "Unified Data Model",  component: UnifiedDataModelSlide,    theme: "dark" },
   "ai-tailwind-opt-a": { id: "ai-tailwind-opt-a",  label: "AI Tailwind Option A", component: AiTailwindOptionASlide,  theme: "dark" },
   "ai-tailwind-opt-b": { id: "ai-tailwind-opt-b",  label: "AI Tailwind Option B", component: AiTailwindOptionBSlide,  theme: "dark" },
