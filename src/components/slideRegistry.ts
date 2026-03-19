@@ -83,6 +83,12 @@ import ExecutiveSummaryCardsCopySlide from "./slides/ExecutiveSummaryCardsCopySl
 import ExecutiveSummary2Slide from "./slides/ExecutiveSummary2Slide";
 import ExecutiveSummaryStackSlide from "./slides/ExecutiveSummaryStackSlide";
 import ExecutiveSummary2StackSlide from "./slides/ExecutiveSummary2StackSlide";
+import AIAgentsByIndustrySlide from "./slides/AIAgentsByIndustrySlide";
+import CustomerSuzukiSlide from "./slides/CustomerSuzukiSlide";
+import CustomerTataPlaySlide from "./slides/CustomerTataPlaySlide";
+import CustomerShastaSlide from "./slides/CustomerShastaSlide";
+import CustomerAEGVisionSlide from "./slides/CustomerAEGVisionSlide";
+import CustomerUseCasesSlide from "./slides/CustomerUseCasesSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -180,6 +186,12 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "executive-summary-2": { id: "executive-summary-2", label: "Executive Summary (Option 2, cards)", component: ExecutiveSummary2Slide, theme: "dark" },
   "executive-summary-stack": { id: "executive-summary-stack", label: "Executive Summary (Option 1, stack)", component: ExecutiveSummaryStackSlide, theme: "dark" },
   "executive-summary-2-stack": { id: "executive-summary-2-stack", label: "Executive Summary (Option 2, stack)", component: ExecutiveSummary2StackSlide, theme: "dark" },
+  "ai-agents-by-industry": { id: "ai-agents-by-industry", label: "AI Agents by Industry", component: AIAgentsByIndustrySlide, theme: "dark" },
+  "customer-suzuki": { id: "customer-suzuki", label: "Customer: Suzuki", component: CustomerSuzukiSlide, theme: "dark" },
+  "customer-tata-play": { id: "customer-tata-play", label: "Customer: Tata Play", component: CustomerTataPlaySlide, theme: "dark" },
+  "customer-shasta": { id: "customer-shasta", label: "Customer: Shasta Community Health", component: CustomerShastaSlide, theme: "dark" },
+  "customer-aeg-vision": { id: "customer-aeg-vision", label: "Customer: AEG Vision", component: CustomerAEGVisionSlide, theme: "dark" },
+  "customer-use-cases": { id: "customer-use-cases", label: "Customer Use Cases (4-card)", component: CustomerUseCasesSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
