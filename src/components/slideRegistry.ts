@@ -61,6 +61,7 @@ import AiTailwindOptionDSlide from "./slides/AiTailwindOptionDSlide";
 import AiTailwindOptionESlide from "./slides/AiTailwindOptionESlide";
 import AiTailwindCopySlide from "./slides/AiTailwindCopySlide";
 import AiTailwind3Slide from "./slides/AiTailwind3Slide";
+import AiDefensibilityMatrixSlide from "./slides/AiDefensibilityMatrixSlide";
 import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
 import MarketTAMLovableSlide from "./slides/MarketTAMLovableSlide";
 import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
@@ -159,6 +160,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-opt-e": { id: "ai-tailwind-opt-e",  label: "AI Tailwind Option E", component: AiTailwindOptionESlide,  theme: "dark" },
   "ai-tailwind-copy":  { id: "ai-tailwind-copy",   label: "AI Tailwind (copy)",   component: AiTailwindCopySlide,     theme: "dark" },
   "ai-tailwind-3":     { id: "ai-tailwind-3",      label: "Why AI Strengthens Our Business", component: AiTailwind3Slide, theme: "dark" },
+  "ai-defensibility-matrix": { id: "ai-defensibility-matrix", label: "AI Defensibility 2×2 Matrix", component: AiDefensibilityMatrixSlide, theme: "dark" },
   "customer-base-lovable": { id: "customer-base-lovable", label: "Customer Base (Lovable)", component: CustomerBaseLovableSlide, theme: "dark" },
   "market-tam-lovable": { id: "market-tam-lovable", label: "Market TAM (Lovable)", component: MarketTAMLovableSlide, theme: "dark" },
   "world-moving-thomas": { id: "world-moving-thomas", label: "#4 World Moving to Unified CX (Thomas · SlideWorldMoving)", component: WorldMovingSlide, theme: "dark", isNew: true },
