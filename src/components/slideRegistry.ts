@@ -46,6 +46,8 @@ import AgenticOpportunityCopySlide from "./slides/AgenticOpportunityCopySlide";
 import AgenticOpportunityCopy2Slide from "./slides/AgenticOpportunityCopy2Slide";
 import AgenticOpportunityCopy3Slide from "./slides/AgenticOpportunityCopy3Slide";
 import AgenticOpportunityCopy4Slide from "./slides/AgenticOpportunityCopy4Slide";
+import AgenticOpportunityCopy5Slide from "./slides/AgenticOpportunityCopy5Slide";
+import AgenticOpportunity3Slide from "./slides/AgenticOpportunity3Slide";
 import AiTailwind2Slide from "./slides/AiTailwind2Slide";
 import DurableEdgeSlide from "./slides/DurableEdgeSlide";
 import MarketTAMSlide from "./slides/MarketTAMSlide";
@@ -112,6 +114,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "agentic-opp-copy-2": { id: "agentic-opp-copy-2", label: "AI Opportunity (copy 2)", component: AgenticOpportunityCopy2Slide, theme: "dark" },
   "agentic-opp-copy-3": { id: "agentic-opp-copy-3", label: "Tomorrow's Agentic Workforce (copy)", component: AgenticOpportunityCopy3Slide, theme: "dark" },
   "agentic-opp-copy-4": { id: "agentic-opp-copy-4", label: "The Next Workforce is a Gen Tech (copy)", component: AgenticOpportunityCopy4Slide, theme: "dark" },
+  "agentic-opp-copy-5": { id: "agentic-opp-copy-5", label: "The Next Workforce is Agentic (defensive)", component: AgenticOpportunityCopy5Slide, theme: "dark" },
+  "agentic-opp-3":     { id: "agentic-opp-3",      label: "AI Opportunity (defensive)", component: AgenticOpportunity3Slide, theme: "dark" },
   "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "dark" },
   "cx-market-sizing":  { id: "cx-market-sizing",     label: "CX Market Sizing",    component: CXMarketSizingSlide,      theme: "dark" },
   "labor-cost-savings":{ id: "labor-cost-savings",   label: "Labor Cost Savings",  component: LaborCostSavingsSlide,    theme: "dark" },
