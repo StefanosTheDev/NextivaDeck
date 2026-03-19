@@ -14,11 +14,11 @@ const outcomes = [
   "AI that improves with every interaction",
 ];
 
-const DIAMOND = { w: 880, h: 390 };
+const DIAMOND = { w: 880, h: 480 };
 const AI = { x: 440, y: 70 };
 const LEFT = { x: 130, y: 195 };
 const RIGHT = { x: 750, y: 195 };
-const BOTTOM = { x: 440, y: 340 };
+const BOTTOM = { x: 440, y: 420 };
 
 export default function SolutionCopySlide({ slideNumber = 9 }: { slideNumber?: number }) {
   return (
