@@ -176,9 +176,14 @@ export default function SolutionCopySlide({ slideNumber = 9 }: { slideNumber?: n
           {/* Real-time Actions — bottom center */}
           <div style={{
             position: "absolute",
-            top: BOTTOM.y - 40, left: BOTTOM.x - 150,
-            width: 300, textAlign: "center",
+            top: BOTTOM.y - 50, left: BOTTOM.x - 160,
+            width: 320, textAlign: "center",
             display: "flex", flexDirection: "column", alignItems: "center",
+            background: "rgba(40,96,178,0.14)",
+            border: "1px solid rgba(126,179,232,0.22)",
+            borderRadius: 16,
+            padding: "14px 16px 18px",
+            boxShadow: "0 0 40px rgba(78,154,232,0.12), 0 0 80px rgba(40,96,178,0.08)",
           }}>
             <p style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 10px", fontFamily: "inherit" }}>
               Operational execution
