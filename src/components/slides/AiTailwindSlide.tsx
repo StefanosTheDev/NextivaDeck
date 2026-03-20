@@ -44,15 +44,15 @@ export default function AiTailwindSlide({ slideNumber = 13 }: { slideNumber?: nu
     >
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "48px 80px 0", flexShrink: 0 }}
+        style={{ padding: "40px 80px 0", flexShrink: 0 }}
       >
-        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 8px" }}>
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 6px" }}>
           AI & NEXTIVA
         </p>
-        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           AI is the tailwind — not the thesis.
         </h1>
-        <p style={{ fontSize: 18, color: "rgba(255,255,255,0.45)", margin: "10px 0 0", lineHeight: 1.5 }}>
+        <p style={{ fontSize: 17, color: "rgba(255,255,255,0.45)", margin: "8px 0 0", lineHeight: 1.5 }}>
           AI expands the opportunity and deepens our platform moat.
         </p>
       </motion.header>
@@ -60,7 +60,7 @@ export default function AiTailwindSlide({ slideNumber = 13 }: { slideNumber?: nu
       {/* Four cards */}
       <motion.main
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-        style={{ flex: 1, display: "flex", gap: 16, padding: "28px 80px 0", alignItems: "stretch" }}
+        style={{ display: "flex", gap: 16, padding: "20px 80px 0", flexShrink: 0 }}
       >
         {cards.map((c) => {
           const Icon = c.icon;
@@ -71,20 +71,20 @@ export default function AiTailwindSlide({ slideNumber = 13 }: { slideNumber?: nu
               border: "1px solid rgba(255,255,255,0.08)",
               borderTop: "3px solid #2860B2",
               borderRadius: 14,
-              padding: "28px 24px",
+              padding: "20px 20px",
               display: "flex", flexDirection: "column",
             }}>
               <div style={{
-                width: 44, height: 44, borderRadius: 10,
+                width: 38, height: 38, borderRadius: 10,
                 background: "rgba(40,96,178,0.15)", border: "1px solid rgba(40,96,178,0.25)",
-                display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18,
+                display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12,
               }}>
-                <Icon size={22} color="#7EB3E8" strokeWidth={1.75} />
+                <Icon size={20} color="#7EB3E8" strokeWidth={1.75} />
               </div>
-              <h3 className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", lineHeight: 1.25 }}>
+              <h3 className="font-heading" style={{ fontSize: 20, fontWeight: 700, color: "#FFFFFF", margin: "0 0 8px", lineHeight: 1.25 }}>
                 {c.title}
               </h3>
-              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.55, margin: 0 }}>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.5, margin: 0 }}>
                 {c.body}
               </p>
             </div>
@@ -104,11 +104,11 @@ export default function AiTailwindSlide({ slideNumber = 13 }: { slideNumber?: nu
         }}>
           {bottomStats.map((s, i) => (
             <div key={s.label} style={{
-              flex: 1, padding: "20px 24px", textAlign: "center",
+              flex: 1, padding: "16px 24px", textAlign: "center",
               borderRight: i < bottomStats.length - 1 ? "1px solid rgba(40,96,178,0.2)" : "none",
             }}>
-              <p className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1 }}>{s.stat}</p>
-              <p style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", margin: "6px 0 0" }}>{s.label}</p>
+              <p className="font-heading" style={{ fontSize: 26, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1 }}>{s.stat}</p>
+              <p style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", margin: "5px 0 0" }}>{s.label}</p>
             </div>
           ))}
         </div>
