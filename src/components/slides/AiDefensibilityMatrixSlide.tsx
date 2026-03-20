@@ -3,32 +3,24 @@ import React from "react";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
-const vulnerableItems = [
-  "Knowledge management",
-  "Simple CRM",
-  "Reporting / BI tools",
-  "Helpdesk ticketing",
+const vulnerableFloats = [
+  { label: "Knowledge management", top: "45%", left: "4%", fontSize: 18, rotate: 0 },
+  { label: "CRM", top: "62%", left: "22%", fontSize: 26, rotate: 0 },
+  { label: "Analytics / BI", top: "34%", left: "38%", fontSize: 16, rotate: 0 },
+  { label: "Help desk", top: "72%", left: "50%", fontSize: 20, rotate: 0 },
 ];
 
-const dataNoInfraItems = [
-  "Conversational AI point solutions",
-  "Chat-only platforms",
-  "Analytics SaaS",
+const dataNoInfraFloats = [
+  { label: "Analytics SaaS", top: "30%", left: "5%", fontSize: 16, rotate: 0 },
+  { label: "Chat-only platforms", top: "50%", left: "28%", fontSize: 18, rotate: 0 },
+  { label: "Conversational AI point solutions", top: "68%", left: "12%", fontSize: 15, rotate: 0 },
 ];
 
-const infraNoDataItems = [
-  "Legacy on-prem PBX",
-  "Traditional telecom carriers",
+const infraNoDataFloats = [
+  { label: "Traditional telecom carriers", top: "35%", left: "8%", fontSize: 16, rotate: 0 },
+  { label: "Legacy on-prem PBX", top: "58%", left: "28%", fontSize: 18, rotate: 0 },
 ];
 
-const dotStyle = (color: string): React.CSSProperties => ({
-  width: 8,
-  height: 8,
-  borderRadius: "50%",
-  background: color,
-  flexShrink: 0,
-  opacity: 0.7,
-});
 
 export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slideNumber?: number }) {
   return (
@@ -94,10 +86,11 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: "20px 80px 0",
+          padding: "10px 80px 0",
+          justifyContent: "center",
         }}
       >
-        <div style={{ flex: 0.75, position: "relative", width: "75%" }}>
+        <div style={{ height: "78%", position: "relative", width: "75%" }}>
           {/* Axis labels positioned on grid divider lines */}
 
           {/* "Thin Application Layer" — centered between two bottom boxes */}
@@ -196,7 +189,7 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
               position: "relative",
             }}
           >
-            {/* ── Top-left: Data Without Infrastructure ── */}
+            {/* ── Top-left: Infrastructure Without Data ── */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -212,7 +205,7 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
             >
               <p
                 style={{
-                  fontSize: 14,
+                  fontSize: 18,
                   fontWeight: 700,
                   color: "#E0B87E",
                   letterSpacing: "0.04em",
@@ -225,26 +218,44 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
               </p>
               <p
                 style={{
-                  fontSize: 11,
-                  color: "rgba(255,255,255,0.3)",
-                  margin: "0 0 14px",
+                  fontSize: 13,
+                  color: "rgba(255,255,255,0.55)",
+                  margin: "0 0 4px",
                   fontWeight: 600,
                   textAlign: "center",
                 }}
               >
-                Data Without Infrastructure
+                Infrastructure Without Data
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {dataNoInfraItems.map((item) => (
-                  <div
-                    key={item}
-                    style={{ display: "flex", alignItems: "center", gap: 10 }}
+              <p
+                style={{
+                  fontSize: 11,
+                  color: "rgba(255,255,255,0.4)",
+                  margin: "0 0 10px",
+                  fontStyle: "italic",
+                  textAlign: "center",
+                  lineHeight: 1.35,
+                }}
+              >
+                Deep pipes, but no intelligence flowing through them
+              </p>
+              <div style={{ position: "relative", flex: 1 }}>
+                {infraNoDataFloats.map((item) => (
+                  <span
+                    key={item.label}
+                    style={{
+                      position: "absolute",
+                      top: item.top,
+                      left: item.left,
+                      fontSize: item.fontSize,
+                      fontWeight: 600,
+                      color: "rgba(224,184,126,0.55)",
+                      transform: `rotate(${item.rotate}deg)`,
+                      whiteSpace: "nowrap",
+                    }}
                   >
-                    <div style={dotStyle("#E0B87E")} />
-                    <span style={{ fontSize: 14, color: "rgba(255,255,255,0.55)" }}>
-                      {item}
-                    </span>
-                  </div>
+                    {item.label}
+                  </span>
                 ))}
               </div>
             </motion.div>
@@ -268,7 +279,7 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
             >
               <p
                 style={{
-                  fontSize: 14,
+                  fontSize: 18,
                   fontWeight: 700,
                   color: "#7EB3E8",
                   letterSpacing: "0.04em",
@@ -307,8 +318,8 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
 
                 <p
                   style={{
-                    fontSize: 13,
-                    color: "rgba(255,255,255,0.55)",
+                    fontSize: 14,
+                    color: "rgba(255,255,255,0.65)",
                     textAlign: "center",
                     maxWidth: 280,
                     lineHeight: 1.45,
@@ -337,7 +348,7 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
             >
               <p
                 style={{
-                  fontSize: 14,
+                  fontSize: 18,
                   fontWeight: 700,
                   color: "#E07E7E",
                   letterSpacing: "0.04em",
@@ -350,31 +361,49 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
               </p>
               <p
                 style={{
-                  fontSize: 11,
-                  color: "rgba(255,255,255,0.3)",
-                  margin: "0 0 14px",
+                  fontSize: 13,
+                  color: "rgba(255,255,255,0.55)",
+                  margin: "0 0 4px",
                   fontWeight: 600,
                   textAlign: "center",
                 }}
               >
                 Thin Apps + Static Data
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {vulnerableItems.map((item) => (
-                  <div
-                    key={item}
-                    style={{ display: "flex", alignItems: "center", gap: 10 }}
+              <p
+                style={{
+                  fontSize: 11,
+                  color: "rgba(255,255,255,0.4)",
+                  margin: "0 0 10px",
+                  fontStyle: "italic",
+                  textAlign: "center",
+                  lineHeight: 1.35,
+                }}
+              >
+                UI layers over databases — AI does both natively
+              </p>
+              <div style={{ position: "relative", flex: 1 }}>
+                {vulnerableFloats.map((item) => (
+                  <span
+                    key={item.label}
+                    style={{
+                      position: "absolute",
+                      top: item.top,
+                      left: item.left,
+                      fontSize: item.fontSize,
+                      fontWeight: 600,
+                      color: "rgba(224,126,126,0.55)",
+                      transform: `rotate(${item.rotate}deg)`,
+                      whiteSpace: "nowrap",
+                    }}
                   >
-                    <div style={dotStyle("#E07E7E")} />
-                    <span style={{ fontSize: 14, color: "rgba(255,255,255,0.55)" }}>
-                      {item}
-                    </span>
-                  </div>
+                    {item.label}
+                  </span>
                 ))}
               </div>
             </motion.div>
 
-            {/* ── Bottom-right: Infrastructure Without Data ── */}
+            {/* ── Bottom-right: Data Without Infrastructure ── */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -390,7 +419,7 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
             >
               <p
                 style={{
-                  fontSize: 14,
+                  fontSize: 18,
                   fontWeight: 700,
                   color: "#E0B87E",
                   letterSpacing: "0.04em",
@@ -403,26 +432,44 @@ export default function AiDefensibilityMatrixSlide({ slideNumber = 12 }: { slide
               </p>
               <p
                 style={{
-                  fontSize: 11,
-                  color: "rgba(255,255,255,0.3)",
-                  margin: "0 0 14px",
+                  fontSize: 13,
+                  color: "rgba(255,255,255,0.55)",
+                  margin: "0 0 4px",
                   fontWeight: 600,
                   textAlign: "center",
                 }}
               >
-                Infrastructure Without Data
+                Data Without Infrastructure
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {infraNoDataItems.map((item) => (
-                  <div
-                    key={item}
-                    style={{ display: "flex", alignItems: "center", gap: 10 }}
+              <p
+                style={{
+                  fontSize: 11,
+                  color: "rgba(255,255,255,0.4)",
+                  margin: "0 0 10px",
+                  fontStyle: "italic",
+                  textAlign: "center",
+                  lineHeight: 1.35,
+                }}
+              >
+                Rich signals, but built on someone else&#39;s stack
+              </p>
+              <div style={{ position: "relative", flex: 1 }}>
+                {dataNoInfraFloats.map((item) => (
+                  <span
+                    key={item.label}
+                    style={{
+                      position: "absolute",
+                      top: item.top,
+                      left: item.left,
+                      fontSize: item.fontSize,
+                      fontWeight: 600,
+                      color: "rgba(224,184,126,0.55)",
+                      transform: `rotate(${item.rotate}deg)`,
+                      whiteSpace: "nowrap",
+                    }}
                   >
-                    <div style={dotStyle("#E0B87E")} />
-                    <span style={{ fontSize: 14, color: "rgba(255,255,255,0.55)" }}>
-                      {item}
-                    </span>
-                  </div>
+                    {item.label}
+                  </span>
                 ))}
               </div>
             </motion.div>
