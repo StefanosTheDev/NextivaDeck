@@ -41,6 +41,7 @@
     "ai-defensibility-matrix",
     "ai-tandem",
     "ai-agents-in-action",
+    "customer-use-cases",
     "market-tam",
     "cx-market-sizing",
     "labor-cost-savings",
@@ -88,8 +89,7 @@
     "customer-suzuki",
     "customer-tata-play",
     "customer-shasta",
-    "customer-aeg-vision",
-    "customer-use-cases"
+    "customer-aeg-vision"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",
