@@ -90,6 +90,11 @@ import CustomerTataPlaySlide from "./slides/CustomerTataPlaySlide";
 import CustomerShastaSlide from "./slides/CustomerShastaSlide";
 import CustomerAEGVisionSlide from "./slides/CustomerAEGVisionSlide";
 import CustomerUseCasesSlide from "./slides/CustomerUseCasesSlide";
+import SystemOfActionSlide from "./slides/SystemOfActionSlide";
+import SystemOfActionCopySlide from "./slides/SystemOfActionCopySlide";
+import AIDefensibilityV2Copy2Slide from "./slides/AIDefensibilityV2Copy2Slide";
+import MonetizationEvolutionCopySlide from "./slides/MonetizationEvolutionCopySlide";
+import AITailwindVisualSlide from "./slides/AITailwindVisualSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -194,6 +199,11 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-shasta": { id: "customer-shasta", label: "Customer: Shasta Community Health", component: CustomerShastaSlide, theme: "dark" },
   "customer-aeg-vision": { id: "customer-aeg-vision", label: "Customer: AEG Vision", component: CustomerAEGVisionSlide, theme: "dark" },
   "customer-use-cases": { id: "customer-use-cases", label: "Customer Use Cases (4-card)", component: CustomerUseCasesSlide, theme: "dark" },
+  "system-of-action": { id: "system-of-action", label: "System of Action", component: SystemOfActionSlide, theme: "dark" },
+  "system-of-action-copy": { id: "system-of-action-copy", label: "System of Action (copy)", component: SystemOfActionCopySlide, theme: "dark" },
+  "ai-defensibility-v2-copy-2": { id: "ai-defensibility-v2-copy-2", label: "AI Defensibility (3 Pillars)", component: AIDefensibilityV2Copy2Slide, theme: "dark" },
+  "monetization-evolution-copy": { id: "monetization-evolution-copy", label: "Monetization Evolution", component: MonetizationEvolutionCopySlide, theme: "dark" },
+  "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
