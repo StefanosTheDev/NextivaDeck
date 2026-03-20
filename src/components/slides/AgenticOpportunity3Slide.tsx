@@ -30,7 +30,7 @@ const whyNextiva = [
   "Proprietary Real-Time Data",
   "Agentic & Human In Tandem",
   "Highly Regulated & Compliant",
-  "Quick Time to Value",
+  "Product-Led Motion / Quick Time to Value",
 ];
 
 export default function AgenticOpportunity3Slide({ slideNumber = 12 }: { slideNumber?: number }) {
