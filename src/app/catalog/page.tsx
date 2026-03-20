@@ -88,7 +88,7 @@ export default function CatalogPage() {
           const pending = localStorage.getItem("catalogPendingChanges");
           if (pending) {
             const p = JSON.parse(pending);
-            if (p.version && p.version !== serverVersion) {
+            if (!p.version || p.version !== serverVersion) {
               localStorage.removeItem("catalogPendingChanges");
               setOrder(data.order);
               setHiddenSlides(data.hiddenSlides || []);
