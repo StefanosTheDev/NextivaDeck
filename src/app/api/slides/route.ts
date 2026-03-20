@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { createHash } from "crypto";
 import fs from "fs/promises";
 import path from "path";
 
@@ -81,9 +82,13 @@ async function writeData(data: SlideData): Promise<void> {
   await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2), "utf-8");
 }
 
+function hashData(data: SlideData): string {
+  return createHash("md5").update(JSON.stringify(data)).digest("hex").slice(0, 12);
+}
+
 export async function GET() {
   const data = await readData();
-  return NextResponse.json(data);
+  return NextResponse.json({ ...data, version: hashData(data) });
 }
 
 export async function PUT(request: Request) {
@@ -150,7 +155,7 @@ export async function PUT(request: Request) {
     }
 
     await writeData(current);
-    return NextResponse.json(current);
+    return NextResponse.json({ ...current, version: hashData(current) });
   } catch {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
