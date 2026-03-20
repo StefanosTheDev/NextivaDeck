@@ -109,7 +109,6 @@
   "hiddenSlides": [
     "cx-market-sizing",
     "summary",
-    "appendix-products",
     "customer-base",
     "appendix-customers",
     "ai-tailwind-opt-a",
@@ -143,6 +142,27 @@
     "agentic-opp-copy",
     "agentic-opp-copy-3",
     "executive-summary-cards",
-    "customer-aeg-vision"
+    "customer-aeg-vision",
+    "solution",
+    "solution-copy",
+    "agentic-opp-copy-4",
+    "agentic-opp-copy-5",
+    "ai-tailwind",
+    "ai-tailwind-4",
+    "ai-tailwind-3",
+    "competitive-moat",
+    "competitive-moat-2",
+    "platform-copy",
+    "platform-copy-2",
+    "ai-agents-by-industry",
+    "customer-suzuki",
+    "customer-shasta",
+    "customer-tata-play",
+    "executive-summary-2",
+    "executive-summary-stack",
+    "executive-summary-2-stack",
+    "executive-summary-cards-copy",
+    "executive-summary",
+    "appendix-products"
   ]
 }
