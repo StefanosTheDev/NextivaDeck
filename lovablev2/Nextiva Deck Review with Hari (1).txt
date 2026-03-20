@@ -1,0 +1,2577 @@
+Nextiva Deck Review with Hari-20260317_203256-Meeting Recording
+March 17, 2026, 12:32AM
+2h 0m 54s
+
+
+ Yaniv Masjedi started transcription
+
+
+ Hari Ravichandran   0:03 Is it senior facility? Is it sort of, you know, is it something that subsumes everything else that's there? Give me like the high level of what the deal looks like, yeah.
+
+
+ Tomas Gorny   0:12 The objective, yeah. So the objective, you know, we're still looking to take out as much or all of Goldman, you know, and so they sit at 250. We took like a little bit of 100 out. So we would at least want to take out another 150 at least.
+
+
+ Hari Ravichandran   0:20 Yeah.
+
+
+ Tomas Gorny   0:29 If not more so senior facility, you know that that essentially financing that's what we're looking for and you know what I was hoping that we go through the banks but we also go to privates like the you know like Subarus and some others that you know.
+
+
+ Hari Ravichandran   0:48 Yeah. So Thomas, remind me again on this one, the current structure is there's Wells and sort of that syndicate is up at the top and they're at 250 at the moment.
+
+
+ Tomas Gorny   0:49 Uh, also you have connect.
+
+
+ Anne Brennan   0:59 No, they're at 135 and senior.
+
+
+ Hari Ravichandran   1:01 So they're 135 and then you've got Goldman and they're sort of that's the Senior Trance and the Goldman is 230 something kind of underneath the underneath the the bank facility at the moment.
+
+
+ Anne Brennan   1:14 Yeah, call it 250. Rough numbers. Yeah, yeah.
+
+
+ Hari Ravichandran   1:15 250 and on the on the 135 end, is it syndicated or is it all one holder? At the moment it's syndicated. OK, got it.
+
+
+ Anne Brennan   1:25 Syndicate. It's quite small, three members with Wales and SVB and lead, and then there's a third one way smaller than the other two.
+
+
+ Hari Ravichandran   1:28 Got it. And what's the pricing on that is a?
+
+
+ Anne Brennan   1:36 Uh, I think the spread is 4 and 1/4 of so far.
+
+
+ Hari Ravichandran   1:41 OK. So that's pretty good. So you're kind of ping. Yeah. OK. And the Goldman one, I I remember that one that was about 15 ish percent, I think was the clip. Yeah. So, yeah. OK. OK.
+
+
+ Anne Brennan   1:42 Yeah. 4.
+
+
+ Tomas Gorny   1:47 Order, yeah.
+
+
+ Anne Brennan   1:48 Yeah, that's right. Yeah. Yep.
+
+
+ Tomas Gorny   1:50 And that's that's what we want to take out because it's really expensive cost of capital. And so let's me let me find the presentation. Where did I put it? OK, all right, so.
+
+
+ Hari Ravichandran   1:56 Yeah, yeah. OK. Understood. Understood.
+
+
+ Tomas Gorny   2:06 Let me start here. And so it's definitely supposed to be geared towards debt financing. We don't think so we're entirely there. But again, you know, I don't want to be apologetic before I show you. You know, so there's just a cover slide, you know that communicating the democratized innovation to mainstream businesses and customer experience. So I, Rory, I don't have a clean talk track and has a very clean talk track. I just going to walk you through the slides. Would I try to communicate on them? So you know we're starting here with customers and here the idea is that you know we're serving mainstream businesses in the US very often they have very limited IT and budgets.
+
+
+ Anne Brennan   2:42 OK.
+
+
+ Tomas Gorny   2:56 And they really rely on us, you know, to level the playing field in customer experience so they can deliver, you know, the customer experience that is today needed in the marketplace essentially. And we do that by, you know, delivering it in easy to use ways because. Like I said, they are generally not technologists. The user of tech, you know, first time to value is key since a lot of them are entrepreneurial businesses and we're delivering it in one pane of glass. You know, here is Nextiva at the Glens where we are now now. You know, we the exit EBITDA for this year is going to be between 80 to 85 the.
+
+
+ Hari Ravichandran   3:39 Hey, hey, Thomas, one quick question here and maybe for Anne, when we showed this to Cerberus last time out of curiosity, what was was it still around the in the 350s or was it a higher number or lower? Do you remember by chance Anne or Gru?
+
+
+ Anne Brennan   3:51 No, it was higher. It was like 380, I think off the top of my head for 26.
+
+
+ Hari Ravichandran   3:54 380 was the budget we told them. Uh, or was that the?
+
+
+ Anne Brennan   3:58 Yeah, with $20 million of EBITDA. So, so we have.
+
+
+ Hari Ravichandran   4:03 So EBITDA is much higher. Revenue is a little bit lower basically. Got it, OK.
+
+
+ Anne Brennan   4:06 Exactly, yeah. Now the other thing to consider is that we pared back in on the investment side, mainly on go to market to allow us and across the whole organisation, but to allow us some leeway for potential acquisition. Which would then replace as long as we get the acquisition at the right price with the right economics that we would replace that revenue which we originally intended to be organic to be inorganic. Now we haven't landed a deal yet to so that that was the original intent. We do have one in the hopper.
+
+
+ Hari Ravichandran   4:43 Yeah.
+
+
+ Anne Brennan   4:43 That would frankly, well at this stage it's on a pro forma basis it would be higher at this stage in the year obviously on a pro rata basis it would be lower. So yeah that's that's so that I think that's that's the narrative that we walk through with some of these guys.
+
+
+ Hari Ravichandran   4:51 Yeah. And and it and and remind me that fiscal year is June to June or is March to March, what's your June to June is the yeah, OK.
+
+
+ Tomas Gorny   5:01 Good.
+
+
+ Anne Brennan   5:03 Yeah, June. Yeah.
+
+
+ Tomas Gorny   5:03 Yeah. And you know we we we decided early in the fiscal year for two reason to pull back. You know when we came out of the of the you know race and we couldn't get completely there, right. The feedback we were getting essentially you're kind of in between you're not growing fast enough and you don't have enough EBITDA.
+
+
+ Hari Ravichandran   5:22 Yeah, I I think for these guys, Thomas, like especially once we've talked to, this will be a very positive development. It will not be seen as negative. But can I ask a couple more questions just to get myself anchored, if you don't mind, if I looked at calendar year 25 to calendar year 26 or maybe your fiscal 25 to 26.
+
+
+ Tomas Gorny   5:32 Yep.
+
+
+ Hari Ravichandran   5:41 Was there any growth or was it shrinking top line?
+
+
+ Anne Brennan   5:44 A tiny like 2%.
+
+
+ Hari Ravichandran   5:46 OK. That's good. So but it's it's 2% growth and then what's your forecast for this year?
+
+
+ Anne Brennan   5:52 Yeah, that is the last 2025 fiscal to 26 fiscal, which is this year, the following year.
+
+
+ Hari Ravichandran   5:57 But fiscal your 26 is almost gonna end now, right? In two months.
+
+
+ Anne Brennan   6:01 Correct. That's right. So.
+
+
+ Tomas Gorny   6:01 Yeah, correct. It's three months then.
+
+
+ Hari Ravichandran   6:02 Yeah. So 26 to 27, what are you guys forecasting? Another 3% or like is a, is there any?
+
+
+ Anne Brennan   6:07 No, it it's about 6%, so we go from 353.
+
+
+ Hari Ravichandran   6:09 So there's no shrink anywhere, basically, but it's flat. OK, great. OK, thank you. Yeah.
+
+
+ Tomas Gorny   6:11 No, no, no. Look the other the other thing that we want to and I want to talk to you about it a little bit more. We we to to here is why we made the we made the decision for three reasons. One was because you know we we knew they want to do the refinancing. Second you know we had challenges.
+
+
+ Anne Brennan   6:14 No, no.
+
+
+ Tomas Gorny   6:31 With the launch of the product that now finally it's kicking in and we're starting to see actually momentum, you know and then the third one was we pulled back because we said look, we want to go a little bit like, I mean like you know what you must add acquisition strategy and you know I am actually a little bit.
+
+
+ Hari Ravichandran   6:38 Yeah. Yeah.
+
+
+ Tomas Gorny   6:51 Cheap on the acquisitions and because I am, so I'm going to talk to you separately about it because there's one deal we could be making now if I'm willing to pay up a little bit more. But but having said that, you know like that's for like a separate conversation because there are enough targets out there. I am just trying to get on synergize EBITA into 3 1/2 times and and but if we if I would loosen this up a little bit to like 4.2 I could make we could make deals.
+
+
+ Hari Ravichandran   7:15 Yeah. Yeah. To buy at 4.2 times.
+
+
+ Tomas Gorny   7:25 To buy, to buy, to buy after synergize, yeah.
+
+
+ Hari Ravichandran   7:28 What is the pre synergy?
+
+
+ Tomas Gorny   7:30 This energy it would be, you know, it would be like 6 * 8 times.
+
+
+ Anne Brennan   7:33 Yeah, I'd say six, yeah.
+
+
+ Hari Ravichandran   7:37 It as a. Are they growing assets? Are they flat?
+
+
+ Tomas Gorny   7:40 Like a little bit, you know, not, not, not shrinking, not growing. Really. It doesn't really help us.
+
+
+ Hari Ravichandran   7:45 OK, flat. OK. OK. OK, got it. So yeah, we'll talk about that one separately. That's helpful. The one one sort of quick thing I would say here by the way guys is that.
+
+
+ Tomas Gorny   7:48 Yeah. Yeah, yeah, but but we have more of them and I go, I'm going to London next week to meet like with bunch of others because there's like a conference. So, so we have enough targets to grow the revenue. I just gotta, we just gotta decide where we need to lend, you know what I mean?
+
+
+ Anne Brennan   7:53 OK.
+
+
+ Hari Ravichandran   8:06 Yep, understood. So one one quick thing on this slide by the way, the MRR of 1.6%, I would not present that up front like that's the weakest part of this whole slide for me again because you're going to credit guys where their net dollar retention is like 100% or above.
+
+
+ Anne Brennan   8:25 Yeah, but yeah, but consider which segment in the market we're playing. We have been lower. So this is not, this is not a great story compared to where we were, but if you compare it to where we are relative to others in the market segment, it.
+
+
+ Hari Ravichandran   8:26 So. They won't. I mean, again, because you're not playing, they're not comparing you to like your competitor. They're you're comparing, they're comparing you to every other credit available. So they're making their decision based on, hey, like, am I like, you know, am I putting money to something that has super high NDR or not? And so it's a limited pool of capital. So the way they would think about it is, hey, like if you're. 'Cause I think you're you have better numbers than that. Like I think you guys have numbers where if you cut it by segments or you look at it on a dollar retention basis.
+
+
+ Anne Brennan   9:07 Yeah, we can. This is an aggregate. Yeah, yeah, I mean we can. We can cut.
+
+
+ Hari Ravichandran   9:12 I so I would, I wouldn't do any sort of, I wouldn't show any subscriber once, Anne, 'cause I think your NDR numbers look a lot better than this if I recall your your net dollar retention numbers.
+
+
+ Anne Brennan   9:22 But yeah, I mean we can, we can get, we can get any number of stories that are, you know, lower churn than this one, but then you're cutting into, you know, a really specific segment in the customer base.
+
+
+ Tomas Gorny   9:36 Yeah.
+
+
+ Hari Ravichandran   9:36 No, no, you don't. You definitely don't wanna do that. But what like if you looked at the aggregate NDR, is it like you know, is it, is it 82% or whatever this this would imply? This is gross.
+
+
+ Anne Brennan   9:47 No, this this is the the aggregate number.
+
+
+ Hari Ravichandran   9:49 But no, but oh, so this is on a dollar basis. It's not, it's not on a, it's not on a sub basis, OK.
+
+
+ Anne Brennan   9:53 Connect. Correct. That's right. Yeah.
+
+
+ Drew Schulz   9:55 But but but gross.
+
+
+ Anne Brennan   10:00 No, this. Mm. Oh.
+
+
+ Hari Ravichandran   10:02 I'm out.
+
+
+ Drew Schulz   10:07 So that's our NR. Yeah. Thomas, do you wanna?
+
+
+ Hari Ravichandran   10:07 Not, not, not.
+
+
+ Anne Brennan   10:07 No, just go to that slide, Drew. Just go there, yeah.
+
+
+ Tomas Gorny   10:10 No, no, I, I, I, I run. I'm running it. So just if you guys, if you just got get get the number like can you look at it up because I don't want to go all the way to the back of the presentation.
+
+
+ Drew Schulz   10:12 Sorry.
+
+
+ Anne Brennan   10:13 Oh, sorry, Thomas. I.
+
+
+ Drew Schulz   10:19 Yep. Yeah. It is number.
+
+
+ Hari Ravichandran   10:23 So if you have anything that's if your net dollar retention number is higher, right, which is basically somewhere in the 80, high 80s, low 90s, that's where I would start and let them kind of push you into the.
+
+
+ Tomas Gorny   10:31 Yeah.
+
+
+ Anne Brennan   10:33 And aggregate that, yeah, that's where it is.
+
+
+ Hari Ravichandran   10:35 Yeah. So that that's a much better number. I would never even talk. I wouldn't even talk about the gross. Say again.
+
+
+ Tomas Gorny   10:36 Like 99494.
+
+
+ Drew Schulz   10:38 Yeah. So 32. Sorry, Thomas, 32.
+
+
+ Anne Brennan   10:42 Ninety-two.
+
+
+ Hari Ravichandran   10:44 92, yeah, yeah. Only show that. Don't show that the the, the, the gross number. Because again, you you have a really good story there when people get to the DoubleClick, which is look, these are small business customers like the ones that are gonna die are gonna die pretty early on. And then we have all the people that stick around and this is basically a.
+
+
+ Drew Schulz   10:44 Slide 32.
+
+
+ Hari Ravichandran   11:02 A funnel to be able to get, yeah, so it's a funnel to get the high value customers in the mix and it's really cost efficient and we know that the on a dollar basis we're retaining 92 cents on the dollar. Like I would just keep pounding that cause again the the reason I mentioned this fairly early on like the market is really ****** right now. I'm sorry to tell you this.
+
+
+ Tomas Gorny   11:02 Yeah.
+
+
+ Anne Brennan   11:03 Yeah, that's exactly what happens, yeah.
+
+
+ Drew Schulz   11:04 Yep.
+
+
+ Tomas Gorny   11:05 Yeah, yeah. Yeah.
+
+
+ Hari Ravichandran   11:21 For a couple of reasons, everybody's spooked about, well, they're calling it the SaaSpocalypse now. So if you're in the SaaS segment and everybody thinks that AI is gonna eat your lunch and we've been now out like on a couple of refis over the last few weeks, basically one one for Aura and then one for.
+
+
+ Anne Brennan   11:22 Yeah.
+
+
+ Hari Ravichandran   11:39 The point wild one is doing better, but the Aura one's been tough because they just think that if you're in software, like cloud code is basically going to replace everything and everybody. And there's like a whole mass sense of paranoia in the market. And credit's gotten wedged now for a couple of reasons, which are things you should address, by the way, in the slides.
+
+
+ Anne Brennan   11:42 It.
+
+
+ Hari Ravichandran   11:56 The big thing is they're looking at NDR and they're saying, hey, like if companies are using cloud code or something to replace a bunch of software, your net dollar retention is going to get worse because next year they're going to need less seats. So if they have less seats, it's less dollars. So I'm not going to underwrite as much. And so Blue Owl, which is one of the bigger providers.
+
+
+ Anne Brennan   12:06 OK. Mhm.
+
+
+ Hari Ravichandran   12:15 They just went, you know, into a little bit of a tough spot about 3 weeks to 3-4 weeks ago and Blackstone's sort of in the same spot now as well. So there's generally a bit of a negative sentiment in private credit. We can still find some good folks. I think we can get that done, but they're going to push on NDR and the and especially if there's.
+
+
+ Anne Brennan   12:21 That's right.
+
+
+ Hari Ravichandran   12:35 If you're on your decline in NDR, then hey, is this happening because of AI? I mean, that's gonna be the big sort of push. Are people replacing you with some other AI system and they don't understand a telephony system or something else? Yeah, you have to explain it to them, but generally now it's like a moment of paranoid. I suspect that in the.
+
+
+ Anne Brennan   12:48 Utility, yeah. Yeah.
+
+
+ Hari Ravichandran   12:55 Next 2-3 months it probably gets a little bit more stable. But this is sort of from the field from like last week and the week before, because we've been out there now. We've talked to, we talked with the 6th Street, we talked with Blackstone, we talked, we've talked with a bunch of people and there's just a general fear of the unknown. So anyway, but so it's a lot.
+
+
+ Anne Brennan   12:59 OK. 2.
+
+
+ Tomas Gorny   13:12 No, no. Look, this is very helpful. Educate us because and we will make the change like this is a and and I and and the is the NDR declining or is it steady N?
+
+
+ Anne Brennan   13:17 OK. Um. It's probably as I think about it. I actually pull up the let me pull up the board deck. I think it's declining, Thomas.
+
+
+ Hari Ravichandran   13:38 And if it's sort of very close, Anne, I think you're gonna go around it, but it was like 102% going to like 92, then that probably needs like some very specific voiceover potentially so.
+
+
+ Tomas Gorny   13:47 Yeah, yeah. Did it? No, no, no, no. It's not that drastic. No, no, like.
+
+
+ Anne Brennan   13:49 Yeah, no, that's not the. Oh.
+
+
+ Drew Schulz   13:51 Recently and it's been going up.
+
+
+ Anne Brennan   13:53 No, no, no.
+
+
+ Hari Ravichandran   13:55 So I mean I would just call it generally flat, we're seeing good you know economics, blah, blah, blah, blah, right. And so I think so, so I that's the only thing because everything else here looks very solid like 70% gross margins, your EBITDA is increasing and I'm guessing you know you have more cost outs coming out basically because your revenue is growing 6%, but your EBITDA is growing like.
+
+
+ Anne Brennan   13:59 Yeah.
+
+
+ Tomas Gorny   14:10 Correct.
+
+
+ Hari Ravichandran   14:13 100% so, so I'm sure you have have you done a QFE or what's your audit status now?
+
+
+ Anne Brennan   14:13 Yeah, yeah.
+
+
+ Tomas Gorny   14:14 Yeah.
+
+
+ Anne Brennan   14:20 No, we're up to date with our audits. We're going through our current year audit for we did 3 audits last calendar year to get us up to date on 25 and we're just prepping for 26, which is the year that we're currently in.
+
+
+ Hari Ravichandran   14:34 So you guys may need to fire that up, Anne, especially for the private credit market, because they're gonna be looking at every the underwrites completely on a TTM basis. So they're gonna want something that says 44 looking back. Obviously they're not gonna do anything looking forward basically. If you can derive that from your audit and basically bridge, that's fine, but that's like a little 3 weeker. So just a little heads up on that as you know, you know something to fire up basically.
+
+
+ Anne Brennan   14:51 Yeah. Yeah. And that TTM is right, this 44 numbers right through the end of June hurry. So because last year, do you want to, sorry, Thomas, do you want to go to the first or third slide in the finance section and I'll explain why we had, you know that we're running the business at break even.
+
+
+ Hari Ravichandran   15:19 Yep.
+
+
+ Anne Brennan   15:20 Next one, sorry, 4th forgot the order and the next one, the 5th. There we go. Yeah. So if you look at 25 EBITDA was basically we're at break even 44 is us at the end in year at the end of 26.
+
+
+ Hari Ravichandran   15:39 So, so we're in March now, let's say you're, you know, out to market through March to early April and you gotta be done by June, Thomas, is that sort of your goal? Yeah. OK. So it's can you what, what would your TTM be starting March back 12 months?
+
+
+ Tomas Gorny   15:48 We want to, yeah. We would love to be done by Junior.
+
+
+ Anne Brennan   15:49 Yeah, realistically. Yeah, just hold on a SEC. I literally.
+
+
+ Hari Ravichandran   15:58 It it was. I'm assuming that'll be positive, right? It's not gonna be. It won't be 44, but it'll be some positive #30 or something 35.
+
+
+ Tomas Gorny   16:02 OK.
+
+
+ Anne Brennan   16:06 Yeah, through fair books like, give me a SEC TTM, just give me one SEC. Just to leave it at the end of February, we are 22. We expect another five in March, so we'll be at 27. Yeah, so close to the 30. Yeah.
+
+
+ Hari Ravichandran   16:24 27 fine. OK, no problem. And I know you guys are gonna take me through this. I don't wanna jump the gun by the way, but once you get to a stable state that shows you the the right amount of leverage, right? So let's say you're taking in 350. So when you get to that 100 million, just flatten it. Like don't show them anything that shows that the big stair step. Like once you get to 100, then show them like 103105107, because they don't need more than that. And the moment you put it in there, they're gonna set covenants around whatever number you're producing for them. And it's just a bunch of headache for no reason. So like when you get out to, when you get out to like 27.
+
+
+ Drew Schulz   16:55 Interesting.
+
+
+ Hari Ravichandran   16:58 You're at 94, you're raising, you know, show a delevering a little bit, but it doesn't need to delever like a lot, right? I mean, so you're starting at like whatever, four turns of leverage, basically ballpark, rough justice. And then every year if it goes from 4 to like 3.9 to like 3.8 to 3.7 type of thing. And then if they want to, they can push back on it. I just.
+
+
+ Drew Schulz   17:03 Interesting.
+
+
+ Anne Brennan   17:10 Mhm.
+
+
+ Hari Ravichandran   17:17 Wouldn't show them this, uh, this, this Clipper, basically, uh, separate, just as a seven.
+
+
+ Anne Brennan   17:21 But we don't even have to show 2030. We can just tail off at 29 and and flatten it.
+
+
+ Tomas Gorny   17:21 OK.
+
+
+ Hari Ravichandran   17:28 And I would say even flattened where you're at after 27, like you don't, I mean, you know, you go like 94 to like 99 to like, you know, like for example, I'll give you just as a for context, our point wall business will do 280 million of EBITDA this year. The bank case is 210. Last year we did 204 and we said, oh, this year's going to be 210. Our board budget is like close to two to almost close to 290 this year. So we just kind of like we're like hey we're not going to give you any you know ammunition to like you know put a squeeze on us where we don't need to basically sort of our perspective on it and they all expected by the way that they won't be surprised if they see it and if they say why is it only growing but it's we're being conservative.
+
+
+ Anne Brennan   17:52 Right.
+
+
+ Tomas Gorny   18:01 Mm.
+
+
+ Hari Ravichandran   18:07 By the way, you shouldn't care because it's deliberating what you care. So um.
+
+
+ Anne Brennan   18:10 Yeah. OK. I can look at that that that Thomas then pulls back on your target adjusted EBITDA that we've been talking about, so.
+
+
+ Hari Ravichandran   18:19 The equity's a different story, but I mean you're talking about in the straight up lenders here basically. So I think for that's a that's a whole other ball game together. Yeah, so.
+
+
+ Tomas Gorny   18:23 Correct. Yeah, yeah, yeah, that's right. Yeah. So, yeah. So we're going to also adjust the, you know, the the good thing is the story what you know like where was here. The good part of the story is you like as you, I mean as you you, you know this that.
+
+
+ Drew Schulz   18:26 It's interesting.
+
+
+ Hari Ravichandran   18:41 I mean servers are gonna like this by the way. They're gonna look at it and say, hey, you told me that you were like flat to sort of declining EBITDA or negative EBITDA. You're up to 44 already. You're showing me 94 and I know you Thomas and blah blah blah blah. So I think this will show very positively. I think I would just put, I would just fix the NDR piece is the only thing I would take. So yeah.
+
+
+ Tomas Gorny   18:42 The motor. Mm-hmm. Yeah, yeah, no, no, that's it. That's it. You know what? And in the data, when they look at the data, it's clearly shows after this third year churn is 0.6%.
+
+
+ Hari Ravichandran   19:08 OK, perfect. Yeah. And you. Yeah. How are you want to present it that you guys feel comfortable with? If you've got a better number, put that in there because that's what we're.
+
+
+ Tomas Gorny   19:10 You know. Remember when we looked at it last time together is this, this is the small business things, right? It's the the mortality rate and then it's level off.
+
+
+ Hari Ravichandran   19:23 Yeah, I would literally just show them, I would just show them the dollar retention. At some point they'll ask for cohorts and then you can kind of go into the battle of, hey, like, but look at it like it's all year one, these guys are all going out of business and by year 2, it's stabilizing, it's asymptoting off basically. And that's, yeah. So hey, one quick question on this, Thomas and Anne.
+
+
+ Drew Schulz   19:36 Yeah.
+
+
+ Tomas Gorny   19:36 Yeah, and LTV to check on the SB part.
+
+
+ Drew Schulz   19:39 Yeah.
+
+
+ Hari Ravichandran   19:41 What is the delta between the EBITDA and the FCF line for the first year? It seems to come sorry.
+
+
+ +14*******77   19:45 You guys. Teach I've had this afternoon, so apologies. Um.
+
+
+ Hari Ravichandran   19:53 No problem. Quick question, Anne, under the 44 to 15, what's in the middle? Between between even dot and FC app.
+
+
+ +14*******77   20:00 Uh, wait. Oh, hold on.
+
+
+ Drew Schulz   20:01 This is the free cash flow conversion in FY26 and it's mostly severance driven.
+
+
+ +14*******77   20:07 Yeah, it's seven. Yeah. Yeah, I was gonna say.
+
+
+ Hari Ravichandran   20:07 OK, I I would not, I would not. Sorry, go ahead. So what I would do by the way guys is for that one show add the severance back and show FCF of like whatever it is, right? So call it if it's 35, show the 35. And then what? And then put a little footnote underneath it and say the, you know, the one time cost of blah blah blah blah because again, people are going to be looking stronger because this is the first time you're generating real EBITDA. They they want to make sure there's not a lot kind of underneath it that's like CapEx or this or that that's eating up cash flows.
+
+
+ Drew Schulz   20:28 OK.
+
+
+ Hari Ravichandran   20:38 That's very clear at 90. Yeah, 90. Sorry.
+
+
+ +14*******77   20:39 It's interest. The biggest, yeah, the biggest chunk is isn't 7, so 7 is probably going to be in the final analysis about 8. The the larger number by far is the interest and fees and pay down of the debt. That's about 17,000,000 so.
+
+
+ Hari Ravichandran   20:56 Perfect. So that's that that that's expected. So 'cause you already have leverage in place basically. So you might just show unlevered free cash flow. Like I think, I think the point you want to try to make is, hey, like from EBITDA to free cash flow, there's not a lot of gaps.
+
+
+ +14*******77   21:02 Yeah. Yeah.
+
+
+ Hari Ravichandran   21:10 Or you could just.
+
+
+ Tomas Gorny   21:10 So you would you would include the you would include the debt and the severance and with a footnote and OK.
+
+
+ Hari Ravichandran   21:14 I I would, I I would show them an unlevered free cash flow number that and then you can put an FCF number underneath it if you want. Like you just say, hey look we generate 44 million of EBITDA, 35 of that or 39 of it or 40 of it, whatever is all cash and then we make a decision around you know what we're paying in increase and all that type of stuff, you know what I mean? So yeah.
+
+
+ Drew Schulz   21:25 Yeah.
+
+
+ +14*******77   21:28 Mhm.
+
+
+ Tomas Gorny   21:30 OK, makes sense. Yeah. Yeah, we got we're gonna make that adjustment. So that that's that's that's really smart. Yeah, that's.
+
+
+ Hari Ravichandran   21:33 Yeah, yeah.
+
+
+ +14*******77   21:33 Right.
+
+
+ Drew Schulz   21:34 OK.
+
+
+ +14*******77   21:36 OK.
+
+
+ Tomas Gorny   21:37 So, OK, so we, you know, we thought we should lead with some of the founder story saying look, you know this business was, you know, grew without external financing to 250. Even after that we took modest capital, we built the platform. You know, we have a sticky customer base, the order of those slides. I don't know if it's perfect here, but.
+
+
+ Hari Ravichandran   22:00 That's it's pretty good. Yeah. Keep going. Yeah.
+
+
+ Tomas Gorny   22:03 Right. And then and then and then then we say look you know like we we're not like one trick pony like what you just said, right. Like we have customer base that are not enterprise. They're not going to go vibe code majority of them. They're not going to take us out. They actually rely on us. To lead them to the to the kind of inflection points of technology and that's the point we're trying to make here that you know that that we've been, we existed for during multiple inflection points and we've been growing and leading our customers through that so, so.
+
+
+ Hari Ravichandran   22:35 Yeah. So Thomas, maybe there's there's a slide in the next one, by the way, like what I might do after this one, wherever you you wanna make that point, I would actually add a lot more on why you think AI is a tailwind and not a headwind, right?
+
+
+ Tomas Gorny   22:49 Oh, we have it. We have. We have a little bit, maybe too late, but we have at the end.
+
+
+ Hari Ravichandran   22:52 So the the the you might have some stuff in there for this already right? Because everybody's out there saying hey like AI's a a tailwind first blah blah blah blah. But if you can get more specific on why you don't think that you know an LM based coding system can't replace you like to to me just off the top of my head. I don't know like you probably have like 10 more.
+
+
+ Tomas Gorny   23:12 Yeah. So let let let me walk you through and see if it answers it and if it doesn't, we make it stronger. So, so you know, so we're we're saying look like here, here is where the world is going, right. People don't compare anymore companies to the nearest competitor. They compare it to like the best experiences.
+
+
+ Hari Ravichandran   23:12 Things, but I'll yeah, OK. Yep. Perfect. You got it.
+
+
+ Tomas Gorny   23:29 Everybody got to deliver. Most companies can't because they have silo tools, the data list in silos and integrations and context is not together, right? So that's what we do, right? We we bring all communication channels together in a single pane of glass. Which with that data which is majority unstructured data combined with you know our ecosystem integrations you know CRM, ERP, ecommerce and that's that's how we because we're doing that because we you know we created a core system of record from ground up. Unifying all that you know non-structured and structured data, we can harness a I to its fullest potential which is you know very unique in this space and and so the unique value proposition that we do is we provide is that you know businesses who use our products and software. You know they can deliver better business outcome at the moment of interactions because unlike Salesforce and Fresh rocks and some of the others, they sit at the static data layout right far and removed from the interaction right in today's world very often by the time they. You know information are entered into the databases, they are outdated, right. So we we're sitting right close to the edge and that's you know that's how we that's that's actually it's our mode that we at the core a data company with communication as a superpower. And so you know the one problem that I wanted to solve and I hope we're solving this with this slide is that you know we're not because although we have developed you know brand new products with expert and next and experience center is also you know like a two to two and a half year product. You know, majority of our customers still live on next OS. Now that's not my talking track, that's just telling you. And so So what we have done, we made sure that basically any of our customers, all the 350 million can take advantage of AI which is the expert one and take advantage of next which is. The unified platform without migration, right? Because one of the challenges that we don't wanna deal ourselves, right? A year long migrations into a new platform, right? So it's a little bit different in practice, but this picture's supposed to represent. That essentially we have a product portfolio and across that product portfolio we can deliver AI, agentic AI automation and the unified back end front end, right. That's kind of the gist of the story here. And here is the platform slide of this all kind of the sausage is made. Right. Omni channel data, unified back end, you build at once, deliver it across all the channels, unified data platform. So the huge market opportunity and it's actually accelerating because of the AI and CX conversion and it's projected right by like in 2030 to. 202980% I mean you you live that vault as well. So you you know there's there's not much convincing needed on we've been told on this slide that that's where the vault is going right that front office will be automated but what is good about.
+
+
+ Hari Ravichandran   26:45 Yeah. One, hey, one, one question, one sorry, don't mean to your flow 11 quick question on the the previous two slides. Do you guys have any like third party reports that either address like you know that that the kind of thing that you're building here?
+
+
+ Tomas Gorny   26:49 Sure.
+
+
+ Hari Ravichandran   27:04 Is not easily replaceable by an AI system, for example. I think you know you almost like the trend part of it. Everybody's going to buy into it because everybody sees it. You almost need it from the other way now, unfortunately, because like like HubSpot's trading at like 2 1/2 times revenue at the moment. I mean their stock's down 86%.
+
+
+ Tomas Gorny   27:18 Yeah. Yeah.
+
+
+ Hari Ravichandran   27:24 In the last 3 1/2 months, you got Salesforce is down to three times revenue. People just think that if you're a SAS company, you're cooked, you're done, right? And so a little bit like a lot of the combat here is coming at it from the other side saying, look, if we have a lot of functional engineering, there's not an LLM that's gonna go do.
+
+
+ Tomas Gorny   27:25 Yes, I saw it.
+
+
+ Hari Ravichandran   27:44 Telephony, right. So in an odd way, by the way, being in the void market is really good. Like it's it's all turned around now, right? Cuz like we're now like you know when people when people fight with us, we're like, well, what LM's gonna do any virus? They're like, Oh yeah, that's a good point. And so so I think the more you can kind of push people towards functional engineering and have any third party, so like the.
+
+
+ Drew Schulz   27:49 Yeah, it's funny. Yeah, with hardware endpoints already out there, yeah.
+
+
+ Tomas Gorny   27:49 I think.
+
+
+ Yaniv Masjedi   27:53 Yes. Yeah.
+
+
+ Hari Ravichandran   28:04 Like Gartner's been doing these like the the, the, the matrix basically where they say, hey, here's the companies that are going to be if they adapt to the AI world, they're going to be the winners. And here's the ones that are going to go away and die basically because if it's a thin layer, if it's a knowledge based system, LM's are going to take over. If it's an automation based system, LM's are going to take over. So if you guys can find a chart or a graph like that where you can easily position yourself in the top right, that will help lenders quite a bit, you know, especially if it's something that's a a known report. And there's a whole bunch of these now floating around, so I'm sure you guys can find something there.
+
+
+ Yaniv Masjedi   28:38 Yeah.
+
+
+ Tomas Gorny   28:40 Yeah, we will, we will find it. Yeah, they they there are a couple of things, but we need to exactly to support the point. We will do it. That's it. That's really good, right. So big.
+
+
+ Drew Schulz   28:42 Yep.
+
+
+ Hari Ravichandran   28:48 Yeah. So because, like, you almost don't need to support them that the world's gonna go this way. You know, I think now you need to support the fact that we know the world's going this way. Like, why aren't you gonna get taken out by somebody else, basically? So, yeah, yeah.
+
+
+ Tomas Gorny   28:57 Yeah, yeah, that's a really good point. Like like change the narrative here. Yeah. And so, so here is the thing that you know that little explanation, there's a better way to present that probably. But let me just explain. So like you know we're competing in two segments of the market, we're competing. You know in the contact center seats and we're competing in the general general business with front office employees. And when you look at the contact center market, ironically majority of the market is less than you know 2/3 of the market than 250 employees and actually almost 10 million is less than 50. Like, but the irony is majority of our competitors, nice Genesis 59, they compete for the 6 million, not for the, you know, 12 million, right. And and so it's a huge underserved market and you know when we built our tech that is much more designed towards that. Add. And we were as you know last year we were swinging for Willie the enterprise and we can serve those enterprises well. But really what we're finding out that our sweet port more and more is really kind of the 250 and below because it's it's PLG. We have a go to market mode, you know quick time to value all this. Things that kind of you know you you know me for you know we we have now returned back to much stronger right. And there is another 7 million out of the 20 million total businesses like when we had in endurance the target market, there are 7 million within with front office between 5 to 10 people. It's also an underserved market, right. And we approach that market from the UK's perspective, live chat and so on, right. And that's the more the white space. And we we have competitors, you know, Zoom would be competitive, Dalpit would be competitor, but it's significantly less crowded than the other side of the coin. Right. And that's the the part that we want to communicate that it's part of the moat and also the protection that AIAI doesn't is not replacing mainstream business or mainstream businesses are not white coding and trying to figure out how to bring the.
+
+
+ Hari Ravichandran   31:08 See, I I think you're gonna be surprised by the feedback here, Thomas. Like I have been actually for what it's worth, right. I think the general view is so like if you thought about it again, I'm coming back to the same point over and again because this is the thing we're gonna have to fight and this is gonna because the numbers, you know, it's mostly there, like you gotta move a little bit of things here and there. But you know if you got 95 million of EBITDA 350.
+
+
+ Tomas Gorny   31:12 Yeah. Yeah. Yeah.
+
+
+ Hari Ravichandran   31:27 Flat ARR, you know, if you're looking at you're thinking about going in 1X deep and within a year you're getting about 9500 million of EBITDA or like 3 1/2 turns. So I that's that's not a tough story. That's an easy story now like not like last year or the year or whenever we looked at it, right. So I think that's going to be fine.
+
+
+ Tomas Gorny   31:42 Yeah, yeah.
+
+
+ Hari Ravichandran   31:45 The problem's going to be convincing them that you can get it done and not go backwards, right? So like, you know, you have 350 or perhaps 94 of EBITDA. You got to get these people to believe that it's not going to go back now six months ago or even I would say four months ago.
+
+
+ Tomas Gorny   31:51 Yeah.
+
+
+ Hari Ravichandran   32:02 If you're a SAS business, 70% SAS business, 70% EBITDA margin, great free cash flow conversion. Nobody would even ask you a second question. They're like, Oh yeah, of course, like every the world's been built on these things for the last 25 years, right? And so, so you would have no pushback at all. But now like since like the middle of Jan, we're in a whole nother, you know, regime now basically, right. Where so like what people will say and again and these these are things we have to combat, which again we'll come back to that grid again is, hey, like I know you don't think that a a dentist office can't bycode their way into something, right. Like the big pushback. So Hubspot's getting the same thing right now, which is, oh, like I could just build a version of Hubspot. I can tell cloud code to go do that. And like, I'll come back like a week later. The genetic models are getting better and better and better. Why do I so so like that? The threats are multiple ways. One is those companies themselves building out the software, which means they don't have to pay you for something, right? That's one. The second thing is they simplify their business where entire functions just go away, right? So in your case, if you were per employee per month licensing model, which you're not, but you know for many of the SAS companies, that's what they're worried about is the number of employees needed is gonna go down, right? So you're bill, you're like somebody paid you 100 bucks this year. And you're hoping to get 110 next year, you might get like 90 next year basically. So that's that's worrying for a bank, right? That's number two. And then the third thing is basically are there direct competitors that can build your product very quickly and you know replace you inside inside? A stack and underprice you and undercut you basically, right? So I'd say the vibe coding kids building a version of your software to replace you is probably the the the third worry. They gotta get through the first two first, right? Which is basically, hey, like how do I convince myself that you're you're. Revenue isn't going to go down because a bunch of people are now saying I can build a version of whatever it is you're giving me, like, you know, social media management, all this type of stuff with, you know, with something that already integrates inside my system, right? Because now you're seeing like, you know, block just, you know, laid off 40% of people at last day before yesterday was like. 10% of the staff. There's an article that came out today that Stripe basically has this thing called minions, which are basically a bunch of software engineers, effectively an A I code that can replace a whole bunch of like actual software developers, etcetera. So this is like what's going on in the world at the moment. They're like, holy ****, like, you know, a SAS is dead. It's not.
+
+
+    34:08 Oh.
+
+
+ Hari Ravichandran   34:25 So, so there's like when you look at that 7 million that you think of as like white space here, that's where they're going to push back saying hey like why wouldn't if you're a 10% company, you know like you know at some point maybe the the owner just says look, I'm just going to go into cloud code and like are they going to do it or not? Obviously not like because it's not, it's one thing to build and one thing to maintain and do all the things in the back. And but I it's it's they're not in a rational headspace at the moment from from my from my yeah so.
+
+
+ Tomas Gorny   34:49 Yeah, yeah. And do you, do you think that that you know where my head would go as a like initial response is really the the place that we wanted to avoid in the past to go, which we essentially part of our businesses infrastructure, right.
+
+
+ Hari Ravichandran   35:05 Yeah, no, no, you got to go there. I mean, that's your biggest. So if you got data, you got to go into data because saying, hey, I nobody can touch me because I've got all this data that people can't use, right? So whether you have an LLM or whatever it is, somebody by coded with cloud, that system's going to be a lot more inferior because I'm using my data to do this stuff.
+
+
+ Tomas Gorny   35:05 Hey, right.
+
+
+ Seksom Suriyapa   35:07 Yeah.
+
+
+ Hari Ravichandran   35:23 I'm in the infrastructure stack. That's a big, powerful thing that you have that we got to play up now, which you didn't need to before. So I think that's actually that one is actually a positive, especially for lenders, that's really positive. They're like, well, OK, well, who's going to go replace, we got to tie into their telco system. We got to do all these things that need physical infrastructure. Now you're in a safe zone. So it's data, it's I call it functional engineering basically, which is whether it's infra or something that you're in the network stack or you're sort of in a stack where which is cuz if you think about the LM's right there above the app stack inside the knowledge stack, right? Basically, these apps are pumping out information. The LM stack kind of takes all that stuff and converts it into knowledge or something that's understandable for a human. The further down you go, the safer you are, right? And so I think that when you know, so I would not underestimate.
+
+
+ Anne Brennan   36:12 Yes.
+
+
+ Hari Ravichandran   36:20 The amount of push back we'll get even from smart people like Goro, which we should go back to and from Kevin who we should go back to as well. They will like the story. I've had like probably many multi-hour conversations with Kevin about this now and he's obsessed with it by the way. He's like, you know he's got like a Grok window open. He's got JGPT, he's got like, but he's like personally.
+
+
+ Tomas Gorny   36:35 Yeah. Yeah.
+
+
+ Hari Ravichandran   36:40 He's like, look, I'm going to fire all my ******* analysts because they're all like worth nothing because I can just have these A I things like do the entire thing for me. And by the way, I personally invested in 18 deals in the last four months, which would have taken servers like whatever, like, you know, nine months to kind of go do it. So they're all like drinking the frigging Kool-Aid at the moment and and they're all and Kevin especially I think has gotten very hands on.
+
+
+ Tomas Gorny   36:57 Anything.
+
+
+ Hari Ravichandran   37:00 So I think kind of you know positioning to him more on the infra will get, I think will will will get you home. Basically infra and data I think are the two to make things possible, yeah.
+
+
+ Anne Brennan   37:05 OK.
+
+
+ Tomas Gorny   37:09 Yeah, yeah. And you know the the unique part of our data is not even that we collect the kind of data that kind of get obsolete, but we collect always fresh data, right. And that's the that's the part that it's very unique that you know like.
+
+
+ Hari Ravichandran   37:22 And I think you need to be able to tie that to how is that making your product very defensible for that end customer, right. Like so it's in a lot of ways like you know, hey, we collect all this data and then we're able to offer these five features that are like well used by all our customers that if you build it by yourself, you're not gonna get it. Or it can be something like I gotta go kind of plug a bunch of stuff inside your. You know, inside your company like you know, draw cable or whatever, like whatever, you know what I mean, like infrastructure type of stuff which you can't automate away.
+
+
+ Tomas Gorny   37:45 Yeah. Yeah, no. And it's tough look and and infrastructure telephone you right got sexy again with the AI, with AI, right. So it's it's like you can it's tough to replicate.
+
+
+ Hari Ravichandran   37:59 Yeah, and so you were somewhat insulated, right? So in a lot of ways, I would play that up saying like, you know, can I tell you the hottest deal in the Valley that happened in the last week and a half, the hottest ******* deals, like oversubscribed, like Sequoia is like throwing money. It's a company in Spain that sends a bunch of people over to a bunch of courts and get like physical documents.
+
+
+ Seksom Suriyapa   38:07 Yes.
+
+
+ Tomas Gorny   38:09 What is that?
+
+
+ Hari Ravichandran   38:18 And they figured out a very clever way to digitize it and use it inside a legal based system in Brazil. It's grown like whatever, like 40% a month or something, something naughty basically. But they're everybody's gonna go, holy ****, like the LM's can't ever replace that because these guys now have.
+
+
+ Anne Brennan   38:27 Yes.
+
+
+ Tomas Gorny   38:29 Yeah.
+
+
+ Anne Brennan   38:32 OK. OK.
+
+
+ Hari Ravichandran   38:33 A physical thing that they got, they convert it into digital and it's proprietary data that nobody else has a system in place and they all love it. I mean, they're all a bunch of minions. I would take that for a grain of salt, but that's the current mindset. That's what we're fighting at the moment if you as you get into their market, so yeah.
+
+
+ Tomas Gorny   38:44 Yeah. OK, now this this is really, really good like infrastructure data like and then that's playing what capability capabilities you cannot get unless you use us.
+
+
+ Seksom Suriyapa   38:58 Hey.
+
+
+ Hari Ravichandran   39:00 Yeah. So and and so, so a few again if you thought about that that that attack vector, right, like like where is AI attacking SaaS businesses, right. I mean that's really the fundamental question, right. It's attacking in any. So it's based on pricing like for you, you already have that if it's outcome, if it's per employee per month based pricing. I think you need to actually start the narrative that you're gonna go to outcome based because yeah, because the because the generally people are thinking look like you know if you're per employee per month who whatever business you have is gonna simplify. Like I'll give you a simple example, right? Let's say you're building out like a.
+
+
+ Tomas Gorny   39:23 Yeah, we yeah, we we have it later in the deck too.
+
+
+ Hari Ravichandran   39:35 I don't know, like like an analytics for financial information or something like that, right? Or let's say it's it's connecting, it's creating like financial reports or like, you know, maybe it's like a gap forecasting tour or something like that. Like the question people will ask is, hey, like, why wouldn't I just go into my billing system, attach a couple AI agents to it? And have it prepare the gap reports for me. Why do I need to pay you like whatever it is you're charging me per employee per month, right? And so now if you are the person that's actually doing that software, you can go to them and say, listen, like, I'll give you a big discount. They're gonna be like, we still don't need you. You can say I'm gonna go like identify everything and my software is gonna be like fully automated, like still don't need you, right. And so.
+
+
+ Seksom Suriyapa   39:58 Yeah.
+
+
+ Hari Ravichandran   40:16 And so, so that's one big area of concern is can they replace you out altogether is is 1 big one. The second one is the the the the notion that basically you know are there like vibe coding kids that can come and build a software and kind of you know plug it in and make it make it be really easy. And then the third one is, is there something fundamentally defensible in your product set? Because again, this is sort of the the current setup is like, I'm sure you guys have seen it. It's being called a SASPocalypse at the moment, right? It's like the worst. Multiples we're seeing for SaaS companies like in forever, basically. So what they're doing is saying that we don't know what's going to happen and we don't want to take the risk. So sell it all, right? Just get it all out, get it off the portfolio. In reality, what's going to end up happening and everybody knows this.
+
+
+ Seksom Suriyapa   40:56 OK.
+
+
+ Hari Ravichandran   41:03 Is there going to be winners and losers? There's going to be companies like the one that created a gap report for you that now some AI system is going to automate away at some point in time, right? And so those will get completely checked out. And there'll be companies hopefully like this one where we say, hey, like we have a bunch of infrastructure stuff, we have a bunch of data stuff, it can't get replicated. Where now people can potentially spend more money because they're saving money elsewhere. So we're going to be like the recipient of the tailwinds type of thing. So that thing needs to be like front and center. I mean, that's the, I think at the moment.
+
+
+ Seksom Suriyapa   41:31 Yeah.
+
+
+ Hari Ravichandran   41:32 Last year the the battle was the numbers. This year it's it's more this, I think at the moment, yeah.
+
+
+ Tomas Gorny   41:36 Yeah, you know, this is really good feedback. We're not, we're not, we just got to get this kind of competitive squashing slight, right. Oh, no, no competitive. I think the kind of market squashes the the doubts on on on the company.
+
+
+ Hari Ravichandran   41:49 Yeah, yeah.
+
+
+ Tomas Gorny   41:50 Right. So, so then basically you know this is a very dense slide but and and too many words right now on it. But the idea is that you know A I it's kind of probably not strongly enough but speaking to the point that you you can trying to convey that A I is essentially the product. It's just part of not just a bolt on. We have stand alone AI go to market strategy actually then we have you know AI as in you know acceleration inside of the product of the revenue is like land and expand. And the proprietary data story, this flight is yet not strong enough. I could actually this being more replaced with a lot of the things that we just talked about right now.
+
+
+ Hari Ravichandran   42:34 Yeah. And I think that's what you got to do. I think I think this is like because here again you're saying, hey, like we're embracing the AI race, right? Which is sort of like the message we use. That's what we need to get to the market like 4 months ago. Now like, you know, people are like, you know, hey, by the way, like if you don't embrace it, you're ****** anyway. Like, you know, there's no point that you're a dead man walking. Like, I don't need to talk to you right now, right? And so.
+
+
+ Tomas Gorny   42:52 Yeah, yeah, yeah, you know exactly.
+
+
+ Hari Ravichandran   42:54 So they already see that part anyway. So they assume that if you're a smart entrepreneur, you're already doing it. Now it's almost the other thing, which is, hey, like, you know, what else is this gonna do to, like, bust up your business? Like, you know, like the per employee per month one, like a simple thing, right? So let's say there's a. A set of functions that are downstream set of functions and now you automate something upstream. Like I'll give you a very simple example, right? So there's an agency for events that we use for doing websites for us, right? Like does they do fancy like the nice looking websites. I think we pay them like 2-3 hundred 4000 bucks a year or something like that basically and every year for various events that. We run, they, you know, they go set up all the things, all that type of stuff. And so one of our marketing people figured out that you could actually just use cloud code to go do that very easily and simply and we don't need to pay them the 400,000 anymore. So we just completely whacked that function upstream because there's some smart person somewhere that kind of figured that out. And so you have one of two outcomes there where you are completely like done, you're you're thrown away because you don't need the function at all, like in this case. Or if it's a per employee per month model, maybe you bring the payments down where you're like, OK, you know what, I don't need your software enough for five people, I only need it for two people.
+
+
+ Seksom Suriyapa   43:55 And.
+
+
+ Tomas Gorny   44:06 Yeah, yeah.
+
+
+ Hari Ravichandran   44:07 And and the perpetual sort of, you know, leverage formulas were all driven off the fact that your net dollar retention was always going up a little bit every year. And so now all of a sudden for the first time ever, people are like, wait, like maybe the formula doesn't work anymore because we started 100 next year, maybe it's going to be 98, in which case, ****, like you're over levered, right. And so. So, so I think you know it's it's the per employee per month based pricing is one thing you have to address because you have number of lines type of thing, right, which is hey like if the the number of people in the company itself are going down, why are they going to pay for a bunch of extra lines? Like they just don't need it anymore because of blah blah blah blah. Like this will be the the fight. Basically, that's one big bucket. The second big bucket is they may not need you at all because they might be able to build your entire thing top to bottom themselves. That's easier to address. That first one is a little harder to address because it's very amorphous, like you don't know what any company's gonna go do or not do. So that's why I was kind of pushing on the NDR up front, right. So that NDR is sort of the big bellwether they're gonna be looking at. And there I think, you know, if we can basically say look like we've already switched X amount into outcome based.
+
+
+ Tomas Gorny   45:05 Yeah.
+
+
+ Hari Ravichandran   45:14 We're not reliant on per per employee per month anymore. Our model, we already saw that coming ahead of time and we're charging people on more of a, you know, outcome based pricing that's up.
+
+
+ Tomas Gorny   45:23 Yeah, we can, we can, you know, we can actually we we can do it like usage outcome resolution based, right, because we have combination of all of it, but.
+
+
+ Hari Ravichandran   45:33 And just and even if you're not out of it yet, Thomas, by saying, hey, like, you know, we're not gonna be relying long term and per per employee per month, like not number of lines.
+
+
+ Tomas Gorny   45:40 Yeah, no, we we we actually have it later in the deck, right. So one one of the things you know that that I always preach is saying look you know like a lot of the the the system out there, they are one trick point. Some of them are just AI rappers, right. They are, you know they they try to provide the autonomous.
+
+
+ Hari Ravichandran   45:43 Oh, great. OK, great.
+
+
+ Tomas Gorny   46:00 But really, the world is not there yet, right? There's actually you need a platform that is able to do seamless switching between AI and human, and even in between AI, just human monitoring AI. So this slide depends. That's why I show it resonates with people and it's just one of those slides that it's a little more of a text slide here. Should I wait or?
+
+
+ Hari Ravichandran   46:33 Sorry, go ahead, Thomas. Yeah, this is my 9th weekend.
+
+
+ Tomas Gorny   46:34 Yeah, yeah. So that that that's like what I was saying like it's just you know that it's you know and that's the answer that like we're not going to be displaced by the decagons on the Sierras because they only have the autonomous best experience. People need the range, the full range, right. Most most businesses you know. They not doing the one trick point, just one thing that right then then we're just showing couple of examples here of AI agent that they deploy that they work together, they work separately. I mean it's a cliche slide but essentially communicating the value of AI. And then and then this is the last slide essentially. Again, I think based on this feedback today, we're going to do a much better job. The defensible part that you know we we have a data mode, we embedded in really daily operations, I mean deeply we have a platform economics. That lend and expand really story right and we're going to and we have no customer concentration.
+
+
+ Hari Ravichandran   47:34 I I I actually think this is a really good slide Thomas. I I think probably the embedded in daily operations, I might expand that to be more infra along with daily operations. I think the conversational data mode is a good one. I think that the OR in the platform is that the the platform economics is where I would basically call it more. You know, moving away from per employee per month to outcome based pricing and no concentration risk, I think those are solid, right? I mean so because there then you hit up data, you hit up infrastructure, you hit up how hard it is to actually pull you out.
+
+
+ Tomas Gorny   48:05 Yeah, and and we need to change the number below, right? 1.6 to to NDR.
+
+
+ Hari Ravichandran   48:11 Yeah, I and I think you know where wherever you guys are talking about the outcome based pricing, if you can say, hey like you know 20% of our revenue is no longer SaaS based pricing, it's outcome based pricing or whatever your numbers are basically, how, how big is that number? Is it, is it meaningful now?
+
+
+ Tomas Gorny   48:24 Like I mean out compute outcome, it would be very very small, but like if we include usage base and stuff like that, right?
+
+
+ Hari Ravichandran   48:32 I'm saying that like anything that's not a per line, like where they're paying your bill per month, yeah.
+
+
+ Tomas Gorny   48:34 That proline I think, I think look may I mean and what would it be? Would we, would we, would we get to 20%?
+
+
+ Hari Ravichandran   48:45 A muted answer.
+
+
+ Anne Brennan   48:47 So, yeah, I think so, yeah.
+
+
+ Yaniv Masjedi   48:47 You're on mute.
+
+
+ Hari Ravichandran   48:48 Yeah. So I think if he's if he's got a good trajectory, that's a really strong story or you can sub cut it by saying hey like you know 80% of our new revenues are all outcome based or you know how how are you want to kind of package it.
+
+
+ Tomas Gorny   48:58 Yeah. Or, you know, like, Oh yeah, like all like platform fee plus outcomes plus plus, you know, some seats like hybrids, right?
+
+
+ Hari Ravichandran   49:06 Yeah, anything that goes away and from per line like the the risk in the stories of per line basically, 'cause people just think the number of people in the workforce is gonna go down and.
+
+
+ Tomas Gorny   49:09 Yeah, yeah, yeah.
+
+
+ Anne Brennan   49:10 Yeah.
+
+
+ Tomas Gorny   49:14 Yeah, we we we have a slide, but I think internally we've got to now double click and do a better job still how we bring some of the things that we're already doing even more in and how we defend it, but.
+
+
+ Anne Brennan   49:19 Yeah. Yeah, yeah. And we're seeing, we're seeing that number by 28 is going to be 30% of billing. So tokenized usage based and outcomes revenue, we're saying 30 by 2830.
+
+
+ Drew Schulz   49:24 Yeah.
+
+
+ Hari Ravichandran   49:24 Yeah. So sorry. And I think that's gonna be 30, that's that's 30% of a much bigger number. Anne, I would since you're gonna give the banks a number where your growth is like 2-3 percent a year and it never pops up, right. I would take that same dollar figure off of off a bigger base.
+
+
+ Anne Brennan   49:41 Mhm.
+
+
+ Hari Ravichandran   49:51 And whatever that is, is what it is, right? I mean, so, you know, if it was going to be, yeah, so.
+
+
+ Anne Brennan   49:54 Yeah, yeah, yeah, we got. So, yeah, what would what we would do based on feedback that we got before this call, how do we would switch from a percentage base. So I'm about to show you a slide to the actual dollars and then you'll see the dollar impact of what it looks like. So it would be it's 30, it's 30% of our overall number.
+
+
+ Hari Ravichandran   50:14 OK. I I that that what so that's out for three years, two years, three years.
+
+
+ Anne Brennan   50:18 To, yeah, end of 27 going into 28, which would be like 5 quarters from now. I.
+
+
+ Hari Ravichandran   50:25 Oh, OK. Because you guys have all the fiscal year stuff. OK, got it. So if I looked at three years, what percent of your revenues would be non per line revenue?
+
+
+ Anne Brennan   50:30 Yeah. Oh, actually, we're only showing it through. Do we have that data, Drew? Yeah, no.
+
+
+ Hari Ravichandran   50:38 No, the only reason I'm asking is people will will will want to see a faster clip of adoption there, right? Because if if for example in the last year you've already gone to 20, like you don't need to actually put a number or commit to it, but being able to.
+
+
+ Drew Schulz   50:43 Let me do that.
+
+
+ Anne Brennan   50:45 Yeah.
+
+
+ Tomas Gorny   50:52 Yeah, look, keep in mind, right. It's a little bit not super clean, right. We didn't get to 20 because only with outcome, right. We got, we got, we got the.
+
+
+ Anne Brennan   50:53 Mhm. Yeah.
+
+
+ Hari Ravichandran   51:00 Not outcome, but I said not non non per non SaaS basically right? Non SaaS revenue effectively meaning not not line based basically because I think the general view is the more people are paying for usage or for outcome you are safer as a SaaS business, right?
+
+
+ Tomas Gorny   51:03 No, you. Yep.
+
+
+ Anne Brennan   51:13 Mhm.
+
+
+ Tomas Gorny   51:15 Right. And you know, and there are tricks that we can play to do that, even to get ourselves in that it doesn't look like subscription, but it is.
+
+
+ Anne Brennan   51:16 Yes, yeah.
+
+
+ Hari Ravichandran   51:24 And I and I and I think more than the presentation, Thomas, you guys should probably think about that for your business anyway.
+
+
+ Anne Brennan   51:26 Mhm.
+
+
+ Hari Ravichandran   51:31 Because I I don't think these these fears are all like just made-up. Like I think there is a kernel of truth to a lot of it. I think it's amplified and people are like probably a little freaked out. But I do think that in general the more and more you can kind of get into the zone of like, hey, you know usage and you know activity and outcome based, it's generally safer. But I think you guys have a good framework here, right? So you've got data.
+
+
+ Anne Brennan   51:34 No.
+
+
+ Drew Schulz   51:42 Yeah.
+
+
+ Hari Ravichandran   51:51 You've got infra, you know what percent of your Billings are in like non SaaS, you know what I shouldn't call non SaaS, but like you know activity and and outcome based revenue embedded in daily operations is a good one. No concentration risk is another good one.
+
+
+ Tomas Gorny   51:58 Yeah, yeah.
+
+
+ Anne Brennan   52:01 Mhm.
+
+
+ Hari Ravichandran   52:07 So I I think you've got it. I mean this is this is what you're I think this is what you need to like double click a bit on to to to get this at the AI story.
+
+
+ Anne Brennan   52:08 Yeah.
+
+
+ Tomas Gorny   52:12 So, so, so this is kind of the the, the this deck slide deck in terms of the the presentation. So and we're going to make this correction and you know, but do you think before we even move to financial, do you think it's too long?
+
+
+ Hari Ravichandran   52:29 I I I no, I think it's actually very good.
+
+
+ Tomas Gorny   52:33 OK.
+
+
+ Hari Ravichandran   52:33 I think it's actually very good. Look, I I I mean the the one small thing I might do is somewhere in the middle if you take out like two or three slides and just show the product like one or two slides that just shows a screenshot or two because people don't know what the actual product is. Like Gaurav and like some of the ones we've already talked to will know about it, right? But for everybody else.
+
+
+ Anne Brennan   52:34 OK.
+
+
+ Tomas Gorny   52:43 Yeah.
+
+
+ Hari Ravichandran   52:52 They don't know what you're building. They see the financial profile. It's good for a first meeting. They'll want to dig into it a bit more, but just show them like even one slide or maybe two slides and just say, you know.
+
+
+ Tomas Gorny   53:00 Yeah. You know, do you think it's worth going to Cerberus because they the cost of capital is not Cerberus, I mean Walburg because it's high, right?
+
+
+ Hari Ravichandran   53:08 I mean, they're all there. I mean, private credit. So, well, I mean, they won't have the convert headache that you have, right? I mean, they'll, you know, which you may not have the headache anymore. I don't know what your new terms look like. I think that's sort of like the.
+
+
+ Tomas Gorny   53:22 But sure, but Cerberus won't won't be Cerberus around 910% on that credit.
+
+
+ Hari Ravichandran   53:26 They are I mean they're probably super plus they're they're probably pricing 625 is my guess basically is where they're at and they'll do I mean by the way like Gaurav I talked to last week or after showing him something he's like I I don't I I don't even look at anything less than 300 anymore cause their their fund is just absolutely crushed it the last two years. So I was looking at like 75 million for something and he was like, yeah, it's like too much like, you know, yeah, yeah.
+
+
+ Tomas Gorny   53:48 Yeah, but but he but he has the but he has the mandate on 15% right that they are.
+
+
+ Hari Ravichandran   53:54 Yeah, but if you go TPG, Blackstone, any of these people into any kind of a convertible vehicle, you're looking at something in the mid teens like 13 to 15% now again.
+
+
+ Anne Brennan   53:55 Delete.
+
+
+ Tomas Gorny   54:05 Right. But then then you then it almost not worth converting from Goldman, right? Because it's just.
+
+
+ Hari Ravichandran   54:10 Well, I mean, it depends on where they send the convert.
+
+
+ Anne Brennan   54:11 Mhm.
+
+
+ Hari Ravichandran   54:14 Right. I mean, so if you set the convert out of like 3 billion or something, right, it's gonna be heavily out of the money.
+
+
+ Tomas Gorny   54:14 Yeah. No, no. No, no, Goldman. Goldman is out of the money. It's like a 12 billion.
+
+
+ Hari Ravichandran   54:23 And they're how are they gonna pay? They're just gonna pay to pick.
+
+
+ Tomas Gorny   54:26 They they're getting paid to pick yet.
+
+
+ Anne Brennan   54:29 Yeah, they're pick. Yeah, they're pick until December 28th and then it goes to cash. So we've got, you know, the best part of three years is December 20.
+
+
+ Hari Ravichandran   54:29 OK, at at 15. Yeah, I mean. And you're playing, you're paying so for plus 475 on the senior basically.
+
+
+ Tomas Gorny   54:48 Yeah.
+
+
+ Anne Brennan   54:49 Yeah, actually, yeah. No, I think it's, I think I said 4 1/4 earlier. I think it might be 4 1/2, I can check, but that sort of range.
+
+
+ Hari Ravichandran   54:57 Yeah, yeah, you should definitely go to service there. People like them. You know, you go to like GIC, you know, who's a really good lender. I think Pru is a good lender. Like there's A and by the way, like we can just have Kevin do that work for us behind the scenes and just say like, go talk to a few of these people like Viking Global. I really like those guys. I spent a bunch of time with them.
+
+
+ Tomas Gorny   54:57 Yeah, so.
+
+
+ Hari Ravichandran   55:15 They they they have a really quite a sizable operation. So there's there's several that'll kind of be in that zone. But if we go to this like the the, the, the, the special instrument people who are like you know whether it's you know preferred equity or convertible debt type people, they're all gonna be in that 15 ish percent. So you're yeah.
+
+
+ Tomas Gorny   55:23 Yep. Yeah, yeah, no. But those those ones, look, those ones I want to avoid because Goldman, Goldman is there and right the the one thing with Goldman that that we cannot do because we have senior sitting in front, we cannot keep paying them down. I would prefer to keep paying them down.
+
+
+ Hari Ravichandran   55:35 Yeah.
+
+
+ Anne Brennan   55:41 Yes.
+
+
+ Tomas Gorny   55:50 Versus having a pic, you know, on it because you know.
+
+
+ Anne Brennan   55:52 Yeah.
+
+
+ Hari Ravichandran   55:54 You know, it compiles pretty ******* fast. You know, makes. Yeah, yeah, so.
+
+
+ Tomas Gorny   55:56 Right, exactly right. But The thing is, so there may be also a way to rock it out with Wells Fargo that we can pay.
+
+
+ Anne Brennan   55:57 Yeah.
+
+
+ Hari Ravichandran   56:03 What's your, what's your weighted cost of capital now? I guess you can do the maths pretty simply, right? You got you got 2/3 of your stack and 15% paper.
+
+
+ Tomas Gorny   56:11 But I and then and then.
+
+
+ Hari Ravichandran   56:12 Right. And then you got, you got another third and in call it, I don't know, like 10 ish, no eight ish percent.
+
+
+ Anne Brennan   56:13 Yeah. No, no, it's like 7775, something like that. It can't slow for spread, yeah.
+
+
+ Hari Ravichandran   56:21 Yeah. So, yeah. So, yeah, so, yeah, so.
+
+
+ Tomas Gorny   56:26 Yeah, it's probably at 11.
+
+
+ Hari Ravichandran   56:26 So it's, yeah, so you're basically right around 10 ish percent blended, right?
+
+
+ Tomas Gorny   56:30 Yeah, yeah. No, so so that that's see that's that's the exercise here we we want to get more move to that bucket from the other bucket, right and.
+
+
+ Anne Brennan   56:31 Mhm.
+
+
+ Hari Ravichandran   56:31 Uh, this. Yeah, so I think what you do, I mean, because if you go servers, this may or may not work for you guys, but what they will want is for you to pay off everything and then just have them hold the 350.
+
+
+ Tomas Gorny   56:51 Yeah, look, it would rock. It actually would rock because then the total cost, if the cost of capital is like 10%, absolutely it would.
+
+
+ Anne Brennan   56:53 Yes, that's right. Yeah.
+
+
+ Hari Ravichandran   57:00 Yeah, it's gonna be that right. So it's gonna be it's gonna be 10%. And then what they'll do is they'll go syndicate. We can push them to say they can just have Dan like, you know, like give us committed and you guys can go syndicate on the back end of it and they'll work fast. I mean they're like they get deals done like 2-3 weeks. I mean Kevin's really fast. So I think that's that's a pretty.
+
+
+ Tomas Gorny   57:14 Yeah, and and look and and would work because also we would. I don't want to pick because I don't want to compound. I would want to just pay them straight.
+
+
+ Anne Brennan   57:24 Yeah.
+
+
+ Hari Ravichandran   57:24 He he wouldn't. He wouldn't take a pick anyway. Like I think that's when. Yeah, yeah, when you go to the special, the special instrument guys like your Goldmans or the, you know, TPGs or the crossover guys, basically they'll take a bunch and pick and compound. But the the, the, the, the like the.
+
+
+ Tomas Gorny   57:26 Yeah, no, but I'm just saying also, you know, so, so that's why it's rocks.
+
+
+ Hari Ravichandran   57:42 The street lenders, they like cash, so I think they just, yeah.
+
+
+ Tomas Gorny   57:43 Yeah, look, and I would want to even deliver them quickly, right. So like from 3:50 to 300, like, you know, or or do acquisition with the money, right. So it's whatever, right. It's just.
+
+
+ Hari Ravichandran   57:54 I think that the the one thing here is I mean you got basically on a TTM basis you got 30 million, it's going up up to about 100. So you're gonna need like a little gap period, right? Cause on 350 you still gotta pay up 35 million bucks a year in just interest.
+
+
+ Anne Brennan   58:08 Read.
+
+
+ Hari Ravichandran   58:09 So I think what we have to do is gonna make it like a little bit of a hey, like, you know.
+
+
+ Tomas Gorny   58:13 No, Jori, by the exit by June, we will be on a straight line trajectory of 85. So, so we will have the money to pay them every, you know what I mean? So every month we will collect roughly $7,000,000.
+
+
+ Hari Ravichandran   58:21 Going forward. So I I think what we do, Thomas, is basically just have the option to pay, right? And just to just to kind of give you some safety and cushion, basically because it doesn't cost you anything more. Just say, hey, we have the opportunity to pick it or we have the opportunity to pay it in cash for the first year. At some point he's gonna say you gotta just pay me cash.
+
+
+ Tomas Gorny   58:34 Yeah.
+
+
+ Anne Brennan   58:35 Yeah, that's right. Oh.
+
+
+ Tomas Gorny   58:42 Yeah.
+
+
+ Hari Ravichandran   58:43 Right. But as long as you have the option, why give it up, right. I mean, just basically, yeah, yeah, so, so.
+
+
+ Anne Brennan   58:44 OK.
+
+
+ Tomas Gorny   58:46 Yeah, no, no, you're right, right. And that. So that's why I keep bringing to you Cerberus up versus Wahlberg because because Warburg, I cannot make it better deal that we already have with Goldman.
+
+
+ Anne Brennan   58:47 Yeah.
+
+
+ Hari Ravichandran   58:57 Correct. You're you're correct about that. If you were worried about the convert, that's where you would get the benefit from Warburg because.
+
+
+ Tomas Gorny   59:02 No, I'm not. No, because I I I I took them out on the convert last year. The convert was 3 million, 3 billion before and I negotiated with them essentially 12 billion like you know.
+
+
+ Hari Ravichandran   59:07 OK, great then. So, so you're not gonna get anything better than that anyway. And so and you're gonna have fees. So it's not worth making the switch out of Goldman to somebody else. But if you did like a server syndicate and you basically, I mean had them bring in GIC, Brew, Viking, like a bunch of these guys. Um, Whitehorse is another one that's that's been pretty good. Actually, uh, we spent some time with those guys.
+
+
+ Tomas Gorny   59:40 So, so do you do you think with the numbers that we we we have the possibility to take them out, right?
+
+
+ Hari Ravichandran   59:42 I do. I I do. I do. I do. Yes. Yeah, I I tell you the things about.
+
+
+ Anne Brennan   59:48 How do you explain how you why you're so definitive about a yes on that one because our our trailing 12 months even at the end of the year?
+
+
+ Hari Ravichandran   59:54 Good. No, because they they also do, they go deep into the ARR stack too, right? I mean, so the thing you have to convince them is your revenue isn't gonna go down and your unit economics aren't gonna get, you know, kicked, kicked, kicked by by AI, right? That's what they're gonna be looking for. But for a SAS business with 93% or 94% of that dollar retention.
+
+
+ Tomas Gorny   1:00:07 Squash.
+
+
+ Anne Brennan   1:00:08 Right. Right.
+
+
+ Hari Ravichandran   1:00:17 Even if it's grown 2%, most people would be comfortable going into the stack, you know, 1 to 1 1/2 times revenue. Because the assumption is that if your unit economics hold as you scale up, you know you're going to generate a bunch of cash. Again, you don't have a lot of growth here, but you're taking a bunch of costs out.
+
+
+ Anne Brennan   1:00:23 Right. Mm-hmm.
+
+
+ Hari Ravichandran   1:00:33 So the way they would underwrite it is to say, OK, you know we're doing one times ARR in in year one and then it's quickly converting to EBITDA based stuff, which a lot of times they'll look at it, you know, hey like for the first two years we're OK with revenue as long as our revenue is stable.
+
+
+ Anne Brennan   1:00:43 Yeah, yeah. Mhm.
+
+
+ Hari Ravichandran   1:00:50 As long as at some point in time you're converting. In this case, that window is pretty small from the way you guys are representing it, right? It means you got, you know, 80 button.
+
+
+ Anne Brennan   1:00:54 OK.
+
+
+ Tomas Gorny   1:00:56 Yeah, yeah, the window is it's it's imminent literally literally on a like I said like by June we will we will be if we do nothing.
+
+
+ Hari Ravichandran   1:01:04 Yeah. And if you're if you're like if you're like 90 million or forward-looking EBITDA, that's less than four turns leverage at 3:50. So I think they, I think you get them there, right. I mean there'll be some dancing and like all the type of stuff, but I think they'll they'll play, they'll play, they'll play for that and I think that.
+
+
+ Anne Brennan   1:01:10 Yeah.
+
+
+ Tomas Gorny   1:01:10 Yeah. OK, sounds good.
+
+
+ Anne Brennan   1:01:14 OK.
+
+
+ Tomas Gorny   1:01:17 Yeah.
+
+
+ Hari Ravichandran   1:01:20 It's also like somebody we know. So I think that that always helps a little bit too. So now again, like the one thing I will say is they're smart, but they're tough lenders. So you got like, so you gotta, that's why I keep saying like, like don't show them any numbers that look good like.
+
+
+ Anne Brennan   1:01:20 Oh.
+
+
+ Tomas Gorny   1:01:23 Yeah, awesome.
+
+
+ Anne Brennan   1:01:29 Yeah. Otherwise they'll amp up there, yeah.
+
+
+ Hari Ravichandran   1:01:35 Like, I mean, I'll always come up with some, yeah, I'll always have some numbers and Blake will take it down by like 80%, you know, by the time he sends it over to them. So you just like only show them something that deleveraged like a little bit. And we don't need to do that in the first call, by the way. Like the only thing I would show them in the first call is this deck after you've kind of redone it on the financial.
+
+
+ Tomas Gorny   1:01:41 Yeah.
+
+
+ Anne Brennan   1:01:42 Mm-hmm. Yeah.
+
+
+ Tomas Gorny   1:01:47 Yeah, no. And how do you we will have. Yeah, go on. Sorry.
+
+
+ Hari Ravichandran   1:01:55 I'd only show them two slides. I showed them, I'd show them like the historical numbers and where you think your TTM EBITDA is going to be, right. And then basically here's a whole bunch more cost outs that are coming out right that we think that in the within the next, I wouldn't even say the next like 3 months, Thomas, I'd say over the next 12 months.
+
+
+ Anne Brennan   1:02:03 Right. Yeah.
+
+
+ Hari Ravichandran   1:02:14 We're gonna pretty quickly get to whatever your numbers, 90 million of EBITDA or something like that basically. And then you know, and that's all I would show the first go around. Then then we just tell him to go talk to Dan, come back, you know, tell us if he can do it and then if he says yes.
+
+
+ Anne Brennan   1:02:21 Mhm. Right.
+
+
+ Hari Ravichandran   1:02:30 In my experience with them, we've done probably 6 deals with them. If they come back with an early yes, they've never been a no after that in my experience, but sometimes it's a little harder to get it over the hump, but you know, but it they always get it done so.
+
+
+ Tomas Gorny   1:02:40 Yeah. And and and you think they would, we actually is a positive. Do you think they would want to take it all?
+
+
+ Hari Ravichandran   1:02:47 I think they would. That's the only way they would probably do it for a couple of reasons. One is the sizing, you know they they seem to need bigger sizes now and the 2nd is they don't want anybody senior to them sitting out there.
+
+
+ Tomas Gorny   1:02:56 Yeah, it wouldn't be senior would be that would be the senior.
+
+
+ Anne Brennan   1:02:59 They would be senior.
+
+
+ Hari Ravichandran   1:02:59 Yeah, that's what I mean. So that's why they would want to take out Wells and they would want to take out Goldman and everybody and just do one slot.
+
+
+ Tomas Gorny   1:03:05 Yeah, Goldman would be would be not senior to them, right? So whatever would, let's just say they don't get to 350, let's just say they get in the first runs to 300, let's just say.
+
+
+ Hari Ravichandran   1:03:14 Yeah, exactly. As as long as as long as it's more than 160, you know you're moving one from 1 bucket to the other. Yeah. So I think that's that's the that's money good. So if he gets to like, I remember like the last time we talked to him, he said oh like 160 or was he came up with some random numbers like 167 or something.
+
+
+ Tomas Gorny   1:03:17 Exactly, exactly. Right, exactly.
+
+
+ Hari Ravichandran   1:03:30 And then he called me like a month. He called me like 2 months later and he said, hey, like, you know, maybe we'll take a look at it again. Do you guys want to come chat with us? And I asked him about Thomas and I think he said that wasn't a good idea back then. So. So I think that, you know, does he get to the full 350? I think, yes. But it may also be one of those things where he's like, oh.
+
+
+ Anne Brennan   1:03:30 Yeah, that's right.
+
+
+ Tomas Gorny   1:03:36 Yeah, now. No.
+
+
+ Hari Ravichandran   1:03:46 Why don't we do something that's like 200 to twenty-five to start and I'll give you a DDTL of committed capital that you can then draw down in like you know, July or August or September as long as you show me 3 months of X months of EBI or whatever. It'll be something like that. So yeah, yeah, so.
+
+
+ Anne Brennan   1:03:52 Mhm.
+
+
+ Tomas Gorny   1:03:57 Exactly, exactly, exactly right. Perfect. Let let me let me let us show you that the kind of financial maybe if Anne can quickly walk you through it that would be but this is really helpful. Do you think you know do you think we need like go to market like because we don't have anything on go to market here like you know how we acquire customers.
+
+
+ Hari Ravichandran   1:04:08 Sure. I think that, I mean, they'll do a bunch of diligence and go deeper. But I think for your first call, Thomas, it's just like, hey, give us a sizing, give us sort of the pricing type of stuff. The thing that they will ***** about that you already heard from everybody else in the past is, hey, like is there new equity coming in behind this thing that tells me that, you know, there's somebody with a deep pocket that thinks that this.
+
+
+ Tomas Gorny   1:04:25 OK.
+
+
+ Hari Ravichandran   1:04:37 This thing is worth enough to sit behind my X amount of dollars. Basically, we're not going to have that here, but I think the way that they were probably presented is clearly Goldman thought it was good enough that they were OK sitting behind the thing and we'll just show that as equity, you know, even though sequestration.
+
+
+ Tomas Gorny   1:04:51 Yeah, but even though even if Goldman let it stays with a little bit, so they can maybe even explain it with 50 million, you know what I mean?
+
+
+ Hari Ravichandran   1:04:59 Yeah, yeah, yeah. So I think that's how you start them. So like, I'll tell you like we did a big buyback. We bought 350 million of stock back in December, right. And servers did probably 250 of it. So I was like, hey, like, you know, we're gonna do this thing and they don't like money leaving the system, obviously, I guess. So like, oh, you know, they're like, oh, like, you know.
+
+
+ Anne Brennan   1:05:16 Yes.
+
+
+ Hari Ravichandran   1:05:18 So you're doing doing this by can anybody come in with an equity check that's that's a good size check. So there we have people that came out with like a $50 million check and they they their feedback was hey like we're gonna cap you on how much you can buy back. Based on the check size and it ended up with a couple other guys were pretty interested in it. So we ended up doing 150 in equity and they were like, Oh yeah, like, you know, now he calls every day saying, hey, do you want another 200? Do you want 300? Like he said. So. So I think that, you know, they want to put money to work. They'll have. And it's it's more Kevin selling it to Dan because Dan, Dan will, you know, will be the decision maker on this thing. So Kevin basically will have to go to him and say, hey, like Goldman's already in it for 1:50. They want to stay, but Thomas really wants to take him out. So there is equity behind this thing like that, yeah.
+
+
+ Tomas Gorny   1:06:02 Yeah, they're 250 now, right. So we will know. But look, even again, I take even we take even if we if we get Goldman to like 7550, right, it's much better where we are now.
+
+
+ Hari Ravichandran   1:06:15 And again, remember like for me it was like you know on on 800 they wanted like a a new 50 million bucks like we're talking about 300 million bucks here, 350 or whatever, right. So I I think that you know showing a fifty $7500 million. Facility kind of sitting behind them should hopefully kind of make them not escressed anymore. So and if you're if you're saying and if you're open to saying hey like you know I'm OK like I don't want to do it unless it's like 250 right. So we should tell them something because.
+
+
+ Tomas Gorny   1:06:36 Yeah, alright, so and.
+
+
+ Anne Brennan   1:06:38 Right.
+
+
+ Hari Ravichandran   1:06:46 You know, 'cause what you don't want to do is like create like.
+
+
+ Tomas Gorny   1:06:48 Yeah, no, actually you you got the number right. It's 250. I don't want to leave Goldman with more than 100.
+
+
+ Hari Ravichandran   1:06:53 With that and also because you you have like 7% money you're sitting on now, right? Or 8% money and you got to pay these guys 10%. You got to pay them a fee too up front so it's going to cost money, right? They'll be like an OID and all that stuff. And so so you know, so it's got to be big enough that your break even analysis shows that.
+
+
+ Tomas Gorny   1:06:59 Yeah, yeah, yeah.
+
+
+ Anne Brennan   1:07:02 Yeah.
+
+
+ Tomas Gorny   1:07:04 Yeah. So.
+
+
+ Hari Ravichandran   1:07:13 That if you bring Goldman down by a certain amount as you're putting servers in that 15 to 10 split, you know, because you're giving up, you're giving up an 8, you're giving up an 8% coupon to put in a 10. So there's a just a mathematical number. I'm venturing, I guess just by quick math I I'd suspect it's around 2.
+
+
+ Tomas Gorny   1:07:20 Yeah. Yeah.
+
+
+ Hari Ravichandran   1:07:33 50 is is is what is what comes down to me at the moment.
+
+
+ Tomas Gorny   1:07:35 So there was one more slide like was that the board you know I added you there and then and then so and you know I'm going to grab a drink but like and if you can walk quickly worry to because getting late I think on his side he's just come back so.
+
+
+ Hari Ravichandran   1:07:39 Yep, right.
+
+
+ Anne Brennan   1:07:46 Yeah. Oh.
+
+
+ Hari Ravichandran   1:07:49 Yeah, I don't know. I have a few calls left as well, so yeah.
+
+
+ Anne Brennan   1:07:50 Yeah. OK, so let me do.
+
+
+ Tomas Gorny   1:07:50 Yeah, yeah. So maybe, maybe let's wrap it up in the next 20 Max, you know, so.
+
+
+ Anne Brennan   1:07:56 OK, right. We option #1 hurry out the front to back in 10 minutes. You hold your comments, do that and then OK, so let me do that. I think given that we've got 20 minutes, there's probably no more.
+
+
+ Hari Ravichandran   1:08:05 Done this.
+
+
+ Anne Brennan   1:08:11 Efficient way to do it. OK, so and I've got more formal comments than than Thomas has. So slightly different approach here. So you've heard the strategic case from Thomas. Let me walk you through what the numbers are that underpin it. We're projecting revenue growth from 353 million today to 463 million by fiscal 30. And what's critical for this audience is the quality of that growth, 98% of either subscription based, outcome based or success based revenue with gross margins expanding from 70 today to 77 in fiscal 30. If I compare to where we are today with that 70, we actually already expanded from 6712 months ago, so we're on the trajectory already. The gross margin expansion isn't aspirational. It's driven by COGS staying relatively flat as we add 100 million in top line revenue because our infrastructure scales without proportional headcount increases. This is enabled by our adoption of AI for service delivery support. Through product innovations with R&D, which is driving operational efficiencies across the board, subscription margins, if I focus there just for a minute, specifically expand from 76% to 81% over the plan period, which is best in class for our category. This is a business that compounds revenue while structurally improving our unit economics. Every year. Let me show you how AI is powering that growth on the revenue side. As Thomas walked you through earlier, we're on a clear path. Yeah. Can we go to the next page? Hey, Thomas, you're still sharing.
+
+
+ Tomas Gorny   1:09:43 Yeah, I clicked it on button. Yeah, yeah, sorry.
+
+
+ Anne Brennan   1:09:44 OK, right. Yeah, no worries. OK, if you want to work, we can have someone else drive.
+
+
+ Tomas Gorny   1:09:50 No, no, no, I I know I'm committed to this. I just clicked the wrong button. That's why. That's all.
+
+
+ Anne Brennan   1:09:51 OK. OK, right. As Thomas walked you through earlier, we're on a clear path from where we are today through a fully autonomous Agentic A I. Let me tell you how we think about it in the context of the financials. A I isn't a separate line item for the of the business, it's the economic engine embedded in our existing platform and it's one of our biggest tailwinds. We're expecting greater than 90% AI activation across our customer base by fiscal 28. The activation for us means a customer has access to embedded AI capabilities in their platform. This means that almost every dollar of recurring revenue benefits from AI driven stickiness and expansion we've already begun to observe today the important financial. Dimension is the emergence of AI outcomes, revenue, tokenized revenue, tokenized usage base revenue that we are we project will reach roughly 30% of Billings by fiscal 20. AI gateways revenue reflects our core attached AI products led by expert AI for AI gateways. Targeting 22 to 20% of Billings by fiscal 28. Today new sign ups with expert AI attached are driving roughly 2 times ARPA versus non AI sign ups in our small business segment. AI attached bookings have already exceeded 20% of total bookings in fiscal 26. Remember this is additive revenue, it's not replaced. It expands our share of wallet whilst deepening switching costs for our customers. Now that's the the AI revenue story. Let me show how we why we have such strong visibility into next year's numbers. This is a slide that should give you as lenders real comfort of our $367 million. Of fiscal 27 subscription revenue target 354 is already visible, meaning only 3% or 13 million requires net new execution to hit the plan. That visibility comes from 246 million in contracted revenue that runs through fiscal 27 plus 34 million in monthly renewals with historically stable. Retention rates, 8 million in contract net renewals and 23 million in expansion bookings, which our cohort data consistently supports. The final 43 million is projected attainment, new bookings against our existing robust pipeline with 86% of our base on 12 month plus contracts, usually in the majority of which are. 6 month month contracts and no single customer exceeding half of 1% of our ARR. It's highly de-risk revenue based, sorry, a highly de-risk revenue base with minimal concentration. If I now focus for a moment on our internal adoption of AI and its benefit to our operational efficiency. This is where the A I story directly translates to margin revenue per full time employee improving from roughly 255 today to over 500 by fiscal 30, a two time step up driven by a I powered productivity across support, onboarding, go to market operations and GNA. Revenue per R&D head moves even more dramatically from just 900 K today to 2.5 million and nearly three times improvement because our engineering organization is adopting a I tools that replace headcount in addition to just simplifying and augmenting it. Our long range plan shows total OpEx declining from 72% of revenue in 25 a break even year to 41% by fiscal 30 and critically we're achieving this whilst growing the top line at single dig high single digits organically. These aren't temporary cost cuts, they're structural efficiency gains that come. That compound and are largely already in place today. Let me show you what the operating leverage looks like in profitability numbers. Looking backward, we went from essentially break even and Adjusted EBITDA in fiscal 25 to an expected 44 million in fiscal 26. The trajectory improves from there. 94 million is a strong step up in fiscal 27 that grows to 185 million by fiscal 30. The fiscal 26 exit rate of 75 to 80 annualised is important because it demonstrates the second-half acceleration. We're exiting this year at a pace that underpins the step up into 27. The path from 44 to 185 is 40 is a 43% EBITDA CAGR built on high single digit organic revenue growth, which tells you the importance of the operating leverage story that we just showed. This is a plan that's not dependent on optimistic top line bookings assumptions. By fiscal 30, we're targeting 40% EBITDA margins, which positions us well for the next phase of our capital structure evolution. Let me show you how profitability now converts to cash. Go through cash. Cash generation is the ultimate proof proof point here, and this slide tells a story. Free cash flow moves from 15,000,000 in 26 to approximately 170 by fiscal 30, with conversion rates improving from 34% to over 90, meaning we convert nearly every dollar V bit data to cash. That conversion profile reflects our capital light model, minimal capital CapEx requirements and favourable working capital dynamics from our prepaid subscription base. Cash on the balance sheet grows from 29 at the end of last fiscal to approximately 495 by 30. Providing substantial liquidity for debt servicing, reinvestment and strategic flexibility. The long range plan confirms that this isn't dependent on future capital raises. These projections exclude future acquisition activity and assume organic execution and growth only. Now let's turn to the customer economics and show you why this revenue base is so durable. Our customer economics tell a compelling story. Customers don't just retain, they grow. The average customer expands MRR by approximately 1 1/2 times after sign up driven by a combination of seat based. Expansion in the future, we expect to move with new pricing models and in the A I market more seats, more seats per customer plus ARPU uplift as they purchase additional platform capabilities and as our pricing models evolve towards outcome and transaction based models, we expect further expansion opportunities. 72% of customers have expanded their spending with us after sign up and 15% have doubled it, which demonstrates the natural land and expand motion which Thomas mentioned earlier in our go to market model. This cohort data is very durable. We've been around for a long time. Our pre 2020 vintage was nearly. 2 times MRR expansion. Our most most recent cohorts are already tracking above 1.2 times, which is consistent with where earlier vintages sat at the same point in their life cycle. This expansion dynamic supports our revenue visibility, reduces our dependency on new local acquisition. And creates a foundation from from which further customer and revenue growth is built. This brings me to our retention forecast where we're seeing improvements across every metric. Our retention story is straightforward and moving in the right direction. Net revenue retention improves from 91% last year to 94 next year as upselling. When cross-sell motions mature, particularly with AI product attach, logo churn declines from 1.9% to 1.7% next year, reflecting the stickiness of our unified platform that becomes embedded in our customers daily operations. Remember 86% of our customers are on annual plus contracts. As I mentioned earlier, monthly MRR churn tightens from 1.6% last year to 1.5%, which at our scale translates to meaningful incremental revenue retention year over year for a predominantly SMB focused business. These are robust metrics and the trajectory. Supports the revenue compounding you saw in the long term model. As AI activation approaches 100%, we see these trends to continue to continue improving. Now let me tie it all together with the summary of our long range plan. This is where we are headed. In fiscal 26, we're projecting 353 million in revenue. 13% EBITDA margins as our crossover year, demonstrating that we can grow, expand margins and generate cash simultaneously. In fiscal 27, fiscal 27 steps up meaningfully to 374 million revenue, $1,000,000 revenue, 26% margins and by fiscal 30 were targeted. 450 to 470 million in revenue and a range of 38 to 42 in in EBITDA margins. The leverage comes from every line. Sales and marketing drops from 27 to mid teens, GNA down from 14 to single digits and R&D stays in the discipline range of 8 to 12% while the platform scales via AI driven efficiency. Agencies gross margins expand from 70 to the 70% to high 70s as subscription economics improve and recurring cost of revenue stays flat on a growing base. This is a custom. This is a business that. That's positioning itself for long term durable cash generation, exactly the profile that supports the credit capacity we're here to discuss. Stop. So that obviously doesn't absorb because this is prepared the comments that you made earlier, Harry, which are are well received, so.
+
+
+ Hari Ravichandran   1:19:11 Yeah, so, so a few things that's quite excellent. I think that's very, very well put together. I think it it covers a lot of the open questions people would have. I'll give you like a few macro and then some micro feedback as well or specific feedback. The macro is that that still feels like an equity focus deck to me. Because like anytime we're talking about the next some years, these guys are always looking back, they're never looking forward. So I would almost sort of get cut off at, you know, hey, here's where our numbers are this year, maybe next year you put in like the, you know, if there's a big clip up like you got the 44 going to 90 or whatever and then just do an LK.
+
+
+ Anne Brennan   1:19:34 Mhm. Mhm.
+
+
+ Hari Ravichandran   1:19:50 QA number, which is basically, hey, if you take the last quarter, last three months annualized as sort of your little bridge slide in between and then cut off all the rest of it on the back end, don't provide any long term guidance. They don't. I mean they they just want to make sure they don't lose money. Baseline and got enough to pay their interest, I mean that's really where their heads are at, right. And so, so I think that you're addressing if you put the slide deck back up, I can give you some specific ones on some of the each of the slides. I can't see it. So that's one macro point is that it feels.
+
+
+ Anne Brennan   1:20:20 Mm-hmm go.
+
+
+ Hari Ravichandran   1:20:26 Uh.
+
+
+    1:20:31 Yeah.
+
+
+ Anne Brennan   1:20:36 Mhm. Yeah.
+
+
+ Hari Ravichandran   1:20:45 So this this is fine. I mean just basically again the same same thing here. I would just do 26. I'd maybe show them 27 and then do like an LQA 426, right. So here's the last three months to annualize and that's how it's bridging closer to the 373 or whatever and then cut off the the Gray things on the on the right hand. Side, at least for the eventually they'll ask you for five year forecast. That's when you got to see them background and say like you know we're going to grow like 3% and that's it basically, right. So you don't want to say something now and then when it's time to set covenants, you go back with oh wait, like we're only going to grow 3% because we don't want to have a bunch of covenant tightness.
+
+
+ Anne Brennan   1:21:11 Yeah.
+
+
+ Hari Ravichandran   1:21:23 'Cause there won't be confidence in this deal and so showing that doesn't buy us anything. So that's that's what I would do here. If you go to the next one, um.
+
+
+ Anne Brennan   1:21:23 Yeah. Mhm.
+
+
+ Hari Ravichandran   1:21:33 This, I thought, was quite excellent. My only sort of, you know, small concern here would be. Like I don't understand what that light Gray one is like I I get the the blue lines.
+
+
+ Tomas Gorny   1:21:44 So, yeah, so, so, so let's the light grade is the one that in the product, you know AI lives in the product and essentially as we educating people you, I mean we don't even have to educate you can when you use our products you you have you will trip over AI usage you see I'm.
+
+
+ Hari Ravichandran   1:21:47 OK.
+
+
+ Tomas Gorny   1:22:03 Saying and that's and that's what we're trying to say in a more eloquent way that our in the light blue, the top light blue, the adoption of AI is going to just almost automatic in our product then. So that's the embedded right. The bottom line it's pure AI cell meaning.
+
+
+ Hari Ravichandran   1:22:17 Yeah.
+
+
+ Tomas Gorny   1:22:23 We're leading with the AI product and the dark blue one is the one that essentially is the outcome resolution based. But we're gonna do a better job to bring it even to now because we're gonna like based on your feedback, we're gonna include the usage and stuff like that in it.
+
+
+ Anne Brennan   1:22:34 It's.
+
+
+ Hari Ravichandran   1:22:38 Yeah, so the the thing I would do here by the way is that you can have this and maybe you just want to add another slide again. Same thing. I would cut off everything after the the the next year for the banks basically. But if you showed something that said hey like you know when you look at.
+
+
+ Tomas Gorny   1:22:50 And this is funny enough. This is only because it's by quarter. It's all it's ends a year, year and three quarters from now.
+
+
+ Hari Ravichandran   1:22:57 Oh, OK. Yeah. So that's fine. I I can't read the bottom part. It's yeah, yeah, yeah. OK, got it. Yeah, got it, got it. So then then it's probably fine then because you're showing it quarterly, but cut it off after you know wherever you think is once you get to like an inflection point so you don't have the the covenant wall issue. But the the quick thing here is.
+
+
+ Anne Brennan   1:22:57 Yeah, yeah, 1/4 actually comments. It's only, yeah, five quarters from now.
+
+
+ Tomas Gorny   1:23:02 Yeah.
+
+
+ Anne Brennan   1:23:06 Yeah.
+
+
+ Hari Ravichandran   1:23:14 If I looked at like, uh, your entire book of 350 million of revenues, right? And I took out everybody that's paying me per line.
+
+
+ Anne Brennan   1:23:22 Mhm.
+
+
+ Hari Ravichandran   1:23:23 Right. How much revenue would I have? Is it a meaning?
+
+
+ Anne Brennan   1:23:29 It's small right now. Yeah, it is. We are doing contracts like like that now, especially with some of our larger customers, they're asking for it.
+
+
+ Hari Ravichandran   1:23:30 A small bed. Yeah. OK. Yeah. And and if you look at new revenue end, what would that look like?
+
+
+ Anne Brennan   1:23:43 New revenue is more oriented towards. So let's think about it in in two different tranches like new new where we're building pipeline and selling to new new acquisition customers that I think would has the potential and Yaniv keep me right here has the potential to move from a seat model to utilization or outcome based model. Model. So and then what we would have to think about and I'm thinking about this out loud, Thomas, as we do renewals. So if can you move to the slide that has the revenue risk, that's the best way to explain it, you know? Yes, if you pause here. So the blue section here, I'm going to go left to right. So blue is primarily seat based monthly renewals at the both of those seat based expansion bookings, primarily seat based, but I think there's probably like a thin layer of that that would either. Be usage or move to new models, contract net new renewals. If it's with a new product, then I would say it moves to new. So that's eight and new bookings. I'd say that has a much higher propensity to be under the new models. So if I do it proportionally, the vast majority of it is going. It's going to be, you know, 246 plus 34, so that's 280 and I'd say 20 of the the expansion is going to be that. So that's 300. So call it 300 / 350 would be seat based.
+
+
+ Hari Ravichandran   1:25:11 I mean, I I I think maybe, yeah, I I think maybe the way we attack this is with the contract length. That might be the way to go here basically is to say listen like we have through 27 where people are committed to paying what they've already contracted for. And here's a bunch of programs we're testing where you know we're converting from per person per line into outcome based and here's. So depending on how much data you guys have like that could be the other approach and say no, but we give ourselves like 18 to 24 months where if AI is really starting to.
+
+
+ Anne Brennan   1:25:28 Mhm. Yeah.
+
+
+ Tomas Gorny   1:25:36 Yeah.
+
+
+ Anne Brennan   1:25:40 Yeah.
+
+
+ Hari Ravichandran   1:25:45 Uh, kind of, you know, jam into stuff like here's we're gonna do this anyway. We'll just accelerate that a bit more and, you know, you know, something like that.
+
+
+ Tomas Gorny   1:25:51 Yeah. And we have some good Nuggets because we started moving our usage base revenue quite a bit over the last year. And so we have to, we put it into that thing. We can demonstrate that we were experimenting with that and you know, like you just said.
+
+
+ Anne Brennan   1:25:52 OK. Mhm.
+
+
+ Hari Ravichandran   1:26:06 Yeah. And I think, I think it's it's also like the the value prop for them is to say, hey, listen, like if it's usage based or outcome based, we're going to pass some savings back to the customer and that you know that's going to convert a lot of them to be out of the per line piece that we're going to keep doing the per line until then.
+
+
+ Yaniv Masjedi   1:26:17 OK.
+
+
+ Tomas Gorny   1:26:20 Yeah, yeah.
+
+
+ Anne Brennan   1:26:22 Yeah.
+
+
+ Tomas Gorny   1:26:23 Yeah, it's kind of like the unified concept, right? With you.
+
+
+ Hari Ravichandran   1:26:23 And then at some point we're gonna be it's exactly that. But now it's for it's for software too. Like before it was just for the humans and now like you know people's senses say it's also coming for all the software that's on a per human basis right. So, so, so I think that that so look at the numbers if the numbers look good like put it in there. If not then just say hey.
+
+
+ Tomas Gorny   1:26:35 What's up there?
+
+
+ Anne Brennan   1:26:42 Mhm.
+
+
+ Hari Ravichandran   1:26:43 You know, here's the 245, that's all on a per line basis. Here's a bunch of testing we're doing. You don't need to do this for the first meeting, by the way, just when you go through diligence. But here we've done some fair amount of testing and on the testing we're seeing that people are very open to converting from this to this if we give them a small discount or whatever that is.
+
+
+ Anne Brennan   1:26:51 Yes.
+
+
+ Tomas Gorny   1:27:00 Yeah.
+
+
+ Hari Ravichandran   1:27:01 And by the way, you don't need to worry about it because you know our contracts are two year contracts or three-year contracts, so they can't get out of the contract anyway. And that gives us enough runway to go get the model changed as needed and go faster or slower depending on pace of adoption basically and I think.
+
+
+ Anne Brennan   1:27:02 Right. Mhm.
+
+
+ Tomas Gorny   1:27:17 Yep.
+
+
+ Anne Brennan   1:27:18 Yeah.
+
+
+ Hari Ravichandran   1:27:18 That should give you enough to, uh, to come with that.
+
+
+ Tomas Gorny   1:27:19 Yeah, and we already have, you know, we have like platform fee. Now our expert is platform fee plus usage and stuff. We can start demonstrating that so.
+
+
+ Yaniv Masjedi   1:27:27 Mhm.
+
+
+ Hari Ravichandran   1:27:27 Yeah. And I and I think almost the entire thing and again this is probably something to think about for your business itself, like I don't actually, I haven't really thought about AI deployment based risk to your business, you know the but to whatever degree you feel there is a. Per employee based indexing, you know it might be helpful just to convert some slug of it into into usage based anyway, like independent of the bank. I mean it's something like that, yeah.
+
+
+ Tomas Gorny   1:27:52 Yeah, totally. No, no. And we we're doing it. But also exactly like, I mean, we have to, you know, oh, **** about. Yeah, good.
+
+
+ Anne Brennan   1:27:53 Yes, yeah, yeah.
+
+
+ Drew Schulz   1:27:56 Yeah.
+
+
+ Hari Ravichandran   1:27:59 Yeah. So can you go to the, sorry, we were in the previous one.
+
+
+ Tomas Gorny   1:28:06 So we were here, we were here, then we were now here.
+
+
+ Hari Ravichandran   1:28:07 Yeah, yeah. So yeah, this is fine. And yeah, and then that's fine. I think I already covered that. Uh, this was great. Actually, no, nothing. Nothing here to add.
+
+
+ Anne Brennan   1:28:07 Yeah. So. Yeah. And the point, the point on this one is that, and I wouldn't say it like this, I'll explain it like this to you, Harry, is that R&D is the tip of the spear. We expect a similar uplift on every other function, maybe not to the same degree as R&D, but that's not baked into the plan.
+
+
+ Hari Ravichandran   1:28:28 Yeah, yeah. And again, just the same comment there and at some point just cut it off so they don't, they don't end up in holding you guys hostage for that. And the previous one, there's a comment that says, you know, contracts are through 27.
+
+
+ Anne Brennan   1:28:34 Yeah.
+
+
+ Tomas Gorny   1:28:36 Yeah.
+
+
+ Anne Brennan   1:28:42 Uh, yeah.
+
+
+ Hari Ravichandran   1:28:42 I gotta imagine there's some contracts that are further than that 'cause that makes it almost sound like all your contracts are gonna end in 27.
+
+
+ Tomas Gorny   1:28:47 Yeah, yeah. No, we we need to correct that because N did that in the voiceover. When we say 12 plus, we don't mean that it's 12 months, we mean that it's greater than 12, but we need to say it differently because.
+
+
+ Hari Ravichandran   1:28:53 OK, got it. Yeah.
+
+
+ Anne Brennan   1:28:56 Yeah.
+
+
+ Hari Ravichandran   1:28:59 Yes. So just maybe like just just like as I looked at that and said hey, like so because again if especially we're gonna make the point that that's your runway to go make a bunch of changes, you want that to be as long as humanly possible obviously so.
+
+
+ Tomas Gorny   1:29:06 Yeah, yeah, I I very first time I read it, I read it the same way you read it and and and I like I thought it's 12 months and I said guys it's not 12 months. But we need to change that language because because somebody who doesn't read it well will think it's only 12 months.
+
+
+ Anne Brennan   1:29:09 Yeah. That's right.
+
+
+ Hari Ravichandran   1:29:13 OK, go back. Got it.
+
+
+ Drew Schulz   1:29:18 Yeah, it's annual plus, yeah.
+
+
+ Anne Brennan   1:29:25 That's right. Yeah. OK. So let's, let's look at that, Drew. Yeah. Thanks.
+
+
+ Hari Ravichandran   1:29:26 Yeah, this. Yeah, this was good. And then go to the next one. Um.
+
+
+ Drew Schulz   1:29:30 Yep, 100%.
+
+
+ Hari Ravichandran   1:29:34 This is great.
+
+
+ Anne Brennan   1:29:35 That's your point about cut it off at like 110120. Yep.
+
+
+ Hari Ravichandran   1:29:38 Yeah, that that's where I might do LQA and basically, right. So you might show because 44 is too light, right? 80, you're kind of getting in the zone for the kind of leverage you're looking for, right? Because if you're sort of in the 80 zone, you know, going to them to fight for 3 1/2, four times, that is not unreasonable. I may not get you the full 350.
+
+
+ Anne Brennan   1:29:48 Yeah, yeah. Mhm.
+
+
+ Hari Ravichandran   1:29:58 But it gets you a lot closer. So if you if Tom is saying hey like by June it's gonna get to that place. The thing you could say is you know here you know fiscal year is 44, LQA is, I don't know what that is for you, but I'm guessing it it's a decent number if you take the last.
+
+
+ Anne Brennan   1:29:59 Yeah. OK.
+
+
+ Hari Ravichandran   1:30:16 Month or two annualized.
+
+
+ Anne Brennan   1:30:18 Yeah, well, that's going to be the eighteen. Uh, well, somewhere between seventy-five and eighty-five, right?
+
+
+ Tomas Gorny   1:30:22 Yeah, I know. And we it's gonna be over 80, like we're gonna either we get the one or the other way.
+
+
+ Hari Ravichandran   1:30:26 No, I'm talking about like, I'm talking about like Feb and March.
+
+
+ Anne Brennan   1:30:27 Mhm. Yeah, well, no, that would be a June statement. Yeah. And the other thing is, um, what? What?
+
+
+ Hari Ravichandran   1:30:33 So like if you what's what is your February EBITDA?
+
+
+ Anne Brennan   1:30:37 February EBITDA is is is not a good month to use. Let's use January only because of the the revenue number of days. So like 4 1/2, call it 4 1/2 in January, yes.
+
+
+ Hari Ravichandran   1:30:43 Yeah, so see me like, so take like. And what is it for the quarter that you guys are focus?
+
+
+ Anne Brennan   1:30:51 For the quarter it's going to be probably have another that's nine, it's going to be about 13, maybe somewhere between like 11 and 13. Yeah, something like that 246.
+
+
+ Hari Ravichandran   1:30:59 Yeah. Alright, so if it's 13, that's a good number, right? So you said you show fiscal year 44, so you got 52.
+
+
+ Anne Brennan   1:31:07 Actually, it might not be as high. Sorry, I'm thinking out loud with you. Probably won't be as high as 13. Let's call it 10 for now.
+
+
+ Hari Ravichandran   1:31:13 10 for the quarter. So if you can get show something that's north of 44 because what people are gonna want to see is say like my full trailing 12 months was 44 and you're telling me your next year is gonna be 80 something from June. So if I look at the and June is like only three months out.
+
+
+ Anne Brennan   1:31:23 Yeah. Yeah.
+
+
+ Hari Ravichandran   1:31:30 So if I look at the last two or three months, you should be higher than the 44, but not quite at the 80 or whatever it is. So just look at the numbers and see how best to present that. If if that doesn't look good because you're gonna do a big riff or whatever and that's how the cost is coming out, then don't show that, then just show hey like.
+
+
+ Anne Brennan   1:31:43 Yeah.
+
+
+ Drew Schulz   1:31:45 Mhm.
+
+
+ Hari Ravichandran   1:31:46 June, you know, look forward, we anticipate 75 to 80 and then cut it off there basically, right? And then you know.
+
+
+ Tomas Gorny   1:31:50 And.
+
+
+ Anne Brennan   1:31:51 That's and that's exactly, yeah.
+
+
+ Tomas Gorny   1:31:52 And part partially and if you back, if you put back, if you put back the serving cost for the loan and you put back the restructuring cost, it's going to be much greater.
+
+
+ Hari Ravichandran   1:32:03 But that's that shouldn't hit your EBITDA anyway. Like the restructure you should give yourself credit for for sure, right? If it's one time expensive.
+
+
+ Anne Brennan   1:32:08 Oh, yeah, that's already, that's already an adjustment. That's out already. Yeah, they what we're talking about earlier, Thomas, is the free cash flow for interest and yeah, so.
+
+
+ Hari Ravichandran   1:32:11 OK, OK, I got it.
+
+
+ Tomas Gorny   1:32:16 OK, sounds good.
+
+
+ Hari Ravichandran   1:32:17 So EBITDA wouldn't affect anyway. So I think, I think Anne's got it. So I think it's basically, you know, show the 44 zero to 44, that's a huge clip, then 44 to hey like the last few months annualize if that number looks like 55 or 60, great, like put that in, that looks good and then say.
+
+
+ Anne Brennan   1:32:21 Yeah.
+
+
+ Hari Ravichandran   1:32:34 June, June to June, it's gonna be 80 or whatever you're showing here and then cut off the slides and show show no more. And you can keep the you know long term target of 40% still in there basically. So people can see that basically and and but that's what I would do here.
+
+
+ Anne Brennan   1:32:51 Yeah, and I'm looking. Just give me a second. I'll share it. Can I share for a minute, Thomas? I know that you want to.
+
+
+ Hari Ravichandran   1:32:52 Oh.
+
+
+ Tomas Gorny   1:32:57 Yeah. I'm. I'm more because of worry. I don't want him because he is is to run. But like, yeah, go ahead, Cher.
+
+
+ Anne Brennan   1:33:00 So we did a.
+
+
+ Hari Ravichandran   1:33:02 That sounds so good, yeah.
+
+
+ Anne Brennan   1:33:06 Yeah, OK. Sorry, this is so small here, but this is exactly what you're you're asking. So I've got three different versions of Adjusted EBITDA. So the first one, let me see them bump it up a bit. So what was if we if we stopped today, where would we be? We'd be at 21. If we ran through March, we would be on a on a TTM basis, we would be at 24. If I ran through the end of the year, sorry about that. If I ran through the end of the year, we would be at 46. Based based on what we see right now. So that's I'd say that's probably the low end of the range.
+
+
+ Hari Ravichandran   1:33:47 So what is? I mean, what's the huge take up between March and April? Because it goes 26 to then 33. I mean, like keeps clipping up fast. Is there like some baddie but that one's coming out?
+
+
+ Anne Brennan   1:33:56 Yeah. So we're taking, we're taking a bunch, yeah, we're taking a bunch of actions at the end of March. So it will start reflecting. So if I were to do like a pro forma in March, it would pull that April number forward.
+
+
+ Hari Ravichandran   1:34:03 Got it. So are is when you're talking about actions, you're talking about headcount reduction, etcetera, right. That's already identified. What I would do for the presentation, Anne, is give yourself credit for that on the Marsh look back basically give yourself credit for it. Yeah, so so because then because then then then your LQA is gonna look pretty good.
+
+
+ Tomas Gorny   1:34:12 Yep.
+
+
+ Anne Brennan   1:34:12 Yes. Yes. Yeah, that's exactly what I planned to do. Yeah. Yeah.
+
+
+ Hari Ravichandran   1:34:25 You can just say, hey, like, you know, taking credit for the April actions, going back to Jan and then annualizing, then you should be able to show a number. So what is that like? Let me see your action 'cause you got some monthlies up there. Your March goes from.
+
+
+ Anne Brennan   1:34:29 Yeah. Yeah. So March, sorry. Um.
+
+
+ Hari Ravichandran   1:34:39 2. Not not TTM, but just the actual month.
+
+
+ Anne Brennan   1:34:44 For the month of March. Um, there we go.
+
+
+ Hari Ravichandran   1:34:45 I think you got that up there right on top the monthly.
+
+
+ Anne Brennan   1:34:48 Yeah, yeah, still is here. So that's going to be. Let me just make sure. Forecasted.
+
+
+ Hari Ravichandran   1:34:56 Well, no 'cause you gotta take 'cause you gotta take the the last, the the old month out if you so, so is do you have just like a monthly number that I can look at?
+
+
+ Seksom Suriyapa   1:34:58 No.
+
+
+ Anne Brennan   1:35:01 Oh, exactly, yeah. 1 1/2 years. So if I go back to, let's see if I got March of last year, so.
+
+
+ Hari Ravichandran   1:35:12 Oh, no, it's just, yeah, do you have a forecast on the right side, Anne, by chance? On the monthlies. Yeah. In 26. Yeah. OK, there you go. OK, so now we're in the. Yeah. So I mean, that's OK. Yeah. I mean, guys like this and these, these are all tagged and you got account names and all that stuff kind of marked and all that type of stuff. At the moment, it's actionable.
+
+
+ Anne Brennan   1:35:17 On the right hand side for March, yeah. Yeah, sorry. Let me go forward here. Yeah.
+
+
+ Tomas Gorny   1:35:32 Yeah, we we it's getting done. I I am. I am actually doing this so.
+
+
+ Hari Ravichandran   1:35:34 Yeah. So I I would, I mean, so I think, I think Thomas, I think what you should probably do is take that, take that 64 like whatever the delta is if the 36 to like the 64 is all headcount production.
+
+
+ Anne Brennan   1:35:34 Yeah, we do. Yeah. Yeah, Thomas is. Mhm.
+
+
+ Hari Ravichandran   1:35:50 Give yourself the credit for Jan, Feb, March based on the actions that actually you know what we should do. We should just say based on April reductions, if I set that back to Jan, what does that look like? And then take the four months Jan, Feb, March, April and annualize it because that's going to look like a 70 + $1,000,000 number.
+
+
+ Anne Brennan   1:36:03 Mhm.
+
+
+ Seksom Suriyapa   1:36:06 OK.
+
+
+ Anne Brennan   1:36:08 Yeah.
+
+
+ Hari Ravichandran   1:36:10 It's gonna show a much stronger credit profile because you're so like right in the right in the the the throes of it, right. Because I'm just if you just average that April, May, June for me, if you don't mind. So that looks like the the forward April, May, June of yeah, yeah.
+
+
+ Anne Brennan   1:36:21 Just here. Oh, sorry, forward here.
+
+
+ Hari Ravichandran   1:36:26 So that's your average. There's about 6 1/2. I mean, that's almost 80 million of EBITDA.
+
+
+ Anne Brennan   1:36:30 Mhm. That's right, yeah.
+
+
+ Hari Ravichandran   1:36:33 Right. So I would simply just say take the April actionable items and pro forma that back to Jan, Feb, March and then give yourself an LQA number, then footnote it saying hey this includes the anticipated headcount because they will give you full credit for that as long as it's not like some revenue synergy number or something.
+
+
+ Anne Brennan   1:36:48 OK. Yes.
+
+
+ Hari Ravichandran   1:36:53 Like that if it's like, you know, people, yeah, if it's like actual cost coming up, yeah.
+
+
+ Tomas Gorny   1:36:53 No, no, no, it's not.
+
+
+ Anne Brennan   1:36:53 No, no, no. It will be, yeah, named. Yeah, when we have named to your point, we've got named heads. So that's why I'm I'm pushing Thomas to action that before the end of March so I can take credit for it all the way, all the way back.
+
+
+ Hari Ravichandran   1:37:01 Yep.
+
+
+ Tomas Gorny   1:37:06 Yeah, it's happening next next year because it, you know, that's.
+
+
+ Hari Ravichandran   1:37:07 Yeah, so if you get done that, get that done by or even if you if it's not done because operationally maybe like a tough job or whatever. But the the take the April, set it back to Jan, Feb, March. The one thing I would probably fire up after the first one or two calls in is the the QV.
+
+
+ Tomas Gorny   1:37:16 What?
+
+
+ Hari Ravichandran   1:37:22 Like these guys won't won't underwrite something like this without a quality of earnings and something that shows on the same basis that $80 million EBITDA number, because I think we can drive a much more aggressive set of negotiating with 80 of you know.
+
+
+ Anne Brennan   1:37:23 Mhm. Yeah. Mhm.
+
+
+ Hari Ravichandran   1:37:39 You know sort of you know whatever like adjusted QV EBITDA number because now you're talking about something that's like hey like you know it's four times you know what's you know what's the issue like maybe that you got to give us like a six months of reprieve on you know on interest payments or something like that you know which by the way you should if they you know like for 350.
+
+
+ Tomas Gorny   1:37:42 It's just AB dot you.
+
+
+ Anne Brennan   1:37:47 Mhm.
+
+
+ Hari Ravichandran   1:37:58 You should be pushing for $100 million revolver facility too.
+
+
+ Anne Brennan   1:38:02 Mm-hmm. Yeah.
+
+
+ Tomas Gorny   1:38:03 Yeah.
+
+
+ Hari Ravichandran   1:38:03 Which, which they will do. They hate it, but they'll do it. I mean, I think because I think it's about one turn of EBITDA, so call it 80 to $100 million and there's not much of an undrawn fee, but that gives you guys some liquidity coverage as well. Like let's say you're tight on a month for payment or whatever.
+
+
+ Anne Brennan   1:38:12 Mhm. Mhm.
+
+
+ Hari Ravichandran   1:38:19 You've got a revolving facility that you can draw down from and then kind of, you know, pay it off on the back end or there's a small acquisition that comes along and you want to go draw down some money. Now they'll have baskets and they'll say, hey, there's permitted acquisitions, you gotta, you can do this and like all this **** that they'll put in there. But so I think the package we should go shoot for if you got 7880 million of EBITDA.
+
+
+ Anne Brennan   1:38:27 Yeah. Yeah, that's right. Yeah.
+
+
+ Tomas Gorny   1:38:32 Yeah.
+
+
+ Hari Ravichandran   1:38:38 That can be the quality of earnings. I mean, I feel not bad about it. I feel like you've got a good shot. I mean, I don't know if you get quite the 350, but.
+
+
+ Anne Brennan   1:38:47 Mhm.
+
+
+ Tomas Gorny   1:38:48 Yeah. And even if not, look, even if we have to keep Goldman, I am OK keeping look, keeping Goldman at 50 to 75, that's not going to break the bank.
+
+
+ Hari Ravichandran   1:38:56 That's that. No. And that's that's an easy one, Thomas, because once you put this in place and the credit is performing, you can just go up it by another 50 to 75 without a lot of extra fees. And you know, they'll be good to you on that. Like they they've been good to us, you know, on on on any of the things we've done. Yeah, yeah.
+
+
+ Anne Brennan   1:38:58 Yeah.
+
+
+ Tomas Gorny   1:39:05 Yeah, exactly. Oh ****, I need to charge my computer. I have 4%. They're gonna die. Hey, do do you have time to look at the slides or do you need to break now?
+
+
+ Hari Ravichandran   1:39:13 All right, all right. I I got it. I got a book out too, but I think that's that's it, yeah.
+
+
+ Anne Brennan   1:39:15 OK.
+
+
+ Seksom Suriyapa   1:39:17 Mm.
+
+
+ Anne Brennan   1:39:17 OK.
+
+
+ Hari Ravichandran   1:39:20 I think it's all almost all done. Just put it back up. I think we're there was maybe like one or two more slides.
+
+
+ Tomas Gorny   1:39:24 You know, I my computer gonna dilated in a second also. So yeah, I gonna and share it and I gonna get my charge out so.
+
+
+ Anne Brennan   1:39:25 Yeah. I got it. I got it, Thomas. Just give me a SEC.
+
+
+ Hari Ravichandran   1:39:33 Yeah, same same thing here too by the way, just a cut off point in the in the, you know, because once you've sort of made the point that it's a 90%, you know, EBITDA FCF conversion, you've already hit the big, the big point anyway at that point. So you you don't need to show the.
+
+
+ Anne Brennan   1:39:34 Yeah.
+
+
+ Seksom Suriyapa   1:39:42 Mm.
+
+
+ Anne Brennan   1:39:46 Yeah. Right. That was, yeah.
+
+
+ Hari Ravichandran   1:39:52 Yeah, but I I thought this is, yeah, this is excellent. And I think that the cache accumulation, yes, anyway, just cut it off there. So here and the the.
+
+
+ Anne Brennan   1:39:58 Yeah. No, that's two things. It doesn't include full disclosure. It doesn't going to have to start paying taxes. We've got $100 million of anywhere else. I haven't reflected that in here, #1 and #2. I haven't. Yeah, and I haven't included the incremental interest. So we've got our baseline interest to 12 million a year.
+
+
+ Hari Ravichandran   1:40:09 Yeah, they'll do that in their model. Yep.
+
+
+ Anne Brennan   1:40:17 Plus, you know, capital payback probably about 14 or 15. I haven't assumed that it's going to be like that 30 or 35. So that number, that 491 number doesn't include those two considerations.
+
+
+ Hari Ravichandran   1:40:28 Yeah, yeah. No, I would, I would, I would say like after 27, just cut it off anyway. Like, you know, don't show anything more than that and don't show.
+
+
+ Anne Brennan   1:40:33 Yeah.
+
+
+ Tomas Gorny   1:40:33 And then it won't, right? If we pay, if we pay down the interest, that's going to reduce the tax liability and then you know we're going to.
+
+
+ Anne Brennan   1:40:41 Exactly.
+
+
+ Hari Ravichandran   1:40:41 And if you buy something, you buy something, you can, we might pick up more in a while. So there's all, all, all the things. Yeah, yeah, yeah. So this is the only one that I had like a very specific thing around. I think just given everything we're talking about, I I don't think.
+
+
+ Anne Brennan   1:40:43 Yeah, yeah.
+
+
+ Tomas Gorny   1:40:43 Exactly. We do acquisition. We're going to manage the capital. We're not going to pay taxes.
+
+
+ Seksom Suriyapa   1:40:46 It.
+
+
+ Anne Brennan   1:40:46 Yeah.
+
+
+ Hari Ravichandran   1:40:55 What this buys you is worth the pushback you're gonna get on the per line piece 'cause this feels like when you're talking about, you know, a certain amount of lines with a particular ARPU lift, they're worried about it the opposite way where they think the number of lines gonna go down. So I I think this brings that issue to the surface. So this slide may not be worth it in my opinion.
+
+
+ Anne Brennan   1:41:07 Yeah.
+
+
+ Drew Schulz   1:41:09 Yeah, yeah.
+
+
+ Anne Brennan   1:41:10 Right.
+
+
+ Tomas Gorny   1:41:13 Yeah. And we, we, we and and guys, we can maybe present that that in a way that we say because a lot of our revenue that grow or some of our revenue growth is actually usage revenue, right. So we can, we can, so we can maybe present it in a way that you may start on subscription, but you get.
+
+
+ Drew Schulz   1:41:14 As we push on the outcomes, we need to pull back on this.
+
+
+ Hari Ravichandran   1:41:18 Yeah.
+
+
+ Seksom Suriyapa   1:41:22 Mm.
+
+
+ Anne Brennan   1:41:27 It is, yeah.
+
+
+ Tomas Gorny   1:41:33 Into the other categories, that's what we should do.
+
+
+ Hari Ravichandran   1:41:35 Yeah, it may also be that by the time you guys figure out a plan, Thomas, since you have contracts of 2728, when you go to customers, you might be able to say, listen, like you know, on a per line basis, you're paying me 500 bucks right now. I'll give it to you for 450, you know, for the software and then if the usage goes up or down then it can cover the other 50 or whatever that.
+
+
+ Anne Brennan   1:41:35 Mhm.
+
+
+ Drew Schulz   1:41:43 Yeah.
+
+
+ Tomas Gorny   1:41:54 Yeah.
+
+
+ Hari Ravichandran   1:41:55 You know, it's it's not it's not like and again is all depends on how much your business actually gets eroded, which to me it's not clear at the moment it's anything at all, right? But that gives.
+
+
+ Tomas Gorny   1:42:04 Right, right. Look, we're also playing in such industries that the that again I we're gonna.
+
+
+ Hari Ravichandran   1:42:10 It's, it's a oh, sorry, 111 big thing I would put in there, Thomas, by the way, is your industry is regulated. So Vibe coding kid cannot put software in there basically because you have a bunch of compliance and yeah, yeah, and regulated and all that type of stuff. Nobody can come in there because you got, yeah, yeah.
+
+
+ Anne Brennan   1:42:18 Oh, yeah, yeah.
+
+
+ Yaniv Masjedi   1:42:19 OK. That's a good one. That's a good one.
+
+
+ Anne Brennan   1:42:22 Yeah, yeah.
+
+
+ Drew Schulz   1:42:24 We had a whole, we had a whole XY like we were we we gridded this all out where we showed like highly regulated hardware dependent. Yeah, that's.
+
+
+ Hari Ravichandran   1:42:26 Yeah. Yeah.
+
+
+ Tomas Gorny   1:42:29 Yeah, like, OK, wait, let me. Yeah, we're gonna when we create the slide infrastructure regulated data, right. That's a defensible mode.
+
+
+ Drew Schulz   1:42:34 Very cool.
+
+
+ Hari Ravichandran   1:42:38 Yep. Yeah, Yep, Yep. I think, I think the regulation people will get like, oh ****, like, you know, cloud doesn't get regulation. So you know, I would, I would definitely put them in there. Yeah. So this one keep or don't like I I think right now I would definitely say no. And if you find some other way to show it, if you go to the next one.
+
+
+ Yaniv Masjedi   1:42:41 Mhm.
+
+
+ Tomas Gorny   1:42:45 Good. Alright.
+
+
+ Anne Brennan   1:42:53 OK, right.
+
+
+ Hari Ravichandran   1:42:56 This was great. So I would, yeah, I would just, yeah, the same comment again, like take out a logo and MRR, just keep the net revenue retention going up in the top slide. You don't need this slide. They'll get to this by the way. They'll say send us your cohort files and they'll go through it and we'll have the ability to explain the the.
+
+
+ Anne Brennan   1:42:58 He gave us comment. Mhm.
+
+
+ Tomas Gorny   1:43:13 And and maybe what we should show what we our model like the first year two, it's higher churn and then it goes to 0.6 after that, right, I think.
+
+
+ Hari Ravichandran   1:43:23 Yeah, like I, I, I they're gonna get to all of that by the way. So just don't don't start with that. Like I would just say go with the net dollar retention because they're gonna look at every customer, they're gonna look at every bit of cohort data, all that stuff we did, you know, when we're kind of doing the last bucket of stuff. And then you can just say, hey, like, listen, like, you know, because now they're anchored to the 91 going to 94.
+
+
+ Anne Brennan   1:43:26 Yeah.
+
+
+ Tomas Gorny   1:43:28 OK.
+
+
+ Hari Ravichandran   1:43:43 And that's the headline he's already sold internally. So he's gonna be on your side now trying to make it work, right? Versus in the early stage, he's gonna be trying to push back to say, hey, like, you know, do I want to go to bat for this deal or not? So it's not worth the the brain damage, I think, because you're not saying anything incorrectly. I mean, that is your actual number.
+
+
+ Tomas Gorny   1:43:52 Yeah, yeah. Right.
+
+
+ Hari Ravichandran   1:43:59 And this by the way, again, you know, I would keep this for the equity guys. I think it's a nice summary. So I might just do again here and like the 25 LQA 26 for these metrics and then kind of cut it off there basically.
+
+
+ Anne Brennan   1:44:00 OK. Right.
+
+
+ Hari Ravichandran   1:44:15 And if you want to show 27 in there because you're really close, that that's fine. If you guys feel good about it, if you're not comfortable with the 373, you know if you're already at 80 of EBITDA, like take it down to you know 360 or something like some growth, but like you know like we always just show 3% growth for anything future.
+
+
+ Anne Brennan   1:44:16 OK. Yeah.
+
+
+ Hari Ravichandran   1:44:32 As long as the, you know, like in your case, like the way we should be presenting the story is a like everything that gets us to 80 million of EBITDA, the work is already done, right. So you're underwriting an $80 million EBITDA business. That's what you're looking at here. Now again, we may have some, you know, working capital, cash flow type of stuff. So we'll have to kind of work through all of that stuff.
+
+
+ Anne Brennan   1:44:33 Right. Yeah.
+
+
+ Tomas Gorny   1:44:42 Right.
+
+
+ Hari Ravichandran   1:44:52 And as long as it's 80 going to like 83 going to 85 and revenue going from 353 to 357 to you know whatever 365, you should be fine with it because I can support your credit, right. And so so maybe just take that down a bit and then kind of cut it off at 27, take out the targets on the 30 side.
+
+
+ Anne Brennan   1:44:52 Mhm. Yeah.
+
+
+ Tomas Gorny   1:45:06 Yeah.
+
+
+ Hari Ravichandran   1:45:11 We're the, we're the Carter, basically. So, but I think this is very good. You guys are very close in this. So yeah, so all right, great.
+
+
+ Anne Brennan   1:45:13 Right. OK. That was great. Thank you. Appreciate the investment.
+
+
+ Tomas Gorny   1:45:17 Hey, hey, Tim, stay here so we can organise ourselves that you already. Thanks a lot, you know. All right. So sounds good. Thanks. All right. So that was that was awesome. So like that's what we needed here. I mean, you know, and I knew it was going to be, but but you know, so I think.
+
+
+ Hari Ravichandran   1:45:22 Yep. All right, guys. Thank you. Yeah, we'll see you soon. Bye, bye.
+
+
+ Seksom Suriyapa   1:45:24 Thanks, Harry.
+
+
+ Anne Brennan   1:45:26 Thank you. Right. Yeah, it was, yeah.
+
+
+ Tomas Gorny   1:45:37 I think we should build 2 versions, right? One the the kind of the the private debt version and then the other one that it's and then we still can decide if we use that one because you know Gori is very much you know he is a master of the private debt, right. So, so it's so and but we can carry some of this.
+
+
+ Anne Brennan   1:45:38 OK. Yep.
+
+
+ Tomas Gorny   1:45:57 Stuff like the NRR into the other version as well. I really like what the defensibility like everybody talked about it, but he was the first one who started framing it very pragmatic around the infrastructure. Like you said, Drew, that's awesome statement regulated and then around the data. But the the data, what I am talking more about being the data because it's in a fresh mode state always right and and and and then with this in on that slide actually with the communication being superpower now it fits.
+
+
+ Seksom Suriyapa   1:46:23 Good.
+
+
+ Tomas Gorny   1:46:32 Because because because that's the number one is regulated #2 it's it's that's the part that is the tough going to be the toughest to replace to any for anybody right. It's not only the voice part but live chat all you can replace maybe one or two components but nobody going to go. To the headache like like to build entire infrastructure of all channels like you know like so that is competitive thing but it's not gonna be by customers right. So now now we actually defend that in multiple ways. I think that's a that's a very, that's a very. Powerful slide. You know, I like that he liked the last slide. I mean, you know, the other ones didn't respond that as strongly to it, but that, you know, but then we just should change the wording. So I think, look, we have work cut out for us.
+
+
+ Anne Brennan   1:47:24 OK.
+
+
+ Tomas Gorny   1:47:26 But what we can, what we can do now and especially Drew, you know now you kind of got a sense for you know like you know what a clean deck looks like. So now you have the opportunity, you know those slides that are missing on the, you know he didn't think so we need to go to market but we should accommodate. Bank of America with the go to market, you know we need a really good go to market slide. You got to pick Yaniv's brain and think and Chris says this is not something you want to do in vacuum. You want to just really go and because you're going to get really good Nuggets.
+
+
+ Drew Schulz   1:47:47 Yeah, we need that. Yep.
+
+
+ Tomas Gorny   1:48:02 How we compete and where we defend. We, you know, we have a lot of slides, decks that were created, even the stuff that we took to Canada when we were doing the trio deal to convince them on it. I mean, we need only one slide. So there's a lot of good stuff, I mean, and even when I threw it the first time.
+
+
+ Drew Schulz   1:48:16 OK.
+
+
+ Tomas Gorny   1:48:22 I just I never actually I told you that but I mean not never because I only hear that today but but you know there was excellent like I mean from the you know like your narrative was was awesome with the little changes. I mean you nailed that like since this morning. Um, you know on that. So it it is just the small Nuggets that we just got feedback about and and I think that the front deck.
+
+
+ Anne Brennan   1:48:43 Yeah. Thank you. Shout out. I have to say shout out to Claude and Drew on that one. Thank you.
+
+
+ Tomas Gorny   1:48:49 Awesome. So yeah, and Drew, this is that this is your strong suit like more on the numbers, you know, then on the deck. I mean you're going to learn the deck part, but you like it. But The thing is you can see that you know there's more of a story arc, right? And how you work and the sensitivity, but having having things.
+
+
+ Yaniv Masjedi   1:48:51 Right.
+
+
+ Tomas Gorny   1:49:09 Said that great job on the numbers like drew that that that's and we we continue to now to adjust that and like you know start kind of contributing a little bit on the slides you know I you know I still gonna knock you over if you don't do it right but but.
+
+
+ Anne Brennan   1:49:13 Yeah.
+
+
+ Drew Schulz   1:49:20 OK. I know.
+
+
+ Anne Brennan   1:49:25 Yeah, not too hard, though. Not too hard.
+
+
+ Tomas Gorny   1:49:27 But but but I'm looking everybody over like I I think it's just it's the it's like a chess pieces on the board including myself so but The thing is.
+
+
+ Drew Schulz   1:49:31 I know. The deck is looking very good. Looks very good.
+
+
+ Yaniv Masjedi   1:49:36 Equal. Equal. What is it? Equal opportunity. Equal discrimination. Yeah, equal.
+
+
+ Tomas Gorny   1:49:39 I'm equal opportunity. So like I I don't think so. I don't think so. Nobody likes me here. But The thing is, but they're not all joking aside. The thing is, look, it was run, but we did a really good job. I like it. It's it's it. Even the deck. Look, I would say the.
+
+
+ Anne Brennan   1:49:40 Equal opportunity bashing.
+
+
+ Tomas Gorny   1:49:58 It depends who you listen to, right? We got a very, very broad range of of of responses. I mean, Bank of America, I was surprised that Corey didn't think the deck should be tied up because Corey Corey decks are very tight. So at that.
+
+
+ Anne Brennan   1:50:01 OK.
+
+
+ Yaniv Masjedi   1:50:05 So.
+
+
+ Anne Brennan   1:50:15 Yeah. Mm-hmm.
+
+
+ Tomas Gorny   1:50:18 It's actually a positive surprise that he thought it just he just said what things missing. So but we still should a little bit tighten it up. Having said that you know the Bank of America wanted to have a tighter as you guys heard you know Karen comments again now reflecting on those. All the comments they were good, but we got to be careful of our indexing. I think the idea doing language tie down that should be always our objective, but I think we shouldn't over index on that first. This is more like the final touches.
+
+
+ Seksom Suriyapa   1:51:12 Yeah.
+
+
+ Tomas Gorny   1:51:13 For this purpose, I actually think actually it could be even go taking us the wrong direction a little bit. You know, like like Cory by far the best. Ellen, you know, good contribution. Bank of America, very good and with with.
+
+
+ Drew Schulz   1:51:20 Mhm, Yeah.
+
+
+ Seksom Suriyapa   1:51:21 Yeah. Also, Thomas, I think the habit we have to remember, which is great coaching by him, is we only need to tell them what they need. We don't have to go beyond it. We have to like, you know, this is a stable business where we don't have to convince them too much, right? And that's the.
+
+
+ Drew Schulz   1:51:29 Very good.
+
+
+ Anne Brennan   1:51:38 OK.
+
+
+ Drew Schulz   1:51:38 Yeah.
+
+
+ Tomas Gorny   1:51:39 Yet. Yeah, there's nobody better. I mean, there are very few people in the world that you could like, even put up Cory here. You know, like literally the guy, the guy raised billions and billions of dollars and and he does it. He does it literally, literally. I mean, first that we can deploy his companies.
+
+
+ Drew Schulz   1:51:50 It's great at that.
+
+
+ Seksom Suriyapa   1:51:50 Yeah, I see that.
+
+
+ Tomas Gorny   1:52:02 That he's onboarding with us. And that's not a joke. That's exactly what they told us the other day. You know so and and so so he he knows his stuff he what he doesn't know what N knows better is the the the direct lenders he's the direct lenders but it still applies majority of it applies there.
+
+
+ Seksom Suriyapa   1:52:10 Yeah.
+
+
+ Anne Brennan   1:52:11 It. OK.
+
+
+ Seksom Suriyapa   1:52:14 Yeah. Yeah.
+
+
+ Anne Brennan   1:52:23 Yeah.
+
+
+ Tomas Gorny   1:52:25 You know, less on the future they they they not as big of farks holding you accountable to the big numbers but but but where he is right, those guys like Sibrus and the other guys, whatever you show them, they will just build covenants around it and then it's going to you know.
+
+
+ Anne Brennan   1:52:28 Yeah. Yeah. Yeah, that's it's a really, it's a really valid point, Thomas, because and then we can't take it in to to the to the banks. But if we want to argue a really aggressive multiple on the EBITDA, let's say we want to argue five times, right, if they see the numbers improving out in the future.
+
+
+ Yaniv Masjedi   1:52:48 Oh.
+
+
+ Anne Brennan   1:53:02 Future they won't give us the five because they'll say we'll give you this right now and right. And then so you make life difficult for yourself because you're showing them what the future beyond their their investment window looks like. So it is what it was a really valid point that he made actually like don't don't give them an inkling of.
+
+
+ Tomas Gorny   1:53:05 Yeah, yeah, yeah. Yeah, and even if if even on the beginning, although you argue that a little bit, but on the beginning he he is a master of like positioning like this NRR right versus the churn because he he ran into this problem. This is not, you know, it's pattern recognition. He he he did the same mistake and he ran into it and now he knows not to do it, you know?
+
+
+ Anne Brennan   1:53:22 What you what you're doing, you know? Yeah.
+
+
+ Drew Schulz   1:53:35 Yeah.
+
+
+ Tomas Gorny   1:53:41 And that's what we're getting from HORI. Like it's going to be, it's going to be better than any of the bankers because they're not credit guys, right? They're just bankers that, you know, they'd want to help us and then they're going to go to the credit card and they're going to get knocked over by them.
+
+
+ Anne Brennan   1:53:42 Yeah. That's right. Yeah. Yeah, that's right. So.
+
+
+ Tomas Gorny   1:53:59 No, but awesome job. Let's let's let's reconvene tomorrow. Oh, go ahead and I'm sorry, so.
+
+
+ Anne Brennan   1:54:03 Yeah, yeah, I did receive the financial package from Bank of America. So let's take a look at that tomorrow. Drew, what I was going to suggest, there's some cleaning up we've got to do in the finance piece. It sounds like Thomas wants to leverage you for go to market. I I want to make sure that we don't burn Drew out in the middle here.
+
+
+ Drew Schulz   1:54:11 Yeah. Could you forward that? Yep.
+
+
+ Tomas Gorny   1:54:21 No, hear what I would say have have Drew focusing with you like that's like that's his superpower there. But eventually he can help us with the other slides, right? Because because he also has to kind of get.
+
+
+ Anne Brennan   1:54:23 So sex and let's just. Yeah, with you.
+
+
+ Tomas Gorny   1:54:38 Back into the game, you took it over, right? But you got to start getting back into the game because we have day jobs, right? I mean, and that's you guys or that's true day job, right? Like I I got to get back to focusing much more on the task at hand.
+
+
+ Anne Brennan   1:54:39 Yeah. Yeah, that's right.
+
+
+ Tomas Gorny   1:54:55 And I am traveling for acquisitions. And so today is, you know, so I want to still work on it. But I I think we need to, we need to get all the comments. Let's meet tomorrow. Let's tech tomorrow. Look at the slides together.
+
+
+ Anne Brennan   1:55:01 Yeah.
+
+
+ Tomas Gorny   1:55:10 You know like from financial and non financial and then we go to rock.
+
+
+ Anne Brennan   1:55:14 Thanks. Yeah. So let me, I know that you mentioned earlier you wanted to help on the AI revenue. Let me do another pass of that with the messaging. Andrew, I have some thoughts. Let's do that in the morning, OK.
+
+
+ Seksom Suriyapa   1:55:16 Cool.
+
+
+ Tomas Gorny   1:55:26 Yeah. And and the way the the way I'm thinking you know like of it what what I meant help really you know looking at anything that we can pack into an AI revenue or or usage revenue it what he said that well forget that a I anything but.
+
+
+ Drew Schulz   1:55:27 OK.
+
+
+ Anne Brennan   1:55:41 Yeah.
+
+
+ Tomas Gorny   1:55:45 Subscription, right, right. Proceeds and in the way actually we get out of it in the future too like actually what we're doing now with with expert, right. It's what you you that's a platform fee that's not an AI, right. It's agnostic to use us, right. There's a platform fee then use us.
+
+
+ Drew Schulz   1:55:46 Yeah.
+
+
+ Anne Brennan   1:55:46 Uh, see. Yeah, yeah, yeah. Yeah.
+
+
+ Yaniv Masjedi   1:56:03 Yeah.
+
+
+ Tomas Gorny   1:56:05 We can do more of that. We can, you know what, what give me the idea just over all those meetings to think about our pricing strategy a little bit differently because you know it's all smoke and mirrors like majority of the people they're going to convert they cost into.
+
+
+ Yaniv Masjedi   1:56:14 Mhm.
+
+
+ Anne Brennan   1:56:17 Yes.
+
+
+ Tomas Gorny   1:56:21 Into how much money they spend and how much money they and it won't matter if it's seat or not seat. We can give them seat discount, right? But it's more, it's more how how the world view us, you know what I mean? That's more important, you know?
+
+
+ Anne Brennan   1:56:26 Totally. Yeah. Yeah.
+
+
+ Seksom Suriyapa   1:56:27 Yeah.
+
+
+ Drew Schulz   1:56:33 Yeah.
+
+
+ Anne Brennan   1:56:35 Yeah, I was even thinking more aggressively than we were discussing on that call. Every time Ken renews and I'll see it dramatically like from this day forward, he should be renewing not on a seat basis, but he should be renewing on a usage or some outcome or.
+
+
+ Tomas Gorny   1:56:48 Correct. But I need to coach them to do that. We need to develop this through a strategy. You know what I mean? Like.
+
+
+ Anne Brennan   1:56:52 Yeah. Agreed. Yeah. Yeah. Yeah. Yeah.
+
+
+ Yaniv Masjedi   1:56:55 Um.
+
+
+ Anne Brennan   1:56:57 Yeah.
+
+
+ Seksom Suriyapa   1:56:57 Yeah, it sounds this is really one where you have to turn it into an actual renewal motion that just that is what they do basically. Yeah, so we can represent it that way too.
+
+
+ Tomas Gorny   1:56:57 But.
+
+
+ Anne Brennan   1:57:02 Exactly. Yep. And that's why I was saying.
+
+
+ Tomas Gorny   1:57:04 Yeah.
+
+
+ Anne Brennan   1:57:07 Yeah, it's not. It is not literally from this day forward, but that's our mindset has to change.
+
+
+ Seksom Suriyapa   1:57:10 Yeah, it's kinda. It's also like we're not experimenting with like, it's a programmatic way of doing it.
+
+
+ Anne Brennan   1:57:16 Exactly. Yeah. That's what I mean by even being more aggressive than you were, Thomas, in terms of thinking about it. It's like we don't offer renewals anymore on a seat basis. These are our options, Mr. Mark. Sorry, Mr. Marketing Guide. I might be out of line here, so tell me to get back in my box.
+
+
+ Tomas Gorny   1:57:18 Yeah. Yeah, exactly.
+
+
+ Yaniv Masjedi   1:57:32 Yeah. No, it's good. No, it's good.
+
+
+ Seksom Suriyapa   1:57:32 Or or the seat price is really high.
+
+
+ Drew Schulz   1:57:33 Yeah, no.
+
+
+ Anne Brennan   1:57:35 Yeah. Yeah.
+
+
+ Tomas Gorny   1:57:37 Yeah, exactly. Look, I mean we we figured that that's actually the fun part, right. I mean and so like again guys like let's come, let's, let's, let's, let's reserve some time like couple of hours we but what what would be good by the time I think.
+
+
+ Seksom Suriyapa   1:57:43 Yeah.
+
+
+ Tomas Gorny   1:57:53 You know we can do it later afternoon. So you Seksom and Drew, you guys extract the comments so it's productive. So we have the comments, we organize, you know we we can go through that tomorrow and then and then we get to rock a little bit then we divide and conquer again who works on what.
+
+
+ Anne Brennan   1:57:59 Yeah.
+
+
+ Seksom Suriyapa   1:58:00 Yeah. Yep.
+
+
+ Drew Schulz   1:58:08 Yeah.
+
+
+ Anne Brennan   1:58:12 Yeah. OK. Sounds good. Cool. Thank you, guys.
+
+
+ Drew Schulz   1:58:13 Perfect.
+
+
+ Seksom Suriyapa   1:58:13 Alright, sounds good. Thank you.
+
+
+ Tomas Gorny   1:58:15 But but good work I think. I mean any other feedback outside of that from you guys now?
+
+
+ Seksom Suriyapa   1:58:19 Yeah.
+
+
+ Anne Brennan   1:58:21 Yeah, I think we're good.
+
+
+ Seksom Suriyapa   1:58:22 No, I think you covered it.
+
+
+ Tomas Gorny   1:58:26 Do what you think. You're quiet.
+
+
+ Drew Schulz   1:58:27 I think the deck, I think the deck looks very, very good. I think it's, I think it's looking, I think it's looking very good. I think we need to show a little bit more on.
+
+
+ Tomas Gorny   1:58:33 I actually think we still have some rock, but I think it's it's better, you know?
+
+
+ Anne Brennan   1:58:34 OK.
+
+
+ Drew Schulz   1:58:37 Yeah, it's it's come a long way. Yeah, this is.
+
+
+ Tomas Gorny   1:58:40 Yeah, yeah, I think, I think there's it's still we got to tighten it up. It can be much better, but but it was good for first run.
+
+
+ Seksom Suriyapa   1:58:45 Yeah.
+
+
+ Drew Schulz   1:58:49 100%.
+
+
+ Yaniv Masjedi   1:58:50 So when we think about timing, like what's?
+
+
+ Tomas Gorny   1:58:50 Yeah but again but but you guys says numbers look awesome like the same way you complimenting this I I am impressed for the first one is way better than I expected like it's it's just it was it was it's it's it's super tight how you guys presented.
+
+
+ Anne Brennan   1:58:50 Yeah.
+
+
+ Tomas Gorny   1:59:07 And delivered.
+
+
+ Drew Schulz   1:59:07 And sounds like A and sounds like a public company CFO.
+
+
+ Anne Brennan   1:59:08 Mm.
+
+
+ Seksom Suriyapa   1:59:08 So. She does. No, she really does. Actually, I was like closing. I said close my eyes. It just sounds like a quarterly earnings call with the public company CFO. How early in the day? Like, do we have to wait till? Do we have to wait till like?
+
+
+ Tomas Gorny   1:59:12 No, but both. I mean, but to both. Kudos to both of you guys, you know? Very, very solid again. But but but Drew, Drew, kudos to you too, because I know you built this stuff too.
+
+
+ Anne Brennan   1:59:23 It's a bit sleepy.
+
+
+ Drew Schulz   1:59:27 Thank you.
+
+
+ Seksom Suriyapa   1:59:28 Do we have to wait till late afternoon or are we able to meet earlier? Because I I think we'll have our comment together before like late.
+
+
+ Tomas Gorny   1:59:33 Look, the the problem I have, I can meet, I cannot meet until two and the reason for that is because I got all morning with the product engineering team until and so.
+
+
+ Drew Schulz   1:59:33 Yeah, I'm gonna get. I'm gonna get him from Edrick right after this.
+
+
+ Seksom Suriyapa   1:59:45 Got it. Should we can we do 2:00 then? Is that?
+
+
+ Anne Brennan   1:59:47 Right.
+
+
+ Tomas Gorny   1:59:49 We we can do 2:00. Let me check, check. Let me check if I have something at two. You know what I will have to move something for two because now I put a meeting from two. I can move that meeting for later but but but I we we can book it for if you we book it for 2:00 AM.
+
+
+ Anne Brennan   1:59:51 OK, let's do that and then.
+
+
+ Seksom Suriyapa   1:59:51 All right. You have Karina PU said it.
+
+
+ Anne Brennan   2:00:02 OK, right.
+
+
+ Seksom Suriyapa   2:00:03 All right. OK, will you do Karina or do we do we need to reach her?
+
+
+ Anne Brennan   2:00:07 Great. OK.
+
+
+ Tomas Gorny   2:00:12 No, we need to reach out to Karina and I can. If you guys do, it would help.
+
+
+ Seksom Suriyapa   2:00:16 OK.
+
+
+ Anne Brennan   2:00:17 OK.
+
+
+ Seksom Suriyapa   2:00:17 Yeah, OK. Yeah, we'll do it. I'll take it.
+
+
+ Anne Brennan   2:00:20 And sex someone through. Let's really sex. Oh, you're there. Sorry. Let's plan our morning accordingly then, so that it's as productive as possible at two. OK.
+
+
+ Yaniv Masjedi   2:00:25 No, he's here.
+
+
+ Seksom Suriyapa   2:00:26 No, no, I'm here.
+
+
+ Drew Schulz   2:00:31 Percent Yep. Can you can you forward me the B of A package that you received, Anne?
+
+
+ Seksom Suriyapa   2:00:33 Yep.
+
+
+ Anne Brennan   2:00:36 Yeah, yeah, I'll do that.
+
+
+ Yaniv Masjedi   2:00:38 Yeah.
+
+
+ Tomas Gorny   2:00:41 OK. All right, guys, this is awesome. And also thank you. There was great rock. Thank you, everybody. Thank you.
+
+
+ Yaniv Masjedi   2:00:48 Thanks. Thanks. Bye.
+
+
+ Yaniv Masjedi stopped transcription
