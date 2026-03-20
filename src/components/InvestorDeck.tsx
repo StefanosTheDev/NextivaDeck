@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
 
 import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "./slideRegistry";
+import ScaledSlide from "./ScaledSlide";
 
 export default function InvestorDeck() {
   const [slides, setSlides] = useState<SlideDef[]>(() => resolveSlides(DEFAULT_SLIDE_ORDER));
@@ -167,7 +168,7 @@ export default function InvestorDeck() {
         </div>
       )}
 
-      {/* Slide layer */}
+      {/* Slide layer — scaled to fit viewport */}
       <div
         style={{
           position: "absolute",
@@ -176,7 +177,9 @@ export default function InvestorDeck() {
           transition: "opacity 0.3s ease-in-out",
         }}
       >
-        <Slide slideNumber={safeCur + 1} />
+        <ScaledSlide>
+          <Slide slideNumber={safeCur + 1} />
+        </ScaledSlide>
       </div>
 
       {/* Navigation overlay */}
