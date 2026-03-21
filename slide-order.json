@@ -40,7 +40,6 @@
     "ai-tailwind-4",
     "ai-tailwind-3",
     "ai-defensibility-matrix",
-    "ai-tandem",
     "ai-agents-in-action",
     "customer-use-cases",
     "monetization-evolution-copy",
@@ -68,6 +67,7 @@
     "closing",
     "appendix-divider",
     "unified-data-model",
+    "ai-tandem",
     "appendix-products",
     "customer-base",
     "durable-edge",
@@ -148,7 +148,6 @@
     "solution-copy",
     "agentic-opp-copy-4",
     "agentic-opp-copy-5",
-    "ai-tailwind",
     "ai-tailwind-4",
     "ai-tailwind-3",
     "competitive-moat",
@@ -169,6 +168,7 @@
     "agentic-opp-3",
     "ai-defensibility-matrix",
     "system-of-action-copy",
-    "system-of-action"
+    "system-of-action",
+    "ai-tailwind-visual"
   ]
 }
