@@ -80,27 +80,9 @@ export default function CatalogPage() {
           setSavedHiddenSlides(data.hiddenSlides);
         }
 
-        // Restore pending changes from localStorage, or use saved values
-        try {
-          const pending = localStorage.getItem("catalogPendingChanges");
-          if (pending) {
-            const p = JSON.parse(pending);
-            setOrder(Array.isArray(p.order) ? p.order : data.order);
-            setHiddenSlides(Array.isArray(p.hiddenSlides) ? p.hiddenSlides : (data.hiddenSlides || []));
-            if (p.categories && typeof p.categories === "object" && !Array.isArray(p.categories)) {
-              setCategories(p.categories);
-            }
-            if (Array.isArray(p.categoryNames)) {
-              setCategoryNames(p.categoryNames);
-            }
-          } else {
-            setOrder(data.order);
-            setHiddenSlides(data.hiddenSlides || []);
-          }
-        } catch {
-          setOrder(data.order);
-          setHiddenSlides(data.hiddenSlides || []);
-        }
+        localStorage.removeItem("catalogPendingChanges");
+        setOrder(data.order);
+        setHiddenSlides(data.hiddenSlides || []);
 
         setLoaded(true);
       })
