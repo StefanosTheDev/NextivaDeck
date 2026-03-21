@@ -96,6 +96,7 @@ import AIDefensibilityV2Copy2Slide from "./slides/AIDefensibilityV2Copy2Slide";
 import MonetizationEvolutionCopySlide from "./slides/MonetizationEvolutionCopySlide";
 import AITailwindVisualSlide from "./slides/AITailwindVisualSlide";
 import SystemOfActionVisualCopySlide from "./slides/SystemOfActionVisualCopySlide";
+import AppendixDividerSlide from "./slides/AppendixDividerSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -206,6 +207,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-defensibility-v2-copy-2": { id: "ai-defensibility-v2-copy-2", label: "AI Defensibility (3 Pillars)", component: AIDefensibilityV2Copy2Slide, theme: "dark" },
   "monetization-evolution-copy": { id: "monetization-evolution-copy", label: "Monetization Evolution", component: MonetizationEvolutionCopySlide, theme: "dark" },
   "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
+  "appendix-divider": { id: "appendix-divider", label: "Appendix", component: AppendixDividerSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
