@@ -89,10 +89,10 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
         <p
           style={{
             fontWeight: 700,
-            fontSize: 15,
-            letterSpacing: "0.08em",
+            fontSize: 18,
+            letterSpacing: "0.05em",
             textTransform: "uppercase",
-            color: ACCENT,
+            color: "#CCC7C3",
             margin: "0 0 10px",
           }}
         >

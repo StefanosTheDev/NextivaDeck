@@ -36,7 +36,7 @@ export default function CustomerBaseLovableSlide({ slideNumber = 50 }: { slideNu
         transition={{ duration: 0.6 }}
         style={{ padding: "72px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 20, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           CUSTOMERS
         </p>
         <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
@@ -78,7 +78,7 @@ export default function CustomerBaseLovableSlide({ slideNumber = 50 }: { slideNu
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.08)",
                   borderLeft: "4px solid #9BB5CC",
-                  borderRadius: 12,
+                  borderRadius: 14,
                   padding: "24px 32px",
                   display: "flex",
                   alignItems: "baseline",
@@ -105,7 +105,7 @@ export default function CustomerBaseLovableSlide({ slideNumber = 50 }: { slideNu
             style={{
               background: "rgba(40,96,178,0.12)",
               border: "1px solid rgba(40,96,178,0.2)",
-              borderRadius: 12,
+              borderRadius: 14,
               padding: "24px 36px",
               width: "100%",
             }}

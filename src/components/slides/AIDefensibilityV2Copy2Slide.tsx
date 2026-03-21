@@ -1,8 +1,9 @@
 "use client";
+import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { Shield, Radio, Zap } from "lucide-react";
 
-const CORAL = "#F0A88C";
+const ACCENT = "#7EB3E8";
 
 const pillars = [
   {
@@ -55,7 +56,7 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
     <div
       className="slide"
       style={{
-        background: "linear-gradient(170deg, #061A37 0%, #0A1E3D 100%)",
+        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
         display: "flex",
         flexDirection: "column",
         position: "relative",
@@ -63,7 +64,6 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
       }}
       data-speaker-notes="Infrastructure is the moat. We are not a feature — we are the foundation. AI without real-time data is guessing. We give it ground truth. And we don't charge for access — we capture value as it happens. Every conversation, resolution, and outcome is monetizable. Growth is no longer tied to seats — it scales with interactions and outcomes."
     >
-      {/* Subtle glow */}
       <div
         style={{
           position: "absolute",
@@ -72,19 +72,23 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
           width: 800,
           height: 500,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(240,168,140,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(40,96,178,0.06) 0%, transparent 70%)",
         }}
       />
 
-      {/* Header */}
-      <header style={{ padding: "44px 80px 0", flexShrink: 0, position: "relative", zIndex: 1 }}>
+      <motion.header
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        style={{ padding: "44px 80px 0", flexShrink: 0, position: "relative", zIndex: 1 }}
+      >
         <p
           style={{
             fontWeight: 700,
-            fontSize: 15,
-            letterSpacing: "0.2em",
+            fontSize: 18,
+            letterSpacing: "0.05em",
             textTransform: "uppercase",
-            color: CORAL,
+            color: "#CCC7C3",
             margin: 0,
           }}
         >
@@ -94,19 +98,21 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
           className="font-heading"
           style={{
             fontSize: 48,
-            fontWeight: 600,
+            fontWeight: 500,
             color: "#FFFFFF",
             margin: "10px 0 0",
             lineHeight: 1.15,
           }}
         >
           Three Structural Advantages That Make Nextiva{" "}
-          <span style={{ color: CORAL }}>AI-Proof</span>
+          <span style={{ color: ACCENT }}>AI-Proof</span>
         </h1>
-      </header>
+      </motion.header>
 
-      {/* Three columns */}
-      <main
+      <motion.main
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
           padding: "28px 80px 0",
@@ -118,42 +124,43 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
           minHeight: 0,
         }}
       >
-        {pillars.map((col) => (
-          <div
+        {pillars.map((col, i) => (
+          <motion.div
             key={col.number}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
             style={{
-              background: "rgba(240,168,140,0.04)",
-              border: "1.5px solid rgba(240,168,140,0.12)",
-              borderRadius: 16,
+              background: "rgba(40,96,178,0.04)",
+              border: "1.5px solid rgba(40,96,178,0.12)",
+              borderRadius: 14,
               padding: "24px 24px 20px",
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
             }}
           >
-            {/* Number + Icon */}
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10 }}>
               <span
                 className="font-heading"
                 style={{
                   fontSize: 30,
                   fontWeight: 700,
-                  color: "rgba(240,168,140,0.22)",
+                  color: "rgba(40,96,178,0.22)",
                   lineHeight: 1,
                 }}
               >
                 {col.number}
               </span>
-              <col.icon size={22} color={CORAL} style={{ opacity: 0.7 }} />
+              <col.icon size={22} color={ACCENT} style={{ opacity: 0.7 }} />
             </div>
 
-            {/* Title + subtitle */}
             <h2
               className="font-heading"
               style={{
                 fontSize: 22,
                 fontWeight: 700,
-                color: CORAL,
+                color: ACCENT,
                 margin: "0 0 3px",
                 lineHeight: 1.25,
               }}
@@ -172,14 +179,12 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
               {col.subtitle}
             </p>
 
-            {/* Divider */}
-            <div style={{ height: 1, background: "rgba(240,168,140,0.12)", marginBottom: 14 }} />
+            <div style={{ height: 1, background: "rgba(40,96,178,0.12)", marginBottom: 14 }} />
 
-            {/* Supporting claim box */}
             <div
               style={{
                 padding: "14px 16px",
-                background: "rgba(240,168,140,0.08)",
+                background: "rgba(40,96,178,0.08)",
                 borderRadius: 10,
                 display: "flex",
                 gap: 12,
@@ -188,7 +193,7 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
             >
               <col.icon
                 size={22}
-                color={CORAL}
+                color={ACCENT}
                 style={{ flexShrink: 0, marginTop: 2 }}
               />
               <div>
@@ -218,19 +223,17 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
               </div>
             </div>
 
-            {/* Divider */}
-            <div style={{ height: 1, background: "rgba(240,168,140,0.12)", margin: "14px 0" }} />
+            <div style={{ height: 1, background: "rgba(40,96,178,0.12)", margin: "14px 0" }} />
 
-            {/* Points */}
             <div style={{ display: "flex", flexDirection: "column", gap: 8, flex: 1 }}>
-              {col.points.map((pt, i) => (
-                <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+              {col.points.map((pt, idx) => (
+                <div key={idx} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
                   <span
                     style={{
                       width: 5,
                       height: 5,
                       borderRadius: "50%",
-                      background: CORAL,
+                      background: ACCENT,
                       flexShrink: 0,
                       marginTop: 8,
                       opacity: 0.7,
@@ -250,21 +253,20 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
               ))}
             </div>
 
-            {/* Callout for column 3 */}
             {"callout" in col && col.callout && (
               <div
                 style={{
                   marginTop: 12,
                   padding: "10px 14px",
-                  background: "rgba(240,168,140,0.12)",
-                  border: "1px solid rgba(240,168,140,0.25)",
+                  background: "rgba(40,96,178,0.12)",
+                  border: "1px solid rgba(40,96,178,0.25)",
                   borderRadius: 10,
                 }}
               >
                 <p style={{
                   fontSize: 14,
                   fontWeight: 700,
-                  color: CORAL,
+                  color: ACCENT,
                   margin: 0,
                   lineHeight: 1.45,
                 }}>
@@ -272,27 +274,31 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
                 </p>
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
-      </main>
+      </motion.main>
 
-      {/* Bottom bar */}
-      <div style={{ padding: "12px 80px 0", position: "relative", zIndex: 1, flexShrink: 0 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        style={{ padding: "12px 80px 0", position: "relative", zIndex: 1, flexShrink: 0 }}
+      >
         <div
           style={{
-            background: "rgba(240,168,140,0.10)",
-            border: "1px solid rgba(240,168,140,0.20)",
+            background: "rgba(40,96,178,0.10)",
+            border: "1px solid rgba(40,96,178,0.20)",
             borderRadius: 14,
             padding: "14px 40px",
             textAlign: "center",
           }}
         >
           <p style={{ fontSize: 19, color: "#FFFFFF", margin: 0, lineHeight: 1.5 }}>
-            <span style={{ fontWeight: 700, color: CORAL }}>Nextiva is not a tool.</span>{" "}
+            <span style={{ fontWeight: 700, color: ACCENT }}>Nextiva is not a tool.</span>{" "}
             It is the infrastructure layer where AI executes — a system of action, not a system of record.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>

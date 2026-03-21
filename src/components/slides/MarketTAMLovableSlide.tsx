@@ -20,7 +20,7 @@ export default function MarketTAMLovableSlide({ slideNumber = 50 }: { slideNumbe
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "56px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 20, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           MARKET OPPORTUNITY
         </p>
         <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
@@ -38,7 +38,7 @@ export default function MarketTAMLovableSlide({ slideNumber = 50 }: { slideNumbe
           style={{
             background: "rgba(255,255,255,0.04)",
             border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 20,
+            borderRadius: 14,
             padding: "60px 64px",
             display: "flex", flexDirection: "column",
             alignItems: "center", textAlign: "center",
@@ -75,7 +75,7 @@ export default function MarketTAMLovableSlide({ slideNumber = 50 }: { slideNumbe
           style={{
             background: "rgba(40,96,178,0.12)",
             border: "2px solid rgba(40,96,178,0.4)",
-            borderRadius: 20,
+            borderRadius: 14,
             padding: "60px 64px",
             display: "flex", flexDirection: "column",
             alignItems: "center", textAlign: "center",
