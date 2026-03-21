@@ -16,10 +16,10 @@ const columns = [
     whyItMatters: "Fast-moving, often distributed multi-location teams need solutions that deploy quickly.",
   },
   {
-    keyword: "unified",
-    subtitle: "data",
-    whatItMeans: "All your data in one place",
-    whyItMatters: "Outcome-focused operators need full visibility and real-time insight",
+    keyword: "powerful",
+    subtitle: "technology",
+    whatItMeans: "Enterprise-class technology",
+    whyItMatters: "Busy operators don't need large IT teams to compete head-to-head against the giants.",
   },
 ];
 
@@ -84,13 +84,13 @@ export default function WhatWeAreCloseSlide({ slideNumber = 58 }: { slideNumber?
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
-          flex: 1,
-          padding: "56px 100px 0",
+          position: "absolute",
+          left: 100,
+          right: 100,
+          bottom: "50%",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: 20,
-          alignContent: "start",
-          position: "relative",
           zIndex: 1,
         }}
       >
@@ -163,28 +163,30 @@ export default function WhatWeAreCloseSlide({ slideNumber = 58 }: { slideNumber?
         ))}
       </motion.main>
 
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        style={{ padding: "0 100px", position: "relative", zIndex: 1 }}
-      >
-        <div
-          style={{
-            background: "rgba(40,96,178,0.1)",
-            border: "1px solid rgba(40,96,178,0.2)",
-            borderRadius: 14,
-            padding: "16px 40px",
-            textAlign: "center",
-          }}
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 1 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          style={{ padding: "0 100px" }}
         >
-          <p style={{ fontSize: 22, color: "#FFFFFF", margin: 0, lineHeight: 1.5 }}>
-            Serving small to massive middle — millions of businesses that need enterprise-grade CX without enterprise complexity.
-          </p>
-        </div>
-      </motion.div>
+          <div
+            style={{
+              background: "rgba(40,96,178,0.1)",
+              border: "1px solid rgba(40,96,178,0.2)",
+              borderRadius: 14,
+              padding: "16px 40px",
+              textAlign: "center",
+            }}
+          >
+            <p style={{ fontSize: 22, color: "#FFFFFF", margin: 0, lineHeight: 1.5 }}>
+              Serving small to massive middle — millions of businesses that need enterprise-grade CX without enterprise complexity.
+            </p>
+          </div>
+        </motion.div>
 
-      <SlideFooter slideNumber={slideNumber} variant="dark" />
+        <SlideFooter slideNumber={slideNumber} variant="dark" />
+      </div>
     </div>
   );
 }
