@@ -95,6 +95,7 @@ import SystemOfActionCopySlide from "./slides/SystemOfActionCopySlide";
 import AIDefensibilityV2Copy2Slide from "./slides/AIDefensibilityV2Copy2Slide";
 import MonetizationEvolutionCopySlide from "./slides/MonetizationEvolutionCopySlide";
 import AITailwindVisualSlide from "./slides/AITailwindVisualSlide";
+import SystemOfActionVisualCopySlide from "./slides/SystemOfActionVisualCopySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -201,6 +202,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-use-cases": { id: "customer-use-cases", label: "Customer Use Cases (4-card)", component: CustomerUseCasesSlide, theme: "dark" },
   "system-of-action": { id: "system-of-action", label: "System of Action", component: SystemOfActionSlide, theme: "dark" },
   "system-of-action-copy": { id: "system-of-action-copy", label: "System of Action (copy)", component: SystemOfActionCopySlide, theme: "dark" },
+  "system-of-action-visual-copy": { id: "system-of-action-visual-copy", label: "System of Action Visual (Understand → Decide → Act)", component: SystemOfActionVisualCopySlide, theme: "dark" },
   "ai-defensibility-v2-copy-2": { id: "ai-defensibility-v2-copy-2", label: "AI Defensibility (3 Pillars)", component: AIDefensibilityV2Copy2Slide, theme: "dark" },
   "monetization-evolution-copy": { id: "monetization-evolution-copy", label: "Monetization Evolution", component: MonetizationEvolutionCopySlide, theme: "dark" },
   "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
