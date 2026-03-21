@@ -52,7 +52,6 @@ export default function CatalogPage() {
   const [savedCategoryNames, setSavedCategoryNames] = useState<string[]>([]);
   const [hiddenSlides, setHiddenSlides] = useState<string[]>([]);
   const [savedHiddenSlides, setSavedHiddenSlides] = useState<string[]>([]);
-  const [serverVersion, setServerVersion] = useState("");
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [loaded, setLoaded] = useState(false);
@@ -81,12 +80,27 @@ export default function CatalogPage() {
           setSavedHiddenSlides(data.hiddenSlides);
         }
 
-        const sv = data.version || "";
-        setServerVersion(sv);
-
-        localStorage.removeItem("catalogPendingChanges");
-        setOrder(data.order);
-        setHiddenSlides(data.hiddenSlides || []);
+        // Restore pending changes from localStorage, or use saved values
+        try {
+          const pending = localStorage.getItem("catalogPendingChanges");
+          if (pending) {
+            const p = JSON.parse(pending);
+            setOrder(Array.isArray(p.order) ? p.order : data.order);
+            setHiddenSlides(Array.isArray(p.hiddenSlides) ? p.hiddenSlides : (data.hiddenSlides || []));
+            if (p.categories && typeof p.categories === "object" && !Array.isArray(p.categories)) {
+              setCategories(p.categories);
+            }
+            if (Array.isArray(p.categoryNames)) {
+              setCategoryNames(p.categoryNames);
+            }
+          } else {
+            setOrder(data.order);
+            setHiddenSlides(data.hiddenSlides || []);
+          }
+        } catch {
+          setOrder(data.order);
+          setHiddenSlides(data.hiddenSlides || []);
+        }
 
         setLoaded(true);
       })
@@ -101,11 +115,11 @@ export default function CatalogPage() {
     const catsChanged = JSON.stringify(categories) !== JSON.stringify(savedCategories);
     const catNamesChanged = JSON.stringify(categoryNames) !== JSON.stringify(savedCategoryNames);
     if (orderChanged || hiddenChanged || catsChanged || catNamesChanged) {
-      localStorage.setItem("catalogPendingChanges", JSON.stringify({ version: serverVersion, order, hiddenSlides, categories, categoryNames }));
+      localStorage.setItem("catalogPendingChanges", JSON.stringify({ order, hiddenSlides, categories, categoryNames }));
     } else {
       localStorage.removeItem("catalogPendingChanges");
     }
-  }, [order, hiddenSlides, categories, categoryNames, savedOrder, savedHiddenSlides, savedCategories, savedCategoryNames, serverVersion, loaded]);
+  }, [order, hiddenSlides, categories, categoryNames, savedOrder, savedHiddenSlides, savedCategories, savedCategoryNames, loaded]);
 
   const uniqueCategories = categoryNames;
 
@@ -126,8 +140,6 @@ export default function CatalogPage() {
         body: JSON.stringify({ order, categories, categoryNames, hiddenSlides }),
       });
       if (res.ok) {
-        const result = await res.json();
-        if (result.version) setServerVersion(result.version);
         setSavedOrder([...order]);
         setSavedCategories({ ...categories });
         setSavedCategoryNames([...categoryNames]);
@@ -214,45 +226,49 @@ export default function CatalogPage() {
   }, []);
 
   const [pdfStatus, setPdfStatus] = useState<"idle" | "generating" | "done">("idle");
-  const [pdfProgress, setPdfProgress] = useState("");
 
   const downloadPdf = useCallback(async () => {
     setPdfStatus("generating");
-    setPdfProgress("Preparing slides…");
     try {
-      const { generatePdfClient } = await import("@/lib/clientExport");
-      await generatePdfClient((done, total) => {
-        setPdfProgress(`${done}/${total} slides`);
-      });
+      const res = await fetch("/api/generate-pdf");
+      if (!res.ok) throw new Error("PDF generation failed");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Nextiva-Investor-Deck-2026.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
       setPdfStatus("done");
-      setPdfProgress("");
       setTimeout(() => setPdfStatus("idle"), 3000);
-    } catch (e) {
-      console.error("PDF generation failed:", e);
+    } catch {
       setPdfStatus("idle");
-      setPdfProgress("");
       alert("Failed to generate PDF. Please try again.");
     }
   }, []);
 
   const [pptxStatus, setPptxStatus] = useState<"idle" | "generating" | "done">("idle");
-  const [pptxProgress, setPptxProgress] = useState("");
 
   const downloadPptx = useCallback(async () => {
     setPptxStatus("generating");
-    setPptxProgress("Preparing slides…");
     try {
-      const { generatePptxClient } = await import("@/lib/clientExport");
-      await generatePptxClient((done, total) => {
-        setPptxProgress(`${done}/${total} slides`);
-      });
+      const res = await fetch("/api/generate-pptx");
+      if (!res.ok) throw new Error("PPTX generation failed");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Nextiva-Investor-Deck-2026.pptx";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
       setPptxStatus("done");
-      setPptxProgress("");
       setTimeout(() => setPptxStatus("idle"), 3000);
-    } catch (e) {
-      console.error("PPTX generation failed:", e);
+    } catch {
       setPptxStatus("idle");
-      setPptxProgress("");
       alert("Failed to generate PowerPoint. Please try again.");
     }
   }, []);
@@ -362,7 +378,7 @@ export default function CatalogPage() {
             style={{ opacity: pdfStatus === "generating" ? 0.6 : 1 }}
           >
             {pdfStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pdfStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <Download size={15} style={{ flexShrink: 0 }} />}
-            {pdfStatus === "generating" ? (pdfProgress || "Generating…") : pdfStatus === "done" ? "Downloaded!" : "Generate PDF"}
+            {pdfStatus === "generating" ? "Generating…" : pdfStatus === "done" ? "Downloaded!" : "Generate PDF"}
           </button>
           <button
             onClick={downloadPptx}
@@ -371,7 +387,7 @@ export default function CatalogPage() {
             style={{ opacity: pptxStatus === "generating" ? 0.6 : 1 }}
           >
             {pptxStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pptxStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <FileDown size={15} style={{ flexShrink: 0 }} />}
-            {pptxStatus === "generating" ? (pptxProgress || "Generating…") : pptxStatus === "done" ? "Downloaded!" : "Generate PPTX"}
+            {pptxStatus === "generating" ? "Generating…" : pptxStatus === "done" ? "Downloaded!" : "Generate PPTX"}
           </button>
           {hasChanges && (
             <button onClick={() => { if (window.confirm("Undo all unsaved changes? This will revert slide order and visibility back to the last saved state.")) resetAll(); }} className="catalog-btn-outline">
