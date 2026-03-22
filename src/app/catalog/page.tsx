@@ -56,7 +56,13 @@ export default function CatalogPage() {
   const [saved, setSaved] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
-  const [viewFilter, setViewFilter] = useState<"all" | "published" | "hidden">("all");
+  const [viewFilter, setViewFilter] = useState<"all" | "published" | "hidden">(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("catalogViewFilter");
+      if (stored === "all" || stored === "published" || stored === "hidden") return stored;
+    }
+    return "all";
+  });
   const [showPreview, setShowPreview] = useState(false);
   const savedTimeout = useRef<NodeJS.Timeout>(undefined);
 
@@ -104,6 +110,23 @@ export default function CatalogPage() {
       })
       .catch(() => setLoaded(true));
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("catalogViewFilter", viewFilter);
+  }, [viewFilter]);
+
+  useEffect(() => {
+    if (!loaded) return;
+    const target = localStorage.getItem("catalogScrollTarget");
+    if (!target) return;
+    localStorage.removeItem("catalogScrollTarget");
+    requestAnimationFrame(() => {
+      const el = document.querySelector(`[data-slide-id="${target}"]`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  }, [loaded]);
 
   // Persist all pending changes to localStorage so they survive refreshes
   useEffect(() => {
