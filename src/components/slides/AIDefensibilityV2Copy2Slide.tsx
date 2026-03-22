@@ -80,7 +80,7 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "44px 80px 0", flexShrink: 0, position: "relative", zIndex: 1 }}
+        style={{ padding: "60px 100px 0", flexShrink: 0, position: "relative", zIndex: 1, textAlign: "center" }}
       >
         <p
           style={{
@@ -97,7 +97,7 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
         <h1
           className="font-heading"
           style={{
-            fontSize: 48,
+            fontSize: 60,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: "10px 0 0",
