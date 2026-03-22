@@ -50,18 +50,27 @@ export default function CXPortfolioArchYanivV1Slide({
         transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 15,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            color: "#CCC7C3",
-            margin: "0 0 10px",
-          }}
-        >
-          OUR SOLUTION
-        </p>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginBottom: 10 }}>
+          <p
+            style={{
+              fontWeight: 700,
+              fontSize: 15,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#CCC7C3",
+              margin: 0,
+            }}
+          >
+            OUR SOLUTION
+          </p>
+          <span style={{
+            padding: "2px 10px", borderRadius: 12,
+            background: "rgba(217,119,6,0.25)", border: "1px solid rgba(217,119,6,0.4)",
+            color: "#fbbf24", fontSize: 12, fontWeight: 700, letterSpacing: "0.04em",
+          }}>
+            V1
+          </span>
+        </div>
         <h1
           className="font-heading"
           style={{
