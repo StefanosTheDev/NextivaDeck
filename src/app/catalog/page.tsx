@@ -68,21 +68,37 @@ export default function CatalogPage() {
           setSavedOrder(data.order);
         }
         if (data.categories && typeof data.categories === "object") {
-          setCategories(data.categories);
           setSavedCategories(data.categories);
         }
         const savedNames: string[] = Array.isArray(data.categoryNames) ? data.categoryNames : [];
         const namesFromAssignments = data.categories ? Object.values(data.categories) as string[] : [];
         const merged = Array.from(new Set([...savedNames, ...namesFromAssignments])).sort();
-        setCategoryNames(merged);
         setSavedCategoryNames(merged);
         if (Array.isArray(data.hiddenSlides)) {
           setSavedHiddenSlides(data.hiddenSlides);
         }
 
-        localStorage.removeItem("catalogPendingChanges");
-        setOrder(data.order);
-        setHiddenSlides(data.hiddenSlides || []);
+        const pending = localStorage.getItem("catalogPendingChanges");
+        if (pending) {
+          try {
+            const p = JSON.parse(pending);
+            setOrder(Array.isArray(p.order) ? p.order : data.order);
+            setHiddenSlides(Array.isArray(p.hiddenSlides) ? p.hiddenSlides : data.hiddenSlides || []);
+            setCategories(p.categories && typeof p.categories === "object" ? p.categories : (data.categories || {}));
+            setCategoryNames(Array.isArray(p.categoryNames) ? p.categoryNames : merged);
+          } catch {
+            setOrder(data.order);
+            setHiddenSlides(data.hiddenSlides || []);
+            setCategories(data.categories || {});
+            setCategoryNames(merged);
+            localStorage.removeItem("catalogPendingChanges");
+          }
+        } else {
+          setOrder(data.order);
+          setHiddenSlides(data.hiddenSlides || []);
+          setCategories(data.categories || {});
+          setCategoryNames(merged);
+        }
 
         setLoaded(true);
       })
