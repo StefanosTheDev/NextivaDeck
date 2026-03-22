@@ -102,17 +102,17 @@
     "platform-copy-2"
   ],
   "categories": {
-    "world-moving-thomas": "from Tomas",
-    "what-we-are-close-thomas": "from Tomas",
-    "cx-portfolio-thomas": "from Tomas",
-    "agentic-opp-v2-thomas": "from Tomas",
-    "cx-portfolio-arch": "from Yaniv",
-    "cx-portfolio-arch-yaniv-v1": "from Yaniv"
+    "world-moving-thomas": "From Tomas",
+    "what-we-are-close-thomas": "From Tomas",
+    "cx-portfolio-thomas": "From Tomas",
+    "agentic-opp-v2-thomas": "From Tomas",
+    "cx-portfolio-arch": "From Yaniv",
+    "cx-portfolio-arch-yaniv-v1": "From Yaniv"
   },
   "categoryNames": [
     "dividers",
-    "from Tomas",
-    "from Yaniv"
+    "From Tomas",
+    "From Yaniv"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
