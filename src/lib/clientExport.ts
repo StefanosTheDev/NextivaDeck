@@ -32,17 +32,35 @@ async function captureSlideImages(
     const label = el.getAttribute("data-slide-label") || `Slide ${i + 1}`;
     onProgress?.({ phase: "rendering", current: i + 1, total, slideLabel: label });
 
+    // Make only the current slide visible for capture
+    for (let j = 0; j < slideEls.length; j++) {
+      (slideEls[j] as HTMLElement).style.display = j === i ? "block" : "none";
+    }
+    // Let the browser paint
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+
     const canvas = await html2canvas(el, {
       width: 1920,
       height: 1080,
+      windowWidth: 1920,
+      windowHeight: 1080,
       scale: 1,
       useCORS: true,
       allowTaint: true,
       backgroundColor: "#000208",
       logging: false,
+      x: 0,
+      y: 0,
+      scrollX: 0,
+      scrollY: 0,
     });
 
     images.push(canvas.toDataURL("image/jpeg", 0.92));
+  }
+
+  // Restore visibility
+  for (let j = 0; j < slideEls.length; j++) {
+    (slideEls[j] as HTMLElement).style.display = "";
   }
 
   return images;

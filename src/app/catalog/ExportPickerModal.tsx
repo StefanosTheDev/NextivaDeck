@@ -68,7 +68,12 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
 
       try {
         await document.fonts.ready;
-        await new Promise((r) => setTimeout(r, 1000));
+        // Wait for all images in the offscreen container to load
+        const imgs = container.querySelectorAll("img");
+        await Promise.all(Array.from(imgs).map((img) =>
+          img.complete ? Promise.resolve() : new Promise((r) => { img.onload = r; img.onerror = r; })
+        ));
+        await new Promise((r) => setTimeout(r, 1500));
 
         const exportFn = format === "pdf"
           ? (await import("@/lib/clientExport")).generatePdfClient
@@ -105,39 +110,64 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
     <>
       {/* Offscreen render container for html2canvas capture */}
       {renderSlides && createPortal(
-        <div
-          ref={offscreenRef}
-          id="print-deck"
-          style={{
-            position: "fixed",
-            left: -99999,
-            top: 0,
-            width: 1920,
-            zIndex: -1,
-            background: "#000208",
-          }}
-        >
-          {selectedSlides.map((s, idx) => {
-            const Slide = s.slide.component;
-            return (
-              <div
-                key={s.id}
-                className="print-slide"
-                data-slide-id={s.id}
-                data-slide-label={s.slide.label}
-                style={{
-                  width: 1920,
-                  height: 1080,
-                  overflow: "hidden",
-                  position: "relative",
-                  flexShrink: 0,
-                }}
-              >
-                <Slide slideNumber={idx + 1} />
-              </div>
-            );
-          })}
-        </div>,
+        <>
+          <style dangerouslySetInnerHTML={{ __html: `
+            #export-offscreen .print-slide {
+              width: 1920px !important;
+              height: 1080px !important;
+              overflow: hidden !important;
+              position: relative !important;
+              flex-shrink: 0 !important;
+            }
+            #export-offscreen .print-slide .slide {
+              width: 1920px !important;
+              height: 1080px !important;
+            }
+            #export-offscreen * {
+              animation-duration: 0s !important;
+              animation-delay: 0s !important;
+              transition-duration: 0s !important;
+              transition-delay: 0s !important;
+            }
+          `}} />
+          <div
+            ref={offscreenRef}
+            id="export-offscreen"
+            style={{
+              position: "fixed",
+              left: 0,
+              top: 0,
+              width: 1920,
+              height: 1080,
+              overflow: "hidden",
+              zIndex: -9999,
+              pointerEvents: "none",
+              background: "#000208",
+              clipPath: "inset(0 0 0 0)",
+            }}
+          >
+            {selectedSlides.map((s, idx) => {
+              const Slide = s.slide.component;
+              return (
+                <div
+                  key={s.id}
+                  className="print-slide"
+                  data-slide-id={s.id}
+                  data-slide-label={s.slide.label}
+                  style={{
+                    width: 1920,
+                    height: 1080,
+                    overflow: "hidden",
+                    position: "relative",
+                    flexShrink: 0,
+                  }}
+                >
+                  <Slide slideNumber={idx + 1} />
+                </div>
+              );
+            })}
+          </div>
+        </>,
         document.body
       )}
 
