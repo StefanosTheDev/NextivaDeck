@@ -182,6 +182,7 @@ export default function MonetizationEvolutionCopySlide({ slideNumber = 0 }: { sl
         </div>
       </motion.main>
 
+      <div style={{ height: 24, flexShrink: 0 }} />
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );

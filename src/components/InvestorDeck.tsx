@@ -9,9 +9,13 @@ import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "./slideRegist
 export default function InvestorDeck() {
   const [slides, setSlides] = useState<SlideDef[]>(() => resolveSlides(DEFAULT_SLIDE_ORDER));
   const [isPreview, setIsPreview] = useState(false);
+  const [fromCatalog, setFromCatalog] = useState(false);
   const [cur, setCur] = useState(() => {
     if (typeof window !== "undefined") {
-      const param = new URLSearchParams(window.location.search).get("slide");
+      const params = new URLSearchParams(window.location.search);
+      const slideId = params.get("slideId");
+      if (slideId) return 0;
+      const param = params.get("slide");
       if (param) {
         const n = parseInt(param, 10);
         if (!isNaN(n) && n >= 1) return n - 1;
@@ -26,7 +30,10 @@ export default function InvestorDeck() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const preview = params.get("preview") === "true";
+    const slideId = params.get("slideId");
+    const from = params.get("from");
     setIsPreview(preview);
+    setFromCatalog(from === "catalog");
 
     if (preview) {
       const stored = localStorage.getItem("previewDeckData");
@@ -53,10 +60,19 @@ export default function InvestorDeck() {
       .then((data) => {
         if (Array.isArray(data.order)) {
           const hidden: string[] = Array.isArray(data.hiddenSlides) ? data.hiddenSlides : [];
-          const visibleOrder = data.order.filter((id: string) => !hidden.includes(id));
-          const resolved = resolveSlides(visibleOrder);
+          const showAll = from === "catalog";
+          const displayOrder = showAll
+            ? data.order
+            : data.order.filter((id: string) => !hidden.includes(id));
+          const resolved = resolveSlides(displayOrder);
           setSlides(resolved);
-          if (cur >= resolved.length) setCur(0);
+
+          if (slideId) {
+            const idx = resolved.findIndex((s: SlideDef) => s.id === slideId);
+            setCur(idx >= 0 ? idx : 0);
+          } else if (cur >= resolved.length) {
+            setCur(0);
+          }
         }
       })
       .catch(() => {});
@@ -106,13 +122,13 @@ export default function InvestorDeck() {
   }, [slides, cur]);
 
   useEffect(() => {
-    if (isPreview) return;
+    if (isPreview || fromCatalog) return;
     let t: NodeJS.Timeout;
     const show = () => { setNav(true); clearTimeout(t); t = setTimeout(() => setNav(false), 3000); };
     window.addEventListener("mousemove", show);
     t = setTimeout(() => setNav(false), 5000);
     return () => { window.removeEventListener("mousemove", show); clearTimeout(t); };
-  }, [isPreview]);
+  }, [isPreview, fromCatalog]);
 
   const safeCur = slides.length > 0 ? Math.min(cur, slides.length - 1) : 0;
   const currentSlide = slides[safeCur];
@@ -124,6 +140,47 @@ export default function InvestorDeck() {
 
   return (
     <div ref={containerRef} className="deck-viewport">
+      {/* Back to Catalog button */}
+      {fromCatalog && !isPreview && (
+        <a
+          href="/catalog"
+          style={{
+            position: "absolute",
+            top: 16,
+            left: 16,
+            zIndex: 60,
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            padding: "8px 16px",
+            borderRadius: 8,
+            background: "rgba(10, 15, 26, 0.85)",
+            backdropFilter: "blur(12px)",
+            border: "1px solid rgba(255,255,255,0.12)",
+            color: "rgba(255,255,255,0.7)",
+            textDecoration: "none",
+            fontSize: 13,
+            fontWeight: 500,
+            fontFamily: "'Space Grotesk', sans-serif",
+            cursor: "pointer",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "rgba(10, 15, 26, 0.95)";
+            e.currentTarget.style.color = "#fff";
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(10, 15, 26, 0.85)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+          }}
+        >
+          <ArrowLeft size={14} />
+          Back to Catalog
+        </a>
+      )}
+
       {/* Preview banner */}
       {isPreview && (
         <div

@@ -83,7 +83,10 @@ export default function SidebarSlideRow({
 
       {/* Slide name */}
       <span
-        onClick={() => (window.location.href = `/?slide=${position}`)}
+        onDoubleClick={() => {
+          localStorage.setItem("catalogScrollTarget", id);
+          window.location.href = `/?slideId=${id}&from=catalog`;
+        }}
         style={{
           overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
           flex: 1, cursor: "pointer",

@@ -50,9 +50,11 @@ export default function SortableSlideCard({
         didDrag.current = true;
         listeners?.onPointerMove?.(e);
       }}
-      onClick={() => {
+      data-slide-id={slide.id}
+      onDoubleClick={() => {
         if (!didDrag.current) {
-          window.location.href = `/?slide=${index + 1}`;
+          localStorage.setItem("catalogScrollTarget", slide.id);
+          window.location.href = `/?slideId=${slide.id}&from=catalog`;
         }
       }}
     >

@@ -98,6 +98,7 @@ import AITailwindVisualSlide from "./slides/AITailwindVisualSlide";
 import SystemOfActionVisualCopySlide from "./slides/SystemOfActionVisualCopySlide";
 import AppendixDividerSlide from "./slides/AppendixDividerSlide";
 import CustomerUseCasesDarkSlide from "./slides/CustomerUseCasesDarkSlide";
+import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -210,6 +211,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
   "appendix-divider": { id: "appendix-divider", label: "Appendix", component: AppendixDividerSlide, theme: "dark" },
   "customer-use-cases-dark": { id: "customer-use-cases-dark", label: "Customer Use Cases (Dark)", component: CustomerUseCasesDarkSlide, theme: "dark" },
+  "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture", component: CXPortfolioArchSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

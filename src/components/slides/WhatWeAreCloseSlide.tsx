@@ -30,6 +30,8 @@ export default function WhatWeAreCloseSlide({ slideNumber = 58 }: { slideNumber?
       style={{
         background:
           "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 50%, #000208 100%)",
+        display: "flex",
+        flexDirection: "column",
       }}
       data-speaker-notes="Reprise: Customers rely on Nextiva to run their customer communications. What matters most: easy to use, fast time to value, and unified data."
     >
@@ -84,12 +86,11 @@ export default function WhatWeAreCloseSlide({ slideNumber = 58 }: { slideNumber?
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
-          position: "absolute",
-          left: 100,
-          right: 100,
-          bottom: "50%",
+          flex: 1,
+          padding: "0 100px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
+          alignContent: "center",
           gap: 20,
           zIndex: 1,
         }}
@@ -163,30 +164,28 @@ export default function WhatWeAreCloseSlide({ slideNumber = 58 }: { slideNumber?
         ))}
       </motion.main>
 
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 1 }}>
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          style={{ padding: "0 100px" }}
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        style={{ padding: "16px 100px 24px", flexShrink: 0, zIndex: 1 }}
+      >
+        <div
+          style={{
+            background: "rgba(40,96,178,0.1)",
+            border: "1px solid rgba(40,96,178,0.2)",
+            borderRadius: 14,
+            padding: "16px 40px",
+            textAlign: "center",
+          }}
         >
-          <div
-            style={{
-              background: "rgba(40,96,178,0.1)",
-              border: "1px solid rgba(40,96,178,0.2)",
-              borderRadius: 14,
-              padding: "16px 40px",
-              textAlign: "center",
-            }}
-          >
-            <p style={{ fontSize: 22, color: "#FFFFFF", margin: 0, lineHeight: 1.5 }}>
-              Serving small to massive middle — millions of businesses that need enterprise-grade CX without enterprise complexity.
-            </p>
-          </div>
-        </motion.div>
+          <p style={{ fontSize: 22, color: "#FFFFFF", margin: 0, lineHeight: 1.5 }}>
+            Serving small to massive middle — millions of businesses that need enterprise-grade CX without enterprise complexity.
+          </p>
+        </div>
+      </motion.div>
 
-        <SlideFooter slideNumber={slideNumber} variant="dark" />
-      </div>
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }

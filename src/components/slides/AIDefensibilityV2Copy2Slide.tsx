@@ -282,7 +282,7 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        style={{ padding: "12px 80px 0", position: "relative", zIndex: 1, flexShrink: 0 }}
+        style={{ padding: "12px 80px 24px", position: "relative", zIndex: 1, flexShrink: 0 }}
       >
         <div
           style={{

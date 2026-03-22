@@ -49,7 +49,7 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.2 }}
         style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 80px" }}
       >
-        <div style={{ position: "relative", width: DIAMOND.w, height: DIAMOND.h, transform: "scale(1.67)", transformOrigin: "center center" }}>
+        <div style={{ position: "relative", width: DIAMOND.w, height: DIAMOND.h, transform: "scale(1.15)", transformOrigin: "center center" }}>
           {/* SVG connecting lines */}
           <svg
             width={DIAMOND.w} height={DIAMOND.h}
@@ -188,7 +188,7 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
       {/* Outcomes banner */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }}
-        style={{ padding: "0 100px 8px", flexShrink: 0 }}
+        style={{ padding: "16px 100px 24px", flexShrink: 0 }}
       >
         <div style={{
           display: "flex", justifyContent: "center", alignItems: "center", gap: 12,

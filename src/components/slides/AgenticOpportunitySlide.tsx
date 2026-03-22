@@ -58,7 +58,7 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
       {/* Stat cards (18M = 6M+12M + 7M) - same space as prior 18M/85%/5-7M row */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.15 }}
-        style={{ padding: "100px 80px 0", position: "relative" }}
+        style={{ padding: "24px 80px 0", position: "relative" }}
       >
         <div style={{ width: "100%", position: "relative", paddingBottom: 6 }}>
           {/* Nextiva blue ocean - above oval */}
@@ -232,7 +232,7 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
         </div>
       </motion.main>
 
-      <div style={{ flex: 1 }} />
+      <div style={{ height: 24, flexShrink: 0 }} />
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );

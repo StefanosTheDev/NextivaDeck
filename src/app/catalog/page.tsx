@@ -56,7 +56,13 @@ export default function CatalogPage() {
   const [saved, setSaved] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
-  const [viewFilter, setViewFilter] = useState<"all" | "published" | "hidden">("all");
+  const [viewFilter, setViewFilter] = useState<"all" | "published" | "hidden">(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("catalogViewFilter");
+      if (stored === "all" || stored === "published" || stored === "hidden") return stored;
+    }
+    return "all";
+  });
   const [showPreview, setShowPreview] = useState(false);
   const savedTimeout = useRef<NodeJS.Timeout>(undefined);
 
@@ -68,26 +74,59 @@ export default function CatalogPage() {
           setSavedOrder(data.order);
         }
         if (data.categories && typeof data.categories === "object") {
-          setCategories(data.categories);
           setSavedCategories(data.categories);
         }
         const savedNames: string[] = Array.isArray(data.categoryNames) ? data.categoryNames : [];
         const namesFromAssignments = data.categories ? Object.values(data.categories) as string[] : [];
         const merged = Array.from(new Set([...savedNames, ...namesFromAssignments])).sort();
-        setCategoryNames(merged);
         setSavedCategoryNames(merged);
         if (Array.isArray(data.hiddenSlides)) {
           setSavedHiddenSlides(data.hiddenSlides);
         }
 
-        localStorage.removeItem("catalogPendingChanges");
-        setOrder(data.order);
-        setHiddenSlides(data.hiddenSlides || []);
+        const pending = localStorage.getItem("catalogPendingChanges");
+        if (pending) {
+          try {
+            const p = JSON.parse(pending);
+            setOrder(Array.isArray(p.order) ? p.order : data.order);
+            setHiddenSlides(Array.isArray(p.hiddenSlides) ? p.hiddenSlides : data.hiddenSlides || []);
+            setCategories(p.categories && typeof p.categories === "object" ? p.categories : (data.categories || {}));
+            setCategoryNames(Array.isArray(p.categoryNames) ? p.categoryNames : merged);
+          } catch {
+            setOrder(data.order);
+            setHiddenSlides(data.hiddenSlides || []);
+            setCategories(data.categories || {});
+            setCategoryNames(merged);
+            localStorage.removeItem("catalogPendingChanges");
+          }
+        } else {
+          setOrder(data.order);
+          setHiddenSlides(data.hiddenSlides || []);
+          setCategories(data.categories || {});
+          setCategoryNames(merged);
+        }
 
         setLoaded(true);
       })
       .catch(() => setLoaded(true));
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("catalogViewFilter", viewFilter);
+  }, [viewFilter]);
+
+  useEffect(() => {
+    if (!loaded) return;
+    const target = localStorage.getItem("catalogScrollTarget");
+    if (!target) return;
+    localStorage.removeItem("catalogScrollTarget");
+    requestAnimationFrame(() => {
+      const el = document.querySelector(`[data-slide-id="${target}"]`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  }, [loaded]);
 
   // Persist all pending changes to localStorage so they survive refreshes
   useEffect(() => {
