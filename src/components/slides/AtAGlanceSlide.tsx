@@ -7,7 +7,7 @@ const metrics = [
   { stat: "70%", label: "Q4 FY26 Gross Margin", desc: "Up ~300bps y/y" },
   { stat: "$44M", label: "Adj EBITDA", desc: "FY26 projected" },
   { stat: "$94M", label: "Adj EBITDA", desc: "FY27 projected" },
-  { stat: "~1.6%", label: "MRR churn", desc: "Durable SMB retention" },
+  { stat: "93%", label: "Net Revenue Retention", desc: "FY26 Q3" },
   { stat: "92K+", label: "Customers", desc: "All US, all industries" },
   { stat: "$15M", label: "FY26 FCF", desc: "projected" },
   { stat: "$75M", label: "FY27 FCF", desc: "projected" },
