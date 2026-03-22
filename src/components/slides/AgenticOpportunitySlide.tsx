@@ -232,7 +232,7 @@ export default function AgenticOpportunitySlide({ slideNumber = 12 }: { slideNum
         </div>
       </motion.main>
 
-      <div style={{ height: 24, flexShrink: 0 }} />
+      <div style={{ flex: 1 }} />
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
