@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { Target, Zap, Rocket } from "lucide-react";
@@ -69,7 +70,7 @@ export default function SystemOfActionVisualCopySlide({ slideNumber = 0 }: { sli
         </p>
         <h1 className="font-heading" style={{
           fontSize: 54, fontWeight: 500,
-          color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15,
+          color: "#FFFFFF", margin: "12px auto 0", lineHeight: 1.15, textAlign: "center",
         }}>
           Data + AI with communication<br />
           <span style={{ color: ACCENT }}>as a superpower.</span>
@@ -90,41 +91,41 @@ export default function SystemOfActionVisualCopySlide({ slideNumber = 0 }: { sli
         style={{
           flex: 1, display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center",
-          padding: "0 100px", position: "relative", zIndex: 1, gap: 48,
+          padding: "0 100px", position: "relative", zIndex: 1, gap: 24,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 0, width: "100%", maxWidth: 1500 }}>
+        <div style={{ display: "flex", alignItems: "stretch", width: "100%", maxWidth: 1500 }}>
           {steps.map((step, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", flex: 1 }}>
+            <React.Fragment key={i}>
               <div style={{
                 flex: 1,
                 background: GLASS, border: `1px solid ${BORDER}`, borderRadius: 14,
-                padding: "40px 36px", textAlign: "center",
-                display: "flex", flexDirection: "column", alignItems: "center", gap: 12,
+                padding: "24px 28px", textAlign: "center",
+                display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 8,
               }}>
                 <div style={{
-                  width: 72, height: 72, borderRadius: 14,
+                  width: 52, height: 52, borderRadius: 12,
                   background: "rgba(40,96,178,0.15)", border: "1px solid rgba(40,96,178,0.25)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
-                  <step.Icon size={32} color={ACCENT} strokeWidth={1.75} />
+                  <step.Icon size={24} color={ACCENT} strokeWidth={1.75} />
                 </div>
                 <p style={{
-                  fontSize: 14, fontWeight: 700, letterSpacing: "0.08em",
+                  fontSize: 13, fontWeight: 700, letterSpacing: "0.08em",
                   color: ACCENT, margin: 0, textTransform: "uppercase",
                 }}>
                   {step.num}
                 </p>
                 <h2 className="font-heading" style={{
-                  fontSize: 36, fontWeight: 600,
+                  fontSize: 28, fontWeight: 600,
                   color: "#FFFFFF", margin: 0, lineHeight: 1.2,
                 }}>
                   {step.label}
                 </h2>
-                <p style={{ fontSize: 22, color: "rgba(255,255,255,0.7)", margin: 0, fontWeight: 500 }}>
+                <p style={{ fontSize: 18, color: "rgba(255,255,255,0.7)", margin: 0, fontWeight: 500 }}>
                   {step.detail}
                 </p>
-                <p style={{ fontSize: 17, color: "rgba(255,255,255,0.4)", margin: 0 }}>
+                <p style={{ fontSize: 15, color: "rgba(255,255,255,0.4)", margin: 0 }}>
                   {step.sub}
                 </p>
               </div>
@@ -137,34 +138,34 @@ export default function SystemOfActionVisualCopySlide({ slideNumber = 0 }: { sli
                   </svg>
                 </div>
               )}
-            </div>
+            </React.Fragment>
           ))}
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 0, width: "100%", maxWidth: 1500 }}>
+        <div style={{ display: "flex", alignItems: "center", width: "100%", maxWidth: 1500 }}>
           {shifts.map((s, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", flex: 1 }}>
+            <React.Fragment key={i}>
               <div style={{
                 flex: 1,
                 background: GLASS, border: `1px solid ${BORDER}`, borderRadius: 14,
-                padding: "22px 28px",
-                display: "flex", alignItems: "center", justifyContent: "center", gap: 16,
+                padding: "14px 24px",
+                display: "flex", alignItems: "center", justifyContent: "center", gap: 14,
               }}>
                 <span style={{
-                  fontSize: 22, color: "rgba(255,255,255,0.3)", fontWeight: 500,
+                  fontSize: 18, color: "rgba(255,255,255,0.3)", fontWeight: 500,
                   textDecoration: "line-through",
                 }}>
                   {s.from}
                 </span>
-                <svg width="28" height="14" viewBox="0 0 28 14" fill="none">
-                  <path d="M0 7h22m0 0l-5-5m5 5l-5 5" stroke={ACCENT} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <svg width="24" height="12" viewBox="0 0 24 12" fill="none">
+                  <path d="M0 6h18m0 0l-4-4m4 4l-4 4" stroke={ACCENT} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <span style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF" }}>
+                <span style={{ fontSize: 20, fontWeight: 700, color: "#FFFFFF" }}>
                   {s.to}
                 </span>
               </div>
               {i < 2 && <div style={{ width: 88, flexShrink: 0 }} />}
-            </div>
+            </React.Fragment>
           ))}
         </div>
       </motion.main>
@@ -173,13 +174,13 @@ export default function SystemOfActionVisualCopySlide({ slideNumber = 0 }: { sli
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        style={{ padding: "0 100px 8px", position: "relative", zIndex: 1 }}
+        style={{ padding: "16px 100px 24px", position: "relative", zIndex: 1 }}
       >
         <div style={{
           background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)",
-          borderRadius: 14, padding: "22px 40px", textAlign: "center",
+          borderRadius: 14, padding: "16px 40px", textAlign: "center",
         }}>
-          <p style={{ fontSize: 22, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.4 }}>
+          <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.4 }}>
             We are not a system of record.
             <span style={{ color: ACCENT, marginLeft: 10 }}>We are a system of action.</span>
           </p>

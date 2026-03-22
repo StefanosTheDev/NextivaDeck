@@ -95,7 +95,7 @@ export default function AiTailwindSlide({ slideNumber = 13 }: { slideNumber?: nu
       {/* Bottom stats bar */}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.35 }}
-        style={{ padding: "16px 80px 8px", flexShrink: 0 }}
+        style={{ padding: "16px 80px 24px", flexShrink: 0 }}
       >
         <div style={{
           display: "flex",
