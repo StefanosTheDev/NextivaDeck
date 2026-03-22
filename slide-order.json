@@ -67,6 +67,7 @@
     "customer-use-cases",
     "closing",
     "cx-portfolio-arch",
+    "cx-portfolio-arch-yaniv-v1",
     "appendix-divider",
     "unified-data-model",
     "ai-tandem",
@@ -101,14 +102,17 @@
     "platform-copy-2"
   ],
   "categories": {
-    "world-moving-thomas": "from Thomas",
-    "what-we-are-close-thomas": "from Thomas",
-    "cx-portfolio-thomas": "from Thomas",
-    "agentic-opp-v2-thomas": "from Thomas"
+    "world-moving-thomas": "from Tomas",
+    "what-we-are-close-thomas": "from Tomas",
+    "cx-portfolio-thomas": "from Tomas",
+    "agentic-opp-v2-thomas": "from Tomas",
+    "cx-portfolio-arch": "from Yaniv",
+    "cx-portfolio-arch-yaniv-v1": "from Yaniv"
   },
   "categoryNames": [
     "dividers",
-    "from Thomas"
+    "from Tomas",
+    "from Yaniv"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
@@ -169,6 +173,7 @@
     "ai-defensibility-matrix",
     "system-of-action-copy",
     "system-of-action",
-    "ai-tailwind-visual"
+    "ai-tailwind-visual",
+    "cx-portfolio-arch-yaniv-v1"
   ]
 }

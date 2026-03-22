@@ -99,6 +99,7 @@ import SystemOfActionVisualCopySlide from "./slides/SystemOfActionVisualCopySlid
 import AppendixDividerSlide from "./slides/AppendixDividerSlide";
 import CustomerUseCasesDarkSlide from "./slides/CustomerUseCasesDarkSlide";
 import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
+import CXPortfolioArchYanivV1Slide from "./slides/CXPortfolioArchYanivV1Slide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -212,6 +213,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "appendix-divider": { id: "appendix-divider", label: "Appendix", component: AppendixDividerSlide, theme: "dark" },
   "customer-use-cases-dark": { id: "customer-use-cases-dark", label: "Customer Use Cases (Dark)", component: CustomerUseCasesDarkSlide, theme: "dark" },
   "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture", component: CXPortfolioArchSlide, theme: "dark" },
+  "cx-portfolio-arch-yaniv-v1": { id: "cx-portfolio-arch-yaniv-v1", label: "CX Portfolio Arch (Yaniv-VersionG Original)", component: CXPortfolioArchYanivV1Slide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

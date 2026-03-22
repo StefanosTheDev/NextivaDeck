@@ -46,6 +46,7 @@ export default function SlideCardContent({ slide, index, category, categoryColor
               position: "absolute",
               top: 8,
               right: 8,
+              zIndex: 11,
               display: "flex",
               alignItems: "center",
               gap: 5,
