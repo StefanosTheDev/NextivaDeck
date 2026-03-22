@@ -13,6 +13,7 @@ export async function GET(request: Request) {
   try {
     browser = await puppeteer.launch({
       headless: true,
+      protocolTimeout: 600_000,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -25,12 +26,17 @@ export async function GET(request: Request) {
     await page.setViewport({
       width: SLIDE_WIDTH,
       height: SLIDE_HEIGHT,
-      deviceScaleFactor: 2,
+      deviceScaleFactor: 1,
     });
 
-    await page.goto(`${baseUrl}/print/raw`, {
-      waitUntil: "networkidle0",
-      timeout: 60_000,
+    const slidesParam = searchParams.get("slides");
+    const printUrl = slidesParam
+      ? `${baseUrl}/print/raw?slides=${encodeURIComponent(slidesParam)}`
+      : `${baseUrl}/print/raw`;
+
+    await page.goto(printUrl, {
+      waitUntil: "networkidle2",
+      timeout: 120_000,
     });
 
     await page.waitForSelector("#print-deck", { timeout: 30_000 });
@@ -49,29 +55,23 @@ export async function GET(request: Request) {
       ])
     );
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
-    const slideCount = await page.$$eval(".print-slide", (els) => els.length);
+    const slideElements = await page.$$(".print-slide");
+    console.log(`PDF: rendering ${slideElements.length} slides...`);
 
-    // Screenshot each slide individually, then assemble into a clean PDF
-    // where each page is exactly one slide
     const screenshots: Buffer[] = [];
-    for (let i = 0; i < slideCount; i++) {
-      const clip = {
-        x: 0,
-        y: i * SLIDE_HEIGHT,
-        width: SLIDE_WIDTH,
-        height: SLIDE_HEIGHT,
-      };
-      const shot = await page.screenshot({
+    for (let i = 0; i < slideElements.length; i++) {
+      const shot = await slideElements[i].screenshot({
         type: "png",
-        clip,
         omitBackground: false,
       });
       screenshots.push(Buffer.from(shot));
+      if ((i + 1) % 10 === 0) console.log(`PDF: captured ${i + 1}/${slideElements.length}`);
     }
 
-    // Build a simple HTML page with one image per page and use pdf() on that
+    console.log(`PDF: all ${screenshots.length} slides captured, assembling...`);
+
     const imgPage = await browser.newPage();
     await imgPage.setViewport({
       width: SLIDE_WIDTH,
@@ -96,7 +96,7 @@ export async function GET(request: Request) {
         @page { size: ${SLIDE_WIDTH}px ${SLIDE_HEIGHT}px; margin: 0; }
       </style></head>
       <body>${imgTags}</body></html>`,
-      { waitUntil: "load" }
+      { waitUntil: "load", timeout: 120_000 }
     );
 
     const pdfBuffer = await imgPage.pdf({
@@ -105,6 +105,8 @@ export async function GET(request: Request) {
       printBackground: true,
       margin: { top: 0, right: 0, bottom: 0, left: 0 },
     });
+
+    console.log(`PDF: done, ${Buffer.from(pdfBuffer).length} bytes`);
 
     return new NextResponse(Buffer.from(pdfBuffer), {
       status: 200,

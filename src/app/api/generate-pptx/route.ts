@@ -14,6 +14,7 @@ export async function GET(request: Request) {
   try {
     browser = await puppeteer.launch({
       headless: true,
+      protocolTimeout: 600_000,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
@@ -26,12 +27,17 @@ export async function GET(request: Request) {
     await page.setViewport({
       width: SLIDE_WIDTH,
       height: SLIDE_HEIGHT,
-      deviceScaleFactor: 2,
+      deviceScaleFactor: 1,
     });
 
-    await page.goto(`${baseUrl}/print/raw`, {
-      waitUntil: "networkidle0",
-      timeout: 60_000,
+    const slidesParam = searchParams.get("slides");
+    const printUrl = slidesParam
+      ? `${baseUrl}/print/raw?slides=${encodeURIComponent(slidesParam)}`
+      : `${baseUrl}/print/raw`;
+
+    await page.goto(printUrl, {
+      waitUntil: "networkidle2",
+      timeout: 120_000,
     });
 
     await page.waitForSelector("#print-deck", { timeout: 30_000 });
@@ -50,27 +56,23 @@ export async function GET(request: Request) {
       ])
     );
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
-    const slideCount = await page.$$eval(".print-slide", (els) => els.length);
+    const slideElements = await page.$$(".print-slide");
+    console.log(`PPTX: rendering ${slideElements.length} slides...`);
 
     const screenshots: Buffer[] = [];
-    for (let i = 0; i < slideCount; i++) {
-      const clip = {
-        x: 0,
-        y: i * SLIDE_HEIGHT,
-        width: SLIDE_WIDTH,
-        height: SLIDE_HEIGHT,
-      };
-      const shot = await page.screenshot({
+    for (let i = 0; i < slideElements.length; i++) {
+      const shot = await slideElements[i].screenshot({
         type: "png",
-        clip,
         omitBackground: false,
       });
       screenshots.push(Buffer.from(shot));
+      if ((i + 1) % 10 === 0) console.log(`PPTX: captured ${i + 1}/${slideElements.length}`);
     }
 
-    // Build the PowerPoint presentation
+    console.log(`PPTX: all ${screenshots.length} slides captured, assembling...`);
+
     const pptx = new PptxGenJS();
     pptx.defineLayout({ name: "CUSTOM", width: 10, height: 5.625 });
     pptx.layout = "CUSTOM";
@@ -89,6 +91,8 @@ export async function GET(request: Request) {
     }
 
     const pptxBuffer = await pptx.write({ outputType: "nodebuffer" }) as Buffer;
+
+    console.log(`PPTX: done, ${Buffer.from(pptxBuffer).length} bytes`);
 
     return new NextResponse(Buffer.from(pptxBuffer), {
       status: 200,
