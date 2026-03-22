@@ -1,5 +1,5 @@
 export type ExportProgress = {
-  phase: "rendering" | "assembling" | "done";
+  phase: "rendering" | "assembling" | "done" | "error";
   current: number;
   total: number;
   slideLabel?: string;
@@ -18,50 +18,81 @@ function triggerDownload(blob: Blob, filename: string) {
   URL.revokeObjectURL(url);
 }
 
-export async function generatePdfFromApi(
-  slideIds?: string[],
+async function captureSlideImages(
+  container: HTMLElement,
   onProgress?: ProgressCallback
-) {
-  const total = slideIds?.length ?? 0;
-  onProgress?.({ phase: "rendering", current: 0, total, slideLabel: "Starting..." });
+): Promise<string[]> {
+  const html2canvas = (await import("html2canvas")).default;
+  const slideEls = container.querySelectorAll<HTMLElement>(".print-slide");
+  const total = slideEls.length;
+  const images: string[] = [];
 
-  const url = slideIds
-    ? `/api/generate-pdf?slides=${encodeURIComponent(slideIds.join(","))}`
-    : "/api/generate-pdf";
+  for (let i = 0; i < total; i++) {
+    const el = slideEls[i];
+    const label = el.getAttribute("data-slide-label") || `Slide ${i + 1}`;
+    onProgress?.({ phase: "rendering", current: i + 1, total, slideLabel: label });
 
-  const res = await fetch(url);
+    const canvas = await html2canvas(el, {
+      width: 1920,
+      height: 1080,
+      scale: 1,
+      useCORS: true,
+      allowTaint: true,
+      backgroundColor: "#000208",
+      logging: false,
+    });
 
-  if (!res.ok) {
-    const body = await res.json().catch(() => null);
-    throw new Error(body?.details ?? `PDF generation failed (${res.status})`);
+    images.push(canvas.toDataURL("image/jpeg", 0.92));
   }
 
-  onProgress?.({ phase: "done", current: total, total });
-
-  const blob = await res.blob();
-  triggerDownload(blob, "Nextiva-Investor-Deck-2026.pdf");
+  return images;
 }
 
-export async function generatePptxFromApi(
-  slideIds?: string[],
+export async function generatePdfClient(
+  container: HTMLElement,
   onProgress?: ProgressCallback
 ) {
-  const total = slideIds?.length ?? 0;
-  onProgress?.({ phase: "rendering", current: 0, total, slideLabel: "Starting..." });
+  const images = await captureSlideImages(container, onProgress);
+  if (images.length === 0) throw new Error("No slides to export");
 
-  const url = slideIds
-    ? `/api/generate-pptx?slides=${encodeURIComponent(slideIds.join(","))}`
-    : "/api/generate-pptx";
+  onProgress?.({ phase: "assembling", current: images.length, total: images.length, slideLabel: "Building PDF..." });
 
-  const res = await fetch(url);
+  const { jsPDF } = await import("jspdf");
+  const pdf = new jsPDF({ orientation: "landscape", unit: "px", format: [1920, 1080] });
 
-  if (!res.ok) {
-    const body = await res.json().catch(() => null);
-    throw new Error(body?.details ?? `PPTX generation failed (${res.status})`);
+  for (let i = 0; i < images.length; i++) {
+    if (i > 0) pdf.addPage([1920, 1080], "landscape");
+    pdf.addImage(images[i], "JPEG", 0, 0, 1920, 1080);
   }
 
-  onProgress?.({ phase: "done", current: total, total });
+  const blob = pdf.output("blob");
+  triggerDownload(blob, "Nextiva-Investor-Deck-2026.pdf");
+  onProgress?.({ phase: "done", current: images.length, total: images.length });
+}
 
-  const blob = await res.blob();
+export async function generatePptxClient(
+  container: HTMLElement,
+  onProgress?: ProgressCallback
+) {
+  const images = await captureSlideImages(container, onProgress);
+  if (images.length === 0) throw new Error("No slides to export");
+
+  onProgress?.({ phase: "assembling", current: images.length, total: images.length, slideLabel: "Building PPTX..." });
+
+  const PptxGenJS = (await import("pptxgenjs")).default;
+  const pptx = new PptxGenJS();
+  pptx.defineLayout({ name: "CUSTOM", width: 10, height: 5.625 });
+  pptx.layout = "CUSTOM";
+  pptx.author = "Nextiva";
+  pptx.title = "Nextiva Investor Deck 2026";
+
+  for (const imgData of images) {
+    const slide = pptx.addSlide();
+    slide.addImage({ data: imgData, x: 0, y: 0, w: 10, h: 5.625 });
+  }
+
+  const output = await pptx.write({ outputType: "blob" });
+  const blob = output instanceof Blob ? output : new Blob([output as ArrayBuffer]);
   triggerDownload(blob, "Nextiva-Investor-Deck-2026.pptx");
+  onProgress?.({ phase: "done", current: images.length, total: images.length });
 }
