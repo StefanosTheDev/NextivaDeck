@@ -97,6 +97,7 @@ import MonetizationEvolutionCopySlide from "./slides/MonetizationEvolutionCopySl
 import AITailwindVisualSlide from "./slides/AITailwindVisualSlide";
 import SystemOfActionVisualCopySlide from "./slides/SystemOfActionVisualCopySlide";
 import AppendixDividerSlide from "./slides/AppendixDividerSlide";
+import CustomerUseCasesDarkSlide from "./slides/CustomerUseCasesDarkSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -208,6 +209,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "monetization-evolution-copy": { id: "monetization-evolution-copy", label: "Monetization Evolution", component: MonetizationEvolutionCopySlide, theme: "dark" },
   "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
   "appendix-divider": { id: "appendix-divider", label: "Appendix", component: AppendixDividerSlide, theme: "dark" },
+  "customer-use-cases-dark": { id: "customer-use-cases-dark", label: "Customer Use Cases (Dark)", component: CustomerUseCasesDarkSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
