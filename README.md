@@ -49,3 +49,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 | Last test push | 2025-03-13 — verify Vercel build on `main` |
 
 If this table is visible on GitHub `main`, the push worked. Check **Vercel → Deployments** for a new production build for this commit. Vercel should show a new deployment for this commit in the project dashboard.
+
+---
+
+## Branch `Yaniv-VersionH` (Version H)
+
+Publish smoke test: README touch to push this branch to `origin` (2025-03-23).
