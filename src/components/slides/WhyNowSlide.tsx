@@ -5,13 +5,13 @@ import SlideFooter from "../SlideFooter";
 const ACCENT = "#7EB3E8";
 
 const items = [
-  { word: "Embedded", description: "across the entire platform" },
-  { word: "Compounding", description: "more interactions drive more usage" },
-  { word: "Monetizable", description: "enables new pricing models" },
-  { word: "Durable", description: "switching costs deepen over time" },
+  { word: "AI adoption", description: "is accelerating" },
+  { word: "Customer expectations", description: "are rising" },
+  { word: "Legacy systems", description: "cannot keep up" },
+  { word: "The platform", description: "that owns real-time interactions wins" },
 ];
 
-export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber?: number }) {
+export default function WhyNowSlide({ slideNumber = 0 }: { slideNumber?: number }) {
   return (
     <div
       className="slide"
@@ -44,7 +44,7 @@ export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber
             textAlign: "center",
           }}
         >
-          AI & NEXTIVA
+          WHY NOW
         </motion.p>
 
         <motion.h1
@@ -53,7 +53,7 @@ export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           style={{
-            fontSize: 56,
+            fontSize: 60,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: "24px 0 0",
@@ -61,11 +61,7 @@ export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber
             textAlign: "center",
           }}
         >
-          AI expands Nextiva &mdash;
-          <br />
-          <span style={{ color: ACCENT }}>
-            it does not disrupt it.
-          </span>
+          The inflection point
         </motion.h1>
 
         <motion.div
@@ -131,21 +127,6 @@ export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber
             </motion.p>
           ))}
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.15 }}
-          style={{
-            fontSize: 26,
-            color: "rgba(255,255,255,0.5)",
-            margin: "48px 0 0",
-            textAlign: "center",
-            lineHeight: 1.5,
-          }}
-        >
-          Growth scales with interactions, not seats.
-        </motion.p>
       </div>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />

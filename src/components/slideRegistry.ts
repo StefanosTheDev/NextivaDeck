@@ -110,6 +110,13 @@ import AgenticCXPlatformSlide from "./slides/AgenticCXPlatformSlide";
 import HowItWorksSlide from "./slides/HowItWorksSlide";
 import StrategicAdvantageSlide from "./slides/StrategicAdvantageSlide";
 import AIExpandsNextivaSlide from "./slides/AIExpandsNextivaSlide";
+import AIInActionV2Slide from "./slides/AIInActionV2Slide";
+import MonetizationCriticalSlide from "./slides/MonetizationCriticalSlide";
+import DefensibilityStructuralSlide from "./slides/DefensibilityStructuralSlide";
+import CompetitionCategorySlide from "./slides/CompetitionCategorySlide";
+import EnterpriseExpansionSlide from "./slides/EnterpriseExpansionSlide";
+import WhyNowSlide from "./slides/WhyNowSlide";
+import ThankYouV2Slide from "./slides/ThankYouV2Slide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -234,6 +241,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "how-it-works": { id: "how-it-works", label: "How It Works", component: HowItWorksSlide, theme: "dark", isNew: true },
   "strategic-advantage": { id: "strategic-advantage", label: "Strategic Advantage", component: StrategicAdvantageSlide, theme: "dark", isNew: true },
   "ai-expands-nextiva": { id: "ai-expands-nextiva", label: "AI Expands Nextiva", component: AIExpandsNextivaSlide, theme: "dark", isNew: true },
+  "ai-in-action-v2": { id: "ai-in-action-v2", label: "AI In Action", component: AIInActionV2Slide, theme: "dark", isNew: true },
+  "monetization-critical": { id: "monetization-critical", label: "Monetization (Critical)", component: MonetizationCriticalSlide, theme: "dark", isNew: true },
+  "defensibility-structural": { id: "defensibility-structural", label: "Defensibility", component: DefensibilityStructuralSlide, theme: "dark", isNew: true },
+  "competition-category": { id: "competition-category", label: "Competition", component: CompetitionCategorySlide, theme: "dark", isNew: true },
+  "enterprise-expansion": { id: "enterprise-expansion", label: "Enterprise Expansion", component: EnterpriseExpansionSlide, theme: "dark", isNew: true },
+  "why-now-v2": { id: "why-now-v2", label: "Why Now", component: WhyNowSlide, theme: "dark", isNew: true },
+  "thank-you-v2": { id: "thank-you-v2", label: "Thank You", component: ThankYouV2Slide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

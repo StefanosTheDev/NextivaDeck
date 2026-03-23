@@ -5,13 +5,13 @@ import SlideFooter from "../SlideFooter";
 const ACCENT = "#7EB3E8";
 
 const items = [
-  { word: "Embedded", description: "across the entire platform" },
-  { word: "Compounding", description: "more interactions drive more usage" },
-  { word: "Monetizable", description: "enables new pricing models" },
-  { word: "Durable", description: "switching costs deepen over time" },
+  { word: "Unified experience", description: "across SMB → mid-market → enterprise" },
+  { word: "AI-driven workflows", description: "scale across segments" },
+  { word: "Expansion driven", description: "by usage and outcomes" },
+  { word: "Land → expand", description: "→ monetize interactions" },
 ];
 
-export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber?: number }) {
+export default function EnterpriseExpansionSlide({ slideNumber = 0 }: { slideNumber?: number }) {
   return (
     <div
       className="slide"
@@ -44,7 +44,7 @@ export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber
             textAlign: "center",
           }}
         >
-          AI & NEXTIVA
+          ENTERPRISE EXPANSION
         </motion.p>
 
         <motion.h1
@@ -61,11 +61,9 @@ export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber
             textAlign: "center",
           }}
         >
-          AI expands Nextiva &mdash;
+          Moving up-market
           <br />
-          <span style={{ color: ACCENT }}>
-            it does not disrupt it.
-          </span>
+          <span style={{ color: ACCENT }}>with the same platform.</span>
         </motion.h1>
 
         <motion.div
@@ -131,21 +129,6 @@ export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber
             </motion.p>
           ))}
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.15 }}
-          style={{
-            fontSize: 26,
-            color: "rgba(255,255,255,0.5)",
-            margin: "48px 0 0",
-            textAlign: "center",
-            lineHeight: 1.5,
-          }}
-        >
-          Growth scales with interactions, not seats.
-        </motion.p>
       </div>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
