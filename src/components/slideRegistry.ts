@@ -107,6 +107,7 @@ import OpportunitySlide from "./slides/OpportunitySlide";
 import TheShiftSlide from "./slides/TheShiftSlide";
 import TheProblemAISlide from "./slides/TheProblemAISlide";
 import AgenticCXPlatformSlide from "./slides/AgenticCXPlatformSlide";
+import HowItWorksSlide from "./slides/HowItWorksSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -228,6 +229,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "the-shift": { id: "the-shift", label: "The Shift", component: TheShiftSlide, theme: "dark", isNew: true },
   "the-problem-ai": { id: "the-problem-ai", label: "The Problem (AI)", component: TheProblemAISlide, theme: "dark", isNew: true },
   "agentic-cx-platform": { id: "agentic-cx-platform", label: "Agentic CX Platform", component: AgenticCXPlatformSlide, theme: "dark", isNew: true },
+  "how-it-works": { id: "how-it-works", label: "How It Works", component: HowItWorksSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
