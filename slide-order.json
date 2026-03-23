@@ -33,21 +33,22 @@
     "agentic-opp",
     "agentic-opp-alt-d",
     "agentic-opp-alt-a",
+    "customer-use-cases-dark",
+    "customer-use-cases",
+    "ai-tailwind",
     "agentic-opp-3",
     "agentic-opp-v2-thomas",
     "agentic-opp-lovable",
     "ai-tailwind-copy",
     "ai-tailwind-visual",
-    "ai-tailwind",
     "ai-tailwind-4",
     "ai-tailwind-3",
     "ai-defensibility-matrix",
-    "ai-agents-in-action",
+    "ai-defensibility-v2-copy-2",
     "monetization-evolution-copy",
     "market-tam",
     "cx-market-sizing",
     "labor-cost-savings",
-    "ai-defensibility-v2-copy-2",
     "competitive-moat",
     "competitive-moat-2",
     "win",
@@ -65,12 +66,11 @@
     "target-model",
     "customer-use-cases-divider",
     "summary",
-    "customer-use-cases-dark",
-    "customer-use-cases",
     "closing",
     "cx-portfolio-arch",
     "cx-portfolio-arch-yaniv-v1",
     "appendix-divider",
+    "ai-agents-in-action",
     "unified-data-model",
     "ai-tandem",
     "appendix-products",
@@ -103,7 +103,8 @@
     "platform-copy",
     "platform-copy-2",
     "cx-portfolio-data",
-    "unified-data-model-v2"
+    "unified-data-model-v2",
+    "investment-thesis"
   ],
   "categories": {
     "world-moving-thomas": "From Tomas",
@@ -114,9 +115,9 @@
     "cx-portfolio-arch-yaniv-v1": "From Yaniv"
   },
   "categoryNames": [
-    "dividers",
     "From Tomas",
-    "From Yaniv"
+    "From Yaniv",
+    "dividers"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
@@ -178,6 +179,10 @@
     "system-of-action-copy",
     "system-of-action",
     "ai-tailwind-visual",
-    "cx-portfolio-arch-yaniv-v1"
+    "cx-portfolio-arch-yaniv-v1",
+    "cx-portfolio-arch",
+    "customer-use-cases-divider",
+    "agentic-opp-alt-a",
+    "system-of-action-visual-copy"
   ]
 }
