@@ -105,6 +105,7 @@ import CXPortfolioArchYanivV1Slide from "./slides/CXPortfolioArchYanivV1Slide";
 import InvestmentThesisSlide from "./slides/InvestmentThesisSlide";
 import AgenticOpportunityAltDSlide from "./slides/AgenticOpportunityAltDSlide";
 import AgenticOpportunityAltASlide from "./slides/AgenticOpportunityAltASlide";
+import SlideARRGrossMarginQuarterlyDark from "./slides/SlideARRGrossMarginQuarterlyDark";
 
 export type SlideTheme = "light" | "dark";
 
@@ -224,6 +225,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "investment-thesis": { id: "investment-thesis", label: "Investment Thesis", component: InvestmentThesisSlide, theme: "dark" },
   "agentic-opp-alt-d": { id: "agentic-opp-alt-d", label: "AI Opportunity (Alt D: Aha Reveal)", component: AgenticOpportunityAltDSlide, theme: "dark" },
   "agentic-opp-alt-a": { id: "agentic-opp-alt-a", label: "AI Opportunity (Alt A: Bar Chart)", component: AgenticOpportunityAltASlide, theme: "dark" },
+  "arr-gross-margin-quarterly-dark": { id: "arr-gross-margin-quarterly-dark", label: "ARR & Gross Margin (Quarterly Dark)", component: SlideARRGrossMarginQuarterlyDark, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
