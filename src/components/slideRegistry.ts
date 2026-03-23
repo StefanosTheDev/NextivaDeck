@@ -107,6 +107,8 @@ import AgenticOpportunityAltDSlide from "./slides/AgenticOpportunityAltDSlide";
 import AgenticOpportunityAltASlide from "./slides/AgenticOpportunityAltASlide";
 import SlideARRGrossMarginQuarterlyDark from "./slides/SlideARRGrossMarginQuarterlyDark";
 import SlideEBITDAQuarterlyDark from "./slides/SlideEBITDAQuarterlyDark";
+import SlideCashFlowTrendsQuarterlyDark from "./slides/SlideCashFlowTrendsQuarterlyDark";
+import SlideTargetModelDark from "./slides/SlideTargetModelDark";
 
 export type SlideTheme = "light" | "dark";
 
@@ -228,6 +230,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "agentic-opp-alt-a": { id: "agentic-opp-alt-a", label: "AI Opportunity (Alt A: Bar Chart)", component: AgenticOpportunityAltASlide, theme: "dark" },
   "arr-gross-margin-quarterly-dark": { id: "arr-gross-margin-quarterly-dark", label: "ARR & Gross Margin (Quarterly Dark)", component: SlideARRGrossMarginQuarterlyDark, theme: "dark" },
   "ebitda-quarterly-dark": { id: "ebitda-quarterly-dark", label: "EBITDA (Quarterly Dark)", component: SlideEBITDAQuarterlyDark, theme: "dark" },
+  "cash-flow-trends-quarterly-dark": { id: "cash-flow-trends-quarterly-dark", label: "Cash Flow Trends (Quarterly Dark)", component: SlideCashFlowTrendsQuarterlyDark, theme: "dark" },
+  "target-model-dark": { id: "target-model-dark", label: "Target Model (Dark)", component: SlideTargetModelDark, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
