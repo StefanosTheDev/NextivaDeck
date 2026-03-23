@@ -102,6 +102,7 @@ import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
 import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
 import UnifiedDataModelV2Slide from "./slides/UnifiedDataModelV2Slide";
 import CXPortfolioArchYanivV1Slide from "./slides/CXPortfolioArchYanivV1Slide";
+import InvestmentThesisSlide from "./slides/InvestmentThesisSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -218,6 +219,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cx-portfolio-arch-yaniv-v1": { id: "cx-portfolio-arch-yaniv-v1", label: "CX Portfolio Architecture (V1)", component: CXPortfolioArchYanivV1Slide, theme: "dark" },
   "cx-portfolio-data": { id: "cx-portfolio-data", label: "CX Portfolio + Data (Yaniv v1)", component: CXPortfolioDataSlide, theme: "dark" },
   "unified-data-model-v2": { id: "unified-data-model-v2", label: "Unified Data Model (v2 from screenshot)", component: UnifiedDataModelV2Slide, theme: "dark" },
+  "investment-thesis": { id: "investment-thesis", label: "Investment Thesis", component: InvestmentThesisSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
