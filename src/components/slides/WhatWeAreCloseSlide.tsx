@@ -53,7 +53,7 @@ export default function WhatWeAreCloseSlide({ slideNumber = 58 }: { slideNumber?
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "56px 100px 0", flexShrink: 0, position: "relative", zIndex: 1, textAlign: "center" }}
+        style={{ padding: "56px 100px 0", flexShrink: 0, position: "relative", zIndex: 1 }}
       >
         <p
           style={{
