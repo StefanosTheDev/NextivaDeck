@@ -1,5 +1,6 @@
 import CoverSlide from "./slides/CoverSlide";
 import SafeHarborSlide from "./slides/SafeHarborSlide";
+import InfrastructureLayerThesisSlide from "./slides/InfrastructureLayerThesisSlide";
 import AtAGlanceSlide from "./slides/AtAGlanceSlide";
 import FounderSlide from "./slides/FounderSlide";
 import WhoWeServeSlide from "./slides/WhoWeServeSlide";
@@ -116,6 +117,7 @@ export interface SlideDef {
 const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   cover:               { id: "cover",               label: "Cover",               component: CoverSlide,               theme: "dark" },
   "safe-harbor":       { id: "safe-harbor",         label: "Safe Harbor",         component: SafeHarborSlide,          theme: "dark" },
+  "infrastructure-layer-thesis": { id: "infrastructure-layer-thesis", label: "Infrastructure Layer Thesis", component: InfrastructureLayerThesisSlide, theme: "dark" },
   "better-outcomes":   { id: "better-outcomes",     label: "Our Mission",         component: BetterOutcomesSlide,      theme: "dark" },
   "better-outcomes-copy": { id: "better-outcomes-copy", label: "Our Mission (copy)", component: BetterOutcomesCopySlide, theme: "dark" },
   glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
@@ -223,6 +225,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
 export const DEFAULT_SLIDE_ORDER: string[] = [
   "cover",
   "safe-harbor",
+  "infrastructure-layer-thesis",
   "better-outcomes",
   "glance",
   "founder",

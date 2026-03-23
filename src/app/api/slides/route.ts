@@ -8,6 +8,7 @@ const IS_VERCEL = !!process.env.VERCEL;
 const DEFAULT_ORDER = [
   "cover",
   "safe-harbor",
+  "infrastructure-layer-thesis",
   "glance",
   "founder",
   "who",

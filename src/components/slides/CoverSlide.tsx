@@ -18,7 +18,7 @@ export default function CoverSlide({ slideNumber: _sn }: { slideNumber?: number 
           transition={{ duration: 0.8 }}
           style={{ fontWeight: 700, fontSize: 22, letterSpacing: "0.15em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}
         >
-          NEXTIVA
+          Nextiva
         </motion.p>
 
         <motion.h1
@@ -27,8 +27,16 @@ export default function CoverSlide({ slideNumber: _sn }: { slideNumber?: number 
           className="font-heading"
           style={{ fontSize: 88, fontWeight: 500, color: "#FFFFFF", marginTop: 24, lineHeight: 1.15, textAlign: "center", maxWidth: 1540 }}
         >
-          Agentic CX. Human-level care.
+          Agentic CX Platform
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+          style={{ fontSize: 30, fontWeight: 300, color: "rgba(255,255,255,0.7)", marginTop: 20, lineHeight: 1.4, textAlign: "center", maxWidth: 900, letterSpacing: "0.01em" }}
+        >
+          Turning every customer interaction into real-time outcomes
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
@@ -39,7 +47,7 @@ export default function CoverSlide({ slideNumber: _sn }: { slideNumber?: number 
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          style={{ fontSize: 24, fontWeight: 400, color: "rgba(255,255,255,0.5)", margin: 0 }}
+          style={{ fontSize: 20, fontWeight: 400, color: "rgba(255,255,255,0.4)", margin: 0 }}
         >
           Confidential
         </motion.p>
