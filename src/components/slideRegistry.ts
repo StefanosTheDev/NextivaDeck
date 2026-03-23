@@ -104,6 +104,7 @@ import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
 import UnifiedDataModelV2Slide from "./slides/UnifiedDataModelV2Slide";
 import CXPortfolioArchYanivV1Slide from "./slides/CXPortfolioArchYanivV1Slide";
 import OpportunitySlide from "./slides/OpportunitySlide";
+import TheShiftSlide from "./slides/TheShiftSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -222,6 +223,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cx-portfolio-data": { id: "cx-portfolio-data", label: "CX Portfolio + Data (Yaniv v1)", component: CXPortfolioDataSlide, theme: "dark" },
   "unified-data-model-v2": { id: "unified-data-model-v2", label: "Unified Data Model (v2 from screenshot)", component: UnifiedDataModelV2Slide, theme: "dark" },
   "opportunity": { id: "opportunity", label: "The Opportunity", component: OpportunitySlide, theme: "dark" },
+  "the-shift": { id: "the-shift", label: "The Shift", component: TheShiftSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -232,6 +234,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "glance",
   "founder",
   "who",
+  "the-shift",
   "customer-base-lovable",
   "journey",
   "problem",
