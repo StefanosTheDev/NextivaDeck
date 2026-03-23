@@ -109,6 +109,7 @@ import TheProblemAISlide from "./slides/TheProblemAISlide";
 import AgenticCXPlatformSlide from "./slides/AgenticCXPlatformSlide";
 import HowItWorksSlide from "./slides/HowItWorksSlide";
 import StrategicAdvantageSlide from "./slides/StrategicAdvantageSlide";
+import AIExpandsNextivaSlide from "./slides/AIExpandsNextivaSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -232,6 +233,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "agentic-cx-platform": { id: "agentic-cx-platform", label: "Agentic CX Platform", component: AgenticCXPlatformSlide, theme: "dark", isNew: true },
   "how-it-works": { id: "how-it-works", label: "How It Works", component: HowItWorksSlide, theme: "dark", isNew: true },
   "strategic-advantage": { id: "strategic-advantage", label: "Strategic Advantage", component: StrategicAdvantageSlide, theme: "dark", isNew: true },
+  "ai-expands-nextiva": { id: "ai-expands-nextiva", label: "AI Expands Nextiva", component: AIExpandsNextivaSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
