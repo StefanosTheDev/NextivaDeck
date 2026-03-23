@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
   LabelList,
   Customized,
+  type LabelProps,
 } from "recharts";
 
 /* ── Color constants ── */
@@ -96,20 +97,15 @@ function ForecastBarShape(props: Record<string, unknown>) {
 }
 
 /* ── Custom label renderer ── */
-function renderCustomLabel(props: Record<string, unknown>) {
-  const { x, y, width, height, value } = props as {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-    value: number;
-  };
+function renderCustomLabel(props: LabelProps) {
+  const { x, y, width, height, value: raw } = props;
+  const value = typeof raw === "number" ? raw : Number(raw);
   const isNeg = value < 0;
-  const labelY = isNeg ? y + Math.abs(height) + 18 : y - 8;
+  const labelY = isNeg ? Number(y) + Math.abs(Number(height)) + 18 : Number(y) - 8;
   const text = isNeg ? `-$${Math.abs(value)}M` : `$${value}M`;
   return (
     <text
-      x={x + width / 2}
+      x={Number(x) + Number(width) / 2}
       y={labelY}
       textAnchor="middle"
       fill={isNeg ? C.negBarColor : C.pureWhite}

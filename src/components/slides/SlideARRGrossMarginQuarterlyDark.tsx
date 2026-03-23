@@ -360,7 +360,10 @@ export default function SlideARRGrossMarginQuarterlyDark({
                 <LabelList
                   dataKey="revenue"
                   position="top"
-                  formatter={(v: number) => `$${v}M`}
+                  formatter={(label) => {
+                    const n = typeof label === "number" ? label : Number(label);
+                    return Number.isFinite(n) ? `$${n}M` : "";
+                  }}
                   style={{
                     fontSize: 15,
                     fontWeight: 700,
@@ -382,7 +385,10 @@ export default function SlideARRGrossMarginQuarterlyDark({
                 <LabelList
                   dataKey="gm"
                   position="top"
-                  formatter={(v: number) => `${v}%`}
+                  formatter={(label) => {
+                    const n = typeof label === "number" ? label : Number(label);
+                    return Number.isFinite(n) ? `${n}%` : "";
+                  }}
                   style={{
                     fontSize: 14,
                     fontWeight: 700,
