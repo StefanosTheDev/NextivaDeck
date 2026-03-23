@@ -105,6 +105,8 @@ import UnifiedDataModelV2Slide from "./slides/UnifiedDataModelV2Slide";
 import CXPortfolioArchYanivV1Slide from "./slides/CXPortfolioArchYanivV1Slide";
 import OpportunitySlide from "./slides/OpportunitySlide";
 import TheShiftSlide from "./slides/TheShiftSlide";
+import TheProblemAISlide from "./slides/TheProblemAISlide";
+import AgenticCXPlatformSlide from "./slides/AgenticCXPlatformSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -224,6 +226,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "unified-data-model-v2": { id: "unified-data-model-v2", label: "Unified Data Model (v2 from screenshot)", component: UnifiedDataModelV2Slide, theme: "dark" },
   "opportunity": { id: "opportunity", label: "The Opportunity", component: OpportunitySlide, theme: "dark" },
   "the-shift": { id: "the-shift", label: "The Shift", component: TheShiftSlide, theme: "dark", isNew: true },
+  "the-problem-ai": { id: "the-problem-ai", label: "The Problem (AI)", component: TheProblemAISlide, theme: "dark", isNew: true },
+  "agentic-cx-platform": { id: "agentic-cx-platform", label: "Agentic CX Platform", component: AgenticCXPlatformSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -235,6 +239,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "founder",
   "who",
   "the-shift",
+  "the-problem-ai",
   "customer-base-lovable",
   "journey",
   "problem",
