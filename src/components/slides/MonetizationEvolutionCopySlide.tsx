@@ -57,12 +57,12 @@ export default function MonetizationEvolutionCopySlide({ slideNumber = 0 }: { sl
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "60px 100px 0", flexShrink: 0, position: "relative", zIndex: 1, textAlign: "center" }}
+        style={{ padding: "44px 80px 0", flexShrink: 0, position: "relative", zIndex: 1 }}
       >
         <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           MONETIZATION EVOLUTION
         </p>
-        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
           From Subscription to Scalable, Usage-Driven Economics
         </h1>
       </motion.header>
