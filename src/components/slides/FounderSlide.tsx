@@ -39,7 +39,8 @@ export default function FounderSlide({ slideNumber = 4 }: { slideNumber?: number
             ))}
           </ul>
 
-          <div style={{ margin: "40px 0 0", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: "20px 32px" }}>
+          <div style={{ flex: 1 }} />
+          <div style={{ marginBottom: 20, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 16, padding: "20px 32px" }}>
             <p style={{ fontSize: 26, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.5 }}>
               <span style={{ color: "#CCC7C3" }}>Superpower</span> = product vision + market timing + patience
             </p>
