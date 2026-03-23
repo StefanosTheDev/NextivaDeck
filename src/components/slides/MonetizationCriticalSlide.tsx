@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { TrendingUp, Zap, Target } from "lucide-react";
+import { TrendingUp, Zap, Target, ChevronRight, RefreshCw } from "lucide-react";
 
 const ACCENT = "#7EB3E8";
 const GLASS = "rgba(255,255,255,0.04)";
@@ -13,7 +13,17 @@ const expansionItems = [
   { icon: TrendingUp, label: "Per outcome pricing" },
 ];
 
-export default function MonetizationCriticalSlide({ slideNumber = 0 }: { slideNumber?: number }) {
+const foundationBullets = [
+  { bold: "Predictable", rest: "revenue stream" },
+  { bold: "Built-in", rest: "platform stickiness" },
+  { bold: "Land &", rest: "expand motion" },
+];
+
+export default function MonetizationCriticalSlide({
+  slideNumber = 0,
+}: {
+  slideNumber?: number;
+}) {
   return (
     <div
       className="slide"
@@ -33,7 +43,8 @@ export default function MonetizationCriticalSlide({ slideNumber = 0 }: { slideNu
           width: 1200,
           height: 600,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(40,96,178,0.07) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(40,96,178,0.07) 0%, transparent 70%)",
         }}
       />
 
@@ -42,7 +53,7 @@ export default function MonetizationCriticalSlide({ slideNumber = 0 }: { slideNu
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         style={{
-          padding: "60px 100px 0",
+          padding: "48px 100px 0",
           flexShrink: 0,
           position: "relative",
           zIndex: 1,
@@ -82,197 +93,339 @@ export default function MonetizationCriticalSlide({ slideNumber = 0 }: { slideNu
         style={{
           flex: 1,
           display: "flex",
-          gap: 20,
-          padding: "36px 80px 0",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "16px 80px 0",
           position: "relative",
           zIndex: 1,
           minHeight: 0,
         }}
       >
-        {/* Foundation */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "stretch",
+            gap: 24,
+            width: "100%",
+          }}
+        >
+          {/* Left group: Foundation + Expansion stacked vertically */}
           <div
             style={{
-              background: GLASS,
-              border: `1px solid ${BORDER}`,
-              borderRadius: 14,
-              padding: "28px 28px 24px",
-              flex: 1,
+              flex: 6,
               display: "flex",
               flexDirection: "column",
+              gap: 16,
             }}
           >
-            <p
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: ACCENT,
-                margin: "0 0 4px",
-              }}
-            >
-              01
-            </p>
-            <h2
-              className="font-heading"
-              style={{
-                fontSize: 30,
-                fontWeight: 600,
-                color: "#FFFFFF",
-                margin: "0 0 20px",
-                lineHeight: 1.2,
-              }}
-            >
-              Foundation
-            </h2>
-
+            {/* Foundation */}
             <div
               style={{
-                background: "rgba(40,96,178,0.08)",
-                border: "1px solid rgba(40,96,178,0.2)",
-                borderRadius: 12,
-                padding: "24px",
-                flex: 1,
+                background: GLASS,
+                border: `1px solid ${BORDER}`,
+                borderRadius: 14,
+                padding: "24px 28px 20px",
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
-                gap: 16,
               }}
             >
-              <p
-                className="font-heading"
+              <div
                 style={{
-                  fontSize: 36,
-                  fontWeight: 700,
-                  color: "#FFFFFF",
-                  margin: 0,
-                  lineHeight: 1.2,
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: 12,
+                  marginBottom: 16,
                 }}
               >
-                Subscription revenue
-              </p>
-              <p
+                <p
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 700,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: ACCENT,
+                    margin: 0,
+                  }}
+                >
+                  01
+                </p>
+                <h2
+                  className="font-heading"
+                  style={{
+                    fontSize: 32,
+                    fontWeight: 600,
+                    color: "#FFFFFF",
+                    margin: 0,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  Foundation
+                </h2>
+              </div>
+
+              <div
                 style={{
-                  fontSize: 20,
-                  color: "rgba(255,255,255,0.6)",
-                  margin: 0,
-                  lineHeight: 1.5,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 20,
                 }}
               >
-                High margin, recurring base
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Expansion */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-          <div
-            style={{
-              background: GLASS,
-              border: `1px solid ${BORDER}`,
-              borderRadius: 14,
-              padding: "28px 28px 24px",
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <p
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: ACCENT,
-                margin: "0 0 4px",
-              }}
-            >
-              02
-            </p>
-            <h2
-              className="font-heading"
-              style={{
-                fontSize: 30,
-                fontWeight: 600,
-                color: "#FFFFFF",
-                margin: "0 0 20px",
-                lineHeight: 1.2,
-              }}
-            >
-              Expansion
-            </h2>
-
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 16,
-                flex: 1,
-              }}
-            >
-              {expansionItems.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={i}
+                <div
+                  style={{
+                    width: 52,
+                    height: 52,
+                    borderRadius: 14,
+                    background: "rgba(40,96,178,0.15)",
+                    border: "1px solid rgba(40,96,178,0.25)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  <RefreshCw size={26} color={ACCENT} strokeWidth={1.75} />
+                </div>
+                <div style={{ flex: 1 }}>
+                  <p
+                    className="font-heading"
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 14,
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      borderRadius: 12,
-                      padding: "18px 20px",
+                      fontSize: 24,
+                      fontWeight: 700,
+                      color: "#FFFFFF",
+                      margin: 0,
+                      lineHeight: 1.2,
                     }}
                   >
+                    Subscription revenue
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 16,
+                      color: "rgba(255,255,255,0.5)",
+                      margin: "4px 0 0",
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    High margin, recurring base
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 20,
+                    marginLeft: 16,
+                  }}
+                >
+                  {foundationBullets.map((item, i) => (
                     <div
+                      key={i}
                       style={{
-                        width: 44,
-                        height: 44,
-                        borderRadius: 12,
-                        background: "rgba(40,96,178,0.15)",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
+                        gap: 8,
                       }}
                     >
-                      <Icon size={22} color={ACCENT} strokeWidth={1.75} />
+                      <div
+                        style={{
+                          width: 6,
+                          height: 6,
+                          borderRadius: "50%",
+                          background: ACCENT,
+                          flexShrink: 0,
+                          opacity: 0.6,
+                        }}
+                      />
+                      <p
+                        style={{
+                          fontSize: 17,
+                          color: "rgba(255,255,255,0.5)",
+                          margin: 0,
+                          lineHeight: 1.4,
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontWeight: 600,
+                            color: "rgba(255,255,255,0.75)",
+                          }}
+                        >
+                          {item.bold}
+                        </span>{" "}
+                        {item.rest}
+                      </p>
                     </div>
-                    <p
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Expansion */}
+            <div
+              style={{
+                background: GLASS,
+                border: `1px solid ${BORDER}`,
+                borderRadius: 14,
+                padding: "24px 28px 20px",
+                display: "flex",
+                flexDirection: "column",
+                flex: 1,
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: 12,
+                  marginBottom: 16,
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 700,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: ACCENT,
+                    margin: 0,
+                  }}
+                >
+                  02
+                </p>
+                <h2
+                  className="font-heading"
+                  style={{
+                    fontSize: 32,
+                    fontWeight: 600,
+                    color: "#FFFFFF",
+                    margin: 0,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  Expansion
+                </h2>
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 12,
+                  flex: 1,
+                  justifyContent: "center",
+                }}
+              >
+                {expansionItems.map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={i}
                       style={{
-                        fontSize: 20,
-                        fontWeight: 600,
-                        color: "#FFFFFF",
-                        margin: 0,
-                        lineHeight: 1.3,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 16,
+                        background: "rgba(255,255,255,0.03)",
+                        border: "1px solid rgba(255,255,255,0.06)",
+                        borderRadius: 12,
+                        padding: "16px 20px",
                       }}
                     >
-                      {item.label}
-                    </p>
-                  </div>
-                );
-              })}
+                      <div
+                        style={{
+                          width: 48,
+                          height: 48,
+                          borderRadius: 12,
+                          background: "rgba(40,96,178,0.15)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                        }}
+                      >
+                        <Icon
+                          size={22}
+                          color={ACCENT}
+                          strokeWidth={1.75}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          fontSize: 20,
+                          fontWeight: 600,
+                          color: "#FFFFFF",
+                          margin: 0,
+                          lineHeight: 1.3,
+                        }}
+                      >
+                        {item.label}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Result */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+          {/* Arrow connector */}
           <div
             style={{
-              background: "rgba(40,96,178,0.06)",
-              border: "2px solid rgba(40,96,178,0.25)",
-              borderRadius: 14,
-              padding: "28px 28px 24px",
-              flex: 1,
               display: "flex",
-              flexDirection: "column",
-              boxShadow: "0 6px 32px rgba(40,96,178,0.08)",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
             }}
           >
+            <div
+              style={{
+                width: 52,
+                height: 52,
+                borderRadius: "50%",
+                background: "rgba(40,96,178,0.15)",
+                border: "1px solid rgba(40,96,178,0.3)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 0 24px rgba(40,96,178,0.12)",
+              }}
+            >
+              <ChevronRight size={28} color={ACCENT} strokeWidth={2} />
+            </div>
+          </div>
+
+          {/* Result hero card */}
+          <div
+            style={{
+              flex: 4,
+              background:
+                "linear-gradient(135deg, rgba(40,96,178,0.1) 0%, rgba(40,96,178,0.04) 100%)",
+              border: "2px solid rgba(40,96,178,0.35)",
+              borderRadius: 16,
+              padding: "36px 36px 32px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              boxShadow:
+                "0 8px 48px rgba(40,96,178,0.18), inset 0 1px 0 rgba(255,255,255,0.04)",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                top: "40%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: 300,
+                height: 200,
+                borderRadius: "50%",
+                background:
+                  "radial-gradient(circle, rgba(126,179,232,0.08) 0%, transparent 70%)",
+                pointerEvents: "none",
+              }}
+            />
+
             <p
               style={{
                 fontSize: 13,
@@ -280,44 +433,75 @@ export default function MonetizationCriticalSlide({ slideNumber = 0 }: { slideNu
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
                 color: ACCENT,
-                margin: "0 0 4px",
+                margin: "0 0 24px",
+                position: "relative",
               }}
             >
               RESULT
             </p>
-            <h2
-              className="font-heading"
+
+            <p
               style={{
-                fontSize: 30,
-                fontWeight: 600,
-                color: "#FFFFFF",
-                margin: "0 0 24px",
-                lineHeight: 1.2,
+                fontSize: 16,
+                fontWeight: 500,
+                color: "rgba(255,255,255,0.5)",
+                margin: "0 0 4px",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                position: "relative",
               }}
             >
-              Same customer &mdash;{" "}
-              <span style={{ color: ACCENT }}>2&ndash;3x revenue potential</span>
-            </h2>
+              Same customer
+            </p>
+
+            <p
+              className="font-heading"
+              style={{
+                fontSize: 80,
+                fontWeight: 700,
+                color: ACCENT,
+                margin: "0 0 4px",
+                lineHeight: 1.0,
+                position: "relative",
+              }}
+            >
+              2&ndash;3x
+            </p>
+
+            <p
+              className="font-heading"
+              style={{
+                fontSize: 28,
+                fontWeight: 600,
+                color: "#FFFFFF",
+                margin: "0 0 32px",
+                lineHeight: 1.2,
+                position: "relative",
+              }}
+            >
+              revenue potential
+            </p>
 
             <div
               style={{
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
+                borderTop: "1px solid rgba(255,255,255,0.08)",
+                paddingTop: 20,
+                position: "relative",
               }}
             >
               <p
                 style={{
-                  fontSize: 22,
-                  color: "rgba(255,255,255,0.7)",
+                  fontSize: 18,
+                  color: "rgba(255,255,255,0.6)",
                   margin: 0,
                   lineHeight: 1.6,
                 }}
               >
                 Revenue scales with{" "}
-                <span style={{ fontWeight: 700, color: "#FFFFFF" }}>customer success</span>, not
-                seats.
+                <span style={{ fontWeight: 700, color: "#FFFFFF" }}>
+                  customer success
+                </span>
+                , not seats.
               </p>
             </div>
           </div>
