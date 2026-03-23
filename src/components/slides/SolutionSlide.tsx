@@ -39,9 +39,13 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
         }}>
           OUR SOLUTION
         </p>
-        <h1 className="font-heading" style={{ fontSize: 54, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
-          Delivering business outcomes at moments of interaction.
+        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.15 }}>
+          Data + AI with communication<br />
+          <span style={{ color: "#7EB3E8" }}>as a superpower.</span>
         </h1>
+        <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "14px auto 0", lineHeight: 1.5, maxWidth: 900 }}>
+          Delivering business outcomes at moments of interaction.
+        </p>
       </motion.header>
 
       {/* Diamond graphic */}
@@ -191,18 +195,14 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
         style={{ padding: "16px 100px 24px", flexShrink: 0 }}
       >
         <div style={{
-          display: "flex", justifyContent: "center", alignItems: "center", gap: 12,
           padding: "18px 32px", borderRadius: 12,
           background: "rgba(40,96,178,0.12)", border: "1px solid rgba(40,96,178,0.2)",
+          textAlign: "center",
         }}>
-          {outcomes.map((o, i) => (
-            <span key={o} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ fontSize: 16, fontWeight: 700, color: "#7EB3E8" }}>{o}</span>
-              {i < outcomes.length - 1 && (
-                <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#7EB3E8", opacity: 0.3 }} />
-              )}
-            </span>
-          ))}
+          <p style={{ fontSize: 22, fontWeight: 700, margin: 0, lineHeight: 1.5 }}>
+            <span style={{ color: "#FFFFFF" }}>We are not a system of record. </span>
+            <span style={{ color: "#7EB3E8" }}>We are a system of action.</span>
+          </p>
         </div>
       </motion.div>
 
