@@ -84,17 +84,18 @@ export default function SortableSlideCard({
         {isHidden && (
           <div
             style={{
-              position: "absolute", top: 0, left: 0, right: 0,
-              zIndex: 10, display: "flex", alignItems: "center", justifyContent: "center",
-              gap: 6, padding: "6px 0",
+              position: "absolute", top: 0, left: 0,
+              zIndex: 10, display: "flex", alignItems: "center",
+              gap: 6, padding: "6px 10px",
               background: "rgba(0,0,0,0.7)", backdropFilter: "blur(4px)",
               fontSize: 12, fontWeight: 600, color: "#ef4444",
               fontFamily: "'Space Grotesk', sans-serif",
               letterSpacing: "0.04em", textTransform: "uppercase",
+              borderBottomRightRadius: 8,
             }}
           >
             <EyeOff size={13} />
-            Hidden from Deck
+            Hidden
           </div>
         )}
 

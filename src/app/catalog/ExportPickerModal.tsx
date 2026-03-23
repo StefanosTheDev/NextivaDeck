@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback } from "react";
 import { X, Check, Download, FileDown, Loader2, CheckSquare, Square } from "lucide-react";
 import type { SlideDef } from "@/components/slideRegistry";
 
@@ -24,7 +24,6 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
     () => new Set(publishedSlides.map((s) => s.id))
   );
   const [state, setState] = useState<GenerationState>({ status: "picking" });
-  const abortRef = useRef(false);
 
   const toggle = useCallback((id: string) => {
     setSelected((prev) => {
@@ -43,73 +42,32 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
     setSelected(new Set());
   }, []);
 
-  const handleGenerate = useCallback(async () => {
-    const slideIds = publishedSlides
-      .filter((s) => selected.has(s.id))
-      .map((s) => s.id);
+  const selectedSlides = publishedSlides.filter((s) => selected.has(s.id));
 
+  const handleGenerate = useCallback(async () => {
+    const slideIds = selectedSlides.map((s) => s.id);
     if (slideIds.length === 0) return;
 
-    abortRef.current = false;
     setState({
       status: "generating",
       current: 0,
       total: slideIds.length,
-      slideLabel: "Starting...",
+      slideLabel: "Loading slides...",
     });
 
     try {
-      const endpoint = format === "pdf" ? "/api/generate-pdf" : "/api/generate-pptx";
-      const url = `${endpoint}?slides=${encodeURIComponent(slideIds.join(","))}`;
+      const exportFn = format === "pdf"
+        ? (await import("@/lib/clientExport")).generatePdfClient
+        : (await import("@/lib/clientExport")).generatePptxClient;
 
-      const labels = new Map(publishedSlides.map((s) => [s.id, s.slide.label]));
-
-      const estimatedMs = slideIds.length * 2500;
-      const startTime = Date.now();
-      const progressInterval = setInterval(() => {
-        if (abortRef.current) {
-          clearInterval(progressInterval);
-          return;
-        }
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / estimatedMs, 0.95);
-        const currentSlide = Math.floor(progress * slideIds.length);
-        const label = labels.get(slideIds[Math.min(currentSlide, slideIds.length - 1)]) || "";
+      await exportFn(slideIds, (progress) => {
         setState({
           status: "generating",
-          current: Math.min(currentSlide + 1, slideIds.length),
-          total: slideIds.length,
-          slideLabel: label,
+          current: progress.current,
+          total: progress.total,
+          slideLabel: progress.slideLabel || "",
         });
-      }, 500);
-
-      const res = await fetch(url);
-
-      clearInterval(progressInterval);
-
-      if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        throw new Error(body?.details ?? `Generation failed (${res.status})`);
-      }
-
-      setState({
-        status: "generating",
-        current: slideIds.length,
-        total: slideIds.length,
-        slideLabel: "Downloading...",
       });
-
-      const blob = await res.blob();
-      const downloadUrl = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = downloadUrl;
-      a.download = format === "pdf"
-        ? "Nextiva-Investor-Deck-2026.pdf"
-        : "Nextiva-Investor-Deck-2026.pptx";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(downloadUrl);
 
       setState({ status: "done" });
     } catch (err) {
@@ -118,7 +76,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
         message: err instanceof Error ? err.message : "Generation failed",
       });
     }
-  }, [format, publishedSlides, selected]);
+  }, [format, selectedSlides]);
 
   const allSelected = selected.size === publishedSlides.length;
   const noneSelected = selected.size === 0;
@@ -174,7 +132,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
           )}
         </div>
 
-        {/* Progress bar (visible during generation) */}
+        {/* Progress bar */}
         {(state.status === "generating" || state.status === "done") && (
           <div style={{ padding: "12px 24px 0" }}>
             <div style={{
@@ -214,10 +172,9 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
           </div>
         )}
 
-        {/* Slide list */}
+        {/* Slide list (picking) */}
         {(state.status === "picking" || state.status === "error") && (
           <>
-            {/* Select all / deselect all */}
             <div style={{
               display: "flex", alignItems: "center", gap: 12,
               padding: "12px 24px",
@@ -301,10 +258,10 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
           </>
         )}
 
-        {/* Generating slide list (readonly view with progress) */}
+        {/* Generating slide list */}
         {state.status === "generating" && (
           <div style={{ flex: 1, overflowY: "auto", padding: "4px 24px 12px" }}>
-            {publishedSlides.filter((s) => selected.has(s.id)).map((s, idx) => {
+            {selectedSlides.map((s, idx) => {
               const isDone = idx < state.current;
               const isCurrent = idx === state.current - 1;
               return (

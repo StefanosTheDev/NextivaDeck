@@ -65,6 +65,7 @@ export default function CatalogPage() {
     return "all";
   });
   const [showPreview, setShowPreview] = useState(false);
+  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   const savedTimeout = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
@@ -418,18 +419,26 @@ export default function CatalogPage() {
           {uniqueCategories.map((cat) => {
             const color = getColorForCategory(cat, uniqueCategories);
             const count = order.filter((id) => categories[id] === cat).length;
+            const isActive = categoryFilter === cat;
             return (
               <div key={`cat-header-${cat}`} style={{
                 display: "flex", alignItems: "center", gap: 8,
                 padding: "6px 8px", borderRadius: 6, marginBottom: 4, marginTop: 8,
-              }}>
+                background: isActive ? color.bg : "transparent",
+                cursor: "pointer",
+                transition: "background 0.15s",
+              }}
+                onClick={() => setCategoryFilter(isActive ? null : cat)}
+              >
                 <div style={{ width: 10, height: 10, borderRadius: "50%", background: color.dot, flexShrink: 0 }} />
                 <span style={{ fontSize: 14, fontWeight: 600, color: color.text, flex: 1 }}>{cat}</span>
                 <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginRight: 4 }}>{count}</span>
                 <button
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     if (window.confirm(`Delete category "${cat}"? All slides in this category will be moved to Uncategorized.`)) {
                       deleteCategory(cat);
+                      if (categoryFilter === cat) setCategoryFilter(null);
                     }
                   }}
                   title={`Delete "${cat}"`}
@@ -525,6 +534,7 @@ export default function CatalogPage() {
             display: "flex", alignItems: "center", gap: 6,
             padding: "20px 32px 0",
             flexShrink: 0,
+            flexWrap: "wrap",
           }}>
             {([
               { key: "all" as const, label: "All Slides", count: order.length },
@@ -560,6 +570,29 @@ export default function CatalogPage() {
                 </span>
               </button>
             ))}
+            {categoryFilter && (() => {
+              const filterColor = getColorForCategory(categoryFilter, uniqueCategories);
+              return (
+                <button
+                  onClick={() => setCategoryFilter(null)}
+                  style={{
+                    display: "flex", alignItems: "center", gap: 6,
+                    padding: "6px 14px", borderRadius: 20,
+                    border: "none", fontSize: 13, fontWeight: 600,
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    cursor: "pointer",
+                    background: filterColor.bg,
+                    color: filterColor.text,
+                    marginLeft: 8,
+                    transition: "opacity 0.15s",
+                  }}
+                >
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: filterColor.dot }} />
+                  {categoryFilter}
+                  <X size={13} style={{ marginLeft: 2 }} />
+                </button>
+              );
+            })()}
           </div>
 
           <div style={{ padding: "20px 32px 60px", flex: 1 }}>
@@ -594,6 +627,7 @@ export default function CatalogPage() {
                     const isHidden = hiddenSet.has(id);
                     if (viewFilter === "published" && isHidden) return null;
                     if (viewFilter === "hidden" && !isHidden) return null;
+                    if (categoryFilter && (categories[id] || null) !== categoryFilter) return null;
                     const displayIndex = viewFilter === "published"
                       ? (publishedIndexMap.get(id) ?? order.indexOf(id))
                       : order.indexOf(id);

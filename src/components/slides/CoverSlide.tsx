@@ -12,24 +12,6 @@ export default function CoverSlide({ slideNumber: _sn }: { slideNumber?: number 
         textAlign: "center",
       }}
     >
-      {/* Desert landscape photo */}
-      <img
-        src="/images/desert-hero.png"
-        alt=""
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          width: "100%",
-          height: "55%",
-          objectFit: "cover",
-          objectPosition: "center top",
-          opacity: 0.35,
-          maskImage: "linear-gradient(to bottom, transparent 0%, black 30%)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 30%)",
-        }}
-      />
-
       <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
         <motion.p
           initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}

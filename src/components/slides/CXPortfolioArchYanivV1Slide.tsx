@@ -10,10 +10,10 @@ const cxProducts = [
 ];
 
 const platformLayers = [
-  { label: "AI Orchestration Layer", opacity: 0.07 },
-  { label: "Omnichannel Communication", opacity: 0.10 },
-  { label: "Unified Data Model", opacity: 0.14 },
-  { label: "Data & Integration Layer", opacity: 0.18 },
+  { label: "AI Orchestration Layer", opacity: 0.18 },
+  { label: "Omnichannel Communication", opacity: 0.14 },
+  { label: "Unified Data Model", opacity: 0.10 },
+  { label: "Data & Integration Layer", opacity: 0.07 },
 ];
 
 const ecosystemItems = [
@@ -29,7 +29,7 @@ const ecosystemItems = [
   },
 ];
 
-export default function CXPortfolioArchSlide({
+export default function CXPortfolioArchYanivV1Slide({
   slideNumber = 20,
 }: {
   slideNumber?: number;
@@ -65,10 +65,10 @@ export default function CXPortfolioArchSlide({
           </p>
           <span style={{
             padding: "2px 10px", borderRadius: 12,
-            background: "rgba(40,96,178,0.25)", border: "1px solid rgba(40,96,178,0.4)",
-            color: "#5b9cf5", fontSize: 12, fontWeight: 700, letterSpacing: "0.04em",
+            background: "rgba(217,119,6,0.25)", border: "1px solid rgba(217,119,6,0.4)",
+            color: "#fbbf24", fontSize: 12, fontWeight: 700, letterSpacing: "0.04em",
           }}>
-            V2
+            V1
           </span>
         </div>
         <h1
@@ -96,7 +96,6 @@ export default function CXPortfolioArchSlide({
         </p>
       </motion.header>
 
-      {/* Main architecture diagram */}
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -109,29 +108,26 @@ export default function CXPortfolioArchSlide({
           padding: "20px 100px 0",
         }}
       >
-        {/* Outer bordered container — mirrors Tableau's main box */}
         <div
           style={{
             display: "flex",
             width: "100%",
-            maxWidth: 1040,
+            maxWidth: 960,
             border: "1.5px solid rgba(40,96,178,0.45)",
             borderRadius: 20,
             overflow: "hidden",
           }}
         >
-          {/* Left section (~65%) — CX Platform */}
           <div
             style={{
               flex: "0 0 64%",
-              background: "rgba(255,255,255,0.06)",
+              background: "rgba(255,255,255,0.03)",
               padding: "28px 32px 28px",
               display: "flex",
               flexDirection: "column",
               gap: 18,
             }}
           >
-            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
@@ -140,11 +136,11 @@ export default function CXPortfolioArchSlide({
               <span
                 style={{
                   display: "inline-block",
-                  padding: "6px 18px",
+                  padding: "5px 16px",
                   borderRadius: 20,
-                  background: "rgba(6,26,55,0.9)",
-                  border: "1px solid rgba(40,96,178,0.4)",
-                  color: "#FFFFFF",
+                  background: "rgba(40,96,178,0.35)",
+                  border: "1px solid rgba(40,96,178,0.5)",
+                  color: "#7EB3E8",
                   fontSize: 12,
                   fontWeight: 700,
                   letterSpacing: "0.04em",
@@ -154,7 +150,6 @@ export default function CXPortfolioArchSlide({
               </span>
             </motion.div>
 
-            {/* Pre-built CX Products heading */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -164,18 +159,16 @@ export default function CXPortfolioArchSlide({
                 fontWeight: 600,
                 color: "rgba(255,255,255,0.7)",
                 margin: 0,
-                textAlign: "center",
               }}
             >
               Pre-built CX Products
             </motion.p>
 
-            {/* Product tiles row */}
             <div
               style={{
                 display: "flex",
                 gap: 24,
-                justifyContent: "center",
+                justifyContent: "flex-start",
                 marginBottom: 4,
               }}
             >
@@ -197,9 +190,9 @@ export default function CXPortfolioArchSlide({
                   >
                     <div
                       style={{
-                        width: 52,
-                        height: 52,
-                        borderRadius: 14,
+                        width: 44,
+                        height: 44,
+                        borderRadius: 12,
                         background: "rgba(40,96,178,0.15)",
                         border: "1px solid rgba(40,96,178,0.3)",
                         display: "flex",
@@ -207,7 +200,7 @@ export default function CXPortfolioArchSlide({
                         justifyContent: "center",
                       }}
                     >
-                      <Icon size={26} color="#7EB3E8" strokeWidth={1.75} />
+                      <Icon size={22} color="#7EB3E8" strokeWidth={1.75} />
                     </div>
                     <span
                       style={{
@@ -225,7 +218,6 @@ export default function CXPortfolioArchSlide({
               })}
             </div>
 
-            {/* Stacked layer bars */}
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {platformLayers.map((layer, i) => (
                 <motion.div
@@ -236,7 +228,6 @@ export default function CXPortfolioArchSlide({
                   style={{
                     background: `rgba(40,96,178,${layer.opacity})`,
                     border: "1px solid rgba(40,96,178,0.2)",
-                    borderLeft: "4px solid rgba(40,96,178,0.5)",
                     borderRadius: 10,
                     padding: "12px 20px",
                     textAlign: "center",
@@ -256,7 +247,6 @@ export default function CXPortfolioArchSlide({
             </div>
           </div>
 
-          {/* Vertical divider */}
           <div
             style={{
               width: 1.5,
@@ -265,7 +255,6 @@ export default function CXPortfolioArchSlide({
             }}
           />
 
-          {/* Right section (~36%) — NEXT Ecosystem */}
           <motion.div
             initial={{ opacity: 0, x: 14 }}
             animate={{ opacity: 1, x: 0 }}
@@ -282,10 +271,10 @@ export default function CXPortfolioArchSlide({
             <h3
               className="font-heading"
               style={{
-                fontSize: 26,
+                fontSize: 24,
                 fontWeight: 700,
                 color: "#FFFFFF",
-                margin: "0 0 16px",
+                margin: "0 0 8px",
                 textAlign: "center",
                 lineHeight: 1.2,
               }}
@@ -295,7 +284,6 @@ export default function CXPortfolioArchSlide({
               Ecosystem
             </h3>
 
-            {/* Ecosystem items */}
             <div
               style={{
                 flex: 1,
@@ -322,7 +310,20 @@ export default function CXPortfolioArchSlide({
                       gap: 8,
                     }}
                   >
-                    <Icon size={40} color="#7EB3E8" strokeWidth={1.5} />
+                    <div
+                      style={{
+                        width: 48,
+                        height: 48,
+                        borderRadius: 14,
+                        background: "rgba(40,96,178,0.18)",
+                        border: "1px solid rgba(40,96,178,0.3)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Icon size={24} color="#7EB3E8" strokeWidth={1.75} />
+                    </div>
                     <p
                       style={{
                         fontSize: 16,
@@ -353,7 +354,6 @@ export default function CXPortfolioArchSlide({
         </div>
       </motion.main>
 
-      {/* Bottom takeaway bar */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

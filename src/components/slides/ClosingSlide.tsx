@@ -12,24 +12,6 @@ export default function ClosingSlide({ slideNumber: _sn }: { slideNumber?: numbe
         textAlign: "center",
       }}
     >
-      {/* Desert landscape photo */}
-      <img
-        src="/images/desert-hero.png"
-        alt=""
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          width: "100%",
-          height: "45%",
-          objectFit: "cover",
-          objectPosition: "center top",
-          opacity: 0.2,
-          maskImage: "linear-gradient(to bottom, transparent 0%, black 40%)",
-          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 40%)",
-        }}
-      />
-
       <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}
           style={{ fontWeight: 700, fontSize: 22, letterSpacing: "0.15em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>

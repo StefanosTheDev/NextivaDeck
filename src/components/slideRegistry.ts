@@ -101,6 +101,7 @@ import CustomerUseCasesDarkSlide from "./slides/CustomerUseCasesDarkSlide";
 import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
 import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
 import UnifiedDataModelV2Slide from "./slides/UnifiedDataModelV2Slide";
+import CXPortfolioArchYanivV1Slide from "./slides/CXPortfolioArchYanivV1Slide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -213,7 +214,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
   "appendix-divider": { id: "appendix-divider", label: "Appendix", component: AppendixDividerSlide, theme: "dark" },
   "customer-use-cases-dark": { id: "customer-use-cases-dark", label: "Customer Use Cases (Dark)", component: CustomerUseCasesDarkSlide, theme: "dark" },
-  "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture", component: CXPortfolioArchSlide, theme: "dark" },
+  "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture (V2)", component: CXPortfolioArchSlide, theme: "dark" },
+  "cx-portfolio-arch-yaniv-v1": { id: "cx-portfolio-arch-yaniv-v1", label: "CX Portfolio Architecture (V1)", component: CXPortfolioArchYanivV1Slide, theme: "dark" },
   "cx-portfolio-data": { id: "cx-portfolio-data", label: "CX Portfolio + Data (Yaniv v1)", component: CXPortfolioDataSlide, theme: "dark" },
   "unified-data-model-v2": { id: "unified-data-model-v2", label: "Unified Data Model (v2 from screenshot)", component: UnifiedDataModelV2Slide, theme: "dark" },
 };
