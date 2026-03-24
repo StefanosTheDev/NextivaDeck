@@ -117,6 +117,8 @@ import CompetitionCategorySlide from "./slides/CompetitionCategorySlide";
 import EnterpriseExpansionSlide from "./slides/EnterpriseExpansionSlide";
 import WhyNowSlide from "./slides/WhyNowSlide";
 import ThankYouV2Slide from "./slides/ThankYouV2Slide";
+import InvestorSummarySlide from "./slides/InvestorSummarySlide";
+import AtAGlanceTomasSlide from "./slides/AtAGlanceTomasSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -248,6 +250,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "enterprise-expansion": { id: "enterprise-expansion", label: "Enterprise Expansion", component: EnterpriseExpansionSlide, theme: "dark", isNew: true },
   "why-now-v2": { id: "why-now-v2", label: "Why Now", component: WhyNowSlide, theme: "dark", isNew: true },
   "thank-you-v2": { id: "thank-you-v2", label: "Thank You", component: ThankYouV2Slide, theme: "dark", isNew: true },
+  "investor-summary-tomas": { id: "investor-summary-tomas", label: "Investor Summary (Tomas)", component: InvestorSummarySlide, theme: "dark", isNew: true },
+  "glance-tomas": { id: "glance-tomas", label: "At a Glance (Tomas)", component: AtAGlanceTomasSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -317,6 +321,8 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "executive-summary-stack",
   "executive-summary-2-stack",
   "executive-summary-cards-copy",
+  "investor-summary-tomas",
+  "glance-tomas",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
