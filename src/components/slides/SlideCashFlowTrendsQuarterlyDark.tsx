@@ -11,6 +11,7 @@ import {
   ResponsiveContainer,
   LabelList,
   Customized,
+  type LabelProps,
 } from "recharts";
 
 /* ── Design system ── */
@@ -126,40 +127,37 @@ function ForecastDivider(props: Record<string, unknown>) {
 }
 
 /* ── Label renderers ── */
-function ebitdaLabel(props: Record<string, unknown>) {
-  const { x, y, width, height, value } = props as {
-    x: number; y: number; width: number; height: number; value: number;
-  };
+function ebitdaLabel(props: LabelProps) {
+  const { x, y, width, height, value: raw } = props;
+  const value = typeof raw === "number" ? raw : Number(raw);
   const isNeg = value < 0;
-  const ly = isNeg ? y + Math.abs(height) + 14 : y - 6;
+  const ly = isNeg ? Number(y) + Math.abs(Number(height)) + 14 : Number(y) - 6;
   return (
-    <text x={x + width / 2} y={ly} textAnchor="middle"
+    <text x={Number(x) + Number(width) / 2} y={ly} textAnchor="middle"
       fill={isNeg ? NEG_BAR : C.pureWhite} fontSize={12} fontWeight={700} fontFamily={F.body}>
       {isNeg ? `-$${Math.abs(value)}` : `$${value}`}
     </text>
   );
 }
 
-function fcfLabel(props: Record<string, unknown>) {
-  const { x, y, width, height, value } = props as {
-    x: number; y: number; width: number; height: number; value: number;
-  };
+function fcfLabel(props: LabelProps) {
+  const { x, y, width, height, value: raw } = props;
+  const value = typeof raw === "number" ? raw : Number(raw);
   const isNeg = value < 0;
-  const ly = isNeg ? y + Math.abs(height) + 14 : y - 6;
+  const ly = isNeg ? Number(y) + Math.abs(Number(height)) + 14 : Number(y) - 6;
   return (
-    <text x={x + width / 2} y={ly} textAnchor="middle"
+    <text x={Number(x) + Number(width) / 2} y={ly} textAnchor="middle"
       fill={isNeg ? NEG_BAR : C.pureWhite} fontSize={12} fontWeight={700} fontFamily={F.body}>
       {isNeg ? `($${Math.abs(value)})` : `$${value}`}
     </text>
   );
 }
 
-function cashLabel(props: Record<string, unknown>) {
-  const { x, y, width, value } = props as {
-    x: number; y: number; width: number; value: number;
-  };
+function cashLabel(props: LabelProps) {
+  const { x, y, width, value: raw } = props;
+  const value = typeof raw === "number" ? raw : Number(raw);
   return (
-    <text x={x + width / 2} y={y - 6} textAnchor="middle"
+    <text x={Number(x) + Number(width) / 2} y={Number(y) - 6} textAnchor="middle"
       fill={BAR_GOLD} fontSize={12} fontWeight={700} fontFamily={F.body}>
       ${value}
     </text>
@@ -225,23 +223,26 @@ function ChartRow({ chart, card }: { chart: React.ReactNode; card: React.ReactNo
 }
 
 /* ── Margin % custom label on the line ── */
-function marginLineLabel(props: Record<string, unknown>) {
-  const { x, y, value } = props as { x: number; y: number; value: number };
+function marginLineLabel(props: LabelProps) {
+  const { x, y, value: raw } = props;
+  const value = typeof raw === "number" ? raw : Number(raw);
   return (
-    <text x={x} y={y + 16} textAnchor="middle"
+    <text x={Number(x)} y={Number(y) + 16} textAnchor="middle"
       fill="rgba(255,255,255,0.5)" fontSize={11} fontFamily={F.body}>
       {value}%
     </text>
   );
 }
 
-function conversionLineLabel(props: Record<string, unknown>) {
-  const { x, y, value } = props as { x: number; y: number; value: number | null };
-  if (value == null) return null;
+function conversionLineLabel(props: LabelProps) {
+  const { x, y, value } = props;
+  if (value == null || value === "") return null;
+  const num = typeof value === "number" ? value : Number(value);
+  if (!Number.isFinite(num)) return null;
   return (
-    <text x={x} y={y + 16} textAnchor="middle"
+    <text x={Number(x)} y={Number(y) + 16} textAnchor="middle"
       fill="rgba(255,255,255,0.5)" fontSize={11} fontFamily={F.body}>
-      {value}%
+      {num}%
     </text>
   );
 }
