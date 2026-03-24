@@ -3,8 +3,6 @@
     "cover",
     "safe-harbor",
     "infrastructure-layer-thesis",
-    "investor-summary-tomas",
-    "glance-tomas",
     "better-outcomes-copy",
     "glance",
     "founder",
@@ -117,26 +115,27 @@
     "platform-copy",
     "platform-copy-2",
     "cx-portfolio-data",
-    "unified-data-model-v2"
+    "unified-data-model-v2",
+    "investor-summary-tomas",
+    "glance-tomas"
   ],
   "categories": {
     "world-moving-thomas": "From Tomas",
     "what-we-are-close-thomas": "From Tomas",
     "cx-portfolio-thomas": "From Tomas",
     "agentic-opp-v2-thomas": "From Tomas",
-    "investor-summary-tomas": "From Tomas",
-    "glance-tomas": "From Tomas",
+    "investor-summary-tomas": "From Tomas-Branch",
+    "glance-tomas": "From Tomas-Branch",
     "cx-portfolio-arch": "From Yaniv",
     "cx-portfolio-arch-yaniv-v1": "From Yaniv"
   },
   "categoryNames": [
     "dividers",
     "From Tomas",
+    "From Tomas-Branch",
     "From Yaniv"
   ],
   "hiddenSlides": [
-    "glance",
-    "founder",
     "better-outcomes-copy",
     "the-problem-ai",
     "cx-market-sizing",
