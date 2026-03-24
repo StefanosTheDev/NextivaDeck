@@ -12,6 +12,7 @@
     "better-outcomes",
     "executive-summary-cards",
     "who",
+    "customer-base-broad-tomas",
     "the-shift",
     "problem",
     "agentic-cx-platform",
@@ -118,7 +119,7 @@
     "platform-copy-2",
     "cx-portfolio-data",
     "unified-data-model-v2",
-    "customer-base-broad-tomas"
+    "world-moving-tomas-branch"
   ],
   "categories": {
     "world-moving-thomas": "From Tomas",
@@ -128,6 +129,7 @@
     "investor-summary-tomas": "From Tomas-Branch",
     "glance-tomas": "From Tomas-Branch",
     "customer-base-broad-tomas": "From Tomas-Branch",
+    "world-moving-tomas-branch": "From Tomas-Branch",
     "cx-portfolio-arch": "From Yaniv",
     "cx-portfolio-arch-yaniv-v1": "From Yaniv"
   },

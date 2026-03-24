@@ -120,6 +120,7 @@ import ThankYouV2Slide from "./slides/ThankYouV2Slide";
 import InvestorSummarySlide from "./slides/InvestorSummarySlide";
 import AtAGlanceTomasSlide from "./slides/AtAGlanceTomasSlide";
 import CustomerBaseBroadTomasSlide from "./slides/CustomerBaseBroadTomasSlide";
+import WorldMovingTomasSlide from "./slides/WorldMovingTomasSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -254,6 +255,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "investor-summary-tomas": { id: "investor-summary-tomas", label: "Investor Summary (From Tomas-Branch · 03/24/26)", component: InvestorSummarySlide, theme: "dark", isNew: true },
   "glance-tomas": { id: "glance-tomas", label: "At a Glance (From Tomas-Branch · 03/24/26)", component: AtAGlanceTomasSlide, theme: "dark", isNew: true },
   "customer-base-broad-tomas": { id: "customer-base-broad-tomas", label: "Customer Base Broad (From Tomas-Branch · 03/24/26)", component: CustomerBaseBroadTomasSlide, theme: "dark", isNew: true },
+  "world-moving-tomas-branch": { id: "world-moving-tomas-branch", label: "World Moving to Unified CX (From Tomas-Branch · 03/24/26)", component: WorldMovingTomasSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -326,6 +328,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "investor-summary-tomas",
   "glance-tomas",
   "customer-base-broad-tomas",
+  "world-moving-tomas-branch",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
