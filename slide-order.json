@@ -33,8 +33,7 @@
     "agentic-opp",
     "agentic-opp-alt-d",
     "agentic-opp-alt-a",
-    "customer-use-cases-dark",
-    "customer-use-cases-dark-v2",
+    "ai-agents-in-action-v2",
     "customer-use-cases",
     "ai-tailwind",
     "agentic-opp-3",
@@ -70,13 +69,14 @@
     "target-model",
     "target-model-dark",
     "customer-use-cases-divider",
+    "customer-use-cases-dark",
+    "customer-use-cases-dark-v2",
     "summary",
     "closing",
     "cx-portfolio-arch",
     "cx-portfolio-arch-yaniv-v1",
     "appendix-divider",
     "ai-agents-in-action",
-    "ai-agents-in-action-v2",
     "unified-data-model",
     "ai-tandem",
     "appendix-products",
@@ -196,6 +196,7 @@
     "cash-flow-trends",
     "target-model",
     "customer-use-cases-dark",
-    "customer-use-cases"
+    "customer-use-cases",
+    "customer-use-cases-dark-v2"
   ]
 }
