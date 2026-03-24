@@ -76,6 +76,7 @@
     "cx-portfolio-arch-yaniv-v1",
     "appendix-divider",
     "ai-agents-in-action",
+    "ai-agents-in-action-v2",
     "unified-data-model",
     "ai-tandem",
     "appendix-products",
@@ -193,6 +194,8 @@
     "arr-gross-margin",
     "ebitda",
     "cash-flow-trends",
-    "target-model"
+    "target-model",
+    "customer-use-cases-dark",
+    "customer-use-cases"
   ]
 }
