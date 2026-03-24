@@ -102,6 +102,19 @@ import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
 import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
 import UnifiedDataModelV2Slide from "./slides/UnifiedDataModelV2Slide";
 import CXPortfolioArchYanivV1Slide from "./slides/CXPortfolioArchYanivV1Slide";
+import InvestorSummarySlide from "./slides/InvestorSummarySlide";
+import SystemOfActionCombinedSlide from "./slides/SystemOfActionCombinedSlide";
+import ClosingCopySlide from "./slides/ClosingCopySlide";
+import ConversationalCommerceSlide from "./slides/ConversationalCommerceSlide";
+import ThreeMoatsSlide from "./slides/ThreeMoatsSlide";
+import InvestorSummaryCopySlide from "./slides/InvestorSummaryCopySlide";
+import UnifiedPlatformMoatsSlide from "./slides/UnifiedPlatformMoatsSlide";
+import StructuralAdvantagesSlide from "./slides/StructuralAdvantagesSlide";
+import JourneyCopySlide from "./slides/JourneyCopySlide";
+import StructuralAdvantagesCopySlide from "./slides/StructuralAdvantagesCopySlide";
+import CustomerBaseBroadSlide from "./slides/CustomerBaseBroadSlide";
+import GTMEngineSlide from "./slides/GTMEngineSlide";
+import GTMEngineCopySlide from "./slides/GTMEngineCopySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -134,7 +147,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "agentic-opp-copy-2": { id: "agentic-opp-copy-2", label: "AI Opportunity (copy 2)", component: AgenticOpportunityCopy2Slide, theme: "dark" },
   "agentic-opp-copy-3": { id: "agentic-opp-copy-3", label: "Tomorrow's Agentic Workforce (copy)", component: AgenticOpportunityCopy3Slide, theme: "dark" },
   "agentic-opp-copy-4": { id: "agentic-opp-copy-4", label: "The Next Workforce is a Gen Tech (copy)", component: AgenticOpportunityCopy4Slide, theme: "dark" },
-  "agentic-opp-copy-5": { id: "agentic-opp-copy-5", label: "The Next Workforce is Agentic (defensive)", component: AgenticOpportunityCopy5Slide, theme: "dark" },
+  "agentic-opp-copy-5": { id: "agentic-opp-copy-5", label: "AI Opportunity (simplified)", component: AgenticOpportunityCopy5Slide, theme: "dark" },
   "agentic-opp-3":     { id: "agentic-opp-3",      label: "AI Opportunity (defensive)", component: AgenticOpportunity3Slide, theme: "dark" },
   "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "dark" },
   "cx-market-sizing":  { id: "cx-market-sizing",     label: "CX Market Sizing",    component: CXMarketSizingSlide,      theme: "dark" },
@@ -218,6 +231,19 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cx-portfolio-arch-yaniv-v1": { id: "cx-portfolio-arch-yaniv-v1", label: "CX Portfolio Architecture (V1)", component: CXPortfolioArchYanivV1Slide, theme: "dark" },
   "cx-portfolio-data": { id: "cx-portfolio-data", label: "CX Portfolio + Data (Yaniv v1)", component: CXPortfolioDataSlide, theme: "dark" },
   "unified-data-model-v2": { id: "unified-data-model-v2", label: "Unified Data Model (v2 from screenshot)", component: UnifiedDataModelV2Slide, theme: "dark" },
+  "investor-summary": { id: "investor-summary", label: "Investor Summary", component: InvestorSummarySlide, theme: "dark" },
+  "system-of-action-combined": { id: "system-of-action-combined", label: "System of Action (Combined)", component: SystemOfActionCombinedSlide, theme: "dark" },
+  "closing-copy": { id: "closing-copy", label: "Closing (3-card)", component: ClosingCopySlide, theme: "dark" },
+  "conversational-commerce": { id: "conversational-commerce", label: "Conversational Commerce", component: ConversationalCommerceSlide, theme: "dark" },
+  "three-moats": { id: "three-moats", label: "Three Moats", component: ThreeMoatsSlide, theme: "dark" },
+  "investor-summary-copy": { id: "investor-summary-copy", label: "Investor Summary (simplified)", component: InvestorSummaryCopySlide, theme: "dark" },
+  "unified-platform-moats": { id: "unified-platform-moats", label: "Unified Platform Moats", component: UnifiedPlatformMoatsSlide, theme: "dark" },
+  "structural-advantages": { id: "structural-advantages", label: "Three Structural Advantages", component: StructuralAdvantagesSlide, theme: "dark" },
+  "journey-copy": { id: "journey-copy", label: "Journey (copy)", component: JourneyCopySlide, theme: "dark" },
+  "structural-advantages-copy": { id: "structural-advantages-copy", label: "Structural Advantages (copy)", component: StructuralAdvantagesCopySlide, theme: "dark" },
+  "customer-base-broad": { id: "customer-base-broad", label: "Customer Base (Broad, Tenured, Durable)", component: CustomerBaseBroadSlide, theme: "dark" },
+  "gtm-engine": { id: "gtm-engine", label: "GTM Engine", component: GTMEngineSlide, theme: "dark" },
+  "gtm-engine-copy": { id: "gtm-engine-copy", label: "GTM Engine (Investor)", component: GTMEngineCopySlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

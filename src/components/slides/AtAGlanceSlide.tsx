@@ -31,7 +31,7 @@ export default function AtAGlanceSlide({ slideNumber = 3 }: { slideNumber?: numb
           Nextiva at a glance.
         </h1>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "12px 0 0", lineHeight: 1.4 }}>
-          A durable, profitable, founder-led software business.
+          A durable, profitable and scaled platform with embedded distribution advantage
         </p>
       </motion.header>
 

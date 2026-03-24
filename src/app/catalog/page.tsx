@@ -90,10 +90,20 @@ export default function CatalogPage() {
         if (pending) {
           try {
             const p = JSON.parse(pending);
-            setOrder(Array.isArray(p.order) ? p.order : data.order);
+            const cachedOrder: string[] = Array.isArray(p.order) ? p.order : data.order;
+            const serverOrder: string[] = data.order;
+            const cachedSet = new Set(cachedOrder);
+            const newSlides = serverOrder.filter((id: string) => !cachedSet.has(id));
+            const mergedOrder = newSlides.length > 0 ? [...cachedOrder, ...newSlides] : cachedOrder;
+            const serverSet = new Set(serverOrder);
+            const cleanedOrder = mergedOrder.filter((id: string) => serverSet.has(id));
+            setOrder(cleanedOrder);
             setHiddenSlides(Array.isArray(p.hiddenSlides) ? p.hiddenSlides : data.hiddenSlides || []);
             setCategories(p.categories && typeof p.categories === "object" ? p.categories : (data.categories || {}));
             setCategoryNames(Array.isArray(p.categoryNames) ? p.categoryNames : merged);
+            if (newSlides.length > 0) {
+              localStorage.setItem("catalogPendingChanges", JSON.stringify({ ...p, order: cleanedOrder }));
+            }
           } catch {
             setOrder(data.order);
             setHiddenSlides(data.hiddenSlides || []);

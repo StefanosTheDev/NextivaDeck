@@ -50,16 +50,8 @@ export default function BetterOutcomesCopySlide({ slideNumber = 4 }: { slideNumb
             alignItems: "center",
           }}
         >
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "16px 24px", justifyContent: "center", alignItems: "baseline" }}>
-            <p className="font-heading" style={{ fontSize: 64, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.2 }}>
-              Enterprise power.
-            </p>
-            <p className="font-heading" style={{ fontSize: 64, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.2 }}>
-              Main street simplicity.
-            </p>
-          </div>
-          <p className="font-heading" style={{ fontSize: 64, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.2 }}>
-            Exceptional customer experiences.
+          <p className="font-heading" style={{ fontSize: 64, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.2, textAlign: "center" }}>
+            Turning every customer interaction<br />into real-time outcomes
           </p>
         </motion.div>
 

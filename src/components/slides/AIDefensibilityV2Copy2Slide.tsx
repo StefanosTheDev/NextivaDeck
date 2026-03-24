@@ -92,7 +92,7 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
             margin: 0,
           }}
         >
-          AI DEFENSIBILITY
+          AI ACCELERATOR
         </p>
         <h1
           className="font-heading"

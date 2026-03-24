@@ -27,18 +27,26 @@ export default function CoverSlide({ slideNumber: _sn }: { slideNumber?: number 
           className="font-heading"
           style={{ fontSize: 88, fontWeight: 500, color: "#FFFFFF", marginTop: 24, lineHeight: 1.15, textAlign: "center", maxWidth: 1540 }}
         >
-          Agentic CX. Human-level care.
+          Agentic CX Platform
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          style={{ fontSize: 28, fontWeight: 400, color: "rgba(255,255,255,0.6)", margin: "20px 0 0", lineHeight: 1.4 }}
+        >
+          Turning every customer interaction into real-time outcomes
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           style={{ width: 120, height: 1, background: "rgba(255,255,255,0.2)", margin: "32px 0" }}
         />
 
         <motion.p
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
           style={{ fontSize: 24, fontWeight: 400, color: "rgba(255,255,255,0.5)", margin: 0 }}
         >
           Confidential

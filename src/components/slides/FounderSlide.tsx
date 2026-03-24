@@ -5,7 +5,7 @@ import SlideFooter from "../SlideFooter";
 const bullets = [
   "Founder Mode since day one.",
   "Self-funded to ~$250M ARR.",
-  "Started multiple businesses and led them to successful exits.",
+  "Track record of building durable, capital-efficient businesses",
 ];
 
 export default function FounderSlide({ slideNumber = 4 }: { slideNumber?: number }) {
@@ -26,7 +26,7 @@ export default function FounderSlide({ slideNumber = 4 }: { slideNumber?: number
           </p>
           <h1 className="font-heading" style={{ fontSize: 76, fontWeight: 500, color: "#FFFFFF", margin: "16px 0 0", lineHeight: 1.2 }}>
             Founder-led.<br />
-            Operator-driven.<br />
+            Repeat execution.<br />
             Proven through cycles.
           </h1>
 

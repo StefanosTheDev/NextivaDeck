@@ -63,7 +63,7 @@ export default function MonetizationEvolutionCopySlide({ slideNumber = 0 }: { sl
           MONETIZATION EVOLUTION
         </p>
         <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
-          From Subscription to Scalable, Usage-Driven Economics
+          Expanding monetization from subscriptions → usage → outcomes
         </h1>
       </motion.header>
 

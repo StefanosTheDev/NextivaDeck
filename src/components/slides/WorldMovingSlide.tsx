@@ -99,7 +99,7 @@ export default function WorldMovingSlide({ slideNumber = 57 }: { slideNumber?: n
             maxWidth: 1400,
           }}
         >
-          The world is moving to intelligent relationships
+          CX is now real-time, AI-driven, and outcome-based
         </h1>
       </motion.header>
 

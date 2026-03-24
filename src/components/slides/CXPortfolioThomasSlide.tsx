@@ -84,7 +84,7 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "48px 100px 0", flexShrink: 0, position: "relative", zIndex: 1 }}
+        style={{ padding: "48px 100px 0", flexShrink: 0, position: "relative", zIndex: 1, textAlign: "center" }}
       >
         <p
           style={{
