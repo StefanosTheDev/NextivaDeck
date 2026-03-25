@@ -19,14 +19,13 @@ import {
   rectSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Save, Check, RotateCcw, ArrowLeft, Download, X, Eye, ArrowRight, FileDown } from "lucide-react";
+import { Save, Check, RotateCcw, ArrowLeft, Download, Loader2, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
 
 import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
 import SortableSlideCard from "./SortableSlideCard";
 import SlideCardContent from "./SlideCardContent";
 import SidebarSlideRow from "./SidebarSlideRow";
 import CategoryInput from "./CategoryInput";
-import ExportPickerModal from "./ExportPickerModal";
 
 const CATEGORY_COLORS = [
   { bg: "rgba(40,96,178,0.18)",  text: "#5b9cf5", dot: "#2860B2"  },
@@ -65,7 +64,6 @@ export default function CatalogPage() {
     return "all";
   });
   const [showPreview, setShowPreview] = useState(false);
-  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   const savedTimeout = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
@@ -258,13 +256,53 @@ export default function CatalogPage() {
     );
   }, []);
 
-  const [exportModal, setExportModal] = useState<"pdf" | "pptx" | null>(null);
+  const [pdfStatus, setPdfStatus] = useState<"idle" | "generating" | "done">("idle");
 
-  const exportSlides = order.map((id) => ({
-    id,
-    slide: SLIDE_COMPONENTS[id],
-    isHidden: hiddenSlides.includes(id),
-  })).filter((s) => s.slide != null) as { id: string; slide: SlideDef; isHidden: boolean }[];
+  const downloadPdf = useCallback(async () => {
+    setPdfStatus("generating");
+    try {
+      const res = await fetch("/api/generate-pdf");
+      if (!res.ok) throw new Error("PDF generation failed");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Nextiva-Investor-Deck-2026.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      setPdfStatus("done");
+      setTimeout(() => setPdfStatus("idle"), 3000);
+    } catch {
+      setPdfStatus("idle");
+      alert("Failed to generate PDF. Please try again.");
+    }
+  }, []);
+
+  const [pptxStatus, setPptxStatus] = useState<"idle" | "generating" | "done">("idle");
+
+  const downloadPptx = useCallback(async () => {
+    setPptxStatus("generating");
+    try {
+      const res = await fetch("/api/generate-pptx");
+      if (!res.ok) throw new Error("PPTX generation failed");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Nextiva-Investor-Deck-2026.pptx";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      setPptxStatus("done");
+      setTimeout(() => setPptxStatus("idle"), 3000);
+    } catch {
+      setPptxStatus("idle");
+      alert("Failed to generate PowerPoint. Please try again.");
+    }
+  }, []);
 
   const gridSensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -365,18 +403,22 @@ export default function CatalogPage() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <button
-            onClick={() => setExportModal("pdf")}
+            onClick={downloadPdf}
+            disabled={pdfStatus === "generating"}
             className="catalog-btn-outline"
+            style={{ opacity: pdfStatus === "generating" ? 0.6 : 1 }}
           >
-            <Download size={15} style={{ flexShrink: 0 }} />
-            Generate PDF
+            {pdfStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pdfStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <Download size={15} style={{ flexShrink: 0 }} />}
+            {pdfStatus === "generating" ? "Generating…" : pdfStatus === "done" ? "Downloaded!" : "Generate PDF"}
           </button>
           <button
-            onClick={() => setExportModal("pptx")}
+            onClick={downloadPptx}
+            disabled={pptxStatus === "generating"}
             className="catalog-btn-outline"
+            style={{ opacity: pptxStatus === "generating" ? 0.6 : 1 }}
           >
-            <FileDown size={15} style={{ flexShrink: 0 }} />
-            Generate PPTX
+            {pptxStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pptxStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <FileDown size={15} style={{ flexShrink: 0 }} />}
+            {pptxStatus === "generating" ? "Generating…" : pptxStatus === "done" ? "Downloaded!" : "Generate PPTX"}
           </button>
           {hasChanges && (
             <button onClick={() => { if (window.confirm("Undo all unsaved changes? This will revert slide order and visibility back to the last saved state.")) resetAll(); }} className="catalog-btn-outline">
@@ -429,26 +471,18 @@ export default function CatalogPage() {
           {uniqueCategories.map((cat) => {
             const color = getColorForCategory(cat, uniqueCategories);
             const count = order.filter((id) => categories[id] === cat).length;
-            const isActive = categoryFilter === cat;
             return (
               <div key={`cat-header-${cat}`} style={{
                 display: "flex", alignItems: "center", gap: 8,
                 padding: "6px 8px", borderRadius: 6, marginBottom: 4, marginTop: 8,
-                background: isActive ? color.bg : "transparent",
-                cursor: "pointer",
-                transition: "background 0.15s",
-              }}
-                onClick={() => setCategoryFilter(isActive ? null : cat)}
-              >
+              }}>
                 <div style={{ width: 10, height: 10, borderRadius: "50%", background: color.dot, flexShrink: 0 }} />
                 <span style={{ fontSize: 14, fontWeight: 600, color: color.text, flex: 1 }}>{cat}</span>
                 <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginRight: 4 }}>{count}</span>
                 <button
-                  onClick={(e) => {
-                    e.stopPropagation();
+                  onClick={() => {
                     if (window.confirm(`Delete category "${cat}"? All slides in this category will be moved to Uncategorized.`)) {
                       deleteCategory(cat);
-                      if (categoryFilter === cat) setCategoryFilter(null);
                     }
                   }}
                   title={`Delete "${cat}"`}
@@ -544,7 +578,6 @@ export default function CatalogPage() {
             display: "flex", alignItems: "center", gap: 6,
             padding: "20px 32px 0",
             flexShrink: 0,
-            flexWrap: "wrap",
           }}>
             {([
               { key: "all" as const, label: "All Slides", count: order.length },
@@ -580,29 +613,6 @@ export default function CatalogPage() {
                 </span>
               </button>
             ))}
-            {categoryFilter && (() => {
-              const filterColor = getColorForCategory(categoryFilter, uniqueCategories);
-              return (
-                <button
-                  onClick={() => setCategoryFilter(null)}
-                  style={{
-                    display: "flex", alignItems: "center", gap: 6,
-                    padding: "6px 14px", borderRadius: 20,
-                    border: "none", fontSize: 13, fontWeight: 600,
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    cursor: "pointer",
-                    background: filterColor.bg,
-                    color: filterColor.text,
-                    marginLeft: 8,
-                    transition: "opacity 0.15s",
-                  }}
-                >
-                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: filterColor.dot }} />
-                  {categoryFilter}
-                  <X size={13} style={{ marginLeft: 2 }} />
-                </button>
-              );
-            })()}
           </div>
 
           <div style={{ padding: "20px 32px 60px", flex: 1 }}>
@@ -637,7 +647,6 @@ export default function CatalogPage() {
                     const isHidden = hiddenSet.has(id);
                     if (viewFilter === "published" && isHidden) return null;
                     if (viewFilter === "hidden" && !isHidden) return null;
-                    if (categoryFilter && (categories[id] || null) !== categoryFilter) return null;
                     const displayIndex = viewFilter === "published"
                       ? (publishedIndexMap.get(id) ?? order.indexOf(id))
                       : order.indexOf(id);
@@ -889,15 +898,6 @@ export default function CatalogPage() {
             </div>
           </div>
         </div>
-      )}
-
-      {/* Export Picker Modal */}
-      {exportModal && (
-        <ExportPickerModal
-          format={exportModal}
-          slides={exportSlides}
-          onClose={() => setExportModal(null)}
-        />
       )}
 
       <style dangerouslySetInnerHTML={{ __html: `

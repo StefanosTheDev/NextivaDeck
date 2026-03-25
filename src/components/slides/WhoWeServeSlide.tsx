@@ -37,7 +37,7 @@ export default function WhoWeServeSlide({ slideNumber = 5 }: { slideNumber?: num
           Great technology isn&apos;t just for the Fortune&nbsp;500.
         </h1>
         <p style={{ fontSize: 24, color: "rgba(255,255,255,0.55)", margin: "14px 0 0", fontWeight: 400 }}>
-          The most sophisticated tools. Limited IT and resources required.
+          The most sophisticated tools for companies with limited IT resources and budget.
         </p>
       </motion.header>
 

@@ -46,6 +46,7 @@
     "ai-tailwind-3",
     "ai-defensibility-matrix",
     "ai-agents-in-action",
+    "customer-use-cases",
     "monetization-evolution-copy",
     "market-tam",
     "cx-market-sizing",
@@ -68,13 +69,10 @@
     "target-model",
     "customer-use-cases-divider",
     "summary",
-    "customer-use-cases-dark",
-    "customer-use-cases",
     "closing",
     "closing-copy",
     "conversational-commerce",
     "cx-portfolio-arch",
-    "cx-portfolio-arch-yaniv-v1",
     "appendix-divider",
     "unified-data-model",
     "ai-tandem",
@@ -109,24 +107,19 @@
     "customer-aeg-vision",
     "platform-copy",
     "platform-copy-2",
-    "cx-portfolio-data",
-    "unified-data-model-v2",
     "structural-advantages-copy",
     "gtm-engine",
     "gtm-engine-copy"
   ],
   "categories": {
-    "world-moving-thomas": "From Tomas",
-    "what-we-are-close-thomas": "From Tomas",
-    "cx-portfolio-thomas": "From Tomas",
-    "agentic-opp-v2-thomas": "From Tomas",
-    "cx-portfolio-arch": "From Yaniv",
-    "cx-portfolio-arch-yaniv-v1": "From Yaniv"
+    "world-moving-thomas": "from Thomas",
+    "what-we-are-close-thomas": "from Thomas",
+    "cx-portfolio-thomas": "from Thomas",
+    "agentic-opp-v2-thomas": "from Thomas"
   },
   "categoryNames": [
     "dividers",
-    "From Tomas",
-    "From Yaniv"
+    "from Thomas"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
@@ -148,6 +141,7 @@
     "win",
     "ai-tailwind-copy",
     "durable-edge",
+    "customer-use-cases-divider",
     "cx-portfolio-puzzle-cross",
     "cx-portfolio",
     "agentic-opp-lovable",
@@ -188,7 +182,6 @@
     "system-of-action-copy",
     "system-of-action",
     "ai-tailwind-visual",
-    "cx-portfolio-arch-yaniv-v1",
     "customer-use-cases",
     "monetization-evolution-copy",
     "system-of-action-combined",

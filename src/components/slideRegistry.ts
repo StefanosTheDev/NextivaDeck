@@ -97,11 +97,7 @@ import MonetizationEvolutionCopySlide from "./slides/MonetizationEvolutionCopySl
 import AITailwindVisualSlide from "./slides/AITailwindVisualSlide";
 import SystemOfActionVisualCopySlide from "./slides/SystemOfActionVisualCopySlide";
 import AppendixDividerSlide from "./slides/AppendixDividerSlide";
-import CustomerUseCasesDarkSlide from "./slides/CustomerUseCasesDarkSlide";
 import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
-import CXPortfolioDataSlide from "./slides/CXPortfolioDataSlide";
-import UnifiedDataModelV2Slide from "./slides/UnifiedDataModelV2Slide";
-import CXPortfolioArchYanivV1Slide from "./slides/CXPortfolioArchYanivV1Slide";
 import InvestorSummarySlide from "./slides/InvestorSummarySlide";
 import SystemOfActionCombinedSlide from "./slides/SystemOfActionCombinedSlide";
 import ClosingCopySlide from "./slides/ClosingCopySlide";
@@ -115,6 +111,7 @@ import StructuralAdvantagesCopySlide from "./slides/StructuralAdvantagesCopySlid
 import CustomerBaseBroadSlide from "./slides/CustomerBaseBroadSlide";
 import GTMEngineSlide from "./slides/GTMEngineSlide";
 import GTMEngineCopySlide from "./slides/GTMEngineCopySlide";
+
 
 export type SlideTheme = "light" | "dark";
 
@@ -226,11 +223,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "monetization-evolution-copy": { id: "monetization-evolution-copy", label: "Monetization Evolution", component: MonetizationEvolutionCopySlide, theme: "dark" },
   "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
   "appendix-divider": { id: "appendix-divider", label: "Appendix", component: AppendixDividerSlide, theme: "dark" },
-  "customer-use-cases-dark": { id: "customer-use-cases-dark", label: "Customer Use Cases (Dark)", component: CustomerUseCasesDarkSlide, theme: "dark" },
-  "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture (V2)", component: CXPortfolioArchSlide, theme: "dark" },
-  "cx-portfolio-arch-yaniv-v1": { id: "cx-portfolio-arch-yaniv-v1", label: "CX Portfolio Architecture (V1)", component: CXPortfolioArchYanivV1Slide, theme: "dark" },
-  "cx-portfolio-data": { id: "cx-portfolio-data", label: "CX Portfolio + Data (Yaniv v1)", component: CXPortfolioDataSlide, theme: "dark" },
-  "unified-data-model-v2": { id: "unified-data-model-v2", label: "Unified Data Model (v2 from screenshot)", component: UnifiedDataModelV2Slide, theme: "dark" },
+  "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture", component: CXPortfolioArchSlide, theme: "dark" },
   "investor-summary": { id: "investor-summary", label: "Investor Summary", component: InvestorSummarySlide, theme: "dark" },
   "system-of-action-combined": { id: "system-of-action-combined", label: "System of Action (Combined)", component: SystemOfActionCombinedSlide, theme: "dark" },
   "closing-copy": { id: "closing-copy", label: "Closing (3-card)", component: ClosingCopySlide, theme: "dark" },
