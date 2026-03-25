@@ -111,7 +111,21 @@ import StructuralAdvantagesCopySlide from "./slides/StructuralAdvantagesCopySlid
 import CustomerBaseBroadSlide from "./slides/CustomerBaseBroadSlide";
 import GTMEngineSlide from "./slides/GTMEngineSlide";
 import GTMEngineCopySlide from "./slides/GTMEngineCopySlide";
-
+import BetterOutcomesYanivVHSlide from "./slides/BetterOutcomesYanivVHSlide";
+import OpportunitySlide from "./slides/OpportunitySlide";
+import CustomerBaseBroadTomasSlide from "./slides/CustomerBaseBroadTomasSlide";
+import TheShiftSlide from "./slides/TheShiftSlide";
+import WorldMovingTomasSlide from "./slides/WorldMovingTomasSlide";
+import PlatformYanivVHSlide from "./slides/PlatformYanivVHSlide";
+import AgenticCXPlatformSlide from "./slides/AgenticCXPlatformSlide";
+import MarketTAMLovableYanivVHSlide from "./slides/MarketTAMLovableYanivVHSlide";
+import AgenticOpportunityYanivVHSlide from "./slides/AgenticOpportunityYanivVHSlide";
+import AIExpandsNextivaSlide from "./slides/AIExpandsNextivaSlide";
+import AIInActionV2Slide from "./slides/AIInActionV2Slide";
+import AiTailwindTomasBranchSlide from "./slides/AiTailwindTomasBranchSlide";
+import MonetizationCriticalSlide from "./slides/MonetizationCriticalSlide";
+import DefensibilityStructuralSlide from "./slides/DefensibilityStructuralSlide";
+import CustomerUseCasesDarkYanivVHSlide from "./slides/CustomerUseCasesDarkYanivVHSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -237,6 +251,21 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-base-broad": { id: "customer-base-broad", label: "Customer Base (Broad, Tenured, Durable)", component: CustomerBaseBroadSlide, theme: "dark" },
   "gtm-engine": { id: "gtm-engine", label: "GTM Engine", component: GTMEngineSlide, theme: "dark" },
   "gtm-engine-copy": { id: "gtm-engine-copy", label: "GTM Engine (Investor)", component: GTMEngineCopySlide, theme: "dark" },
+  "better-outcomes-yaniv-vh": { id: "better-outcomes-yaniv-vh", label: "Better Outcomes (Yaniv-VH)", component: BetterOutcomesYanivVHSlide, theme: "dark" },
+  "opportunity": { id: "opportunity", label: "The Opportunity", component: OpportunitySlide, theme: "dark" },
+  "customer-base-broad-tomas": { id: "customer-base-broad-tomas", label: "Customer Base Broad (Tomas)", component: CustomerBaseBroadTomasSlide, theme: "dark" },
+  "the-shift": { id: "the-shift", label: "The Shift", component: TheShiftSlide, theme: "dark" },
+  "world-moving-tomas-branch": { id: "world-moving-tomas-branch", label: "World Moving (Tomas)", component: WorldMovingTomasSlide, theme: "dark" },
+  "platform-yaniv-vh": { id: "platform-yaniv-vh", label: "Platform (Yaniv-VH)", component: PlatformYanivVHSlide, theme: "dark" },
+  "agentic-cx-platform": { id: "agentic-cx-platform", label: "Agentic CX Platform", component: AgenticCXPlatformSlide, theme: "dark" },
+  "market-tam-lovable-yaniv-vh": { id: "market-tam-lovable-yaniv-vh", label: "Market TAM (Yaniv-VH)", component: MarketTAMLovableYanivVHSlide, theme: "dark" },
+  "agentic-opp-yaniv-vh": { id: "agentic-opp-yaniv-vh", label: "Agentic Opportunity (Yaniv-VH)", component: AgenticOpportunityYanivVHSlide, theme: "dark" },
+  "ai-expands-nextiva": { id: "ai-expands-nextiva", label: "AI Expands Nextiva", component: AIExpandsNextivaSlide, theme: "dark" },
+  "ai-in-action-v2": { id: "ai-in-action-v2", label: "AI In Action V2", component: AIInActionV2Slide, theme: "dark" },
+  "ai-tailwind-tomas-branch": { id: "ai-tailwind-tomas-branch", label: "AI Tailwind (Tomas)", component: AiTailwindTomasBranchSlide, theme: "dark" },
+  "monetization-critical": { id: "monetization-critical", label: "Monetization (Critical)", component: MonetizationCriticalSlide, theme: "dark" },
+  "defensibility-structural": { id: "defensibility-structural", label: "Defensibility (Structural)", component: DefensibilityStructuralSlide, theme: "dark" },
+  "customer-use-cases-dark-yaniv-vh": { id: "customer-use-cases-dark-yaniv-vh", label: "Customer Use Cases Dark (Yaniv-VH)", component: CustomerUseCasesDarkYanivVHSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

@@ -109,17 +109,48 @@
     "platform-copy-2",
     "structural-advantages-copy",
     "gtm-engine",
-    "gtm-engine-copy"
+    "gtm-engine-copy",
+    "better-outcomes-yaniv-vh",
+    "opportunity",
+    "customer-base-broad-tomas",
+    "the-shift",
+    "world-moving-tomas-branch",
+    "platform-yaniv-vh",
+    "agentic-cx-platform",
+    "market-tam-lovable-yaniv-vh",
+    "agentic-opp-yaniv-vh",
+    "ai-expands-nextiva",
+    "ai-in-action-v2",
+    "ai-tailwind-tomas-branch",
+    "monetization-critical",
+    "defensibility-structural",
+    "customer-use-cases-dark-yaniv-vh"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",
     "what-we-are-close-thomas": "from Thomas",
     "cx-portfolio-thomas": "from Thomas",
-    "agentic-opp-v2-thomas": "from Thomas"
+    "agentic-opp-v2-thomas": "from Thomas",
+    "better-outcomes-yaniv-vh": "Yaniv-VersionH Slides",
+    "opportunity": "Yaniv-VersionH Slides",
+    "customer-base-broad-tomas": "Yaniv-VersionH Slides",
+    "the-shift": "Yaniv-VersionH Slides",
+    "world-moving-tomas-branch": "Yaniv-VersionH Slides",
+    "platform-yaniv-vh": "Yaniv-VersionH Slides",
+    "agentic-cx-platform": "Yaniv-VersionH Slides",
+    "market-tam-lovable-yaniv-vh": "Yaniv-VersionH Slides",
+    "agentic-opp-yaniv-vh": "Yaniv-VersionH Slides",
+    "ai-expands-nextiva": "Yaniv-VersionH Slides",
+    "ai-in-action-v2": "Yaniv-VersionH Slides",
+    "ai-tailwind-tomas-branch": "Yaniv-VersionH Slides",
+    "monetization-critical": "Yaniv-VersionH Slides",
+    "defensibility-structural": "Yaniv-VersionH Slides",
+    "customer-use-cases-dark-yaniv-vh": "Yaniv-VersionH Slides"
   },
   "categoryNames": [
     "dividers",
-    "from Thomas"
+    "from Thomas",
+    "Yaniv-VersionH Slides"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
