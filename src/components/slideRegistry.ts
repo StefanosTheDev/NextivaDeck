@@ -124,7 +124,9 @@ import WorldMovingTomasSlide from "./slides/WorldMovingTomasSlide";
 import AiTailwindTomasBranchSlide from "./slides/AiTailwindTomasBranchSlide";
 import GTMEngineTomasBranchSlide from "./slides/GTMEngineTomasBranchSlide";
 import GTMEngineCopyTomasBranchSlide from "./slides/GTMEngineCopyTomasBranchSlide";
+import GTMEngineTomasBranchCopySlide from "./slides/GTMEngineTomasBranchCopySlide";
 import GTMMotionSlide from "./slides/GTMMotionSlide";
+import GTMMotionCopySlide from "./slides/GTMMotionCopySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -263,7 +265,9 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-tomas-branch": { id: "ai-tailwind-tomas-branch", label: "AI Tailwind (From Tomas-Branch · 03/24/26)", component: AiTailwindTomasBranchSlide, theme: "dark", isNew: true },
   "gtm-engine-tomas-branch": { id: "gtm-engine-tomas-branch", label: "GTM Engine (From Tomas-Branch · 03/24/26)", component: GTMEngineTomasBranchSlide, theme: "dark", isNew: true },
   "gtm-engine-copy-tomas-branch": { id: "gtm-engine-copy-tomas-branch", label: "GTM Engine Investor (From Tomas-Branch · 03/24/26)", component: GTMEngineCopyTomasBranchSlide, theme: "dark", isNew: true },
-  "gtm-motion": { id: "gtm-motion", label: "GTM Motion", component: GTMMotionSlide, theme: "dark", isNew: true },
+  "gtm-engine-tomas-branch-copy": { id: "gtm-engine-tomas-branch-copy", label: "GTM Engine (Redesign v2)", component: GTMEngineTomasBranchCopySlide, theme: "dark", isNew: true },
+  "gtm-motion": { id: "gtm-motion", label: "GTM Motion (From Tomas-Branch · 03/25/26)", component: GTMMotionSlide, theme: "dark", isNew: true },
+  "gtm-motion-copy": { id: "gtm-motion-copy", label: "GTM Motion (Redesign v2 · 03/25/26)", component: GTMMotionCopySlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -341,6 +345,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "gtm-engine-tomas-branch",
   "gtm-engine-copy-tomas-branch",
   "gtm-motion",
+  "gtm-motion-copy",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
