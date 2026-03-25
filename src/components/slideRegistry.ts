@@ -132,6 +132,7 @@ import StructuralAdvantagesCopy2Slide from "./slides/StructuralAdvantagesCopy2Sl
 import AIDefensibilityV2Copy3Slide from "./slides/AIDefensibilityV2Copy3Slide";
 import LeadershipCopySlide from "./slides/LeadershipCopySlide";
 import GTMMotionSlide from "./slides/GTMMotionSlide";
+import ConversationalCommerceCopySlide from "./slides/ConversationalCommerceCopySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -278,6 +279,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-defensibility-v2-copy-3": { id: "ai-defensibility-v2-copy-3", label: "AI Accelerator (Copy 3)", component: AIDefensibilityV2Copy3Slide, theme: "dark" },
   "leadership-copy": { id: "leadership-copy", label: "Leadership (Copy)", component: LeadershipCopySlide, theme: "dark" },
   "gtm-motion": { id: "gtm-motion", label: "GTM Motion", component: GTMMotionSlide, theme: "dark" },
+  "conversational-commerce-copy": { id: "conversational-commerce-copy", label: "Conversational Commerce (Copy)", component: ConversationalCommerceCopySlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
