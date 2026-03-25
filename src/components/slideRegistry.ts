@@ -126,6 +126,8 @@ import AiTailwindTomasBranchSlide from "./slides/AiTailwindTomasBranchSlide";
 import MonetizationCriticalSlide from "./slides/MonetizationCriticalSlide";
 import DefensibilityStructuralSlide from "./slides/DefensibilityStructuralSlide";
 import CustomerUseCasesDarkYanivVHSlide from "./slides/CustomerUseCasesDarkYanivVHSlide";
+import WhoWeServeCopySlide from "./slides/WhoWeServeCopySlide";
+import WorldMovingCopySlide from "./slides/WorldMovingCopySlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -266,6 +268,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "monetization-critical": { id: "monetization-critical", label: "Monetization (Critical)", component: MonetizationCriticalSlide, theme: "dark" },
   "defensibility-structural": { id: "defensibility-structural", label: "Defensibility (Structural)", component: DefensibilityStructuralSlide, theme: "dark" },
   "customer-use-cases-dark-yaniv-vh": { id: "customer-use-cases-dark-yaniv-vh", label: "Customer Use Cases Dark (Yaniv-VH)", component: CustomerUseCasesDarkYanivVHSlide, theme: "dark" },
+  "who-copy": { id: "who-copy", label: "Who We Serve (Built for Operators)", component: WhoWeServeCopySlide, theme: "dark" },
+  "world-moving-copy": { id: "world-moving-copy", label: "The Shift (Alt)", component: WorldMovingCopySlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

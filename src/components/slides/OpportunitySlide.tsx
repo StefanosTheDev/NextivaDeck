@@ -25,7 +25,7 @@ export default function OpportunitySlide({ slideNumber = 7 }: { slideNumber?: nu
             textAlign: "center",
           }}
         >
-          THE OPPORTUNITY
+          OUR MARKET
         </motion.p>
 
         <motion.h1

@@ -121,7 +121,7 @@ export default function AiTailwindSlide({ slideNumber = 13 }: { slideNumber?: nu
               <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 10px", lineHeight: 1.25 }}>
                 {c.title}
               </h3>
-              <p style={{ fontSize: 14, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: 0 }}>
+              <p style={{ fontSize: 17, color: "rgba(255,255,255,0.55)", lineHeight: 1.6, margin: 0 }}>
                 {c.body}
               </p>
             </motion.div>

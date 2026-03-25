@@ -68,9 +68,8 @@ export default function AIExpandsNextivaSlide({ slideNumber = 0 }: { slideNumber
               lineHeight: 1.18,
             }}
           >
-            AI expands Nextiva &mdash;
-            <br />
-            <span style={{ color: ACCENT }}>it does not disrupt it.</span>
+            AI expands Nextiva&apos;s{" "}
+            <span style={{ color: ACCENT }}>durability and opportunity.</span>
           </motion.h1>
 
           <motion.div
