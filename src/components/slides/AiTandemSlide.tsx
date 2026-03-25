@@ -22,7 +22,7 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "72px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", marginBottom: 12 }}>AI FLEXIBILITY</p>
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", marginBottom: 12 }}>AI FLEXIBILITY & KEY DIFFERENTIATOR</p>
         <h1 className="font-heading" style={{ fontSize: 68, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           AI and humans in tandem
         </h1>
@@ -34,7 +34,7 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
       {/* Three cards */}
       <motion.main
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-        style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 100px 0", gap: 32 }}
+        style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "0 100px 0", gap: 32, marginTop: -60 }}
       >
         {modes.map((m) => {
           const Icon = m.icon;

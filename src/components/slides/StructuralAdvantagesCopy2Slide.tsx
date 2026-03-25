@@ -22,9 +22,9 @@ const pillars = [
     title: "Data & Intelligence",
     subtitle: "We see interactions as they happen.",
     points: [
-      "AI trained and executed in real time",
-      "Ground truth others don\u2019t have",
-      "Data flywheel strengthens with every interaction",
+      "AI trained and executed on live interaction data",
+      "Ground truth at the moment of conversation, not static or delayed datasets",
+      "Proprietary data flywheel compounding with every interaction",
     ],
     badge: "Value compounds over time",
   },
@@ -44,7 +44,7 @@ const pillars = [
 
 const ACCENT = "#0070F3";
 
-export default function StructuralAdvantagesSlide({ slideNumber = 43 }: { slideNumber?: number }) {
+export default function StructuralAdvantagesCopy2Slide({ slideNumber = 43 }: { slideNumber?: number }) {
   return (
     <div
       className="slide"

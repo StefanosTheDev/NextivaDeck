@@ -9,25 +9,25 @@ const cards = [
   {
     icon: Layers,
     title: "Embedded across the entire platform",
-    body: "AI ships inside every product — not bolted on. Customers get smarter without switching tools.",
+    body: "AI ships inside every product — not bolted on. Unlimited agents (support, sales, scheduling, billing) work independently or together from first contact to resolution.",
     accent: "#0070F3",
   },
   {
     icon: TrendingUp,
     title: "More interactions → more usage",
-    body: "AI increases throughput per customer, driving higher engagement and expanding revenue per account.",
+    body: "Agents resolve issues, capture leads, book appointments, and handle payments autonomously — driving higher throughput and expanding revenue per account.",
     accent: "#00C2FF",
   },
   {
     icon: DollarSign,
     title: "New monetization models",
-    body: "Per-interaction, per-resolution, per-outcome pricing — unlocking revenue beyond seat-based subscriptions.",
+    body: "Per-interaction, per-resolution, per-outcome pricing — unlocking revenue beyond seat-based subscriptions as AI handles end-to-end workflows.",
     accent: "#7B61FF",
   },
   {
     icon: Shield,
     title: "Increases switching costs",
-    body: "AI learns from every conversation. The longer customers stay, the smarter it gets — deepening the moat over time.",
+    body: "Every agent learns from every conversation. The longer customers stay, the smarter the system gets — deepening the moat over time.",
     accent: "#00D68F",
   },
 ];

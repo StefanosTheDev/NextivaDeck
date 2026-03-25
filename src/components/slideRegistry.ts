@@ -128,6 +128,7 @@ import DefensibilityStructuralSlide from "./slides/DefensibilityStructuralSlide"
 import CustomerUseCasesDarkYanivVHSlide from "./slides/CustomerUseCasesDarkYanivVHSlide";
 import WhoWeServeCopySlide from "./slides/WhoWeServeCopySlide";
 import WorldMovingCopySlide from "./slides/WorldMovingCopySlide";
+import StructuralAdvantagesCopy2Slide from "./slides/StructuralAdvantagesCopy2Slide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -270,6 +271,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-use-cases-dark-yaniv-vh": { id: "customer-use-cases-dark-yaniv-vh", label: "Customer Use Cases Dark (Yaniv-VH)", component: CustomerUseCasesDarkYanivVHSlide, theme: "dark" },
   "who-copy": { id: "who-copy", label: "Who We Serve (Built for Operators)", component: WhoWeServeCopySlide, theme: "dark" },
   "world-moving-copy": { id: "world-moving-copy", label: "The Shift (Alt)", component: WorldMovingCopySlide, theme: "dark" },
+  "structural-advantages-copy-2": { id: "structural-advantages-copy-2", label: "Structural Advantages (Copy 2)", component: StructuralAdvantagesCopy2Slide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

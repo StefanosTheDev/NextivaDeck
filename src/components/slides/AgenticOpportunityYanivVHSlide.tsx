@@ -31,6 +31,54 @@ const segments = [
   },
 ];
 
+const bottomCards = [
+  {
+    flex: 6,
+    label: "COMPETITIVE SOLUTIONS",
+    labelColor: "#E07E7E",
+    bg: "rgba(180,60,60,0.06)",
+    border: "rgba(200,80,80,0.15)",
+    bulletColor: "#E07E7E",
+    bulletChar: "✗",
+    items: [
+      "Require large IT teams",
+      "6-figure implementation costs",
+      "12–18 month deploy cycles",
+      "Not built for self-service",
+    ],
+  },
+  {
+    flex: 12,
+    label: "THE UNDERSERVED MIDDLE",
+    labelColor: "#CCC7C3",
+    bg: "rgba(255,255,255,0.03)",
+    border: "rgba(255,255,255,0.08)",
+    bulletColor: "#CCC7C3",
+    bulletChar: "•",
+    items: [
+      "CX built for enterprise, not the middle",
+      "Millions of businesses left behind",
+      "Expensive and complex to deploy",
+      "No AI-native CX platform exists",
+    ],
+  },
+  {
+    flex: 7,
+    label: "WHY NEXTIVA WINS",
+    labelColor: "#7EB3E8",
+    bg: "rgba(40,96,178,0.06)",
+    border: "rgba(40,96,178,0.15)",
+    bulletColor: "#7EB3E8",
+    bulletChar: "›",
+    items: [
+      "Unified Customer Interactions & Data",
+      "Agentic & Human in Tandem",
+      "Go-to-Market Moat",
+      "Product-led, fast time to value",
+    ],
+  },
+];
+
 export default function AgenticOpportunityYanivVHSlide({ slideNumber = 12 }: { slideNumber?: number }) {
   return (
     <div
@@ -44,7 +92,7 @@ export default function AgenticOpportunityYanivVHSlide({ slideNumber = 12 }: { s
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "56px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "52px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p
           style={{
@@ -68,13 +116,13 @@ export default function AgenticOpportunityYanivVHSlide({ slideNumber = 12 }: { s
             lineHeight: 1.2,
           }}
         >
-          The white space is wide open.
+          Built for the market others can&apos;t serve.
         </h1>
         <p
           style={{
             fontSize: 22,
             color: "rgba(255,255,255,0.5)",
-            margin: "14px 0 0",
+            margin: "12px 0 0",
             lineHeight: 1.5,
           }}
         >
@@ -89,6 +137,7 @@ export default function AgenticOpportunityYanivVHSlide({ slideNumber = 12 }: { s
           flexDirection: "column",
           justifyContent: "center",
           padding: "0 100px",
+          marginTop: -30,
         }}
       >
         <motion.div
@@ -112,7 +161,7 @@ export default function AgenticOpportunityYanivVHSlide({ slideNumber = 12 }: { s
               style={{
                 flex: seg.flex,
                 background: seg.bg,
-                padding: "36px 20px",
+                padding: "32px 20px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -188,62 +237,50 @@ export default function AgenticOpportunityYanivVHSlide({ slideNumber = 12 }: { s
             alignItems: "center",
             marginLeft: "24%",
             width: "76%",
-            marginTop: 20,
+            marginTop: 14,
           }}
         >
-          <div
-            style={{
-              width: "80%",
-              height: 2,
-              background: "#7EB3E8",
-              borderRadius: 1,
-            }}
-          />
-          <div
-            style={{
-              width: 2,
-              height: 14,
-              background: "#7EB3E8",
-              borderRadius: 1,
-            }}
-          />
-          <p
-            className="font-heading"
-            style={{
-              fontSize: 20,
-              fontWeight: 600,
-              color: "#7EB3E8",
-              margin: "8px 0 0",
-              letterSpacing: "0.02em",
-            }}
-          >
+          <div style={{ width: "80%", height: 2, background: "#7EB3E8", borderRadius: 1 }} />
+          <div style={{ width: 2, height: 8, background: "#7EB3E8", borderRadius: 1 }} />
+          <p className="font-heading" style={{ fontSize: 20, fontWeight: 600, color: "#7EB3E8", margin: "6px 0 0", letterSpacing: "0.02em" }}>
             Nextiva&apos;s opportunity
           </p>
         </motion.div>
-      </main>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.9 }}
-        style={{
-          padding: "0 100px 20px",
-          textAlign: "center",
-          flexShrink: 0,
-        }}
-      >
-        <p
-          style={{
-            fontSize: 18,
-            color: "rgba(255,255,255,0.35)",
-            margin: 0,
-            fontStyle: "italic",
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          style={{ display: "flex", gap: 0, marginTop: 38 }}
         >
-          Millions of growing businesses are underserved by platforms built for
-          the enterprise.
-        </p>
-      </motion.div>
+          {bottomCards.map((card, i) => (
+            <div key={card.label} style={{
+              flex: card.flex,
+              background: card.bg,
+              border: `1px solid ${card.border}`,
+              borderRadius: 0,
+              borderTopLeftRadius: i === 0 ? 12 : 0,
+              borderBottomLeftRadius: i === 0 ? 12 : 0,
+              borderTopRightRadius: i === bottomCards.length - 1 ? 12 : 0,
+              borderBottomRightRadius: i === bottomCards.length - 1 ? 12 : 0,
+              borderRight: i < bottomCards.length - 1 ? "none" : undefined,
+              padding: "18px 22px",
+            }}>
+              <p style={{ fontSize: 15, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: card.labelColor, margin: "0 0 10px" }}>
+                {card.label}
+              </p>
+              <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                {card.items.map((item) => (
+                  <li key={item} style={{ fontSize: 18, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 5, paddingLeft: 18, position: "relative" }}>
+                    <span style={{ position: "absolute", left: 0, color: card.bulletColor, fontWeight: 700 }}>{card.bulletChar}</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </motion.div>
+      </main>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>

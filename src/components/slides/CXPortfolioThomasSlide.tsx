@@ -13,20 +13,20 @@ const products = [
     badge: "All Customers",
     tagline: "Core Communication Platform.",
     bullets: [
-      "AI-enabled communication",
-      "Cross-product workflow automation",
-      "Leverages XBert and NEXT AI capabilities",
+      "AI-powered voice, video & messaging",
+      "Workflow automation across products",
+      "Built-in XBert and NEXT AI",
     ],
   },
   {
     Icon: Headphones,
     name: "Experience Center",
     badge: "Enterprise & Verticals",
-    tagline: "Programmable AI & CX Solutions.",
+    tagline: "Programmable CX Platform.",
     bullets: [
-      "Omnichannel engagement",
-      "AI-assisted customer interactions",
-      "Open API ecosystem & integrations",
+      "Omnichannel voice, chat & email",
+      "AI-assisted interactions at scale",
+      "Open APIs and integrations",
     ],
   },
   {
@@ -35,9 +35,9 @@ const products = [
     badge: "All Nextiva Users",
     tagline: "Agentic AI for All Channels.",
     bullets: [
-      "Agentic AI across voice, chat & email",
-      "Autonomous handling of customer interactions 24/7",
-      "Self-learning, always-improving agents",
+      "AI agents across voice, chat & email",
+      "Autonomous 24/7 resolution",
+      "Self-learning, always improving",
     ],
   },
   {
@@ -46,8 +46,8 @@ const products = [
     badge: "SMB & Mid-Market",
     tagline: "Unified Front & Back Office.",
     bullets: [
-      "Unified data model across all products",
-      "AI & human working in tandem",
+      "One data model across all products",
+      "AI and human working in tandem",
       "Single source of customer truth",
     ],
   },
