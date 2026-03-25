@@ -74,7 +74,7 @@ export default function WorldMovingCopySlide({ slideNumber = 0 }: { slideNumber?
         </p>
       </motion.header>
 
-      <main style={{ flex: 1, display: "flex", alignItems: "center", padding: "32px 100px" }}>
+      <main style={{ flex: 1, display: "flex", alignItems: "center", padding: "32px 100px", marginTop: -40 }}>
         <div style={{ display: "flex", gap: 0, width: "100%", alignItems: "stretch" }}>
           {eras.map((era, i) => {
             const Icon = era.icon;

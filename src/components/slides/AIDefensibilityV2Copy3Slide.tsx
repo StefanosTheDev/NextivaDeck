@@ -10,36 +10,24 @@ const pillars = [
   {
     icon: Shield,
     title: "Deep Infrastructure",
-    subtitle: "We own the layer AI runs on.",
-    points: [
-      "Unified voice, messaging & video network",
-      "Regulated, hard to replicate",
-      "Switching costs compound over time",
-    ],
+    desc: "We own the network AI runs on — not an app on someone else's stack.",
+    badge: "Hard to replicate",
   },
   {
     icon: Radio,
-    title: "Real-Time Data",
-    subtitle: "Ground truth others don't have.",
-    points: [
-      "Live signals — tone, intent, context",
-      "Collected continuously, not stored",
-      "Unique to each interaction",
-    ],
+    title: "Proprietary Real-Time Data",
+    desc: "Live interaction signals at the moment of conversation — ground truth others don't have.",
+    badge: "Compounds over time",
   },
   {
     icon: Zap,
-    title: "Outcome Monetization",
-    subtitle: "Revenue scales with usage, not seats.",
-    points: [
-      "Every interaction is a revenue event",
-      "Every resolution is measurable value",
-      "AI throughput → more revenue",
-    ],
+    title: "Outcome-Based Monetization",
+    desc: "Revenue scales with interactions and outcomes, not seats.",
+    badge: "Growth accelerator",
   },
 ];
 
-export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slideNumber?: number }) {
+export default function AIDefensibilityV2Copy3Slide({ slideNumber = 0 }: { slideNumber?: number }) {
   return (
     <div
       className="slide"
@@ -56,11 +44,13 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
         <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           AI ACCELERATOR
         </p>
-        <h1 className="font-heading" style={{ fontSize: 54, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.18 }}>
-          Three structural advantages that make
-          <br />
-          Nextiva <span style={{ color: ACCENT }}>AI-proof.</span>
+        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.18 }}>
+          Three advantages that make Nextiva{" "}
+          <span style={{ color: ACCENT }}>AI-proof.</span>
         </h1>
+        <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "14px 0 0", lineHeight: 1.5 }}>
+          Infrastructure, data, and monetization — each one compounds, together they're a moat.
+        </p>
       </motion.header>
 
       <main style={{ flex: 1, display: "flex", alignItems: "center", padding: "0 100px" }}>
@@ -79,7 +69,7 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
                   border: "1px solid rgba(255,255,255,0.08)",
                   borderTop: `3px solid ${ACCENT_STRONG}`,
                   borderRadius: 16,
-                  padding: "36px 30px",
+                  padding: "44px 36px",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -92,23 +82,20 @@ export default function AIDefensibilityV2Copy2Slide({ slideNumber = 0 }: { slide
                   <Icon size={26} color={ACCENT} strokeWidth={1.75} />
                 </div>
 
-                <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", margin: "0 0 6px", lineHeight: 1.2 }}>
+                <h2 className="font-heading" style={{ fontSize: 30, fontWeight: 700, color: "#FFFFFF", margin: "0 0 14px", lineHeight: 1.2 }}>
                   {p.title}
                 </h2>
-                <p style={{ fontSize: 18, fontWeight: 600, color: ACCENT, margin: "0 0 20px", lineHeight: 1.4 }}>
-                  {p.subtitle}
+
+                <p style={{ fontSize: 20, color: "rgba(255,255,255,0.6)", margin: 0, lineHeight: 1.55, flex: 1 }}>
+                  {p.desc}
                 </p>
 
-                <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.12)", marginBottom: 20 }} />
-
-                <ul style={{ margin: 0, padding: 0, listStyle: "none", flex: 1 }}>
-                  {p.points.map((pt) => (
-                    <li key={pt} style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", lineHeight: 1.55, marginBottom: 10, paddingLeft: 18, position: "relative" }}>
-                      <span style={{ position: "absolute", left: 0, color: ACCENT, fontWeight: 700 }}>&rsaquo;</span>
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
+                <div style={{
+                  marginTop: 40, padding: "10px 20px", borderRadius: 10,
+                  background: ACCENT_STRONG, textAlign: "center",
+                }}>
+                  <span style={{ fontSize: 15, fontWeight: 700, color: "#FFFFFF" }}>{p.badge}</span>
+                </div>
               </motion.article>
             );
           })}

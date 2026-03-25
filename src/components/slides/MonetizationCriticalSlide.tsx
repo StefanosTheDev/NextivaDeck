@@ -8,15 +8,13 @@ const GLASS = "rgba(255,255,255,0.04)";
 const BORDER = "rgba(255,255,255,0.08)";
 
 const expansionItems = [
-  { icon: Zap, label: "Per interaction pricing" },
-  { icon: Target, label: "Per resolution pricing" },
-  { icon: TrendingUp, label: "Per outcome pricing" },
+  { icon: Zap, label: "Per interaction pricing", desc: "Every conversation is a revenue event" },
+  { icon: Target, label: "Per resolution pricing", desc: "Every resolution is measurable value" },
+  { icon: TrendingUp, label: "Per outcome pricing", desc: "Every outcome is monetizable" },
 ];
 
-const foundationBullets = [
-  { bold: "Predictable", rest: "revenue stream" },
-  { bold: "Built-in", rest: "platform stickiness" },
-  { bold: "Land &", rest: "expand motion" },
+const foundationItems = [
+  { icon: RefreshCw, label: "Subscription", desc: "Recurring, high-margin base" },
 ];
 
 export default function MonetizationCriticalSlide({
@@ -84,6 +82,9 @@ export default function MonetizationCriticalSlide({
         >
           From SaaS to scalable, usage-driven economics
         </h1>
+        <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "12px 0 0", lineHeight: 1.5 }}>
+          We capture value as it happens — growth scales with interactions &amp; outcomes.
+        </p>
       </motion.header>
 
       <motion.main
@@ -127,137 +128,39 @@ export default function MonetizationCriticalSlide({
                 padding: "24px 28px 20px",
                 display: "flex",
                 flexDirection: "column",
+                flex: 1,
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  gap: 12,
-                  marginBottom: 16,
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 700,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    color: ACCENT,
-                    margin: 0,
-                  }}
-                >
-                  01
-                </p>
-                <h2
-                  className="font-heading"
-                  style={{
-                    fontSize: 32,
-                    fontWeight: 600,
-                    color: "#FFFFFF",
-                    margin: 0,
-                    lineHeight: 1.2,
-                  }}
-                >
-                  Foundation
-                </h2>
+              <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 16 }}>
+                <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: ACCENT, margin: 0 }}>01</p>
+                <h2 className="font-heading" style={{ fontSize: 32, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.2 }}>Foundation</h2>
               </div>
 
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 20,
-                }}
-              >
-                <div
-                  style={{
-                    width: 52,
-                    height: 52,
-                    borderRadius: 14,
-                    background: "rgba(40,96,178,0.15)",
-                    border: "1px solid rgba(40,96,178,0.25)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
-                >
-                  <RefreshCw size={26} color={ACCENT} strokeWidth={1.75} />
-                </div>
-                <div style={{ flex: 1 }}>
-                  <p
-                    className="font-heading"
-                    style={{
-                      fontSize: 24,
-                      fontWeight: 700,
-                      color: "#FFFFFF",
-                      margin: 0,
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    Subscription revenue
-                  </p>
-                  <p
-                    style={{
-                      fontSize: 16,
-                      color: "rgba(255,255,255,0.5)",
-                      margin: "4px 0 0",
-                      lineHeight: 1.4,
-                    }}
-                  >
-                    High margin, recurring base
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 20,
-                    marginLeft: 16,
-                  }}
-                >
-                  {foundationBullets.map((item, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 8,
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: 6,
-                          height: 6,
-                          borderRadius: "50%",
-                          background: ACCENT,
-                          flexShrink: 0,
-                          opacity: 0.6,
-                        }}
-                      />
-                      <p
-                        style={{
-                          fontSize: 17,
-                          color: "rgba(255,255,255,0.5)",
-                          margin: 0,
-                          lineHeight: 1.4,
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        <span
-                          style={{
-                            fontWeight: 600,
-                            color: "rgba(255,255,255,0.75)",
-                          }}
-                        >
-                          {item.bold}
-                        </span>{" "}
-                        {item.rest}
-                      </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {foundationItems.map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={i} style={{
+                      display: "flex", alignItems: "center", gap: 16,
+                      background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)",
+                      borderRadius: 12, padding: "14px 20px",
+                    }}>
+                      <div style={{
+                        width: 48, height: 48, borderRadius: 12,
+                        background: "rgba(40,96,178,0.15)",
+                        display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                      }}>
+                        <Icon size={22} color={ACCENT} strokeWidth={1.75} />
+                      </div>
+                      <div>
+                        <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.3 }}>{item.label}</p>
+                        {"desc" in item && item.desc && (
+                          <p style={{ fontSize: 15, color: "rgba(255,255,255,0.45)", margin: "3px 0 0", lineHeight: 1.3 }}>{item.desc}</p>
+                        )}
+                      </div>
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -349,17 +252,14 @@ export default function MonetizationCriticalSlide({
                           strokeWidth={1.75}
                         />
                       </div>
-                      <p
-                        style={{
-                          fontSize: 20,
-                          fontWeight: 600,
-                          color: "#FFFFFF",
-                          margin: 0,
-                          lineHeight: 1.3,
-                        }}
-                      >
-                        {item.label}
-                      </p>
+                      <div>
+                        <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.3 }}>
+                          {item.label}
+                        </p>
+                        <p style={{ fontSize: 15, color: "rgba(255,255,255,0.45)", margin: "3px 0 0", lineHeight: 1.3 }}>
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
                   );
                 })}
@@ -401,7 +301,7 @@ export default function MonetizationCriticalSlide({
                 "linear-gradient(135deg, rgba(40,96,178,0.1) 0%, rgba(40,96,178,0.04) 100%)",
               border: "2px solid rgba(40,96,178,0.35)",
               borderRadius: 16,
-              padding: "36px 36px 32px",
+              padding: "36px 36px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -433,7 +333,7 @@ export default function MonetizationCriticalSlide({
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
                 color: ACCENT,
-                margin: "0 0 24px",
+                margin: "0 0 16px",
                 position: "relative",
               }}
             >
@@ -474,7 +374,7 @@ export default function MonetizationCriticalSlide({
                 fontSize: 28,
                 fontWeight: 600,
                 color: "#FFFFFF",
-                margin: "0 0 32px",
+                margin: "0 0 20px",
                 lineHeight: 1.2,
                 position: "relative",
               }}
@@ -489,19 +389,11 @@ export default function MonetizationCriticalSlide({
                 position: "relative",
               }}
             >
-              <p
-                style={{
-                  fontSize: 18,
-                  color: "rgba(255,255,255,0.6)",
-                  margin: 0,
-                  lineHeight: 1.6,
-                }}
-              >
-                Revenue scales with{" "}
-                <span style={{ fontWeight: 700, color: "#FFFFFF" }}>
-                  customer success
-                </span>
-                , not seats.
+              <p style={{ fontSize: 17, color: "rgba(255,255,255,0.6)", margin: 0, lineHeight: 1.6 }}>
+                AI increases throughput → directly increases revenue.
+              </p>
+              <p style={{ fontSize: 15, color: "rgba(255,255,255,0.4)", margin: "8px 0 0", lineHeight: 1.5 }}>
+                Growth is no longer tied to seats — it scales with interactions and outcomes.
               </p>
             </div>
           </div>
