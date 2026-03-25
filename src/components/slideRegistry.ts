@@ -124,6 +124,7 @@ import WorldMovingTomasSlide from "./slides/WorldMovingTomasSlide";
 import AiTailwindTomasBranchSlide from "./slides/AiTailwindTomasBranchSlide";
 import GTMEngineTomasBranchSlide from "./slides/GTMEngineTomasBranchSlide";
 import GTMEngineCopyTomasBranchSlide from "./slides/GTMEngineCopyTomasBranchSlide";
+import GTMMotionSlide from "./slides/GTMMotionSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -262,6 +263,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-tomas-branch": { id: "ai-tailwind-tomas-branch", label: "AI Tailwind (From Tomas-Branch · 03/24/26)", component: AiTailwindTomasBranchSlide, theme: "dark", isNew: true },
   "gtm-engine-tomas-branch": { id: "gtm-engine-tomas-branch", label: "GTM Engine (From Tomas-Branch · 03/24/26)", component: GTMEngineTomasBranchSlide, theme: "dark", isNew: true },
   "gtm-engine-copy-tomas-branch": { id: "gtm-engine-copy-tomas-branch", label: "GTM Engine Investor (From Tomas-Branch · 03/24/26)", component: GTMEngineCopyTomasBranchSlide, theme: "dark", isNew: true },
+  "gtm-motion": { id: "gtm-motion", label: "GTM Motion", component: GTMMotionSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -338,6 +340,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "ai-tailwind-tomas-branch",
   "gtm-engine-tomas-branch",
   "gtm-engine-copy-tomas-branch",
+  "gtm-motion",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
