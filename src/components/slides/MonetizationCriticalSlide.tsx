@@ -14,7 +14,7 @@ const expansionItems = [
 ];
 
 const foundationItems = [
-  { icon: RefreshCw, label: "Subscription", desc: "Recurring, high-margin base" },
+  { icon: RefreshCw, label: "Subscription & Platform Fee", desc: "Recurring, high-margin base" },
 ];
 
 export default function MonetizationCriticalSlide({

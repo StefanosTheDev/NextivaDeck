@@ -24,7 +24,7 @@ const eras = [
     subtitle: "Two-way engagement",
     points: [
       "Unified platform across voice & digital",
-      "Personalized conversations on any channel",
+      "Personalized conversations, all channels",
       "Front and back office converging",
     ],
     borderColor: "rgba(40,96,178,0.4)",
