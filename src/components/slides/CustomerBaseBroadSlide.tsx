@@ -19,7 +19,7 @@ const segments = [
       { name: "Savannah Bananas", industry: "Sports & Entertainment", initials: "SB", color: "#F59E0B" },
       { name: "Shasta Community Health", industry: "Healthcare", initials: "SC", color: "#10B981", logo: "/logos/shasta-community-health.png" },
     ],
-    tenure: "4.4 yrs",
+    tenure: "4.5 years",
   },
   {
     name: "SMB",
@@ -36,7 +36,7 @@ const segments = [
       { name: "Jeni's Ice Cream", industry: "Food & Beverage", initials: "JI", color: "#E11D48", logo: "/logos/jenis-ice-cream.png" },
       { name: "Erewhon", industry: "Retail", initials: "EW", color: "#065F46" },
     ],
-    tenure: "4.7 yrs",
+    tenure: "8.3 years",
   },
   {
     name: "Mid-Market",
@@ -53,7 +53,7 @@ const segments = [
       { name: "Shelby", industry: "Automotive", initials: "SH", color: "#1E40AF", logo: "/logos/shelby.png" },
       { name: "Texas Roadhouse", industry: "Restaurant", initials: "TR", color: "#B91C1C", logo: "/logos/texas-roadhouse.png" },
     ],
-    tenure: "4.3 yrs",
+    tenure: "7.9 years",
   },
 ];
 
@@ -228,6 +228,15 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
           </motion.article>
         ))}
       </motion.main>
+
+      <div style={{ padding: "16px 80px 0", textAlign: "center" }}>
+        <p style={{
+          fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)",
+          letterSpacing: "0.04em", margin: 0,
+        }}>
+          Expected Lifetime by Segment (logo churn, FY26)
+        </p>
+      </div>
 
       <div style={{ flex: 1 }} />
       <SlideFooter slideNumber={slideNumber} variant="dark" />
