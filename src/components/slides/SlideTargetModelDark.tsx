@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import SlideFooter from "../SlideFooter";
 
 /* ── Design system ── */
 const C = {
@@ -29,17 +30,15 @@ const rows: { metric: string; fy26: string; fy27: string; fy30: string; bold?: b
 
 /* ── Slide component ── */
 export default function SlideTargetModelDark({
-  slideNumber = "25",
+  slideNumber = 25,
 }: {
-  slideNumber?: string | number;
+  slideNumber?: number;
 }) {
   return (
     <div
       className="slide"
       style={{
-        background: C.midnightNavy,
-        width: 1920,
-        height: 1080,
+        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
         display: "flex",
         flexDirection: "column",
         fontFamily: F.body,
@@ -234,27 +233,7 @@ export default function SlideTargetModelDark({
         by NOLs.
       </p>
 
-      {/* ── Footer ── */}
-      <footer
-        style={{
-          borderTop: "1px solid rgba(255,255,255,0.1)",
-          padding: "12px 80px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexShrink: 0,
-        }}
-      >
-        <span style={{ fontSize: 20, color: "rgba(255,255,255,0.3)", fontFamily: F.body }}>
-          nextiva.com | a new dawn in customer experience.
-        </span>
-        <span style={{ fontSize: 20, color: "rgba(255,255,255,0.3)", fontFamily: F.body }}>
-          confidential
-        </span>
-        <span style={{ fontSize: 20, color: "rgba(255,255,255,0.3)", fontFamily: F.body }}>
-          {slideNumber}
-        </span>
-      </footer>
+      <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
 }

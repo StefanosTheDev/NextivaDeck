@@ -66,15 +66,19 @@
     "ai-defensibility-v2-copy-2",
     "leadership",
     "financial-divider",
+    "arr-gross-margin-quarterly-dark",
     "arr-gross-margin",
     "ai-gateways-revenue",
     "revenue-visibility",
     "operating-leverage-dated",
+    "ebitda-quarterly-dark",
     "ebitda",
+    "cash-flow-trends-quarterly-dark",
     "cash-flow-trends",
     "appendix-customers",
     "expansion-retention",
     "nrr-churn",
+    "target-model-dark",
     "target-model",
     "customer-use-cases-divider",
     "summary",
@@ -131,11 +135,7 @@
     "customer-use-cases-dark-yaniv-vh",
     "ai-defensibility-v2-copy-3",
     "leadership-copy",
-    "gtm-motion",
-    "arr-gross-margin-quarterly-dark",
-    "ebitda-quarterly-dark",
-    "cash-flow-trends-quarterly-dark",
-    "target-model-dark"
+    "gtm-motion"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",
@@ -163,10 +163,10 @@
     "target-model-dark": "From Seksom-Branch"
   },
   "categoryNames": [
+    "From Seksom-Branch",
     "Yaniv-VersionH Slides",
     "dividers",
-    "from Thomas",
-    "From Seksom-Branch"
+    "from Thomas"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
@@ -243,6 +243,10 @@
     "structural-advantages-copy",
     "agentic-opp",
     "ai-defensibility-v2-copy-2",
-    "system-of-action-visual-copy"
+    "system-of-action-visual-copy",
+    "arr-gross-margin",
+    "ebitda",
+    "cash-flow-trends",
+    "target-model"
   ]
 }
