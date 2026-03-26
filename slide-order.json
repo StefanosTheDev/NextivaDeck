@@ -131,7 +131,11 @@
     "customer-use-cases-dark-yaniv-vh",
     "ai-defensibility-v2-copy-3",
     "leadership-copy",
-    "gtm-motion"
+    "gtm-motion",
+    "arr-gross-margin-quarterly-dark",
+    "ebitda-quarterly-dark",
+    "cash-flow-trends-quarterly-dark",
+    "target-model-dark"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",
@@ -152,12 +156,17 @@
     "ai-tailwind-tomas-branch": "Yaniv-VersionH Slides",
     "monetization-critical": "Yaniv-VersionH Slides",
     "defensibility-structural": "Yaniv-VersionH Slides",
-    "customer-use-cases-dark-yaniv-vh": "Yaniv-VersionH Slides"
+    "customer-use-cases-dark-yaniv-vh": "Yaniv-VersionH Slides",
+    "arr-gross-margin-quarterly-dark": "From Seksom-Branch",
+    "ebitda-quarterly-dark": "From Seksom-Branch",
+    "cash-flow-trends-quarterly-dark": "From Seksom-Branch",
+    "target-model-dark": "From Seksom-Branch"
   },
   "categoryNames": [
     "Yaniv-VersionH Slides",
     "dividers",
-    "from Thomas"
+    "from Thomas",
+    "From Seksom-Branch"
   ],
   "hiddenSlides": [
     "cx-market-sizing",

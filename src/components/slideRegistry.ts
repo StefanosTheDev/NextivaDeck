@@ -133,6 +133,10 @@ import AIDefensibilityV2Copy3Slide from "./slides/AIDefensibilityV2Copy3Slide";
 import LeadershipCopySlide from "./slides/LeadershipCopySlide";
 import GTMMotionSlide from "./slides/GTMMotionSlide";
 import ConversationalCommerceCopySlide from "./slides/ConversationalCommerceCopySlide";
+import SlideARRGrossMarginQuarterlyDark from "./slides/SlideARRGrossMarginQuarterlyDark";
+import SlideEBITDAQuarterlyDark from "./slides/SlideEBITDAQuarterlyDark";
+import SlideCashFlowTrendsQuarterlyDark from "./slides/SlideCashFlowTrendsQuarterlyDark";
+import SlideTargetModelDark from "./slides/SlideTargetModelDark";
 
 export type SlideTheme = "light" | "dark";
 
@@ -280,6 +284,10 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "leadership-copy": { id: "leadership-copy", label: "Leadership (Copy)", component: LeadershipCopySlide, theme: "dark" },
   "gtm-motion": { id: "gtm-motion", label: "GTM Motion", component: GTMMotionSlide, theme: "dark" },
   "conversational-commerce-copy": { id: "conversational-commerce-copy", label: "Conversational Commerce (Copy)", component: ConversationalCommerceCopySlide, theme: "dark" },
+  "arr-gross-margin-quarterly-dark": { id: "arr-gross-margin-quarterly-dark", label: "ARR & Gross Margin (Quarterly Dark)", component: SlideARRGrossMarginQuarterlyDark, theme: "dark" },
+  "ebitda-quarterly-dark": { id: "ebitda-quarterly-dark", label: "EBITDA (Quarterly Dark)", component: SlideEBITDAQuarterlyDark, theme: "dark" },
+  "cash-flow-trends-quarterly-dark": { id: "cash-flow-trends-quarterly-dark", label: "Cash Flow Trends (Quarterly Dark)", component: SlideCashFlowTrendsQuarterlyDark, theme: "dark" },
+  "target-model-dark": { id: "target-model-dark", label: "Target Model (Dark)", component: SlideTargetModelDark, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -346,6 +354,10 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "executive-summary-stack",
   "executive-summary-2-stack",
   "executive-summary-cards-copy",
+  "arr-gross-margin-quarterly-dark",
+  "ebitda-quarterly-dark",
+  "cash-flow-trends-quarterly-dark",
+  "target-model-dark",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
