@@ -35,7 +35,7 @@ export default function BetterOutcomesSlide({ slideNumber = 3 }: { slideNumber?:
             margin: 0,
           }}
         >
-          Our Purpose
+          What We Do
         </motion.p>
 
         <motion.h1
@@ -52,8 +52,9 @@ export default function BetterOutcomesSlide({ slideNumber = 3 }: { slideNumber?:
             maxWidth: 1100,
           }}
         >
-          Helping businesses reach their full potential by building deeper,
-          lasting relationships with their customers.
+          One platform where businesses manage every customer conversation
+          — voice, chat, text, social — and AI that automates decisions and
+          actions from every conversation.
         </motion.h1>
 
         <motion.div
