@@ -52,9 +52,9 @@ export default function BetterOutcomesSlide({ slideNumber = 3 }: { slideNumber?:
             maxWidth: 1100,
           }}
         >
-          One platform where businesses manage every customer conversation
-          — voice, chat, text, social — and AI that automates decisions and
-          actions from every conversation.
+          We bring every customer conversation into a single system of
+          action, where AI transforms interactions into decisions and
+          business outcomes.
         </motion.h1>
 
         <motion.div
