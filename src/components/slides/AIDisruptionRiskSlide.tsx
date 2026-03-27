@@ -4,14 +4,10 @@ import SlideFooter from "../SlideFooter";
 import { ShieldCheck } from "lucide-react";
 
 const ACCENT = "#0070F3";
-const RED_BG = "rgba(220,80,60,0.18)";
-const RED_BORDER = "rgba(220,80,60,0.35)";
-const RED_TEXT = "#E8624D";
-const GREEN_BG = "rgba(34,170,80,0.18)";
-const GREEN_BORDER = "rgba(34,170,80,0.35)";
-const GREEN_TEXT = "#2ECC71";
+const WARM = "#E8956A";
+const COOL = "#5BAD78";
 
-const atRiskRows = [
+const leftRows = [
   "Generalist Knowledge",
   "Simple, or Low-Stakes Workflows",
   "Point Solutions or Standalone Tools",
@@ -21,7 +17,7 @@ const atRiskRows = [
   "Commoditized or Publicly Available Data",
 ];
 
-const insulatedRows = [
+const rightRows = [
   "Deep, Specialized Domain Expertise",
   "Complex, Critically Important Workflows",
   "Embedded Platforms",
@@ -36,20 +32,18 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
     <div
       className="slide"
       style={{
-        background: "radial-gradient(ellipse 90% 80% at 50% 30%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 50%, #000208 100%)",
+        background: "#0A0F1C",
         overflow: "hidden",
       }}
     >
+      {/* Title */}
       <motion.header
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "44px 80px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "44px 80px 0", flexShrink: 0 }}
       >
-        <p style={{ fontWeight: 700, fontSize: 14, letterSpacing: "0.08em", textTransform: "uppercase", color: ACCENT, margin: "0 0 10px" }}>
-          AI DISRUPTION RISK
-        </p>
-        <h1 className="font-heading" style={{ fontSize: 44, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 40, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.2 }}>
           AI Disruption Risk Is Not Uniform Across Software
         </h1>
       </motion.header>
@@ -57,107 +51,121 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
       <motion.main
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.15 }}
         style={{ flex: 1, padding: "24px 80px 0", display: "flex", flexDirection: "column" }}
       >
-        {/* Arrow bar — styled like the original with arrow shapes */}
-        <div style={{ display: "flex", alignItems: "center", gap: 0, marginBottom: 20, position: "relative" }}>
+        {/* Arrow bar */}
+        <div style={{ display: "flex", alignItems: "center", marginBottom: 20, position: "relative" }}>
           {/* Left arrow */}
           <div style={{
-            flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
-            position: "relative", height: 48,
+            display: "flex", alignItems: "center", gap: 0,
           }}>
-            <div style={{
-              position: "absolute", left: 0, top: 0, bottom: 0, right: 0,
-              background: "linear-gradient(90deg, rgba(220,80,60,0.25) 0%, rgba(220,80,60,0.08) 100%)",
-              borderRadius: "24px 4px 4px 24px",
-              border: `1px solid ${RED_BORDER}`,
-            }} />
-            <svg width="20" height="20" viewBox="0 0 20 20" style={{ position: "absolute", left: 12 }}>
-              <path d="M14 3L6 10L14 17" stroke={RED_TEXT} strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="28" height="40" viewBox="0 0 28 40" fill="none">
+              <polygon points="28,0 28,40 0,20" fill={WARM} />
             </svg>
-            <span style={{ fontSize: 18, fontWeight: 800, color: RED_TEXT, position: "relative", zIndex: 1 }}>
-              More at Risk
-            </span>
+            <div style={{
+              background: WARM, padding: "10px 32px", borderRadius: "0 8px 8px 0",
+              display: "flex", alignItems: "center",
+            }}>
+              <span style={{ fontSize: 16, fontWeight: 800, color: "#FFFFFF", letterSpacing: "0.02em" }}>More at Risk</span>
+            </div>
           </div>
 
-          <div style={{ width: 40 }} />
+          {/* Center line */}
+          <div style={{ flex: 1, height: 3, background: "linear-gradient(90deg, rgba(232,149,106,0.4), rgba(255,255,255,0.08), rgba(91,173,120,0.4))" }} />
 
           {/* Right arrow */}
           <div style={{
-            flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
-            position: "relative", height: 48,
+            display: "flex", alignItems: "center", gap: 0,
           }}>
             <div style={{
-              position: "absolute", left: 0, top: 0, bottom: 0, right: 0,
-              background: "linear-gradient(90deg, rgba(34,170,80,0.08) 0%, rgba(34,170,80,0.25) 100%)",
-              borderRadius: "4px 24px 24px 4px",
-              border: `1px solid ${GREEN_BORDER}`,
-            }} />
-            <span style={{ fontSize: 18, fontWeight: 800, color: GREEN_TEXT, position: "relative", zIndex: 1 }}>
-              More Insulated
-            </span>
-            <svg width="20" height="20" viewBox="0 0 20 20" style={{ position: "absolute", right: 12 }}>
-              <path d="M6 3L14 10L6 17" stroke={GREEN_TEXT} strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              background: COOL, padding: "10px 32px", borderRadius: "8px 0 0 8px",
+              display: "flex", alignItems: "center",
+            }}>
+              <span style={{ fontSize: 16, fontWeight: 800, color: "#FFFFFF", letterSpacing: "0.02em" }}>More Insulated</span>
+            </div>
+            <svg width="28" height="40" viewBox="0 0 28 40" fill="none">
+              <polygon points="0,0 0,40 28,20" fill={COOL} />
             </svg>
           </div>
         </div>
 
-        {/* Column sub-headers */}
-        <div style={{ display: "flex", gap: 40, marginBottom: 10 }}>
-          <p style={{ flex: 1, fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.6)", margin: 0, textAlign: "center" }}>
-            Fast, Forgiving, Low-Stakes Environments
-          </p>
-          <p style={{ flex: 1, fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.6)", margin: 0, textAlign: "center" }}>
-            High-Stakes, Complex, Regulated Systems
-          </p>
+        {/* Column headers */}
+        <div style={{ display: "flex", gap: 24, marginBottom: 8 }}>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.7)", margin: 0, textAlign: "center" }}>
+              Fast, Forgiving, Low-Stakes Environments
+            </p>
+          </div>
+          <div style={{ flex: 1 }}>
+            <p style={{ fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.7)", margin: 0, textAlign: "center" }}>
+              High-Stakes, Complex, Regulated Systems
+            </p>
+          </div>
         </div>
 
         {/* Comparison rows */}
         <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-          {atRiskRows.map((left, i) => (
+          {leftRows.map((left, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.25 + i * 0.06 }}
-              style={{ display: "flex", gap: 40 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.2 + i * 0.05 }}
+              style={{ display: "flex", gap: 24 }}
             >
               <div style={{
-                flex: 1, background: RED_BG, border: `1px solid ${RED_BORDER}`,
-                borderRadius: 6, padding: "12px 20px",
+                flex: 1,
+                background: `${WARM}18`,
+                border: `1px solid ${WARM}30`,
+                borderRadius: 6,
+                padding: "10px 16px",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <span style={{ fontSize: 15, color: RED_TEXT, textAlign: "center", fontWeight: 600 }}>{left}</span>
+                <span style={{ fontSize: 14, color: WARM, textAlign: "center", fontWeight: 600 }}>{left}</span>
               </div>
               <div style={{
-                flex: 1, background: GREEN_BG, border: `1px solid ${GREEN_BORDER}`,
-                borderRadius: 6, padding: "12px 20px",
+                flex: 1,
+                background: `${COOL}18`,
+                border: `1px solid ${COOL}30`,
+                borderRadius: 6,
+                padding: "10px 16px",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <span style={{ fontSize: 15, color: GREEN_TEXT, textAlign: "center", fontWeight: 700 }}>{insulatedRows[i]}</span>
+                <span style={{ fontSize: 14, color: COOL, textAlign: "center", fontWeight: 600 }}>{rightRows[i]}</span>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Nextiva indicator */}
+        {/* Nextiva badge */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          style={{ display: "flex", justifyContent: "flex-end", marginTop: 14, paddingRight: 20 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", marginTop: 16, gap: 16 }}
         >
           <div style={{
             display: "flex", alignItems: "center", gap: 10,
-            background: "rgba(0,112,243,0.15)", border: "1px solid rgba(0,112,243,0.35)",
+            background: `${ACCENT}15`,
+            border: `1px solid ${ACCENT}35`,
             borderRadius: 10, padding: "10px 24px",
           }}>
             <ShieldCheck size={20} color={ACCENT} strokeWidth={2} />
-            <span className="font-heading" style={{ fontSize: 16, fontWeight: 700, color: ACCENT }}>NEXTIVA IS HERE</span>
+            <span className="font-heading" style={{ fontSize: 15, fontWeight: 700, color: ACCENT }}>NEXTIVA IS HERE</span>
           </div>
         </motion.div>
       </motion.main>
+
+      {/* Thoma Bravo attribution */}
+      <div style={{ padding: "0 80px 6px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+        <p style={{ fontSize: 9, color: "rgba(255,255,255,0.2)", margin: 0, maxWidth: 600, lineHeight: 1.4 }}>
+          For illustrative purposes only. Framework developed by Thoma Bravo. The classifications represent generalizations and do not constitute a guarantee of future performance or insulation from AI-related disruption.
+        </p>
+        <p style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.3)", margin: 0, letterSpacing: "0.06em" }}>
+          THOMA BRAVO
+        </p>
+      </div>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
