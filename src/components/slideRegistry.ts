@@ -134,6 +134,7 @@ import LeadershipCopySlide from "./slides/LeadershipCopySlide";
 import GTMMotionSlide from "./slides/GTMMotionSlide";
 import ConversationalCommerceCopySlide from "./slides/ConversationalCommerceCopySlide";
 import OpportunityCopySlide from "./slides/OpportunityCopySlide";
+import AIDisruptionRiskSlide from "./slides/AIDisruptionRiskSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -282,6 +283,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "gtm-motion": { id: "gtm-motion", label: "GTM Motion", component: GTMMotionSlide, theme: "dark" },
   "conversational-commerce-copy": { id: "conversational-commerce-copy", label: "Conversational Commerce (Copy)", component: ConversationalCommerceCopySlide, theme: "dark" },
   "opportunity-copy": { id: "opportunity-copy", label: "Our Market (Copy)", component: OpportunityCopySlide, theme: "dark" },
+  "ai-disruption-risk": { id: "ai-disruption-risk", label: "AI Disruption Risk", component: AIDisruptionRiskSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
