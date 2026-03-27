@@ -2,6 +2,7 @@
   "order": [
     "cover",
     "safe-harbor",
+    "opportunity-copy",
     "better-outcomes-copy",
     "investor-summary",
     "glance",
@@ -226,7 +227,6 @@
     "journey",
     "customer-use-cases-dark-yaniv-vh",
     "world-moving-tomas-branch",
-    "better-outcomes-copy",
     "who",
     "what-we-are-close-thomas",
     "world-moving-thomas",
@@ -235,6 +235,7 @@
     "agentic-opp",
     "ai-defensibility-v2-copy-2",
     "system-of-action-visual-copy",
-    "conversational-commerce-copy"
+    "conversational-commerce-copy",
+    "better-outcomes-copy"
   ]
 }
