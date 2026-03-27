@@ -4,17 +4,25 @@ import SlideFooter from "../SlideFooter";
 import { ShieldCheck } from "lucide-react";
 
 const ACCENT = "#0070F3";
-const MUTED = "rgba(255,255,255,0.06)";
-const BORDER = "rgba(255,255,255,0.1)";
 
-const rows = [
-  { left: "Generalist Knowledge", right: "Deep, Specialized Domain Expertise" },
-  { left: "Simple, or Low-Stakes Workflows", right: "Complex, Critically Important Workflows" },
-  { left: "Point Solutions or Standalone Tools", right: "Embedded Platforms" },
-  { left: "Higher Tolerance for Mistakes", right: "No Room for Mistakes" },
-  { left: "Low Cost of Failure", right: "High Cost of Failure" },
-  { left: "Light Regulatory Oversight", right: "Stringent Regulation & Compliance Requirements" },
-  { left: "Commoditized or Publicly Available Data", right: "Proprietary Data or Proprietary Know-How" },
+const leftItems = [
+  "Generalist Knowledge",
+  "Simple, or Low-Stakes Workflows",
+  "Point Solutions or Standalone Tools",
+  "Higher Tolerance for Mistakes",
+  "Low Cost of Failure",
+  "Light Regulatory Oversight",
+  "Commoditized or Publicly Available Data",
+];
+
+const rightItems = [
+  "Deep, Specialized Domain Expertise",
+  "Complex, Critically Important Workflows",
+  "Embedded Platforms",
+  "No Room for Mistakes",
+  "High Cost of Failure",
+  "Stringent Regulation & Compliance Requirements",
+  "Proprietary Data or Proprietary Know-How",
 ];
 
 export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumber?: number }) {
@@ -26,127 +34,126 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
         overflow: "hidden",
       }}
     >
-      {/* Header with arrow bar integrated */}
+      {/* Title */}
       <motion.header
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "44px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "40px 80px 0", flexShrink: 0, textAlign: "center" }}
       >
         <h1 className="font-heading" style={{ fontSize: 44, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           AI Disruption Risk Is Not Uniform Across Software
         </h1>
-
-        {/* Arrow spectrum bar — directly under title */}
-        <div style={{ display: "flex", alignItems: "center", marginTop: 24 }}>
-          <svg width="22" height="32" viewBox="0 0 22 32" fill="none" style={{ flexShrink: 0 }}>
-            <polygon points="22,0 22,32 0,16" fill="rgba(255,255,255,0.15)" />
-          </svg>
-          <div style={{
-            background: "rgba(255,255,255,0.08)", padding: "7px 24px",
-            border: `1px solid ${BORDER}`,
-            borderRight: "none",
-          }}>
-            <span style={{ fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "0.04em", textTransform: "uppercase" }}>More at Risk</span>
-          </div>
-          <div style={{
-            flex: 1, height: 1,
-            background: "linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05), rgba(0,112,243,0.3))",
-          }} />
-          <div style={{
-            background: `${ACCENT}15`, padding: "7px 24px",
-            border: `1px solid ${ACCENT}30`,
-            borderLeft: "none",
-          }}>
-            <span style={{ fontSize: 14, fontWeight: 700, color: ACCENT, letterSpacing: "0.04em", textTransform: "uppercase" }}>More Insulated</span>
-          </div>
-          <svg width="22" height="32" viewBox="0 0 22 32" fill="none" style={{ flexShrink: 0 }}>
-            <polygon points="0,0 0,32 22,16" fill={`${ACCENT}40`} />
-          </svg>
-        </div>
       </motion.header>
 
+      {/* Arrow bar */}
+      <div style={{ padding: "20px 80px 0", display: "flex", alignItems: "center" }}>
+        <svg width="24" height="36" viewBox="0 0 24 36" fill="none" style={{ flexShrink: 0 }}>
+          <polygon points="24,0 24,36 0,18" fill="rgba(255,255,255,0.2)" />
+        </svg>
+        <div style={{ background: "rgba(255,255,255,0.12)", padding: "8px 28px" }}>
+          <span style={{ fontSize: 15, fontWeight: 800, color: "rgba(255,255,255,0.6)", letterSpacing: "0.04em" }}>More at Risk</span>
+        </div>
+        <div style={{ flex: 1, height: 2, background: "linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.04), rgba(0,112,243,0.4))" }} />
+        <div style={{ background: `${ACCENT}25`, padding: "8px 28px" }}>
+          <span style={{ fontSize: 15, fontWeight: 800, color: ACCENT, letterSpacing: "0.04em" }}>More Insulated</span>
+        </div>
+        <svg width="24" height="36" viewBox="0 0 24 36" fill="none" style={{ flexShrink: 0 }}>
+          <polygon points="0,0 0,36 24,18" fill={ACCENT} fillOpacity={0.5} />
+        </svg>
+      </div>
+
+      {/* Two-column table */}
       <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.15 }}
         style={{
-          flex: 1, padding: "20px 100px 0",
-          display: "flex", flexDirection: "column",
-          justifyContent: "center",
+          flex: 1,
+          padding: "16px 80px 0",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 28,
+          alignContent: "start",
         }}
       >
-        {/* Column headers */}
-        <div style={{ display: "flex", gap: 20, marginBottom: 10 }}>
-          <p style={{ flex: 1, fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)", margin: 0, textAlign: "center", letterSpacing: "0.02em" }}>
+        {/* LEFT COLUMN */}
+        <div style={{
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: 14,
+          padding: "20px 0",
+        }}>
+          <p style={{
+            fontSize: 15, fontWeight: 700, color: "rgba(255,255,255,0.45)",
+            textAlign: "center", margin: "0 0 14px", padding: "0 24px",
+          }}>
             Fast, Forgiving, Low-Stakes Environments
           </p>
-          <p style={{ flex: 1, fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)", margin: 0, textAlign: "center", letterSpacing: "0.02em" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            {leftItems.map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: "13px 28px",
+                  borderTop: i === 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                  borderBottom: "1px solid rgba(255,255,255,0.06)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}
+              >
+                <span style={{ fontSize: 17, color: "rgba(255,255,255,0.45)", textAlign: "center", fontWeight: 500 }}>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN */}
+        <div style={{
+          background: `rgba(0,112,243,0.06)`,
+          border: `1px solid ${ACCENT}20`,
+          borderRadius: 14,
+          padding: "20px 0",
+        }}>
+          <p style={{
+            fontSize: 15, fontWeight: 700, color: "rgba(255,255,255,0.6)",
+            textAlign: "center", margin: "0 0 14px", padding: "0 24px",
+          }}>
             High-Stakes, Complex, Regulated Systems
           </p>
-        </div>
-
-        {/* Comparison rows */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-          {rows.map((row, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.2 + i * 0.05 }}
-              style={{ display: "flex", gap: 20 }}
-            >
-              <div style={{
-                flex: 1,
-                background: MUTED,
-                border: `1px solid ${BORDER}`,
-                borderRadius: 8,
-                padding: "12px 20px",
-                display: "flex", alignItems: "center", justifyContent: "center",
-              }}>
-                <span style={{ fontSize: 15, color: "rgba(255,255,255,0.45)", textAlign: "center", fontWeight: 500 }}>{row.left}</span>
+          <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+            {rightItems.map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: "13px 28px",
+                  borderTop: i === 0 ? `1px solid ${ACCENT}12` : "none",
+                  borderBottom: `1px solid ${ACCENT}12`,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}
+              >
+                <span style={{ fontSize: 17, color: "#FFFFFF", textAlign: "center", fontWeight: 600 }}>{item}</span>
               </div>
-              <div style={{
-                flex: 1,
-                background: `${ACCENT}08`,
-                border: `1px solid ${ACCENT}20`,
-                borderRadius: 8,
-                padding: "12px 20px",
-                display: "flex", alignItems: "center", justifyContent: "center",
-              }}>
-                <span style={{ fontSize: 15, color: "rgba(255,255,255,0.8)", textAlign: "center", fontWeight: 600 }}>{row.right}</span>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
+      </motion.main>
 
-        {/* Nextiva badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          style={{ display: "flex", justifyContent: "flex-end", marginTop: 16 }}
-        >
+      {/* Bottom row: Nextiva badge + Thoma Bravo */}
+      <div style={{ padding: "12px 80px 8px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <p style={{ fontSize: 9, color: "rgba(255,255,255,0.18)", margin: 0, maxWidth: 480, lineHeight: 1.4 }}>
+          For illustrative purposes only. Framework developed by Thoma Bravo. The classifications represent generalizations and do not constitute a guarantee of future performance or insulation from AI-related disruption.
+        </p>
+        <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
           <div style={{
             display: "flex", alignItems: "center", gap: 10,
-            background: `${ACCENT}12`,
-            border: `1px solid ${ACCENT}30`,
+            background: `${ACCENT}12`, border: `1px solid ${ACCENT}30`,
             borderRadius: 10, padding: "10px 24px",
           }}>
             <ShieldCheck size={20} color={ACCENT} strokeWidth={2} />
             <span className="font-heading" style={{ fontSize: 15, fontWeight: 700, color: ACCENT }}>NEXTIVA IS HERE</span>
           </div>
-        </motion.div>
-      </motion.main>
-
-      {/* Thoma Bravo attribution */}
-      <div style={{ padding: "0 100px 8px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-        <p style={{ fontSize: 9, color: "rgba(255,255,255,0.18)", margin: 0, maxWidth: 560, lineHeight: 1.4 }}>
-          For illustrative purposes only. Framework developed by Thoma Bravo. The classifications represent generalizations and do not constitute a guarantee of future performance or insulation from AI-related disruption.
-        </p>
-        <p style={{ fontSize: 11, fontWeight: 800, color: "rgba(255,255,255,0.25)", margin: 0, letterSpacing: "0.08em" }}>
-          THOMA BRAVO
-        </p>
+          <span style={{ fontSize: 11, fontWeight: 800, color: "rgba(255,255,255,0.25)", letterSpacing: "0.08em" }}>THOMA BRAVO</span>
+        </div>
       </div>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
