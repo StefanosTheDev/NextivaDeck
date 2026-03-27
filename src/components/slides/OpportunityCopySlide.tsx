@@ -25,7 +25,7 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
             textAlign: "center",
           }}
         >
-          OUR PURPOSE
+          WHAT WE DO
         </motion.p>
 
         <motion.h1
@@ -73,7 +73,7 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
             lineHeight: 1.5,
           }}
         >
-          Helping businesses to build stronger customer relationships
+          Turning every customer interaction into real-time outcomes
         </motion.p>
       </div>
 

@@ -53,7 +53,7 @@ export default function CoverSlide({ slideNumber: _sn }: { slideNumber?: number 
           transition={{ duration: 0.8, delay: 0.4 }}
           style={{ fontSize: 28, fontWeight: 400, color: "rgba(255,255,255,0.6)", margin: "20px 0 0", lineHeight: 1.4 }}
         >
-          Turning every customer interaction into real-time outcomes
+          Helping businesses to build stronger customer relationships
         </motion.p>
 
         <motion.div
