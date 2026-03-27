@@ -135,6 +135,7 @@ import GTMMotionSlide from "./slides/GTMMotionSlide";
 import ConversationalCommerceCopySlide from "./slides/ConversationalCommerceCopySlide";
 import OpportunityCopySlide from "./slides/OpportunityCopySlide";
 import AIDisruptionRiskSlide from "./slides/AIDisruptionRiskSlide";
+import AIDisruptionNextivaSlide from "./slides/AIDisruptionNextivaSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -284,6 +285,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "conversational-commerce-copy": { id: "conversational-commerce-copy", label: "Conversational Commerce (Copy)", component: ConversationalCommerceCopySlide, theme: "dark" },
   "opportunity-copy": { id: "opportunity-copy", label: "Our Market (Copy)", component: OpportunityCopySlide, theme: "dark" },
   "ai-disruption-risk": { id: "ai-disruption-risk", label: "AI Disruption Risk", component: AIDisruptionRiskSlide, theme: "dark" },
+  "ai-disruption-nextiva": { id: "ai-disruption-nextiva", label: "AI Disruption - Nextiva Position", component: AIDisruptionNextivaSlide, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
