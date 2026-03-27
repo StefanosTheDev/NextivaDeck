@@ -64,6 +64,8 @@
     "competitive-moat-2",
     "win",
     "ai-defensibility-v2-copy-2",
+    "ai-disruption-risk",
+    "ai-disruption-nextiva",
     "leadership",
     "financial-divider",
     "arr-gross-margin",
@@ -132,9 +134,7 @@
     "customer-use-cases-dark-yaniv-vh",
     "ai-defensibility-v2-copy-3",
     "leadership-copy",
-    "gtm-motion",
-    "ai-disruption-risk",
-    "ai-disruption-nextiva"
+    "gtm-motion"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",
