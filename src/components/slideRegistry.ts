@@ -68,6 +68,7 @@ import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
 import MarketTAMLovableSlide from "./slides/MarketTAMLovableSlide";
 import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
 import BetterOutcomesCopySlide from "./slides/BetterOutcomesCopySlide";
+import BetterOutcomesCopy2Slide from "./slides/BetterOutcomesCopy2Slide";
 import WorldMovingSlide from "./slides/WorldMovingSlide";
 import WhatWeAreCloseSlide from "./slides/WhatWeAreCloseSlide";
 import CXPortfolioThomasSlide from "./slides/CXPortfolioThomasSlide";
@@ -144,6 +145,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "infrastructure-layer-thesis": { id: "infrastructure-layer-thesis", label: "Infrastructure Layer Thesis", component: InfrastructureLayerThesisSlide, theme: "dark" },
   "better-outcomes":   { id: "better-outcomes",     label: "Our Mission",         component: BetterOutcomesSlide,      theme: "dark" },
   "better-outcomes-copy": { id: "better-outcomes-copy", label: "Our Mission (copy)", component: BetterOutcomesCopySlide, theme: "dark" },
+  "better-outcomes-copy-2": { id: "better-outcomes-copy-2", label: "What We Do (v2)", component: BetterOutcomesCopy2Slide, theme: "dark", isNew: true },
   glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
   who:                 { id: "who",                  label: "Who We Serve",        component: WhoWeServeSlide,          theme: "dark" },
