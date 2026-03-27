@@ -34,7 +34,7 @@ export default function WhoWeServeCopySlide({ slideNumber = 5 }: { slideNumber?:
           WHO WE SERVE
         </p>
         <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: "12px 0 0", lineHeight: 1.15 }}>
-          Built for operators, not technologists.
+          Great technology isn&apos;t just for the Fortune 500.
         </h1>
         <p style={{ fontSize: 24, color: "rgba(255,255,255,0.55)", margin: "14px 0 0", fontWeight: 400 }}>
           Enterprise-grade CX without enterprise complexity.
