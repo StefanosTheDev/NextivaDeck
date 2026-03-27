@@ -12,13 +12,6 @@ const cards = [
     detail: "Expanding through upsell and cross-sell",
   },
   {
-    label: "Logo Churn",
-    from: `${RETENTION.logoChurn.FY25}%`,
-    to: `${RETENTION.logoChurn.FY27}%`,
-    direction: "down" as const,
-    detail: "Improving customer retention",
-  },
-  {
     label: "MRR Churn",
     from: `${RETENTION.mrrChurn.FY25}%`,
     to: `${RETENTION.mrrChurn.FY27}%`,
@@ -36,7 +29,7 @@ export default function NRRChurnSlide({ slideNumber = 26 }: { slideNumber?: numb
       >
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#CCC7C3", margin: "0 0 10px" }}>Retention trends</p>
         <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
-          Retention improving across every metric.
+          Churn and Retention both improving across segments.
         </h1>
       </motion.header>
 

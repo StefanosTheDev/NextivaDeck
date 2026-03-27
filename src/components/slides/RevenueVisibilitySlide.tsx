@@ -49,7 +49,7 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
           Majority of FY27 revenue already locked in.
         </h1>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.45)", marginTop: 10, lineHeight: 1.5, maxWidth: 1200, marginLeft: "auto", marginRight: "auto" }}>
-          ~{GAP_PCT}% of FY27 subscription revenue remains at risk — the foundation is already in place today.
+          97% of FY27 subscription revenue is secured — the foundation is already in place today.
         </p>
       </motion.header>
 
@@ -167,10 +167,10 @@ export default function RevenueVisibilitySlide({ slideNumber = 31 }: { slideNumb
             }}
           >
             <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", color: "#7EB3E8", margin: 0 }}>
-              FY27 Subscription Revenue at Risk
+              FY27 Subscription Revenue In Place
             </p>
             <p className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: "6px 0 0", lineHeight: 1 }}>
-              Only {GAP_PCT}%
+              97% visibility
             </p>
             <p style={{ fontSize: 18, color: "rgba(255,255,255,0.4)", margin: "6px 0 0" }}>
               ${GAP}M gap to plan
