@@ -226,7 +226,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
                   {card.badge}
                 </span>
               </div>
-              <p style={{ fontSize: 16, color: "rgba(255,255,255,0.5)", margin: "8px 0 0", lineHeight: 1.5 }}>
+              <p style={{ fontSize: 18, color: "rgba(255,255,255,0.5)", margin: "8px 0 0", lineHeight: 1.5 }}>
                 {card.desc}
               </p>
             </motion.div>
