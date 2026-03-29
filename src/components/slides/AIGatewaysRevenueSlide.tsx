@@ -123,7 +123,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
       >
         <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>AI REVENUE MIX</p>
         <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
-          Projecting roughly 95%+ activation on AI by FY28.
+          Projecting roughly 90%+ activation on AI by FY28.
         </h1>
       </motion.header>
 
