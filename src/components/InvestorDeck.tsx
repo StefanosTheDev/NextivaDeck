@@ -61,10 +61,7 @@ export default function InvestorDeck() {
       .then((data) => {
         if (Array.isArray(data.order)) {
           const hidden: string[] = Array.isArray(data.hiddenSlides) ? data.hiddenSlides : [];
-          const showAll = from === "catalog";
-          const displayOrder = showAll
-            ? data.order
-            : data.order.filter((id: string) => !hidden.includes(id));
+          const displayOrder = data.order.filter((id: string) => !hidden.includes(id));
           const resolved = resolveSlides(displayOrder);
           setSlides(resolved);
 
