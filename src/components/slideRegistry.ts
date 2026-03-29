@@ -136,6 +136,10 @@ import ConversationalCommerceCopySlide from "./slides/ConversationalCommerceCopy
 import OpportunityCopySlide from "./slides/OpportunityCopySlide";
 import AIDisruptionRiskSlide from "./slides/AIDisruptionRiskSlide";
 import AIDisruptionNextivaSlide from "./slides/AIDisruptionNextivaSlide";
+import SlideARRGrossMarginQuarterlyDark from "./slides/SlideARRGrossMarginQuarterlyDark";
+import SlideEBITDAQuarterlyDark from "./slides/SlideEBITDAQuarterlyDark";
+import SlideCashFlowTrendsQuarterlyDark from "./slides/SlideCashFlowTrendsQuarterlyDark";
+import SlideTargetModelDark from "./slides/SlideTargetModelDark";
 
 export type SlideTheme = "light" | "dark";
 
@@ -181,7 +185,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   closing:             { id: "closing",              label: "Closing",             component: ClosingSlide,             theme: "dark" },
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
-  "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
+  "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
   "financial-divider":  { id: "financial-divider",   label: "Financial Overview",  component: FinancialDividerSlide,    theme: "dark", isNew: true },
   "customer-use-cases-divider": { id: "customer-use-cases-divider", label: "Customer Use Cases", component: CustomerUseCasesDividerSlide, theme: "dark", isNew: true },
   "cx-portfolio": { id: "cx-portfolio", label: "CX Platform Portfolio", component: CXPortfolioSlide, theme: "dark", isNew: true },
@@ -191,13 +195,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "cx-portfolio-puzzle-cross": { id: "cx-portfolio-puzzle-cross", label: "CX Portfolio (Puzzle Cross)", component: CXPortfolioPuzzleCrossSlide, theme: "dark", isNew: true },
   "arr-gross-margin":   { id: "arr-gross-margin",    label: "Revenue & Margin",    component: ARRGrossMarginSlide,      theme: "dark", isNew: true },
   "ebitda":             { id: "ebitda",              label: "EBITDA",              component: EBITDASlide,              theme: "dark", isNew: true },
-  "nrr-churn":          { id: "nrr-churn",           label: "Retention Trends",    component: NRRChurnSlide,            theme: "dark", isNew: true },
-  "expansion-retention":{ id: "expansion-retention", label: "Customer Expansion",  component: ExpansionRetentionSlide,  theme: "dark", isNew: true },
+  "nrr-churn":          { id: "nrr-churn",           label: "(35) Retention Trends",    component: NRRChurnSlide,            theme: "dark", isNew: true },
+  "expansion-retention":{ id: "expansion-retention", label: "(34) Customer Expansion",  component: ExpansionRetentionSlide,  theme: "dark", isNew: true },
   "target-model":       { id: "target-model",        label: "Target Model",        component: TargetModelSlide,         theme: "dark", isNew: true },
   "operating-leverage": { id: "operating-leverage",  label: "Operating Leverage",  component: OperatingLeverageSlide,   theme: "dark", isNew: true },
-  "operating-leverage-dated": { id: "operating-leverage-dated", label: "Operating Leverage (0315)", component: OperatingLeverageDatedSlide, theme: "dark", isNew: true },
+  "operating-leverage-dated": { id: "operating-leverage-dated", label: "(32) Operating Leverage (0315)", component: OperatingLeverageDatedSlide, theme: "dark", isNew: true },
   "customer-base":      { id: "customer-base",       label: "Customer Base",       component: CustomerBaseSlide,        theme: "dark", isNew: true },
-  "revenue-visibility": { id: "revenue-visibility",  label: "Revenue Visibility",  component: RevenueVisibilitySlide,   theme: "dark", isNew: true },
+  "revenue-visibility": { id: "revenue-visibility",  label: "(31) Revenue Visibility",  component: RevenueVisibilitySlide,   theme: "dark", isNew: true },
   "cash-flow-trends":   { id: "cash-flow-trends",    label: "Cash Flow Trends",    component: CashFlowTrendsSlide,      theme: "dark", isNew: true },
   "agentic-opp-2":     { id: "agentic-opp-2",       label: "AI Opportunity (2)",  component: AgenticOpportunity2Slide, theme: "dark" },
   "ai-tailwind-2":     { id: "ai-tailwind-2",       label: "AI Tailwind (2)",     component: AiTailwind2Slide,         theme: "dark" },
@@ -286,6 +290,10 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "opportunity-copy": { id: "opportunity-copy", label: "Our Market (Copy)", component: OpportunityCopySlide, theme: "dark" },
   "ai-disruption-risk": { id: "ai-disruption-risk", label: "AI Disruption Risk", component: AIDisruptionRiskSlide, theme: "dark" },
   "ai-disruption-nextiva": { id: "ai-disruption-nextiva", label: "AI Disruption - Nextiva Position", component: AIDisruptionNextivaSlide, theme: "dark" },
+  "ebitda-quarterly-dark": { id: "ebitda-quarterly-dark", label: "(28) EBITDA (Quarterly Dark)", component: SlideEBITDAQuarterlyDark, theme: "dark" },
+  "arr-gross-margin-quarterly-dark": { id: "arr-gross-margin-quarterly-dark", label: "(29) ARR & Gross Margin (Quarterly Dark)", component: SlideARRGrossMarginQuarterlyDark, theme: "dark" },
+  "cash-flow-trends-quarterly-dark": { id: "cash-flow-trends-quarterly-dark", label: "(33) Cash Flow Trends (Quarterly Dark)", component: SlideCashFlowTrendsQuarterlyDark, theme: "dark" },
+  "target-model-dark": { id: "target-model-dark", label: "(36) Target Model (Dark)", component: SlideTargetModelDark, theme: "dark" },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -352,6 +360,11 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "executive-summary-stack",
   "executive-summary-2-stack",
   "executive-summary-cards-copy",
+  "ebitda-quarterly-dark",
+  "arr-gross-margin-quarterly-dark",
+  "operating-leverage-dated",
+  "cash-flow-trends-quarterly-dark",
+  "target-model-dark",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

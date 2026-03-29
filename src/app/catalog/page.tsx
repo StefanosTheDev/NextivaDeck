@@ -73,6 +73,7 @@ export default function CatalogPage() {
     return "all";
   });
   const [showPreview, setShowPreview] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const savedTimeout = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
@@ -328,90 +329,76 @@ export default function CatalogPage() {
     setActiveId(event.active.id as string);
   }
 
+  const reorderFiltered = useCallback(
+    (activeId: string, overId: string) => {
+      const isFiltered = viewFilter !== "all" || selectedCategory;
+      if (!isFiltered) {
+        setOrder((prev) => {
+          const oldIndex = prev.indexOf(activeId);
+          const newIndex = prev.indexOf(overId);
+          return arrayMove(prev, oldIndex, newIndex);
+        });
+      } else {
+        setOrder((prev) => {
+          const hiddenSet = new Set(hiddenSlides);
+          const matchesFilter = (id: string) => {
+            if (viewFilter === "published" && hiddenSet.has(id)) return false;
+            if (viewFilter === "hidden" && !hiddenSet.has(id)) return false;
+            if (selectedCategory && categories[id] !== selectedCategory) return false;
+            return true;
+          };
+          const filtered = prev.filter(matchesFilter);
+          const oldIdx = filtered.indexOf(activeId);
+          const newIdx = filtered.indexOf(overId);
+          const reordered = arrayMove(filtered, oldIdx, newIdx);
+          const result: string[] = [];
+          let fi = 0;
+          for (const id of prev) {
+            if (matchesFilter(id)) {
+              result.push(reordered[fi++]);
+            } else {
+              result.push(id);
+            }
+          }
+          return result;
+        });
+      }
+    },
+    [viewFilter, hiddenSlides, selectedCategory, categories]
+  );
+
   function handleGridDragEnd(event: DragEndEvent) {
     setActiveId(null);
     const { active, over } = event;
     if (!over || active.id === over.id) return;
-
-    if (viewFilter === "all") {
-      setOrder((prev) => {
-        const oldIndex = prev.indexOf(active.id as string);
-        const newIndex = prev.indexOf(over.id as string);
-        return arrayMove(prev, oldIndex, newIndex);
-      });
-    } else {
-      setOrder((prev) => {
-        const hiddenSet = new Set(hiddenSlides);
-        const isVisible = viewFilter === "published"
-          ? (id: string) => !hiddenSet.has(id)
-          : (id: string) => hiddenSet.has(id);
-        const filtered = prev.filter(isVisible);
-        const oldFilteredIdx = filtered.indexOf(active.id as string);
-        const newFilteredIdx = filtered.indexOf(over.id as string);
-        const reordered = arrayMove(filtered, oldFilteredIdx, newFilteredIdx);
-        const result: string[] = [];
-        let fi = 0;
-        for (const id of prev) {
-          if (isVisible(id)) {
-            result.push(reordered[fi++]);
-          } else {
-            result.push(id);
-          }
-        }
-        return result;
-      });
-    }
+    reorderFiltered(active.id as string, over.id as string);
   }
 
   function handleSidebarDragEnd(event: DragEndEvent) {
     const { active, over } = event;
     if (!over || active.id === over.id) return;
-
-    if (viewFilter === "all") {
-      setOrder((prev) => {
-        const oldIndex = prev.indexOf(active.id as string);
-        const newIndex = prev.indexOf(over.id as string);
-        return arrayMove(prev, oldIndex, newIndex);
-      });
-    } else {
-      setOrder((prev) => {
-        const hiddenSet = new Set(hiddenSlides);
-        const isVisible = viewFilter === "published"
-          ? (id: string) => !hiddenSet.has(id)
-          : (id: string) => hiddenSet.has(id);
-        const filtered = prev.filter(isVisible);
-        const oldFilteredIdx = filtered.indexOf(active.id as string);
-        const newFilteredIdx = filtered.indexOf(over.id as string);
-        const reordered = arrayMove(filtered, oldFilteredIdx, newFilteredIdx);
-        const result: string[] = [];
-        let fi = 0;
-        for (const id of prev) {
-          if (isVisible(id)) {
-            result.push(reordered[fi++]);
-          } else {
-            result.push(id);
-          }
-        }
-        return result;
-      });
-    }
+    reorderFiltered(active.id as string, over.id as string);
   }
 
   const activeSlide = activeId ? SLIDE_COMPONENTS[activeId] : null;
 
   const sidebarOrder = useMemo(() => {
-    if (viewFilter === "all") return order;
+    let filtered = order;
     const hiddenSet = new Set(hiddenSlides);
-    if (viewFilter === "published") return order.filter((id) => !hiddenSet.has(id));
-    return order.filter((id) => hiddenSet.has(id));
-  }, [order, hiddenSlides, viewFilter]);
+    if (viewFilter === "published") filtered = filtered.filter((id) => !hiddenSet.has(id));
+    else if (viewFilter === "hidden") filtered = filtered.filter((id) => hiddenSet.has(id));
+    if (selectedCategory) filtered = filtered.filter((id) => categories[id] === selectedCategory);
+    return filtered;
+  }, [order, hiddenSlides, viewFilter, selectedCategory, categories]);
 
   const savedSidebarOrder = useMemo(() => {
-    if (viewFilter === "all") return savedOrder;
+    let filtered = savedOrder;
     const hiddenSet = new Set(savedHiddenSlides);
-    if (viewFilter === "published") return savedOrder.filter((id) => !hiddenSet.has(id));
-    return savedOrder.filter((id) => hiddenSet.has(id));
-  }, [savedOrder, savedHiddenSlides, viewFilter]);
+    if (viewFilter === "published") filtered = filtered.filter((id) => !hiddenSet.has(id));
+    else if (viewFilter === "hidden") filtered = filtered.filter((id) => hiddenSet.has(id));
+    if (selectedCategory) filtered = filtered.filter((id) => savedCategories[id] === selectedCategory);
+    return filtered;
+  }, [savedOrder, savedHiddenSlides, viewFilter, selectedCategory, savedCategories]);
 
   const uncategorizedSlides = order.filter((id) => !categories[id]);
 
@@ -537,21 +524,31 @@ export default function CatalogPage() {
         >
           <CategoryInput existingNames={uniqueCategories} onCreateCategory={createCategory} />
 
-          {/* Category headers (non-draggable) */}
+          {/* Category headers — clickable to filter */}
           {uniqueCategories.map((cat) => {
             const color = getColorForCategory(cat, uniqueCategories);
             const count = order.filter((id) => categories[id] === cat).length;
+            const isActive = selectedCategory === cat;
             return (
-              <div key={`cat-header-${cat}`} style={{
-                display: "flex", alignItems: "center", gap: 8,
-                padding: "6px 8px", borderRadius: 6, marginBottom: 4, marginTop: 8,
-              }}>
+              <div
+                key={`cat-header-${cat}`}
+                onClick={() => setSelectedCategory(isActive ? null : cat)}
+                style={{
+                  display: "flex", alignItems: "center", gap: 8,
+                  padding: "6px 8px", borderRadius: 6, marginBottom: 4, marginTop: 8,
+                  cursor: "pointer", transition: "all 0.15s",
+                  background: isActive ? color.bg : "transparent",
+                  border: isActive ? `1px solid ${color.dot}` : "1px solid transparent",
+                }}
+              >
                 <div style={{ width: 10, height: 10, borderRadius: "50%", background: color.dot, flexShrink: 0 }} />
                 <span style={{ fontSize: 14, fontWeight: 600, color: color.text, flex: 1 }}>{cat}</span>
-                <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", marginRight: 4 }}>{count}</span>
+                <span style={{ fontSize: 12, color: isActive ? color.text : "rgba(255,255,255,0.3)", marginRight: 4 }}>{count}</span>
                 <button
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     if (window.confirm(`Delete category "${cat}"? All slides in this category will be moved to Uncategorized.`)) {
+                      if (selectedCategory === cat) setSelectedCategory(null);
                       deleteCategory(cat);
                     }
                   }}
@@ -570,6 +567,21 @@ export default function CatalogPage() {
               </div>
             );
           })}
+          {selectedCategory && (
+            <button
+              onClick={() => setSelectedCategory(null)}
+              style={{
+                display: "flex", alignItems: "center", gap: 6,
+                padding: "5px 12px", borderRadius: 6, border: "none",
+                background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)",
+                fontSize: 12, fontFamily: "'Space Grotesk', sans-serif",
+                cursor: "pointer", transition: "all 0.15s", alignSelf: "flex-start",
+              }}
+            >
+              <X size={11} />
+              Clear filter
+            </button>
+          )}
 
           {/* Slide order list — draggable */}
           <div style={{ marginTop: 16 }}>
