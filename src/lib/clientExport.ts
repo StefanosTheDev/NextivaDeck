@@ -58,14 +58,20 @@ async function waitForIframeReady(iframe: HTMLIFrameElement): Promise<void> {
   // Wait for fonts
   await iframe.contentWindow?.document.fonts.ready;
 
-  // Wait for all images
-  const imgs = doc.querySelectorAll("img");
-  await Promise.all(Array.from(imgs).map((img) =>
-    img.complete ? Promise.resolve() : new Promise((r) => { img.onload = r; img.onerror = r; })
-  ));
+  // Wait for all images (including ones added dynamically)
+  const waitForImages = async () => {
+    const imgs = doc.querySelectorAll("img");
+    await Promise.all(Array.from(imgs).map((img) =>
+      img.complete ? Promise.resolve() : new Promise((r) => { img.onload = r; img.onerror = r; })
+    ));
+  };
+  await waitForImages();
 
-  // Extra paint settle time
-  await new Promise((r) => setTimeout(r, 2000));
+  // Let charts (Recharts SVG) and layout fully settle — animations need to complete
+  await new Promise((r) => setTimeout(r, 5000));
+
+  // Re-check images in case any loaded lazily
+  await waitForImages();
 }
 
 async function captureFromIframe(
@@ -90,13 +96,14 @@ async function captureFromIframe(
       (slideEls[j] as HTMLElement).style.display = j === i ? "block" : "none";
     }
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    await new Promise((r) => setTimeout(r, 200));
 
     const canvas = await html2canvas(el, {
       width: 1920,
       height: 1080,
       windowWidth: 1920,
       windowHeight: 1080,
-      scale: 1,
+      scale: 2,
       useCORS: true,
       allowTaint: true,
       backgroundColor: "#000208",
@@ -107,7 +114,7 @@ async function captureFromIframe(
       scrollY: 0,
     });
 
-    images.push(canvas.toDataURL("image/jpeg", 0.92));
+    images.push(canvas.toDataURL("image/jpeg", 0.95));
   }
 
   return images;

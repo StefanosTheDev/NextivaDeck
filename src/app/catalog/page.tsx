@@ -19,13 +19,14 @@ import {
   rectSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Save, Check, RotateCcw, ArrowLeft, Download, Loader2, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
+import { Save, Check, RotateCcw, ArrowLeft, Download, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
 
 import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
 import SortableSlideCard from "./SortableSlideCard";
 import SlideCardContent from "./SlideCardContent";
 import SidebarSlideRow from "./SidebarSlideRow";
 import CategoryInput from "./CategoryInput";
+import ExportPickerModal from "./ExportPickerModal";
 
 const CATEGORY_COLORS = [
   { bg: "rgba(40,96,178,0.18)",  text: "#5b9cf5", dot: "#2860B2"  },
@@ -256,53 +257,7 @@ export default function CatalogPage() {
     );
   }, []);
 
-  const [pdfStatus, setPdfStatus] = useState<"idle" | "generating" | "done">("idle");
-
-  const downloadPdf = useCallback(async () => {
-    setPdfStatus("generating");
-    try {
-      const res = await fetch("/api/generate-pdf");
-      if (!res.ok) throw new Error("PDF generation failed");
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "Nextiva-Investor-Deck-2026.pdf";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      setPdfStatus("done");
-      setTimeout(() => setPdfStatus("idle"), 3000);
-    } catch {
-      setPdfStatus("idle");
-      alert("Failed to generate PDF. Please try again.");
-    }
-  }, []);
-
-  const [pptxStatus, setPptxStatus] = useState<"idle" | "generating" | "done">("idle");
-
-  const downloadPptx = useCallback(async () => {
-    setPptxStatus("generating");
-    try {
-      const res = await fetch("/api/generate-pptx");
-      if (!res.ok) throw new Error("PPTX generation failed");
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "Nextiva-Investor-Deck-2026.pptx";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      setPptxStatus("done");
-      setTimeout(() => setPptxStatus("idle"), 3000);
-    } catch {
-      setPptxStatus("idle");
-      alert("Failed to generate PowerPoint. Please try again.");
-    }
-  }, []);
+  const [exportFormat, setExportFormat] = useState<"pdf" | "pptx" | null>(null);
 
   const gridSensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -440,22 +395,18 @@ export default function CatalogPage() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <button
-            onClick={downloadPdf}
-            disabled={pdfStatus === "generating"}
+            onClick={() => setExportFormat("pdf")}
             className="catalog-btn-outline"
-            style={{ opacity: pdfStatus === "generating" ? 0.6 : 1 }}
           >
-            {pdfStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pdfStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <Download size={15} style={{ flexShrink: 0 }} />}
-            {pdfStatus === "generating" ? "Generating…" : pdfStatus === "done" ? "Downloaded!" : "Generate PDF"}
+            <Download size={15} style={{ flexShrink: 0 }} />
+            Generate PDF
           </button>
           <button
-            onClick={downloadPptx}
-            disabled={pptxStatus === "generating"}
+            onClick={() => setExportFormat("pptx")}
             className="catalog-btn-outline"
-            style={{ opacity: pptxStatus === "generating" ? 0.6 : 1 }}
           >
-            {pptxStatus === "generating" ? <Loader2 size={15} style={{ animation: "spin 1s linear infinite", flexShrink: 0 }} /> : pptxStatus === "done" ? <Check size={15} style={{ flexShrink: 0 }} /> : <FileDown size={15} style={{ flexShrink: 0 }} />}
-            {pptxStatus === "generating" ? "Generating…" : pptxStatus === "done" ? "Downloaded!" : "Generate PPTX"}
+            <FileDown size={15} style={{ flexShrink: 0 }} />
+            Generate PPTX
           </button>
           {hasChanges && (
             <button onClick={() => { if (window.confirm("Undo all unsaved changes? This will revert slide order and visibility back to the last saved state.")) resetAll(); }} className="catalog-btn-outline">
@@ -939,6 +890,19 @@ export default function CatalogPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Export Picker Modal */}
+      {exportFormat && (
+        <ExportPickerModal
+          format={exportFormat}
+          slides={order.map((id) => ({
+            id,
+            slide: SLIDE_COMPONENTS[id],
+            isHidden: hiddenSlides.includes(id),
+          })).filter((s) => s.slide != null) as { id: string; slide: SlideDef; isHidden: boolean }[]}
+          onClose={() => setExportFormat(null)}
+        />
       )}
 
       <style dangerouslySetInnerHTML={{ __html: `
