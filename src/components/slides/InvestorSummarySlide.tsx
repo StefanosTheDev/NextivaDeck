@@ -14,7 +14,7 @@ const points = [
   {
     icon: Brain,
     stat: "AI + CX - Platform Leadership",
-    headline: "Only platform fusing AI, comms & data",
+    headline: "Only platform fusing AI, comms & data — 50+ CX & AI patents 2014+",
   },
   {
     icon: Users,
