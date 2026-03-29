@@ -237,7 +237,7 @@ export default function SlideARRGrossMarginQuarterlyDark({
       data-speaker-notes="Quarterly revenue and gross margin trajectory from FY25 through FY27. Q3'26 onward is forecast. FY27 Q4 revenue of $95M annualizes to $380M. Gross margin expands from 67% to 74%."
     >
       {/* ── Header ── */}
-      <header style={{ padding: "60px 100px 0", textAlign: "center", flexShrink: 0 }}>
+      <header style={{ padding: "40px 100px 0", textAlign: "center", flexShrink: 0 }}>
         <p
           style={{
             fontSize: 22,
@@ -254,7 +254,7 @@ export default function SlideARRGrossMarginQuarterlyDark({
         <h1
           style={{
             fontFamily: F.heading,
-            fontSize: 68,
+            fontSize: 58,
             fontWeight: 400,
             color: C.pureWhite,
             margin: 0,
@@ -281,7 +281,7 @@ export default function SlideARRGrossMarginQuarterlyDark({
         style={{
           display: "flex",
           gap: 48,
-          padding: "32px 100px 0",
+          padding: "24px 100px 0",
           flex: 1,
           minHeight: 0,
         }}
@@ -410,7 +410,7 @@ export default function SlideARRGrossMarginQuarterlyDark({
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            gap: 20,
+            gap: 16,
           }}
         >
           {cards.map((card) => (
@@ -421,8 +421,8 @@ export default function SlideARRGrossMarginQuarterlyDark({
                 border: card.highlighted
                   ? `2px solid ${C.accent}`
                   : "1px solid rgba(255,255,255,0.10)",
-                borderRadius: 16,
-                padding: "36px 40px",
+                borderRadius: 12,
+                padding: "18px 28px",
                 textAlign: "center",
                 boxShadow: card.highlighted
                   ? "0 4px 16px rgba(74,158,242,0.15)"
@@ -431,12 +431,12 @@ export default function SlideARRGrossMarginQuarterlyDark({
             >
               <p
                 style={{
-                  fontSize: 18,
+                  fontSize: 16,
                   fontWeight: 700,
                   letterSpacing: "0.05em",
                   textTransform: "uppercase",
                   color: C.pureWhite,
-                  margin: "0 0 12px",
+                  margin: "0 0 8px",
                   fontFamily: F.body,
                 }}
               >
@@ -445,7 +445,7 @@ export default function SlideARRGrossMarginQuarterlyDark({
               <p
                 style={{
                   fontFamily: F.heading,
-                  fontSize: 64,
+                  fontSize: 42,
                   fontWeight: 700,
                   color: C.pureWhite,
                   margin: 0,
@@ -456,9 +456,9 @@ export default function SlideARRGrossMarginQuarterlyDark({
               </p>
               <p
                 style={{
-                  fontSize: 22,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.5)",
-                  margin: "12px 0 0",
+                  margin: "8px 0 0",
                   fontFamily: F.body,
                 }}
               >
