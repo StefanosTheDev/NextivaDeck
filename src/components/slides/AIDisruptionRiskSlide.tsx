@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { ShieldCheck, ArrowRight, Check } from "lucide-react";
 
-const ACCENT = "#0070F3";
+const ACCENT = "#7EB3E8";
 
 const leftItems = [
   "Generalist Knowledge",

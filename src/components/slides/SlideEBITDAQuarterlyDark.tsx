@@ -201,7 +201,7 @@ export default function SlideEBITDAQuarterlyDark({
       data-speaker-notes="Adj. EBITDA ramps from breakeven in FY25 to 28% margin by FY27 Q4. FY27 Q4 annualized = $104M at 28% margin. FY26 exit run rate of $75–$80M provides near-term underwriting comfort."
     >
       {/* ── Header ── */}
-      <header style={{ padding: "60px 100px 0", textAlign: "center", flexShrink: 0 }}>
+      <header style={{ padding: "40px 100px 0", textAlign: "center", flexShrink: 0 }}>
         <p
           style={{
             fontSize: 22,
@@ -218,7 +218,7 @@ export default function SlideEBITDAQuarterlyDark({
         <h1
           style={{
             fontFamily: F.heading,
-            fontSize: 68,
+            fontSize: 58,
             fontWeight: 400,
             color: C.pureWhite,
             margin: 0,
@@ -331,8 +331,8 @@ export default function SlideEBITDAQuarterlyDark({
                 border: card.highlighted
                   ? `2px solid ${C.accent}`
                   : "1px solid rgba(255,255,255,0.10)",
-                borderRadius: 16,
-                padding: "28px 36px",
+                borderRadius: 12,
+                padding: "18px 28px",
                 textAlign: "center",
                 boxShadow: card.highlighted
                   ? "0 4px 16px rgba(74,158,242,0.15)"
@@ -346,7 +346,7 @@ export default function SlideEBITDAQuarterlyDark({
                   letterSpacing: "0.05em",
                   textTransform: "uppercase",
                   color: C.pureWhite,
-                  margin: "0 0 12px",
+                  margin: "0 0 8px",
                   fontFamily: F.body,
                 }}
               >
@@ -355,7 +355,7 @@ export default function SlideEBITDAQuarterlyDark({
               <p
                 style={{
                   fontFamily: F.heading,
-                  fontSize: 56,
+                  fontSize: 42,
                   fontWeight: 700,
                   color: C.pureWhite,
                   margin: 0,
@@ -366,9 +366,9 @@ export default function SlideEBITDAQuarterlyDark({
               </p>
               <p
                 style={{
-                  fontSize: 20,
+                  fontSize: 16,
                   color: "rgba(255,255,255,0.5)",
-                  margin: "12px 0 0",
+                  margin: "8px 0 0",
                   fontFamily: F.body,
                 }}
               >
