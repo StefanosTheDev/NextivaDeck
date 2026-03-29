@@ -129,10 +129,10 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
 
       <motion.main
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-        style={{ flex: 1, padding: "12px 100px 0", display: "flex", gap: 36 }}
+        style={{ flex: 1, padding: "12px 100px 0", display: "flex", gap: 48 }}
       >
         {/* Chart area — 60% */}
-        <div style={{ flex: 60, display: "flex", flexDirection: "column" }}>
+        <div style={{ flex: 55, display: "flex", flexDirection: "column" }}>
           <p style={{ fontSize: 18, fontWeight: 600, color: "rgba(255,255,255,0.8)", margin: "12px 0 2px", lineHeight: 1.3 }}>
             24-Month AI Revenue Mix Evolution
           </p>
@@ -192,7 +192,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
         </div>
 
         {/* Right column — 3 target cards — 40% */}
-        <div style={{ flex: 40, display: "flex", flexDirection: "column", justifyContent: "center", gap: 14 }}>
+        <div style={{ flex: 45, display: "flex", flexDirection: "column", justifyContent: "center", gap: 16 }}>
           {targetCards.map((card, i) => (
             <motion.div
               key={card.label}
@@ -202,20 +202,20 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
                 background: "rgba(255,255,255,0.09)",
                 border: `1px solid ${card.borderColor}`,
                 borderRadius: 12,
-                padding: "20px 28px",
+                padding: "18px 28px",
               }}
             >
               <p style={{
-                fontSize: 12, fontWeight: 700, letterSpacing: "0.05em",
+                fontSize: 14, fontWeight: 700, letterSpacing: "0.05em",
                 textTransform: "uppercase", color: card.labelColor, margin: 0,
               }}>
                 {card.label}
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
                 <p className="font-heading" style={{
-                  fontSize: 40, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1,
+                  fontSize: 36, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1,
                 }}>
-                  {card.range[0]} <span style={{ fontSize: 32, fontWeight: 500 }}>to</span> {card.range[1]}
+                  {card.range[0]} <span style={{ fontSize: 28, fontWeight: 500 }}>to</span> {card.range[1]}
                 </p>
                 <span style={{
                   background: "#2860B2", color: "#FFFFFF",
