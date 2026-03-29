@@ -34,7 +34,7 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           style={{
-            fontSize: 72,
+            fontSize: 62,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: "24px 0 0",
@@ -42,9 +42,9 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
             textAlign: "center",
           }}
         >
-          A unified, AI-driven customer platform
+          A unified, AI-driven customer experience
           <br />
-          powering every interaction.
+          platform powering every interaction.
         </motion.h1>
 
         <motion.div
