@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import {
   DndContext,
   closestCenter,
@@ -43,6 +43,15 @@ export function getColorForCategory(name: string, allCategories: string[]) {
   return CATEGORY_COLORS[idx % CATEGORY_COLORS.length];
 }
 
+function dedupe(arr: string[]): string[] {
+  const seen = new Set<string>();
+  return arr.filter((id) => {
+    if (seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+}
+
 export default function CatalogPage() {
   const [order, setOrder] = useState<string[]>(DEFAULT_SLIDE_ORDER);
   const [savedOrder, setSavedOrder] = useState<string[]>(DEFAULT_SLIDE_ORDER);
@@ -71,6 +80,7 @@ export default function CatalogPage() {
       .then((r) => r.json())
       .then((data) => {
         if (Array.isArray(data.order)) {
+          data.order = dedupe(data.order);
           setSavedOrder(data.order);
         }
         if (data.categories && typeof data.categories === "object") {
@@ -94,7 +104,7 @@ export default function CatalogPage() {
             const newSlides = serverOrder.filter((id: string) => !cachedSet.has(id));
             const mergedOrder = newSlides.length > 0 ? [...cachedOrder, ...newSlides] : cachedOrder;
             const serverSet = new Set(serverOrder);
-            const cleanedOrder = mergedOrder.filter((id: string) => serverSet.has(id));
+            const cleanedOrder = dedupe(mergedOrder.filter((id: string) => serverSet.has(id)));
             setOrder(cleanedOrder);
             setHiddenSlides(Array.isArray(p.hiddenSlides) ? p.hiddenSlides : data.hiddenSlides || []);
             setCategories(p.categories && typeof p.categories === "object" ? p.categories : (data.categories || {}));
@@ -321,27 +331,87 @@ export default function CatalogPage() {
   function handleGridDragEnd(event: DragEndEvent) {
     setActiveId(null);
     const { active, over } = event;
-    if (over && active.id !== over.id) {
+    if (!over || active.id === over.id) return;
+
+    if (viewFilter === "all") {
       setOrder((prev) => {
         const oldIndex = prev.indexOf(active.id as string);
         const newIndex = prev.indexOf(over.id as string);
         return arrayMove(prev, oldIndex, newIndex);
+      });
+    } else {
+      setOrder((prev) => {
+        const hiddenSet = new Set(hiddenSlides);
+        const isVisible = viewFilter === "published"
+          ? (id: string) => !hiddenSet.has(id)
+          : (id: string) => hiddenSet.has(id);
+        const filtered = prev.filter(isVisible);
+        const oldFilteredIdx = filtered.indexOf(active.id as string);
+        const newFilteredIdx = filtered.indexOf(over.id as string);
+        const reordered = arrayMove(filtered, oldFilteredIdx, newFilteredIdx);
+        const result: string[] = [];
+        let fi = 0;
+        for (const id of prev) {
+          if (isVisible(id)) {
+            result.push(reordered[fi++]);
+          } else {
+            result.push(id);
+          }
+        }
+        return result;
       });
     }
   }
 
   function handleSidebarDragEnd(event: DragEndEvent) {
     const { active, over } = event;
-    if (over && active.id !== over.id) {
+    if (!over || active.id === over.id) return;
+
+    if (viewFilter === "all") {
       setOrder((prev) => {
         const oldIndex = prev.indexOf(active.id as string);
         const newIndex = prev.indexOf(over.id as string);
         return arrayMove(prev, oldIndex, newIndex);
       });
+    } else {
+      setOrder((prev) => {
+        const hiddenSet = new Set(hiddenSlides);
+        const isVisible = viewFilter === "published"
+          ? (id: string) => !hiddenSet.has(id)
+          : (id: string) => hiddenSet.has(id);
+        const filtered = prev.filter(isVisible);
+        const oldFilteredIdx = filtered.indexOf(active.id as string);
+        const newFilteredIdx = filtered.indexOf(over.id as string);
+        const reordered = arrayMove(filtered, oldFilteredIdx, newFilteredIdx);
+        const result: string[] = [];
+        let fi = 0;
+        for (const id of prev) {
+          if (isVisible(id)) {
+            result.push(reordered[fi++]);
+          } else {
+            result.push(id);
+          }
+        }
+        return result;
+      });
     }
   }
 
   const activeSlide = activeId ? SLIDE_COMPONENTS[activeId] : null;
+
+  const sidebarOrder = useMemo(() => {
+    if (viewFilter === "all") return order;
+    const hiddenSet = new Set(hiddenSlides);
+    if (viewFilter === "published") return order.filter((id) => !hiddenSet.has(id));
+    return order.filter((id) => hiddenSet.has(id));
+  }, [order, hiddenSlides, viewFilter]);
+
+  const savedSidebarOrder = useMemo(() => {
+    if (viewFilter === "all") return savedOrder;
+    const hiddenSet = new Set(savedHiddenSlides);
+    if (viewFilter === "published") return savedOrder.filter((id) => !hiddenSet.has(id));
+    return savedOrder.filter((id) => hiddenSet.has(id));
+  }, [savedOrder, savedHiddenSlides, viewFilter]);
 
   const uncategorizedSlides = order.filter((id) => !categories[id]);
 
@@ -510,7 +580,11 @@ export default function CatalogPage() {
               <span style={{ fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                 Slide Order
               </span>
-              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.2)" }}>Drag to reorder</span>
+              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.2)" }}>
+                {viewFilter === "all"
+                  ? "Drag to reorder"
+                  : `${sidebarOrder.length} ${viewFilter} · Drag to reorder`}
+              </span>
             </div>
 
             <DndContext
@@ -518,12 +592,12 @@ export default function CatalogPage() {
               collisionDetection={closestCenter}
               onDragEnd={handleSidebarDragEnd}
             >
-              <SortableContext items={order} strategy={verticalListSortingStrategy}>
-                {order.map((id) => {
+              <SortableContext items={sidebarOrder} strategy={verticalListSortingStrategy}>
+                {sidebarOrder.map((id, filteredIdx) => {
                   const slide = SLIDE_COMPONENTS[id];
                   if (!slide) return null;
-                  const pos = order.indexOf(id) + 1;
-                  const savedPos = savedOrder.indexOf(id) + 1;
+                  const pos = viewFilter === "all" ? order.indexOf(id) + 1 : filteredIdx + 1;
+                  const savedPos = savedSidebarOrder.indexOf(id) + 1;
                   const cat = categories[id] || null;
                   const catColor = cat ? getColorForCategory(cat, uniqueCategories) : null;
 
@@ -622,7 +696,7 @@ export default function CatalogPage() {
             onDragStart={handleDragStart}
             onDragEnd={handleGridDragEnd}
           >
-            <SortableContext items={order} strategy={rectSortingStrategy}>
+            <SortableContext items={sidebarOrder} strategy={rectSortingStrategy}>
               <div
                 style={{
                   display: "grid",
@@ -630,42 +704,26 @@ export default function CatalogPage() {
                   gap: 24,
                 }}
               >
-                {(() => {
-                  const hiddenSet = new Set(hiddenSlides);
-                  const publishedIndexMap = new Map<string, number>();
-                  let pubIdx = 0;
-                  for (const id of order) {
-                    if (!hiddenSet.has(id)) {
-                      publishedIndexMap.set(id, pubIdx);
-                      pubIdx++;
-                    }
-                  }
-
-                  return order.map((id) => {
-                    const slide = SLIDE_COMPONENTS[id];
-                    if (!slide) return null;
-                    const isHidden = hiddenSet.has(id);
-                    if (viewFilter === "published" && isHidden) return null;
-                    if (viewFilter === "hidden" && !isHidden) return null;
-                    const displayIndex = viewFilter === "published"
-                      ? (publishedIndexMap.get(id) ?? order.indexOf(id))
-                      : order.indexOf(id);
-                    return (
-                      <SortableSlideCard
-                        key={id}
-                        slide={slide}
-                        index={displayIndex}
-                        isActive={activeId === id}
-                        isHidden={isHidden}
-                        onToggleHide={() => toggleHideSlide(id)}
-                        category={categories[id] || null}
-                        categoryColor={categories[id] ? getColorForCategory(categories[id], uniqueCategories) : null}
-                        allCategories={uniqueCategories}
-                        onAssignCategory={(cat) => assignCategory(id, cat)}
-                      />
-                    );
-                  });
-                })()}
+                {sidebarOrder.map((id, filteredIdx) => {
+                  const slide = SLIDE_COMPONENTS[id];
+                  if (!slide) return null;
+                  const isHidden = hiddenSlides.includes(id);
+                  const displayIndex = viewFilter === "all" ? order.indexOf(id) : filteredIdx;
+                  return (
+                    <SortableSlideCard
+                      key={id}
+                      slide={slide}
+                      index={displayIndex}
+                      isActive={activeId === id}
+                      isHidden={isHidden}
+                      onToggleHide={() => toggleHideSlide(id)}
+                      category={categories[id] || null}
+                      categoryColor={categories[id] ? getColorForCategory(categories[id], uniqueCategories) : null}
+                      allCategories={uniqueCategories}
+                      onAssignCategory={(cat) => assignCategory(id, cat)}
+                    />
+                  );
+                })}
               </div>
             </SortableContext>
 

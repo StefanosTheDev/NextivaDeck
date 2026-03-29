@@ -42,9 +42,7 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
             textAlign: "center",
           }}
         >
-          A unified, AI-driven customer experience
-          <br />
-          platform powering every interaction.
+          A unified, AI platform powering every customer interaction.
         </motion.h1>
 
         <motion.div
