@@ -55,3 +55,9 @@ If this table is visible on GitHub `main`, the push worked. Check **Vercel → D
 ## Demo-BranchV2
 
 Branch initialized.
+
+---
+
+## Demo-BranchV3
+
+Rebuild triggered: 2026-03-29
