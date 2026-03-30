@@ -71,10 +71,10 @@ export default function AIDisruptionNextivaCopySlide({ slideNumber = 51 }: { sli
         transition={{ duration: 0.6 }}
         style={{ padding: "28px 80px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.08em", textTransform: "uppercase", color: ACCENT, margin: "0 0 12px" }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           WHERE NEXTIVA SITS ON THE AI DISRUPTION SPECTRUM
         </p>
-        <h1 className="font-heading" style={{ fontSize: 42, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
           Nextiva operates on the &ldquo;more insulated&rdquo; side
         </h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.45)", margin: "12px auto 0", whiteSpace: "nowrap" }}>

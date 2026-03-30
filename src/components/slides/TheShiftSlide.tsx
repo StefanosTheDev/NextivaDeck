@@ -58,26 +58,17 @@ export default function TheShiftSlide({ slideNumber = 8 }: { slideNumber?: numbe
         transition={{ duration: 0.6 }}
         style={{ padding: "40px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 18,
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
-            color: "#CCC7C3",
-            margin: "0 0 10px",
-          }}
-        >
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           THE SHIFT
         </p>
         <h1
           className="font-heading"
           style={{
-            fontSize: 54,
+            fontSize: 56,
             fontWeight: 500,
             color: "#FFFFFF",
-            margin: "0 auto",
-            lineHeight: 1.18,
+            margin: "10px 0 0",
+            lineHeight: 1.15,
           }}
         >
           Customer experience is becoming real-time,

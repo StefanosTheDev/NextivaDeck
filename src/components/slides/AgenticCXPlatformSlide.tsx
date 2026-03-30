@@ -66,27 +66,12 @@ export default function AgenticCXPlatformSlide({ slideNumber = 0 }: { slideNumbe
           zIndex: 1,
         }}
       >
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 18,
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
-            color: "#CCC7C3",
-            margin: "0 0 12px",
-          }}
-        >
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           THE SOLUTION
         </p>
         <h1
           className="font-heading"
-          style={{
-            fontSize: 56,
-            fontWeight: 500,
-            color: "#FFFFFF",
-            margin: "0 auto",
-            lineHeight: 1.15,
-          }}
+          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
         >
           Nextiva&apos;s Agentic CX Platform
         </h1>

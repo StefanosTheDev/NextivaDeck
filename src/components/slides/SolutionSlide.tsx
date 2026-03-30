@@ -33,13 +33,10 @@ export default function SolutionSlide({ slideNumber = 9 }: { slideNumber?: numbe
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{
-          fontWeight: 700, fontSize: 18, letterSpacing: "0.05em",
-          textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px",
-        }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           OUR SOLUTION
         </p>
-        <h1 className="font-heading" style={{ fontSize: 54, fontWeight: 500, color: "#FFFFFF", margin: "0 auto", lineHeight: 1.18, maxWidth: 900 }}>
+        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px auto 0", lineHeight: 1.15, maxWidth: 900 }}>
           Delivering business outcomes at moments of interaction.
         </h1>
       </motion.header>

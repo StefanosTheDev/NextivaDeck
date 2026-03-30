@@ -36,43 +36,24 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
         flexDirection: "column",
       }}
     >
-      {/* ─── TOP ROW: Thoma Bravo + Title ─── */}
       <motion.header
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "36px 80px 0", flexShrink: 0 }}
+        style={{ padding: "36px 80px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-          <h1
-            className="font-heading"
-            style={{
-              fontSize: 40, fontWeight: 600, color: "#FFFFFF",
-              margin: 0, lineHeight: 1.15,
-            }}
-          >
-            AI Disruption Risk Is Not Uniform Across Software
-          </h1>
-
-          {/* Thoma Bravo — prominent top-right */}
-          <div style={{
-            display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4,
-            marginTop: 4,
-          }}>
-            <span style={{
-              fontSize: 22, fontWeight: 800, color: "rgba(255,255,255,0.85)",
-              letterSpacing: "0.14em",
-            }}>
-              THOMA BRAVO
-            </span>
-            <span style={{
-              fontSize: 16, color: "rgba(255,255,255,0.4)", fontWeight: 600,
-              letterSpacing: "0.06em",
-            }}>
-              Framework
-            </span>
-          </div>
-        </div>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
+          DEFENSIBILITY
+        </p>
+        <h1
+          className="font-heading"
+          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
+        >
+          AI disruption risk is not uniform across software.
+        </h1>
+        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", margin: "10px 0 0", fontWeight: 600, letterSpacing: "0.06em" }}>
+          Thoma Bravo Framework
+        </p>
       </motion.header>
 
       {/* ─── ARROW SPECTRUM BAR ─── */}

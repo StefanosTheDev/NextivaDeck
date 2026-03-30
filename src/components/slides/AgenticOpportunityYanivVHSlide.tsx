@@ -94,27 +94,12 @@ export default function AgenticOpportunityYanivVHSlide({ slideNumber = 12 }: { s
         transition={{ duration: 0.6 }}
         style={{ padding: "52px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 18,
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
-            color: "#CCC7C3",
-            margin: "0 0 10px",
-          }}
-        >
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           THE AGENTIC AI OPPORTUNITY
         </p>
         <h1
           className="font-heading"
-          style={{
-            fontSize: 56,
-            fontWeight: 500,
-            color: "#FFFFFF",
-            margin: 0,
-            lineHeight: 1.2,
-          }}
+          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
         >
           Built for the market others can&apos;t serve.
         </h1>

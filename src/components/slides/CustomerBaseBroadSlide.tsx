@@ -71,15 +71,12 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
         transition={{ duration: 0.6 }}
         style={{ padding: "44px 100px 20px", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{
-          fontWeight: 700, fontSize: 15, letterSpacing: "0.08em",
-          textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px",
-        }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           CUSTOMERS
         </p>
         <h1
           className="font-heading"
-          style={{ fontSize: 52, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
+          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
         >
           Diversified revenue, tenured &amp; durable.
         </h1>

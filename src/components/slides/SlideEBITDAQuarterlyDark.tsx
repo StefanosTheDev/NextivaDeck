@@ -202,28 +202,12 @@ export default function SlideEBITDAQuarterlyDark({
     >
       {/* ── Header ── */}
       <header style={{ padding: "40px 100px 0", textAlign: "center", flexShrink: 0 }}>
-        <p
-          style={{
-            fontSize: 22,
-            fontWeight: 700,
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
-            color: C.accent,
-            margin: "0 0 8px",
-            fontFamily: F.body,
-          }}
-        >
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           PROFITABILITY
         </p>
         <h1
-          style={{
-            fontFamily: F.heading,
-            fontSize: 58,
-            fontWeight: 400,
-            color: C.pureWhite,
-            margin: 0,
-            lineHeight: 1.15,
-          }}
+          className="font-heading"
+          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
         >
           Adj. EBITDA ramps from breakeven to 28%.
         </h1>

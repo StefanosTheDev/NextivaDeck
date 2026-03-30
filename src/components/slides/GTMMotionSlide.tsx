@@ -70,10 +70,10 @@ export default function GTMMotionSlide({ slideNumber = 0 }: { slideNumber?: numb
         transition={{ duration: 0.6 }}
         style={{ padding: "52px 100px 0", flexShrink: 0, position: "relative", zIndex: 1 }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: ACCENT, margin: "0 0 8px" }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           GTM ENGINE
         </p>
-        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
           A machine competitors{" "}
           <span style={{
             background: "linear-gradient(90deg, #0070F3, #00C2FF)",

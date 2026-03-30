@@ -15,15 +15,7 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          style={{
-            fontWeight: 700,
-            fontSize: 22,
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
-            color: "#CCC7C3",
-            margin: 0,
-            textAlign: "center",
-          }}
+          style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0, textAlign: "center" }}
         >
           WHAT WE DO
         </motion.p>
@@ -33,14 +25,7 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          style={{
-            fontSize: 62,
-            fontWeight: 500,
-            color: "#FFFFFF",
-            margin: "24px 0 0",
-            lineHeight: 1.2,
-            textAlign: "center",
-          }}
+          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15, textAlign: "center" }}
         >
           A unified, AI-driven customer experience
           <br />

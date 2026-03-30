@@ -47,10 +47,10 @@ export default function ThreeMoatsSlide({ slideNumber = 41 }: { slideNumber?: nu
         initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
         style={{ padding: "56px 80px 0", flexShrink: 0, textAlign: "center", position: "relative", zIndex: 1 }}
       >
-        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: ACCENT, margin: "0 0 10px" }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           WHY NEXTIVA WINS
         </p>
-        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
           We own the{" "}
           <span style={{
             background: "linear-gradient(90deg, #0070F3, #00C2FF)",
