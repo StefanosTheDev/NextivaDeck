@@ -6,10 +6,13 @@ import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/
 export default function PrintRawPage() {
   const [slides, setSlides] = useState<SlideDef[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [startNum, setStartNum] = useState(1);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const slidesParam = params.get("slides");
+    const sn = parseInt(params.get("startNumber") || "1", 10);
+    if (!isNaN(sn) && sn >= 1) setStartNum(sn);
 
     fetch("/api/slides")
       .then((r) => r.json())
@@ -57,7 +60,7 @@ export default function PrintRawPage() {
               flexShrink: 0,
             }}
           >
-            <Slide slideNumber={i + 1} />
+            <Slide slideNumber={startNum + i} />
           </div>
         );
       })}

@@ -107,7 +107,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
         style={{
           background: "#111827", border: "1px solid rgba(255,255,255,0.1)",
           borderRadius: 16, width: "100%", maxWidth: 600, maxHeight: "85vh",
-          display: "flex", flexDirection: "column",
+          display: "flex", flexDirection: "column", overflow: "hidden",
           boxShadow: "0 24px 80px rgba(0,0,0,0.6)",
           fontFamily: "'Space Grotesk', sans-serif",
         }}
@@ -117,6 +117,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
           padding: "20px 24px 16px",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
           display: "flex", alignItems: "center", justifyContent: "space-between",
+          flexShrink: 0,
         }}>
           <div>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: "#fff", margin: 0 }}>
@@ -313,6 +314,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
           padding: "14px 24px 18px",
           borderTop: "1px solid rgba(255,255,255,0.08)",
           display: "flex", alignItems: "center", gap: 12,
+          flexShrink: 0,
         }}>
           {state.status === "picking" || state.status === "error" ? (
             <>
