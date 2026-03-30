@@ -9,7 +9,7 @@ const board = [
   { name: "Stephen Kerns", role: "MD, Goldman Sachs Growth Equity", photo: "/images/headshot-stephen.png" },
   { name: "Karen Walker", role: "CMO, Cisco, Intel", photo: "/images/headshot-karen.png" },
   { name: "Bob Beauchamp", role: "CEO, BMC Software", photo: "/images/headshot-bob.png" },
-  { name: "Hari Ravichandran", role: "Founder & CEO, Endurance / Aura.com", photo: "/images/headshot-hari.png", needsFrame: true },
+  { name: "Hari Ravichandran", role: "Founder & CEO, Endurance / Aura.com", photo: "/images/headshot-hari.png" },
 ];
 
 const management = [
@@ -19,13 +19,13 @@ const management = [
   { name: "Josh Lesavoy", role: "Chief Information Officer", photo: "/images/headshot-josh.png" },
   { name: "Chris Reaburn", role: "Chief Sales Officer", photo: "/images/headshot-chris.png" },
   { name: "Ken McMahon", role: "Chief Customer Officer", photo: "/images/headshot-ken.png" },
-  { name: "Seksom Suriyapa", role: "Chief Transformation Officer", photo: "/images/headshot-seksom.jpg", needsFrame: true, objectPosition: "center 15%" },
-  { name: "Ran Ezerzer", role: "Chief Technology Officer", photo: "/images/headshot-ran.jpg", needsFrame: true, objectPosition: "center 15%" },
+  { name: "Seksom Suriyapa", role: "Chief Transformation Officer", photo: "/images/headshot-seksom.png" },
+  { name: "Ran Ezerzer", role: "Chief Technology Officer", photo: "/images/headshot-ran.png" },
 ];
 
 const advisors = [
   { name: "John Connolly", role: "Founder/MD, Eaglehead Capital; Advisor, Bain Capital & Sixth Street", photo: "/images/headshot-john.png" },
-  { name: "Alex Pinchev", role: "President & CRO, RedHat, Rackspace", photo: "/images/headshot-alex.png", needsFrame: true },
+  { name: "Alex Pinchev", role: "President & CRO, RedHat, Rackspace", photo: "/images/headshot-alex.png" },
 ];
 
 function PersonCard({ name, role, photo, objectPosition = "center center", needsFrame = false, framePadding, imgInset }: {
@@ -56,6 +56,11 @@ function PersonCard({ name, role, photo, objectPosition = "center center", needs
               objectFit: "cover", objectPosition,
             }}
           />
+          <div style={{
+            position: "absolute", inset: 0,
+            background: "linear-gradient(135deg, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0.25) 100%)",
+            pointerEvents: "none",
+          }} />
         </div>
       </div>
       <div>
@@ -78,10 +83,10 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 80px 0", flexShrink: 0 }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
+        <p style={{ fontWeight: 700, fontSize: 16, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
           LEADERSHIP
         </p>
-        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           Proven tech leaders drawn to compelling vision.
         </h1>
       </motion.header>
@@ -134,11 +139,17 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
                     overflow: "hidden",
                     border: p.needsFrame ? "1px solid rgba(255,255,255,0.85)" : "none",
                     boxSizing: "border-box" as const,
+                    position: "relative" as const,
                   }}>
                     <img
                       src={p.photo} alt={p.name}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
+                    <div style={{
+                      position: "absolute", inset: 0,
+                      background: "linear-gradient(135deg, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0.25) 100%)",
+                      pointerEvents: "none",
+                    }} />
                   </div>
                 </div>
                 <p style={{ fontSize: 14, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.25 }}>{p.name}</p>
