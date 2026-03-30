@@ -45,7 +45,7 @@ export default function InvestorSummaryCopySlide({ slideNumber = 0 }: { slideNum
           Positioned at the intersection of
         </h1>
         <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, margin: "4px 0 0", lineHeight: 1.15 }}>
-          <span style={{ color: "#0070F3" }}>AI</span>
+          <span style={{ color: "#7EB3E8" }}>AI</span>
           {" + "}
           <span style={{ color: "#00C2FF" }}>Communications</span>
           {" + "}

@@ -173,15 +173,16 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
                   {logo.logo ? (
                     <div style={{
                       width: 40, height: 40, borderRadius: 10, flexShrink: 0,
-                      background: "#FFFFFF",
+                      background: "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.12)",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       overflow: "hidden",
-                      padding: 2,
+                      padding: 4,
                     }}>
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        style={{ width: 36, height: 36, objectFit: "contain" }}
+                        style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 4 }}
                       />
                     </div>
                   ) : (

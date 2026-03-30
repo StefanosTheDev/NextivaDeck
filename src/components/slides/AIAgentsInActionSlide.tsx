@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { Headphones, MessageSquare, CalendarCheck, CreditCard } from "lucide-react";
 
-const ACCENT = "#0070F3";
+const ACCENT = "#7EB3E8";
 
 const agents = [
   { icon: Headphones, label: "Support Agent", action: "Resolves issues autonomously" },
@@ -39,11 +39,7 @@ export default function AIAgentsInActionSlide({ slideNumber = 20 }: { slideNumbe
         </p>
         <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
           AI agents handling{" "}
-          <span style={{
-            background: "linear-gradient(90deg, #0070F3, #00C2FF)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}>
+          <span style={{ color: "#0070F3" }}>
             end-to-end workflows.
           </span>
         </h1>
@@ -72,7 +68,7 @@ export default function AIAgentsInActionSlide({ slideNumber = 20 }: { slideNumbe
                 display: "flex", alignItems: "center", gap: 24,
                 background: "rgba(255,255,255,0.03)",
                 border: "1px solid rgba(255,255,255,0.08)",
-                borderLeft: `4px solid ${ACCENT}`,
+                borderLeft: "4px solid #2860B2",
                 borderRadius: 14,
                 padding: "24px 32px",
               }}

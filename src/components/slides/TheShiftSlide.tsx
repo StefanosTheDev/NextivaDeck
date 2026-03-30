@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { ArrowRight } from "lucide-react";
@@ -77,15 +78,17 @@ export default function TheShiftSlide({ slideNumber = 8 }: { slideNumber?: numbe
         </h1>
       </motion.header>
 
-      <main style={{ flex: 1, padding: "28px 80px 0", display: "flex", gap: 20, alignItems: "stretch" }}>
+      <main style={{ flex: 1, padding: "28px 80px 0", display: "flex", alignItems: "center", justifyContent: "center" }}>
         {eras.map((era, i) => (
-          <div key={era.label} style={{ display: "flex", alignItems: "center", flex: "1 1 0", minWidth: 0, gap: 12 }}>
+          <React.Fragment key={era.label}>
             <motion.article
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
               style={{
-                flex: 1,
+                flex: "1 1 0",
+                minWidth: 0,
+                alignSelf: "stretch",
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.1)",
                 borderTop: era.accent ? "3px solid #2860B2" : "3px solid rgba(255,255,255,0.15)",
@@ -139,12 +142,10 @@ export default function TheShiftSlide({ slideNumber = 8 }: { slideNumber?: numbe
                 ))}
               </ul>
             </motion.article>
-            {i < eras.length - 1 ? (
-              <ArrowRight size={24} color="rgba(255,255,255,0.3)" strokeWidth={2} style={{ flexShrink: 0 }} />
-            ) : (
-              <div style={{ width: 24, flexShrink: 0 }} aria-hidden />
+            {i < eras.length - 1 && (
+              <ArrowRight size={24} color="rgba(255,255,255,0.3)" strokeWidth={2} style={{ flexShrink: 0, margin: "0 10px" }} />
             )}
-          </div>
+          </React.Fragment>
         ))}
       </main>
 

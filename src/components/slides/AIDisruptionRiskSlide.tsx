@@ -40,8 +40,13 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "36px 80px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "36px 80px 0", flexShrink: 0, textAlign: "center", position: "relative" }}
       >
+        <img
+          src="/logos/THOMABRAVO.png"
+          alt="Thoma Bravo"
+          style={{ position: "absolute", top: 36, right: 80, height: 34, opacity: 0.5 }}
+        />
         <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           DEFENSIBILITY
         </p>
@@ -51,9 +56,6 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
         >
           AI disruption risk is not uniform across software.
         </h1>
-        <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", margin: "10px 0 0", fontWeight: 600, letterSpacing: "0.06em" }}>
-          Thoma Bravo Framework
-        </p>
       </motion.header>
 
       {/* ─── ARROW SPECTRUM BAR ─── */}
