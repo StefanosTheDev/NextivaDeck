@@ -51,7 +51,7 @@ export default function MonetizationCriticalSlide({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         style={{
-          padding: "48px 100px 0",
+          padding: "36px 80px 0",
           flexShrink: 0,
           position: "relative",
           zIndex: 1,
@@ -62,10 +62,10 @@ export default function MonetizationCriticalSlide({
           style={{
             fontWeight: 700,
             fontSize: 18,
-            letterSpacing: "0.05em",
+            letterSpacing: "0.08em",
             textTransform: "uppercase",
             color: "#CCC7C3",
-            margin: 0,
+            margin: "0 0 12px",
           }}
         >
           MONETIZATION
@@ -73,16 +73,16 @@ export default function MonetizationCriticalSlide({
         <h1
           className="font-heading"
           style={{
-            fontSize: 56,
-            fontWeight: 500,
+            fontSize: 46,
+            fontWeight: 400,
             color: "#FFFFFF",
-            margin: "12px 0 0",
+            margin: 0,
             lineHeight: 1.15,
           }}
         >
-          From SaaS to scalable, usage-driven economics
+          From SaaS to scalable, usage-driven economics.
         </h1>
-        <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "12px 0 0", lineHeight: 1.5 }}>
+        <p style={{ fontSize: 18, color: "rgba(255,255,255,0.45)", margin: "12px 0 0", lineHeight: 1.5 }}>
           We capture value as it happens — growth scales with interactions &amp; outcomes.
         </p>
       </motion.header>

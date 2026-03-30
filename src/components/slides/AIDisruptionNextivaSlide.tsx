@@ -137,7 +137,7 @@ export default function AIDisruptionNextivaSlide({ slideNumber = 51 }: { slideNu
 
               {/* Takeaway */}
               <div style={{
-                marginTop: 72,
+                marginTop: 80,
                 background: `${ACCENT}10`,
                 border: `1px solid ${ACCENT}22`,
                 borderRadius: 10,
