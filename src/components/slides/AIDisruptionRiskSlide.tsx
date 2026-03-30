@@ -59,7 +59,7 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
       </motion.header>
 
       {/* ─── ARROW SPECTRUM BAR ─── */}
-      <div style={{ padding: "60px 80px 0" }}>
+      <div style={{ padding: "36px 80px 0" }}>
         <div style={{ display: "flex", alignItems: "center" }}>
           <svg width="22" height="34" viewBox="0 0 22 34" fill="none" style={{ flexShrink: 0 }}>
             <polygon points="22,0 22,34 0,17" fill="rgba(255,255,255,0.15)" />
@@ -78,7 +78,7 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
       </div>
 
       {/* ─── COLUMN HEADERS ─── */}
-      <div style={{ padding: "50px 80px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+      <div style={{ padding: "28px 80px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
         <p
           className="font-heading"
           style={{
@@ -159,37 +159,40 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
         </div>
       </motion.main>
 
-      {/* ─── NEXTIVA BADGE — centered under right column ─── */}
+      {/* ─── NEXTIVA BADGE — centered as one unit under right column ─── */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7 }}
         style={{
-          padding: "40px 80px 0",
-          display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24,
+          padding: "20px 80px 0",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 24,
         }}
       >
-        <div />
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20 }}>
-          <div style={{
-            display: "flex", alignItems: "center", gap: 14,
-            background: `linear-gradient(135deg, ${ACCENT}18, ${ACCENT}08)`,
-            border: `1px solid ${ACCENT}40`,
-            borderRadius: 14, padding: "14px 32px",
-          }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/nextiva-logo-white.svg"
-              alt="Nextiva"
-              style={{ height: 28, opacity: 1 }}
-            />
-            <div style={{ width: 1, height: 24, background: `${ACCENT}40` }} />
-            <span className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", letterSpacing: "0.04em" }}>IS HERE</span>
-            <Check size={20} color="#2E7D32" strokeWidth={3} />
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 20, color: "rgba(255,255,255,0.35)", fontWeight: 600 }}>See why</span>
-            <ArrowRight size={20} color="rgba(255,255,255,0.35)" strokeWidth={2} />
+        <div style={{ gridColumn: "2", display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 20, flexWrap: "nowrap", transform: "translateX(36px)" }}>
+            <div style={{
+              display: "flex", alignItems: "center", gap: 14,
+              background: `linear-gradient(135deg, ${ACCENT}18, ${ACCENT}08)`,
+              border: `1px solid ${ACCENT}40`,
+              borderRadius: 14, padding: "14px 32px",
+            }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/nextiva-logo-white.svg"
+                alt="Nextiva"
+                style={{ height: 28, opacity: 1 }}
+              />
+              <div style={{ width: 1, height: 24, background: `${ACCENT}40` }} />
+              <span className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", letterSpacing: "0.04em" }}>IS HERE</span>
+              <Check size={20} color="#2E7D32" strokeWidth={3} />
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+              <span style={{ fontSize: 20, color: "rgba(255,255,255,0.35)", fontWeight: 600 }}>See why</span>
+              <ArrowRight size={20} color="rgba(255,255,255,0.35)" strokeWidth={2} />
+            </div>
           </div>
         </div>
       </motion.div>
