@@ -137,14 +137,14 @@ export default function AIDisruptionNextivaSlide({ slideNumber = 51 }: { slideNu
 
               {/* Takeaway */}
               <div style={{
-                marginTop: 50,
+                marginTop: 72,
                 background: `${ACCENT}10`,
                 border: `1px solid ${ACCENT}22`,
                 borderRadius: 10,
                 padding: "14px 20px",
                 textAlign: "center",
               }}>
-                <span style={{ fontSize: 14, fontWeight: 700, color: "#FFFFFF", textTransform: "uppercase", letterSpacing: "0.04em", whiteSpace: "pre-line", lineHeight: 1.5 }}>
+                <span style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", textTransform: "uppercase", letterSpacing: "0.04em", whiteSpace: "pre-line", lineHeight: 1.5 }}>
                   {p.takeaway}
                 </span>
               </div>
