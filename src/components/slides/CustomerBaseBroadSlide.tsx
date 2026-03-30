@@ -10,7 +10,7 @@ const segments = [
     badges: ["NEXT", "NextOS", "XBert AI", "NextivaONE"],
     customers: "80,200",
     custPct: "86% of total",
-    arr: "$112M",
+    arr: "$143M",
     arrPct: "41% of total",
     logos: [
       { name: "Guidant Financial", industry: "Financial Services", initials: "GF", color: "#2563EB", logo: "/logos/guidant-financial.png" },
@@ -27,7 +27,7 @@ const segments = [
     badges: ["NEXT", "XBert AI", "Experience Center"],
     customers: "11,000",
     custPct: "12% of total",
-    arr: "$83M",
+    arr: "$106M",
     arrPct: "30% of total",
     logos: [
       { name: "Louisville Water Co.", industry: "Utilities", initials: "LW", color: "#0284C7", logo: "/logos/louisville-water.png" },
@@ -44,7 +44,7 @@ const segments = [
     badges: ["NEXT", "XBert AI", "Experience Center"],
     customers: "1,800",
     custPct: "2% of total",
-    arr: "$80M",
+    arr: "$104M",
     arrPct: "29% of total",
     logos: [
       { name: "Simmons Bank", industry: "Financial Services", initials: "SB", color: "#1D4ED8", logo: "/logos/simmons-bank.png" },
