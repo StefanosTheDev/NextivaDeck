@@ -165,14 +165,14 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7 }}
         style={{
-          padding: "20px 80px 0",
+          padding: "32px 80px 32px",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: 24,
         }}
       >
         <div style={{ gridColumn: "2", display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 20, flexWrap: "nowrap", transform: "translateX(36px)" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 20, flexWrap: "nowrap", transform: "translateX(42px)" }}>
             <div style={{
               display: "flex", alignItems: "center", gap: 14,
               background: `linear-gradient(135deg, ${ACCENT}18, ${ACCENT}08)`,
