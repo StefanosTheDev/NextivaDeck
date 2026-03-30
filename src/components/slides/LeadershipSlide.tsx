@@ -157,22 +157,12 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
                 <div style={{
                   width: 64, height: 64, borderRadius: 10, overflow: "hidden", marginBottom: 8,
                   background: "#0a1628",
-                  padding: p.needsFrame ? "7px 12px" : 0,
                   boxSizing: "border-box" as const,
                 }}>
-                  <div style={{
-                    width: "100%", height: "100%",
-                    borderRadius: p.needsFrame ? 3 : 0,
-                    overflow: "hidden",
-                    border: p.needsFrame ? "1px solid rgba(255,255,255,0.85)" : "none",
-                    boxSizing: "border-box" as const,
-                    position: "relative" as const,
-                  }}>
-                    <img
-                      src={p.photo} alt={p.name}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    />
-                  </div>
+                  <img
+                    src={p.photo} alt={p.name}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
                 </div>
                 <p style={{ fontSize: 14, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.25 }}>{p.name}</p>
                 <p style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", margin: "3px 0 0", lineHeight: 1.3 }}>{p.role}</p>
