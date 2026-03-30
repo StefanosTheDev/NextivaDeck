@@ -6,7 +6,7 @@ const cards = [
   {
     label: "Get in Touch",
     stat: "nextiva.com",
-    detail: "(800) 799-0600",
+    detail: "949-519-1086",
   },
   {
     label: "Headquarters",

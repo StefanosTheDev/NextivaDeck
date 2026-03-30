@@ -30,7 +30,7 @@ export default function ClosingSlide({ slideNumber: _sn }: { slideNumber?: numbe
             style={{ fontSize: 20, color: "rgba(255,255,255,0.5)", textDecoration: "none" }}>
             nextiva.com
           </a>
-          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.25)", margin: 0 }}>(800) 799-0600</p>
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.25)", margin: 0 }}>949-519-1086</p>
         </motion.div>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}
