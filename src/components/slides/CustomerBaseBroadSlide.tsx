@@ -13,11 +13,11 @@ const segments = [
     arr: "$143M",
     arrPct: "41% of total",
     logos: [
-      { name: "Guidant Financial", industry: "Financial Services", initials: "GF", color: "#2563EB", logo: "/logos/guidant-financial.png" },
-      { name: "D4C Dental Brands", industry: "Healthcare", initials: "D4C", color: "#7C3AED", logo: "/logos/d4c-dental.png" },
-      { name: "Scoot Education", industry: "Education", initials: "SE", color: "#0891B2", logo: "/logos/scoot-education.png" },
-      { name: "Savannah Bananas", industry: "Sports & Entertainment", initials: "SB", color: "#F59E0B" },
-      { name: "Shasta Community Health", industry: "Healthcare", initials: "SC", color: "#10B981", logo: "/logos/shasta-community-health.png" },
+      { name: "Canyon Coolers", industry: "Food & Beverage", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png" },
+      { name: "New England Brewing Co", industry: "Food & Beverage", initials: "NE", color: "#7C3AED", logo: "/logos/new-england-brewing.jpg" },
+      { name: "Edgar's Bakery", industry: "Food & Beverage", initials: "EB", color: "#0891B2", logo: "/logos/edgars-bakery.png" },
+      { name: "Wine Library", industry: "Retail", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.png" },
+      { name: "Mister Pizza", industry: "Food & Beverage", initials: "MP", color: "#10B981", logo: "/logos/mister-pizza.png" },
     ],
     tenure: "4.5 years",
   },
@@ -30,11 +30,11 @@ const segments = [
     arr: "$106M",
     arrPct: "30% of total",
     logos: [
-      { name: "Louisville Water Co.", industry: "Utilities", initials: "LW", color: "#0284C7", logo: "/logos/louisville-water.png" },
-      { name: "Retail Imaging Mgmt Group", industry: "Business Services", initials: "RI", color: "#4F46E5", logo: "/logos/retail-imaging.png" },
-      { name: "Rocky Mountain Clinics", industry: "Healthcare", initials: "RM", color: "#059669", logo: "/logos/rocky-mountain.png" },
-      { name: "Jeni's Ice Cream", industry: "Food & Beverage", initials: "JI", color: "#E11D48", logo: "/logos/jenis-ice-cream.png" },
-      { name: "Erewhon", industry: "Retail", initials: "EW", color: "#065F46" },
+      { name: "Compartes", industry: "Food & Beverage", initials: "CO", color: "#0284C7", logo: "/logos/compartes.png" },
+      { name: "Savannah Bananas", industry: "Sports & Entertainment", initials: "SB", color: "#4F46E5", logo: "/logos/savannah-bananas.png" },
+      { name: "Pizzana", industry: "Food & Beverage", initials: "PZ", color: "#059669", logo: "/logos/pizzana.jpg" },
+      { name: "J. Lohr Vineyards and Wines", industry: "Food & Beverage", initials: "JL", color: "#E11D48", logo: "/logos/j-lohr-vineyards.jpg" },
+      { name: "Jeni's Ice Cream", industry: "Food & Beverage", initials: "JI", color: "#065F46", logo: "/logos/jenis-ice-cream.png" },
     ],
     tenure: "8.3 years",
   },
@@ -47,11 +47,11 @@ const segments = [
     arr: "$104M",
     arrPct: "29% of total",
     logos: [
-      { name: "Simmons Bank", industry: "Financial Services", initials: "SB", color: "#1D4ED8", logo: "/logos/simmons-bank.png" },
-      { name: "Acuity Eye Care Group", industry: "Healthcare", initials: "AE", color: "#9333EA", logo: "/logos/acuity-eye.png" },
-      { name: "Cashman Equipment", industry: "Manufacturing", initials: "CE", color: "#B45309", logo: "/logos/cashman-equipment.png" },
-      { name: "Shelby", industry: "Automotive", initials: "SH", color: "#1E40AF", logo: "/logos/shelby.png" },
+      { name: "Samsonite", industry: "Consumer Goods", initials: "SA", color: "#1D4ED8", logo: "/logos/samsonite.png" },
       { name: "Texas Roadhouse", industry: "Restaurant", initials: "TR", color: "#B91C1C", logo: "/logos/texas-roadhouse.png" },
+      { name: "Erewhon", industry: "Retail", initials: "EW", color: "#065F46", logo: "/logos/erewhon.png" },
+      { name: "Acuity Eyecare", industry: "Healthcare", initials: "AE", color: "#9333EA", logo: "/logos/acuity-eye.png" },
+      { name: "Simmons Bank", industry: "Financial Services", initials: "SB", color: "#1E40AF", logo: "/logos/simmons-bank.png" },
     ],
     tenure: "7.9 years",
   },
@@ -175,16 +175,16 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
                 <div key={logo.name} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   {logo.logo ? (
                     <div style={{
-                      width: 36, height: 36, borderRadius: 10, flexShrink: 0,
+                      width: 40, height: 40, borderRadius: 10, flexShrink: 0,
                       background: "#FFFFFF",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       overflow: "hidden",
-                      padding: 4,
+                      padding: 2,
                     }}>
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        style={{ width: 28, height: 28, objectFit: "contain" }}
+                        style={{ width: 36, height: 36, objectFit: "contain" }}
                       />
                     </div>
                   ) : (

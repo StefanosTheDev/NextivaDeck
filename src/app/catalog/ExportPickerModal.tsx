@@ -52,22 +52,32 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
       status: "generating",
       current: 0,
       total: slideIds.length,
-      slideLabel: "Loading slides...",
+      slideLabel: "Rendering slides...",
     });
 
     try {
-      const exportFn = format === "pdf"
-        ? (await import("@/lib/clientExport")).generatePdfClient
-        : (await import("@/lib/clientExport")).generatePptxClient;
+      const endpoint = format === "pdf" ? "/api/generate-pdf" : "/api/generate-pptx";
+      const params = new URLSearchParams({ slides: slideIds.join(",") });
+      const response = await fetch(`${endpoint}?${params}`);
 
-      await exportFn(slideIds, (progress) => {
-        setState({
-          status: "generating",
-          current: progress.current,
-          total: progress.total,
-          slideLabel: progress.slideLabel || "",
-        });
-      });
+      if (!response.ok) {
+        const err = await response.json().catch(() => ({ error: "Generation failed" }));
+        throw new Error(err.details || err.error || "Generation failed");
+      }
+
+      const blob = await response.blob();
+      const filename = format === "pdf"
+        ? "Nextiva-Investor-Deck-2026.pdf"
+        : "Nextiva-Investor-Deck-2026.pptx";
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
 
       setState({ status: "done" });
     } catch (err) {
@@ -116,7 +126,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
               {state.status === "picking"
                 ? `Select slides to include (${selected.size} of ${publishedSlides.length})`
                 : state.status === "generating"
-                  ? `Rendering slide ${state.current} of ${state.total}...`
+                  ? `Rendering ${state.total} slides...`
                   : state.status === "done"
                     ? "Download complete!"
                     : "Generation failed"}
@@ -143,10 +153,9 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
               <div style={{
                 height: "100%", borderRadius: 3,
                 background: state.status === "done" ? "#059669" : "#2860B2",
-                width: state.status === "done"
-                  ? "100%"
-                  : `${Math.max(2, (state.current / state.total) * 100)}%`,
-                transition: "width 0.5s ease-out, background 0.3s",
+                width: state.status === "done" ? "100%" : "30%",
+                transition: state.status === "done" ? "width 0.3s ease-out, background 0.3s" : "none",
+                animation: state.status === "generating" ? "progressPulse 1.5s ease-in-out infinite" : "none",
               }} />
             </div>
             {state.status === "generating" && (
@@ -260,50 +269,19 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
 
         {/* Generating slide list */}
         {state.status === "generating" && (
-          <div style={{ flex: 1, overflowY: "auto", padding: "4px 24px 12px" }}>
-            {selectedSlides.map((s, idx) => {
-              const isDone = idx < state.current;
-              const isCurrent = idx === state.current - 1;
-              return (
-                <div
-                  key={s.id}
-                  style={{
-                    display: "flex", alignItems: "center", gap: 10,
-                    padding: "6px 8px", borderRadius: 6,
-                    background: isCurrent ? "rgba(40,96,178,0.08)" : "transparent",
-                  }}
-                >
-                  <div style={{
-                    width: 18, height: 18, borderRadius: 4, flexShrink: 0,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    background: isDone ? "#059669" : isCurrent ? "rgba(40,96,178,0.3)" : "rgba(255,255,255,0.05)",
-                  }}>
-                    {isDone
-                      ? <Check size={12} color="#fff" strokeWidth={3} />
-                      : isCurrent
-                        ? <Loader2 size={12} color="#5b9cf5" style={{ animation: "spin 1s linear infinite" }} />
-                        : null
-                    }
-                  </div>
-                  <span style={{
-                    fontSize: 12, fontWeight: 600,
-                    color: "rgba(255,255,255,0.3)", minWidth: 24, textAlign: "right", flexShrink: 0,
-                  }}>
-                    {idx + 1}
-                  </span>
-                  <span style={{
-                    fontSize: 13, flex: 1,
-                    color: isDone ? "rgba(255,255,255,0.5)"
-                      : isCurrent ? "#5b9cf5"
-                        : "rgba(255,255,255,0.25)",
-                    fontWeight: isCurrent ? 500 : 400,
-                    overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-                  }}>
-                    {s.slide.label}
-                  </span>
-                </div>
-              );
-            })}
+          <div style={{
+            flex: 1, display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center", gap: 16,
+            padding: "40px 24px",
+          }}>
+            <Loader2 size={32} color="#5b9cf5" style={{ animation: "spin 1s linear infinite" }} />
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, fontWeight: 500, margin: 0 }}>
+              Capturing {state.total} slides...
+            </p>
+            <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, margin: 0, textAlign: "center", lineHeight: 1.5 }}>
+              Each slide is rendered pixel-perfect by Chrome.
+              <br />This may take a minute.
+            </p>
           </div>
         )}
 
@@ -397,6 +375,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
 
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes progressPulse { 0% { transform: translateX(-100%); } 100% { transform: translateX(400%); } }
       `}} />
     </div>
   );

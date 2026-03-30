@@ -58,21 +58,27 @@ async function waitForIframeReady(iframe: HTMLIFrameElement): Promise<void> {
   // Wait for fonts
   await iframe.contentWindow?.document.fonts.ready;
 
-  // Wait for all images
-  const imgs = doc.querySelectorAll("img");
-  await Promise.all(Array.from(imgs).map((img) =>
-    img.complete ? Promise.resolve() : new Promise((r) => { img.onload = r; img.onerror = r; })
-  ));
+  // Wait for all images (including ones added dynamically)
+  const waitForImages = async () => {
+    const imgs = doc.querySelectorAll("img");
+    await Promise.all(Array.from(imgs).map((img) =>
+      img.complete ? Promise.resolve() : new Promise((r) => { img.onload = r; img.onerror = r; })
+    ));
+  };
+  await waitForImages();
 
-  // Extra paint settle time
-  await new Promise((r) => setTimeout(r, 2000));
+  // Let charts (Recharts SVG) and layout fully settle — animations need to complete
+  await new Promise((r) => setTimeout(r, 5000));
+
+  // Re-check images in case any loaded lazily
+  await waitForImages();
 }
 
 async function captureFromIframe(
   iframe: HTMLIFrameElement,
   onProgress?: ProgressCallback
 ): Promise<string[]> {
-  const html2canvas = (await import("html2canvas")).default;
+  const { snapdom } = await import("@zumer/snapdom");
   const doc = iframe.contentDocument;
   if (!doc) throw new Error("Cannot access iframe document");
 
@@ -85,29 +91,27 @@ async function captureFromIframe(
     const label = el.getAttribute("data-slide-label") || `Slide ${i + 1}`;
     onProgress?.({ phase: "rendering", current: i + 1, total, slideLabel: label });
 
-    // Show only current slide
     for (let j = 0; j < slideEls.length; j++) {
-      (slideEls[j] as HTMLElement).style.display = j === i ? "block" : "none";
+      const s = slideEls[j] as HTMLElement;
+      if (j === i) {
+        s.style.display = "flex";
+        s.style.width = "1920px";
+        s.style.height = "1080px";
+      } else {
+        s.style.display = "none";
+      }
     }
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    await new Promise((r) => setTimeout(r, 200));
 
-    const canvas = await html2canvas(el, {
-      width: 1920,
-      height: 1080,
-      windowWidth: 1920,
-      windowHeight: 1080,
-      scale: 1,
-      useCORS: true,
-      allowTaint: true,
+    const result = await snapdom(el, {
+      scale: 2,
+      dpr: 1,
       backgroundColor: "#000208",
-      logging: false,
-      x: 0,
-      y: 0,
-      scrollX: 0,
-      scrollY: 0,
+      embedFonts: true,
     });
-
-    images.push(canvas.toDataURL("image/jpeg", 0.92));
+    const canvas = await result.toCanvas();
+    images.push(canvas.toDataURL("image/jpeg", 0.95));
   }
 
   return images;
