@@ -64,7 +64,7 @@ export default function SlideTargetModelDark({
         <h1
           style={{
             fontFamily: F.heading,
-            fontSize: 72,
+            fontSize: 52,
             fontWeight: 400,
             color: C.pureWhite,
             margin: 0,

@@ -28,7 +28,7 @@ export default function NRRChurnSlide({ slideNumber = 26 }: { slideNumber?: numb
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#CCC7C3", margin: "0 0 10px" }}>Retention trends</p>
-        <h1 className="font-heading" style={{ fontSize: 64, fontWeight: 700, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 400, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}>
           Churn and Retention both improving across segments.
         </h1>
       </motion.header>
