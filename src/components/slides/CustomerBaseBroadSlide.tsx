@@ -15,8 +15,8 @@ const segments = [
     logos: [
       { name: "Canyon Coolers", industry: "Retail", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png" },
       { name: "New England Brewing Co", industry: "Food & Beverage", initials: "NE", color: "#7C3AED", logo: "/logos/new-england-brewing.jpg" },
-      { name: "Edgar's Bakery", industry: "Food & Beverage", initials: "EB", color: "#0891B2", logo: "/logos/edgars-bakery.png" },
-      { name: "Wine Library", industry: "Ecommerce", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.png", fill: true },
+      { name: "Reforming Pilates", industry: "Health & Wellness", initials: "RP", color: "#0891B2", logo: "/logos/reforming-pilates.png" },
+      { name: "Wine Library", industry: "Ecommerce", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.svg" },
       { name: "Mister01 Pizza", industry: "Food & Beverage", initials: "MP", color: "#10B981", logo: "/logos/mister-pizza.png" },
     ],
     tenure: "4.5 years",
@@ -33,8 +33,8 @@ const segments = [
       { name: "Compartes", industry: "Retail", initials: "CO", color: "#0284C7", logo: "/logos/compartes.png" },
       { name: "Savannah Bananas", industry: "Sports & Entertainment", initials: "SB", color: "#4F46E5", logo: "/logos/savannah-bananas.png" },
       { name: "Pizzana", industry: "Restaurant", initials: "PZ", color: "#059669", logo: "/logos/pizzana.jpg" },
-      { name: "J. Lohr Vineyards and Wines", industry: "Food & Beverage", initials: "JL", color: "#E11D48", logo: "/logos/j-lohr-vineyards.jpg" },
-      { name: "Jeni's Ice Cream", industry: "Food & Beverage", initials: "JI", color: "#065F46", logo: "/logos/jenis-ice-cream.png" },
+      { name: "ESB Bank", industry: "Financial Services", initials: "ES", color: "#E11D48", logo: "/logos/esb-bank.png" },
+      { name: "Venice Family Clinic", industry: "Healthcare", initials: "VF", color: "#065F46", logo: "/logos/venice-family-clinic.png" },
     ],
     tenure: "8.3 years",
   },
@@ -71,12 +71,15 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
         transition={{ duration: 0.6 }}
         style={{ padding: "44px 100px 20px", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
+        <p style={{
+          fontWeight: 700, fontSize: 15, letterSpacing: "0.08em",
+          textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px",
+        }}>
           CUSTOMERS
         </p>
         <h1
           className="font-heading"
-          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
+          style={{ fontSize: 52, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
         >
           Diversified revenue, tenured &amp; durable.
         </h1>
@@ -172,19 +175,16 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
                 <div key={logo.name} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   {logo.logo ? (
                     <div style={{
-                      width: 40, height: 40, borderRadius: 10, flexShrink: 0,
-                      background: logo.fill ? "transparent" : "#FFFFFF",
+                      width: 36, height: 36, borderRadius: 10, flexShrink: 0,
+                      background: "#FFFFFF",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       overflow: "hidden",
-                      ...(!logo.fill && { padding: 2 }),
+                      padding: 4,
                     }}>
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        style={logo.fill
-                          ? { width: "100%", height: "100%", objectFit: "cover" }
-                          : { width: 36, height: 36, objectFit: "contain" }
-                        }
+                        style={{ width: 28, height: 28, objectFit: "contain" }}
                       />
                     </div>
                   ) : (

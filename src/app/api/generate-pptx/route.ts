@@ -31,44 +31,58 @@ export async function GET(request: Request) {
     });
 
     const slidesParam = searchParams.get("slides");
-    const printUrl = slidesParam
-      ? `${baseUrl}/print/raw?slides=${encodeURIComponent(slidesParam)}`
-      : `${baseUrl}/print/raw`;
+    let slideIds: string[];
 
-    await page.goto(printUrl, {
-      waitUntil: "networkidle2",
-      timeout: 120_000,
-    });
+    if (slidesParam) {
+      slideIds = slidesParam.split(",").map((s) => s.trim()).filter(Boolean);
+    } else {
+      const apiRes = await fetch(`${baseUrl}/api/slides`);
+      const data = await apiRes.json();
+      const hidden: string[] = Array.isArray(data.hiddenSlides) ? data.hiddenSlides : [];
+      slideIds = (data.order as string[]).filter((id) => !hidden.includes(id));
+    }
 
-    await page.waitForSelector("#print-deck", { timeout: 30_000 });
-
-    await page.evaluate(() =>
-      Promise.all([
-        document.fonts.ready,
-        ...Array.from(document.querySelectorAll("img")).map((img) =>
-          img.complete
-            ? Promise.resolve()
-            : new Promise((resolve) => {
-                img.onload = resolve;
-                img.onerror = resolve;
-              })
-        ),
-      ])
-    );
-
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
-    const slideElements = await page.$$(".print-slide");
-    console.log(`PPTX: rendering ${slideElements.length} slides...`);
+    console.log(`PPTX: rendering ${slideIds.length} slides via live deck...`);
 
     const screenshots: Buffer[] = [];
-    for (let i = 0; i < slideElements.length; i++) {
-      const shot = await slideElements[i].screenshot({
+
+    for (let i = 0; i < slideIds.length; i++) {
+      const slideUrl = `${baseUrl}/?slideId=${encodeURIComponent(slideIds[i])}`;
+      await page.goto(slideUrl, {
+        waitUntil: "networkidle2",
+        timeout: 30_000,
+      });
+
+      await page.evaluate(() =>
+        Promise.all([
+          document.fonts.ready,
+          ...Array.from(document.querySelectorAll("img")).map((img) =>
+            img.complete
+              ? Promise.resolve()
+              : new Promise((resolve) => {
+                  img.onload = resolve;
+                  img.onerror = resolve;
+                })
+          ),
+        ])
+      );
+
+      await page.evaluate(() => {
+        document.querySelectorAll(".nav-dark, .nav-light, [class*='nav-pill'], [class*='nav-arrow'], [class*='nav-dot']")
+          .forEach((el) => ((el as HTMLElement).style.display = "none"));
+        const backBtn = document.querySelector('a[href="/catalog"]');
+        if (backBtn) (backBtn as HTMLElement).style.display = "none";
+      });
+
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      const shot = await page.screenshot({
         type: "png",
-        omitBackground: false,
+        clip: { x: 0, y: 0, width: SLIDE_WIDTH, height: SLIDE_HEIGHT },
       });
       screenshots.push(Buffer.from(shot));
-      if ((i + 1) % 10 === 0) console.log(`PPTX: captured ${i + 1}/${slideElements.length}`);
+
+      if ((i + 1) % 10 === 0) console.log(`PPTX: captured ${i + 1}/${slideIds.length}`);
     }
 
     console.log(`PPTX: all ${screenshots.length} slides captured, assembling...`);

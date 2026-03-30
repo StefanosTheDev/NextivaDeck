@@ -48,12 +48,21 @@ export default function OperatingLeverageDatedSlide({ slideNumber = 29 }: { slid
         transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
+        <p
+          style={{
+            fontWeight: 700,
+            fontSize: 15,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase" as const,
+            color: "#CCC7C3",
+            margin: "0 0 10px",
+          }}
+        >
           Operating leverage
         </p>
         <h1
           className="font-heading"
-          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
+          style={{ fontSize: 64, fontWeight: 400, color: "#FFFFFF", marginTop: 10, lineHeight: 1.15 }}
         >
           Realizing permanent operational efficiencies.
         </h1>
