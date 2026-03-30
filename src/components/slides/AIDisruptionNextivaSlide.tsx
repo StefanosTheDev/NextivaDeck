@@ -82,9 +82,9 @@ export default function AIDisruptionNextivaSlide({ slideNumber = 51 }: { slideNu
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
-          flex: 1, padding: "32px 60px 0",
+          flex: 1, padding: "72px 60px 0",
           display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20,
-          alignItems: "stretch",
+          alignItems: "start",
         }}
       >
         {pillars.map((p, i) => {
@@ -126,7 +126,7 @@ export default function AIDisruptionNextivaSlide({ slideNumber = 51 }: { slideNu
               </h3>
 
               {/* Points */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 16, flex: 1 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {p.points.map((pt, j) => (
                   <div key={j} style={{ display: "flex", gap: 12, alignItems: "center" }}>
                     <Check size={18} color="#4CAF50" strokeWidth={2.5} style={{ flexShrink: 0 }} />
@@ -137,7 +137,7 @@ export default function AIDisruptionNextivaSlide({ slideNumber = 51 }: { slideNu
 
               {/* Takeaway */}
               <div style={{
-                marginTop: 24,
+                marginTop: 50,
                 background: `${ACCENT}10`,
                 border: `1px solid ${ACCENT}22`,
                 borderRadius: 10,
