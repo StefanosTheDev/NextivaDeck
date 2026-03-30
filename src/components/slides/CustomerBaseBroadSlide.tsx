@@ -16,7 +16,7 @@ const segments = [
       { name: "Canyon Coolers", industry: "Retail", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png", zoom: true },
       { name: "New England Brewing Co", industry: "Food & Beverage", initials: "NE", color: "#7C3AED", logo: "/logos/new-england-brewing.jpg" },
       { name: "Reforming Pilates", industry: "Health & Wellness", initials: "RP", color: "#0891B2", logo: "/logos/reforming-pilates.png", zoom: true },
-      { name: "Wine Library", industry: "Ecommerce", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.png", fill: true },
+      { name: "Wine Library", industry: "Ecommerce", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.svg" },
       { name: "Mister01 Pizza", industry: "Food & Beverage", initials: "MP", color: "#10B981", logo: "/logos/mister-pizza.png" },
     ],
     tenure: "4.5 years",
