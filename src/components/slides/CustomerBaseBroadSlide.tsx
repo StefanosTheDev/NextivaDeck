@@ -173,19 +173,17 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
                   {logo.logo ? (
                     <div style={{
                       width: 40, height: 40, borderRadius: 10, flexShrink: 0,
-                      background: logo.fill ? "transparent" : "#FFFFFF",
+                      background: "#FFFFFF",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       overflow: "hidden",
-                      ...(!(logo.fill || logo.zoom) && { padding: 2 }),
+                      ...(!logo.zoom && { padding: 2 }),
                     }}>
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        style={logo.fill
-                          ? { width: "100%", height: "100%", objectFit: "cover" }
-                          : logo.zoom
-                            ? { width: 48, height: 48, objectFit: "contain", marginTop: -2 }
-                            : { width: 36, height: 36, objectFit: "contain" }
+                        style={logo.zoom
+                          ? { width: 48, height: 48, objectFit: "contain", marginTop: -2 }
+                          : { width: 36, height: 36, objectFit: "contain" }
                         }
                       />
                     </div>
