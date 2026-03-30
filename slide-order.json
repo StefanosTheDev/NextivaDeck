@@ -83,7 +83,7 @@
     "operating-leverage-dated",
     "cash-flow-trends-quarterly-dark",
     "expansion-retention",
-    "nrr-churn",
+    "nrr-churn-copy",
     "appendix-products",
     "customer-base",
     "durable-edge",
@@ -137,7 +137,9 @@
     "ai-tailwind-tomas-branch",
     "defensibility-structural",
     "leadership-copy",
-    "gtm-motion"
+    "gtm-motion",
+    "nrr-churn",
+    "ai-disruption-nextiva-copy"
   ],
   "categories": {
     "world-moving-thomas": "from Thomas",

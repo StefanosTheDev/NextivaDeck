@@ -34,6 +34,7 @@ import CXPortfolioPuzzleCrossSlide from "./slides/CXPortfolioPuzzleCrossSlide";
 import ARRGrossMarginSlide from "./slides/ARRGrossMarginSlide";
 import EBITDASlide from "./slides/EBITDASlide";
 import NRRChurnSlide from "./slides/NRRChurnSlide";
+import NRRChurnCopySlide from "./slides/NRRChurnCopySlide";
 import ExpansionRetentionSlide from "./slides/ExpansionRetentionSlide";
 import TargetModelSlide from "./slides/TargetModelSlide";
 import OperatingLeverageSlide from "./slides/OperatingLeverageSlide";
@@ -136,6 +137,7 @@ import ConversationalCommerceCopySlide from "./slides/ConversationalCommerceCopy
 import OpportunityCopySlide from "./slides/OpportunityCopySlide";
 import AIDisruptionRiskSlide from "./slides/AIDisruptionRiskSlide";
 import AIDisruptionNextivaSlide from "./slides/AIDisruptionNextivaSlide";
+import AIDisruptionNextivaCopySlide from "./slides/AIDisruptionNextivaCopySlide";
 import SlideARRGrossMarginQuarterlyDark from "./slides/SlideARRGrossMarginQuarterlyDark";
 import SlideEBITDAQuarterlyDark from "./slides/SlideEBITDAQuarterlyDark";
 import SlideCashFlowTrendsQuarterlyDark from "./slides/SlideCashFlowTrendsQuarterlyDark";
@@ -196,6 +198,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "arr-gross-margin":   { id: "arr-gross-margin",    label: "Revenue & Margin",    component: ARRGrossMarginSlide,      theme: "dark", isNew: true },
   "ebitda":             { id: "ebitda",              label: "EBITDA",              component: EBITDASlide,              theme: "dark", isNew: true },
   "nrr-churn":          { id: "nrr-churn",           label: "(35) Retention Trends",    component: NRRChurnSlide,            theme: "dark", isNew: true },
+  "nrr-churn-copy":     { id: "nrr-churn-copy",      label: "Retention Trends (Copy)", component: NRRChurnCopySlide,        theme: "dark", isNew: true },
   "expansion-retention":{ id: "expansion-retention", label: "(34) Customer Expansion",  component: ExpansionRetentionSlide,  theme: "dark", isNew: true },
   "target-model":       { id: "target-model",        label: "Target Model",        component: TargetModelSlide,         theme: "dark", isNew: true },
   "operating-leverage": { id: "operating-leverage",  label: "Operating Leverage",  component: OperatingLeverageSlide,   theme: "dark", isNew: true },
@@ -290,6 +293,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "opportunity-copy": { id: "opportunity-copy", label: "Our Market (Copy)", component: OpportunityCopySlide, theme: "dark" },
   "ai-disruption-risk": { id: "ai-disruption-risk", label: "AI Disruption Risk", component: AIDisruptionRiskSlide, theme: "dark" },
   "ai-disruption-nextiva": { id: "ai-disruption-nextiva", label: "AI Disruption - Nextiva Position", component: AIDisruptionNextivaSlide, theme: "dark" },
+  "ai-disruption-nextiva-copy": { id: "ai-disruption-nextiva-copy", label: "AI Disruption - Nextiva Position (Copy)", component: AIDisruptionNextivaCopySlide, theme: "dark" },
   "ebitda-quarterly-dark": { id: "ebitda-quarterly-dark", label: "(28) EBITDA (Quarterly Dark)", component: SlideEBITDAQuarterlyDark, theme: "dark" },
   "arr-gross-margin-quarterly-dark": { id: "arr-gross-margin-quarterly-dark", label: "(29) ARR & Gross Margin (Quarterly Dark)", component: SlideARRGrossMarginQuarterlyDark, theme: "dark" },
   "cash-flow-trends-quarterly-dark": { id: "cash-flow-trends-quarterly-dark", label: "(33) Cash Flow Trends (Quarterly Dark)", component: SlideCashFlowTrendsQuarterlyDark, theme: "dark" },
