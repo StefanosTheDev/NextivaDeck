@@ -229,15 +229,6 @@ export default function CustomerBaseBroadTomasSlide({ slideNumber = 46 }: { slid
         ))}
       </motion.main>
 
-      <div style={{ padding: "16px 80px 0", textAlign: "center" }}>
-        <p style={{
-          fontSize: 14, fontWeight: 600, color: "rgba(255,255,255,0.4)",
-          letterSpacing: "0.04em", margin: 0,
-        }}>
-          Expected Lifetime by Segment (logo churn, FY26)
-        </p>
-      </div>
-
       <div style={{ flex: 1 }} />
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>

@@ -91,7 +91,7 @@ export default function CXPortfolioThomasSlide({ slideNumber = 59 }: { slideNumb
         </p>
         <h1
           className="font-heading"
-          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
+          style={{ fontSize: 68, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.12 }}
         >
           Nextiva&apos;s CX Platform Portfolio.
         </h1>

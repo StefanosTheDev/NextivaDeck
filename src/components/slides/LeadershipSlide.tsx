@@ -76,7 +76,7 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
     >
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "48px 80px 0", flexShrink: 0 }}
+        style={{ padding: "48px 80px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
           LEADERSHIP
