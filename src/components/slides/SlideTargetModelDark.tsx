@@ -47,7 +47,7 @@ export default function SlideTargetModelDark({
       data-speaker-notes="FY27 is where the model really inflects. Investors should underwrite the near-term, FY30 is upside."
     >
       {/* ── Header ── */}
-      <header style={{ padding: "60px 100px 0", textAlign: "center", flexShrink: 0 }}>
+      <header style={{ padding: "32px 100px 0", textAlign: "center", flexShrink: 0 }}>
         <p
           style={{
             fontSize: 22,
@@ -81,7 +81,7 @@ export default function SlideTargetModelDark({
           flex: 1,
           display: "flex",
           alignItems: "center",
-          padding: "0 100px",
+          padding: "24px 100px 0",
         }}
       >
         <div
