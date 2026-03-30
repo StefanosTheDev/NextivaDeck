@@ -32,18 +32,62 @@ export default function AIAgentsInActionSlide({ slideNumber = 20 }: { slideNumbe
 
       <motion.header
         initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-        style={{ padding: "48px 80px 0", flexShrink: 0, position: "relative", zIndex: 1 }}
+        style={{
+          padding: "48px 80px 0",
+          flexShrink: 0,
+          position: "relative",
+          zIndex: 1,
+          width: "100%",
+          boxSizing: "border-box",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+        }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
+        <p
+          style={{
+            fontWeight: 700,
+            fontSize: 18,
+            letterSpacing: "0.05em",
+            textTransform: "uppercase",
+            color: "#CCC7C3",
+            margin: 0,
+            textAlign: "center",
+            width: "100%",
+          }}
+        >
           AGENTIC AI
         </p>
-        <h1 className="font-heading" style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}>
+        <h1
+          className="font-heading"
+          style={{
+            fontSize: 56,
+            fontWeight: 500,
+            color: "#FFFFFF",
+            margin: "10px 0 0",
+            lineHeight: 1.15,
+            textAlign: "center",
+            width: "100%",
+            maxWidth: 1200,
+          }}
+        >
           AI agents handling{" "}
           <span style={{ color: "#0070F3" }}>
             end-to-end workflows.
           </span>
         </h1>
-        <p style={{ fontSize: 20, color: "rgba(255,255,255,0.5)", margin: "14px 0 0", lineHeight: 1.5 }}>
+        <p
+          style={{
+            fontSize: 20,
+            color: "rgba(255,255,255,0.5)",
+            margin: "14px 0 0",
+            lineHeight: 1.5,
+            textAlign: "center",
+            width: "100%",
+            whiteSpace: "nowrap",
+          }}
+        >
           Unlimited agents that work independently or together from first contact to resolution — automated and intelligent.
         </p>
       </motion.header>
