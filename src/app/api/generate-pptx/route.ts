@@ -27,7 +27,7 @@ export async function GET(request: Request) {
     await page.setViewport({
       width: SLIDE_WIDTH,
       height: SLIDE_HEIGHT,
-      deviceScaleFactor: 1,
+      deviceScaleFactor: 2,
     });
 
     const slidesParam = searchParams.get("slides");

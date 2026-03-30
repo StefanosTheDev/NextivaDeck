@@ -13,11 +13,11 @@ const segments = [
     arr: "$143M",
     arrPct: "41% of total",
     logos: [
-      { name: "Canyon Coolers", industry: "Food & Beverage", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png" },
+      { name: "Canyon Coolers", industry: "Retail", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png" },
       { name: "New England Brewing Co", industry: "Food & Beverage", initials: "NE", color: "#7C3AED", logo: "/logos/new-england-brewing.jpg" },
       { name: "Edgar's Bakery", industry: "Food & Beverage", initials: "EB", color: "#0891B2", logo: "/logos/edgars-bakery.png" },
-      { name: "Wine Library", industry: "Retail", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.png" },
-      { name: "Mister Pizza", industry: "Food & Beverage", initials: "MP", color: "#10B981", logo: "/logos/mister-pizza.png" },
+      { name: "Wine Library", industry: "Ecommerce", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.png", fill: true },
+      { name: "Mister01 Pizza", industry: "Food & Beverage", initials: "MP", color: "#10B981", logo: "/logos/mister-pizza.png" },
     ],
     tenure: "4.5 years",
   },
@@ -30,9 +30,9 @@ const segments = [
     arr: "$106M",
     arrPct: "30% of total",
     logos: [
-      { name: "Compartes", industry: "Food & Beverage", initials: "CO", color: "#0284C7", logo: "/logos/compartes.png" },
+      { name: "Compartes", industry: "Retail", initials: "CO", color: "#0284C7", logo: "/logos/compartes.png" },
       { name: "Savannah Bananas", industry: "Sports & Entertainment", initials: "SB", color: "#4F46E5", logo: "/logos/savannah-bananas.png" },
-      { name: "Pizzana", industry: "Food & Beverage", initials: "PZ", color: "#059669", logo: "/logos/pizzana.jpg" },
+      { name: "Pizzana", industry: "Restaurant", initials: "PZ", color: "#059669", logo: "/logos/pizzana.jpg" },
       { name: "J. Lohr Vineyards and Wines", industry: "Food & Beverage", initials: "JL", color: "#E11D48", logo: "/logos/j-lohr-vineyards.jpg" },
       { name: "Jeni's Ice Cream", industry: "Food & Beverage", initials: "JI", color: "#065F46", logo: "/logos/jenis-ice-cream.png" },
     ],
@@ -173,16 +173,18 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
                   {logo.logo ? (
                     <div style={{
                       width: 40, height: 40, borderRadius: 10, flexShrink: 0,
-                      background: "rgba(255,255,255,0.1)",
-                      border: "1px solid rgba(255,255,255,0.12)",
+                      background: logo.fill ? "transparent" : "#FFFFFF",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       overflow: "hidden",
-                      padding: 4,
+                      ...(!logo.fill && { padding: 2 }),
                     }}>
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        style={{ width: 32, height: 32, objectFit: "contain", borderRadius: 4 }}
+                        style={logo.fill
+                          ? { width: "100%", height: "100%", objectFit: "cover" }
+                          : { width: 36, height: 36, objectFit: "contain" }
+                        }
                       />
                     </div>
                   ) : (
