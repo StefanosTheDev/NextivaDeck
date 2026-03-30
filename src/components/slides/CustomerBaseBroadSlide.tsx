@@ -13,9 +13,9 @@ const segments = [
     arr: "$143M",
     arrPct: "41% of total",
     logos: [
-      { name: "Canyon Coolers", industry: "Retail", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png" },
+      { name: "Canyon Coolers", industry: "Retail", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png", zoom: true },
       { name: "New England Brewing Co", industry: "Food & Beverage", initials: "NE", color: "#7C3AED", logo: "/logos/new-england-brewing.jpg" },
-      { name: "Edgar's Bakery", industry: "Food & Beverage", initials: "EB", color: "#0891B2", logo: "/logos/edgars-bakery.png" },
+      { name: "Reforming Pilates", industry: "Health & Wellness", initials: "RP", color: "#0891B2", logo: "/logos/reforming-pilates.png", zoom: true },
       { name: "Wine Library", industry: "Ecommerce", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.png", fill: true },
       { name: "Mister01 Pizza", industry: "Food & Beverage", initials: "MP", color: "#10B981", logo: "/logos/mister-pizza.png" },
     ],
@@ -33,8 +33,8 @@ const segments = [
       { name: "Compartes", industry: "Retail", initials: "CO", color: "#0284C7", logo: "/logos/compartes.png" },
       { name: "Savannah Bananas", industry: "Sports & Entertainment", initials: "SB", color: "#4F46E5", logo: "/logos/savannah-bananas.png" },
       { name: "Pizzana", industry: "Restaurant", initials: "PZ", color: "#059669", logo: "/logos/pizzana.jpg" },
-      { name: "J. Lohr Vineyards and Wines", industry: "Food & Beverage", initials: "JL", color: "#E11D48", logo: "/logos/j-lohr-vineyards.jpg" },
-      { name: "Jeni's Ice Cream", industry: "Food & Beverage", initials: "JI", color: "#065F46", logo: "/logos/jenis-ice-cream.png" },
+      { name: "ESB Bank", industry: "Financial Services", initials: "ES", color: "#E11D48", logo: "/logos/esb-bank.png" },
+      { name: "Venice Family Clinic", industry: "Healthcare", initials: "VF", color: "#065F46", logo: "/logos/venice-family-clinic.png" },
     ],
     tenure: "8.3 years",
   },
@@ -176,14 +176,16 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
                       background: logo.fill ? "transparent" : "#FFFFFF",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       overflow: "hidden",
-                      ...(!logo.fill && { padding: 2 }),
+                      ...(!(logo.fill || logo.zoom) && { padding: 2 }),
                     }}>
                       <img
                         src={logo.logo}
                         alt={logo.name}
                         style={logo.fill
                           ? { width: "100%", height: "100%", objectFit: "cover" }
-                          : { width: 36, height: 36, objectFit: "contain" }
+                          : logo.zoom
+                            ? { width: 48, height: 48, objectFit: "contain", marginTop: -2 }
+                            : { width: 36, height: 36, objectFit: "contain" }
                         }
                       />
                     </div>
