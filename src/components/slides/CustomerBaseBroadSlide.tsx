@@ -13,9 +13,9 @@ const segments = [
     arr: "$143M",
     arrPct: "41% of total",
     logos: [
-      { name: "Canyon Coolers", industry: "Retail", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png", zoom: true },
+      { name: "Canyon Coolers", industry: "Retail", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png" },
       { name: "New England Brewing Co", industry: "Food & Beverage", initials: "NE", color: "#7C3AED", logo: "/logos/new-england-brewing.jpg" },
-      { name: "Reforming Pilates", industry: "Health & Wellness", initials: "RP", color: "#0891B2", logo: "/logos/reforming-pilates.png", zoom: true },
+      { name: "Reforming Pilates", industry: "Health & Wellness", initials: "RP", color: "#0891B2", logo: "/logos/reforming-pilates.png" },
       { name: "Wine Library", industry: "Ecommerce", initials: "WL", color: "#F59E0B", logo: "/logos/wine-library.svg" },
       { name: "Mister01 Pizza", industry: "Food & Beverage", initials: "MP", color: "#10B981", logo: "/logos/mister-pizza.png" },
     ],
@@ -71,12 +71,15 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
         transition={{ duration: 0.6 }}
         style={{ padding: "44px 100px 20px", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
+        <p style={{
+          fontWeight: 700, fontSize: 15, letterSpacing: "0.08em",
+          textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px",
+        }}>
           CUSTOMERS
         </p>
         <h1
           className="font-heading"
-          style={{ fontSize: 56, fontWeight: 500, color: "#FFFFFF", margin: "10px 0 0", lineHeight: 1.15 }}
+          style={{ fontSize: 52, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
         >
           Diversified revenue, tenured &amp; durable.
         </h1>
@@ -172,19 +175,16 @@ export default function CustomerBaseBroadSlide({ slideNumber = 46 }: { slideNumb
                 <div key={logo.name} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   {logo.logo ? (
                     <div style={{
-                      width: 40, height: 40, borderRadius: 10, flexShrink: 0,
+                      width: 36, height: 36, borderRadius: 10, flexShrink: 0,
                       background: "#FFFFFF",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       overflow: "hidden",
-                      ...(!logo.zoom && { padding: 2 }),
+                      padding: 4,
                     }}>
                       <img
                         src={logo.logo}
                         alt={logo.name}
-                        style={logo.zoom
-                          ? { width: 48, height: 48, objectFit: "contain", marginTop: -2 }
-                          : { width: 36, height: 36, objectFit: "contain" }
-                        }
+                        style={{ width: 28, height: 28, objectFit: "contain" }}
                       />
                     </div>
                   ) : (
