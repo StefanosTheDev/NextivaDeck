@@ -76,12 +76,44 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
     >
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        style={{ padding: "60px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{
+          padding: "60px 100px 0",
+          flexShrink: 0,
+          width: "100%",
+          boxSizing: "border-box",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+        }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 14px" }}>
+        <p
+          style={{
+            fontWeight: 700,
+            fontSize: 18,
+            letterSpacing: "0.05em",
+            textTransform: "uppercase",
+            color: "#CCC7C3",
+            margin: "0 0 14px",
+            textAlign: "center",
+            width: "100%",
+          }}
+        >
           LEADERSHIP
         </p>
-        <h1 className="font-heading" style={{ fontSize: 60, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1
+          className="font-heading"
+          style={{
+            fontSize: 60,
+            fontWeight: 500,
+            color: "#FFFFFF",
+            margin: 0,
+            lineHeight: 1.15,
+            textAlign: "center",
+            width: "100%",
+            maxWidth: "min(100%, 1200px)",
+          }}
+        >
           Proven tech leaders drawn to compelling vision.
         </h1>
       </motion.header>
