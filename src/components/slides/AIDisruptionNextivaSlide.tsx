@@ -46,7 +46,7 @@ const pillars = [
       "Embedded, not bolt-on",
       "Compounds with every interaction",
     ],
-    takeaway: "AI DOESN\u2019T DISRUPT NEXTIVA \u2014\nIT DEEPENS THE MOAT",
+    takeaway: "AI EMBEDDED TO PERFORM\nCOMPLEX TASKS \u2014 IT DEEPENS THE MOAT",
   },
 ];
 
