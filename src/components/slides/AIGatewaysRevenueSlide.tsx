@@ -211,7 +211,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
               }}>
                 {card.label}
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 12 }}>
                 <p className="font-heading" style={{
                   fontSize: 36, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1,
                 }}>
@@ -226,7 +226,7 @@ export default function AIGatewaysRevenueSlide({ slideNumber = 20 }: { slideNumb
                   {card.badge}
                 </span>
               </div>
-              <p style={{ fontSize: 18, color: "rgba(255,255,255,0.5)", margin: "8px 0 0", lineHeight: 1.5 }}>
+              <p style={{ fontSize: 18, color: "rgba(255,255,255,0.5)", margin: "12px 0 0", lineHeight: 1.25 }}>
                 {card.desc}
               </p>
             </motion.div>
