@@ -78,7 +78,7 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
       </div>
 
       {/* ─── COLUMN HEADERS ─── */}
-      <div style={{ padding: "48px 80px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+      <div style={{ padding: "42px 80px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
         <p
           className="font-heading"
           style={{

@@ -97,7 +97,7 @@ export default function AIAgentsInActionSlide({ slideNumber = 20 }: { slideNumbe
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}
         style={{
           flex: 1, display: "flex", flexDirection: "column", justifyContent: "center",
-          gap: 16, padding: "32px 80px 0", position: "relative", zIndex: 1,
+          gap: 16, padding: "26px 80px 0", position: "relative", zIndex: 1,
         }}
       >
         {agents.map((a, i) => {
