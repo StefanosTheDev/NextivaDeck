@@ -206,7 +206,7 @@ function MetricCard({ title, value, desc }: { title: string; value: string; desc
         color: C.pureWhite, margin: 0, lineHeight: 1.1,
       }}>{value}</p>
       <p style={{
-        fontSize: 22, color: "rgba(255,255,255,0.6)", margin: "8px 0 0",
+        fontSize: 18, color: "rgba(255,255,255,0.6)", margin: "8px 0 0",
         lineHeight: 1.4, fontFamily: F.body,
       }}>{desc}</p>
     </div>
