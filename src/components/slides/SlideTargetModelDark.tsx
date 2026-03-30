@@ -54,7 +54,7 @@ export default function SlideTargetModelDark({
             fontWeight: 700,
             letterSpacing: "0.05em",
             textTransform: "uppercase",
-            color: C.accentBlue,
+            color: "#CCC7C3",
             margin: "0 0 8px",
             fontFamily: F.body,
           }}

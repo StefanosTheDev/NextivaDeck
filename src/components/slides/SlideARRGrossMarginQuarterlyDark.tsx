@@ -244,7 +244,7 @@ export default function SlideARRGrossMarginQuarterlyDark({
             fontWeight: 700,
             letterSpacing: "0.05em",
             textTransform: "uppercase",
-            color: C.accent,
+            color: "#CCC7C3",
             margin: "0 0 8px",
             fontFamily: F.body,
           }}

@@ -268,7 +268,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
       <header style={{ padding: "40px 100px 0", textAlign: "center", flexShrink: 0 }}>
         <p style={{
           fontSize: 18, fontWeight: 700, letterSpacing: "0.05em",
-          textTransform: "uppercase", color: C.accentBlue,
+          textTransform: "uppercase", color: "#CCC7C3",
           margin: "0 0 6px", fontFamily: F.body,
         }}>
           CASH FLOW TRENDS — QUARTERLY
