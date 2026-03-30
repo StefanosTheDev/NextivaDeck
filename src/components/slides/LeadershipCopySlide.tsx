@@ -111,7 +111,7 @@ export default function LeadershipCopySlide({ slideNumber = 16 }: { slideNumber?
             lineHeight: 1.15,
             textAlign: "center",
             width: "100%",
-            maxWidth: "min(100%, 1200px)",
+            whiteSpace: "nowrap",
           }}
         >
           Proven tech leaders drawn to compelling vision.
