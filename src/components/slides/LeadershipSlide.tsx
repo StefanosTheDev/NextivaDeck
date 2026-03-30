@@ -56,11 +56,6 @@ function PersonCard({ name, role, photo, objectPosition = "center center", needs
               objectFit: "cover", objectPosition,
             }}
           />
-          <div style={{
-            position: "absolute", inset: 0,
-            background: "linear-gradient(135deg, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0.25) 100%)",
-            pointerEvents: "none",
-          }} />
         </div>
       </div>
       <div>
@@ -145,11 +140,6 @@ export default function LeadershipSlide({ slideNumber = 16 }: { slideNumber?: nu
                       src={p.photo} alt={p.name}
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
-                    <div style={{
-                      position: "absolute", inset: 0,
-                      background: "linear-gradient(135deg, rgba(10,22,40,0.35) 0%, rgba(10,22,40,0.25) 100%)",
-                      pointerEvents: "none",
-                    }} />
                   </div>
                 </div>
                 <p style={{ fontSize: 14, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.25 }}>{p.name}</p>
