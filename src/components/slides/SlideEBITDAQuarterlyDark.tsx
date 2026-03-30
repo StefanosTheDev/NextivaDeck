@@ -319,7 +319,8 @@ export default function SlideEBITDAQuarterlyDark({
             flex: 45,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "flex-start",
+            paddingTop: 24,
             gap: 16,
           }}
         >

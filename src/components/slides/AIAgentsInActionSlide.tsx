@@ -37,7 +37,7 @@ export default function AIAgentsInActionSlide({ slideNumber = 20 }: { slideNumbe
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: ACCENT, margin: "0 0 8px" }}>
           AGENTIC AI
         </p>
-        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 52, fontWeight: 400, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           AI agents handling{" "}
           <span style={{
             background: "linear-gradient(90deg, #0070F3, #00C2FF)",

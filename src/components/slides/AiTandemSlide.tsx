@@ -23,7 +23,7 @@ export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: numb
         style={{ padding: "72px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", marginBottom: 12 }}>AI FLEXIBILITY & KEY DIFFERENTIATOR</p>
-        <h1 className="font-heading" style={{ fontSize: 68, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
+        <h1 className="font-heading" style={{ fontSize: 68, fontWeight: 400, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           AI and humans in tandem
         </h1>
         <p style={{ fontSize: 24, color: "rgba(255,255,255,0.45)", margin: "14px 0 0", lineHeight: 1.4 }}>
