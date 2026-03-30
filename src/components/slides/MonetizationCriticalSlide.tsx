@@ -51,7 +51,7 @@ export default function MonetizationCriticalSlide({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         style={{
-          padding: "36px 80px 0",
+          padding: "48px 80px 0",
           flexShrink: 0,
           position: "relative",
           zIndex: 1,

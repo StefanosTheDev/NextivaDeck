@@ -66,9 +66,9 @@ export default function AIDisruptionNextivaSlide({ slideNumber = 51 }: { slideNu
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "36px 80px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "48px 80px 0", flexShrink: 0, textAlign: "center" }}
       >
-        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.08em", textTransform: "uppercase", color: ACCENT, margin: "0 0 12px" }}>
+        <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 12px" }}>
           WHERE NEXTIVA SITS ON THE AI DISRUPTION SPECTRUM
         </p>
         <h1 className="font-heading" style={{ fontSize: 46, fontWeight: 400, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
@@ -137,7 +137,7 @@ export default function AIDisruptionNextivaSlide({ slideNumber = 51 }: { slideNu
 
               {/* Takeaway */}
               <div style={{
-                marginTop: 80,
+                marginTop: 100,
                 background: `${ACCENT}10`,
                 border: `1px solid ${ACCENT}22`,
                 borderRadius: 10,
