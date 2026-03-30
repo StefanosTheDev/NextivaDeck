@@ -59,7 +59,7 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
       </motion.header>
 
       {/* ─── ARROW SPECTRUM BAR ─── */}
-      <div style={{ padding: "36px 80px 0" }}>
+      <div style={{ padding: "48px 80px 0" }}>
         <div style={{ display: "flex", alignItems: "center" }}>
           <svg width="22" height="34" viewBox="0 0 22 34" fill="none" style={{ flexShrink: 0 }}>
             <polygon points="22,0 22,34 0,17" fill="rgba(255,255,255,0.15)" />
@@ -78,7 +78,7 @@ export default function AIDisruptionRiskSlide({ slideNumber = 50 }: { slideNumbe
       </div>
 
       {/* ─── COLUMN HEADERS ─── */}
-      <div style={{ padding: "28px 80px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+      <div style={{ padding: "48px 80px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
         <p
           className="font-heading"
           style={{
