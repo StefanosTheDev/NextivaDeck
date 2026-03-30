@@ -301,7 +301,7 @@ export default function MonetizationCriticalSlide({
                 "linear-gradient(135deg, rgba(40,96,178,0.1) 0%, rgba(40,96,178,0.04) 100%)",
               border: "2px solid rgba(40,96,178,0.35)",
               borderRadius: 16,
-              padding: "36px 36px",
+              padding: "28px 32px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -333,7 +333,7 @@ export default function MonetizationCriticalSlide({
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
                 color: ACCENT,
-                margin: "0 0 16px",
+                margin: "0 0 10px",
                 position: "relative",
               }}
             >
@@ -357,7 +357,7 @@ export default function MonetizationCriticalSlide({
             <p
               className="font-heading"
               style={{
-                fontSize: 80,
+                fontSize: 68,
                 fontWeight: 700,
                 color: ACCENT,
                 margin: "0 0 4px",
@@ -374,7 +374,7 @@ export default function MonetizationCriticalSlide({
                 fontSize: 28,
                 fontWeight: 600,
                 color: "#FFFFFF",
-                margin: "0 0 20px",
+                margin: "0 0 14px",
                 lineHeight: 1.2,
                 position: "relative",
               }}
@@ -385,7 +385,7 @@ export default function MonetizationCriticalSlide({
             <div
               style={{
                 borderTop: "1px solid rgba(255,255,255,0.08)",
-                paddingTop: 20,
+                paddingTop: 14,
                 position: "relative",
               }}
             >
