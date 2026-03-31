@@ -25,7 +25,7 @@ const rows: { metric: string; fy26: string; fy27: string; fy30: string; bold?: b
   { metric: "R&D",               fy26: "11%",   fy27: "9%",    fy30: "8–12%" },
   { metric: "G&A",               fy26: "14%",   fy27: "10%",   fy30: "5–9%" },
   { metric: "Adj EBITDA Margin", fy26: "12%",   fy27: "27%",   fy30: "38–42%",       bold: true },
-  { metric: "Adj EBITDA",        fy26: "$44M",  fy27: "$98M",  fy30: "$181–$189M",   bold: true },
+  { metric: "Adj EBITDA",        fy26: "$42M",  fy27: "$98M",  fy30: "$181–$189M",   bold: true },
 ];
 
 /* ── Slide component ── */

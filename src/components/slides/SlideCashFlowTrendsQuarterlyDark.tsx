@@ -46,11 +46,11 @@ const QUARTERS = [
   "Q1'26","Q2'26","Q3'26","Q4'26",
   "Q1'27","Q2'27","Q3'27","Q4'27",
 ];
-const ADJ_EBITDA =     [1, -1, 1, 0, 4, 10, 11, 19, 22, 25, 25, 26];
+const ADJ_EBITDA =     [1, -1, 1, 0, 4, 10, 11, 16, 23, 25, 25, 26];
 const EBITDA_MARGIN =  [1, -1, 1, -1, 5, 11, 12, 22, 25, 26, 27, 28];
-const FCF =            [-3, -3, -1, 3, -1, 2, 5, 9, 14, 18, 20, 23];
+const FCF =            [-3, -3, -1, 3, 1, -2, 4, 11, 15, 23, 23, 19];
 const FCF_CONVERSION: (number | null)[] = [null, null, null, null, null, 20, 45, 47, 64, 72, 80, 88];
-const CASH =           [24, 21, 20, 29, 28, 30, 35, 42, 56, 74, 94, 113];
+const CASH =           [24, 21, 20, 29, 30, 27, 31, 41, 55, 77, 99, 117];
 
 const ebitdaData = QUARTERS.map((name, i) => ({
   name,
