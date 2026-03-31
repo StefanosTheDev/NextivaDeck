@@ -355,7 +355,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
             <MetricCard
               title="FY27 Q4 Exit FCF Conversion"
               value="88%"
-              desc="Low capex and working-capital needs convert nearly all Adj. EBITDA to cash. Q4'27 annualized FCF of $92M."
+              desc="Low capex and working-capital needs convert nearly all Adj. EBITDA to cash. Q4'27 annualized FCF of $76M."
             />
           }
         />
@@ -383,7 +383,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
           card={
             <MetricCard
               title="Cash at Q4'27"
-              value="$113M"
+              value="$117M"
               desc="Cash builds steadily as FCF inflects, providing liquidity for debt service and investment."
             />
           }

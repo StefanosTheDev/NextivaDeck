@@ -212,8 +212,8 @@ const cards = [
   },
   {
     label: "FY27 Q4 REVENUE (ANN.)",
-    value: "$380M",
-    detail: "$95M quarterly × 4",
+    value: "$369M",
+    detail: "$92M quarterly × 4",
     highlighted: false,
   },
 ];
