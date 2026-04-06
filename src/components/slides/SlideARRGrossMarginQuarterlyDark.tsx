@@ -44,8 +44,8 @@ const quarters = [
   "Q1'26", "Q2'26", "Q3'26", "Q4'26",
   "Q1'27", "Q2'27", "Q3'27", "Q4'27",
 ];
-const revenues = [87, 88, 87, 87, 88, 88, 89, 89, 91, 93, 94, 95];
-const grossMargins = [67, 66, 67, 67, 69, 69, 70, 72, 73, 73, 74, 74];
+const revenues = [87, 88, 87, 87, 88, 88, 88, 88, 89, 91, 91, 92];
+const grossMargins = [67, 66, 67, 67, 69, 69, 70.5, 73, 73, 74, 74, 74];
 
 const data = quarters.map((name, i) => ({
   name,
@@ -212,8 +212,8 @@ const cards = [
   },
   {
     label: "FY27 Q4 REVENUE (ANN.)",
-    value: "$380M",
-    detail: "$95M quarterly × 4",
+    value: "$369M",
+    detail: "$92M quarterly × 4",
     highlighted: false,
   },
 ];

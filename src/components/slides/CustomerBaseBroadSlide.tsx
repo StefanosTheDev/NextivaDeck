@@ -10,7 +10,7 @@ const segments = [
     badges: ["NEXT", "NextOS", "XBert AI", "NextivaONE"],
     customers: "80,200",
     custPct: "86% of total",
-    arr: "$143M",
+    arr: "$142M",
     arrPct: "41% of total",
     logos: [
       { name: "Canyon Coolers", industry: "Retail", initials: "CC", color: "#2563EB", logo: "/logos/canyon-coolers.png" },
@@ -27,7 +27,7 @@ const segments = [
     badges: ["NEXT", "XBert AI", "Experience Center"],
     customers: "11,000",
     custPct: "12% of total",
-    arr: "$106M",
+    arr: "$105M",
     arrPct: "30% of total",
     logos: [
       { name: "Compartes", industry: "Retail", initials: "CO", color: "#0284C7", logo: "/logos/compartes.png" },

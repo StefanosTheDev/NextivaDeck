@@ -46,11 +46,11 @@ const QUARTERS = [
   "Q1'26","Q2'26","Q3'26","Q4'26",
   "Q1'27","Q2'27","Q3'27","Q4'27",
 ];
-const ADJ_EBITDA =     [1, -1, 1, 0, 4, 10, 11, 19, 22, 25, 25, 26];
+const ADJ_EBITDA =     [1, -1, 1, 0, 4, 10, 11, 16, 23, 25, 25, 26];
 const EBITDA_MARGIN =  [1, -1, 1, -1, 5, 11, 12, 22, 25, 26, 27, 28];
-const FCF =            [-3, -3, -1, 3, -1, 2, 5, 9, 14, 18, 20, 23];
+const FCF =            [-3, -3, -1, 3, 1, -2, 4, 11, 15, 23, 23, 19];
 const FCF_CONVERSION: (number | null)[] = [null, null, null, null, null, 20, 45, 47, 64, 72, 80, 88];
-const CASH =           [24, 21, 20, 29, 28, 30, 35, 42, 56, 74, 94, 113];
+const CASH =           [24, 21, 20, 29, 30, 27, 31, 41, 55, 77, 99, 117];
 
 const ebitdaData = QUARTERS.map((name, i) => ({
   name,
@@ -355,7 +355,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
             <MetricCard
               title="FY27 Q4 Exit FCF Conversion"
               value="88%"
-              desc="Low capex and working-capital needs convert nearly all Adj. EBITDA to cash. Q4'27 annualized FCF of $92M."
+              desc="Low capex and working-capital needs convert nearly all Adj. EBITDA to cash. Q4'27 annualized FCF of $76M."
             />
           }
         />
@@ -383,7 +383,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
           card={
             <MetricCard
               title="Cash at Q4'27"
-              value="$113M"
+              value="$117M"
               desc="Cash builds steadily as FCF inflects, providing liquidity for debt service and investment."
             />
           }

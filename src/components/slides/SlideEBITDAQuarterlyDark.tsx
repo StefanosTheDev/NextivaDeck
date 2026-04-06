@@ -37,7 +37,7 @@ const quarters = [
   "Q1'26", "Q2'26", "Q3'26", "Q4'26",
   "Q1'27", "Q2'27", "Q3'27", "Q4'27",
 ];
-const ebitdaValues = [1, -1, 1, 0, 4, 10, 11, 19, 22, 25, 25, 26];
+const ebitdaValues = [1, -1, 1, 0, 4, 10, 11, 16, 23, 25, 25, 26];
 
 const data = quarters.map((name, i) => ({
   name,
@@ -170,7 +170,7 @@ const cards = [
   },
   {
     label: "FY26 EXIT EBITDA RUN RATE",
-    value: "$75–$80M",
+    value: "$72M - $75M",
     detail: "Range reflects items still to be actioned",
     highlighted: true,
   },

@@ -6,13 +6,13 @@ import {
   ResponsiveContainer, LabelList, ReferenceLine, Cell, Customized,
 } from "recharts";
 
-const SUBSCRIPTION_TARGET = 366;
+const SUBSCRIPTION_TARGET = 356;
 const CONTRACTED = 246;
 const MONTHLY_RENEWALS = 34;
-const EXPANSION = 23;
+const EXPANSION = 20;
 const CONTRACT_NET_RENEWALS = 8;
-const NEW_BOOKINGS = 43;
-const BUILD_UP = 354;
+const NEW_BOOKINGS = 36;
+const BUILD_UP = 344;
 const GAP = 12;
 const GAP_PCT = 3;
 
