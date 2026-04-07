@@ -46,7 +46,74 @@ const chapters = [
   },
 ];
 
-export default function JourneyCopySlide({ slideNumber = 44 }: { slideNumber?: number }) {
+const ENHANCED_CONNECTOR_W = 108;
+
+export type JourneyCopyConnectorStyle = "simple-bold" | "enhanced";
+
+function ChapterConnector({ delay }: { delay: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.92 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay }}
+      style={{
+        flexShrink: 0,
+        width: ENHANCED_CONNECTOR_W,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        alignSelf: "center",
+      }}
+      aria-hidden
+    >
+      <div
+        style={{
+          width: 34,
+          height: 4,
+          borderRadius: 2,
+          background: "linear-gradient(90deg, rgba(255,255,255,0.06), rgba(74,158,242,0.9))",
+        }}
+      />
+      <div
+        style={{
+          width: 44,
+          height: 44,
+          borderRadius: "50%",
+          margin: "0 -4px",
+          zIndex: 1,
+          background: "linear-gradient(160deg, rgba(126,179,232,0.45), rgba(40,96,178,0.2))",
+          border: "2px solid rgba(126,179,232,0.9)",
+          boxShadow:
+            "0 0 22px rgba(40,96,178,0.55), 0 0 40px rgba(74,158,242,0.2), inset 0 1px 0 rgba(255,255,255,0.15)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <ArrowRight size={22} color="#F0F7FF" strokeWidth={2.75} />
+      </div>
+      <div
+        style={{
+          width: 34,
+          height: 4,
+          borderRadius: 2,
+          background: "linear-gradient(90deg, rgba(74,158,242,0.9), rgba(255,255,255,0.06))",
+        }}
+      />
+    </motion.div>
+  );
+}
+
+function JourneyCopySlideInner({
+  slideNumber = 44,
+  connectorStyle,
+}: {
+  slideNumber?: number;
+  connectorStyle: JourneyCopyConnectorStyle;
+}) {
+  const mainGap = connectorStyle === "enhanced" ? 20 : 16;
+  const colGap = connectorStyle === "enhanced" ? 8 : 12;
+
   return (
     <div
       className="slide"
@@ -69,9 +136,9 @@ export default function JourneyCopySlide({ slideNumber = 44 }: { slideNumber?: n
         </p>
       </motion.header>
 
-      <main style={{ padding: "88px 90px 0", display: "flex", gap: 16, alignItems: "stretch" }}>
+      <main style={{ padding: "88px 90px 0", display: "flex", gap: mainGap, alignItems: "stretch" }}>
         {chapters.map((ch, i) => (
-          <div key={ch.number} style={{ display: "flex", alignItems: "stretch", flex: "1 1 0", minWidth: 0, gap: 12 }}>
+          <div key={ch.number} style={{ display: "flex", alignItems: "stretch", flex: "1 1 0", minWidth: 0, gap: colGap }}>
             <motion.article
               initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
@@ -120,9 +187,22 @@ export default function JourneyCopySlide({ slideNumber = 44 }: { slideNumber?: n
               </div>
             </motion.article>
             {i < chapters.length - 1 ? (
-              <ArrowRight size={24} color="rgba(255,255,255,0.3)" strokeWidth={2} style={{ flexShrink: 0 }} />
+              connectorStyle === "enhanced" ? (
+                <ChapterConnector delay={0.45 + i * 0.12} />
+              ) : (
+                <ArrowRight
+                  size={30}
+                  color="rgba(255,255,255,0.82)"
+                  strokeWidth={3.25}
+                  style={{ flexShrink: 0, alignSelf: "center" }}
+                  aria-hidden
+                />
+              )
             ) : (
-              <div style={{ width: 24, flexShrink: 0 }} aria-hidden />
+              <div
+                style={{ width: connectorStyle === "enhanced" ? ENHANCED_CONNECTOR_W : 30, flexShrink: 0 }}
+                aria-hidden
+              />
             )}
           </div>
         ))}
@@ -132,4 +212,12 @@ export default function JourneyCopySlide({ slideNumber = 44 }: { slideNumber?: n
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
+}
+
+export default function JourneyCopySlide(props: { slideNumber?: number }) {
+  return <JourneyCopySlideInner {...props} connectorStyle="simple-bold" />;
+}
+
+export function JourneyCopySlideEnhanced(props: { slideNumber?: number }) {
+  return <JourneyCopySlideInner {...props} connectorStyle="enhanced" />;
 }

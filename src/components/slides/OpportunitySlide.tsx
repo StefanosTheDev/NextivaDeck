@@ -71,9 +71,10 @@ export default function OpportunitySlide({ slideNumber = 7 }: { slideNumber?: nu
             margin: 0,
             textAlign: "center",
             lineHeight: 1.5,
+            whiteSpace: "nowrap",
           }}
         >
-          The largest and least served segment in CX
+          The largest and most underserved segment in CX representing a $172B TAM
         </motion.p>
       </div>
 

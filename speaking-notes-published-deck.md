@@ -30,7 +30,7 @@ node -e "const j=require('./slide-order.json');const h=new Set(j.hiddenSlides);c
 
 ## Slide 4 — `investor-summary` — Investor Summary
 
-> Here's the thesis in five lines. First — we're scaled and capital efficient: $353 million in revenue, 70%+ gross margins, exiting FY26 at $85 million in EBITDA. Second — we're the only platform that fuses AI, communications, and data natively. Third — the mid-market is massive and underserved, and that's exactly where we win. Fourth — our monetization is evolving from seats to usage and outcomes, which unlocks a 2–3x revenue multiplier on the same customer. And fifth — AI doesn't disrupt us, it expands us. It deepens every deal and widens our moat.
+> Here's the thesis in five lines. First — we're scaled and capital efficient: about $351 million in revenue, 70%+ gross margins, FY26 exit Adj EBITDA run rate $70M+. Second — we're the only platform that fuses AI, communications, and data natively. Third — the mid-market is massive and underserved, and that's exactly where we win. Fourth — our monetization is evolving from seats to usage and outcomes, which unlocks a 2–3x revenue multiplier on the same customer. And fifth — AI doesn't disrupt us, it expands us. It deepens every deal and widens our moat.
 
 ---
 
@@ -48,7 +48,7 @@ node -e "const j=require('./slide-order.json');const h=new Set(j.hiddenSlides);c
 
 ## Slide 7 — `opportunity` — The Opportunity
 
-> The massive middle — businesses between 10 and 250 agents — is the largest and least served segment in CX. Enterprise vendors build for Fortune 500. Point solutions don't scale. Millions of growing businesses are left without a real platform. That's where Nextiva lives, and it's where we win.
+> Lead with the headline and the single subline on screen: the massive middle is where we win, plus “The largest and most underserved segment in CX representing a $172B TAM.” Then tie it to the gap: enterprise stacks and point solutions leave the middle behind; Nextiva is built for that segment.
 
 ---
 
@@ -72,7 +72,7 @@ node -e "const j=require('./slide-order.json');const h=new Set(j.hiddenSlides);c
 
 ## Slide 11 — `customer-base-broad` — Customer Base (Broad, Tenured, Durable)
 
-> **Customers — diversified revenue, tenured and durable.** Three segments on screen: VB up to 10 users — about 80,200 customers, 86% of logos, **$143M ARR**, 41% of ARR, ~4.5 year average tenure. SMB 10–50 users — 11,000 customers, **$106M ARR**, 30% of ARR, ~8.3 year tenure. Mid-market 50+ — 1,800 customers, **$104M ARR**, 29% of ARR, ~7.9 year tenure. Message: mix is healthy; larger customers are stickier; we're layering AI value across all three.
+> **Customers — diversified revenue, tenured and durable.** Three segments on screen: VSB up to 10 users — about 80,200 customers, 86% of logos, **$143M ARR**, 41% of ARR, ~4.5 year average tenure. SMB 10–50 users — 11,000 customers, **$106M ARR**, 30% of ARR, ~8.3 year tenure. Mid-market 50+ — 1,800 customers, **$104M ARR**, 29% of ARR, ~7.9 year tenure. Message: mix is healthy; larger customers are stickier; we're layering AI value across all three.
 
 ---
 

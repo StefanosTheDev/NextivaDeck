@@ -5,7 +5,7 @@ import { Clock, ArrowUpRight } from "lucide-react";
 
 const segments = [
   {
-    name: "VB",
+    name: "VSB",
     range: "Up to 10 Users",
     badges: ["NEXT", "NextOS", "XBert AI", "NextivaONE"],
     customers: "80,200",

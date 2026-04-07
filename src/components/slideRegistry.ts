@@ -65,6 +65,7 @@ import AiTailwind3Slide from "./slides/AiTailwind3Slide";
 import AiTailwind4Slide from "./slides/AiTailwind4Slide";
 import AiDefensibilityMatrixSlide from "./slides/AiDefensibilityMatrixSlide";
 import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
+import CustomerBaseLovablePieSlide from "./slides/CustomerBaseLovablePieSlide";
 import MarketTAMLovableSlide from "./slides/MarketTAMLovableSlide";
 import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
 import BetterOutcomesCopySlide from "./slides/BetterOutcomesCopySlide";
@@ -107,7 +108,7 @@ import ThreeMoatsSlide from "./slides/ThreeMoatsSlide";
 import InvestorSummaryCopySlide from "./slides/InvestorSummaryCopySlide";
 import UnifiedPlatformMoatsSlide from "./slides/UnifiedPlatformMoatsSlide";
 import StructuralAdvantagesSlide from "./slides/StructuralAdvantagesSlide";
-import JourneyCopySlide from "./slides/JourneyCopySlide";
+import JourneyCopySlide, { JourneyCopySlideEnhanced } from "./slides/JourneyCopySlide";
 import StructuralAdvantagesCopySlide from "./slides/StructuralAdvantagesCopySlide";
 import CustomerBaseBroadSlide from "./slides/CustomerBaseBroadSlide";
 import GTMEngineSlide from "./slides/GTMEngineSlide";
@@ -223,6 +224,12 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-3":     { id: "ai-tailwind-3",      label: "Why AI Strengthens Our Business", component: AiTailwind3Slide, theme: "dark" },
   "ai-defensibility-matrix": { id: "ai-defensibility-matrix", label: "AI Defensibility 2×2 Matrix", component: AiDefensibilityMatrixSlide, theme: "dark" },
   "customer-base-lovable": { id: "customer-base-lovable", label: "Customer Base (Lovable)", component: CustomerBaseLovableSlide, theme: "dark" },
+  "customer-base-lovable-pie": {
+    id: "customer-base-lovable-pie",
+    label: "Customer Base (Lovable, industry pie)",
+    component: CustomerBaseLovablePieSlide,
+    theme: "dark",
+  },
   "market-tam-lovable": { id: "market-tam-lovable", label: "Market TAM (Lovable)", component: MarketTAMLovableSlide, theme: "dark" },
   "world-moving-thomas": { id: "world-moving-thomas", label: "#4 World Moving to Unified CX (Thomas · SlideWorldMoving)", component: WorldMovingSlide, theme: "dark", isNew: true },
   "what-we-are-close-thomas": { id: "what-we-are-close-thomas", label: "#6 What We Are Close (Thomas · SlideWhatWeAreClose)", component: WhatWeAreCloseSlide, theme: "dark", isNew: true },
@@ -264,6 +271,12 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "unified-platform-moats": { id: "unified-platform-moats", label: "Unified Platform Moats", component: UnifiedPlatformMoatsSlide, theme: "dark" },
   "structural-advantages": { id: "structural-advantages", label: "Three Structural Advantages", component: StructuralAdvantagesSlide, theme: "dark" },
   "journey-copy": { id: "journey-copy", label: "Journey (copy)", component: JourneyCopySlide, theme: "dark" },
+  "journey-copy-enhanced": {
+    id: "journey-copy-enhanced",
+    label: "Journey (copy, enhanced connectors)",
+    component: JourneyCopySlideEnhanced,
+    theme: "dark",
+  },
   "structural-advantages-copy": { id: "structural-advantages-copy", label: "Structural Advantages (copy)", component: StructuralAdvantagesCopySlide, theme: "dark" },
   "customer-base-broad": { id: "customer-base-broad", label: "Customer Base (Broad, Tenured, Durable)", component: CustomerBaseBroadSlide, theme: "dark" },
   "gtm-engine": { id: "gtm-engine", label: "GTM Engine", component: GTMEngineSlide, theme: "dark" },
