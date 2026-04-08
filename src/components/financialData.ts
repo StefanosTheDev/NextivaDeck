@@ -131,6 +131,8 @@ export const TAM = {
   projected: 262,
   projectedYear: "CY29",
   cagr: 14,
+  /** Underserved middle + adjacencies — aligns with Opportunity / market narrative */
+  underservedMiddle: 172,
 } as const;
 
 export const EBITDA_FLOW_THROUGH_T6M = {

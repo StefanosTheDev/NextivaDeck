@@ -61,7 +61,7 @@ export default function ThreeMoatsSlide({ slideNumber = 41 }: { slideNumber?: nu
           </span>
         </h1>
         <p style={{ fontSize: 20, color: "rgba(255,255,255,0.5)", margin: "16px auto 0", lineHeight: 1.5, maxWidth: 700 }}>
-          Three moats that no competitor can replicate — combined in a single platform.
+          Three moats difficult to replicate — combined in a single platform.
         </p>
       </motion.header>
 

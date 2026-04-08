@@ -66,6 +66,7 @@ import AiTailwind4Slide from "./slides/AiTailwind4Slide";
 import AiDefensibilityMatrixSlide from "./slides/AiDefensibilityMatrixSlide";
 import CustomerBaseLovableSlide from "./slides/CustomerBaseLovableSlide";
 import CustomerBaseLovablePieSlide from "./slides/CustomerBaseLovablePieSlide";
+import CXTamNestedFocusSlide from "./slides/CXTamNestedFocusSlide";
 import MarketTAMLovableSlide from "./slides/MarketTAMLovableSlide";
 import BetterOutcomesSlide from "./slides/BetterOutcomesSlide";
 import BetterOutcomesCopySlide from "./slides/BetterOutcomesCopySlide";
@@ -228,6 +229,12 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "customer-base-lovable-pie",
     label: "Customer Base (Lovable, industry pie)",
     component: CustomerBaseLovablePieSlide,
+    theme: "dark",
+  },
+  "cx-tam-nested-focus": {
+    id: "cx-tam-nested-focus",
+    label: "CX TAM & Nextiva focus (nested)",
+    component: CXTamNestedFocusSlide,
     theme: "dark",
   },
   "market-tam-lovable": { id: "market-tam-lovable", label: "Market TAM (Lovable)", component: MarketTAMLovableSlide, theme: "dark" },
