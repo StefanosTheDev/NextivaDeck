@@ -12,14 +12,14 @@ const customers = [
     size: "Reading, PA · 38 Users · $116K TCV",
     accent: "#2DD4BF",
     problems: [
-      "10–20 lost sales calls/day (static IVR drops live callers)",
-      "Reps stuck on admin, not selling (manual call logging)",
+      "Lost sales: high volume of live callers dropped by static IVR",
+      "Diminished sales productivity: Reps perform manual call logging",
     ],
     solutions: [
-      "Every inbound call captured — zero dropped sales opportunities",
-      "Booking rate nearly doubled: 35% → 60%",
-      "Reps reclaim hours/day — zero manual data entry",
-      "40% same-day close rate via intelligent agent matching",
+      "No lost sales leads: all inbound calls fielded",
+      "Booking rate increased 1.7x: 35% → 60%",
+      "Sales capacity increase secured",
+      "Material sales velocity increase via intelligent agent matching",
     ],
     metrics: [
       { stat: "35%→60%", label: "Booking Rate" },
@@ -35,8 +35,8 @@ const customers = [
     size: "Decatur, AL · 7 Locations · 73 Users",
     accent: "#6B8FAD",
     problems: [
-      "Customers lost between locations (fragmented systems across 10–13 sites)",
-      "Zero performance visibility (no centralized reporting)",
+      "Poor customer sat: fragmented systems prevent contact with preferred location",
+      "Lost CX performance visibility: No reporting",
     ],
     solutions: [
       "Every customer reaches the right office on the first attempt",
@@ -58,8 +58,8 @@ const customers = [
     size: "Dublin, OH · 60 CC Users · US & Canada",
     accent: "#D4A843",
     problems: [
-      "No insight into call quality (legacy platform, no AI)",
-      "French/Spanish claimants underserved (no bilingual routing)",
+      "Call quality compliance doesn't scale: legacy platform drives manual QA reviews",
+      "Lost market opportunity: multi-lingual call routing/agent matching absent",
     ],
     solutions: [
       "100K+ monthly minutes served in English, Spanish, and French",
@@ -81,14 +81,13 @@ const customers = [
     size: "Spring, TX · 115 Users · 42-Month Term",
     accent: "#8FAD6B",
     problems: [
-      "No visibility into agent productivity (12+ years without reporting)",
-      "Revenue leaking through cracks (Excel-based CRM tracking)",
+      "Lost revenues: excel-based customer tracking",
+      "No agent KPI tracking: over a decade without reporting",
     ],
     solutions: [
-      "AI deflects top call drivers — staff focused on revenue-generating work",
-      "Underperformers identified automatically — targeted coaching lifts close rates",
-      "Managers see per-agent performance in real time",
-      "Automated CRM sync eliminates spreadsheet errors and data loss",
+      "Revenue enhanced: AI deflection drives revenue generation capacity",
+      "Improved agent management: visible performance KPIs and mandated coaching for underperformers",
+      "Customer data improved: spreadsheet errors and data loss eliminated through CRM automation",
     ],
     metrics: [
       { stat: "$5.2K", label: "MRR" },

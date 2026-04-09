@@ -12,6 +12,7 @@ import PlatformSlide from "./slides/PlatformSlide";
 import PlatformCopySlide from "./slides/PlatformCopySlide";
 import PlatformCopy2Slide from "./slides/PlatformCopy2Slide";
 import AiTandemSlide from "./slides/AiTandemSlide";
+import AiTandemCopySlide from "./slides/AiTandemCopySlide";
 import MarketSlide from "./slides/MarketSlide";
 import AgenticOpportunitySlide from "./slides/AgenticOpportunitySlide";
 import AiTailwindSlide from "./slides/AiTailwindSlide";
@@ -111,6 +112,33 @@ import SlideCashFlowTrendsQuarterlyDark from "./slides/SlideCashFlowTrendsQuarte
 import SlideTargetModelDark from "./slides/SlideTargetModelDark";
 import CustomerUseCasesDarkV2Slide from "./slides/CustomerUseCasesDarkV2Slide";
 import AIAgentsInActionV2Slide from "./slides/AIAgentsInActionV2Slide";
+import {
+  ProductBriefingSlide01,
+  ProductBriefingSlide02,
+  ProductBriefingSlide03,
+  ProductBriefingSlide04,
+  ProductBriefingSlide05,
+  ProductBriefingSlide06,
+  ProductBriefingSlide07,
+  ProductBriefingSlide08,
+  ProductBriefingSlide09,
+  ProductBriefingSlide10,
+  ProductBriefingSlide11,
+  ProductBriefingSlide12,
+  ProductBriefingSlide13,
+  ProductBriefingSlide14,
+  ProductBriefingSlide15,
+  ProductBriefingSlide16,
+  ProductBriefingSlide17,
+  ProductBriefingSlide18,
+  ProductBriefingSlide19,
+  ProductBriefingSlide20,
+  ProductBriefingSlide21,
+  ProductBriefingSlide22,
+  ProductBriefingSlide23,
+  ProductBriefingSlide24,
+  ProductBriefingSlide25,
+} from "./slides/productBriefing/ProductBriefingDeckSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -146,6 +174,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "agentic-opp-copy-5": { id: "agentic-opp-copy-5", label: "The Next Workforce is Agentic (defensive)", component: AgenticOpportunityCopy5Slide, theme: "dark" },
   "agentic-opp-3":     { id: "agentic-opp-3",      label: "AI Opportunity (defensive)", component: AgenticOpportunity3Slide, theme: "dark" },
   "ai-tandem":         { id: "ai-tandem",            label: "AI + Human",          component: AiTandemSlide,            theme: "dark" },
+  "ai-tandem-copy":    { id: "ai-tandem-copy",       label: "AI + Human (copy)",   component: AiTandemCopySlide,        theme: "dark" },
   "cx-market-sizing":  { id: "cx-market-sizing",     label: "CX Market Sizing",    component: CXMarketSizingSlide,      theme: "dark" },
   "labor-cost-savings":{ id: "labor-cost-savings",   label: "Labor Cost Savings",  component: LaborCostSavingsSlide,    theme: "dark" },
   "ai-tailwind":       { id: "ai-tailwind",          label: "AI Tailwind",         component: AiTailwindSlide,          theme: "dark" },
@@ -236,6 +265,31 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "target-model-dark": { id: "target-model-dark", label: "Target Model (Dark)", component: SlideTargetModelDark, theme: "dark" },
   "customer-use-cases-dark-v2": { id: "customer-use-cases-dark-v2", label: "Customer Use Cases (Dark v2 — Business Value)", component: CustomerUseCasesDarkV2Slide, theme: "dark" },
   "ai-agents-in-action-v2": { id: "ai-agents-in-action-v2", label: "AI Agents in Action (v2)", component: AIAgentsInActionV2Slide, theme: "dark" },
+  "product-briefing-01": { id: "product-briefing-01", label: "Product Briefing (1/25)", component: ProductBriefingSlide01, theme: "dark", isNew: true },
+  "product-briefing-02": { id: "product-briefing-02", label: "Product Briefing (2/25)", component: ProductBriefingSlide02, theme: "dark", isNew: true },
+  "product-briefing-03": { id: "product-briefing-03", label: "Product Briefing (3/25)", component: ProductBriefingSlide03, theme: "dark", isNew: true },
+  "product-briefing-04": { id: "product-briefing-04", label: "Product Briefing (4/25)", component: ProductBriefingSlide04, theme: "dark", isNew: true },
+  "product-briefing-05": { id: "product-briefing-05", label: "Product Briefing (5/25)", component: ProductBriefingSlide05, theme: "dark", isNew: true },
+  "product-briefing-06": { id: "product-briefing-06", label: "Product Briefing (6/25)", component: ProductBriefingSlide06, theme: "dark", isNew: true },
+  "product-briefing-07": { id: "product-briefing-07", label: "Product Briefing (7/25)", component: ProductBriefingSlide07, theme: "dark", isNew: true },
+  "product-briefing-08": { id: "product-briefing-08", label: "Product Briefing (8/25)", component: ProductBriefingSlide08, theme: "dark", isNew: true },
+  "product-briefing-09": { id: "product-briefing-09", label: "Product Briefing (9/25)", component: ProductBriefingSlide09, theme: "dark", isNew: true },
+  "product-briefing-10": { id: "product-briefing-10", label: "Product Briefing (10/25)", component: ProductBriefingSlide10, theme: "dark", isNew: true },
+  "product-briefing-11": { id: "product-briefing-11", label: "Product Briefing (11/25)", component: ProductBriefingSlide11, theme: "dark", isNew: true },
+  "product-briefing-12": { id: "product-briefing-12", label: "Product Briefing (12/25)", component: ProductBriefingSlide12, theme: "dark", isNew: true },
+  "product-briefing-13": { id: "product-briefing-13", label: "Product Briefing (13/25)", component: ProductBriefingSlide13, theme: "dark", isNew: true },
+  "product-briefing-14": { id: "product-briefing-14", label: "Product Briefing (14/25)", component: ProductBriefingSlide14, theme: "dark", isNew: true },
+  "product-briefing-15": { id: "product-briefing-15", label: "Product Briefing (15/25)", component: ProductBriefingSlide15, theme: "dark", isNew: true },
+  "product-briefing-16": { id: "product-briefing-16", label: "Product Briefing (16/25)", component: ProductBriefingSlide16, theme: "dark", isNew: true },
+  "product-briefing-17": { id: "product-briefing-17", label: "Product Briefing (17/25)", component: ProductBriefingSlide17, theme: "dark", isNew: true },
+  "product-briefing-18": { id: "product-briefing-18", label: "Product Briefing (18/25)", component: ProductBriefingSlide18, theme: "dark", isNew: true },
+  "product-briefing-19": { id: "product-briefing-19", label: "Product Briefing (19/25)", component: ProductBriefingSlide19, theme: "dark", isNew: true },
+  "product-briefing-20": { id: "product-briefing-20", label: "Product Briefing (20/25)", component: ProductBriefingSlide20, theme: "dark", isNew: true },
+  "product-briefing-21": { id: "product-briefing-21", label: "Product Briefing (21/25)", component: ProductBriefingSlide21, theme: "dark", isNew: true },
+  "product-briefing-22": { id: "product-briefing-22", label: "Product Briefing (22/25)", component: ProductBriefingSlide22, theme: "dark", isNew: true },
+  "product-briefing-23": { id: "product-briefing-23", label: "Product Briefing (23/25)", component: ProductBriefingSlide23, theme: "dark", isNew: true },
+  "product-briefing-24": { id: "product-briefing-24", label: "Product Briefing (24/25)", component: ProductBriefingSlide24, theme: "dark", isNew: true },
+  "product-briefing-25": { id: "product-briefing-25", label: "Product Briefing (25/25)", component: ProductBriefingSlide25, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -255,6 +309,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "agentic-opp",
   "agentic-opp-copy",
   "ai-tandem",
+  "ai-tandem-copy",
   "ai-tailwind-copy",
   "ai-tailwind",
   "cx-market-sizing",
