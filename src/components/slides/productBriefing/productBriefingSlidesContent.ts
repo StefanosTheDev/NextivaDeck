@@ -10,7 +10,7 @@ export type ProductBriefingSlideSpec = {
   metrics?: { label: string; value: string }[];
   /** Dense roadmap / delivery text (scrollable in UI) */
   denseBlocks?: { heading: string; lines: string[] }[];
-  variant?: "center" | "nda";
+  variant?: "center" | "nda" | "cxpaas-architecture";
   /** Raster from PDF (see scripts/extract_pdf_page.py) */
   referenceImage?: { src: string; alt: string };
 };
@@ -115,12 +115,8 @@ export const PRODUCT_BRIEFING_SPECS: ProductBriefingSlideSpec[] = [
   },
   {
     eyebrow: "CXPaaS",
-    title: "Nextiva CXPaaS architecture",
-    referenceImage: {
-      src: "/product-briefing/cxpaas-architecture.png",
-      alt:
-        "Nextiva CXPaaS architecture: customer and business data with governance, cognitive and assist models, analytics, customer journal, programmable and agentic journeys, Nextiva apps and embedded experiences, NEXT Studio designers, data and intelligence platform, omnichannel experiences, and BYO models analytics flows agents.",
-    },
+    title: "Nextiva CXPaaS Architecture",
+    variant: "cxpaas-architecture",
   },
   {
     eyebrow: "Trustworthy",

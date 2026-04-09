@@ -2,12 +2,17 @@
 
 import { motion } from "framer-motion";
 import SlideFooter from "../../SlideFooter";
+import CxpaasArchitectureBody from "./CxpaasArchitectureBody";
 import { PRODUCT_BRIEFING_SPECS, type ProductBriefingSlideSpec } from "./productBriefingSlidesContent";
 
 const BG =
   "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)";
 
 function BriefingBody({ spec }: { spec: ProductBriefingSlideSpec }) {
+  if (spec.variant === "cxpaas-architecture") {
+    return <CxpaasArchitectureBody />;
+  }
+
   /** PDF raster — must win over plain NDA/center text layouts */
   if (spec.referenceImage) {
     return (
@@ -245,7 +250,12 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
         style={{
-          padding: spec.variant === "nda" ? "72px 100px 16px" : "56px 100px 12px",
+          padding:
+            spec.variant === "nda"
+              ? "72px 100px 16px"
+              : spec.variant === "cxpaas-architecture"
+                ? "32px 56px 4px"
+                : "56px 100px 12px",
           flexShrink: 0,
           textAlign: spec.variant === "nda" ? "center" : "left",
         }}
@@ -261,7 +271,22 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
           </p>
         )}
         {spec.title && spec.variant !== "nda" && (
-          <h1 className="font-heading" style={{ fontSize: spec.pillars && spec.pillars.length <= 4 ? 44 : 38, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15, maxWidth: 1100 }}>
+          <h1
+            className="font-heading"
+            style={{
+              fontSize:
+                spec.variant === "cxpaas-architecture"
+                  ? 38
+                  : spec.pillars && spec.pillars.length <= 4
+                    ? 44
+                    : 38,
+              fontWeight: 700,
+              color: "#FFFFFF",
+              margin: 0,
+              lineHeight: 1.15,
+              maxWidth: 1100,
+            }}
+          >
             {spec.title}
           </h1>
         )}
