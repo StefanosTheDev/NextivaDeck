@@ -253,6 +253,27 @@
     "expansion-retention",
     "nrr-churn",
     "target-model-dark",
-    "closing"
+    "closing",
+    "product-briefing-01",
+    "product-briefing-02",
+    "product-briefing-03",
+    "product-briefing-04",
+    "product-briefing-05",
+    "product-briefing-06",
+    "product-briefing-08",
+    "product-briefing-10",
+    "product-briefing-11",
+    "product-briefing-12",
+    "product-briefing-13",
+    "product-briefing-14",
+    "product-briefing-15",
+    "product-briefing-16",
+    "product-briefing-17",
+    "product-briefing-24",
+    "product-briefing-25",
+    "cx-portfolio-data",
+    "unified-data-model-v2",
+    "investment-thesis",
+    "unified-data-model"
   ]
 }
