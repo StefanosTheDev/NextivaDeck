@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SlideFooter from "../../SlideFooter";
 import CxpaasArchitectureBody from "./CxpaasArchitectureBody";
+import RoadmapHumanAiBody from "./RoadmapHumanAiBody";
 import UnifiedCxmPlatformBody from "./UnifiedCxmPlatformBody";
 import { PRODUCT_BRIEFING_SPECS, type ProductBriefingSlideSpec } from "./productBriefingSlidesContent";
 
@@ -12,6 +13,9 @@ const BG =
 function BriefingBody({ spec }: { spec: ProductBriefingSlideSpec }) {
   if (spec.variant === "unified-cxm-platform") {
     return <UnifiedCxmPlatformBody />;
+  }
+  if (spec.variant === "roadmap-human-ai") {
+    return <RoadmapHumanAiBody />;
   }
   if (spec.variant === "cxpaas-architecture") {
     return <CxpaasArchitectureBody />;
@@ -257,7 +261,9 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
           padding:
             spec.variant === "nda"
               ? "72px 100px 16px"
-              : spec.variant === "cxpaas-architecture" || spec.variant === "unified-cxm-platform"
+              : spec.variant === "cxpaas-architecture" ||
+                  spec.variant === "unified-cxm-platform" ||
+                  spec.variant === "roadmap-human-ai"
                 ? "32px 56px 4px"
                 : "56px 100px 12px",
           flexShrink: 0,
@@ -265,7 +271,16 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
         }}
       >
         {spec.eyebrow && spec.variant !== "nda" && (
-          <p style={{ fontWeight: 700, fontSize: 14, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 10px" }}>
+          <p
+            style={{
+              fontWeight: 700,
+              fontSize: 14,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#CCC7C3",
+              margin: spec.variant === "roadmap-human-ai" ? "0 0 6px" : "0 0 10px",
+            }}
+          >
             {spec.eyebrow}
           </p>
         )}
@@ -281,11 +296,13 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
               fontSize:
                 spec.variant === "unified-cxm-platform"
                   ? 34
-                  : spec.variant === "cxpaas-architecture"
-                    ? 38
-                    : spec.pillars && spec.pillars.length <= 4
-                      ? 44
-                      : 38,
+                  : spec.variant === "roadmap-human-ai"
+                    ? 36
+                    : spec.variant === "cxpaas-architecture"
+                      ? 38
+                      : spec.pillars && spec.pillars.length <= 4
+                        ? 44
+                        : 38,
               fontWeight: 700,
               color: "#FFFFFF",
               margin: 0,
@@ -299,11 +316,12 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
         {spec.subtitle && spec.variant !== "nda" && (
           <p
             style={{
-              fontSize: spec.variant === "unified-cxm-platform" ? 17 : 20,
+              fontSize: spec.variant === "unified-cxm-platform" ? 17 : spec.variant === "roadmap-human-ai" ? 16 : 20,
               color: "rgba(255,255,255,0.5)",
-              margin: "12px 0 0",
+              margin: spec.variant === "roadmap-human-ai" ? "8px 0 0" : "12px 0 0",
               lineHeight: 1.4,
-              maxWidth: spec.variant === "unified-cxm-platform" ? 1100 : 920,
+              maxWidth:
+                spec.variant === "unified-cxm-platform" || spec.variant === "roadmap-human-ai" ? 1100 : 920,
             }}
           >
             {spec.subtitle}

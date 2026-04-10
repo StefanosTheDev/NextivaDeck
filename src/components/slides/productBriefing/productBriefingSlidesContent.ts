@@ -10,7 +10,7 @@ export type ProductBriefingSlideSpec = {
   metrics?: { label: string; value: string }[];
   /** Dense roadmap / delivery text (scrollable in UI) */
   denseBlocks?: { heading: string; lines: string[] }[];
-  variant?: "center" | "nda" | "cxpaas-architecture" | "unified-cxm-platform";
+  variant?: "center" | "nda" | "cxpaas-architecture" | "unified-cxm-platform" | "roadmap-human-ai";
   /** Raster from PDF (see scripts/extract_pdf_page.py) */
   referenceImage?: { src: string; alt: string };
 };
@@ -205,14 +205,10 @@ export const PRODUCT_BRIEFING_SPECS: ProductBriefingSlideSpec[] = [
       "Empower businesses to transform every customer interaction for the best possible outcome. Productive Relationships, for life.",
   },
   {
+    variant: "roadmap-human-ai",
     eyebrow: "Human + AI roadmap",
     title: "the NEXT Agentic CX platform",
     subtitle: "1Q / 2Q / 2H+ 2026 themes",
-    referenceImage: {
-      src: "/product-briefing/roadmap-human-ai-timeline.png",
-      alt:
-        "Human plus AI roadmap timeline for the NEXT Agentic CX platform across 2026: NextIQ, NEXT Studio, AI employees, and vertical capabilities — PDF page 17.",
-    },
   },
   {
     eyebrow: "Phased delivery",
