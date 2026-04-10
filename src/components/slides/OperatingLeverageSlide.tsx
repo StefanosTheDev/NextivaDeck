@@ -31,7 +31,7 @@ const topCards = [
 
 export default function OperatingLeverageSlide({ slideNumber = 29 }: { slideNumber?: number }) {
   return (
-    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", display: "flex", flexDirection: "column", justifyContent: "space-between" }} data-speaker-notes="Revenue per head at $255K today, growing to $553K by FY30 — a 2.2× improvement driven by AI-powered productivity. Revenue per R&D head shows even stronger leverage, from $921K to $2.5M.">
+    <div className="slide" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)", display: "flex", flexDirection: "column", justifyContent: "space-between" }} data-speaker-notes="Revenue per head at $255K today, growing to $563K by FY30 — a 2.2× improvement driven by AI-powered productivity. Revenue per R&D head shows even stronger leverage, from $921K to $2.6M.">
       <motion.header
         initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}

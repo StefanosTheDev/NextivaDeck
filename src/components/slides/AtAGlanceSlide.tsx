@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
 const metrics = [
-  { stat: "$351M", label: "FY26 Revenue", desc: "Full year recognized revenue" },
-  { stat: "70%", label: "Q4 FY26 Gross Margin", desc: "Up ~300bps y/y" },
-  { stat: "$42M", label: "Adj EBITDA", desc: "FY26 projected" },
-  { stat: "$98M", label: "Pro forma Adj EBITDA", desc: "FY27 projected" },
+  { stat: "$350M", label: "FY26 Revenue", desc: "Full year recognized revenue" },
+  { stat: "73%", label: "Q4 FY26 Gross Margin", desc: "Up ~300bps y/y" },
+  { stat: "$47M", label: "Adj EBITDA", desc: "FY26 projected" },
+  { stat: "$94M", label: "Pro forma Adj EBITDA", desc: "FY27 projected" },
   { stat: "93%", label: "Net Revenue Retention", desc: "FY26 Q3" },
   { stat: "92K+", label: "Customers", desc: "All US, all industries" },
-  { stat: "$14M", label: "FY26 FCF", desc: "projected" },
+  { stat: "$11M", label: "FY26 FCF", desc: "projected" },
   { stat: "$75M", label: "Pro forma FY27 FCF", desc: "projected" },
 ];
 

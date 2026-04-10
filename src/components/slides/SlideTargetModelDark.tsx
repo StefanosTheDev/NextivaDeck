@@ -19,13 +19,13 @@ const F = {
 
 /* ── Table data ── */
 const rows: { metric: string; fy26: string; fy27: string; fy30: string; bold?: boolean }[] = [
-  { metric: "Revenue",           fy26: "$351M", fy27: "$363M", fy30: "$454–$472M" },
-  { metric: "Gross Margin",      fy26: "70%",   fy27: "74%",   fy30: "75–79%" },
+  { metric: "Revenue",           fy26: "$350M", fy27: "$363M", fy30: "$454–$472M" },
+  { metric: "Gross Margin",      fy26: "71%",   fy27: "74%",   fy30: "75–79%" },
   { metric: "S&M",               fy26: "27%",   fy27: "23%",   fy30: "14–18%" },
   { metric: "R&D",               fy26: "11%",   fy27: "9%",    fy30: "8–12%" },
-  { metric: "G&A",               fy26: "14%",   fy27: "10%",   fy30: "5–9%" },
-  { metric: "Adj EBITDA Margin", fy26: "12%",   fy27: "27%",   fy30: "38–42%",       bold: true },
-  { metric: "Adj EBITDA",        fy26: "$42M",  fy27: "$98M",  fy30: "$181–$189M",   bold: true },
+  { metric: "G&A",               fy26: "14%",   fy27: "11%",   fy30: "5–9%" },
+  { metric: "Adj EBITDA Margin", fy26: "13%",   fy27: "26%",   fy30: "38–42%",       bold: true },
+  { metric: "Adj EBITDA",        fy26: "$47M",  fy27: "$94M",  fy30: "$181–$189M",   bold: true },
 ];
 
 /* ── Slide component ── */

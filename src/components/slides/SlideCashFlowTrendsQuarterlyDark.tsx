@@ -46,11 +46,11 @@ const QUARTERS = [
   "Q1'26","Q2'26","Q3'26","Q4'26",
   "Q1'27","Q2'27","Q3'27","Q4'27",
 ];
-const ADJ_EBITDA =     [1, -1, 1, 0, 4, 10, 11, 16, 23, 25, 25, 26];
-const EBITDA_MARGIN =  [1, -1, 1, -1, 5, 11, 12, 22, 25, 26, 27, 28];
-const FCF =            [-3, -3, -1, 3, 1, -2, 4, 11, 15, 23, 23, 19];
+const ADJ_EBITDA =     [1, -1, 1, 0, 4, 10, 14, 18, 22, 24, 24, 25];
+const EBITDA_MARGIN =  [1, -1, 1, -1, 5, 11, 16, 21, 24, 26, 26, 27];
+const FCF =            [-3, -3, -1, 3, 1, -2, 2, 9, 14, 22, 22, 18];
 const FCF_CONVERSION: (number | null)[] = [null, null, null, null, null, 20, 45, 47, 64, 72, 80, 88];
-const CASH =           [24, 21, 20, 29, 30, 27, 31, 41, 55, 77, 99, 117];
+const CASH =           [24, 21, 20, 29, 30, 27, 29, 37, 51, 71, 92, 109];
 
 const ebitdaData = QUARTERS.map((name, i) => ({
   name,
@@ -262,7 +262,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
         display: "flex", flexDirection: "column",
         fontFamily: F.body, overflow: "hidden",
       }}
-      data-speaker-notes="Quarterly view: Adj. EBITDA ramps from breakeven in FY25 to $26M in Q4'27 (annualized $104M at 28% margin). FCF turns positive in Q2'26 and reaches $23M in Q4'27 (annualized $92M). Cash & equivalents grow from $24M to $113M by Q4'27."
+      data-speaker-notes="Quarterly view: Adj. EBITDA ramps from breakeven in FY25 to $25M in Q4'27 (annualized $100M at 26% margin). FCF turns positive in Q2'26 and reaches $18M in Q4'27 (annualized $72M). Cash & equivalents grow from $24M to $109M by Q4'27."
     >
       {/* ── Header ── */}
       <header style={{ padding: "40px 100px 0", textAlign: "center", flexShrink: 0 }}>
@@ -317,8 +317,8 @@ export default function SlideCashFlowTrendsQuarterlyDark({
           card={
             <MetricCard
               title="FY27 Q4 Exit (Annualized)"
-              value="$104M"
-              desc="28% Adj. EBITDA margin at Q4'27 exit rate. Margins expand from ~0% to 28% via cost discipline and AI-driven leverage."
+              value="$100M"
+              desc="26% Adj. EBITDA margin at Q4'27 exit rate. Margins expand from ~0% to 26% via cost discipline and AI-driven leverage."
             />
           }
         />
@@ -355,7 +355,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
             <MetricCard
               title="FY27 Q4 Exit FCF Conversion"
               value="88%"
-              desc="Low capex and working-capital needs convert nearly all Adj. EBITDA to cash. Q4'27 annualized FCF of $76M."
+              desc="Low capex and working-capital needs convert nearly all Adj. EBITDA to cash. Q4'27 annualized FCF of $72M."
             />
           }
         />
@@ -383,7 +383,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
           card={
             <MetricCard
               title="Cash at Q4'27"
-              value="$117M"
+              value="$109M"
               desc="Cash builds steadily as FCF inflects, providing liquidity for debt service and investment."
             />
           }

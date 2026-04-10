@@ -9,7 +9,7 @@ const points = [
   {
     icon: DollarSign,
     stat: "Scaled & Efficient Operating Model",
-    headline: "$351M Revenue · 70%+ gross margin · Exit $70M+ Adj EBITDA FY26",
+    headline: "$350M Revenue · 70%+ gross margin · Exit $70M+ Adj EBITDA FY26",
   },
   {
     icon: Brain,

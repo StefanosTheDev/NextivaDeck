@@ -50,11 +50,11 @@ export const OPEX_PCT = {
 
 export const HEADCOUNT = {
   total:      { FY25: 1356, FY26: 1001, FY27: 967, FY28: 925, FY29: 875, FY30: 829 },
-  revPerHead: { FY25: 255, FY26: 343, FY27: 379, FY28: 426, FY29: 486, FY30: 553 },
+  revPerHead: { FY25: 255, FY26: 343, FY27: 379, FY28: 426, FY29: 486, FY30: 563 },
 } as const;
 
 export const RD_REV_PER_HEAD = {
-  FY25: 921, FY26: 1172, FY27: 1413, FY28: 1714, FY29: 2084, FY30: 2537,
+  FY25: 921, FY26: 1172, FY27: 1413, FY28: 1714, FY29: 2084, FY30: 2600,
 } as const;
 
 export const RD_HEADCOUNT = {

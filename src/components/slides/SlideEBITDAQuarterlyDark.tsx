@@ -37,7 +37,7 @@ const quarters = [
   "Q1'26", "Q2'26", "Q3'26", "Q4'26",
   "Q1'27", "Q2'27", "Q3'27", "Q4'27",
 ];
-const ebitdaValues = [1, -1, 1, 0, 4, 10, 11, 16, 23, 25, 25, 26];
+const ebitdaValues = [1, -1, 1, 0, 4, 10, 14, 18, 22, 24, 24, 25];
 
 const data = quarters.map((name, i) => ({
   name,
@@ -164,7 +164,7 @@ function ForecastDivider(props: Record<string, unknown>) {
 const cards = [
   {
     label: "ADJ EBITDA (FY27)",
-    value: "$98M",
+    value: "$94M",
     detail: "Up from breakeven in FY25",
     highlighted: false,
   },
@@ -176,8 +176,8 @@ const cards = [
   },
   {
     label: "TARGET EBITDA (FY27 Q4 ANNUALIZED)",
-    value: "$104M",
-    detail: "28% Adjusted EBITDA margin",
+    value: "$100M",
+    detail: "26% Adjusted EBITDA margin",
     highlighted: false,
   },
 ];
@@ -198,7 +198,7 @@ export default function SlideEBITDAQuarterlyDark({
         fontFamily: F.body,
         overflow: "hidden",
       }}
-      data-speaker-notes="Adj. EBITDA ramps from breakeven in FY25 to 28% margin by FY27 Q4. FY27 Q4 annualized = $104M at 28% margin. FY26 exit run rate of $75–$80M provides near-term underwriting comfort."
+      data-speaker-notes="Adj. EBITDA ramps from breakeven in FY25 to 26% margin by FY27 Q4. FY27 Q4 annualized = $100M at 26% margin. FY26 exit run rate of $75–$80M provides near-term underwriting comfort."
     >
       {/* ── Header ── */}
       <header style={{ padding: "40px 100px 0", textAlign: "center", flexShrink: 0 }}>
@@ -225,7 +225,7 @@ export default function SlideEBITDAQuarterlyDark({
             lineHeight: 1.15,
           }}
         >
-          Adj. EBITDA ramps from breakeven to 28%.
+          Adj. EBITDA ramps from breakeven to 26%.
         </h1>
         <p
           style={{
@@ -237,7 +237,7 @@ export default function SlideEBITDAQuarterlyDark({
             whiteSpace: "nowrap",
           }}
         >
-          Q4&apos;27 exit rate of 28% margin demonstrates the trajectory.
+          Q4&apos;27 exit rate of 26% margin demonstrates the trajectory.
         </p>
       </header>
 

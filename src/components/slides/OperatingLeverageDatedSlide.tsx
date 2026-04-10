@@ -40,7 +40,7 @@ export default function OperatingLeverageDatedSlide({ slideNumber = 29 }: { slid
         flexDirection: "column",
         justifyContent: "space-between",
       }}
-      data-speaker-notes="Revenue per head at $255K today, growing to $553K by FY30 — a 2.2× improvement driven by AI-powered productivity. Revenue per R&D head shows even stronger leverage, from $921K to $2.5M."
+      data-speaker-notes="Revenue per head at $255K today, growing to $563K by FY30 — a 2.2× improvement driven by AI-powered productivity. Revenue per R&D head shows even stronger leverage, from $921K to $2.6M."
     >
       <motion.header
         initial={{ opacity: 0, y: -10 }}
