@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import { ROADMAP_HUMAN_AI_ROWS, ROADMAP_QUARTER_LABELS, type RoadmapBullet } from "./roadmapHumanAiContent";
 
 const TILE_BG = "rgba(255,255,255,0.055)";
@@ -9,7 +10,13 @@ const RAIL_BG = "rgba(0,0,0,0.32)";
 const MUTED = "rgba(255,255,255,0.84)";
 const RAIL_LABEL = "#7EB3E8";
 
-const GRID_COLS = "118px repeat(3, minmax(0, 1fr))";
+/** Matches ProductBriefingDeckSlide roadmap title: h1.font-heading 36px / 700 — prefix ends before E in NEXT */
+const TITLE_PREFIX = "the N";
+
+/** Narrower rail + capped quarter columns (was 118px + 1fr each). */
+const GRID_COLS = "96px repeat(3, minmax(0, 188px))";
+
+const HEADER_PAD_X = 56;
 
 const BULLET_FS = 9.75;
 const BULLET_LH = 1.2;
@@ -75,7 +82,29 @@ function QuarterCell({ items }: { items: RoadmapBullet[] }) {
   );
 }
 
+const titlePrefixMeasureStyle: CSSProperties = {
+  position: "absolute",
+  left: 0,
+  top: 0,
+  visibility: "hidden",
+  pointerEvents: "none",
+  whiteSpace: "nowrap",
+  fontSize: 36,
+  fontWeight: 700,
+  letterSpacing: "-0.02em",
+};
+
 export default function RoadmapHumanAiBody() {
+  const measureRef = useRef<HTMLSpanElement>(null);
+  const [prefixToE_px, setPrefixToE_px] = useState(108);
+
+  useLayoutEffect(() => {
+    const el = measureRef.current;
+    if (!el) return;
+    const w = el.getBoundingClientRect().width;
+    if (w > 0) setPrefixToE_px(w);
+  }, []);
+
   return (
     <motion.main
       initial={{ opacity: 0, y: 8 }}
@@ -85,12 +114,33 @@ export default function RoadmapHumanAiBody() {
         flex: 1,
         minHeight: 0,
         overflow: "hidden",
-        padding: "0 24px 2px",
+        position: "relative",
+        padding: `0 ${HEADER_PAD_X}px 2px`,
         boxSizing: "border-box",
         display: "flex",
         flexDirection: "column",
       }}
     >
+      <span
+        ref={measureRef}
+        className="font-heading"
+        aria-hidden
+        style={titlePrefixMeasureStyle}
+      >
+        {TITLE_PREFIX}
+      </span>
+
+      <div
+        style={{
+          marginLeft: prefixToE_px,
+          width: "fit-content",
+          maxWidth: "100%",
+          display: "flex",
+          flexDirection: "column",
+          minHeight: 0,
+          flex: 1,
+        }}
+      >
       <div
         style={{
           display: "grid",
@@ -179,6 +229,7 @@ export default function RoadmapHumanAiBody() {
             <QuarterCell items={row.q3} />
           </div>
         ))}
+      </div>
       </div>
     </motion.main>
   );
