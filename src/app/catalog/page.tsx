@@ -19,7 +19,7 @@ import {
   rectSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Save, Check, RotateCcw, ArrowLeft, Download, Plus, X, Eye, ArrowRight, FileDown, Image, FileImage } from "lucide-react";
+import { Save, Check, RotateCcw, ArrowLeft, Download, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
 
 import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
 import SortableSlideCard from "./SortableSlideCard";
@@ -415,13 +415,6 @@ export default function CatalogPage() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <button
-            onClick={() => setExportFormat("pdf")}
-            className="catalog-btn-outline"
-          >
-            <Download size={15} style={{ flexShrink: 0 }} />
-            Generate PDF
-          </button>
-          <button
             onClick={() => setExportFormat("pptx")}
             className="catalog-btn-outline"
           >
@@ -431,18 +424,18 @@ export default function CatalogPage() {
           <button
             onClick={() => setExportFormat("png")}
             className="catalog-btn-outline"
-            title="Hi-Res PDF (3434×1844) - matches boss's screenshot specs exactly"
+            title="Hi-Res PDF with JPEG images (98% quality, fast rendering)"
           >
-            <Image size={15} style={{ flexShrink: 0 }} />
-            Hi-Res PDF
+            <Download size={15} style={{ flexShrink: 0 }} />
+            Generate PDF (JPEG)
           </button>
           <button
             onClick={() => setExportFormat("png-zip")}
             className="catalog-btn-outline"
-            title="Hi-Res PDF with true PNG images (lossless) - matches Tomas's screenshots exactly"
+            title="Hi-Res PDF with lossless PNG images (pixel-perfect)"
           >
-            <FileImage size={15} style={{ flexShrink: 0 }} />
-            PNG PDF
+            <Download size={15} style={{ flexShrink: 0 }} />
+            Generate PDF (PNG)
           </button>
           {hasChanges && (
             <button onClick={() => { if (window.confirm("Undo all unsaved changes? This will revert slide order and visibility back to the last saved state.")) resetAll(); }} className="catalog-btn-outline">

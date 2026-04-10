@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { X, Check, Download, FileDown, Loader2, CheckSquare, Square, Image, FileImage } from "lucide-react";
+import { useState, useCallback, useRef } from "react";
+import { X, Check, Download, FileDown, Loader2, CheckSquare, Square, StopCircle } from "lucide-react";
 import type { SlideDef } from "@/components/slideRegistry";
 
 type ExportFormat = "pdf" | "pptx" | "png" | "pdf-hires" | "png-zip";
@@ -16,6 +16,7 @@ type GenerationState =
   | { status: "picking" }
   | { status: "generating"; current: number; total: number; slideLabel: string }
   | { status: "done" }
+  | { status: "cancelled"; current: number; total: number }
   | { status: "error"; message: string };
 
 export default function ExportPickerModal({ format, slides, onClose }: Props) {
@@ -24,6 +25,17 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
     () => new Set(publishedSlides.map((s) => s.id))
   );
   const [state, setState] = useState<GenerationState>({ status: "picking" });
+  const cancelRef = useRef(false);
+
+  const handleCancel = useCallback(() => {
+    cancelRef.current = true;
+    setState((prev) => {
+      if (prev.status === "generating") {
+        return { status: "cancelled", current: prev.current, total: prev.total };
+      }
+      return { status: "cancelled", current: 0, total: 1 };
+    });
+  }, []);
 
   const toggle = useCallback((id: string) => {
     setSelected((prev) => {
@@ -48,35 +60,39 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
     const slideIds = selectedSlides.map((s) => s.id);
     if (slideIds.length === 0) return;
 
+    // Reset cancel flag
+    cancelRef.current = false;
+
     setState({
       status: "generating",
       current: 0,
       total: slideIds.length,
-      slideLabel: "Rendering slides...",
+      slideLabel: "Preparing...",
     });
 
     try {
-      // PNG-based Hi-Res PDF - server-side (true PNG, lossless, Tomas's exact specs)
-      // This takes 3-5 minutes but produces exact PNG quality
-      if (format === "png-zip") {
-        const params = new URLSearchParams({ slides: slideIds.join(",") });
-        const response = await fetch(`/api/generate-pdf-hires?${params}`);
-
-        if (!response.ok) {
-          const err = await response.json().catch(() => ({ error: "Generation failed" }));
-          throw new Error(err.details || err.error || "Generation failed");
+      // Progress callback with cancellation check
+      const createProgressHandler = () => (p: { phase: string; current: number; total: number; slideLabel?: string }) => {
+        // Check for cancellation
+        if (cancelRef.current) {
+          throw new Error("CANCELLED");
         }
+        if (p.phase === "rendering" || p.phase === "assembling") {
+          setState({
+            status: "generating",
+            current: p.current,
+            total: p.total,
+            slideLabel: p.slideLabel || "Processing...",
+          });
+        }
+      };
 
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `Nextiva-Deck-HiRes-PNG_${new Date().toISOString().slice(0, 10).replace(/-/g, "")}.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-
+      // PNG-based Hi-Res PDF - client-side with pdf-lib (true PNG, lossless, Tomas's exact specs)
+      // Uses same iframe/snapdom approach as Hi-Res JPEG but with PNG format
+      if (format === "png-zip") {
+        const { generatePngPdfClient } = await import("@/lib/clientExport");
+        await generatePngPdfClient(slideIds, createProgressHandler());
+        if (cancelRef.current) return; // Don't set done if cancelled
         setState({ status: "done" });
         return;
       }
@@ -84,28 +100,27 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
       // PNG and PDF-HiRes use client-side generation (boss's exact specs, JPEG internally - faster)
       if (format === "png" || format === "pdf-hires") {
         const { generatePngZipClient, generatePdfBossSpecClient } = await import("@/lib/clientExport");
-        const onProgress = (p: { phase: string; current: number; total: number; slideLabel?: string }) => {
-          if (p.phase === "rendering" || p.phase === "assembling") {
-            setState({
-              status: "generating",
-              current: p.current,
-              total: p.total,
-              slideLabel: p.slideLabel || "Processing...",
-            });
-          }
-        };
-        
         if (format === "png") {
-          await generatePngZipClient(slideIds, onProgress);
+          await generatePngZipClient(slideIds, createProgressHandler());
         } else {
-          await generatePdfBossSpecClient(slideIds, onProgress);
+          await generatePdfBossSpecClient(slideIds, createProgressHandler());
         }
+        if (cancelRef.current) return; // Don't set done if cancelled
         setState({ status: "done" });
         return;
       }
 
-      // Standard PDF/PPTX use server-side generation
-      const endpoint = format === "pdf" ? "/api/generate-pdf" : "/api/generate-pptx";
+      // PPTX uses client-side hi-res generation (same quality as PNG PDF)
+      if (format === "pptx") {
+        const { generatePptxHiResClient } = await import("@/lib/clientExport");
+        await generatePptxHiResClient(slideIds, createProgressHandler());
+        if (cancelRef.current) return; // Don't set done if cancelled
+        setState({ status: "done" });
+        return;
+      }
+
+      // Standard PDF uses server-side generation
+      const endpoint = "/api/generate-pdf";
       const params = new URLSearchParams({ slides: slideIds.join(",") });
       const response = await fetch(`${endpoint}?${params}`);
 
@@ -115,9 +130,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
       }
 
       const blob = await response.blob();
-      const filename = format === "pdf"
-        ? "Nextiva-Investor-Deck-2026.pdf"
-        : "Nextiva-Investor-Deck-2026.pptx";
+      const filename = "Nextiva-Investor-Deck-2026.pdf";
 
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -130,6 +143,10 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
 
       setState({ status: "done" });
     } catch (err) {
+      // Don't show error if user cancelled
+      if (cancelRef.current || (err instanceof Error && err.message === "CANCELLED")) {
+        return;
+      }
       setState({
         status: "error",
         message: err instanceof Error ? err.message : "Generation failed",
@@ -170,11 +187,10 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
         }}>
           <div>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: "#fff", margin: 0 }}>
-              {format === "pdf" ? "Generate PDF (Standard)" : 
-               format === "pptx" ? "Generate PowerPoint" :
-               format === "png-zip" ? "Generate Hi-Res PDF (PNG, Lossless)" :
-               format === "png" ? "Generate Hi-Res PDF (3434×1844)" :
-               "Generate Hi-Res PDF (3434×1844)"}
+              {format === "pptx" ? "Generate PowerPoint (Hi-Res)" :
+               format === "png-zip" ? "Generate PDF (PNG)" :
+               format === "png" ? "Generate PDF (JPEG)" :
+               "Generate PDF"}
             </h2>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>
               {state.status === "picking"
@@ -183,10 +199,12 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
                   ? `Rendering ${state.total} slides...`
                   : state.status === "done"
                     ? "Download complete!"
-                    : "Generation failed"}
+                    : state.status === "cancelled"
+                      ? "Generation cancelled"
+                      : "Generation failed"}
             </p>
           </div>
-          {!isGenerating && (
+          {!isGenerating && state.status !== "cancelled" && (
             <button
               onClick={onClose}
               style={{ background: "none", border: "none", color: "rgba(255,255,255,0.4)", cursor: "pointer", padding: 4 }}
@@ -196,8 +214,28 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
           )}
         </div>
 
+        {/* Note for PDF formats */}
+        {(format === "png" || format === "png-zip") && state.status === "picking" && (
+          <div style={{
+            padding: "12px 24px",
+            background: "rgba(40,96,178,0.08)",
+            borderBottom: "1px solid rgba(255,255,255,0.05)",
+          }}>
+            <p style={{ 
+              fontSize: 12, 
+              color: "rgba(255,255,255,0.5)", 
+              margin: 0,
+              lineHeight: 1.5,
+            }}>
+              <span style={{ color: "#5b9cf5", fontWeight: 600 }}>Note:</span> Both PNG and JPEG options produce excellent results at 3434×1844 resolution. 
+              PNG is lossless (pixel-perfect), JPEG is 98% quality (faster PDF rendering). 
+              Both have been battle-tested. — Stefanos
+            </p>
+          </div>
+        )}
+
         {/* Progress bar */}
-        {(state.status === "generating" || state.status === "done") && (
+        {(state.status === "generating" || state.status === "done" || state.status === "cancelled") && (
           <div style={{ padding: "12px 24px 0" }}>
             <div style={{
               height: 6, borderRadius: 3,
@@ -206,20 +244,13 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
             }}>
               <div style={{
                 height: "100%", borderRadius: 3,
-                background: state.status === "done" ? "#059669" : "#2860B2",
-                width: state.status === "done" ? "100%" : "30%",
-                transition: state.status === "done" ? "width 0.3s ease-out, background 0.3s" : "none",
-                animation: state.status === "generating" ? "progressPulse 1.5s ease-in-out infinite" : "none",
+                background: state.status === "done" ? "#059669" : state.status === "cancelled" ? "#ef4444" : "#2860B2",
+                width: state.status === "done" ? "100%" : 
+                       state.status === "generating" ? `${Math.max(2, (state.current / state.total) * 100)}%` :
+                       `${Math.max(2, (state.current / state.total) * 100)}%`,
+                transition: "width 0.3s ease-out, background 0.3s",
               }} />
             </div>
-            {state.status === "generating" && (
-              <p style={{
-                fontSize: 12, color: "rgba(255,255,255,0.4)",
-                margin: "8px 0 0", textAlign: "center",
-              }}>
-                {state.slideLabel}
-              </p>
-            )}
           </div>
         )}
 
@@ -329,14 +360,40 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
             padding: "40px 24px",
           }}>
             <Loader2 size={32} color="#5b9cf5" style={{ animation: "spin 1s linear infinite" }} />
-            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, fontWeight: 500, margin: 0 }}>
-              {format === "png-zip" ? `Rendering ${state.total} slides as PNG...` : `Capturing ${state.total} slides...`}
+            <p style={{ color: "#5b9cf5", fontSize: 18, fontWeight: 600, margin: 0 }}>
+              Slide {state.current} of {state.total}
+            </p>
+            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 14, fontWeight: 500, margin: 0 }}>
+              {state.slideLabel}
             </p>
             <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, margin: 0, textAlign: "center", lineHeight: 1.5 }}>
-              {format === "png-zip" 
-                ? <>Server is capturing lossless PNGs and building PDF.<br />This takes 3-5 minutes for {state.total} slides.</>
-                : <>Each slide is rendered pixel-perfect by Chrome.<br />This may take a minute.</>
+              {format === "png-zip" || format === "pptx"
+                ? <>Capturing lossless PNGs and building {format === "pptx" ? "PPTX" : "PDF"}.</>
+                : <>Each slide is rendered pixel-perfect.</>
               }
+            </p>
+          </div>
+        )}
+
+        {/* Cancelled view */}
+        {state.status === "cancelled" && (
+          <div style={{
+            flex: 1, display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center", gap: 12,
+            padding: "40px 24px",
+          }}>
+            <div style={{
+              width: 48, height: 48, borderRadius: 12,
+              background: "rgba(239,68,68,0.15)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+            }}>
+              <StopCircle size={24} color="#f87171" />
+            </div>
+            <p style={{ color: "#f87171", fontSize: 16, fontWeight: 600, margin: 0 }}>
+              Generation cancelled
+            </p>
+            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, margin: 0 }}>
+              You can close this dialog and try again.
             </p>
           </div>
         )}
@@ -360,9 +417,10 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
             </p>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, margin: 0 }}>
               {selected.size} slides exported as {
-                format === "png-zip" ? "Hi-Res PDF (PNG, Lossless)" :
-                format === "png" || format === "pdf-hires" ? "Hi-Res PDF (3434×1844)" :
-                format.toUpperCase()
+                format === "png-zip" ? "PDF (PNG, 3434×1844)" :
+                format === "pptx" ? "PPTX (PNG, 3434×1844)" :
+                format === "png" ? "PDF (JPEG, 3434×1844)" :
+                "PDF"
               }
             </p>
           </div>
@@ -403,24 +461,53 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
                   cursor: noneSelected ? "default" : "pointer",
                 }}
               >
-                {format === "pdf" ? (
-                  <><Download size={15} /> Generate PDF ({selected.size} slides)</>
-                ) : format === "pptx" ? (
+                {format === "pptx" ? (
                   <><FileDown size={15} /> Generate PPTX ({selected.size} slides)</>
                 ) : format === "png-zip" ? (
-                  <><FileImage size={15} /> Generate PNG PDF ({selected.size} slides)</>
-                ) : format === "png" || format === "pdf-hires" ? (
-                  <><Image size={15} /> Generate Hi-Res PDF ({selected.size} slides)</>
-                ) : null}
+                  <><Download size={15} /> Generate PDF · PNG ({selected.size} slides)</>
+                ) : format === "png" ? (
+                  <><Download size={15} /> Generate PDF · JPEG ({selected.size} slides)</>
+                ) : (
+                  <><Download size={15} /> Generate ({selected.size} slides)</>
+                )}
               </button>
             </>
           ) : state.status === "generating" ? (
-            <p style={{
-              color: "rgba(255,255,255,0.4)", fontSize: 13,
-              margin: 0, textAlign: "center", flex: 1,
-            }}>
-              Please wait — this may take a minute for {state.total} slides...
-            </p>
+            <>
+              <button
+                onClick={handleCancel}
+                style={{
+                  display: "flex", alignItems: "center", gap: 8,
+                  padding: "9px 20px", borderRadius: 8,
+                  border: "1px solid rgba(239,68,68,0.4)",
+                  background: "rgba(239,68,68,0.1)", color: "#f87171",
+                  fontSize: 14, fontFamily: "'Space Grotesk', sans-serif",
+                  cursor: "pointer",
+                }}
+              >
+                <StopCircle size={15} /> Cancel
+              </button>
+              <p style={{
+                color: "rgba(255,255,255,0.4)", fontSize: 13,
+                margin: 0, textAlign: "center", flex: 1,
+              }}>
+                {Math.round((state.current / state.total) * 100)}% complete
+              </p>
+            </>
+          ) : state.status === "cancelled" ? (
+            <button
+              onClick={onClose}
+              style={{
+                display: "flex", alignItems: "center", gap: 8,
+                padding: "9px 24px", borderRadius: 8, border: "none",
+                background: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.7)",
+                fontSize: 14, fontWeight: 500,
+                fontFamily: "'Space Grotesk', sans-serif",
+                cursor: "pointer", marginLeft: "auto",
+              }}
+            >
+              <X size={15} /> Close
+            </button>
           ) : (
             <button
               onClick={onClose}
