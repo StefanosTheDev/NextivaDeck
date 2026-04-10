@@ -144,6 +144,13 @@ import SlideARRGrossMarginQuarterlyDark from "./slides/SlideARRGrossMarginQuarte
 import SlideEBITDAQuarterlyDark from "./slides/SlideEBITDAQuarterlyDark";
 import SlideCashFlowTrendsQuarterlyDark from "./slides/SlideCashFlowTrendsQuarterlyDark";
 import SlideTargetModelDark from "./slides/SlideTargetModelDark";
+import SenthilRoadmapCoverSlide from "./slides/SenthilRoadmapCoverSlide";
+import SenthilRoadmapDividerSlide from "./slides/SenthilRoadmapDividerSlide";
+import SenthilNextAgenticCXRoadmapSlide from "./slides/SenthilNextAgenticCXRoadmapSlide";
+import SenthilNextAgenticCXDeliveredSlide from "./slides/SenthilNextAgenticCXDeliveredSlide";
+import SenthilNCCRoadmapSlide from "./slides/SenthilNCCRoadmapSlide";
+import SenthilNextOSRoadmapSlide from "./slides/SenthilNextOSRoadmapSlide";
+import SenthilTechnologyDividerSlide from "./slides/SenthilTechnologyDividerSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -318,6 +325,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "arr-gross-margin-quarterly-dark": { id: "arr-gross-margin-quarterly-dark", label: "(29) ARR & Gross Margin (Quarterly Dark)", component: SlideARRGrossMarginQuarterlyDark, theme: "dark" },
   "cash-flow-trends-quarterly-dark": { id: "cash-flow-trends-quarterly-dark", label: "(33) Cash Flow Trends (Quarterly Dark)", component: SlideCashFlowTrendsQuarterlyDark, theme: "dark" },
   "target-model-dark": { id: "target-model-dark", label: "(36) Target Model (Dark)", component: SlideTargetModelDark, theme: "dark" },
+  "senthil-roadmap-cover": { id: "senthil-roadmap-cover", label: "Senthil: Products Roadmap Cover", component: SenthilRoadmapCoverSlide, theme: "dark", isNew: true },
+  "senthil-roadmap-divider": { id: "senthil-roadmap-divider", label: "Senthil: Roadmap Divider", component: SenthilRoadmapDividerSlide, theme: "dark", isNew: true },
+  "senthil-next-agentic-cx-roadmap": { id: "senthil-next-agentic-cx-roadmap", label: "Senthil: NEXT Agentic CX Roadmap", component: SenthilNextAgenticCXRoadmapSlide, theme: "dark", isNew: true },
+  "senthil-next-agentic-cx-delivered": { id: "senthil-next-agentic-cx-delivered", label: "Senthil: NEXT Agentic CX (Delivered)", component: SenthilNextAgenticCXDeliveredSlide, theme: "dark", isNew: true },
+  "senthil-ncc-roadmap": { id: "senthil-ncc-roadmap", label: "Senthil: NCC Roadmap", component: SenthilNCCRoadmapSlide, theme: "dark", isNew: true },
+  "senthil-nextos-roadmap": { id: "senthil-nextos-roadmap", label: "Senthil: NextOS Roadmap", component: SenthilNextOSRoadmapSlide, theme: "dark", isNew: true },
+  "senthil-technology-divider": { id: "senthil-technology-divider", label: "Senthil: Technology Divider", component: SenthilTechnologyDividerSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
