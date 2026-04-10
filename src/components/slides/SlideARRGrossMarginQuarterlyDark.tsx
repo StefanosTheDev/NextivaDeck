@@ -486,6 +486,9 @@ export default function SlideARRGrossMarginQuarterlyDark({
         financing costs or assumptions, potential acquisitions, expected tax payments not covered
         by NOLs.
       </p>
+      <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)", fontFamily: F.body, padding: "0 80px 6px", margin: 0, flexShrink: 0, fontStyle: "italic" }}>
+        FY26 is pro forma for efficiency actions taken at the end of Q3, applied retroactively to the beginning of the quarter.
+      </p>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
