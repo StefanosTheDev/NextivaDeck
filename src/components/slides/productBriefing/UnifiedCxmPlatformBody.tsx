@@ -3,11 +3,18 @@
 import { motion } from "framer-motion";
 import { UNIFIED_CXM_STANDALONE, UNIFIED_CXM_TRIAD } from "./unifiedCxmPlatformContent";
 
-/** Match CxpaasArchitectureBody / product briefing dark panels */
-const PANEL_BG = "rgba(255,255,255,0.07)";
-const PANEL_BORDER = "rgba(255,255,255,0.14)";
+/** Outer shell for triad and for the right pair — one visual “card” each */
+const GROUP_BG = "rgba(12, 42, 88, 0.72)";
+const GROUP_BORDER = "rgba(110, 178, 240, 0.45)";
+/** Inner columns — gap shows shell; contrast with outer */
+const TILE_BG = "rgba(255,255,255,0.06)";
+const TILE_BORDER = "rgba(255,255,255,0.12)";
 const MUTED = "rgba(255,255,255,0.78)";
 const HEADER_COLOR = "#7EB3E8";
+
+/** Same outer + inner padding as triad so header bands line up across all five */
+const GROUP_OUTER_PAD_PX = 12;
+const GROUP_INNER_GAP_PX = 12;
 
 /** Same visual header size for columns 1–4; column 5 slightly smaller so one line fits */
 const HEADER_SIZE_PX = 18;
@@ -23,6 +30,29 @@ const HEADER_BAND_HEIGHT_PX = 84;
 const LIST_TOP_GAP_PX = 22;
 
 const COLUMN_PAD = "12px 12px 10px";
+
+/** CX First list typography — ruler for phantom lines */
+const COMPACT_FONT_PX = 11.5;
+const COMPACT_LINE_HEIGHT = 1.32;
+const COMPACT_GAP_PX = 3;
+/** Pretend this many extra lines after the real CX First bullets; bottom sits just under the last phantom line */
+const PHANTOM_LINES_BELOW_CX_FIRST = 7;
+const UNDER_LAST_PHANTOM_LINE_PX = 4;
+
+const cxFirstBulletCount = UNIFIED_CXM_TRIAD[0].bullets.length;
+const rulerLineCount = cxFirstBulletCount + PHANTOM_LINES_BELOW_CX_FIRST;
+
+const listRegionHeightPx =
+  rulerLineCount * (COMPACT_FONT_PX * COMPACT_LINE_HEIGHT) +
+  (rulerLineCount - 1) * COMPACT_GAP_PX +
+  UNDER_LAST_PHANTOM_LINE_PX;
+
+/** One inner tile: pad + header + gap + fixed list band + pad (same for all five columns) */
+const INNER_TILE_HEIGHT_PX =
+  12 + HEADER_BAND_HEIGHT_PX + LIST_TOP_GAP_PX + listRegionHeightPx + 10;
+
+/** Group shell includes outer padding around tiles */
+const GROUP_SHELL_HEIGHT_PX = INNER_TILE_HEIGHT_PX + 2 * GROUP_OUTER_PAD_PX;
 
 function PillarHeaderBand({ title, fontSizePx }: { title: string; fontSizePx: number }) {
   return (
@@ -55,19 +85,21 @@ function PillarHeaderBand({ title, fontSizePx }: { title: string; fontSizePx: nu
   );
 }
 
-function BulletList({ bullets, compact }: { bullets: string[]; compact?: boolean }) {
+function BulletList({ bullets, compact, fillHeight }: { bullets: string[]; compact?: boolean; fillHeight?: boolean }) {
   return (
     <ul
       style={{
         margin: 0,
         padding: 0,
         listStyle: "none",
-        flex: 1,
-        minHeight: 0,
-        overflowY: "auto",
+        flex: fillHeight ? 1 : undefined,
+        minHeight: fillHeight ? 0 : undefined,
+        height: fillHeight ? "100%" : undefined,
+        overflowY: fillHeight ? "auto" : "visible",
         display: "flex",
         flexDirection: "column",
         gap: compact ? 3 : 4,
+        justifyContent: "flex-start",
       }}
     >
       {bullets.map((line, idx) => (
@@ -87,57 +119,70 @@ function BulletList({ bullets, compact }: { bullets: string[]; compact?: boolean
   );
 }
 
-function TriadColumn({
+/** Inner tile inside a grouped shell (triad or right pair) */
+function InnerPillarTile({
   title,
   bullets,
-  showDivider,
   compact,
+  headerFontSizePx,
 }: {
   title: string;
   bullets: string[];
-  showDivider: boolean;
   compact: boolean;
+  headerFontSizePx: number;
 }) {
   return (
     <div
       style={{
         minWidth: 0,
+        height: "100%",
         minHeight: 0,
         display: "flex",
         flexDirection: "column",
         padding: COLUMN_PAD,
-        borderRight: showDivider ? `1px solid ${PANEL_BORDER}` : undefined,
         boxSizing: "border-box",
+        background: TILE_BG,
+        border: `1px solid ${TILE_BORDER}`,
+        borderRadius: 8,
+        overflow: "hidden",
       }}
     >
-      <PillarHeaderBand title={title} fontSizePx={HEADER_SIZE_PX} />
-      <div style={{ marginTop: LIST_TOP_GAP_PX, flex: 1, minHeight: 0, display: "flex", flexDirection: "column" }}>
-        <BulletList bullets={bullets} compact={compact} />
+      <PillarHeaderBand title={title} fontSizePx={headerFontSizePx} />
+      <div
+        style={{
+          marginTop: LIST_TOP_GAP_PX,
+          height: listRegionHeightPx,
+          flexShrink: 0,
+          display: "flex",
+          flexDirection: "column",
+          minHeight: 0,
+        }}
+      >
+        <BulletList bullets={bullets} compact={compact} fillHeight />
       </div>
     </div>
   );
 }
 
-function StandalonePillar({ title, bullets, headerFontSizePx }: { title: string; bullets: string[]; headerFontSizePx: number }) {
+function GroupedPillarShell({ columnCount, children }: { columnCount: 2 | 3; children: React.ReactNode }) {
   return (
     <div
       style={{
         minWidth: 0,
-        minHeight: 0,
-        display: "flex",
-        flexDirection: "column",
-        background: PANEL_BG,
-        border: `1px solid ${PANEL_BORDER}`,
-        borderRadius: 10,
-        padding: COLUMN_PAD,
+        height: GROUP_SHELL_HEIGHT_PX,
         boxSizing: "border-box",
-        overflow: "hidden",
+        display: "grid",
+        gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
+        columnGap: GROUP_INNER_GAP_PX,
+        alignItems: "stretch",
+        padding: GROUP_OUTER_PAD_PX,
+        background: GROUP_BG,
+        border: `1px solid ${GROUP_BORDER}`,
+        borderRadius: 12,
+        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
       }}
     >
-      <PillarHeaderBand title={title} fontSizePx={headerFontSizePx} />
-      <div style={{ marginTop: LIST_TOP_GAP_PX, flex: 1, minHeight: 0, display: "flex", flexDirection: "column" }}>
-        <BulletList bullets={bullets} compact={false} />
-      </div>
+      {children}
     </div>
   );
 }
@@ -159,6 +204,7 @@ export default function UnifiedCxmPlatformBody() {
         boxSizing: "border-box",
         overflow: "hidden",
         display: "flex",
+        flexDirection: "column",
         alignItems: "stretch",
         justifyContent: "center",
       }}
@@ -167,42 +213,36 @@ export default function UnifiedCxmPlatformBody() {
         style={{
           width: "100%",
           maxWidth: 1680,
-          minHeight: 0,
-          height: "100%",
+          alignSelf: "center",
+          flexShrink: 0,
           display: "grid",
-          gridTemplateColumns: "minmax(0, 2.35fr) minmax(0, 1fr) minmax(0, 1fr)",
-          columnGap: 12,
-          alignItems: "stretch",
+          gridTemplateColumns: "minmax(0, 2.35fr) minmax(0, 2fr)",
+          columnGap: 18,
+          alignItems: "start",
           boxSizing: "border-box",
         }}
       >
-        <div
-          style={{
-            minWidth: 0,
-            minHeight: 0,
-            display: "grid",
-            gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)",
-            alignItems: "stretch",
-            background: PANEL_BG,
-            border: `1px solid ${PANEL_BORDER}`,
-            borderRadius: 10,
-            overflow: "hidden",
-            boxSizing: "border-box",
-          }}
-        >
-          {UNIFIED_CXM_TRIAD.map((col, i) => (
-            <TriadColumn
+        <GroupedPillarShell columnCount={3}>
+          {UNIFIED_CXM_TRIAD.map((col) => (
+            <InnerPillarTile
               key={col.title}
               title={col.title}
               bullets={col.bullets}
-              showDivider={i < UNIFIED_CXM_TRIAD.length - 1}
               compact={col.title === "CX First"}
+              headerFontSizePx={HEADER_SIZE_PX}
             />
           ))}
-        </div>
+        </GroupedPillarShell>
 
-        <StandalonePillar title={UNIFIED_CXM_STANDALONE[0].titleLines.join(" ")} bullets={UNIFIED_CXM_STANDALONE[0].bullets} headerFontSizePx={HEADER_SIZE_PX} />
-        <StandalonePillar title={BESPOKE_HEADER_ONE_LINE} bullets={UNIFIED_CXM_STANDALONE[1].bullets} headerFontSizePx={HEADER_SIZE_BESPOKE_PX} />
+        <GroupedPillarShell columnCount={2}>
+          <InnerPillarTile
+            title={UNIFIED_CXM_STANDALONE[0].titleLines.join(" ")}
+            bullets={UNIFIED_CXM_STANDALONE[0].bullets}
+            compact={false}
+            headerFontSizePx={HEADER_SIZE_PX}
+          />
+          <InnerPillarTile title={BESPOKE_HEADER_ONE_LINE} bullets={UNIFIED_CXM_STANDALONE[1].bullets} compact={false} headerFontSizePx={HEADER_SIZE_BESPOKE_PX} />
+        </GroupedPillarShell>
       </div>
     </motion.main>
   );
