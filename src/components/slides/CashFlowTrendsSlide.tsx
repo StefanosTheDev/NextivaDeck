@@ -80,10 +80,10 @@ export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?
                 <XAxis dataKey="year" tick={axisTick} axisLine={false} tickLine={false} />
                 <YAxis yAxisId="left" domain={[0, 250]} ticks={[0, 50, 100, 150, 200, 250]} tick={axisTick} tickFormatter={(v: number) => `$${v}`} axisLine={false} tickLine={false} width={48} />
                 <YAxis yAxisId="right" orientation="right" domain={[0, 100]} ticks={[0, 20, 40, 60, 80, 100]} tick={axisTick} tickFormatter={(v: number) => `${v}%`} axisLine={false} tickLine={false} width={44} />
-                <Bar yAxisId="left" dataKey="value" fill={BAR_BLUE} radius={[6, 6, 0, 0]} barSize={48}>
+                <Bar yAxisId="left" dataKey="value" fill={BAR_BLUE} radius={[6, 6, 0, 0]} barSize={48} isAnimationActive={false}>
                   <LabelList dataKey="value" position="top" formatter={(v: any) => `$${Math.round(v)}`} style={labelStyle} />
                 </Bar>
-                <Line yAxisId="right" type="monotone" dataKey="margin" stroke="#CCC7C3" strokeWidth={3} strokeDasharray="8 4" dot={{ r: 4, fill: "#CCC7C3" }} connectNulls>
+                <Line yAxisId="right" type="monotone" dataKey="margin" stroke="#CCC7C3" strokeWidth={3} strokeDasharray="8 4" dot={{ r: 4, fill: "#CCC7C3" }} connectNulls isAnimationActive={false}>
                   <LabelList dataKey="margin" position="bottom" formatter={(v: any) => `${v}%`} style={{ fontSize: 12, fontWeight: 600, fill: "#CCC7C3", fontFamily: "'Space Grotesk', sans-serif", opacity: 0.7 }} offset={8} />
                 </Line>
               </ComposedChart>
@@ -106,10 +106,10 @@ export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?
                 <XAxis dataKey="year" tick={axisTick} axisLine={false} tickLine={false} />
                 <YAxis yAxisId="left" domain={[-50, 250]} ticks={[-50, 0, 50, 100, 150, 200, 250]} tick={axisTick} tickFormatter={(v: number) => `$${v}`} axisLine={false} tickLine={false} width={48} />
                 <YAxis yAxisId="right" orientation="right" domain={[-20, 100]} ticks={[-20, 0, 20, 40, 60, 80, 100]} tick={axisTick} tickFormatter={(v: number) => `${v}%`} axisLine={false} tickLine={false} width={44} />
-                <Bar yAxisId="left" dataKey="fcf" fill={BAR_TEAL} radius={[6, 6, 0, 0]} barSize={48}>
+                <Bar yAxisId="left" dataKey="fcf" fill={BAR_TEAL} radius={[6, 6, 0, 0]} barSize={48} isAnimationActive={false}>
                   <LabelList dataKey="fcf" position="top" formatter={(v: any) => v < 0 ? `($${Math.abs(v).toFixed(0)})` : `$${v.toFixed(0)}`} style={{ ...labelStyle, fill: BAR_TEAL }} />
                 </Bar>
-                <Line yAxisId="right" type="monotone" dataKey="conversion" stroke="#7EB3E8" strokeWidth={3} strokeDasharray="8 4" dot={{ r: 4, fill: "#7EB3E8" }} connectNulls>
+                <Line yAxisId="right" type="monotone" dataKey="conversion" stroke="#7EB3E8" strokeWidth={3} strokeDasharray="8 4" dot={{ r: 4, fill: "#7EB3E8" }} connectNulls isAnimationActive={false}>
                   <LabelList dataKey="conversion" position="top" formatter={(v: any) => v != null ? `${v.toFixed(0)}%` : ""} style={{ fontSize: 12, fontWeight: 600, fill: "#CCC7C3", fontFamily: "'Space Grotesk', sans-serif" }} offset={8} />
                 </Line>
               </ComposedChart>
@@ -132,7 +132,7 @@ export default function CashFlowTrendsSlide({ slideNumber = 32 }: { slideNumber?
                 <XAxis dataKey="year" tick={axisTick} axisLine={false} tickLine={false} />
                 <YAxis domain={[0, 600]} ticks={[0, 150, 300, 450, 600]} tick={axisTick} tickFormatter={(v: number) => `$${v}`} axisLine={false} tickLine={false} width={48} />
                 <YAxis yAxisId="spacer" orientation="right" tick={false} axisLine={false} tickLine={false} width={44} />
-                <Bar dataKey="value" fill={BAR_GOLD} radius={[6, 6, 0, 0]} barSize={48}>
+                <Bar dataKey="value" fill={BAR_GOLD} radius={[6, 6, 0, 0]} barSize={48} isAnimationActive={false}>
                   <LabelList dataKey="value" position="top" formatter={(v: any) => `$${v.toFixed(0)}`} style={{ ...labelStyle, fill: BAR_GOLD }} />
                 </Bar>
               </BarChart>

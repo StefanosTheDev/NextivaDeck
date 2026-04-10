@@ -355,6 +355,7 @@ export default function SlideARRGrossMarginQuarterlyDark({
                 yAxisId="left"
                 shape={<CustomBarShape />}
                 maxBarSize={60}
+                isAnimationActive={false}
               >
                 <LabelList
                   dataKey="revenue"
@@ -380,6 +381,7 @@ export default function SlideARRGrossMarginQuarterlyDark({
                 strokeWidth={3}
                 dot={<CustomDot />}
                 activeDot={false}
+                isAnimationActive={false}
               >
                 <LabelList
                   dataKey="gm"

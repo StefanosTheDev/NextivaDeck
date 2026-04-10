@@ -303,6 +303,7 @@ export default function SlideEBITDAQuarterlyDark({
                 dataKey="ebitda"
                 shape={<ForecastBarShape />}
                 maxBarSize={60}
+                isAnimationActive={false}
               >
                 <LabelList
                   dataKey="ebitda"

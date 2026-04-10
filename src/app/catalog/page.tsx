@@ -19,7 +19,7 @@ import {
   rectSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Save, Check, RotateCcw, ArrowLeft, Download, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
+import { Save, Check, RotateCcw, ArrowLeft, Download, Plus, X, Eye, ArrowRight, FileDown, Image, FileImage } from "lucide-react";
 
 import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
 import SortableSlideCard from "./SortableSlideCard";
@@ -268,7 +268,7 @@ export default function CatalogPage() {
     );
   }, []);
 
-  const [exportFormat, setExportFormat] = useState<"pdf" | "pptx" | null>(null);
+  const [exportFormat, setExportFormat] = useState<"pdf" | "pptx" | "png" | "pdf-hires" | "png-zip" | null>(null);
 
   const gridSensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -427,6 +427,22 @@ export default function CatalogPage() {
           >
             <FileDown size={15} style={{ flexShrink: 0 }} />
             Generate PPTX
+          </button>
+          <button
+            onClick={() => setExportFormat("png")}
+            className="catalog-btn-outline"
+            title="Hi-Res PDF (3434×1844) - matches boss's screenshot specs exactly"
+          >
+            <Image size={15} style={{ flexShrink: 0 }} />
+            Hi-Res PDF
+          </button>
+          <button
+            onClick={() => setExportFormat("png-zip")}
+            className="catalog-btn-outline"
+            title="Hi-Res PDF with true PNG images (lossless) - matches Tomas's screenshots exactly"
+          >
+            <FileImage size={15} style={{ flexShrink: 0 }} />
+            PNG PDF
           </button>
           {hasChanges && (
             <button onClick={() => { if (window.confirm("Undo all unsaved changes? This will revert slide order and visibility back to the last saved state.")) resetAll(); }} className="catalog-btn-outline">

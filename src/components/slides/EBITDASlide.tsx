@@ -44,7 +44,7 @@ export default function EBITDASlide({ slideNumber = 25 }: { slideNumber?: number
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" vertical={false} />
               <XAxis dataKey="name" tick={{ fontSize: 20, fill: "rgba(255,255,255,0.5)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} tickLine={false} />
               <YAxis domain={[0, 200]} tick={{ fontSize: 18, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `$${Math.round(v)}M`} />
-              <Bar dataKey="ebitda" fill="#2860B2" radius={[8, 8, 0, 0]} maxBarSize={100}>
+              <Bar dataKey="ebitda" fill="#2860B2" radius={[8, 8, 0, 0]} maxBarSize={100} isAnimationActive={false}>
                 <LabelList dataKey="ebitda" position="top" formatter={(v: any) => `$${Math.round(v)}M`} style={{ fontSize: 18, fontWeight: 700, fill: "#FFFFFF", fontFamily: "'Space Grotesk', sans-serif" }} />
               </Bar>
             </BarChart>

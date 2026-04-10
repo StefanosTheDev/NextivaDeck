@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { X, Check, Download, FileDown, Loader2, CheckSquare, Square } from "lucide-react";
+import { X, Check, Download, FileDown, Loader2, CheckSquare, Square, Image, FileImage } from "lucide-react";
 import type { SlideDef } from "@/components/slideRegistry";
 
-type ExportFormat = "pdf" | "pptx";
+type ExportFormat = "pdf" | "pptx" | "png" | "pdf-hires" | "png-zip";
 
 interface Props {
   format: ExportFormat;
@@ -56,6 +56,55 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
     });
 
     try {
+      // PNG-based Hi-Res PDF - server-side (true PNG, lossless, Tomas's exact specs)
+      // This takes 3-5 minutes but produces exact PNG quality
+      if (format === "png-zip") {
+        const params = new URLSearchParams({ slides: slideIds.join(",") });
+        const response = await fetch(`/api/generate-pdf-hires?${params}`);
+
+        if (!response.ok) {
+          const err = await response.json().catch(() => ({ error: "Generation failed" }));
+          throw new Error(err.details || err.error || "Generation failed");
+        }
+
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `Nextiva-Deck-HiRes-PNG_${new Date().toISOString().slice(0, 10).replace(/-/g, "")}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+
+        setState({ status: "done" });
+        return;
+      }
+
+      // PNG and PDF-HiRes use client-side generation (boss's exact specs, JPEG internally - faster)
+      if (format === "png" || format === "pdf-hires") {
+        const { generatePngZipClient, generatePdfBossSpecClient } = await import("@/lib/clientExport");
+        const onProgress = (p: { phase: string; current: number; total: number; slideLabel?: string }) => {
+          if (p.phase === "rendering" || p.phase === "assembling") {
+            setState({
+              status: "generating",
+              current: p.current,
+              total: p.total,
+              slideLabel: p.slideLabel || "Processing...",
+            });
+          }
+        };
+        
+        if (format === "png") {
+          await generatePngZipClient(slideIds, onProgress);
+        } else {
+          await generatePdfBossSpecClient(slideIds, onProgress);
+        }
+        setState({ status: "done" });
+        return;
+      }
+
+      // Standard PDF/PPTX use server-side generation
       const endpoint = format === "pdf" ? "/api/generate-pdf" : "/api/generate-pptx";
       const params = new URLSearchParams({ slides: slideIds.join(",") });
       const response = await fetch(`${endpoint}?${params}`);
@@ -121,7 +170,11 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
         }}>
           <div>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: "#fff", margin: 0 }}>
-              {format === "pdf" ? "Generate PDF" : "Generate PowerPoint"}
+              {format === "pdf" ? "Generate PDF (Standard)" : 
+               format === "pptx" ? "Generate PowerPoint" :
+               format === "png-zip" ? "Generate Hi-Res PDF (PNG, Lossless)" :
+               format === "png" ? "Generate Hi-Res PDF (3434×1844)" :
+               "Generate Hi-Res PDF (3434×1844)"}
             </h2>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>
               {state.status === "picking"
@@ -277,11 +330,13 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
           }}>
             <Loader2 size={32} color="#5b9cf5" style={{ animation: "spin 1s linear infinite" }} />
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, fontWeight: 500, margin: 0 }}>
-              Capturing {state.total} slides...
+              {format === "png-zip" ? `Rendering ${state.total} slides as PNG...` : `Capturing ${state.total} slides...`}
             </p>
             <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, margin: 0, textAlign: "center", lineHeight: 1.5 }}>
-              Each slide is rendered pixel-perfect by Chrome.
-              <br />This may take a minute.
+              {format === "png-zip" 
+                ? <>Server is capturing lossless PNGs and building PDF.<br />This takes 3-5 minutes for {state.total} slides.</>
+                : <>Each slide is rendered pixel-perfect by Chrome.<br />This may take a minute.</>
+              }
             </p>
           </div>
         )}
@@ -304,7 +359,11 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
               Download complete!
             </p>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, margin: 0 }}>
-              {selected.size} slides exported as {format.toUpperCase()}
+              {selected.size} slides exported as {
+                format === "png-zip" ? "Hi-Res PDF (PNG, Lossless)" :
+                format === "png" || format === "pdf-hires" ? "Hi-Res PDF (3434×1844)" :
+                format.toUpperCase()
+              }
             </p>
           </div>
         )}
@@ -344,10 +403,15 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
                   cursor: noneSelected ? "default" : "pointer",
                 }}
               >
-                {format === "pdf"
-                  ? <><Download size={15} /> Generate PDF ({selected.size} slides)</>
-                  : <><FileDown size={15} /> Generate PPTX ({selected.size} slides)</>
-                }
+                {format === "pdf" ? (
+                  <><Download size={15} /> Generate PDF ({selected.size} slides)</>
+                ) : format === "pptx" ? (
+                  <><FileDown size={15} /> Generate PPTX ({selected.size} slides)</>
+                ) : format === "png-zip" ? (
+                  <><FileImage size={15} /> Generate PNG PDF ({selected.size} slides)</>
+                ) : format === "png" || format === "pdf-hires" ? (
+                  <><Image size={15} /> Generate Hi-Res PDF ({selected.size} slides)</>
+                ) : null}
               </button>
             </>
           ) : state.status === "generating" ? (

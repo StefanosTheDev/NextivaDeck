@@ -302,13 +302,13 @@ export default function SlideCashFlowTrendsQuarterlyDark({
                   tickFormatter={(v: number) => `${v}%`}
                   tick={leftTickStyle} axisLine={false} tickLine={false} width={40} />
                 <Customized component={ForecastDivider} />
-                <Bar dataKey="ebitda" yAxisId="left" shape={<EbitdaBarShape />} barSize={40}>
+                <Bar dataKey="ebitda" yAxisId="left" shape={<EbitdaBarShape />} barSize={40} isAnimationActive={false}>
                   <LabelList dataKey="ebitda" content={ebitdaLabel} />
                 </Bar>
                 <Line dataKey="margin" yAxisId="right" type="monotone"
                   stroke="rgba(255,255,255,0.35)" strokeWidth={2} strokeDasharray="8 4"
                   dot={{ r: 4, fill: "rgba(255,255,255,0.35)", stroke: "none" }}
-                  activeDot={false}>
+                  activeDot={false} isAnimationActive={false}>
                   <LabelList dataKey="margin" content={marginLineLabel} />
                 </Line>
               </ComposedChart>
@@ -338,13 +338,13 @@ export default function SlideCashFlowTrendsQuarterlyDark({
                   tickFormatter={(v: number) => `${v}%`}
                   tick={leftTickStyle} axisLine={false} tickLine={false} width={40} />
                 <Customized component={ForecastDivider} />
-                <Bar dataKey="fcf" yAxisId="left" shape={<FcfBarShape />} barSize={40}>
+                <Bar dataKey="fcf" yAxisId="left" shape={<FcfBarShape />} barSize={40} isAnimationActive={false}>
                   <LabelList dataKey="fcf" content={fcfLabel} />
                 </Bar>
                 <Line dataKey="conversion" yAxisId="right" type="monotone"
                   stroke="rgba(255,255,255,0.35)" strokeWidth={2} strokeDasharray="8 4"
                   dot={{ r: 4, fill: "rgba(255,255,255,0.35)", stroke: "none" }}
-                  activeDot={false}
+                  activeDot={false} isAnimationActive={false}
                   connectNulls={false}>
                   <LabelList dataKey="conversion" content={conversionLineLabel} />
                 </Line>
@@ -374,7 +374,7 @@ export default function SlideCashFlowTrendsQuarterlyDark({
                 <YAxis yAxisId="spacer" orientation="right"
                   tick={false} axisLine={false} tickLine={false} width={40} />
                 <Customized component={ForecastDivider} />
-                <Bar dataKey="cash" shape={<CashBarShape />} barSize={40}>
+                <Bar dataKey="cash" shape={<CashBarShape />} barSize={40} isAnimationActive={false}>
                   <LabelList dataKey="cash" content={cashLabel} />
                 </Bar>
               </BarChart>

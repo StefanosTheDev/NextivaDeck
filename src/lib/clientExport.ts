@@ -7,6 +7,17 @@ export type ExportProgress = {
 
 export type ProgressCallback = (progress: ExportProgress) => void;
 
+// Boss's exact screenshot specs (Retina Mac @ 144 DPI)
+const BOSS_CSS_WIDTH = 1717;   // CSS pixels (3434 / 2)
+const BOSS_CSS_HEIGHT = 922;   // CSS pixels (1844 / 2)
+const BOSS_SCALE = 2;          // 2x Retina devicePixelRatio
+const BOSS_OUTPUT_WIDTH = 3434;  // Final pixel width
+const BOSS_OUTPUT_HEIGHT = 1844; // Final pixel height
+
+// Standard export dimensions
+const STANDARD_CSS_WIDTH = 1920;
+const STANDARD_CSS_HEIGHT = 1080;
+
 function triggerDownload(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -18,13 +29,17 @@ function triggerDownload(blob: Blob, filename: string) {
   URL.revokeObjectURL(url);
 }
 
-async function loadPrintIframe(slideIds: string[]): Promise<HTMLIFrameElement> {
+async function loadPrintIframe(
+  slideIds: string[],
+  cssWidth: number = STANDARD_CSS_WIDTH,
+  cssHeight: number = STANDARD_CSS_HEIGHT
+): Promise<HTMLIFrameElement> {
   const slidesParam = encodeURIComponent(slideIds.join(","));
   const url = `/print/raw?slides=${slidesParam}`;
 
   return new Promise((resolve, reject) => {
     const iframe = document.createElement("iframe");
-    iframe.style.cssText = "position:fixed;left:0;top:0;width:1920px;height:1080px;z-index:-9999;pointer-events:none;border:none;";
+    iframe.style.cssText = `position:fixed;left:0;top:0;width:${cssWidth}px;height:${cssHeight}px;z-index:-9999;pointer-events:none;border:none;`;
     iframe.src = url;
 
     const timeout = setTimeout(() => {
@@ -74,10 +89,30 @@ async function waitForIframeReady(iframe: HTMLIFrameElement): Promise<void> {
   await waitForImages();
 }
 
+interface CaptureOptions {
+  cssWidth?: number;
+  cssHeight?: number;
+  scale?: number;
+  format?: "jpeg" | "png";
+  quality?: number;
+  /** Milliseconds to wait for animations per slide (default: 200, hi-res: 2500) */
+  animationDelay?: number;
+}
+
 async function captureFromIframe(
   iframe: HTMLIFrameElement,
-  onProgress?: ProgressCallback
+  onProgress?: ProgressCallback,
+  options: CaptureOptions = {}
 ): Promise<string[]> {
+  const {
+    cssWidth = STANDARD_CSS_WIDTH,
+    cssHeight = STANDARD_CSS_HEIGHT,
+    scale = 2,
+    format = "jpeg",
+    quality = 0.95,
+    animationDelay = 200,
+  } = options;
+
   const { snapdom } = await import("@zumer/snapdom");
   const doc = iframe.contentDocument;
   if (!doc) throw new Error("Cannot access iframe document");
@@ -91,27 +126,37 @@ async function captureFromIframe(
     const label = el.getAttribute("data-slide-label") || `Slide ${i + 1}`;
     onProgress?.({ phase: "rendering", current: i + 1, total, slideLabel: label });
 
+    // Show only this slide
     for (let j = 0; j < slideEls.length; j++) {
       const s = slideEls[j] as HTMLElement;
       if (j === i) {
         s.style.display = "flex";
-        s.style.width = "1920px";
-        s.style.height = "1080px";
+        s.style.width = `${cssWidth}px`;
+        s.style.height = `${cssHeight}px`;
       } else {
         s.style.display = "none";
       }
     }
+    
+    // Wait for layout
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-    await new Promise((r) => setTimeout(r, 200));
+    
+    // Wait for animations to complete (longer for hi-res exports)
+    await new Promise((r) => setTimeout(r, animationDelay));
 
     const result = await snapdom(el, {
-      scale: 2,
+      scale,
       dpr: 1,
       backgroundColor: "#000208",
       embedFonts: true,
     });
     const canvas = await result.toCanvas();
-    images.push(canvas.toDataURL("image/jpeg", 0.95));
+    
+    if (format === "png") {
+      images.push(canvas.toDataURL("image/png"));
+    } else {
+      images.push(canvas.toDataURL("image/jpeg", quality));
+    }
   }
 
   return images;
@@ -179,6 +224,207 @@ export async function generatePptxClient(
     const blob = output instanceof Blob ? output : new Blob([output as ArrayBuffer]);
     triggerDownload(blob, "Nextiva-Investor-Deck-2026.pptx");
     onProgress?.({ phase: "done", current: images.length, total: images.length });
+  } finally {
+    iframe.remove();
+  }
+}
+
+/**
+ * Export specs matching boss's exact screenshots (Retina Mac @ 144 DPI)
+ * Use this to verify exports match the reference
+ */
+export const BOSS_EXPORT_SPECS = {
+  cssWidth: BOSS_CSS_WIDTH,
+  cssHeight: BOSS_CSS_HEIGHT,
+  scale: BOSS_SCALE,
+  outputWidth: BOSS_OUTPUT_WIDTH,
+  outputHeight: BOSS_OUTPUT_HEIGHT,
+  dpi: 144,
+  aspectRatio: BOSS_OUTPUT_WIDTH / BOSS_OUTPUT_HEIGHT, // ~1.86
+  format: "png" as const,
+  colorProfile: "Display P3 (native) / sRGB (export)",
+} as const;
+
+/**
+ * Generate a high-resolution PDF using boss's exact screenshot specs:
+ * - Each page: 3434 × 1844 pixels at 144 DPI
+ * - Uses high-quality JPEG (95%) to avoid memory issues with large PNGs
+ * - Single PDF download
+ */
+export async function generatePngZipClient(
+  slideIds: string[],
+  onProgress?: ProgressCallback
+) {
+  onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
+
+  // Use boss's exact dimensions
+  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT);
+  try {
+    await waitForIframeReady(iframe);
+
+    // Use JPEG at 95% quality to avoid memory issues with large PNGs
+    // Wait 5 seconds per slide to ensure ALL animations fully complete
+    const images = await captureFromIframe(iframe, onProgress, {
+      cssWidth: BOSS_CSS_WIDTH,
+      cssHeight: BOSS_CSS_HEIGHT,
+      scale: BOSS_SCALE,
+      format: "jpeg",
+      quality: 0.98, // Near-lossless quality, visually identical to PNG
+      animationDelay: 5000, // 5 seconds - guarantees all animations complete
+    });
+    if (images.length === 0) throw new Error("No slides captured");
+
+    onProgress?.({ phase: "assembling", current: images.length, total: images.length, slideLabel: "Building PDF..." });
+
+    const { jsPDF } = await import("jspdf");
+    // Create PDF with boss's exact pixel dimensions (3434 × 1844)
+    const pdf = new jsPDF({ 
+      orientation: "landscape", 
+      unit: "px", 
+      format: [BOSS_OUTPUT_WIDTH, BOSS_OUTPUT_HEIGHT],
+      compress: true,
+    });
+
+    for (let i = 0; i < images.length; i++) {
+      if (i > 0) pdf.addPage([BOSS_OUTPUT_WIDTH, BOSS_OUTPUT_HEIGHT], "landscape");
+      pdf.addImage(images[i], "JPEG", 0, 0, BOSS_OUTPUT_WIDTH, BOSS_OUTPUT_HEIGHT);
+    }
+
+    // Get PDF as arraybuffer and convert to Blob explicitly
+    const pdfOutput = pdf.output("arraybuffer");
+    const blob = new Blob([pdfOutput], { type: "application/pdf" });
+    const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    triggerDownload(blob, `Nextiva-Deck-HiRes_${timestamp}.pdf`);
+    onProgress?.({ phase: "done", current: images.length, total: images.length });
+  } finally {
+    iframe.remove();
+  }
+}
+
+// Alias for backwards compatibility
+export const generatePdfBossSpecClient = generatePngZipClient;
+
+/**
+ * Capture a SINGLE slide as PNG and return the data URL.
+ * Processes one slide at a time to avoid memory buildup.
+ */
+async function captureSingleSlidePng(
+  iframe: HTMLIFrameElement,
+  slideIndex: number,
+  cssWidth: number,
+  cssHeight: number,
+  scale: number,
+  animationDelay: number
+): Promise<string> {
+  const { snapdom } = await import("@zumer/snapdom");
+  const doc = iframe.contentDocument;
+  if (!doc) throw new Error("Cannot access iframe document");
+
+  const slideEls = doc.querySelectorAll<HTMLElement>(".print-slide");
+  const el = slideEls[slideIndex];
+  
+  // Show only this slide
+  for (let j = 0; j < slideEls.length; j++) {
+    const s = slideEls[j] as HTMLElement;
+    if (j === slideIndex) {
+      s.style.display = "flex";
+      s.style.width = `${cssWidth}px`;
+      s.style.height = `${cssHeight}px`;
+    } else {
+      s.style.display = "none";
+    }
+  }
+  
+  // Wait for layout
+  await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  
+  // Wait for animations to complete
+  await new Promise((r) => setTimeout(r, animationDelay));
+
+  const result = await snapdom(el, {
+    scale,
+    dpr: 1,
+    backgroundColor: "#000208",
+    embedFonts: true,
+  });
+  const canvas = await result.toCanvas();
+  
+  // Get PNG data URL
+  const dataUrl = canvas.toDataURL("image/png");
+  
+  // Clean up canvas to free memory
+  canvas.width = 0;
+  canvas.height = 0;
+  
+  return dataUrl;
+}
+
+/**
+ * Generate a ZIP file of PNG images matching boss's exact screenshot specs:
+ * - Each image: 3434 × 1844 pixels (PNG format, lossless)
+ * - Processes ONE slide at a time to avoid memory issues
+ * - Filenames: 01.png, 02.png, etc. (sorted order)
+ * - Takes ~3-5 minutes for 38 slides
+ * 
+ * After download, use Preview (Mac) or any online tool to combine into PDF.
+ */
+export async function generatePngZipActual(
+  slideIds: string[],
+  onProgress?: ProgressCallback
+) {
+  onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
+
+  const JSZip = (await import("jszip")).default;
+  const zip = new JSZip();
+
+  // Use boss's exact dimensions
+  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT);
+  
+  try {
+    await waitForIframeReady(iframe);
+    
+    const doc = iframe.contentDocument;
+    if (!doc) throw new Error("Cannot access iframe document");
+    const slideEls = doc.querySelectorAll<HTMLElement>(".print-slide");
+    const total = slideEls.length;
+
+    // Process ONE slide at a time to avoid memory buildup
+    for (let i = 0; i < total; i++) {
+      const el = slideEls[i];
+      const label = el.getAttribute("data-slide-label") || `Slide ${i + 1}`;
+      onProgress?.({ phase: "rendering", current: i + 1, total, slideLabel: label });
+
+      // Capture this single slide as PNG
+      const pngDataUrl = await captureSingleSlidePng(
+        iframe,
+        i,
+        BOSS_CSS_WIDTH,
+        BOSS_CSS_HEIGHT,
+        BOSS_SCALE,
+        5000 // 5 seconds for animations
+      );
+      
+      // Convert data URL to binary and add to ZIP immediately
+      const base64Data = pngDataUrl.split(",")[1];
+      const filename = String(i + 1).padStart(2, "0") + ".png";
+      zip.file(filename, base64Data, { base64: true });
+      
+      // Encourage garbage collection by nullifying reference
+      // (JavaScript will GC the previous PNG data when we move to next iteration)
+    }
+
+    onProgress?.({ phase: "assembling", current: total, total, slideLabel: "Creating ZIP..." });
+
+    // Generate ZIP blob
+    const blob = await zip.generateAsync({ 
+      type: "blob",
+      compression: "DEFLATE",
+      compressionOptions: { level: 1 }, // Fast compression (PNGs are already compressed)
+    });
+    
+    const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    triggerDownload(blob, `Nextiva-Deck-PNGs_${timestamp}.zip`);
+    onProgress?.({ phase: "done", current: total, total });
   } finally {
     iframe.remove();
   }

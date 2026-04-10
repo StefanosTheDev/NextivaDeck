@@ -77,7 +77,7 @@ export default function ARRGrossMarginSlide({ slideNumber = 24 }: { slideNumber?
               <XAxis dataKey="name" tick={{ fontSize: 20, fill: "rgba(255,255,255,0.5)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={{ stroke: "rgba(255,255,255,0.1)" }} tickLine={false} interval={0} />
               <YAxis yAxisId="left" domain={[0, 500]} tick={{ fontSize: 18, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `$${v}M`} />
               <YAxis yAxisId="right" orientation="right" domain={[50, 90]} tick={{ fontSize: 18, fill: "rgba(255,255,255,0.4)", fontFamily: "'Space Grotesk', sans-serif" }} axisLine={false} tickLine={false} tickFormatter={(v: number) => `${v}%`} />
-              <Bar yAxisId="left" dataKey="revenue" name="Revenue" shape={<ProjectionBarShape />} maxBarSize={100}>
+              <Bar yAxisId="left" dataKey="revenue" name="Revenue" shape={<ProjectionBarShape />} maxBarSize={100} isAnimationActive={false}>
                 <LabelList
                   dataKey="revenue"
                   position="top"
@@ -92,6 +92,7 @@ export default function ARRGrossMarginSlide({ slideNumber = 24 }: { slideNumber?
                 name="Gross Margin %"
                 stroke={GM_LINE_COLOR}
                 strokeWidth={3}
+                isAnimationActive={false}
                 dot={(dotProps: any) => {
                   if (dotProps.payload.isProjection) {
                     return <circle key={dotProps.index} cx={dotProps.cx} cy={dotProps.cy} r={5} fill="none" stroke={GM_LINE_COLOR} strokeWidth={2} strokeDasharray="4 3" />;

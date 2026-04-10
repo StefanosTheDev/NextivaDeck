@@ -165,6 +165,7 @@ export default function OperatingLeverageDatedSlide({ slideNumber = 29 }: { slid
                     strokeWidth={4}
                     dot={{ r: 6, fill: "#5BA0E8", strokeWidth: 1.5, stroke: "rgba(255,255,255,0.4)" }}
                     name="Rev / Head"
+                    isAnimationActive={false}
                   >
                     <LabelList
                       dataKey="value"
@@ -186,6 +187,7 @@ export default function OperatingLeverageDatedSlide({ slideNumber = 29 }: { slid
                     dot={{ r: 6, fill: "#7EB3E8", strokeWidth: 1.5, stroke: "rgba(255,255,255,0.4)" }}
                     strokeDasharray="6 4"
                     name="Rev / R&D Head"
+                    isAnimationActive={false}
                   >
                     <LabelList
                       dataKey="rdValue"
