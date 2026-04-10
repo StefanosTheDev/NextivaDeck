@@ -10,7 +10,7 @@ export type ProductBriefingSlideSpec = {
   metrics?: { label: string; value: string }[];
   /** Dense roadmap / delivery text (scrollable in UI) */
   denseBlocks?: { heading: string; lines: string[] }[];
-  variant?: "center" | "nda" | "cxpaas-architecture";
+  variant?: "center" | "nda" | "cxpaas-architecture" | "unified-cxm-platform";
   /** Raster from PDF (see scripts/extract_pdf_page.py) */
   referenceImage?: { src: string; alt: string };
 };
@@ -198,14 +198,11 @@ export const PRODUCT_BRIEFING_SPECS: ProductBriefingSlideSpec[] = [
     subtitle: "Proprietary & highly confidential — covered by NDA",
   },
   {
+    variant: "unified-cxm-platform",
     eyebrow: "Unified CXM",
-    title: "The Nextiva unified-CXM platform (Q4 CY24)",
-    subtitle: "Empower every interaction — productive relationships for life",
-    referenceImage: {
-      src: "/product-briefing/unified-cxm-platform-q4-cy24.png",
-      alt:
-        "Nextiva unified-CXM platform map: channels, AI and agent capabilities, analytics, trust and deployment, integrations — as shown in Product Briefing PDF page 16.",
-    },
+    title: "The Nextiva Unified-CXM platform (Q4 CY24)",
+    subtitle:
+      "Empower businesses to transform every customer interaction for the best possible outcome. Productive Relationships, for life.",
   },
   {
     eyebrow: "Human + AI roadmap",

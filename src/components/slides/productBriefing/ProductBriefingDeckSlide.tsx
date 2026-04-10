@@ -3,12 +3,16 @@
 import { motion } from "framer-motion";
 import SlideFooter from "../../SlideFooter";
 import CxpaasArchitectureBody from "./CxpaasArchitectureBody";
+import UnifiedCxmPlatformBody from "./UnifiedCxmPlatformBody";
 import { PRODUCT_BRIEFING_SPECS, type ProductBriefingSlideSpec } from "./productBriefingSlidesContent";
 
 const BG =
   "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)";
 
 function BriefingBody({ spec }: { spec: ProductBriefingSlideSpec }) {
+  if (spec.variant === "unified-cxm-platform") {
+    return <UnifiedCxmPlatformBody />;
+  }
   if (spec.variant === "cxpaas-architecture") {
     return <CxpaasArchitectureBody />;
   }
@@ -253,7 +257,7 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
           padding:
             spec.variant === "nda"
               ? "72px 100px 16px"
-              : spec.variant === "cxpaas-architecture"
+              : spec.variant === "cxpaas-architecture" || spec.variant === "unified-cxm-platform"
                 ? "32px 56px 4px"
                 : "56px 100px 12px",
           flexShrink: 0,
@@ -275,11 +279,13 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
             className="font-heading"
             style={{
               fontSize:
-                spec.variant === "cxpaas-architecture"
-                  ? 38
-                  : spec.pillars && spec.pillars.length <= 4
-                    ? 44
-                    : 38,
+                spec.variant === "unified-cxm-platform"
+                  ? 34
+                  : spec.variant === "cxpaas-architecture"
+                    ? 38
+                    : spec.pillars && spec.pillars.length <= 4
+                      ? 44
+                      : 38,
               fontWeight: 700,
               color: "#FFFFFF",
               margin: 0,
@@ -291,7 +297,15 @@ export function ProductBriefingDeckSlide({ slideIndex, slideNumber = 0 }: { slid
           </h1>
         )}
         {spec.subtitle && spec.variant !== "nda" && (
-          <p style={{ fontSize: 20, color: "rgba(255,255,255,0.5)", margin: "12px 0 0", lineHeight: 1.4, maxWidth: 920 }}>
+          <p
+            style={{
+              fontSize: spec.variant === "unified-cxm-platform" ? 17 : 20,
+              color: "rgba(255,255,255,0.5)",
+              margin: "12px 0 0",
+              lineHeight: 1.4,
+              maxWidth: spec.variant === "unified-cxm-platform" ? 1100 : 920,
+            }}
+          >
             {spec.subtitle}
           </p>
         )}
