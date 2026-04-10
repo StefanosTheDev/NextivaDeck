@@ -153,7 +153,8 @@
     "brand-trust-overview",
     "brand-trust-channels",
     "three-paths-pre-trust",
-    "customer-use-cases-dark-v2"
+    "customer-use-cases-dark-v2",
+    "customer-use-cases-v2"
   ],
   "categories": {
     "world-moving-thomas": "from Tomas",
@@ -186,6 +187,7 @@
     "brand-trust-channels": "Drew Schulz",
     "three-paths-pre-trust": "Drew Schulz",
     "customer-use-cases-dark-v2": "Seksom-Branch-040926",
+    "customer-use-cases-v2": "Seksom-Branch-040926",
     "ebitda-quarterly-dark": "Finance-Demo-Branch",
     "arr-gross-margin-quarterly-dark": "Finance-Demo-Branch",
     "ai-gateways-revenue": "Finance-Demo-Branch",
