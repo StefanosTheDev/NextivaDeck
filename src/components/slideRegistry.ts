@@ -139,6 +139,12 @@ import {
   ProductBriefingSlide24,
   ProductBriefingSlide25,
 } from "./slides/productBriefing/ProductBriefingDeckSlide";
+import {
+  ProductsRoadmapApr26Slide03,
+  ProductsRoadmapApr26Slide04,
+  ProductsRoadmapApr26Slide05,
+  ProductsRoadmapApr26Slide06,
+} from "./slides/productsRoadmapApr2026/ProductsRoadmapApr26Slides";
 
 export type SlideTheme = "light" | "dark";
 
@@ -290,6 +296,34 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "product-briefing-23": { id: "product-briefing-23", label: "Product Briefing (23/25)", component: ProductBriefingSlide23, theme: "dark", isNew: true },
   "product-briefing-24": { id: "product-briefing-24", label: "Product Briefing (24/25)", component: ProductBriefingSlide24, theme: "dark", isNew: true },
   "product-briefing-25": { id: "product-briefing-25", label: "Product Briefing (25/25)", component: ProductBriefingSlide25, theme: "dark", isNew: true },
+  "products-roadmap-apr26-3": {
+    id: "products-roadmap-apr26-3",
+    label: "Products Roadmap Apr 2026 (3/7 — Agentic CX)",
+    component: ProductsRoadmapApr26Slide03,
+    theme: "dark",
+    isNew: true,
+  },
+  "products-roadmap-apr26-4": {
+    id: "products-roadmap-apr26-4",
+    label: "Products Roadmap Apr 2026 (4/7 — Delivered Jan–Mar)",
+    component: ProductsRoadmapApr26Slide04,
+    theme: "dark",
+    isNew: true,
+  },
+  "products-roadmap-apr26-5": {
+    id: "products-roadmap-apr26-5",
+    label: "Products Roadmap Apr 2026 (5/7 — Agentic NCC)",
+    component: ProductsRoadmapApr26Slide05,
+    theme: "dark",
+    isNew: true,
+  },
+  "products-roadmap-apr26-6": {
+    id: "products-roadmap-apr26-6",
+    label: "Products Roadmap Apr 2026 (6/7 — NextOS + One)",
+    component: ProductsRoadmapApr26Slide06,
+    theme: "dark",
+    isNew: true,
+  },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
