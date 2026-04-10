@@ -151,6 +151,9 @@ import SenthilNextAgenticCXDeliveredSlide from "./slides/SenthilNextAgenticCXDel
 import SenthilNCCRoadmapSlide from "./slides/SenthilNCCRoadmapSlide";
 import SenthilNextOSRoadmapSlide from "./slides/SenthilNextOSRoadmapSlide";
 import SenthilTechnologyDividerSlide from "./slides/SenthilTechnologyDividerSlide";
+import BrandTrustOverviewSlide from "./slides/BrandTrustOverviewSlide";
+import BrandTrustChannelsSlide from "./slides/BrandTrustChannelsSlide";
+import ThreePathsPreTrustSlide from "./slides/ThreePathsPreTrustSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -332,6 +335,9 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "senthil-ncc-roadmap": { id: "senthil-ncc-roadmap", label: "Senthil: NCC Roadmap", component: SenthilNCCRoadmapSlide, theme: "dark", isNew: true },
   "senthil-nextos-roadmap": { id: "senthil-nextos-roadmap", label: "Senthil: NextOS Roadmap", component: SenthilNextOSRoadmapSlide, theme: "dark", isNew: true },
   "senthil-technology-divider": { id: "senthil-technology-divider", label: "Senthil: Technology Divider", component: SenthilTechnologyDividerSlide, theme: "dark", isNew: true },
+  "brand-trust-overview": { id: "brand-trust-overview", label: "Drew: Brand Trust Overview", component: BrandTrustOverviewSlide, theme: "dark", isNew: true },
+  "brand-trust-channels": { id: "brand-trust-channels", label: "Drew: Brand Trust Channels", component: BrandTrustChannelsSlide, theme: "dark", isNew: true },
+  "three-paths-pre-trust": { id: "three-paths-pre-trust", label: "Drew: Three Paths Pre-Trust", component: ThreePathsPreTrustSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [

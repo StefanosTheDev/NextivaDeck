@@ -149,7 +149,10 @@
     "senthil-next-agentic-cx-delivered",
     "senthil-ncc-roadmap",
     "senthil-nextos-roadmap",
-    "senthil-technology-divider"
+    "senthil-technology-divider",
+    "brand-trust-overview",
+    "brand-trust-channels",
+    "three-paths-pre-trust"
   ],
   "categories": {
     "world-moving-thomas": "from Tomas",
@@ -178,6 +181,9 @@
     "senthil-ncc-roadmap": "SENTHIL PPTX Slides",
     "senthil-nextos-roadmap": "SENTHIL PPTX Slides",
     "senthil-technology-divider": "SENTHIL PPTX Slides",
+    "brand-trust-overview": "Drew Schulz",
+    "brand-trust-channels": "Drew Schulz",
+    "three-paths-pre-trust": "Drew Schulz",
     "ebitda-quarterly-dark": "Finance-Demo-Branch",
     "arr-gross-margin-quarterly-dark": "Finance-Demo-Branch",
     "ai-gateways-revenue": "Finance-Demo-Branch",
@@ -193,7 +199,8 @@
     "Yaniv-VersionH Slides",
     "dividers",
     "from Tomas",
-    "SENTHIL PPTX Slides"
+    "SENTHIL PPTX Slides",
+    "Drew Schulz"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
