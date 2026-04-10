@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { ArrowRight } from "lucide-react";
 import { MILESTONES } from "../financialData";
@@ -14,7 +13,6 @@ const chapters = [
       "Built cloud comms from zero — no outside capital.",
       "Won on simplicity, service, and reliability.",
       "Scaled without sacrificing customer-first culture.",
-      "",
     ],
     badge: "Self-funded.",
   },
@@ -27,8 +25,6 @@ const chapters = [
       "One data layer across every conversation.",
       "From tools to platform — single system of record.",
       "Built the foundation AI now runs on.",
-      "",
-      "",
     ],
     badge: "Investment.",
   },
@@ -50,12 +46,9 @@ const ENHANCED_CONNECTOR_W = 108;
 
 export type JourneyCopyConnectorStyle = "simple-bold" | "enhanced";
 
-function ChapterConnector({ delay }: { delay: number }) {
+function ChapterConnector() {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.92 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay }}
+    <div
       style={{
         flexShrink: 0,
         width: ENHANCED_CONNECTOR_W,
@@ -100,7 +93,7 @@ function ChapterConnector({ delay }: { delay: number }) {
           background: "linear-gradient(90deg, rgba(74,158,242,0.9), rgba(255,255,255,0.06))",
         }}
       />
-    </motion.div>
+    </div>
   );
 }
 
@@ -121,8 +114,7 @@ function JourneyCopySlideInner({
         background: "radial-gradient(ellipse 80% 70% at 50% 30%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 50%, #000208 100%)",
       }}
     >
-      <motion.header
-        initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+      <header
         style={{ padding: "48px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p style={{ fontWeight: 700, fontSize: 18, letterSpacing: "0.05em", textTransform: "uppercase", color: "#CCC7C3", margin: 0 }}>
@@ -134,14 +126,12 @@ function JourneyCopySlideInner({
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "10px 0 0", lineHeight: 1.5 }}>
           We lead through the technology inflection points that matter, while earning customer trust.
         </p>
-      </motion.header>
+      </header>
 
       <main style={{ padding: "88px 90px 0", display: "flex", gap: mainGap, alignItems: "stretch" }}>
         {chapters.map((ch, i) => (
           <div key={ch.number} style={{ display: "flex", alignItems: "stretch", flex: "1 1 0", minWidth: 0, gap: colGap }}>
-            <motion.article
-              initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+            <article
               style={{
                 flex: 1,
                 background: "rgba(255,255,255,0.04)",
@@ -160,17 +150,13 @@ function JourneyCopySlideInner({
               <h2 className="font-heading" style={{ fontSize: 30, fontWeight: 500, color: "#FFFFFF", margin: "0 0 14px", lineHeight: 1.2 }}>{ch.title}</h2>
               <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.15)", marginBottom: 14 }} />
               <p className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#CCC7C3", margin: "0 0 14px" }}>{ch.milestone}</p>
-              <ul style={{ margin: 0, padding: 0, listStyle: "none", flex: 1 }}>
-                {ch.bullets.map((b, idx) =>
-                  b === "" ? (
-                    <li key={`${ch.number}-spacer-${idx}`} style={{ lineHeight: 1.5, marginBottom: 6, minHeight: 24 }} aria-hidden />
-                  ) : (
-                    <li key={b} style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 14, position: "relative" }}>
-                      <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.3)" }}>&rsaquo;</span>
-                      {b}
-                    </li>
-                  )
-                )}
+              <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                {ch.bullets.map((b) => (
+                  <li key={b} style={{ fontSize: 16, color: "rgba(255,255,255,0.6)", lineHeight: 1.5, marginBottom: 6, paddingLeft: 14, position: "relative" }}>
+                    <span style={{ position: "absolute", left: 0, color: "rgba(255,255,255,0.3)" }}>&rsaquo;</span>
+                    {b}
+                  </li>
+                ))}
               </ul>
               <div
                 style={{
@@ -185,10 +171,10 @@ function JourneyCopySlideInner({
               >
                 <span style={{ fontSize: 15, fontWeight: 700, color: "#FFFFFF" }}>{ch.badge}</span>
               </div>
-            </motion.article>
+            </article>
             {i < chapters.length - 1 ? (
               connectorStyle === "enhanced" ? (
-                <ChapterConnector delay={0.45 + i * 0.12} />
+                <ChapterConnector />
               ) : (
                 <ArrowRight
                   size={30}
