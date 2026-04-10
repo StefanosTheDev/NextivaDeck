@@ -132,51 +132,44 @@ export default function SenthilNextAgenticCXDeliveredSlide({ slideNumber = 0 }: 
         justifyContent: "space-between",
       }}
     >
-      <header style={{ padding: "28px 80px 0", flexShrink: 0, textAlign: "center" }}>
+      <header style={{ padding: "32px 80px 0", flexShrink: 0, textAlign: "center" }}>
         <p
           style={{
             fontWeight: 700,
-            fontSize: 16,
+            fontSize: 18,
             letterSpacing: "0.05em",
             textTransform: "uppercase",
             color: "#CCC7C3",
             margin: 0,
           }}
         >
-          DELIVERED
+          PRODUCT ROADMAP
         </p>
         <h1
           className="font-heading"
           style={{
-            fontSize: 36,
+            fontSize: 44,
             fontWeight: 500,
             color: "#FFFFFF",
-            margin: "6px 0 0",
+            margin: "8px 0 0",
             lineHeight: 1.15,
           }}
         >
-          the NEXT Agentic CX Platform
+          The NEXT Agentic CX Platform{" "}
+          <span style={{ fontSize: 24, fontWeight: 400, color: "rgba(255,255,255,0.45)" }}>
+            — Delivered in Q3
+          </span>
         </h1>
-        <p
-          style={{
-            fontSize: 16,
-            color: "rgba(255,255,255,0.45)",
-            margin: "4px 0 0",
-          }}
-        >
-          Delivered in Q3
-        </p>
       </header>
 
       <main
         style={{
           flex: 1,
-          padding: "10px 80px 0",
+          padding: "0 80px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: 12,
-          alignContent: "start",
-          overflow: "hidden",
+          alignContent: "center",
         }}
       >
         {months.map((month, mi) => (
@@ -186,36 +179,34 @@ export default function SenthilNextAgenticCXDeliveredSlide({ slideNumber = 0 }: 
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.08)",
               borderRadius: 10,
-              padding: "12px 14px",
-              display: "flex",
-              flexDirection: "column",
-              overflow: "hidden",
+              padding: "0 14px 14px",
             }}
           >
             <h2
               style={{
-                fontSize: 15,
+                fontSize: 16,
                 fontWeight: 700,
                 color: "#FFFFFF",
                 lineHeight: 1.2,
-                background: "rgba(40,96,178,0.1)",
-                margin: "-12px -14px 8px",
+                background: "rgba(40,96,178,0.15)",
                 padding: "10px 14px",
+                margin: "0 -14px 10px",
                 borderRadius: "10px 10px 0 0",
+                flexShrink: 0,
               }}
             >
               {month.header}
             </h2>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 6, overflow: "hidden" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {month.sections.map((section, si) => (
                 <div key={si}>
                   <p
                     style={{
-                      fontSize: 11.5,
+                      fontSize: 13,
                       fontWeight: 700,
                       color: "#7EB3E8",
-                      margin: "0 0 2px",
+                      margin: "0 0 3px",
                       lineHeight: 1.3,
                     }}
                   >
@@ -226,11 +217,11 @@ export default function SenthilNextAgenticCXDeliveredSlide({ slideNumber = 0 }: 
                       <li
                         key={ii}
                         style={{
-                          fontSize: 10.5,
+                          fontSize: 12,
                           color: "rgba(255,255,255,0.7)",
-                          marginBottom: ii < section.items.length - 1 ? 1.5 : 0,
-                          lineHeight: 1.3,
-                          paddingLeft: 10,
+                          marginBottom: ii < section.items.length - 1 ? 2 : 0,
+                          lineHeight: 1.35,
+                          paddingLeft: 12,
                           position: "relative",
                         }}
                       >

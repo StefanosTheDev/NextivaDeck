@@ -65,11 +65,11 @@ function BulletList({ items }: { items: string[] }) {
         <li
           key={i}
           style={{
-            fontSize: 13,
+            fontSize: 14,
             color: "rgba(255,255,255,0.7)",
             marginBottom: i < items.length - 1 ? 4 : 0,
             lineHeight: 1.35,
-            paddingLeft: 12,
+            paddingLeft: 14,
             position: "relative",
           }}
         >
@@ -81,6 +81,36 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
+const COL_HEADER: React.CSSProperties = {
+  fontSize: 16,
+  fontWeight: 700,
+  color: "#FFFFFF",
+  textAlign: "center",
+  padding: "8px 0",
+  background: "rgba(40,96,178,0.15)",
+  borderRadius: 8,
+};
+
+const CAT_LABEL: React.CSSProperties = {
+  fontSize: 14,
+  fontWeight: 700,
+  color: "#7EB3E8",
+  lineHeight: 1.3,
+  whiteSpace: "pre-line",
+  padding: "8px 10px",
+  display: "flex",
+  alignItems: "center",
+  borderLeft: "3px solid rgba(40,96,178,0.4)",
+  borderRadius: 4,
+};
+
+const CELL: React.CSSProperties = {
+  background: "rgba(255,255,255,0.04)",
+  border: "1px solid rgba(255,255,255,0.08)",
+  borderRadius: 8,
+  padding: "8px 14px",
+};
+
 export default function SenthilNextOSRoadmapSlide({ slideNumber = 0 }: { slideNumber?: number }) {
   return (
     <div
@@ -91,11 +121,11 @@ export default function SenthilNextOSRoadmapSlide({ slideNumber = 0 }: { slideNu
         justifyContent: "space-between",
       }}
     >
-      <header style={{ padding: "28px 80px 0", flexShrink: 0, textAlign: "center" }}>
+      <header style={{ padding: "32px 80px 0", flexShrink: 0, textAlign: "center" }}>
         <p
           style={{
             fontWeight: 700,
-            fontSize: 16,
+            fontSize: 18,
             letterSpacing: "0.05em",
             textTransform: "uppercase",
             color: "#CCC7C3",
@@ -107,10 +137,10 @@ export default function SenthilNextOSRoadmapSlide({ slideNumber = 0 }: { slideNu
         <h1
           className="font-heading"
           style={{
-            fontSize: 40,
+            fontSize: 44,
             fontWeight: 500,
             color: "#FFFFFF",
-            margin: "6px 0 0",
+            margin: "8px 0 0",
             lineHeight: 1.15,
           }}
         >
@@ -121,7 +151,7 @@ export default function SenthilNextOSRoadmapSlide({ slideNumber = 0 }: { slideNu
       <main
         style={{
           flex: 1,
-          padding: "12px 80px 0",
+          padding: "8px 80px 0",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -131,78 +161,19 @@ export default function SenthilNextOSRoadmapSlide({ slideNumber = 0 }: { slideNu
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "140px 1fr 1fr",
+            gridTemplateColumns: "150px 1fr 1fr",
             gap: 5,
           }}
         >
-          {/* Column header row */}
           <div />
-          <div
-            style={{
-              fontSize: 15,
-              fontWeight: 700,
-              color: "#FFFFFF",
-              textAlign: "center",
-              padding: "6px 0",
-              background: "rgba(40,96,178,0.15)",
-              borderRadius: 8,
-            }}
-          >
-            2Q 2026
-          </div>
-          <div
-            style={{
-              fontSize: 15,
-              fontWeight: 700,
-              color: "#FFFFFF",
-              textAlign: "center",
-              padding: "6px 0",
-              background: "rgba(40,96,178,0.15)",
-              borderRadius: 8,
-            }}
-          >
-            2H 2026+
-          </div>
+          <div style={COL_HEADER}>2Q 2026</div>
+          <div style={COL_HEADER}>2H 2026+</div>
 
-          {/* Data rows */}
           {rows.map((row, i) => (
             <div key={i} style={{ display: "contents" }}>
-              <div
-                style={{
-                  fontSize: 13,
-                  fontWeight: 700,
-                  color: "#7EB3E8",
-                  lineHeight: 1.3,
-                  whiteSpace: "pre-line",
-                  padding: "8px 10px",
-                  display: "flex",
-                  alignItems: "center",
-                  borderLeft: "3px solid rgba(40,96,178,0.4)",
-                  borderRadius: 4,
-                }}
-              >
-                {row.category}
-              </div>
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 8,
-                  padding: "8px 12px",
-                }}
-              >
-                <BulletList items={row.q2} />
-              </div>
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 8,
-                  padding: "8px 12px",
-                }}
-              >
-                <BulletList items={row.h2} />
-              </div>
+              <div style={CAT_LABEL}>{row.category}</div>
+              <div style={CELL}><BulletList items={row.q2} /></div>
+              <div style={CELL}><BulletList items={row.h2} /></div>
             </div>
           ))}
         </div>
