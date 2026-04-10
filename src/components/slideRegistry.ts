@@ -151,6 +151,7 @@ import SenthilNextAgenticCXDeliveredSlide from "./slides/SenthilNextAgenticCXDel
 import SenthilNCCRoadmapSlide from "./slides/SenthilNCCRoadmapSlide";
 import SenthilNextOSRoadmapSlide from "./slides/SenthilNextOSRoadmapSlide";
 import SenthilTechnologyDividerSlide from "./slides/SenthilTechnologyDividerSlide";
+import CustomerUseCasesDarkV2Slide from "./slides/CustomerUseCasesDarkV2Slide";
 import BrandTrustOverviewSlide from "./slides/BrandTrustOverviewSlide";
 import BrandTrustChannelsSlide from "./slides/BrandTrustChannelsSlide";
 import ThreePathsPreTrustSlide from "./slides/ThreePathsPreTrustSlide";
@@ -338,6 +339,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "brand-trust-overview": { id: "brand-trust-overview", label: "Drew: Brand Trust Overview", component: BrandTrustOverviewSlide, theme: "dark", isNew: true },
   "brand-trust-channels": { id: "brand-trust-channels", label: "Drew: Brand Trust Channels", component: BrandTrustChannelsSlide, theme: "dark", isNew: true },
   "three-paths-pre-trust": { id: "three-paths-pre-trust", label: "Drew: Three Paths Pre-Trust", component: ThreePathsPreTrustSlide, theme: "dark", isNew: true },
+  "customer-use-cases-dark-v2": { id: "customer-use-cases-dark-v2", label: "Customer Use Cases (Dark v2 — Business Value)", component: CustomerUseCasesDarkV2Slide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
