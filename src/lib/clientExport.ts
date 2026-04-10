@@ -39,7 +39,9 @@ async function loadPrintIframe(
 
   return new Promise((resolve, reject) => {
     const iframe = document.createElement("iframe");
-    iframe.style.cssText = `position:fixed;left:0;top:0;width:${cssWidth}px;height:${cssHeight}px;z-index:-9999;pointer-events:none;border:none;`;
+    const browserZoom = window.outerWidth / window.innerWidth;
+    const counterZoom = browserZoom !== 0 ? 1 / browserZoom : 1;
+    iframe.style.cssText = `position:fixed;left:0;top:0;width:${cssWidth}px;height:${cssHeight}px;z-index:-9999;pointer-events:none;border:none;transform-origin:0 0;transform:scale(${counterZoom});`;
     iframe.src = url;
 
     const timeout = setTimeout(() => {
