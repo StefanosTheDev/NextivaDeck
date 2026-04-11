@@ -23,6 +23,9 @@ const metrics = [
   { stat: "60%+", label: "Reduction in time to follow up on standard requests" },
 ];
 
+/** ~⅓ of vertical band from below header to footer on 1080px canvas (breathing room under title). */
+const MAIN_TOP_OFFSET_PX = 240;
+
 export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?: number }) {
   return (
     <div
@@ -49,29 +52,82 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        style={{ flex: 1, display: "flex", gap: 24, padding: "20px 80px 0", overflow: "hidden" }}
+        style={{
+          flex: 1,
+          display: "flex",
+          gap: 28,
+          padding: `${MAIN_TOP_OFFSET_PX}px 80px 12px`,
+          overflow: "hidden",
+          minHeight: 0,
+          alignItems: "stretch",
+        }}
       >
-        {/* Left — photo + company info */}
-        <div style={{ width: "32%", flexShrink: 0, display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={{ flex: 1, borderRadius: 14, overflow: "hidden", position: "relative" }}>
+        {/* Left — photo capped ~½ former vertical span; contain-fit keeps Suzuki logo in frame */}
+        <div
+          style={{
+            width: "26%",
+            flexShrink: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+            alignSelf: "flex-start",
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              height: 400,
+              flexShrink: 0,
+              borderRadius: 14,
+              overflow: "hidden",
+              position: "relative",
+              background: "rgba(0,0,0,0.35)",
+            }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/pptx-slides/slide4-img0.png"
               alt="Suzuki"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                objectPosition: "center center",
+              }}
             />
-            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "40%", background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%)" }} />
-            <div style={{ position: "absolute", bottom: 16, left: 20 }}>
-              <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#7BB3E0", margin: 0 }}>
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: "42%",
+                background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
+                pointerEvents: "none",
+              }}
+            />
+            <div style={{ position: "absolute", bottom: 14, left: 16, right: 16 }}>
+              <p
+                style={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  color: "#7BB3E0",
+                  margin: 0,
+                }}
+              >
                 Industrial Manufacturing
               </p>
-              <p style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", margin: "4px 0 0" }}>72K Employees · 192 Countries</p>
+              <p style={{ fontSize: 11, color: "rgba(255,255,255,0.75)", margin: "4px 0 0", lineHeight: 1.3 }}>
+                72K Employees · 192 Countries
+              </p>
             </div>
           </div>
         </div>
 
         {/* Right — Problem / Solution */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 16 }}>
+        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
           <div style={{ display: "flex", gap: 16, flex: 1 }}>
             {/* Problem */}
             <div style={{ flex: 1, background: "rgba(220,70,70,0.07)", border: "1px solid rgba(220,70,70,0.18)", borderRadius: 14, padding: "20px 22px" }}>

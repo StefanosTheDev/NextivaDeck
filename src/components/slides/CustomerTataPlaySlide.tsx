@@ -24,6 +24,12 @@ const metrics = [
   { stat: "5M+ / Month", label: "Automated standard requests" },
 ];
 
+/** Image from Seksom Slides.pptx — slide 7 (ppt/media/image7.png). */
+const HERO_IMAGE = "/images/pptx-slides/seksom-slide7-tata-play.png";
+
+/** Same vertical rhythm as Customer: Suzuki — space under title on 1080px canvas. */
+const MAIN_TOP_OFFSET_PX = 240;
+
 export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumber?: number }) {
   return (
     <div
@@ -50,31 +56,83 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        style={{ flex: 1, display: "flex", gap: 24, padding: "20px 80px 0", overflow: "hidden" }}
+        style={{
+          flex: 1,
+          display: "flex",
+          gap: 28,
+          padding: `${MAIN_TOP_OFFSET_PX}px 80px 12px`,
+          overflow: "hidden",
+          minHeight: 0,
+          alignItems: "stretch",
+        }}
       >
-        {/* Left — photo + company info */}
-        <div style={{ width: "32%", flexShrink: 0, display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={{ flex: 1, borderRadius: 14, overflow: "hidden", position: "relative" }}>
+        {/* Left — Seksom slide 7 art; fixed frame + contain keeps full logo in view (no cover crop). */}
+        <div
+          style={{
+            width: "26%",
+            flexShrink: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+            alignSelf: "flex-start",
+          }}
+        >
+          <div
+            style={{
+              width: "100%",
+              height: 400,
+              flexShrink: 0,
+              borderRadius: 14,
+              overflow: "hidden",
+              position: "relative",
+              background: "rgba(0,0,0,0.35)",
+            }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/pptx-slides/slide6-img0.jpg"
+              src={HERO_IMAGE}
               alt="Tata Play"
-              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                objectPosition: "center center",
+              }}
             />
-            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "40%", background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%)" }} />
-            <div style={{ position: "absolute", bottom: 16, left: 20 }}>
-              <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#7BB3E0", margin: 0 }}>
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: "42%",
+                background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
+                pointerEvents: "none",
+              }}
+            />
+            <div style={{ position: "absolute", bottom: 14, left: 16, right: 16 }}>
+              <p
+                style={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  color: "#7BB3E0",
+                  margin: 0,
+                }}
+              >
                 Digital Entertainment
               </p>
-              <p style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", margin: "4px 0 0" }}>Servicing 400K+ cities · 1,600 employees</p>
+              <p style={{ fontSize: 11, color: "rgba(255,255,255,0.75)", margin: "4px 0 0", lineHeight: 1.3 }}>
+                Servicing 400K+ cities · 1,600 employees
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Right — Problem / Solution */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 16 }}>
+        {/* Right — Problem / Solution (aligned with Suzuki slide) */}
+        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
           <div style={{ display: "flex", gap: 16, flex: 1 }}>
-            {/* Problem */}
             <div style={{ flex: 1, background: "rgba(220,70,70,0.07)", border: "1px solid rgba(220,70,70,0.18)", borderRadius: 14, padding: "20px 22px" }}>
               <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#E07E7E", margin: "0 0 14px" }}>
                 Problem
@@ -89,7 +147,6 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
               </ul>
             </div>
 
-            {/* Solution */}
             <div style={{ flex: 1, background: "rgba(40,96,178,0.08)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 14, padding: "20px 22px" }}>
               <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 14px" }}>
                 Solution
@@ -105,12 +162,11 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
             </div>
           </div>
 
-          {/* Metrics */}
           <div style={{ display: "flex", gap: 16 }}>
             {metrics.map((m) => (
-              <div key={m.label} style={{ flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "14px 16px", textAlign: "center" }}>
-                <p className="font-heading" style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: 0 }}>{m.stat}</p>
-                <p style={{ fontSize: 10, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em", color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>{m.label}</p>
+              <div key={m.label} style={{ flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "16px 20px", textAlign: "center" }}>
+                <p className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", margin: 0 }}>{m.stat}</p>
+                <p style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em", color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>{m.label}</p>
               </div>
             ))}
           </div>
