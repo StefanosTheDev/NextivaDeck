@@ -91,6 +91,12 @@ import CustomerTataPlaySlide from "./slides/CustomerTataPlaySlide";
 import CustomerShastaSlide from "./slides/CustomerShastaSlide";
 import CustomerAEGVisionSlide from "./slides/CustomerAEGVisionSlide";
 import CustomerUseCasesSlide from "./slides/CustomerUseCasesSlide";
+import {
+  EnterpriseUseCasesSeksomSlide04,
+  EnterpriseUseCasesSeksomSlide07,
+  EnterpriseUseCasesSeksomSlide09,
+  EnterpriseUseCasesSeksomSlide11,
+} from "./slides/EnterpriseUseCasesSeksomSlides";
 import SystemOfActionSlide from "./slides/SystemOfActionSlide";
 import SystemOfActionCopySlide from "./slides/SystemOfActionCopySlide";
 import AIDefensibilityV2Copy2Slide from "./slides/AIDefensibilityV2Copy2Slide";
@@ -250,6 +256,34 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-shasta": { id: "customer-shasta", label: "Customer: Shasta Community Health", component: CustomerShastaSlide, theme: "dark" },
   "customer-aeg-vision": { id: "customer-aeg-vision", label: "Customer: AEG Vision", component: CustomerAEGVisionSlide, theme: "dark" },
   "customer-use-cases": { id: "customer-use-cases", label: "Customer Use Cases (4-card)", component: CustomerUseCasesSlide, theme: "dark" },
+  "enterprise-use-cases-seksom-04": {
+    id: "enterprise-use-cases-seksom-04",
+    label: "Enterprise Use Cases — Tata Play (single-slide layout)",
+    component: EnterpriseUseCasesSeksomSlide04,
+    theme: "dark",
+    isNew: true,
+  },
+  "enterprise-use-cases-seksom-07": {
+    id: "enterprise-use-cases-seksom-07",
+    label: "Enterprise Use Cases — Suzuki (single-slide layout)",
+    component: EnterpriseUseCasesSeksomSlide07,
+    theme: "dark",
+    isNew: true,
+  },
+  "enterprise-use-cases-seksom-09": {
+    id: "enterprise-use-cases-seksom-09",
+    label: "Enterprise Use Cases — Shasta (single-slide layout)",
+    component: EnterpriseUseCasesSeksomSlide09,
+    theme: "dark",
+    isNew: true,
+  },
+  "enterprise-use-cases-seksom-11": {
+    id: "enterprise-use-cases-seksom-11",
+    label: "Enterprise Use Cases — AEG Vision (single-slide layout)",
+    component: EnterpriseUseCasesSeksomSlide11,
+    theme: "dark",
+    isNew: true,
+  },
   "system-of-action": { id: "system-of-action", label: "System of Action", component: SystemOfActionSlide, theme: "dark" },
   "system-of-action-copy": { id: "system-of-action-copy", label: "System of Action (copy)", component: SystemOfActionCopySlide, theme: "dark" },
   "system-of-action-visual-copy": { id: "system-of-action-visual-copy", label: "System of Action Visual (Understand → Decide → Act)", component: SystemOfActionVisualCopySlide, theme: "dark" },
