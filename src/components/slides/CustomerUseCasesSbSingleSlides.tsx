@@ -30,23 +30,27 @@ const SB_MAIN_BODY_SHIFT_RIGHT_PX = 80;
 const SB_CARDS_LEADING_FREE_SPACE_GROW = 65;
 const SB_CARDS_TRAILING_FREE_SPACE_GROW = 35;
 
+/**
+ * Fixed card widths so every SB single (Foxy, Vision Wheel, etc.) shares the same Problem/Solution box size;
+ * longer copy wraps inside instead of widening the cards.
+ */
+const SB_PROBLEM_CARD_WIDTH_PX = 400;
+const SB_SOLUTION_CARD_WIDTH_PX = 460;
+
 function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbCustomerCaseSpec }) {
-  const isFoxy = c.name === "Foxy Coatings";
+  /** Nudge hero right by the flex leading-spacer width so visual gap hero→Problem matches SB_HERO_PROBLEM_SOLUTION_GAP_PX (same as Problem→Solution). */
   const cardsLeadSpacerRef = useRef<HTMLDivElement>(null);
-  const [foxyHeroNudgePx, setFoxyHeroNudgePx] = useState(0);
+  const [heroNudgePx, setHeroNudgePx] = useState(0);
 
   useLayoutEffect(() => {
     const el = cardsLeadSpacerRef.current;
-    if (!isFoxy || !el) {
-      setFoxyHeroNudgePx(0);
-      return;
-    }
-    const sync = () => setFoxyHeroNudgePx(el.offsetWidth);
+    if (!el) return;
+    const sync = () => setHeroNudgePx(el.offsetWidth);
     const ro = new ResizeObserver(sync);
     ro.observe(el);
     sync();
     return () => ro.disconnect();
-  }, [isFoxy]);
+  }, []);
 
   return (
     <div className="slide" style={{ background: BG }}>
@@ -107,13 +111,9 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
             flexDirection: "column",
             gap: 12,
             alignSelf: "flex-start",
-            ...(isFoxy
-              ? {
-                  position: "relative",
-                  zIndex: 2,
-                  transform: `translateX(${foxyHeroNudgePx}px)`,
-                }
-              : {}),
+            position: "relative",
+            zIndex: 2,
+            transform: `translateX(${heroNudgePx}px)`,
           }}
         >
           <div
@@ -213,7 +213,8 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
             <div
               style={{
                 flex: "0 0 auto",
-                width: "max-content",
+                flexShrink: 0,
+                width: SB_PROBLEM_CARD_WIDTH_PX,
                 maxWidth: "100%",
                 minHeight: 0,
                 alignSelf: "stretch",
@@ -232,7 +233,15 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
                 {c.problems.map((p, i) => (
                   <li
                     key={`p-${i}-${p.slice(0, 24)}`}
-                    style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 8, paddingLeft: 16, position: "relative" }}
+                    style={{
+                      fontSize: 13,
+                      color: "rgba(255,255,255,0.55)",
+                      lineHeight: 1.5,
+                      marginBottom: 8,
+                      paddingLeft: 16,
+                      position: "relative",
+                      overflowWrap: "break-word",
+                    }}
                   >
                     <span style={{ position: "absolute", left: 0, color: "#E07E7E", fontWeight: 700 }}>✗</span>
                     {p}
@@ -244,7 +253,8 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
             <div
               style={{
                 flex: "0 0 auto",
-                width: "max-content",
+                flexShrink: 0,
+                width: SB_SOLUTION_CARD_WIDTH_PX,
                 maxWidth: "100%",
                 minHeight: 0,
                 alignSelf: "stretch",
@@ -263,7 +273,15 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
                 {c.solutions.map((s, i) => (
                   <li
                     key={`s-${i}-${s.slice(0, 24)}`}
-                    style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 8, paddingLeft: 16, position: "relative" }}
+                    style={{
+                      fontSize: 13,
+                      color: "rgba(255,255,255,0.55)",
+                      lineHeight: 1.5,
+                      marginBottom: 8,
+                      paddingLeft: 16,
+                      position: "relative",
+                      overflowWrap: "break-word",
+                    }}
                   >
                     <span style={{ position: "absolute", left: 0, color: "#7EB3E8" }}>✓</span>
                     {s}
