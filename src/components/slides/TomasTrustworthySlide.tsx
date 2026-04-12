@@ -123,10 +123,9 @@ export default function TomasTrustworthySlide({
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{
             display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "flex-start",
+            alignItems: "center",
+            justifyContent: "center",
             width: "100%",
-            paddingTop: 40,
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -135,9 +134,9 @@ export default function TomasTrustworthySlide({
             alt="Compliance certifications: HIPAA, HITRUST, GDPR, PCI DSS, Do Not Call Registry, TCPA"
             style={{
               objectFit: "contain",
-              objectPosition: "left top",
-              width: "85%",
-              height: "100%",
+              objectPosition: "center",
+              width: "65%",
+              height: "auto",
             }}
           />
         </motion.div>
