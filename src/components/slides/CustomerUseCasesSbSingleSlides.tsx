@@ -1,9 +1,14 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { SB_CUSTOMER_CASES, type SbCustomerCaseSpec } from "./customerUseCasesSbSinglesContent";
+import {
+  CustomerSlideSbStyleHeroCardsRow,
+  SB_HERO_PROBLEM_SOLUTION_GAP_PX,
+  SB_PROBLEM_CARD_WIDTH_PX,
+  SB_SOLUTION_CARD_WIDTH_PX,
+} from "./CustomerSlideSbStyleHeroCardsRow";
 
 const BG =
   "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)";
@@ -17,41 +22,7 @@ const HERO_HEIGHT_PX = 400;
 /** Space between Problem/Solution row and metrics row (unchanged cushion). */
 const METRICS_TOP_GAP_PX = 16;
 
-/** Horizontal gap between hero and Problem card — same as between Problem and Solution. */
-const SB_HERO_PROBLEM_SOLUTION_GAP_PX = 16;
-
-/** Shifts the hero + cards block right within the slide (beyond main horizontal padding). */
-const SB_MAIN_BODY_SHIFT_RIGHT_PX = 80;
-
-/**
- * After the hero, leftover width is split between leading space, the card column, and trailing space.
- * Grow ratio 65 : 35 closes 65% of the former “all on the right” gap (trailing space = 35% of free width).
- */
-const SB_CARDS_LEADING_FREE_SPACE_GROW = 65;
-const SB_CARDS_TRAILING_FREE_SPACE_GROW = 35;
-
-/**
- * Fixed card widths so every SB single (Foxy, Vision Wheel, etc.) shares the same Problem/Solution box size;
- * longer copy wraps inside instead of widening the cards.
- */
-const SB_PROBLEM_CARD_WIDTH_PX = 400;
-const SB_SOLUTION_CARD_WIDTH_PX = 460;
-
 function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbCustomerCaseSpec }) {
-  /** Nudge hero right by the flex leading-spacer width so visual gap hero→Problem matches SB_HERO_PROBLEM_SOLUTION_GAP_PX (same as Problem→Solution). */
-  const cardsLeadSpacerRef = useRef<HTMLDivElement>(null);
-  const [heroNudgePx, setHeroNudgePx] = useState(0);
-
-  useLayoutEffect(() => {
-    const el = cardsLeadSpacerRef.current;
-    if (!el) return;
-    const sync = () => setHeroNudgePx(el.offsetWidth);
-    const ro = new ResizeObserver(sync);
-    ro.observe(el);
-    sync();
-    return () => ro.disconnect();
-  }, []);
-
   return (
     <div className="slide" style={{ background: BG }}>
       <motion.header
@@ -91,31 +62,8 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
           alignItems: "stretch",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            gap: SB_HERO_PROBLEM_SOLUTION_GAP_PX,
-            alignItems: "flex-start",
-            marginLeft: SB_MAIN_BODY_SHIFT_RIGHT_PX,
-            minWidth: 0,
-            width: `calc(100% - ${SB_MAIN_BODY_SHIFT_RIGHT_PX}px)`,
-          }}
-        >
-        <div
-          style={{
-            width: "26%",
-            flexShrink: 0,
-            display: "flex",
-            flexDirection: "column",
-            gap: 12,
-            alignSelf: "flex-start",
-            position: "relative",
-            zIndex: 2,
-            transform: `translateX(${heroNudgePx}px)`,
-          }}
-        >
+        <CustomerSlideSbStyleHeroCardsRow
+          hero={
           <div
             style={{
               width: "100%",
@@ -169,24 +117,8 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
               <p style={{ fontSize: 11, color: "rgba(255,255,255,0.75)", margin: 0, lineHeight: 1.3 }}>{c.size}</p>
             </div>
           </div>
-        </div>
-
-        <div
-          style={{
-            flex: "1 1 auto",
-            minWidth: 0,
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "flex-start",
-            alignSelf: "stretch",
-          }}
-        >
-          <div
-            ref={cardsLeadSpacerRef}
-            aria-hidden
-            style={{ flex: `${SB_CARDS_LEADING_FREE_SPACE_GROW} 1 0%`, minWidth: 0 }}
-          />
-          <div style={{ flex: "0 0 auto", minWidth: 0, maxWidth: "100%" }}>
+          }
+          cards={
           <div
             style={{
               display: "flex",
@@ -291,7 +223,7 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: 16, flexShrink: 0, width: "100%" }}>
+          <div style={{ display: "flex", gap: SB_HERO_PROBLEM_SOLUTION_GAP_PX, flexShrink: 0, width: "100%" }}>
             {c.metrics.map((m) => (
               <div
                 key={m.label}
@@ -325,13 +257,8 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
             ))}
           </div>
           </div>
-          </div>
-          <div
-            aria-hidden
-            style={{ flex: `${SB_CARDS_TRAILING_FREE_SPACE_GROW} 1 0%`, minWidth: 0 }}
-          />
-        </div>
-        </div>
+          }
+        />
       </motion.main>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
