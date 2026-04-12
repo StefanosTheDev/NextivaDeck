@@ -4,26 +4,58 @@ import SlideFooter from "../SlideFooter";
 
 /* ─── DATA ─── */
 
-const BUSINESS_SOURCES = ["Product Catalog", "KMS (KB/FAQ)", "Web Portal", "Product Specifications", "Best Practices"];
+const BUSINESS_SOURCES = [
+  { label: "Product Catalog", nextiva: false },
+  { label: "KMS (KB/FAQ)", nextiva: false },
+  { label: "Web Portal", nextiva: false },
+  { label: "Product Specifications", nextiva: false },
+  { label: "Best Practices", nextiva: false },
+];
 
 const CUSTOMER_SECTIONS = [
   {
     title: "Portal + Product Interactions",
-    items: ["Nextiva Pixel", "Nextiva Connect", "RUM", "CDP", "GA", "FBP"],
+    items: [
+      { label: "Nextiva Pixel", nextiva: true },
+      { label: "Nextiva Connect", nextiva: true },
+      { label: "RUM", nextiva: false },
+      { label: "CDP", nextiva: false },
+      { label: "GA", nextiva: false },
+      { label: "FBP", nextiva: false },
+    ],
   },
   {
     title: "Customer Records/CRM/LOB Tools",
-    items: ["CRM", "ITSM", "ERP", "AP"],
+    items: [
+      { label: "CRM", nextiva: false },
+      { label: "ITSM", nextiva: false },
+      { label: "ERP", nextiva: false },
+      { label: "AP", nextiva: false },
+    ],
   },
   {
     title: "Data Lakes",
-    items: ["GCP", "Azure Fabric", "Snowflake", "GW", "M365"],
+    items: [
+      { label: "GCP", nextiva: true },
+      { label: "Azure Fabric", nextiva: false },
+      { label: "Snowflake", nextiva: false },
+      { label: "GW", nextiva: false },
+      { label: "M365", nextiva: false },
+    ],
   },
   {
     title: "3rd Party Enrichments",
     items: [
-      "Experian", "LinkedIn", "ZoomInfo", "Clay", "6sense",
-      "IP Geolocation", "DNC Emergency", "Outbound ANI", "Public Records", "Somos NANPA",
+      { label: "Experian", nextiva: false },
+      { label: "LinkedIn", nextiva: false },
+      { label: "ZoomInfo", nextiva: false },
+      { label: "Clay", nextiva: false },
+      { label: "6sense", nextiva: false },
+      { label: "IP Geolocation", nextiva: false },
+      { label: "DNC Emergency", nextiva: false },
+      { label: "Outbound ANI", nextiva: false },
+      { label: "Public Records", nextiva: false },
+      { label: "Somos NANPA", nextiva: false },
     ],
   },
 ];
@@ -38,37 +70,39 @@ const BULLETS = [
 
 /* ─── PILL ─── */
 
-function Pill({ label }: { label: string }) {
+function Pill({ label, nextiva }: { label: string; nextiva: boolean }) {
   return (
     <span style={{
       fontSize: 12,
       color: "#FFFFFF",
-      background: "#2860B2",
+      background: nextiva ? "rgba(126,179,232,0.15)" : "rgba(40,96,178,0.7)",
+      border: nextiva ? "1px solid rgba(126,179,232,0.3)" : "1px solid rgba(40,96,178,0.9)",
       borderRadius: 6,
-      padding: "4px 10px",
-      whiteSpace: "nowrap" as const,
+      padding: "5px 8px",
       fontWeight: 500,
+      textAlign: "center" as const,
     }}>
       {label}
     </span>
   );
 }
 
-/* ─── SUB-SECTION INSIDE CUSTOMER DATA ─── */
+/* ─── SUB-SECTION ─── */
 
-function SubSection({ title, items }: { title: string; items: string[] }) {
+function SubSection({ title, items }: { title: string; items: { label: string; nextiva: boolean }[] }) {
   return (
     <div style={{
       background: "rgba(255,255,255,0.04)",
       border: "1px solid rgba(255,255,255,0.08)",
       borderRadius: 8,
-      padding: "8px 10px",
+      padding: "10px 14px",
+      textAlign: "left",
     }}>
-      <p style={{ fontSize: 12, fontWeight: 700, color: "rgba(255,255,255,0.7)", margin: "0 0 6px" }}>
+      <p style={{ fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.7)", margin: "0 0 8px" }}>
         {title}
       </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-        {items.map((item) => <Pill key={item} label={item} />)}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 5 }}>
+        {items.map((item) => <Pill key={item.label} label={item.label} nextiva={item.nextiva} />)}
       </div>
     </div>
   );
@@ -93,13 +127,13 @@ export default function SenthilDataIntelligencePlatformSlide({
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "40px 100px 0", flexShrink: 0 }}
+        style={{ padding: "36px 80px 0", flexShrink: 0, textAlign: "center" }}
       >
         <h1
           className="font-heading"
           style={{ fontSize: 48, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
         >
-          <span style={{ color: "#7EB3E8" }}>Reasoning</span> across customer &amp; business data
+          <span style={{ color: "#2860B2" }}>Reasoning</span> across customer &amp; business data
         </h1>
       </motion.header>
 
@@ -109,74 +143,94 @@ export default function SenthilDataIntelligencePlatformSlide({
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
-          padding: "20px 80px",
+          padding: "16px 80px",
           display: "grid",
           gridTemplateColumns: "1.4fr 1fr",
           gap: 32,
           alignContent: "center",
         }}
       >
-        {/* LEFT: Nested Architecture Diagram */}
+        {/* LEFT: Diagram with vertical right-side label */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          style={{ display: "flex", flexDirection: "column", gap: 8 }}
+          style={{ display: "flex", flexDirection: "column", gap: 6 }}
         >
-          {/* Business Data Sources — top block */}
-          <div style={{
-            background: "rgba(40,96,178,0.12)",
-            border: "1px solid rgba(40,96,178,0.3)",
-            borderRadius: 10,
-            padding: "10px 14px",
-          }}>
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#7EB3E8", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-              Business Data Sources
-            </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
-              {BUSINESS_SOURCES.map((item) => <Pill key={item} label={item} />)}
+          {/* Data blocks row + vertical label */}
+          <div style={{ display: "flex", gap: 8 }}>
+            {/* Left: stacked data blocks */}
+            <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
+              {/* Business Data Sources */}
+              <div style={{
+                background: "rgba(40,96,178,0.12)",
+                border: "1px solid rgba(40,96,178,0.3)",
+                borderRadius: 10,
+                padding: "14px 18px",
+                textAlign: "center",
+              }}>
+                <p style={{ fontSize: 14, fontWeight: 700, color: "#7EB3E8", margin: "0 0 10px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                  Business Data Sources
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
+                  {BUSINESS_SOURCES.map((item) => <Pill key={item.label} label={item.label} nextiva={item.nextiva} />)}
+                </div>
+              </div>
+
+              {/* Customer Data Sources */}
+              <div style={{
+                background: "rgba(40,96,178,0.08)",
+                border: "1px solid rgba(40,96,178,0.25)",
+                borderRadius: 10,
+                padding: "14px 14px",
+                textAlign: "center",
+              }}>
+                <p style={{ fontSize: 14, fontWeight: 700, color: "#7EB3E8", margin: "0 0 10px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                  Customer Data Sources (1st &amp; 3rd Party)
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  {CUSTOMER_SECTIONS.map((section) => (
+                    <SubSection key={section.title} title={section.title} items={section.items} />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right: vertical label — spans from top of Business Data to bottom of Customer Data */}
+            <div style={{
+              writingMode: "vertical-rl",
+              textOrientation: "mixed",
+              background: "rgba(40,96,178,0.18)",
+              border: "1px solid rgba(40,96,178,0.4)",
+              borderRadius: 10,
+              padding: "16px 10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}>
+              <p style={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: "#FFFFFF",
+                margin: 0,
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                whiteSpace: "nowrap",
+              }}>
+                Nextiva Data &amp; Intelligence Platform
+              </p>
             </div>
           </div>
 
-          {/* Customer Data Sources — large container with sub-sections */}
-          <div style={{
-            background: "rgba(40,96,178,0.08)",
-            border: "1px solid rgba(40,96,178,0.25)",
-            borderRadius: 10,
-            padding: "12px 12px",
-          }}>
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#7EB3E8", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-              Customer Data Sources (1st &amp; 3rd Party)
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {CUSTOMER_SECTIONS.map((section) => (
-                <SubSection key={section.title} title={section.title} items={section.items} />
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom banner: NEXTIVA DATA & INTELLIGENCE PLATFORM */}
-          <div style={{
-            background: "rgba(40,96,178,0.18)",
-            border: "1px solid rgba(40,96,178,0.4)",
-            borderRadius: 10,
-            padding: "10px 14px",
-            textAlign: "center",
-          }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: "#FFFFFF", margin: 0, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-              Nextiva Data &amp; Intelligence Platform
-            </p>
-          </div>
-
-          {/* Bottom badges: Nextiva + 3rd Party */}
-          <div style={{ display: "flex", gap: 8, marginTop: 2 }}>
-            <span style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF", background: "#2860B2", borderRadius: 6, padding: "3px 12px" }}>Nextiva</span>
-            <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.7)", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 6, padding: "3px 12px" }}>3rd Party</span>
+          {/* Legend badges — below, outside the vertical label */}
+          <div style={{ display: "flex", gap: 8 }}>
+            <span style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF", background: "rgba(126,179,232,0.15)", border: "1px solid rgba(126,179,232,0.3)", borderRadius: 6, padding: "3px 12px" }}>Nextiva</span>
+            <span style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF", background: "rgba(40,96,178,0.7)", border: "1px solid rgba(40,96,178,0.9)", borderRadius: 6, padding: "3px 12px" }}>3rd Party</span>
           </div>
         </motion.div>
 
-        {/* RIGHT: Bullet Points */}
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 16 }}>
+        {/* RIGHT: Text points (no bullets) */}
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 18 }}>
           {BULLETS.map((item, i) => (
             <motion.div
               key={i}
@@ -184,14 +238,11 @@ export default function SenthilDataIntelligencePlatformSlide({
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
               style={{
-                fontSize: 16,
+                fontSize: 20,
                 color: "rgba(255,255,255,0.7)",
                 lineHeight: 1.5,
-                paddingLeft: 20,
-                position: "relative",
               }}
             >
-              <span style={{ position: "absolute", left: 0, color: "#2860B2" }}>•</span>
               <span style={{ fontWeight: 700, color: "#FFFFFF" }}>{item.bold}</span>
               {item.text}
             </motion.div>

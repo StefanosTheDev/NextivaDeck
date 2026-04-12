@@ -42,7 +42,7 @@ export default function TomasDemocratizedPlatformSlide({
         <h1
           className="font-heading"
           style={{
-            fontSize: 56,
+            fontSize: 52,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
@@ -51,7 +51,7 @@ export default function TomasDemocratizedPlatformSlide({
         >
           Nextiva provides
           <br />
-          <span style={{ color: "#7EB3E8" }}>a democratized platform for all</span>
+          <span style={{ color: "#2860B2" }}>a democratized platform for all</span>
         </h1>
       </motion.header>
 
@@ -61,11 +61,11 @@ export default function TomasDemocratizedPlatformSlide({
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
-          padding: "36px 100px",
+          padding: "32px 100px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gridTemplateRows: "repeat(2, 1fr)",
-          gap: 20,
+          gap: 18,
           alignContent: "center",
         }}
       >
@@ -77,35 +77,35 @@ export default function TomasDemocratizedPlatformSlide({
             transition={{ duration: 0.5, delay: 0.15 + i * 0.06 }}
             style={{
               background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.1)",
+              border: "1px solid rgba(255,255,255,0.08)",
               borderRadius: 14,
-              padding: "32px 28px",
+              padding: "26px 24px",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              gap: 16,
+              gap: 14,
             }}
           >
             <div
               style={{
-                width: 52,
-                height: 52,
-                borderRadius: 14,
-                background: "rgba(40,96,178,0.14)",
-                border: "1px solid rgba(40,96,178,0.32)",
+                width: 48,
+                height: 48,
+                borderRadius: 12,
+                background: "rgba(40,96,178,0.15)",
+                border: "1px solid rgba(40,96,178,0.25)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
-              <pillar.icon size={26} color="#7EB3E8" strokeWidth={1.75} />
+              <pillar.icon size={24} color="#7EB3E8" strokeWidth={1.75} />
             </div>
             <p
               className="font-heading"
               style={{
-                fontSize: 20,
+                fontSize: 24,
                 fontWeight: 500,
                 color: "#FFFFFF",
                 margin: 0,
