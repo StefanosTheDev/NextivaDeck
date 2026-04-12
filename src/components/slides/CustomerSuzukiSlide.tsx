@@ -4,17 +4,15 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
 const problems = [
-  "High call volume for standard information inquiries on models and locations and customer service issues.",
-  "Reliance on email and phone support, leading to slow response and resolution times.",
-  "Limited visibility to user information throughout the CX lifecycle",
-  "Inefficient customer engagement across multiple channels.",
+  "Staffing inefficiencies: High call volume for standard information inquiries on models, locations and customer service issues.",
+  "Poor customer experiences: Slow response and resolution times due to reliance on phone or e-mail, limited engagement on other channels.",
+  "Limited customer insight: No holistic customer information.",
 ];
 
 const solutions = [
-  "AI-powered chatbot deployed across multiple channels makes response on standard inquiries instantaneous and require no human intervention.",
-  "Seamless agent transfer - direct connection to human agents for complex related inquiries.",
-  "Automated insights & analytics: sessions, users, and engagement rates across all channels.",
-  "Customer feedback & sentiment captures survey insights for consistent improvement.",
+  "Improved CX: AI-driven instant responses to standard inquiries; seamless transfers to human agents for complex ones.",
+  "Automated KPI visibility: KPIs across multiple dimensions and channels.",
+  "Continuous improvement: Customer feedback & sentiment captured.",
 ];
 
 const metrics = [

@@ -4,17 +4,16 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
 const problems = [
-  "High call volume for standard customer service queries and issues.",
-  "Reliance on email and phone support, leading to slow resolution times.",
-  "Limited automation and self-service options for package upgrades and troubleshooting.",
-  "Inefficient customer engagement across multiple channels.",
+  "Staffing inefficiencies: High call volume for standard service queries.",
+  "Slow resolution: Email/phone reliance.",
+  "Poor scalability: No automation for upgrades & troubleshooting.",
+  "Limited channel support: Inefficient multi-channel engagement.",
 ];
 
 const solutions = [
-  "Integrated WhatsApp AI Bot through Nextiva for automated customer support.",
-  "Shifted 20% of customer inquiries from other channels to WhatsApp, reducing call center load.",
-  "Automated 5 million+ standard queries and troubleshooting requests monthly.",
-  "Improved first response time and customer engagement efficiency.",
+  "Expanded channel support: Integrated WhatsApp AI Bot for automated customer support & other inquiries, reduced call center load.",
+  "Scaled automation: 5 million+/month standard queries and troubleshooting.",
+  "Improved customer sat: Faster first response time and customer engagement efficiency.",
 ];
 
 const metrics = [
