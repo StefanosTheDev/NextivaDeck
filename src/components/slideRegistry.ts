@@ -546,13 +546,13 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "platform-roadmap-horizon-2",
   "platform-roadmap-investor",
   // TOMAS / SENTHIL PPT SLIDES 041126
+  "tomas-democratized-platform-041126",
+  "tomas-cx-first-system-041126",
+  "tomas-human-ai-harmony-041126",
   "senthil-model-agnostic-platform-041126",
   "senthil-data-intelligence-platform-041126",
   "senthil-cxpaas-arch-041126",
   "senthil-bespoke-at-scale-041126",
-  "tomas-democratized-platform-041126",
-  "tomas-cx-first-system-041126",
-  "tomas-human-ai-harmony-041126",
   "tomas-trustworthy-041126",
   "tomas-global-footprint-041126",
 ];
