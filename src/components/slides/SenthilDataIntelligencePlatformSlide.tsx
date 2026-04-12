@@ -2,14 +2,31 @@
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
-const CUSTOMER_CRM = ["CRM", "ITSM", "ERP", "AP", "RUM"];
-const CUSTOMER_TRACKING = ["CDP", "GA", "Nextiva Pixel", "Nextiva Connect"];
-const ENRICHMENTS = ["Experian", "LinkedIn", "ZoomInfo", "Clay", "6sense"];
-const BUSINESS_SOURCES = [
-  "Product Catalog", "KMS (KB/FAQ)", "Web Portal", "Product Specifications",
-  "FBP", "IPGeolocation", "DNCEmergency", "Outbound ANI", "PublicRecords", "SomosNANPA",
+/* ─── DATA ─── */
+
+const BUSINESS_SOURCES = ["Product Catalog", "KMS (KB/FAQ)", "Web Portal", "Product Specifications", "Best Practices"];
+
+const CUSTOMER_SECTIONS = [
+  {
+    title: "Portal + Product Interactions",
+    items: ["Nextiva Pixel", "Nextiva Connect", "RUM", "CDP", "GA", "FBP"],
+  },
+  {
+    title: "Customer Records/CRM/LOB Tools",
+    items: ["CRM", "ITSM", "ERP", "AP"],
+  },
+  {
+    title: "Data Lakes",
+    items: ["GCP", "Azure Fabric", "Snowflake", "GW", "M365"],
+  },
+  {
+    title: "3rd Party Enrichments",
+    items: [
+      "Experian", "LinkedIn", "ZoomInfo", "Clay", "6sense",
+      "IP Geolocation", "DNC Emergency", "Outbound ANI", "Public Records", "Somos NANPA",
+    ],
+  },
 ];
-const DATA_LAKES = ["M365", "GW", "Snowflake", "GCP", "Azure Fabric", "Nextiva", "3rd Party"];
 
 const BULLETS = [
   { bold: "Coherent View", text: " of Customer & Business Data critical for every customer interaction" },
@@ -19,65 +36,45 @@ const BULLETS = [
   { bold: "Enabling Recommendation & Ranking Engines", text: " - NBA, NBR, Relevant Articles, Tickets for You" },
 ];
 
+/* ─── PILL ─── */
+
 function Pill({ label }: { label: string }) {
   return (
-    <span
-      style={{
-        fontSize: 11,
-        color: "rgba(255,255,255,0.7)",
-        background: "rgba(40,96,178,0.12)",
-        border: "1px solid rgba(40,96,178,0.3)",
-        borderRadius: 6,
-        padding: "3px 8px",
-        whiteSpace: "nowrap",
-      }}
-    >
+    <span style={{
+      fontSize: 12,
+      color: "#FFFFFF",
+      background: "#2860B2",
+      borderRadius: 6,
+      padding: "4px 10px",
+      whiteSpace: "nowrap" as const,
+      fontWeight: 500,
+    }}>
       {label}
     </span>
   );
 }
 
-function SectionCard({
-  title,
-  items,
-  delay,
-}: {
-  title: string;
-  items: string[];
-  delay: number;
-}) {
+/* ─── SUB-SECTION INSIDE CUSTOMER DATA ─── */
+
+function SubSection({ title, items }: { title: string; items: string[] }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay }}
-      style={{
-        background: "rgba(255,255,255,0.04)",
-        border: "1px solid rgba(255,255,255,0.08)",
-        borderRadius: 10,
-        padding: "10px 14px",
-      }}
-    >
-      <p
-        style={{
-          fontSize: 12,
-          fontWeight: 700,
-          color: "#7EB3E8",
-          margin: "0 0 6px",
-          textTransform: "uppercase",
-          letterSpacing: "0.04em",
-        }}
-      >
+    <div style={{
+      background: "rgba(255,255,255,0.04)",
+      border: "1px solid rgba(255,255,255,0.08)",
+      borderRadius: 8,
+      padding: "8px 10px",
+    }}>
+      <p style={{ fontSize: 12, fontWeight: 700, color: "rgba(255,255,255,0.7)", margin: "0 0 6px" }}>
         {title}
       </p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-        {items.map((item) => (
-          <Pill key={item} label={item} />
-        ))}
+        {items.map((item) => <Pill key={item} label={item} />)}
       </div>
-    </motion.div>
+    </div>
   );
 }
+
+/* ─── SLIDE ─── */
 
 export default function SenthilDataIntelligencePlatformSlide({
   slideNumber = 0,
@@ -88,8 +85,7 @@ export default function SenthilDataIntelligencePlatformSlide({
     <div
       className="slide"
       style={{
-        background:
-          "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
+        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
         justifyContent: "space-between",
       }}
     >
@@ -97,17 +93,11 @@ export default function SenthilDataIntelligencePlatformSlide({
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "48px 100px 0", flexShrink: 0 }}
+        style={{ padding: "40px 100px 0", flexShrink: 0 }}
       >
         <h1
           className="font-heading"
-          style={{
-            fontSize: 48,
-            fontWeight: 500,
-            color: "#FFFFFF",
-            margin: 0,
-            lineHeight: 1.15,
-          }}
+          style={{ fontSize: 48, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
         >
           <span style={{ color: "#7EB3E8" }}>Reasoning</span> across customer &amp; business data
         </h1>
@@ -119,73 +109,74 @@ export default function SenthilDataIntelligencePlatformSlide({
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
-          padding: "20px 100px",
+          padding: "20px 80px",
           display: "grid",
-          gridTemplateColumns: "1.2fr 1fr",
-          gap: 36,
-          alignContent: "start",
+          gridTemplateColumns: "1.4fr 1fr",
+          gap: 32,
+          alignContent: "center",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <SectionCard
-            title="Customer Data Sources (1st & 3rd Party)"
-            items={[
-              "Portal + Product Interactions",
-              ...CUSTOMER_CRM,
-              ...CUSTOMER_TRACKING,
-            ]}
-            delay={0.25}
-          />
-          <SectionCard
-            title="3rd Party Enrichments"
-            items={ENRICHMENTS}
-            delay={0.35}
-          />
-          <SectionCard
-            title="Business Data Sources"
-            items={BUSINESS_SOURCES}
-            delay={0.45}
-          />
-          <SectionCard
-            title="Data Lakes"
-            items={DATA_LAKES}
-            delay={0.55}
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.65 }}
-            style={{
-              background: "rgba(40,96,178,0.15)",
-              border: "1px solid rgba(40,96,178,0.35)",
-              borderRadius: 10,
-              padding: "10px 14px",
-              textAlign: "center",
-            }}
-          >
-            <p
-              style={{
-                fontSize: 13,
-                fontWeight: 700,
-                color: "#FFFFFF",
-                margin: 0,
-                textTransform: "uppercase",
-                letterSpacing: "0.06em",
-              }}
-            >
+        {/* LEFT: Nested Architecture Diagram */}
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          style={{ display: "flex", flexDirection: "column", gap: 8 }}
+        >
+          {/* Business Data Sources — top block */}
+          <div style={{
+            background: "rgba(40,96,178,0.12)",
+            border: "1px solid rgba(40,96,178,0.3)",
+            borderRadius: 10,
+            padding: "10px 14px",
+          }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#7EB3E8", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+              Business Data Sources
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
+              {BUSINESS_SOURCES.map((item) => <Pill key={item} label={item} />)}
+            </div>
+          </div>
+
+          {/* Customer Data Sources — large container with sub-sections */}
+          <div style={{
+            background: "rgba(40,96,178,0.08)",
+            border: "1px solid rgba(40,96,178,0.25)",
+            borderRadius: 10,
+            padding: "12px 12px",
+          }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: "#7EB3E8", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+              Customer Data Sources (1st &amp; 3rd Party)
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {CUSTOMER_SECTIONS.map((section) => (
+                <SubSection key={section.title} title={section.title} items={section.items} />
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom banner: NEXTIVA DATA & INTELLIGENCE PLATFORM */}
+          <div style={{
+            background: "rgba(40,96,178,0.18)",
+            border: "1px solid rgba(40,96,178,0.4)",
+            borderRadius: 10,
+            padding: "10px 14px",
+            textAlign: "center",
+          }}>
+            <p style={{ fontSize: 14, fontWeight: 700, color: "#FFFFFF", margin: 0, textTransform: "uppercase", letterSpacing: "0.06em" }}>
               Nextiva Data &amp; Intelligence Platform
             </p>
-          </motion.div>
-        </div>
+          </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: 14,
-          }}
-        >
+          {/* Bottom badges: Nextiva + 3rd Party */}
+          <div style={{ display: "flex", gap: 8, marginTop: 2 }}>
+            <span style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF", background: "#2860B2", borderRadius: 6, padding: "3px 12px" }}>Nextiva</span>
+            <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,0.7)", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 6, padding: "3px 12px" }}>3rd Party</span>
+          </div>
+        </motion.div>
+
+        {/* RIGHT: Bullet Points */}
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 16 }}>
           {BULLETS.map((item, i) => (
             <motion.div
               key={i}
