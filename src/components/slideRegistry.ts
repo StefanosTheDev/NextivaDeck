@@ -156,6 +156,33 @@ import CustomerUseCasesV2Slide from "./slides/CustomerUseCasesV2Slide";
 import BrandTrustOverviewSlide from "./slides/BrandTrustOverviewSlide";
 import BrandTrustChannelsSlide from "./slides/BrandTrustChannelsSlide";
 import ThreePathsPreTrustSlide from "./slides/ThreePathsPreTrustSlide";
+import HealthcareVerticalGlanceSlide from "./slides/HealthcareVerticalGlanceSlide";
+import HealthcareVerticalSolutionsSlide from "./slides/HealthcareVerticalSolutionsSlide";
+import HealthcareVerticalStrategySlide from "./slides/HealthcareVerticalStrategySlide";
+import BriefingCoverSlide from "./slides/BriefingCoverSlide";
+import BriefingExecSummarySlide from "./slides/BriefingExecSummarySlide";
+import BriefingPlatformDividerSlide from "./slides/BriefingPlatformDividerSlide";
+import BriefingCXFirstSystemSlide from "./slides/BriefingCXFirstSystemSlide";
+import BriefingHumanAITandemSlide from "./slides/BriefingHumanAITandemSlide";
+import BriefingTrustworthyPillarSlide from "./slides/BriefingTrustworthyPillarSlide";
+import BriefingBespokeAtScaleSlide from "./slides/BriefingBespokeAtScaleSlide";
+import BriefingConversationalCommerceSlide from "./slides/BriefingConversationalCommerceSlide";
+import BriefingDataIntelligenceSlide from "./slides/BriefingDataIntelligenceSlide";
+import BriefingAIModelsSlide from "./slides/BriefingAIModelsSlide";
+import BriefingCXPaaSArchSlide from "./slides/BriefingCXPaaSArchSlide";
+import BriefingGlobalFootprintSlide from "./slides/BriefingGlobalFootprintSlide";
+import BriefingClosingRecapSlide from "./slides/BriefingClosingRecapSlide";
+import AgenticCompetitiveLandscapeSlide from "./slides/AgenticCompetitiveLandscapeSlide";
+import PodiumComparisonSlide from "./slides/PodiumComparisonSlide";
+import PodiumComparisonAltSlide from "./slides/PodiumComparisonAltSlide";
+import IntercomComparisonSlide from "./slides/IntercomComparisonSlide";
+import IntercomComparisonAltSlide from "./slides/IntercomComparisonAltSlide";
+import SierraComparisonSlide from "./slides/SierraComparisonSlide";
+import SierraComparisonAltSlide from "./slides/SierraComparisonAltSlide";
+import DecagonComparisonSlide from "./slides/DecagonComparisonSlide";
+import DecagonComparisonAltSlide from "./slides/DecagonComparisonAltSlide";
+import LeadVelocityCurvesSlide from "./slides/LeadVelocityCurvesSlide";
+import LeadVelocityBucketsSlide from "./slides/LeadVelocityBucketsSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -342,6 +369,35 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "three-paths-pre-trust": { id: "three-paths-pre-trust", label: "Drew: Three Paths Pre-Trust", component: ThreePathsPreTrustSlide, theme: "dark", isNew: true },
   "customer-use-cases-dark-v2": { id: "customer-use-cases-dark-v2", label: "Customer Use Cases (Dark v2 — Business Value)", component: CustomerUseCasesDarkV2Slide, theme: "dark", isNew: true },
   "customer-use-cases-v2": { id: "customer-use-cases-v2", label: "Customer Use Cases V2 (4-card, updated)", component: CustomerUseCasesV2Slide, theme: "dark", isNew: true },
+  // Drew Schulz Healthcare 040126
+  "drew-healthcare-glance": { id: "drew-healthcare-glance", label: "Drew: Healthcare At a Glance (040126)", component: HealthcareVerticalGlanceSlide, theme: "dark", isNew: true },
+  "drew-healthcare-solutions": { id: "drew-healthcare-solutions", label: "Drew: Healthcare Solutions (040126)", component: HealthcareVerticalSolutionsSlide, theme: "dark", isNew: true },
+  "drew-healthcare-strategy": { id: "drew-healthcare-strategy", label: "Drew: Healthcare Strategy (040126)", component: HealthcareVerticalStrategySlide, theme: "dark", isNew: true },
+  // Drew Schulz 041126 Slides
+  "drew-briefing-cover": { id: "drew-briefing-cover", label: "Drew: Briefing Cover", component: BriefingCoverSlide, theme: "dark", isNew: true },
+  "drew-briefing-exec-summary": { id: "drew-briefing-exec-summary", label: "Drew: Briefing Exec Summary", component: BriefingExecSummarySlide, theme: "dark", isNew: true },
+  "drew-briefing-platform-divider": { id: "drew-briefing-platform-divider", label: "Drew: Briefing Platform Divider", component: BriefingPlatformDividerSlide, theme: "dark", isNew: true },
+  "drew-briefing-cx-first-system": { id: "drew-briefing-cx-first-system", label: "Drew: Briefing CX-First System", component: BriefingCXFirstSystemSlide, theme: "dark", isNew: true },
+  "drew-briefing-human-ai-tandem": { id: "drew-briefing-human-ai-tandem", label: "Drew: Briefing Human+AI Tandem", component: BriefingHumanAITandemSlide, theme: "dark", isNew: true },
+  "drew-briefing-trustworthy-pillar": { id: "drew-briefing-trustworthy-pillar", label: "Drew: Briefing Trustworthy Pillar", component: BriefingTrustworthyPillarSlide, theme: "dark", isNew: true },
+  "drew-briefing-bespoke-at-scale": { id: "drew-briefing-bespoke-at-scale", label: "Drew: Briefing Bespoke at Scale", component: BriefingBespokeAtScaleSlide, theme: "dark", isNew: true },
+  "drew-briefing-conversational-commerce": { id: "drew-briefing-conversational-commerce", label: "Drew: Briefing Conversational Commerce", component: BriefingConversationalCommerceSlide, theme: "dark", isNew: true },
+  "drew-briefing-data-intelligence": { id: "drew-briefing-data-intelligence", label: "Drew: Briefing Data Intelligence", component: BriefingDataIntelligenceSlide, theme: "dark", isNew: true },
+  "drew-briefing-ai-models": { id: "drew-briefing-ai-models", label: "Drew: Briefing AI Models", component: BriefingAIModelsSlide, theme: "dark", isNew: true },
+  "drew-briefing-cxpaas-arch": { id: "drew-briefing-cxpaas-arch", label: "Drew: Briefing CXPaaS Architecture", component: BriefingCXPaaSArchSlide, theme: "dark", isNew: true },
+  "drew-briefing-global-footprint": { id: "drew-briefing-global-footprint", label: "Drew: Briefing Global Footprint", component: BriefingGlobalFootprintSlide, theme: "dark", isNew: true },
+  "drew-briefing-closing-recap": { id: "drew-briefing-closing-recap", label: "Drew: Briefing Closing Recap", component: BriefingClosingRecapSlide, theme: "dark", isNew: true },
+  "drew-agentic-competitive-landscape": { id: "drew-agentic-competitive-landscape", label: "Drew: Agentic Competitive Landscape", component: AgenticCompetitiveLandscapeSlide, theme: "dark", isNew: true },
+  "drew-competitor-podium": { id: "drew-competitor-podium", label: "Drew: Podium vs Nextiva (framework)", component: PodiumComparisonSlide, theme: "dark", isNew: true },
+  "drew-competitor-podium-alt": { id: "drew-competitor-podium-alt", label: "Drew: Podium vs Nextiva (rated)", component: PodiumComparisonAltSlide, theme: "dark", isNew: true },
+  "drew-competitor-intercom": { id: "drew-competitor-intercom", label: "Drew: Intercom vs Nextiva (framework)", component: IntercomComparisonSlide, theme: "dark", isNew: true },
+  "drew-competitor-intercom-alt": { id: "drew-competitor-intercom-alt", label: "Drew: Intercom vs Nextiva (rated)", component: IntercomComparisonAltSlide, theme: "dark", isNew: true },
+  "drew-competitor-sierra": { id: "drew-competitor-sierra", label: "Drew: Sierra vs Nextiva (framework)", component: SierraComparisonSlide, theme: "dark", isNew: true },
+  "drew-competitor-sierra-alt": { id: "drew-competitor-sierra-alt", label: "Drew: Sierra vs Nextiva (rated)", component: SierraComparisonAltSlide, theme: "dark", isNew: true },
+  "drew-competitor-decagon": { id: "drew-competitor-decagon", label: "Drew: Decagon vs Nextiva (framework)", component: DecagonComparisonSlide, theme: "dark", isNew: true },
+  "drew-competitor-decagon-alt": { id: "drew-competitor-decagon-alt", label: "Drew: Decagon vs Nextiva (rated)", component: DecagonComparisonAltSlide, theme: "dark", isNew: true },
+  "drew-lead-velocity-curves": { id: "drew-lead-velocity-curves", label: "Drew: Lead Velocity Curves", component: LeadVelocityCurvesSlide, theme: "dark", isNew: true },
+  "drew-lead-velocity-buckets": { id: "drew-lead-velocity-buckets", label: "Drew: Lead Velocity Buckets", component: LeadVelocityBucketsSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -413,6 +469,35 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "operating-leverage-dated",
   "cash-flow-trends-quarterly-dark",
   "target-model-dark",
+  // Drew Schulz Healthcare 040126
+  "drew-healthcare-glance",
+  "drew-healthcare-solutions",
+  "drew-healthcare-strategy",
+  // Drew Schulz 041126 Slides
+  "drew-briefing-cover",
+  "drew-briefing-exec-summary",
+  "drew-briefing-platform-divider",
+  "drew-briefing-cx-first-system",
+  "drew-briefing-human-ai-tandem",
+  "drew-briefing-trustworthy-pillar",
+  "drew-briefing-bespoke-at-scale",
+  "drew-briefing-conversational-commerce",
+  "drew-briefing-data-intelligence",
+  "drew-briefing-ai-models",
+  "drew-briefing-cxpaas-arch",
+  "drew-briefing-global-footprint",
+  "drew-briefing-closing-recap",
+  "drew-agentic-competitive-landscape",
+  "drew-competitor-podium",
+  "drew-competitor-podium-alt",
+  "drew-competitor-intercom",
+  "drew-competitor-intercom-alt",
+  "drew-competitor-sierra",
+  "drew-competitor-sierra-alt",
+  "drew-competitor-decagon",
+  "drew-competitor-decagon-alt",
+  "drew-lead-velocity-curves",
+  "drew-lead-velocity-buckets",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
