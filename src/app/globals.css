@@ -180,3 +180,24 @@ body {
 
 /* Scrollbar hidden */
 ::-webkit-scrollbar { display: none; }
+
+/* Roadmap slides 62–63: show scrollbar inside matrix (overrides rule above) */
+.platform-roadmap-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(126, 179, 232, 0.55) rgba(255, 255, 255, 0.08);
+}
+.platform-roadmap-scroll::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+.platform-roadmap-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 5px;
+}
+.platform-roadmap-scroll::-webkit-scrollbar-thumb {
+  background: rgba(126, 179, 232, 0.5);
+  border-radius: 5px;
+}
+.platform-roadmap-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(126, 179, 232, 0.7);
+}

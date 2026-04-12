@@ -153,6 +153,10 @@ import SenthilNextOSRoadmapSlide from "./slides/SenthilNextOSRoadmapSlide";
 import SenthilTechnologyDividerSlide from "./slides/SenthilTechnologyDividerSlide";
 import CustomerUseCasesDarkV2Slide from "./slides/CustomerUseCasesDarkV2Slide";
 import CustomerUseCasesV2Slide from "./slides/CustomerUseCasesV2Slide";
+import PlatformRoadmapHorizonSlide, {
+  PlatformRoadmapHorizonSlidePart2,
+} from "./slides/PlatformRoadmapHorizonSlide";
+import PlatformRoadmapInvestorSlide from "./slides/PlatformRoadmapInvestorSlide";
 import BrandTrustOverviewSlide from "./slides/BrandTrustOverviewSlide";
 import BrandTrustChannelsSlide from "./slides/BrandTrustChannelsSlide";
 import ThreePathsPreTrustSlide from "./slides/ThreePathsPreTrustSlide";
@@ -398,6 +402,27 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "drew-competitor-decagon-alt": { id: "drew-competitor-decagon-alt", label: "Drew: Decagon vs Nextiva (rated)", component: DecagonComparisonAltSlide, theme: "dark", isNew: true },
   "drew-lead-velocity-curves": { id: "drew-lead-velocity-curves", label: "Drew: Lead Velocity Curves", component: LeadVelocityCurvesSlide, theme: "dark", isNew: true },
   "drew-lead-velocity-buckets": { id: "drew-lead-velocity-buckets", label: "Drew: Lead Velocity Buckets", component: LeadVelocityBucketsSlide, theme: "dark", isNew: true },
+  "platform-roadmap-horizon": {
+    id: "platform-roadmap-horizon",
+    label: "Platform horizons (1 of 2 — CX, AI, scale)",
+    component: PlatformRoadmapHorizonSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "platform-roadmap-horizon-2": {
+    id: "platform-roadmap-horizon-2",
+    label: "Platform horizons (2 of 2 — trust, PLG, segments)",
+    component: PlatformRoadmapHorizonSlidePart2,
+    theme: "dark",
+    isNew: true,
+  },
+  "platform-roadmap-investor": {
+    id: "platform-roadmap-investor",
+    label: "Platform roadmap — Investor (three horizons)",
+    component: PlatformRoadmapInvestorSlide,
+    theme: "dark",
+    isNew: true,
+  },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -498,6 +523,9 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "drew-competitor-decagon-alt",
   "drew-lead-velocity-curves",
   "drew-lead-velocity-buckets",
+  "platform-roadmap-horizon",
+  "platform-roadmap-horizon-2",
+  "platform-roadmap-investor",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
