@@ -4,17 +4,16 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
 const problems = [
-  "Limited self-service options for appointment scheduling, prescription refills and routine inquiries",
-  "Inefficient customer engagement across multiple channels.",
-  "Fragmented view of the customer. No visibility to customer data for use across departments",
-  "No outbound sales and marketing able to use risk customer data",
+  "Staffing inefficiencies: Limited self-service options for appointment scheduling, prescription refills and routine inquiries.",
+  "Fragmented customer view and inefficient engagement: Omnichannel experience is inefficient; cross-department silos prevent holistic customer view.",
+  "Outbound sales and marketing lack rich customer data for use.",
 ];
 
 const solutions = [
-  "EMR-integrated agentic IVA for users to manage appointments, refill prescriptions",
-  "Shifted inbound inquires from high-cost retail locations to contact center, deflecting 15%",
-  "HIPAA compliant single view of the customer across clinical, retail, operations and marketing",
-  "Increased sales leveraging customer information in outbound sales and marketing campaigns",
+  "Improved scalability: EMR-integrated AI drives routine tasks like appointments and refills.",
+  "Shifted inbound inquiries from high-cost retail locations to contact center, deflecting 15%.",
+  "Improved compliance: HIPAA-compliant single view of the customer across clinical, retail, operations and marketing.",
+  "Improved sales leverage: Customer information visibility in outbound sales and marketing campaigns.",
 ];
 
 const metrics = [

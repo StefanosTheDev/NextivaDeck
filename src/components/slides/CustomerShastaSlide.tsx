@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
 const problems = [
-  "Chaotic inbound communications management, with many queues, long hold times, significant misrouting",
-  "Routine tasks like appointment scheduling and prescription refills are manual and take human capacity",
-  "Fragmented communications with patients across departments, with no visibility to customer information",
+  "Poor customer experience: Chaotic inbound communications management, with many queues, long hold times, significant misrouting.",
+  "Staffing inefficiencies: Highly manual repetitive tasks, such as appointment scheduling and prescription refills.",
+  "Siloed customer information: Fragmented communications with patients across departments, no holistic visibility.",
 ];
 
 const solutions = [
-  "Rules-based front end supports routing to more than 10 care practices. AI-agent handles routine inquiries.",
-  "EMR integration enables routine tasks to be performed by the AI Agent experience.",
-  "Seamless patient transition across practices and departments. AI handles the easy stuff and connects human agents for complex inquiries",
+  "Improved initial customer experience: Automated to more than 10 care practices; AI addresses routine inquiries.",
+  "Staffing efficiencies gained: AI drives routine tasks via EMR integration, hands off to humans for the complex.",
+  "Overall improved customer sat: Seamless patient transition across practices and departments.",
 ];
 
 const outcomes = [
