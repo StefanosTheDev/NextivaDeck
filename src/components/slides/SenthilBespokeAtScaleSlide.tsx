@@ -108,7 +108,7 @@ export default function SenthilBespokeAtScaleSlide({
             lineHeight: 1.15,
           }}
         >
-          Built to be <span style={{ color: "#7EB3E8" }}>bespoke</span>, at scale
+          Built to be <span style={{ color: "#2860B2" }}>bespoke</span>, at scale
         </h1>
       </motion.header>
 
@@ -118,11 +118,11 @@ export default function SenthilBespokeAtScaleSlide({
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
-          padding: "24px 100px",
+          padding: "8px 100px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: 20,
-          alignContent: "stretch",
+          alignContent: "center",
         }}
       >
         {COLUMNS.map((col, i) => (
@@ -135,18 +135,18 @@ export default function SenthilBespokeAtScaleSlide({
               background: "rgba(255,255,255,0.04)",
               border: "1px solid rgba(255,255,255,0.1)",
               borderRadius: 14,
-              padding: "24px 28px",
+              padding: "18px 24px",
               display: "flex",
               flexDirection: "column",
             }}
           >
-            <div style={{ marginBottom: 16 }}>
+            <div style={{ marginBottom: 10, minHeight: 120 }}>
               <p
                 style={{
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: 700,
                   color: "#7EB3E8",
-                  margin: "0 0 10px",
+                  margin: "0 0 12px",
                 }}
               >
                 {col.top.heading}
@@ -156,8 +156,8 @@ export default function SenthilBespokeAtScaleSlide({
                   <li
                     key={j}
                     style={{
-                      fontSize: 15,
-                      color: "rgba(255,255,255,0.7)",
+                      fontSize: 16,
+                      color: "rgba(255,255,255,0.75)",
                       marginBottom: j < col.top.items.length - 1 ? 6 : 0,
                       lineHeight: 1.45,
                       paddingLeft: 16,
@@ -175,17 +175,17 @@ export default function SenthilBespokeAtScaleSlide({
               style={{
                 height: 1,
                 background: "rgba(255,255,255,0.08)",
-                margin: "4px 0 16px",
+                margin: "4px 0 10px",
               }}
             />
 
             <div style={{ flex: 1 }}>
               <p
                 style={{
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: 700,
                   color: "#7EB3E8",
-                  margin: "0 0 10px",
+                  margin: "0 0 12px",
                 }}
               >
                 {col.bottom.heading}
@@ -195,8 +195,8 @@ export default function SenthilBespokeAtScaleSlide({
                   <li
                     key={j}
                     style={{
-                      fontSize: 15,
-                      color: "rgba(255,255,255,0.7)",
+                      fontSize: 16,
+                      color: "rgba(255,255,255,0.75)",
                       marginBottom: j < col.bottom.items.length - 1 ? 6 : 0,
                       lineHeight: 1.45,
                       paddingLeft: 16,

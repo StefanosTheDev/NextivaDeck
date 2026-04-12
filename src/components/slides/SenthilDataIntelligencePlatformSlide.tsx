@@ -64,8 +64,8 @@ const BULLETS = [
   { bold: "Coherent View", text: " of Customer & Business Data critical for every customer interaction" },
   { bold: "Data Partitioning Support", text: " – Role Based Access; Business Confidential" },
   { bold: "Structured & Unstructured Data", text: "" },
-  { bold: "Open Data Platform", text: " w/ customer key for richer 1st party and 3rd party/DIY analytics and intelligence" },
-  { bold: "Enabling Recommendation & Ranking Engines", text: " - NBA, NBR, Relevant Articles, Tickets for You" },
+  { bold: "Open Data Platform", text: " with customer key for richer 1st party and 3rd party/DIY analytics and intelligence" },
+  { bold: "Enabling Recommendation & Ranking Engines", text: " – NBA, NBR, Relevant Articles, Tickets for You" },
 ];
 
 /* ─── PILL ─── */
@@ -74,9 +74,9 @@ function Pill({ label, nextiva }: { label: string; nextiva: boolean }) {
   return (
     <span style={{
       fontSize: 12,
-      color: "#FFFFFF",
-      background: nextiva ? "rgba(126,179,232,0.15)" : "rgba(40,96,178,0.7)",
-      border: nextiva ? "1px solid rgba(126,179,232,0.3)" : "1px solid rgba(40,96,178,0.9)",
+      color: "rgba(255,255,255,0.7)",
+      background: nextiva ? "rgba(255,255,255,0.06)" : "rgba(40,96,178,0.2)",
+      border: nextiva ? "1px solid rgba(255,255,255,0.12)" : "1px solid rgba(40,96,178,0.35)",
       borderRadius: 6,
       padding: "5px 8px",
       fontWeight: 500,
@@ -92,8 +92,8 @@ function Pill({ label, nextiva }: { label: string; nextiva: boolean }) {
 function SubSection({ title, items }: { title: string; items: { label: string; nextiva: boolean }[] }) {
   return (
     <div style={{
-      background: "rgba(255,255,255,0.04)",
-      border: "1px solid rgba(255,255,255,0.08)",
+      background: "none",
+      border: "1px solid rgba(255,255,255,0.06)",
       borderRadius: 8,
       padding: "10px 14px",
       textAlign: "left",
@@ -101,7 +101,7 @@ function SubSection({ title, items }: { title: string; items: { label: string; n
       <p style={{ fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.7)", margin: "0 0 8px" }}>
         {title}
       </p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 5 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 5 }}>
         {items.map((item) => <Pill key={item.label} label={item.label} nextiva={item.nextiva} />)}
       </div>
     </div>
@@ -129,6 +129,9 @@ export default function SenthilDataIntelligencePlatformSlide({
         transition={{ duration: 0.6 }}
         style={{ padding: "36px 80px 0", flexShrink: 0, textAlign: "center" }}
       >
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 12px" }}>
+          DATA &amp; INTELLIGENCE FOUNDATION
+        </p>
         <h1
           className="font-heading"
           style={{ fontSize: 48, fontWeight: 500, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
@@ -163,8 +166,8 @@ export default function SenthilDataIntelligencePlatformSlide({
             <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 10 }}>
               {/* Business Data Sources */}
               <div style={{
-                background: "rgba(40,96,178,0.12)",
-                border: "1px solid rgba(40,96,178,0.3)",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
                 borderRadius: 10,
                 padding: "14px 18px",
                 textAlign: "center",
@@ -172,15 +175,15 @@ export default function SenthilDataIntelligencePlatformSlide({
                 <p style={{ fontSize: 14, fontWeight: 700, color: "#7EB3E8", margin: "0 0 10px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
                   Business Data Sources
                 </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: 6, justifyContent: "center" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 5, justifyContent: "center" }}>
                   {BUSINESS_SOURCES.map((item) => <Pill key={item.label} label={item.label} nextiva={item.nextiva} />)}
                 </div>
               </div>
 
               {/* Customer Data Sources */}
               <div style={{
-                background: "rgba(40,96,178,0.08)",
-                border: "1px solid rgba(40,96,178,0.25)",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
                 borderRadius: 10,
                 padding: "14px 14px",
                 textAlign: "center",
@@ -200,8 +203,8 @@ export default function SenthilDataIntelligencePlatformSlide({
             <div style={{
               writingMode: "vertical-rl",
               textOrientation: "mixed",
-              background: "rgba(40,96,178,0.18)",
-              border: "1px solid rgba(40,96,178,0.4)",
+              background: "rgba(200,200,215,0.12)",
+              border: "1px solid rgba(200,200,215,0.25)",
               borderRadius: 10,
               padding: "16px 10px",
               display: "flex",
@@ -224,8 +227,8 @@ export default function SenthilDataIntelligencePlatformSlide({
 
           {/* Legend badges — below, outside the vertical label */}
           <div style={{ display: "flex", gap: 8 }}>
-            <span style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF", background: "rgba(126,179,232,0.15)", border: "1px solid rgba(126,179,232,0.3)", borderRadius: 6, padding: "3px 12px" }}>Nextiva</span>
-            <span style={{ fontSize: 11, fontWeight: 600, color: "#FFFFFF", background: "rgba(40,96,178,0.7)", border: "1px solid rgba(40,96,178,0.9)", borderRadius: 6, padding: "3px 12px" }}>3rd Party</span>
+            <span style={{ fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.7)", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", borderRadius: 6, padding: "5px 8px" }}>Nextiva</span>
+            <span style={{ fontSize: 12, fontWeight: 500, color: "rgba(255,255,255,0.7)", background: "rgba(40,96,178,0.2)", border: "1px solid rgba(40,96,178,0.35)", borderRadius: 6, padding: "5px 8px" }}>3rd Party</span>
           </div>
         </motion.div>
 

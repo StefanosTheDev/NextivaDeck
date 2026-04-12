@@ -40,7 +40,7 @@ const LAYERS: LayerDef[] = [
       "Cognitive & Assist Models (AI + Human)",
       "Analytics & Reporting",
       "Nextiva Customer Journal",
-      "xBERT",
+      "XBERT",
       "NextIQ",
     ],
   },
@@ -105,10 +105,10 @@ export default function SenthilCXPaaSArchSlide({
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
-          padding: "20px 100px",
+          padding: "16px 80px",
           display: "flex",
           flexDirection: "column",
-          gap: 8,
+          gap: 10,
           justifyContent: "center",
         }}
       >
@@ -129,7 +129,7 @@ export default function SenthilCXPaaSArchSlide({
                   ? "1px solid rgba(40,96,178,0.35)"
                   : "1px solid rgba(255,255,255,0.08)",
                 borderRadius: 12,
-                padding: isDataLayer ? "16px 24px" : "12px 24px",
+                padding: isDataLayer ? "18px 28px" : "14px 28px",
               }}
             >
               <div
@@ -143,7 +143,7 @@ export default function SenthilCXPaaSArchSlide({
                 <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
                   <span
                     style={{
-                      fontSize: 14,
+                      fontSize: 16,
                       fontWeight: 700,
                       color: layer.accent ? "#7EB3E8" : "#FFFFFF",
                     }}
@@ -153,7 +153,7 @@ export default function SenthilCXPaaSArchSlide({
                   {layer.sublabel && (
                     <span
                       style={{
-                        fontSize: 12,
+                        fontSize: 13,
                         color: "rgba(255,255,255,0.45)",
                       }}
                     >
@@ -163,14 +163,14 @@ export default function SenthilCXPaaSArchSlide({
                 </div>
                 {isDataLayer && (
                   <div style={{ display: "flex", gap: 16 }}>
-                    <span style={{ fontSize: 12, fontWeight: 600, color: "#7EB3E8" }}>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: "#7EB3E8" }}>
                       {DATA_WINGS.left.label}{" "}
                       <span style={{ fontWeight: 400, color: "rgba(255,255,255,0.45)" }}>
                         ({DATA_WINGS.left.sublabel})
                       </span>
                     </span>
                     <span style={{ color: "rgba(255,255,255,0.15)" }}>|</span>
-                    <span style={{ fontSize: 12, fontWeight: 600, color: "#7EB3E8" }}>
+                    <span style={{ fontSize: 13, fontWeight: 600, color: "#7EB3E8" }}>
                       {DATA_WINGS.right.label}
                     </span>
                   </div>
@@ -181,7 +181,7 @@ export default function SenthilCXPaaSArchSlide({
                   <span
                     key={item}
                     style={{
-                      fontSize: 12,
+                      fontSize: 13,
                       color: "rgba(255,255,255,0.7)",
                       background: layer.accent
                         ? "rgba(40,96,178,0.2)"
@@ -190,7 +190,7 @@ export default function SenthilCXPaaSArchSlide({
                         ? "1px solid rgba(40,96,178,0.35)"
                         : "1px solid rgba(255,255,255,0.08)",
                       borderRadius: 6,
-                      padding: "3px 10px",
+                      padding: "4px 12px",
                     }}
                   >
                     {item}
@@ -211,7 +211,7 @@ export default function SenthilCXPaaSArchSlide({
                     <span
                       key={b}
                       style={{
-                        fontSize: 11,
+                        fontSize: 12,
                         color: "rgba(255,255,255,0.45)",
                         background: "rgba(255,255,255,0.02)",
                         border: "1px dashed rgba(255,255,255,0.12)",

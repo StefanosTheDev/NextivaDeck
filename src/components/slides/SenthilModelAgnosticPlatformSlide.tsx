@@ -60,8 +60,9 @@ const CAPABILITIES = [
   },
 ];
 
+const INTRO = "A curated blend of Nextiva proprietary, open-source, open weight, and 3rd party hyperscalers to provide customers best of breed options.";
+
 const BULLETS = [
-  "A curated blend of Nextiva proprietary, open-source, open weight, and 3rd party hyperscalers to provide customers best of breed options.",
   "Swap models without breaking workflows or compliance posture",
   "Key is customer data partitioning + governance",
   "Outcomes, not model novelty",
@@ -126,15 +127,18 @@ export default function SenthilModelAgnosticPlatformSlide({
           alignContent: "center",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 20 }}>
+          <p style={{ fontSize: 26, color: "rgba(255,255,255,0.75)", lineHeight: 1.5, margin: 0 }}>
+            {INTRO}
+          </p>
           <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
             {BULLETS.map((item, i) => (
               <li
                 key={i}
                 style={{
-                  fontSize: 18,
+                  fontSize: 20,
                   color: "rgba(255,255,255,0.7)",
-                  marginBottom: i < BULLETS.length - 1 ? 16 : 0,
+                  marginBottom: i < BULLETS.length - 1 ? 14 : 0,
                   lineHeight: 1.5,
                   paddingLeft: 20,
                   position: "relative",
@@ -184,7 +188,7 @@ export default function SenthilModelAgnosticPlatformSlide({
               <div style={{ flex: 1, minWidth: 0 }}>
                 <p
                   style={{
-                    fontSize: 15,
+                    fontSize: 16,
                     fontWeight: 700,
                     color: "#7EB3E8",
                     margin: "0 0 2px",
@@ -194,7 +198,7 @@ export default function SenthilModelAgnosticPlatformSlide({
                 </p>
                 <p
                   style={{
-                    fontSize: 12,
+                    fontSize: 13,
                     color: "rgba(255,255,255,0.4)",
                     margin: "0 0 6px",
                     fontStyle: "italic",
@@ -207,7 +211,7 @@ export default function SenthilModelAgnosticPlatformSlide({
                     <span
                       key={m}
                       style={{
-                        fontSize: 12,
+                        fontSize: 13,
                         color: "rgba(255,255,255,0.6)",
                         background: "rgba(255,255,255,0.04)",
                         border: "1px solid rgba(255,255,255,0.08)",

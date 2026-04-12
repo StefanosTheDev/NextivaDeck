@@ -1,21 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
-import { Bot, ScanEye, UserCheck } from "lucide-react";
+import { Briefcase, Plane, BrainCog } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
 const MODES = [
   {
-    icon: Bot,
+    icon: Briefcase,
     title: "Autonomous",
     description: "AI Agents trained on business + customer data",
   },
   {
-    icon: ScanEye,
+    icon: Plane,
     title: "Autopilot",
     description: "AI Agents with Human Oversight to escalate",
   },
   {
-    icon: UserCheck,
+    icon: BrainCog,
     title: "Agent Assist",
     description: "Humans with AI Assistance & Oversight",
   },
@@ -102,8 +102,8 @@ export default function TomasHumanAIHarmonySlide({
             >
               <div
                 style={{
-                  width: 72,
-                  height: 72,
+                  width: 80,
+                  height: 80,
                   borderRadius: "50%",
                   background: "rgba(40,96,178,0.15)",
                   border: "1px solid rgba(40,96,178,0.25)",
@@ -112,7 +112,7 @@ export default function TomasHumanAIHarmonySlide({
                   justifyContent: "center",
                 }}
               >
-                <Icon size={34} color="#7EB3E8" strokeWidth={1.5} />
+                <Icon size={38} color="#7EB3E8" strokeWidth={1.5} />
               </div>
               <h2
                 className="font-heading"

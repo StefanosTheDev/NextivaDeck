@@ -48,12 +48,15 @@ export default function TomasCXFirstSystemSlide({
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "40px 100px 0", flexShrink: 0 }}
+        style={{ padding: "34px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
+        <p style={{ fontWeight: 700, fontSize: 15, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 12px" }}>
+          CX-FIRST SYSTEM OF ACTION
+        </p>
         <h1
           className="font-heading"
           style={{
-            fontSize: 48,
+            fontSize: 52,
             fontWeight: 700,
             color: "#FFFFFF",
             margin: 0,
@@ -61,7 +64,7 @@ export default function TomasCXFirstSystemSlide({
           }}
         >
           Delivering an integrated solution{" "}
-          <span style={{ fontWeight: 400, fontSize: 36, color: "rgba(255,255,255,0.6)" }}>
+          <span style={{ fontWeight: 400, fontSize: 28, color: "rgba(255,255,255,0.6)" }}>
             that fits mid market needs.
           </span>
         </h1>
@@ -73,10 +76,10 @@ export default function TomasCXFirstSystemSlide({
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
-          padding: "20px 100px 0",
+          padding: "94px 80px 0",
           display: "flex",
           flexDirection: "column",
-          gap: 12,
+          gap: 14,
         }}
       >
         {/* Top flow bar with dashed border */}
@@ -87,9 +90,9 @@ export default function TomasCXFirstSystemSlide({
           style={{
             border: "2px dashed rgba(40,96,178,0.5)",
             borderRadius: 12,
-            padding: "10px 16px",
+            padding: "12px 20px",
             display: "grid",
-            gridTemplateColumns: "1fr auto 1fr auto 1fr auto 0.8fr",
+            gridTemplateColumns: "1fr auto 1.2fr auto 1.2fr auto 1fr",
             alignItems: "center",
             gap: 8,
             flexShrink: 0,
@@ -113,10 +116,10 @@ export default function TomasCXFirstSystemSlide({
             }
             return (
               <div key={i}>
-                <p style={{ fontSize: 11, fontWeight: 700, color: item.accent ? "#FFFFFF" : "rgba(255,255,255,0.85)", margin: "0 0 2px", textTransform: item.accent ? "none" : "uppercase", letterSpacing: "0.02em", lineHeight: 1.25 }}>
+                <p style={{ fontSize: 15, fontWeight: 700, color: item.accent ? "#FFFFFF" : "rgba(255,255,255,0.9)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: "0.03em", lineHeight: 1.3 }}>
                   {item.label}
                 </p>
-                <p style={{ fontSize: 10, color: "rgba(255,255,255,0.45)", margin: 0, lineHeight: 1.3, fontStyle: item.accent ? "normal" : "italic", fontWeight: item.accent ? 600 : 400 }}>
+                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", margin: 0, lineHeight: 1.35, fontWeight: item.accent ? 600 : 400 }}>
                   {item.sub}
                 </p>
               </div>
@@ -128,7 +131,7 @@ export default function TomasCXFirstSystemSlide({
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 0.8fr 1.6fr",
+            gridTemplateColumns: "0.7fr 0.6fr 1.8fr",
             gap: 14,
             alignItems: "stretch",
           }}
@@ -140,18 +143,18 @@ export default function TomasCXFirstSystemSlide({
             transition={{ duration: 0.5, delay: 0.35 }}
             style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
           >
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: -18, position: "relative", zIndex: 2, flexShrink: 0 }}>
-              <span className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF" }}>1</span>
+            <div style={{ width: 42, height: 42, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: -21, position: "relative", zIndex: 2, flexShrink: 0 }}>
+              <span className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF" }}>1</span>
             </div>
-            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "28px 18px 16px", textAlign: "left", flex: 1, width: "100%" }}>
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "28px 14px 16px", textAlign: "left", flex: 1, width: "100%" }}>
               {CHANNELS.map((ch, ci) => {
                 const Icon = ch.icon;
                 return (
-                  <div key={ch.label} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: ci < CHANNELS.length - 1 ? 8 : 0 }}>
-                    <div style={{ width: 28, height: 28, borderRadius: 7, background: "rgba(40,96,178,0.15)", border: "1px solid rgba(40,96,178,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      <Icon size={14} color="#7EB3E8" strokeWidth={1.75} />
+                  <div key={ch.label} style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: ci < CHANNELS.length - 1 ? 12 : 0 }}>
+                    <div style={{ width: 42, height: 42, borderRadius: 10, background: "rgba(40,96,178,0.2)", border: "1px solid rgba(40,96,178,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <Icon size={22} color="#7EB3E8" strokeWidth={1.75} />
                     </div>
-                    <span style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", fontWeight: ch.label === "Core Communication" ? 700 : 400 }}>
+                    <span style={{ fontSize: 17, color: "rgba(255,255,255,0.9)", fontWeight: ch.label === "Core Communication" ? 700 : 500 }}>
                       {ch.label}
                     </span>
                   </div>
@@ -167,16 +170,16 @@ export default function TomasCXFirstSystemSlide({
             transition={{ duration: 0.5, delay: 0.4 }}
             style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
           >
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: -18, position: "relative", zIndex: 2, flexShrink: 0 }}>
-              <span className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF" }}>2</span>
+            <div style={{ width: 42, height: 42, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: -21, position: "relative", zIndex: 2, flexShrink: 0 }}>
+              <span className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF" }}>2</span>
             </div>
             <div style={{ background: "rgba(40,96,178,0.08)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 12, padding: "28px 14px 16px", textAlign: "center", flex: 1, width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-              <p style={{ fontSize: 14, fontWeight: 700, color: "#FFFFFF", margin: "0 0 14px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <p style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 14px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                 Single Data Source
               </p>
               <div style={{ position: "relative", width: 110, height: 110, margin: "0 auto" }}>
                 <div style={{ position: "absolute", inset: 8, borderRadius: "50%", background: "radial-gradient(circle, rgba(40,96,178,0.4) 0%, rgba(40,96,178,0.15) 70%)", border: "2px solid rgba(126,179,232,0.35)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span className="font-heading" style={{ fontSize: 30, fontWeight: 700, color: "#7EB3E8" }}>AI</span>
+                  <span className="font-heading" style={{ fontSize: 36, fontWeight: 700, color: "#7EB3E8" }}>AI</span>
                 </div>
                 {AI_DOTS.map((angle) => {
                   const r = 54;
@@ -198,61 +201,69 @@ export default function TomasCXFirstSystemSlide({
             transition={{ duration: 0.5, delay: 0.45 }}
             style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
           >
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: -18, position: "relative", zIndex: 2, flexShrink: 0 }}>
-              <span className="font-heading" style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF" }}>3</span>
+            <div style={{ width: 42, height: 42, borderRadius: "50%", background: "#2860B2", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: -21, position: "relative", zIndex: 2, flexShrink: 0 }}>
+              <span className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF" }}>3</span>
             </div>
-            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "28px 18px 0", textAlign: "left", flex: 1, width: "100%", display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "0.6fr 24px 1fr", gap: 0, alignItems: "start" }}>
-                {/* Insights: single dark block */}
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "28px 20px 0", textAlign: "left", flex: 1, width: "100%", display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "0.45fr 1fr", gap: "0 36px", alignItems: "start", flex: 1 }}>
+                {/* Insights block with bracket connector */}
                 <div>
-                  <p style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", margin: "0 0 10px", textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center" }}>
+                  <p style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 10px", textTransform: "uppercase", letterSpacing: "0.05em", textAlign: "center" }}>
                     Insights
                   </p>
-                  <div style={{ background: "rgba(10,20,45,0.8)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, padding: "14px 16px", textAlign: "center" }}>
+                  <div style={{ background: "rgba(10,20,45,0.8)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, padding: "16px 18px", textAlign: "center", position: "relative" }}>
                     {PERSONAS.map((p, pi) => (
-                      <p key={p} style={{ fontSize: 14, color: "rgba(255,255,255,0.85)", fontWeight: 500, margin: pi < PERSONAS.length - 1 ? "0 0 10px" : 0, lineHeight: 1.3 }}>
+                      <p key={p} style={{ fontSize: 17, color: "rgba(255,255,255,0.9)", fontWeight: 500, margin: pi < PERSONAS.length - 1 ? "0 0 14px" : 0, lineHeight: 1.3 }}>
                         {p}
                       </p>
                     ))}
-                  </div>
-                </div>
-
-                {/* Connector: vertical line with dots */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: 36, height: "100%" }}>
-                  <div style={{ position: "relative", width: 2, flex: 1, background: "rgba(126,179,232,0.3)" }}>
-                    {[0, 1, 2, 3].map((d) => (
-                      <div
-                        key={d}
-                        style={{
-                          position: "absolute",
-                          left: -3,
-                          top: `${d * 33}%`,
-                          width: 8,
-                          height: 8,
-                          borderRadius: "50%",
-                          background: "#2860B2",
-                          border: "1.5px solid rgba(126,179,232,0.6)",
-                        }}
-                      />
-                    ))}
+                    {/* Bracket + dots on right edge, spanning from first to last persona */}
+                    <div style={{
+                      position: "absolute",
+                      right: -16,
+                      top: 24,
+                      bottom: 24,
+                      width: 14,
+                      borderTop: "2px solid #2860B2",
+                      borderRight: "2px solid #2860B2",
+                      borderBottom: "2px solid #2860B2",
+                      borderRadius: "0 6px 6px 0",
+                    }}>
+                      {PERSONAS.map((_, pi) => (
+                        <div
+                          key={pi}
+                          style={{
+                            position: "absolute",
+                            right: -6,
+                            top: `${pi * 100 / (PERSONAS.length - 1)}%`,
+                            width: 10,
+                            height: 10,
+                            borderRadius: "50%",
+                            background: "#2860B2",
+                            border: "2px solid #7EB3E8",
+                            transform: "translateY(-50%)",
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
 
                 {/* Customer-First Unified-CXM */}
-                <div>
-                  <p style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", margin: "0 0 12px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                <div style={{ paddingLeft: 70 }}>
+                  <p style={{ fontSize: 18, fontWeight: 700, color: "#FFFFFF", margin: "0 0 24px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
                     Customer-First Unified-CXM
                   </p>
                   {OUTCOMES.map((o, i) => (
-                    <p key={i} style={{ fontSize: 15, color: "rgba(255,255,255,0.8)", margin: i < OUTCOMES.length - 1 ? "0 0 12px" : 0, lineHeight: 1.35 }}>
+                    <p key={i} style={{ fontSize: 17, color: "rgba(255,255,255,0.8)", margin: i < OUTCOMES.length - 1 ? "0 0 22px" : 0, lineHeight: 1.4 }}>
                       <span style={{ fontWeight: 700, color: "#FFFFFF" }}>{o.bold}</span>
                       {o.rest}
                     </p>
                   ))}
                 </div>
               </div>
-              <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "8px 0", textAlign: "center", marginTop: 14 }}>
-                <p style={{ fontSize: 12, fontWeight: 700, color: "rgba(255,255,255,0.4)", margin: 0, letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "10px 0", textAlign: "center", marginTop: "auto" }}>
+                <p style={{ fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.4)", margin: 0, letterSpacing: "0.15em", textTransform: "uppercase" }}>
                   GOVERNANCE &nbsp;·&nbsp; AUTOMATION &nbsp;·&nbsp; WORKFLOW
                 </p>
               </div>
