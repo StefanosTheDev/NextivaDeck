@@ -184,7 +184,16 @@
     "drew-competitor-decagon-alt",
     "drew-lead-velocity-curves",
     "drew-lead-velocity-buckets",
-    "platform-roadmap-investor"
+    "platform-roadmap-investor",
+    "senthil-model-agnostic-platform-041126",
+    "senthil-data-intelligence-platform-041126",
+    "senthil-cxpaas-arch-041126",
+    "senthil-bespoke-at-scale-041126",
+    "tomas-democratized-platform-041126",
+    "tomas-cx-first-system-041126",
+    "tomas-human-ai-harmony-041126",
+    "tomas-trustworthy-041126",
+    "tomas-global-footprint-041126"
   ],
   "categories": {
     "world-moving-thomas": "from Tomas",
@@ -253,7 +262,16 @@
     "drew-competitor-decagon": "Drew Schulz 041126 Slides",
     "drew-competitor-decagon-alt": "Drew Schulz 041126 Slides",
     "drew-lead-velocity-curves": "Drew Schulz 041126 Slides",
-    "drew-lead-velocity-buckets": "Drew Schulz 041126 Slides"
+    "drew-lead-velocity-buckets": "Drew Schulz 041126 Slides",
+    "senthil-model-agnostic-platform-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "senthil-data-intelligence-platform-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "senthil-cxpaas-arch-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "senthil-bespoke-at-scale-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "tomas-democratized-platform-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "tomas-cx-first-system-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "tomas-human-ai-harmony-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "tomas-trustworthy-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "tomas-global-footprint-041126": "TOMAS / SENTHIL PPT SLIDES 041126"
   },
   "categoryNames": [
     "Drew Schulz",
@@ -262,6 +280,7 @@
     "Finance-Demo-Branch",
     "SENTHIL PPTX Slides",
     "Seksom-Branch-040926",
+    "TOMAS / SENTHIL PPT SLIDES 041126",
     "Yaniv-VersionH Slides",
     "dividers",
     "from Tomas"

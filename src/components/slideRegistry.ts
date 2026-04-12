@@ -187,6 +187,15 @@ import DecagonComparisonSlide from "./slides/DecagonComparisonSlide";
 import DecagonComparisonAltSlide from "./slides/DecagonComparisonAltSlide";
 import LeadVelocityCurvesSlide from "./slides/LeadVelocityCurvesSlide";
 import LeadVelocityBucketsSlide from "./slides/LeadVelocityBucketsSlide";
+import SenthilModelAgnosticPlatformSlide from "./slides/SenthilModelAgnosticPlatformSlide";
+import SenthilDataIntelligencePlatformSlide from "./slides/SenthilDataIntelligencePlatformSlide";
+import SenthilCXPaaSArchSlide from "./slides/SenthilCXPaaSArchSlide";
+import SenthilBespokeAtScaleSlide from "./slides/SenthilBespokeAtScaleSlide";
+import TomasDemocratizedPlatformSlide from "./slides/TomasDemocratizedPlatformSlide";
+import TomasCXFirstSystemSlide from "./slides/TomasCXFirstSystemSlide";
+import TomasHumanAIHarmonySlide from "./slides/TomasHumanAIHarmonySlide";
+import TomasTrustworthySlide from "./slides/TomasTrustworthySlide";
+import TomasGlobalFootprintSlide from "./slides/TomasGlobalFootprintSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -423,6 +432,16 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     theme: "dark",
     isNew: true,
   },
+  // TOMAS / SENTHIL PPT SLIDES 041126
+  "senthil-model-agnostic-platform-041126": { id: "senthil-model-agnostic-platform-041126", label: "Senthil 6: Model Agnostic Platform", component: SenthilModelAgnosticPlatformSlide, theme: "dark", isNew: true },
+  "senthil-data-intelligence-platform-041126": { id: "senthil-data-intelligence-platform-041126", label: "Senthil 8: Data & Intelligence Platform", component: SenthilDataIntelligencePlatformSlide, theme: "dark", isNew: true },
+  "senthil-cxpaas-arch-041126": { id: "senthil-cxpaas-arch-041126", label: "Senthil 9: CXPaaS Architecture", component: SenthilCXPaaSArchSlide, theme: "dark", isNew: true },
+  "senthil-bespoke-at-scale-041126": { id: "senthil-bespoke-at-scale-041126", label: "Senthil 13: Bespoke at Scale", component: SenthilBespokeAtScaleSlide, theme: "dark", isNew: true },
+  "tomas-democratized-platform-041126": { id: "tomas-democratized-platform-041126", label: "Tomas 11: Democratized Platform", component: TomasDemocratizedPlatformSlide, theme: "dark", isNew: true },
+  "tomas-cx-first-system-041126": { id: "tomas-cx-first-system-041126", label: "Tomas 12: CX-First System", component: TomasCXFirstSystemSlide, theme: "dark", isNew: true },
+  "tomas-human-ai-harmony-041126": { id: "tomas-human-ai-harmony-041126", label: "Tomas 13: Human + AI in Harmony", component: TomasHumanAIHarmonySlide, theme: "dark", isNew: true },
+  "tomas-trustworthy-041126": { id: "tomas-trustworthy-041126", label: "Tomas 14: Trustworthy", component: TomasTrustworthySlide, theme: "dark", isNew: true },
+  "tomas-global-footprint-041126": { id: "tomas-global-footprint-041126", label: "Tomas 15: Global Footprint", component: TomasGlobalFootprintSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -526,6 +545,16 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "platform-roadmap-horizon",
   "platform-roadmap-horizon-2",
   "platform-roadmap-investor",
+  // TOMAS / SENTHIL PPT SLIDES 041126
+  "senthil-model-agnostic-platform-041126",
+  "senthil-data-intelligence-platform-041126",
+  "senthil-cxpaas-arch-041126",
+  "senthil-bespoke-at-scale-041126",
+  "tomas-democratized-platform-041126",
+  "tomas-cx-first-system-041126",
+  "tomas-human-ai-harmony-041126",
+  "tomas-trustworthy-041126",
+  "tomas-global-footprint-041126",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
