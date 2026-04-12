@@ -27,6 +27,9 @@ const metrics = [
 /** Same vertical rhythm as other Nextiva Customer slides (Suzuki, Tata Play, Shasta). */
 const MAIN_TOP_OFFSET_PX = 240;
 
+const HERO_HEIGHT_PX = 400;
+const METRICS_TOP_GAP_PX = 16;
+
 /** Retail façade / signage often sits slightly above center in hero photography. */
 const HERO_OBJECT_POSITION = "center 32%";
 
@@ -63,7 +66,7 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
           padding: `${MAIN_TOP_OFFSET_PX}px 80px 12px`,
           overflow: "hidden",
           minHeight: 0,
-          alignItems: "stretch",
+          alignItems: "flex-start",
         }}
       >
         <div
@@ -79,7 +82,7 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
           <div
             style={{
               width: "100%",
-              height: 400,
+              height: HERO_HEIGHT_PX,
               flexShrink: 0,
               borderRadius: 14,
               overflow: "hidden",
@@ -129,9 +132,9 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
           </div>
         </div>
 
-        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 12, minHeight: 0 }}>
-          <div style={{ display: "flex", gap: 16, flex: 1, minHeight: 0 }}>
-            <div style={{ flex: 1, minWidth: 0, background: "rgba(220,70,70,0.07)", border: "1px solid rgba(220,70,70,0.18)", borderRadius: 14, padding: "16px 18px", overflow: "auto" }}>
+        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: METRICS_TOP_GAP_PX, minHeight: 0 }}>
+          <div style={{ display: "flex", gap: 16, height: HERO_HEIGHT_PX, flexShrink: 0, minHeight: 0 }}>
+            <div style={{ flex: 1, minWidth: 0, minHeight: 0, background: "rgba(220,70,70,0.07)", border: "1px solid rgba(220,70,70,0.18)", borderRadius: 14, padding: "16px 18px", overflow: "auto" }}>
               <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#E07E7E", margin: "0 0 10px" }}>
                 Problem
               </p>
@@ -145,7 +148,7 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
               </ul>
             </div>
 
-            <div style={{ flex: 1, minWidth: 0, background: "rgba(40,96,178,0.08)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 14, padding: "16px 18px", overflow: "auto" }}>
+            <div style={{ flex: 1, minWidth: 0, minHeight: 0, background: "rgba(40,96,178,0.08)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 14, padding: "16px 18px", overflow: "auto" }}>
               <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 10px" }}>
                 Solution
               </p>
@@ -160,7 +163,7 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: 12, flexShrink: 0 }}>
+          <div style={{ display: "flex", gap: 12, flexShrink: 0, minHeight: 0 }}>
             {metrics.map((m) => (
               <div
                 key={m.label}

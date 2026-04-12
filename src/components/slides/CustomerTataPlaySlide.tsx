@@ -30,6 +30,9 @@ const HERO_IMAGE = "/images/pptx-slides/seksom-slide7-tata-play.png";
 /** Same vertical rhythm as Customer: Suzuki — space under title on 1080px canvas. */
 const MAIN_TOP_OFFSET_PX = 240;
 
+const HERO_HEIGHT_PX = 400;
+const METRICS_TOP_GAP_PX = 16;
+
 export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumber?: number }) {
   return (
     <div
@@ -63,7 +66,7 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
           padding: `${MAIN_TOP_OFFSET_PX}px 80px 12px`,
           overflow: "hidden",
           minHeight: 0,
-          alignItems: "stretch",
+          alignItems: "flex-start",
         }}
       >
         {/* Left — Seksom slide 7 art; fixed frame + contain keeps full logo in view (no cover crop). */}
@@ -80,7 +83,7 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
           <div
             style={{
               width: "100%",
-              height: 400,
+              height: HERO_HEIGHT_PX,
               flexShrink: 0,
               borderRadius: 14,
               overflow: "hidden",
@@ -131,9 +134,20 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
         </div>
 
         {/* Right — Problem / Solution (aligned with Suzuki slide) */}
-        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 16, minHeight: 0 }}>
-          <div style={{ display: "flex", gap: 16, flex: 1 }}>
-            <div style={{ flex: 1, background: "rgba(220,70,70,0.07)", border: "1px solid rgba(220,70,70,0.18)", borderRadius: 14, padding: "20px 22px" }}>
+        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: METRICS_TOP_GAP_PX, minHeight: 0 }}>
+          <div style={{ display: "flex", gap: 16, height: HERO_HEIGHT_PX, flexShrink: 0, minHeight: 0 }}>
+            <div
+              style={{
+                flex: 1,
+                minWidth: 0,
+                minHeight: 0,
+                background: "rgba(220,70,70,0.07)",
+                border: "1px solid rgba(220,70,70,0.18)",
+                borderRadius: 14,
+                padding: "20px 22px",
+                overflow: "auto",
+              }}
+            >
               <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#E07E7E", margin: "0 0 14px" }}>
                 Problem
               </p>
@@ -147,7 +161,18 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
               </ul>
             </div>
 
-            <div style={{ flex: 1, background: "rgba(40,96,178,0.08)", border: "1px solid rgba(40,96,178,0.2)", borderRadius: 14, padding: "20px 22px" }}>
+            <div
+              style={{
+                flex: 1,
+                minWidth: 0,
+                minHeight: 0,
+                background: "rgba(40,96,178,0.08)",
+                border: "1px solid rgba(40,96,178,0.2)",
+                borderRadius: 14,
+                padding: "20px 22px",
+                overflow: "auto",
+              }}
+            >
               <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 14px" }}>
                 Solution
               </p>
@@ -162,7 +187,7 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: 16 }}>
+          <div style={{ display: "flex", gap: 16, flexShrink: 0 }}>
             {metrics.map((m) => (
               <div key={m.label} style={{ flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "16px 20px", textAlign: "center" }}>
                 <p className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", margin: 0 }}>{m.stat}</p>

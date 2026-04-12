@@ -117,6 +117,12 @@ import SlideEBITDAQuarterlyDark from "./slides/SlideEBITDAQuarterlyDark";
 import SlideCashFlowTrendsQuarterlyDark from "./slides/SlideCashFlowTrendsQuarterlyDark";
 import SlideTargetModelDark from "./slides/SlideTargetModelDark";
 import CustomerUseCasesDarkV2Slide from "./slides/CustomerUseCasesDarkV2Slide";
+import {
+  CustomerUseCaseSbFoxySlide,
+  CustomerUseCaseSbRenascentSlide,
+  CustomerUseCaseSbSageSlide,
+  CustomerUseCaseSbVisionWheelSlide,
+} from "./slides/CustomerUseCasesSbSingleSlides";
 import AIAgentsInActionV2Slide from "./slides/AIAgentsInActionV2Slide";
 import {
   ProductBriefingSlide01,
@@ -251,6 +257,34 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "executive-summary-stack": { id: "executive-summary-stack", label: "Executive Summary (Option 1, stack)", component: ExecutiveSummaryStackSlide, theme: "dark" },
   "executive-summary-2-stack": { id: "executive-summary-2-stack", label: "Executive Summary (Option 2, stack)", component: ExecutiveSummary2StackSlide, theme: "dark" },
   "ai-agents-by-industry": { id: "ai-agents-by-industry", label: "AI Agents by Industry", component: AIAgentsByIndustrySlide, theme: "dark" },
+  "customer-use-case-sb-foxy": {
+    id: "customer-use-case-sb-foxy",
+    label: "Customer: Foxy Coatings (SB — from dark v2)",
+    component: CustomerUseCaseSbFoxySlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-vision-wheel": {
+    id: "customer-use-case-sb-vision-wheel",
+    label: "Customer: Vision Wheel (SB — from dark v2)",
+    component: CustomerUseCaseSbVisionWheelSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-renascent": {
+    id: "customer-use-case-sb-renascent",
+    label: "Customer: Renascent Protection (SB — from dark v2)",
+    component: CustomerUseCaseSbRenascentSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-sage": {
+    id: "customer-use-case-sb-sage",
+    label: "Customer: Sage Surfaces (SB — from dark v2)",
+    component: CustomerUseCaseSbSageSlide,
+    theme: "dark",
+    isNew: true,
+  },
   "customer-suzuki": { id: "customer-suzuki", label: "Customer: Suzuki", component: CustomerSuzukiSlide, theme: "dark" },
   "customer-tata-play": { id: "customer-tata-play", label: "Customer: Tata Play", component: CustomerTataPlaySlide, theme: "dark" },
   "customer-shasta": { id: "customer-shasta", label: "Customer: Shasta Community Health", component: CustomerShastaSlide, theme: "dark" },

@@ -40,9 +40,9 @@ const customers = [
       "Zero performance visibility (no centralized reporting)",
     ],
     solutions: [
-      "Right office on the first attempt",
-      "1K monthly AI interactions",
-      "7 locations on one platform",
+      "Improved customer sat: Multichannel engagement, connect immediately to desired office.",
+      "Scale with no additional staff: 1K customer-AI interactions.",
+      "Limit vendor sprawl: Consolidate on Nextiva across locations.",
     ],
     metrics: [
       { stat: "7", label: "Locations" },
@@ -59,9 +59,10 @@ const customers = [
       "French/Spanish claimants underserved (no bilingual routing)",
     ],
     solutions: [
-      "100K+ min/mo in EN, ES, FR",
-      "Automated QA — instant compliance",
-      "Real-time executive dashboards",
+      "Expand TAM to Spanish and French speakers, 100K+ minutes served.",
+      "Scaled compliance: Automated QA replaces manual call reviews.",
+      "Improved KPI visibility: Data-led decision making.",
+      "Enhancing AI use cases: Predictive routing and sentiment-driven escalation.",
     ],
     metrics: [
       { stat: "100K+", label: "Min/Mo" },

@@ -127,6 +127,10 @@
     "executive-summary-2-stack",
     "executive-summary-cards-copy",
     "ai-agents-by-industry",
+    "customer-use-case-sb-foxy",
+    "customer-use-case-sb-vision-wheel",
+    "customer-use-case-sb-renascent",
+    "customer-use-case-sb-sage",
     "customer-suzuki",
     "customer-tata-play",
     "customer-shasta",
@@ -142,6 +146,10 @@
     "investment-thesis"
   ],
   "categories": {
+    "customer-use-case-sb-foxy": "SB use cases",
+    "customer-use-case-sb-vision-wheel": "SB use cases",
+    "customer-use-case-sb-renascent": "SB use cases",
+    "customer-use-case-sb-sage": "SB use cases",
     "world-moving-thomas": "From Tomas",
     "what-we-are-close-thomas": "From Tomas",
     "cx-portfolio-thomas": "From Tomas",
@@ -152,7 +160,8 @@
   "categoryNames": [
     "From Tomas",
     "From Yaniv",
-    "dividers"
+    "dividers",
+    "SB use cases"
   ],
   "hiddenSlides": [
     "cx-market-sizing",

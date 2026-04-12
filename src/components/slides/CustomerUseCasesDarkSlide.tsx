@@ -62,10 +62,10 @@ const customers = [
       "No bilingual routing for US/Canada claims",
     ],
     solutions: [
-      "Bilingual routing (EN/ES/FR) handles 100K+ inbound min/mo",
-      "AI Scorecarding with 50 keywords automates QA monitoring",
-      "Power BI integration via BigQuery bridges enterprise dashboards",
-      "Phase 2: sentiment analysis, predictive routing, NextIQ",
+      "Expand TAM to Spanish and French speakers, 100K+ minutes served.",
+      "Scaled compliance: Automated QA replaces manual call reviews.",
+      "Improved KPI visibility: Data-led decision making.",
+      "Enhancing AI use cases: Predictive routing and sentiment-driven escalation.",
     ],
     metrics: [
       { stat: "100K+", label: "Min/Mo" },

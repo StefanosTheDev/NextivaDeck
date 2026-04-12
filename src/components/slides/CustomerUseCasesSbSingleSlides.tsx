@@ -1,55 +1,44 @@
 "use client";
-import React from "react";
+
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
+import { SB_CUSTOMER_CASES, type SbCustomerCaseSpec } from "./customerUseCasesSbSinglesContent";
 
-const problems = [
-  "High call volume for standard information inquiries on models and locations and customer service issues.",
-  "Reliance on email and phone support, leading to slow response and resolution times.",
-  "Limited visibility to user information throughout the CX lifecycle",
-  "Inefficient customer engagement across multiple channels.",
-];
+const BG =
+  "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)";
 
-const solutions = [
-  "AI-powered chatbot deployed across multiple channels makes response on standard inquiries instantaneous and require no human intervention.",
-  "Seamless agent transfer - direct connection to human agents for complex related inquiries.",
-  "Automated insights & analytics: sessions, users, and engagement rates across all channels.",
-  "Customer feedback & sentiment captures survey insights for consistent improvement.",
-];
-
-const metrics = [
-  { stat: "1M+/ Month", label: "Customers supported with AI" },
-  { stat: "12%", label: "Reduction in employee costs" },
-  { stat: "60%+", label: "Reduction in time to follow up on standard requests" },
-];
-
-/** ~⅓ of vertical band from below header to footer on 1080px canvas (breathing room under title). */
+/** Matches CustomerSuzukiSlide — breathing room under title on 1080px canvas. */
 const MAIN_TOP_OFFSET_PX = 240;
 
-/** Hero height; Problem + Solution row matches so bottoms align with photo. */
+/** Hero photo height; Problem + Solution row matches this so bottoms align. */
 const HERO_HEIGHT_PX = 400;
 
+/** Space between Problem/Solution row and metrics row (unchanged cushion). */
 const METRICS_TOP_GAP_PX = 16;
 
-export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?: number }) {
+function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbCustomerCaseSpec }) {
   return (
-    <div
-      className="slide"
-      style={{
-        background: "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)",
-      }}
-    >
+    <div className="slide" style={{ background: BG }}>
       <motion.header
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         style={{ padding: "40px 80px 0", flexShrink: 0 }}
       >
-        <p style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 4px" }}>
+        <p
+          style={{
+            fontWeight: 700,
+            fontSize: 13,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "#CCC7C3",
+            margin: "0 0 4px",
+          }}
+        >
           Nextiva Customer
         </p>
         <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
-          Suzuki
+          {c.name}
         </h1>
       </motion.header>
 
@@ -67,7 +56,6 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
           alignItems: "flex-start",
         }}
       >
-        {/* Left — photo capped ~½ former vertical span; contain-fit keeps Suzuki logo in frame */}
         <div
           style={{
             width: "26%",
@@ -91,8 +79,8 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/pptx-slides/slide4-img0.png"
-              alt="Suzuki"
+              src={c.photo}
+              alt={c.name}
               style={{
                 width: "100%",
                 height: "100%",
@@ -112,29 +100,46 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
               }}
             />
             <div style={{ position: "absolute", bottom: 14, left: 16, right: 16 }}>
-              <p
+              <span
                 style={{
-                  fontSize: 12,
+                  display: "inline-block",
+                  padding: "4px 12px",
+                  borderRadius: 20,
+                  background: c.accent,
+                  fontSize: 11,
                   fontWeight: 700,
-                  letterSpacing: "0.06em",
+                  letterSpacing: "0.05em",
                   textTransform: "uppercase",
-                  color: "#7BB3E0",
-                  margin: 0,
+                  color: "#FFFFFF",
+                  marginBottom: 8,
                 }}
               >
-                Industrial Manufacturing
-              </p>
-              <p style={{ fontSize: 11, color: "rgba(255,255,255,0.75)", margin: "4px 0 0", lineHeight: 1.3 }}>
-                72K Employees · 192 Countries
-              </p>
+                {c.industry}
+              </span>
+              <p style={{ fontSize: 11, color: "rgba(255,255,255,0.75)", margin: 0, lineHeight: 1.3 }}>{c.size}</p>
             </div>
           </div>
         </div>
 
-        {/* Right — Problem / Solution */}
-        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: METRICS_TOP_GAP_PX, minHeight: 0 }}>
-          <div style={{ display: "flex", gap: 16, height: HERO_HEIGHT_PX, flexShrink: 0, minHeight: 0 }}>
-            {/* Problem */}
+        <div
+          style={{
+            flex: 1,
+            minWidth: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: METRICS_TOP_GAP_PX,
+            minHeight: 0,
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              gap: 16,
+              height: HERO_HEIGHT_PX,
+              flexShrink: 0,
+              minHeight: 0,
+            }}
+          >
             <div
               style={{
                 flex: 1,
@@ -151,8 +156,11 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
                 Problem
               </p>
               <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-                {problems.map((p) => (
-                  <li key={p} style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 8, paddingLeft: 16, position: "relative" }}>
+                {c.problems.map((p, i) => (
+                  <li
+                    key={`p-${i}-${p.slice(0, 24)}`}
+                    style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 8, paddingLeft: 16, position: "relative" }}
+                  >
                     <span style={{ position: "absolute", left: 0, color: "#E07E7E", fontWeight: 700 }}>✗</span>
                     {p}
                   </li>
@@ -160,7 +168,6 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
               </ul>
             </div>
 
-            {/* Solution */}
             <div
               style={{
                 flex: 1,
@@ -177,8 +184,11 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
                 Solution
               </p>
               <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-                {solutions.map((s) => (
-                  <li key={s} style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 8, paddingLeft: 16, position: "relative" }}>
+                {c.solutions.map((s, i) => (
+                  <li
+                    key={`s-${i}-${s.slice(0, 24)}`}
+                    style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 8, paddingLeft: 16, position: "relative" }}
+                  >
                     <span style={{ position: "absolute", left: 0, color: "#7EB3E8" }}>✓</span>
                     {s}
                   </li>
@@ -187,12 +197,36 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
             </div>
           </div>
 
-          {/* Metrics */}
           <div style={{ display: "flex", gap: 16, flexShrink: 0 }}>
-            {metrics.map((m) => (
-              <div key={m.label} style={{ flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "16px 20px", textAlign: "center" }}>
-                <p className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", margin: 0 }}>{m.stat}</p>
-                <p style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.04em", color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>{m.label}</p>
+            {c.metrics.map((m) => (
+              <div
+                key={m.label}
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: 12,
+                  padding: "16px 20px",
+                  textAlign: "center",
+                }}
+              >
+                <p className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", margin: 0 }}>
+                  {m.stat}
+                </p>
+                <p
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.04em",
+                    color: "rgba(255,255,255,0.4)",
+                    margin: "4px 0 0",
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {m.label}
+                </p>
               </div>
             ))}
           </div>
@@ -202,4 +236,20 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
       <SlideFooter slideNumber={slideNumber} variant="dark" />
     </div>
   );
+}
+
+export function CustomerUseCaseSbFoxySlide({ slideNumber }: { slideNumber: number }) {
+  return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[0]} />;
+}
+
+export function CustomerUseCaseSbVisionWheelSlide({ slideNumber }: { slideNumber: number }) {
+  return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[1]} />;
+}
+
+export function CustomerUseCaseSbRenascentSlide({ slideNumber }: { slideNumber: number }) {
+  return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[2]} />;
+}
+
+export function CustomerUseCaseSbSageSlide({ slideNumber }: { slideNumber: number }) {
+  return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[3]} />;
 }

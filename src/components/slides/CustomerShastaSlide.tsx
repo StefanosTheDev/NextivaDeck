@@ -30,6 +30,9 @@ const metrics = [
 /** Same vertical rhythm as Customer: Suzuki / Tata Play. */
 const MAIN_TOP_OFFSET_PX = 240;
 
+const HERO_HEIGHT_PX = 400;
+const METRICS_TOP_GAP_PX = 16;
+
 /**
  * Hero is portrait (~1055×1122). We use a short frame + contain so nothing is clipped.
  * Bias toward the upper band where façade / building signage usually sits so the
@@ -70,7 +73,7 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
           padding: `${MAIN_TOP_OFFSET_PX}px 80px 12px`,
           overflow: "hidden",
           minHeight: 0,
-          alignItems: "stretch",
+          alignItems: "flex-start",
         }}
       >
         <div
@@ -86,7 +89,7 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
           <div
             style={{
               width: "100%",
-              height: 400,
+              height: HERO_HEIGHT_PX,
               flexShrink: 0,
               borderRadius: 14,
               overflow: "hidden",
@@ -136,8 +139,8 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
           </div>
         </div>
 
-        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: 12, minHeight: 0 }}>
-          <div style={{ display: "flex", gap: 16, flex: 1, minHeight: 0 }}>
+        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", gap: METRICS_TOP_GAP_PX, minHeight: 0 }}>
+          <div style={{ display: "flex", gap: 16, height: HERO_HEIGHT_PX, flexShrink: 0, minHeight: 0 }}>
             <div style={{ flex: 1, minWidth: 0, background: "rgba(220,70,70,0.07)", border: "1px solid rgba(220,70,70,0.18)", borderRadius: 14, padding: "16px 18px", overflow: "auto" }}>
               <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#E07E7E", margin: "0 0 10px" }}>
                 Problem
@@ -167,7 +170,7 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: 12, flexShrink: 0 }}>
+          <div style={{ display: "flex", gap: 12, flexShrink: 0, minHeight: 0 }}>
             <div
               style={{
                 flex: 2,

@@ -39,10 +39,9 @@ const customers = [
       "Lost CX performance visibility: No reporting",
     ],
     solutions: [
-      "Every customer reaches the right office on the first attempt",
-      "1K monthly interactions handled by AI — no staff required",
-      "Single platform consolidates 7 locations, eliminating vendor sprawl",
-      "Customers engage via voice, SMS, or web chat — their choice",
+      "Improved customer sat: Multichannel engagement, connect immediately to desired office.",
+      "Scale with no additional staff: 1K customer-AI interactions.",
+      "Limit vendor sprawl: Consolidate on Nextiva across locations.",
     ],
     metrics: [
       { stat: "7", label: "Locations" },
@@ -62,10 +61,10 @@ const customers = [
       "Lost market opportunity: multi-lingual call routing/agent matching absent",
     ],
     solutions: [
-      "100K+ monthly minutes served in English, Spanish, and French",
-      "Automated QA replaces manual call reviews — instant compliance",
-      "Real-time executive dashboards drive data-led decisions",
-      "Next phase: predictive routing and sentiment-driven escalation",
+      "Expand TAM to Spanish and French speakers, 100K+ minutes served.",
+      "Scaled compliance: Automated QA replaces manual call reviews.",
+      "Improved KPI visibility: Data-led decision making.",
+      "Enhancing AI use cases: Predictive routing and sentiment-driven escalation.",
     ],
     metrics: [
       { stat: "100K+", label: "Min/Mo" },
