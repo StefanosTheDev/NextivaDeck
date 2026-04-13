@@ -1,0 +1,80 @@
+{
+  "bundle": "published-slides-128-135-handoff",
+  "description": "Self-contained export of deck positions 128–135 (SB customer singles + enterprise customer slides), matching slide-order.json in NextivaDeck.",
+  "generatedFor": "Handoff to another repo; copy src/ into the app and merge public/images/ into the consuming project's public/ (or equivalent static root).",
+  "slides": [
+    {
+      "position": 128,
+      "registryId": "customer-use-case-sb-foxy",
+      "exportName": "CustomerUseCaseSbFoxySlide",
+      "sourceFile": "src/components/slides/CustomerUseCasesSbSingleSlides.tsx"
+    },
+    {
+      "position": 129,
+      "registryId": "customer-use-case-sb-vision-wheel",
+      "exportName": "CustomerUseCaseSbVisionWheelSlide",
+      "sourceFile": "src/components/slides/CustomerUseCasesSbSingleSlides.tsx"
+    },
+    {
+      "position": 130,
+      "registryId": "customer-use-case-sb-renascent",
+      "exportName": "CustomerUseCaseSbRenascentSlide",
+      "sourceFile": "src/components/slides/CustomerUseCasesSbSingleSlides.tsx"
+    },
+    {
+      "position": 131,
+      "registryId": "customer-use-case-sb-sage",
+      "exportName": "CustomerUseCaseSbSageSlide",
+      "sourceFile": "src/components/slides/CustomerUseCasesSbSingleSlides.tsx"
+    },
+    {
+      "position": 132,
+      "registryId": "customer-suzuki",
+      "exportName": "default (CustomerSuzukiSlide)",
+      "sourceFile": "src/components/slides/CustomerSuzukiSlide.tsx"
+    },
+    {
+      "position": 133,
+      "registryId": "customer-tata-play",
+      "exportName": "default (CustomerTataPlaySlide)",
+      "sourceFile": "src/components/slides/CustomerTataPlaySlide.tsx"
+    },
+    {
+      "position": 134,
+      "registryId": "customer-shasta",
+      "exportName": "default (CustomerShastaSlide)",
+      "sourceFile": "src/components/slides/CustomerShastaSlide.tsx"
+    },
+    {
+      "position": 135,
+      "registryId": "customer-aeg-vision",
+      "exportName": "default (CustomerAEGVisionSlide)",
+      "sourceFile": "src/components/slides/CustomerAEGVisionSlide.tsx"
+    }
+  ],
+  "typescriptFiles": [
+    "src/components/SlideFooter.tsx",
+    "src/components/slides/CustomerUseCasesSbSingleSlides.tsx",
+    "src/components/slides/customerUseCasesSbSinglesContent.ts",
+    "src/components/slides/CustomerSlideSbStyleHeroCardsRow.tsx",
+    "src/components/slides/CustomerSuzukiSlide.tsx",
+    "src/components/slides/CustomerTataPlaySlide.tsx",
+    "src/components/slides/CustomerShastaSlide.tsx",
+    "src/components/slides/CustomerAEGVisionSlide.tsx"
+  ],
+  "staticAssets": [
+    "public/images/customer-foxy.png",
+    "public/images/customer-vision.png",
+    "public/images/customer-renascent.png",
+    "public/images/customer-sage.png",
+    "public/images/pptx-slides/slide4-img0.png",
+    "public/images/pptx-slides/seksom-slide7-tata-play.png",
+    "public/images/pptx-slides/slide9-img0.png",
+    "public/images/pptx-slides/slide11-img0.png"
+  ],
+  "npmDependencies": {
+    "react": "peer (project already has)",
+    "framer-motion": "^12.36.0 (as in source NextivaDeck package.json)"
+  },
+  "importPathsInCode": "All imports are relative (../SlideFooter, ./customerUseCasesSbSinglesContent, etc.). Preserve folder layout: components/SlideFooter.tsx next to components/slides/*.tsx."
+}
