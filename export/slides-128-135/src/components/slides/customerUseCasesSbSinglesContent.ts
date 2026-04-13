@@ -190,4 +190,35 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
     heroObjectFit: "cover",
     heroObjectPosition: "center 45%",
   },
+  {
+    name: "Southeast Diabetes Inc",
+    industry: "Diabetes supplies · Healthcare services",
+    size:
+      "Birmingham, AL · 40 employees (34 agents, 6 supervisors) · ~$2.5K MRR · NEXT Scale + XBERT AI",
+    /** Typographic placeholder — swap for licensed brand or facility imagery when available. */
+    photo: "/images/customer-southeast-diabetes.svg",
+    accent: "#5EC4D4",
+    problems: [
+      "High inbound volume: ~175 calls/day with pressure to reach the correct department without live triage on every interaction.",
+      "SMS in scope from day one: text was already operationally critical and had to be in phase 1, not deferred.",
+      "Fragmented stack + competitive eval: multiple tools and vendors vs. RingCentral/Dialpad; needed one platform to consolidate.",
+      "Healthcare-grade needs: HIPAA, billing lookups, equipment reorder, fax/vFax, and department-specific escalation paths.",
+    ],
+    solutions: [
+      "Phased contact-center transformation: phase 1—AI voice + SMS with transfers; phase 2—Brightree EMR/EHR, web chat, and email.",
+      "NEXT Scale plus XBERT AI Employee Add-on, committed XBert usage, fax/vFax, and call center implementation services.",
+      "Consolidates communications workflows onto Nextiva instead of parallel point solutions.",
+      "Early snapshot: ~417 interactions with ~412 resolved by AI (~99% effective containment), 5 escalated.",
+    ],
+    metrics: [
+      { stat: "~99%", label: "AI containment" },
+      { stat: "417", label: "Interactions (snapshot)" },
+      { stat: "$2.5K", label: "MRR" },
+    ],
+    layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "cover",
+    heroObjectPosition: "center 40%",
+  },
 ];

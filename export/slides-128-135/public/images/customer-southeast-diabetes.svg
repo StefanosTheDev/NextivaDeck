@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Southeast Diabetes placeholder hero">
+  <defs>
+    <linearGradient id="careBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D3D4A"/>
+      <stop offset="50%" stop-color="#1A5C6E"/>
+      <stop offset="100%" stop-color="#2A7F8C"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5EC4D4" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#7EDCE8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#5EC4D4" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#careBg)"/>
+  <path fill="none" stroke="#7EDCE8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"
+    d="M80 420 L180 420 L220 340 L280 500 L340 380 L400 460 L480 300 L560 480 L640 360 L720 440 L800 320 L880 400 L960 350 L1040 430 L1120 400"/>
+  <rect x="200" y="520" width="800" height="4" rx="2" fill="url(#pulse)" opacity="0.5"/>
+  <rect x="0" y="0" width="1200" height="200" fill="rgba(0,0,0,0.28)"/>
+  <text x="600" y="88" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="48" font-weight="700" fill="#FFFFFF">Southeast Diabetes</text>
+  <text x="600" y="138" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="600" fill="rgba(255,255,255,0.92)">Birmingham, Alabama &#183; Diabetes supplies &amp; healthcare services</text>
+</svg>

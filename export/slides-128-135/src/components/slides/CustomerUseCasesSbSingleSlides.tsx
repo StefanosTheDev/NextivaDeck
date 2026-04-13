@@ -379,3 +379,7 @@ export function CustomerUseCaseSbCocoaLoftsSlide({ slideNumber }: { slideNumber:
 export function CustomerUseCaseSbKalleyFlooringSlide({ slideNumber }: { slideNumber: number }) {
   return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[5]} />;
 }
+
+export function CustomerUseCaseSbSoutheastDiabetesSlide({ slideNumber }: { slideNumber: number }) {
+  return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[6]} />;
+}

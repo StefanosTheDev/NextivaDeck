@@ -123,6 +123,7 @@ import {
   CustomerUseCaseSbKalleyFlooringSlide,
   CustomerUseCaseSbRenascentSlide,
   CustomerUseCaseSbSageSlide,
+  CustomerUseCaseSbSoutheastDiabetesSlide,
   CustomerUseCaseSbVisionWheelSlide,
 } from "./slides/CustomerUseCasesSbSingleSlides";
 import AIAgentsInActionV2Slide from "./slides/AIAgentsInActionV2Slide";
@@ -298,6 +299,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "customer-use-case-sb-kalley-flooring",
     label: "Customer: Kalley Flooring (XBert — hardwood / LA)",
     component: CustomerUseCaseSbKalleyFlooringSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-southeast-diabetes": {
+    id: "customer-use-case-sb-southeast-diabetes",
+    label: "Customer: Southeast Diabetes Inc (NEXT Scale + XBERT — healthcare)",
+    component: CustomerUseCaseSbSoutheastDiabetesSlide,
     theme: "dark",
     isNew: true,
   },
