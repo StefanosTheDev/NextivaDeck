@@ -1,0 +1,13 @@
+{
+  "_comment": "Insert these 2 IDs as a contiguous block in slide-order.json under the 'order' array. They should sit together in the 'Healthcare Vertical' section of the deck, immediately after the Customer Use Cases block.",
+  "block_in_order": [
+    "healthcare-vertical-glance",
+    "healthcare-vertical-strategy"
+  ],
+  "_comment_categories": "Also add each ID to the 'categories' map with value 'Healthcare Vertical':",
+  "category_entries": {
+    "healthcare-vertical-glance": "Healthcare Vertical",
+    "healthcare-vertical-strategy": "Healthcare Vertical"
+  },
+  "_comment_categoryNames": "If 'Healthcare Vertical' is not already in categoryNames, add it to the array."
+}

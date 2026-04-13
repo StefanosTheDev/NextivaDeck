@@ -157,6 +157,8 @@
     "three-paths-pre-trust",
     "customer-use-cases-dark-v2",
     "customer-use-cases-v2",
+    "drew-healthcare-glance-v3",
+    "drew-healthcare-strategy-v3",
     "drew-healthcare-glance",
     "drew-healthcare-solutions",
     "drew-healthcare-strategy",
@@ -183,6 +185,7 @@
     "drew-competitor-decagon",
     "drew-competitor-decagon-alt",
     "drew-lead-velocity-curves",
+    "drew-lead-velocity-buckets-v3",
     "drew-lead-velocity-buckets",
     "platform-roadmap-investor",
     "tomas-democratized-platform-041126",
@@ -201,6 +204,7 @@
     "customer-tata-play-041226",
     "customer-shasta-041226",
     "customer-aeg-vision-041226",
+    "drew-carl-incumbent-trust-v3",
     "drew-carl-incumbent-trust"
   ],
   "categories": {
@@ -288,7 +292,11 @@
     "customer-suzuki-041226": "SEKSOM SLIDES 041226",
     "customer-tata-play-041226": "SEKSOM SLIDES 041226",
     "customer-shasta-041226": "SEKSOM SLIDES 041226",
-    "customer-aeg-vision-041226": "SEKSOM SLIDES 041226"
+    "customer-aeg-vision-041226": "SEKSOM SLIDES 041226",
+    "drew-healthcare-glance-v3": "Drew Schulz HealthCare",
+    "drew-healthcare-strategy-v3": "Drew Schulz HealthCare",
+    "drew-lead-velocity-buckets-v3": "Drew Schulz",
+    "drew-carl-incumbent-trust-v3": "Drew Schulz"
   },
   "categoryNames": [
     "Drew Schulz",
@@ -441,6 +449,11 @@
     "senthil-cxpaas-arch-041126",
     "senthil-bespoke-at-scale-041126",
     "tomas-trustworthy-041126",
-    "tomas-global-footprint-041126"
+    "tomas-global-footprint-041126",
+    "drew-healthcare-glance",
+    "drew-healthcare-solutions",
+    "drew-healthcare-strategy",
+    "drew-lead-velocity-buckets",
+    "drew-carl-incumbent-trust"
   ]
 }

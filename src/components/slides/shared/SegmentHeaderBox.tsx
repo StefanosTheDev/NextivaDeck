@@ -36,6 +36,7 @@ export default function SegmentHeaderBox({
         overflow: "hidden",
       }}
     >
+      {/* Segment header — name/range + product pills */}
       <div
         style={{
           padding: `${headerPadY}px ${headerPadX}px ${headerPadY - 2}px`,
@@ -98,6 +99,7 @@ export default function SegmentHeaderBox({
         </div>
       </div>
 
+      {/* Metrics row — Customers / ARR */}
       <div
         style={{
           display: "grid",

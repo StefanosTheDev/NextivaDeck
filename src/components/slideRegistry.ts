@@ -210,6 +210,10 @@ import PodiumComparisonAltV2Slide from "./slides/PodiumComparisonAltV2Slide";
 import LeadVelocityCurvesV2Slide from "./slides/LeadVelocityCurvesV2Slide";
 import LeadVelocityBucketsV2Slide from "./slides/LeadVelocityBucketsV2Slide";
 import CarlIncumbentTrustSlide from "./slides/CarlIncumbentTrustSlide";
+import HealthcareVerticalGlanceV3Slide from "./slides/HealthcareVerticalGlanceV3Slide";
+import HealthcareVerticalStrategyV3Slide from "./slides/HealthcareVerticalStrategyV3Slide";
+import LeadVelocityBucketsV3Slide from "./slides/LeadVelocityBucketsV3Slide";
+import CarlIncumbentTrustV3Slide from "./slides/CarlIncumbentTrustV3Slide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -408,6 +412,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "drew-healthcare-glance": { id: "drew-healthcare-glance", label: "Drew: Healthcare At a Glance (040126)", component: HealthcareVerticalGlanceSlide, theme: "dark", isNew: true },
   "drew-healthcare-solutions": { id: "drew-healthcare-solutions", label: "Drew: Healthcare Solutions (040126)", component: HealthcareVerticalSolutionsSlide, theme: "dark", isNew: true },
   "drew-healthcare-strategy": { id: "drew-healthcare-strategy", label: "Drew: Healthcare Strategy (040126)", component: HealthcareVerticalStrategySlide, theme: "dark", isNew: true },
+  "drew-healthcare-glance-v3": { id: "drew-healthcare-glance-v3", label: "Drew: Healthcare At a Glance (V3)", component: HealthcareVerticalGlanceV3Slide, theme: "dark", isNew: true },
+  "drew-healthcare-strategy-v3": { id: "drew-healthcare-strategy-v3", label: "Drew: Healthcare Strategy (V3)", component: HealthcareVerticalStrategyV3Slide, theme: "dark", isNew: true },
   // Drew Schulz 041126 Slides
   "drew-briefing-cover": { id: "drew-briefing-cover", label: "Drew: Briefing Cover", component: BriefingCoverSlide, theme: "dark", isNew: true },
   "drew-briefing-exec-summary": { id: "drew-briefing-exec-summary", label: "Drew: Briefing Exec Summary", component: BriefingExecSummarySlide, theme: "dark", isNew: true },
@@ -434,6 +440,8 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "drew-lead-velocity-curves": { id: "drew-lead-velocity-curves", label: "Drew: Lead Velocity Curves (VSB/SMB)", component: LeadVelocityCurvesV2Slide, theme: "dark", isNew: true },
   "drew-lead-velocity-buckets": { id: "drew-lead-velocity-buckets", label: "Drew: Lead Velocity Buckets (VSB/SMB)", component: LeadVelocityBucketsV2Slide, theme: "dark", isNew: true },
   "drew-carl-incumbent-trust": { id: "drew-carl-incumbent-trust", label: "Drew: CARL + AI Incumbent Trust", component: CarlIncumbentTrustSlide, theme: "dark", isNew: true },
+  "drew-lead-velocity-buckets-v3": { id: "drew-lead-velocity-buckets-v3", label: "Drew: Lead Velocity Buckets (V3)", component: LeadVelocityBucketsV3Slide, theme: "dark", isNew: true },
+  "drew-carl-incumbent-trust-v3": { id: "drew-carl-incumbent-trust-v3", label: "Drew: CARL + AI Incumbent Trust (V3)", component: CarlIncumbentTrustV3Slide, theme: "dark", isNew: true },
   "platform-roadmap-horizon": {
     id: "platform-roadmap-horizon",
     label: "Platform horizons (1 of 2 — CX, AI, scale)",
@@ -537,6 +545,8 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "cash-flow-trends-quarterly-dark",
   "target-model-dark",
   // Drew Schulz Healthcare 040126
+  "drew-healthcare-glance-v3",
+  "drew-healthcare-strategy-v3",
   "drew-healthcare-glance",
   "drew-healthcare-solutions",
   "drew-healthcare-strategy",
@@ -564,6 +574,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "drew-competitor-decagon",
   "drew-competitor-decagon-alt",
   "drew-lead-velocity-curves",
+  "drew-lead-velocity-buckets-v3",
   "drew-lead-velocity-buckets",
   "platform-roadmap-horizon",
   "platform-roadmap-horizon-2",
