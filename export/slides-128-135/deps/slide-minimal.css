@@ -1,0 +1,21 @@
+/**
+ * Minimal styles for handoff slides (129–135).
+ * Parent project: src/app/globals.css — Space Grotesk is loaded there; include the font if missing.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+.font-heading {
+  font-family: "Georgia", "Times New Roman", serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.slide {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Space Grotesk", sans-serif;
+}
