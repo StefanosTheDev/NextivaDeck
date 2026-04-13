@@ -172,8 +172,8 @@
   "categoryNames": [
     "From Tomas",
     "From Yaniv",
-    "dividers",
-    "SB use cases"
+    "SB use cases",
+    "dividers"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
@@ -309,6 +309,10 @@
     "products-roadmap-apr26-6",
     "products-roadmap-apr26-5",
     "products-roadmap-apr26-4",
-    "products-roadmap-apr26-3"
+    "products-roadmap-apr26-3",
+    "customer-suzuki",
+    "customer-shasta",
+    "customer-tata-play",
+    "customer-aeg-vision"
   ]
 }
