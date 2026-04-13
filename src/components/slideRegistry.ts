@@ -92,6 +92,12 @@ import CustomerSuzukiSlide from "./slides/CustomerSuzukiSlide";
 import CustomerTataPlaySlide from "./slides/CustomerTataPlaySlide";
 import CustomerShastaSlide from "./slides/CustomerShastaSlide";
 import CustomerAEGVisionSlide from "./slides/CustomerAEGVisionSlide";
+import {
+  CustomerUseCaseSbFoxySlide,
+  CustomerUseCaseSbVisionWheelSlide,
+  CustomerUseCaseSbRenascentSlide,
+  CustomerUseCaseSbSageSlide,
+} from "./slides/CustomerUseCasesSbSingleSlides";
 import CustomerUseCasesSlide from "./slides/CustomerUseCasesSlide";
 import SystemOfActionSlide from "./slides/SystemOfActionSlide";
 import SystemOfActionCopySlide from "./slides/SystemOfActionCopySlide";
@@ -203,6 +209,7 @@ import DecagonComparisonAltV2Slide from "./slides/DecagonComparisonAltV2Slide";
 import PodiumComparisonAltV2Slide from "./slides/PodiumComparisonAltV2Slide";
 import LeadVelocityCurvesV2Slide from "./slides/LeadVelocityCurvesV2Slide";
 import LeadVelocityBucketsV2Slide from "./slides/LeadVelocityBucketsV2Slide";
+import CarlIncumbentTrustSlide from "./slides/CarlIncumbentTrustSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -319,6 +326,14 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-tata-play": { id: "customer-tata-play", label: "Customer: Tata Play", component: CustomerTataPlaySlide, theme: "dark" },
   "customer-shasta": { id: "customer-shasta", label: "Customer: Shasta Community Health", component: CustomerShastaSlide, theme: "dark" },
   "customer-aeg-vision": { id: "customer-aeg-vision", label: "Customer: AEG Vision", component: CustomerAEGVisionSlide, theme: "dark" },
+  "customer-use-case-sb-foxy": { id: "customer-use-case-sb-foxy", label: "Customer: Foxy Coatings (SB)", component: CustomerUseCaseSbFoxySlide, theme: "dark" },
+  "customer-use-case-sb-vision-wheel": { id: "customer-use-case-sb-vision-wheel", label: "Customer: Vision Wheel (SB)", component: CustomerUseCaseSbVisionWheelSlide, theme: "dark" },
+  "customer-use-case-sb-renascent": { id: "customer-use-case-sb-renascent", label: "Customer: Renascent Protection (SB)", component: CustomerUseCaseSbRenascentSlide, theme: "dark" },
+  "customer-use-case-sb-sage": { id: "customer-use-case-sb-sage", label: "Customer: Sage Surfaces (SB)", component: CustomerUseCaseSbSageSlide, theme: "dark" },
+  "customer-suzuki-041226": { id: "customer-suzuki-041226", label: "Customer: Suzuki (041226)", component: CustomerSuzukiSlide, theme: "dark" },
+  "customer-tata-play-041226": { id: "customer-tata-play-041226", label: "Customer: Tata Play (041226)", component: CustomerTataPlaySlide, theme: "dark" },
+  "customer-shasta-041226": { id: "customer-shasta-041226", label: "Customer: Shasta (041226)", component: CustomerShastaSlide, theme: "dark" },
+  "customer-aeg-vision-041226": { id: "customer-aeg-vision-041226", label: "Customer: AEG Vision (041226)", component: CustomerAEGVisionSlide, theme: "dark" },
   "customer-use-cases": { id: "customer-use-cases", label: "Customer Use Cases (4-card)", component: CustomerUseCasesSlide, theme: "dark" },
   "system-of-action": { id: "system-of-action", label: "System of Action", component: SystemOfActionSlide, theme: "dark" },
   "system-of-action-copy": { id: "system-of-action-copy", label: "System of Action (copy)", component: SystemOfActionCopySlide, theme: "dark" },
@@ -418,6 +433,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "drew-competitor-decagon-alt": { id: "drew-competitor-decagon-alt", label: "Drew: Decagon vs Nextiva (Tomas framework)", component: DecagonComparisonAltV2Slide, theme: "dark", isNew: true },
   "drew-lead-velocity-curves": { id: "drew-lead-velocity-curves", label: "Drew: Lead Velocity Curves (VSB/SMB)", component: LeadVelocityCurvesV2Slide, theme: "dark", isNew: true },
   "drew-lead-velocity-buckets": { id: "drew-lead-velocity-buckets", label: "Drew: Lead Velocity Buckets (VSB/SMB)", component: LeadVelocityBucketsV2Slide, theme: "dark", isNew: true },
+  "drew-carl-incumbent-trust": { id: "drew-carl-incumbent-trust", label: "Drew: CARL + AI Incumbent Trust", component: CarlIncumbentTrustSlide, theme: "dark", isNew: true },
   "platform-roadmap-horizon": {
     id: "platform-roadmap-horizon",
     label: "Platform horizons (1 of 2 — CX, AI, scale)",
@@ -562,6 +578,15 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "senthil-bespoke-at-scale-041126",
   "tomas-trustworthy-041126",
   "tomas-global-footprint-041126",
+  // SEKSOM SLIDES 041226
+  "customer-use-case-sb-foxy",
+  "customer-use-case-sb-vision-wheel",
+  "customer-use-case-sb-renascent",
+  "customer-use-case-sb-sage",
+  "customer-suzuki-041226",
+  "customer-tata-play-041226",
+  "customer-shasta-041226",
+  "customer-aeg-vision-041226",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

@@ -193,7 +193,15 @@
     "senthil-cxpaas-arch-041126",
     "senthil-bespoke-at-scale-041126",
     "tomas-trustworthy-041126",
-    "tomas-global-footprint-041126"
+    "tomas-global-footprint-041126",
+    "customer-use-case-sb-foxy",
+    "customer-use-case-sb-vision-wheel",
+    "customer-use-case-sb-renascent",
+    "customer-suzuki-041226",
+    "customer-tata-play-041226",
+    "customer-shasta-041226",
+    "customer-aeg-vision-041226",
+    "drew-carl-incumbent-trust"
   ],
   "categories": {
     "world-moving-thomas": "from Tomas",
@@ -263,6 +271,7 @@
     "drew-competitor-decagon-alt": "Drew Schulz Firehorse 041226",
     "drew-lead-velocity-curves": "Drew Schulz Velocity 041226",
     "drew-lead-velocity-buckets": "Drew Schulz Velocity 041226",
+    "drew-carl-incumbent-trust": "Drew 041226 Incumbent Trust",
     "senthil-model-agnostic-platform-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
     "senthil-data-intelligence-platform-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
     "senthil-cxpaas-arch-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
@@ -271,13 +280,22 @@
     "tomas-cx-first-system-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
     "tomas-human-ai-harmony-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
     "tomas-trustworthy-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
-    "tomas-global-footprint-041126": "TOMAS / SENTHIL PPT SLIDES 041126"
+    "tomas-global-footprint-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
+    "customer-use-case-sb-foxy": "SEKSOM SLIDES 041226",
+    "customer-use-case-sb-vision-wheel": "SEKSOM SLIDES 041226",
+    "customer-use-case-sb-renascent": "SEKSOM SLIDES 041226",
+    "customer-use-case-sb-sage": "SEKSOM SLIDES 041226",
+    "customer-suzuki-041226": "SEKSOM SLIDES 041226",
+    "customer-tata-play-041226": "SEKSOM SLIDES 041226",
+    "customer-shasta-041226": "SEKSOM SLIDES 041226",
+    "customer-aeg-vision-041226": "SEKSOM SLIDES 041226"
   },
   "categoryNames": [
     "Drew Schulz",
     "Drew Schulz 041126 Slides",
     "Drew Schulz Firehorse 041226",
     "Drew Schulz HealthCare",
+    "Drew 041226 Incumbent Trust",
     "Drew Schulz Velocity 041226",
     "Finance-Demo-Branch",
     "SENTHIL PPTX Slides",
@@ -285,7 +303,8 @@
     "TOMAS / SENTHIL PPT SLIDES 041126",
     "Yaniv-VersionH Slides",
     "dividers",
-    "from Tomas"
+    "from Tomas",
+    "SEKSOM SLIDES 041226"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
@@ -323,7 +342,6 @@
     "agentic-opp-copy",
     "agentic-opp-copy-3",
     "executive-summary-cards",
-    "customer-aeg-vision",
     "solution-copy",
     "agentic-opp-copy-4",
     "agentic-opp-copy-5",
@@ -334,9 +352,6 @@
     "platform-copy",
     "platform-copy-2",
     "ai-agents-by-industry",
-    "customer-suzuki",
-    "customer-shasta",
-    "customer-tata-play",
     "executive-summary-2",
     "executive-summary-stack",
     "executive-summary-2-stack",
