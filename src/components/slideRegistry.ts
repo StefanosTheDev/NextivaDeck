@@ -196,6 +196,13 @@ import TomasCXFirstSystemSlide from "./slides/TomasCXFirstSystemSlide";
 import TomasHumanAIHarmonySlide from "./slides/TomasHumanAIHarmonySlide";
 import TomasTrustworthySlide from "./slides/TomasTrustworthySlide";
 import TomasGlobalFootprintSlide from "./slides/TomasGlobalFootprintSlide";
+import AgenticCompetitiveLandscapeV2Slide from "./slides/AgenticCompetitiveLandscapeV2Slide";
+import IntercomComparisonAltV2Slide from "./slides/IntercomComparisonAltV2Slide";
+import SierraComparisonAltV2Slide from "./slides/SierraComparisonAltV2Slide";
+import DecagonComparisonAltV2Slide from "./slides/DecagonComparisonAltV2Slide";
+import PodiumComparisonAltV2Slide from "./slides/PodiumComparisonAltV2Slide";
+import LeadVelocityCurvesV2Slide from "./slides/LeadVelocityCurvesV2Slide";
+import LeadVelocityBucketsV2Slide from "./slides/LeadVelocityBucketsV2Slide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -400,17 +407,17 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "drew-briefing-cxpaas-arch": { id: "drew-briefing-cxpaas-arch", label: "Drew: Briefing CXPaaS Architecture", component: BriefingCXPaaSArchSlide, theme: "dark", isNew: true },
   "drew-briefing-global-footprint": { id: "drew-briefing-global-footprint", label: "Drew: Briefing Global Footprint", component: BriefingGlobalFootprintSlide, theme: "dark", isNew: true },
   "drew-briefing-closing-recap": { id: "drew-briefing-closing-recap", label: "Drew: Briefing Closing Recap", component: BriefingClosingRecapSlide, theme: "dark", isNew: true },
-  "drew-agentic-competitive-landscape": { id: "drew-agentic-competitive-landscape", label: "Drew: Agentic Competitive Landscape", component: AgenticCompetitiveLandscapeSlide, theme: "dark", isNew: true },
+  "drew-agentic-competitive-landscape": { id: "drew-agentic-competitive-landscape", label: "Drew: Agentic Competitive Landscape (Firehorse)", component: AgenticCompetitiveLandscapeV2Slide, theme: "dark", isNew: true },
   "drew-competitor-podium": { id: "drew-competitor-podium", label: "Drew: Podium vs Nextiva (framework)", component: PodiumComparisonSlide, theme: "dark", isNew: true },
-  "drew-competitor-podium-alt": { id: "drew-competitor-podium-alt", label: "Drew: Podium vs Nextiva (rated)", component: PodiumComparisonAltSlide, theme: "dark", isNew: true },
+  "drew-competitor-podium-alt": { id: "drew-competitor-podium-alt", label: "Drew: Podium vs Nextiva (Tomas framework)", component: PodiumComparisonAltV2Slide, theme: "dark", isNew: true },
   "drew-competitor-intercom": { id: "drew-competitor-intercom", label: "Drew: Intercom vs Nextiva (framework)", component: IntercomComparisonSlide, theme: "dark", isNew: true },
-  "drew-competitor-intercom-alt": { id: "drew-competitor-intercom-alt", label: "Drew: Intercom vs Nextiva (rated)", component: IntercomComparisonAltSlide, theme: "dark", isNew: true },
+  "drew-competitor-intercom-alt": { id: "drew-competitor-intercom-alt", label: "Drew: Intercom vs Nextiva (Tomas framework)", component: IntercomComparisonAltV2Slide, theme: "dark", isNew: true },
   "drew-competitor-sierra": { id: "drew-competitor-sierra", label: "Drew: Sierra vs Nextiva (framework)", component: SierraComparisonSlide, theme: "dark", isNew: true },
-  "drew-competitor-sierra-alt": { id: "drew-competitor-sierra-alt", label: "Drew: Sierra vs Nextiva (rated)", component: SierraComparisonAltSlide, theme: "dark", isNew: true },
+  "drew-competitor-sierra-alt": { id: "drew-competitor-sierra-alt", label: "Drew: Sierra vs Nextiva (Tomas framework)", component: SierraComparisonAltV2Slide, theme: "dark", isNew: true },
   "drew-competitor-decagon": { id: "drew-competitor-decagon", label: "Drew: Decagon vs Nextiva (framework)", component: DecagonComparisonSlide, theme: "dark", isNew: true },
-  "drew-competitor-decagon-alt": { id: "drew-competitor-decagon-alt", label: "Drew: Decagon vs Nextiva (rated)", component: DecagonComparisonAltSlide, theme: "dark", isNew: true },
-  "drew-lead-velocity-curves": { id: "drew-lead-velocity-curves", label: "Drew: Lead Velocity Curves", component: LeadVelocityCurvesSlide, theme: "dark", isNew: true },
-  "drew-lead-velocity-buckets": { id: "drew-lead-velocity-buckets", label: "Drew: Lead Velocity Buckets", component: LeadVelocityBucketsSlide, theme: "dark", isNew: true },
+  "drew-competitor-decagon-alt": { id: "drew-competitor-decagon-alt", label: "Drew: Decagon vs Nextiva (Tomas framework)", component: DecagonComparisonAltV2Slide, theme: "dark", isNew: true },
+  "drew-lead-velocity-curves": { id: "drew-lead-velocity-curves", label: "Drew: Lead Velocity Curves (VSB/SMB)", component: LeadVelocityCurvesV2Slide, theme: "dark", isNew: true },
+  "drew-lead-velocity-buckets": { id: "drew-lead-velocity-buckets", label: "Drew: Lead Velocity Buckets (VSB/SMB)", component: LeadVelocityBucketsV2Slide, theme: "dark", isNew: true },
   "platform-roadmap-horizon": {
     id: "platform-roadmap-horizon",
     label: "Platform horizons (1 of 2 — CX, AI, scale)",
