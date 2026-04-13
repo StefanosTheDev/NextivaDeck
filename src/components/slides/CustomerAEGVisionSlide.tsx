@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import {
   CustomerSlideSbStyleHeroCardsRow,
-  SB_CARDS_STACK_WIDTH_PX,
   SB_CUSTOMER_MAIN_TOP_OFFSET_PX,
   SB_HERO_PROBLEM_SOLUTION_GAP_PX,
   SB_PROBLEM_CARD_WIDTH_PX,
@@ -31,13 +30,36 @@ const metrics = [
   { stat: "40K / Month", label: "Automated standard requests" },
 ];
 
-const HERO_HEIGHT_PX = 400;
-const METRICS_TOP_GAP_PX = 16;
+/** Match SB singles slides 128–131: larger hero + cards footprint. */
+const LAYOUT_SCALE = 1.33;
+
+const HERO_HEIGHT_BASE_PX = 400;
+const METRICS_TOP_GAP_BASE_PX = 16;
 
 /** Retail façade / signage often sits slightly above center in hero photography. */
 const HERO_OBJECT_POSITION = "center 32%";
 
 export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumber?: number }) {
+  const scale = LAYOUT_SCALE;
+  const heroH = Math.round(HERO_HEIGHT_BASE_PX * scale);
+  const problemW = Math.round(SB_PROBLEM_CARD_WIDTH_PX * scale);
+  const solutionW = Math.round(SB_SOLUTION_CARD_WIDTH_PX * scale);
+  const gap = Math.round(SB_HERO_PROBLEM_SOLUTION_GAP_PX * scale);
+  const metricsTopGap = Math.round(METRICS_TOP_GAP_BASE_PX * scale);
+  const cardsStackW = problemW + gap + solutionW;
+  const cardPadY = Math.round(20 * scale);
+  const cardPadX = Math.round(22 * scale);
+  const cardRadius = Math.round(14 * scale);
+  const metricsRadius = Math.round(12 * scale);
+  const metricsPadY = Math.round(16 * scale);
+  const metricsPadX = Math.round(12 * scale);
+  const fsSection = Math.round(14 * scale);
+  const fsBody = Math.round(13 * scale);
+  const fsStat = Math.round(28 * scale);
+  const fsLabel = Math.round(11 * scale);
+  const fsHeroIndustry = Math.round(12 * scale);
+  const fsHeroMeta = Math.round(11 * scale);
+
   return (
     <div
       className="slide"
@@ -52,7 +74,7 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
         style={{ padding: "40px 80px 0", flexShrink: 0 }}
       >
         <p style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 4px" }}>
-          SMB Customer Use Case
+          Enterprise Customer Use Case
         </p>
         <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           AEG Vision
@@ -74,13 +96,14 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
         }}
       >
         <CustomerSlideSbStyleHeroCardsRow
+          rowGapPx={gap}
           hero={
             <div
               style={{
                 width: "100%",
-                height: HERO_HEIGHT_PX,
+                height: heroH,
                 flexShrink: 0,
-                borderRadius: 14,
+                borderRadius: cardRadius,
                 overflow: "hidden",
                 position: "relative",
                 background: "rgba(0,0,0,0.35)",
@@ -108,10 +131,17 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
                   pointerEvents: "none",
                 }}
               />
-              <div style={{ position: "absolute", bottom: 14, left: 16, right: 16 }}>
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: Math.round(14 * scale),
+                  left: Math.round(16 * scale),
+                  right: Math.round(16 * scale),
+                }}
+              >
                 <p
                   style={{
-                    fontSize: 12,
+                    fontSize: fsHeroIndustry,
                     fontWeight: 700,
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
@@ -121,7 +151,7 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
                 >
                   Retail Optometry
                 </p>
-                <p style={{ fontSize: 11, color: "rgba(255,255,255,0.75)", margin: "4px 0 0", lineHeight: 1.3 }}>
+                <p style={{ fontSize: fsHeroMeta, color: "rgba(255,255,255,0.75)", margin: `${Math.round(4 * scale)}px 0 0`, lineHeight: 1.3 }}>
                   500 Clinical Practice Locations · 5,000 employees
                 </p>
               </div>
@@ -130,19 +160,19 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
           cards={
             <div
               style={{
-                width: SB_CARDS_STACK_WIDTH_PX,
+                width: cardsStackW,
                 maxWidth: "100%",
                 minWidth: 0,
                 display: "flex",
                 flexDirection: "column",
-                gap: METRICS_TOP_GAP_PX,
+                gap: metricsTopGap,
               }}
             >
               <div
                 style={{
                   display: "flex",
-                  gap: SB_HERO_PROBLEM_SOLUTION_GAP_PX,
-                  height: HERO_HEIGHT_PX,
+                  gap,
+                  height: heroH,
                   flexShrink: 0,
                   minHeight: 0,
                 }}
@@ -150,18 +180,27 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
                 <div
                   style={{
                     flex: "0 0 auto",
-                    width: SB_PROBLEM_CARD_WIDTH_PX,
+                    width: problemW,
                     maxWidth: "100%",
                     minHeight: 0,
                     boxSizing: "border-box",
                     background: "rgba(220,70,70,0.07)",
                     border: "1px solid rgba(220,70,70,0.18)",
-                    borderRadius: 14,
-                    padding: "16px 18px",
+                    borderRadius: cardRadius,
+                    padding: `${cardPadY}px ${cardPadX}px`,
                     overflow: "auto",
                   }}
                 >
-                  <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#E07E7E", margin: "0 0 10px" }}>
+                  <p
+                    style={{
+                      fontSize: fsSection,
+                      fontWeight: 700,
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
+                      color: "#E07E7E",
+                      margin: `0 0 ${Math.round(14 * scale)}px`,
+                    }}
+                  >
                     Problem
                   </p>
                   <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
@@ -169,11 +208,11 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
                       <li
                         key={p}
                         style={{
-                          fontSize: 13,
+                          fontSize: fsBody,
                           color: "rgba(255,255,255,0.55)",
-                          lineHeight: 1.45,
-                          marginBottom: 6,
-                          paddingLeft: 16,
+                          lineHeight: 1.5,
+                          marginBottom: Math.round(8 * scale),
+                          paddingLeft: Math.round(16 * scale),
                           position: "relative",
                           overflowWrap: "break-word",
                         }}
@@ -188,18 +227,27 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
                 <div
                   style={{
                     flex: "0 0 auto",
-                    width: SB_SOLUTION_CARD_WIDTH_PX,
+                    width: solutionW,
                     maxWidth: "100%",
                     minHeight: 0,
                     boxSizing: "border-box",
                     background: "rgba(40,96,178,0.08)",
                     border: "1px solid rgba(40,96,178,0.2)",
-                    borderRadius: 14,
-                    padding: "16px 18px",
+                    borderRadius: cardRadius,
+                    padding: `${cardPadY}px ${cardPadX}px`,
                     overflow: "auto",
                   }}
                 >
-                  <p style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "#7EB3E8", margin: "0 0 10px" }}>
+                  <p
+                    style={{
+                      fontSize: fsSection,
+                      fontWeight: 700,
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
+                      color: "#7EB3E8",
+                      margin: `0 0 ${Math.round(14 * scale)}px`,
+                    }}
+                  >
                     Solution
                   </p>
                   <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
@@ -207,11 +255,11 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
                       <li
                         key={s}
                         style={{
-                          fontSize: 13,
+                          fontSize: fsBody,
                           color: "rgba(255,255,255,0.55)",
-                          lineHeight: 1.45,
-                          marginBottom: 6,
-                          paddingLeft: 16,
+                          lineHeight: 1.5,
+                          marginBottom: Math.round(8 * scale),
+                          paddingLeft: Math.round(16 * scale),
                           position: "relative",
                           overflowWrap: "break-word",
                         }}
@@ -224,7 +272,7 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
                 </div>
               </div>
 
-              <div style={{ display: "flex", gap: SB_HERO_PROBLEM_SOLUTION_GAP_PX, flexShrink: 0, width: "100%" }}>
+              <div style={{ display: "flex", gap, flexShrink: 0, width: "100%" }}>
                 {metrics.map((m) => (
                   <div
                     key={m.label}
@@ -233,23 +281,23 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
                       minWidth: 0,
                       background: "rgba(255,255,255,0.04)",
                       border: "1px solid rgba(255,255,255,0.08)",
-                      borderRadius: 12,
-                      padding: "16px 10px",
+                      borderRadius: metricsRadius,
+                      padding: `${metricsPadY}px ${metricsPadX}px`,
                       textAlign: "center",
                       boxSizing: "border-box",
                     }}
                   >
-                    <p className="font-heading" style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.05 }}>
+                    <p className="font-heading" style={{ fontSize: fsStat, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.05 }}>
                       {m.stat}
                     </p>
                     <p
                       style={{
-                        fontSize: 11,
+                        fontSize: fsLabel,
                         fontWeight: 600,
                         textTransform: "uppercase",
                         letterSpacing: "0.04em",
                         color: "rgba(255,255,255,0.4)",
-                        margin: "4px 0 0",
+                        margin: `${Math.round(4 * scale)}px 0 0`,
                         lineHeight: 1.2,
                         overflowWrap: "break-word",
                       }}

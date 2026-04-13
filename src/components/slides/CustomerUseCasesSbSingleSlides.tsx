@@ -40,6 +40,18 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
   const fsHeroBadge = Math.round(11 * scale);
   const fsHeroMeta = Math.round(11 * scale);
 
+  /** Strip under the photo (black) for location / users / term; image height shrinks so total hero column stays `heroH`. */
+  const heroMetaCompact = c.heroMetaCompact === true;
+  const heroMetaBelowPadTop = heroMetaCompact ? Math.round(6 * scale) : Math.round(10 * scale);
+  const heroMetaBelowHeight = heroMetaCompact
+    ? Math.round(heroMetaBelowPadTop + fsHeroMeta * 1.35 + Math.round(4 * scale))
+    : Math.round(heroMetaBelowPadTop + fsHeroMeta * 1.35 * 2 + Math.round(8 * scale));
+  const heroSymmetricBands = c.heroSymmetricMetaBands === true;
+  const bandH = heroMetaBelowHeight;
+  const heroImageH = Math.max(0, heroSymmetricBands ? heroH - 2 * bandH : heroH - bandH);
+  const heroObjectFit = c.heroObjectFit ?? "contain";
+  const heroObjectPosition = c.heroObjectPosition ?? "center center";
+
   return (
     <div className="slide" style={{ background: BG }}>
       <motion.header
@@ -87,59 +99,94 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
               width: "100%",
               height: heroH,
               flexShrink: 0,
-              borderRadius: cardRadius,
-              overflow: "hidden",
-              position: "relative",
-              background: "rgba(0,0,0,0.35)",
+              display: "flex",
+              flexDirection: "column",
+              minHeight: 0,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={c.photo}
-              alt={c.name}
+            {heroSymmetricBands ? (
+              <div
+                aria-hidden
+                style={{
+                  flexShrink: 0,
+                  width: "100%",
+                  height: bandH,
+                  background: "#000000",
+                }}
+              />
+            ) : null}
+            <div
               style={{
                 width: "100%",
-                height: "100%",
-                objectFit: "contain",
-                objectPosition: "center center",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: "42%",
-                background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
-                pointerEvents: "none",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                bottom: Math.round(14 * scale),
-                left: Math.round(16 * scale),
-                right: Math.round(16 * scale),
+                height: heroImageH,
+                flexShrink: 0,
+                borderRadius: cardRadius,
+                overflow: "hidden",
+                position: "relative",
+                background: "rgba(0,0,0,0.35)",
               }}
             >
-              <span
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={c.photo}
+                alt={c.name}
                 style={{
-                  display: "inline-block",
-                  padding: `${Math.round(4 * scale)}px ${Math.round(12 * scale)}px`,
-                  borderRadius: Math.round(20 * scale),
-                  background: c.accent,
-                  fontSize: fsHeroBadge,
-                  fontWeight: 700,
-                  letterSpacing: "0.05em",
-                  textTransform: "uppercase",
-                  color: "#FFFFFF",
-                  marginBottom: Math.round(8 * scale),
+                  width: "100%",
+                  height: "100%",
+                  objectFit: heroObjectFit,
+                  objectPosition: heroObjectPosition,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "42%",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
+                  pointerEvents: "none",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: Math.round(12 * scale),
+                  left: Math.round(12 * scale),
+                  right: Math.round(12 * scale),
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
                 }}
               >
-                {c.industry}
-              </span>
-              <p style={{ fontSize: fsHeroMeta, color: "rgba(255,255,255,0.75)", margin: 0, lineHeight: 1.3 }}>{c.size}</p>
+                <span
+                  style={{
+                    display: "inline-block",
+                    padding: `${Math.round(4 * scale)}px ${Math.round(12 * scale)}px`,
+                    borderRadius: Math.round(20 * scale),
+                    background: c.accent,
+                    fontSize: fsHeroBadge,
+                    fontWeight: 700,
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
+                    color: "#FFFFFF",
+                  }}
+                >
+                  {c.industry}
+                </span>
+              </div>
+            </div>
+            <div
+              style={{
+                flexShrink: 0,
+                width: "100%",
+                height: heroMetaBelowHeight,
+                boxSizing: "border-box",
+                paddingTop: heroMetaBelowPadTop,
+                background: "#000000",
+              }}
+            >
+              <p style={{ fontSize: fsHeroMeta, color: "rgba(255,255,255,0.75)", margin: 0, lineHeight: 1.35 }}>{c.size}</p>
             </div>
           </div>
           }

@@ -13,6 +13,16 @@ export type SbCustomerCaseSpec = {
   problems: string[];
   solutions: string[];
   metrics: SbCustomerCaseMetric[];
+  /** Multiplier for hero frame height + Problem/Solution/metrics sizing (slides 128–131: larger footprint). */
+  layoutScale?: number;
+  /** Shorter black strip under the photo (single-line meta). */
+  heroMetaCompact?: boolean;
+  /** Black band above the photo same height as the meta strip below (photo sits between). */
+  heroSymmetricMetaBands?: boolean;
+  /** Hero `<img>` object-fit; default `contain`. */
+  heroObjectFit?: "contain" | "cover";
+  /** `object-position` for the hero image (e.g. focal point when using `cover`). */
+  heroObjectPosition?: string;
 };
 
 export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
@@ -37,6 +47,11 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
       { stat: "$3K", label: "MRR" },
       { stat: "5 min", label: "Speed-to-Lead" },
     ],
+    layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "cover",
+    heroObjectPosition: "center 38%",
   },
   {
     name: "Vision Wheel",
@@ -58,6 +73,7 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
       { stat: "73", label: "Users" },
       { stat: "1K", label: "AI Sessions/Mo" },
     ],
+    layoutScale: 1.33,
   },
   {
     name: "Renascent Protection",
@@ -80,6 +96,7 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
       { stat: "$5.4K", label: "MRR" },
       { stat: "50", label: "AI Keywords" },
     ],
+    layoutScale: 1.33,
   },
   {
     name: "Sage Surfaces",
@@ -101,5 +118,6 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
       { stat: "$205K", label: "TCV" },
       { stat: "12 yr", label: "Displacement" },
     ],
+    layoutScale: 1.33,
   },
 ];
