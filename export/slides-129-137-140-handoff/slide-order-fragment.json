@@ -1,0 +1,15 @@
+{
+  "comment": "Insert these IDs into slide-order.json `order` at the desired positions (e.g. after slide 128 if keeping Foxy first).",
+  "positions_129_to_137": [
+    "customer-use-case-sb-vision-wheel",
+    "customer-use-case-sb-renascent",
+    "customer-use-case-sb-sage",
+    "customer-use-case-sb-cocoa-lofts",
+    "customer-use-case-sb-kalley-flooring",
+    "customer-use-case-sb-southeast-diabetes",
+    "customer-use-case-sb-handyman-hub",
+    "customer-use-case-sb-renegade-roofing",
+    "customer-use-case-sb-walker-river-resort"
+  ],
+  "position_140": "customer-tata-play"
+}

@@ -1,0 +1,48 @@
+{
+  "bundleId": "slides-129-137-140-handoff",
+  "description": "Self-contained export for slide-order.json positions 129–137 (SB customer singles, Vision Wheel → Walker River Resort) and position 140 (Tata Play).",
+  "slideOrderSource": "NextivaDeck/slide-order.json full `order` array (1-based positions)",
+  "slides": [
+    { "position": 129, "id": "customer-use-case-sb-vision-wheel", "export": "CustomerUseCaseSbVisionWheelSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 130, "id": "customer-use-case-sb-renascent", "export": "CustomerUseCaseSbRenascentSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 131, "id": "customer-use-case-sb-sage", "export": "CustomerUseCaseSbSageSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 132, "id": "customer-use-case-sb-cocoa-lofts", "export": "CustomerUseCaseSbCocoaLoftsSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 133, "id": "customer-use-case-sb-kalley-flooring", "export": "CustomerUseCaseSbKalleyFlooringSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 134, "id": "customer-use-case-sb-southeast-diabetes", "export": "CustomerUseCaseSbSoutheastDiabetesSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 135, "id": "customer-use-case-sb-handyman-hub", "export": "CustomerUseCaseSbHandymanHubSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 136, "id": "customer-use-case-sb-renegade-roofing", "export": "CustomerUseCaseSbRenegadeRoofingSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 137, "id": "customer-use-case-sb-walker-river-resort", "export": "CustomerUseCaseSbWalkerRiverResortSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 140, "id": "customer-tata-play", "export": "default (CustomerTataPlaySlide)", "file": "CustomerTataPlaySlide.tsx" }
+  ],
+  "typescriptFiles": [
+    "src/components/SlideFooter.tsx",
+    "src/components/slides/CustomerSlideSbStyleHeroCardsRow.tsx",
+    "src/components/slides/CustomerUseCasesSbSingleSlides.tsx",
+    "src/components/slides/customerUseCasesSbSinglesContent.ts",
+    "src/components/slides/CustomerTataPlaySlide.tsx"
+  ],
+  "publicAssets": [
+    "public/images/customer-foxy.png",
+    "public/images/customer-vision.png",
+    "public/images/customer-renascent.png",
+    "public/images/customer-sage.png",
+    "public/images/customer-cocoa-lofts.webp",
+    "public/images/customer-kalley-flooring.jpeg",
+    "public/images/customer-southeast-diabetes.svg",
+    "public/images/customer-handyman-hub.png",
+    "public/images/customer-renegade-roofing.png",
+    "public/images/customer-walker-river-resort.svg",
+    "public/images/pptx-slides/seksom-slide7-tata-play.png"
+  ],
+  "npmDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "framer-motion": "^12.36.0 (matches NextivaDeck at export time)"
+  },
+  "notes": [
+    "SB slides share SB_CUSTOMER_CASES in customerUseCasesSbSinglesContent.ts (includes Foxy at index 0 for a complete bundle; you may omit slide 128 from your order if you only want 129–137).",
+    "Paths assume Next.js `public/` so `/images/...` resolves.",
+    "Import deps/slide-minimal.css (or equivalent) for `.slide` and `.font-heading`.",
+    "See README.md for registry snippet and merge steps."
+  ]
+}

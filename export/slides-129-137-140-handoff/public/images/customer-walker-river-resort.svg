@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Walker River Resort placeholder hero">
+  <defs>
+    <linearGradient id="wrrSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A3D4A"/>
+      <stop offset="40%" stop-color="#3A6B7A"/>
+      <stop offset="100%" stop-color="#5A9A8A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#wrrSky)"/>
+  <!-- Mountains -->
+  <path fill="#0F2A32" opacity="0.55" d="M0 520 L280 280 L520 480 L720 220 L920 460 L1200 300 L1200 800 L0 800 Z"/>
+  <path fill="#1A3540" opacity="0.45" d="M0 560 L360 360 L580 520 L780 320 L1000 500 L1200 400 L1200 800 L0 800 Z"/>
+  <!-- River -->
+  <path fill="rgba(120,200,220,0.25)" d="M0 640 Q300 600 600 640 T1200 620 L1200 800 L0 800 Z"/>
+  <rect x="0" y="0" width="1200" height="200" fill="rgba(0,0,0,0.28)"/>
+  <text x="600" y="88" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="46" font-weight="700" fill="#FFFFFF">Walker River Resort</text>
+  <text x="600" y="138" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="600" fill="rgba(255,255,255,0.92)">Smith Valley, Nevada &#183; Lodging &amp; outdoor recreation</text>
+</svg>
