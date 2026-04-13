@@ -28,7 +28,7 @@
     "public/images/customer-vision.png",
     "public/images/customer-renascent.png",
     "public/images/customer-sage.png",
-    "public/images/customer-cocoa-lofts.svg",
+    "public/images/customer-cocoa-lofts.webp",
     "public/images/customer-kalley-flooring.jpeg",
     "public/images/pptx-slides/slide4-img0.png",
     "public/images/pptx-slides/seksom-slide7-tata-play.png",
@@ -42,7 +42,7 @@
   "notes": [
     "SB single slides use SB_CUSTOMER_CASES from customerUseCasesSbSinglesContent.ts (Foxy, Vision Wheel, Renascent, Sage, Cocoa Lofts LLC, Kalley Flooring).",
     "Place `public/images` under the consuming app’s `public/` (Next.js) so paths like `/images/customer-foxy.png` resolve.",
-    "Cocoa Lofts hero ships as placeholder SVG; Kalley hero JPEG is from kalleyflooring.com marketing CDN—confirm license for external decks.",
+    "Cocoa Lofts hero is customer-cocoa-lofts.webp (from deck discussion transcripts); Kalley hero JPEG is from kalleyflooring.com marketing CDN—confirm license for external decks.",
     "Slides expect CSS classes `.slide` and `.font-heading`; see deps/slide-minimal.css."
   ]
 }

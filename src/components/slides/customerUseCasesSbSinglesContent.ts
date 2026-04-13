@@ -136,8 +136,8 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
     name: "Cocoa Lofts LLC",
     industry: "Hospitality · Lodging",
     size: "Cocoa, FL · Pilot property · $99 MRR · XBert AI Pro",
-    /** Placeholder SVG — swap for a licensed property photo (e.g. cocoalofts.com) when available. */
-    photo: "/images/customer-cocoa-lofts.svg",
+    /** Property photo (WebP) from deck discussion transcripts / client materials. */
+    photo: "/images/customer-cocoa-lofts.webp",
     accent: "#B8956A",
     problems: [
       "Call routing gap: needed AI on an existing business number with correct handoff to the right live agent.",
