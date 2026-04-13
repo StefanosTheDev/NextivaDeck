@@ -54,7 +54,7 @@ export default function CustomerTataPlaySlide({ slideNumber = 12 }: { slideNumbe
         style={{ padding: "40px 80px 0", flexShrink: 0 }}
       >
         <p style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 4px" }}>
-          Nextiva Customer
+          SMB Customer Use Case
         </p>
         <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           Tata Play

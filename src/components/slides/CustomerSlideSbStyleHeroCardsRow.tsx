@@ -2,6 +2,12 @@
 
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 
+/**
+ * Top padding under the slide header/title for SB-style customer slides.
+ * Previously 240px; shifted hero+cards up by ⅓ of that gap (80px) toward the title.
+ */
+export const SB_CUSTOMER_MAIN_TOP_OFFSET_PX = 160;
+
 /** Shifts hero + cards block right (matches Sage / SB singles). */
 export const SB_MAIN_BODY_SHIFT_RIGHT_PX = 80;
 
@@ -21,13 +27,13 @@ export const SB_SOLUTION_CARD_WIDTH_PX = 460;
 export const SB_CARDS_STACK_WIDTH_PX =
   SB_PROBLEM_CARD_WIDTH_PX + SB_HERO_PROBLEM_SOLUTION_GAP_PX + SB_SOLUTION_CARD_WIDTH_PX;
 
-type Props = { hero: ReactNode; cards: ReactNode };
+type Props = { hero: ReactNode; cards: ReactNode; rowGapPx?: number };
 
 /**
  * Hero (26%) + gap + card region with leading/trailing flex spacers and hero translateX
  * so visual spacing matches SB single-customer slides (e.g. Sage Surfaces).
  */
-export function CustomerSlideSbStyleHeroCardsRow({ hero, cards }: Props) {
+export function CustomerSlideSbStyleHeroCardsRow({ hero, cards, rowGapPx = SB_HERO_PROBLEM_SOLUTION_GAP_PX }: Props) {
   const cardsLeadSpacerRef = useRef<HTMLDivElement>(null);
   const [heroNudgePx, setHeroNudgePx] = useState(0);
 
@@ -47,7 +53,7 @@ export function CustomerSlideSbStyleHeroCardsRow({ hero, cards }: Props) {
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
-        gap: SB_HERO_PROBLEM_SOLUTION_GAP_PX,
+        gap: rowGapPx,
         alignItems: "flex-start",
         marginLeft: SB_MAIN_BODY_SHIFT_RIGHT_PX,
         minWidth: 0,

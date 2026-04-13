@@ -41,7 +41,7 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
             margin: "0 0 4px",
           }}
         >
-          Nextiva Customer
+          SMB Customer Use Case
         </p>
         <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           {c.name}

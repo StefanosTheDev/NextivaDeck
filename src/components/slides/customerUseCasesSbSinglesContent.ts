@@ -13,6 +13,8 @@ export type SbCustomerCaseSpec = {
   problems: string[];
   solutions: string[];
   metrics: SbCustomerCaseMetric[];
+  /** Multiplier for hero frame height + Problem/Solution/metrics sizing (slide 128 Foxy: larger footprint). */
+  layoutScale?: number;
 };
 
 export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
@@ -37,6 +39,7 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
       { stat: "$3K", label: "MRR" },
       { stat: "5 min", label: "Speed-to-Lead" },
     ],
+    layoutScale: 1.33,
   },
   {
     name: "Vision Wheel",

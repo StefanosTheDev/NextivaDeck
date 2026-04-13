@@ -5,6 +5,7 @@ import SlideFooter from "../SlideFooter";
 import {
   CustomerSlideSbStyleHeroCardsRow,
   SB_CARDS_STACK_WIDTH_PX,
+  SB_CUSTOMER_MAIN_TOP_OFFSET_PX,
   SB_HERO_PROBLEM_SOLUTION_GAP_PX,
   SB_PROBLEM_CARD_WIDTH_PX,
   SB_SOLUTION_CARD_WIDTH_PX,
@@ -28,9 +29,6 @@ const metrics = [
   { stat: "60%+", label: "Reduction in time to follow up on standard requests" },
 ];
 
-/** ~⅓ of vertical band from below header to footer on 1080px canvas (breathing room under title). */
-const MAIN_TOP_OFFSET_PX = 240;
-
 /** Hero height; Problem + Solution row matches so bottoms align with photo. */
 const HERO_HEIGHT_PX = 400;
 
@@ -51,7 +49,7 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
         style={{ padding: "40px 80px 0", flexShrink: 0 }}
       >
         <p style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 4px" }}>
-          Nextiva Customer
+          SMB Customer Use Case
         </p>
         <h1 className="font-heading" style={{ fontSize: 48, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}>
           Suzuki
@@ -66,7 +64,7 @@ export default function CustomerSuzukiSlide({ slideNumber = 12 }: { slideNumber?
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          padding: `${MAIN_TOP_OFFSET_PX}px 80px 12px`,
+          padding: `${SB_CUSTOMER_MAIN_TOP_OFFSET_PX}px 80px 12px`,
           overflow: "hidden",
           minHeight: 0,
           alignItems: "stretch",
