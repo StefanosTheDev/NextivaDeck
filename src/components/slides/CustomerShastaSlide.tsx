@@ -20,6 +20,7 @@ const solutions = [
   "Improved initial customer experience: Automated to more than 10 care practices; AI addresses routine inquiries.",
   "Staffing efficiencies gained: AI drives routine tasks via EMR integration, hands off to humans for the complex.",
   "Overall improved customer sat: Seamless patient transition across practices and departments.",
+  "Operational efficiencies gained from handling peak call volumes concurrently with one AI Employee vs customers waiting on hold for the next human representative.",
 ];
 
 const metrics = [

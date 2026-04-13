@@ -97,6 +97,12 @@ import {
   CustomerUseCaseSbVisionWheelSlide,
   CustomerUseCaseSbRenascentSlide,
   CustomerUseCaseSbSageSlide,
+  CustomerUseCaseSbCocoaLoftsSlide,
+  CustomerUseCaseSbKalleyFlooringSlide,
+  CustomerUseCaseSbSoutheastDiabetesSlide,
+  CustomerUseCaseSbHandymanHubSlide,
+  CustomerUseCaseSbRenegadeRoofingSlide,
+  CustomerUseCaseSbWalkerRiverResortSlide,
 } from "./slides/CustomerUseCasesSbSingleSlides";
 import CustomerUseCasesSlide from "./slides/CustomerUseCasesSlide";
 import SystemOfActionSlide from "./slides/SystemOfActionSlide";
@@ -334,6 +340,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-use-case-sb-vision-wheel": { id: "customer-use-case-sb-vision-wheel", label: "Customer: Vision Wheel (SB)", component: CustomerUseCaseSbVisionWheelSlide, theme: "dark" },
   "customer-use-case-sb-renascent": { id: "customer-use-case-sb-renascent", label: "Customer: Renascent Protection (SB)", component: CustomerUseCaseSbRenascentSlide, theme: "dark" },
   "customer-use-case-sb-sage": { id: "customer-use-case-sb-sage", label: "Customer: Sage Surfaces (SB)", component: CustomerUseCaseSbSageSlide, theme: "dark" },
+  "customer-use-case-sb-cocoa-lofts": { id: "customer-use-case-sb-cocoa-lofts", label: "Customer: Cocoa Lofts (SB)", component: CustomerUseCaseSbCocoaLoftsSlide, theme: "dark" },
+  "customer-use-case-sb-kalley-flooring": { id: "customer-use-case-sb-kalley-flooring", label: "Customer: Kalley Flooring (SB)", component: CustomerUseCaseSbKalleyFlooringSlide, theme: "dark" },
+  "customer-use-case-sb-southeast-diabetes": { id: "customer-use-case-sb-southeast-diabetes", label: "Customer: Southeast Diabetes (SB)", component: CustomerUseCaseSbSoutheastDiabetesSlide, theme: "dark" },
+  "customer-use-case-sb-handyman-hub": { id: "customer-use-case-sb-handyman-hub", label: "Customer: Handyman Hub (SB)", component: CustomerUseCaseSbHandymanHubSlide, theme: "dark" },
+  "customer-use-case-sb-renegade-roofing": { id: "customer-use-case-sb-renegade-roofing", label: "Customer: Renegade Roofing (SB)", component: CustomerUseCaseSbRenegadeRoofingSlide, theme: "dark" },
+  "customer-use-case-sb-walker-river-resort": { id: "customer-use-case-sb-walker-river-resort", label: "Customer: Walker River Resort (SB)", component: CustomerUseCaseSbWalkerRiverResortSlide, theme: "dark" },
+  "customer-tata-play-041326": { id: "customer-tata-play-041326", label: "Customer: Tata Play (041326)", component: CustomerTataPlaySlide, theme: "dark" },
   "customer-suzuki-041226": { id: "customer-suzuki-041226", label: "Customer: Suzuki (041226)", component: CustomerSuzukiSlide, theme: "dark" },
   "customer-tata-play-041226": { id: "customer-tata-play-041226", label: "Customer: Tata Play (041226)", component: CustomerTataPlaySlide, theme: "dark" },
   "customer-shasta-041226": { id: "customer-shasta-041226", label: "Customer: Shasta (041226)", component: CustomerShastaSlide, theme: "dark" },
@@ -598,6 +611,14 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "customer-tata-play-041226",
   "customer-shasta-041226",
   "customer-aeg-vision-041226",
+  // SEKSOM SLIDES 041326
+  "customer-use-case-sb-cocoa-lofts",
+  "customer-use-case-sb-kalley-flooring",
+  "customer-use-case-sb-southeast-diabetes",
+  "customer-use-case-sb-handyman-hub",
+  "customer-use-case-sb-renegade-roofing",
+  "customer-use-case-sb-walker-river-resort",
+  "customer-tata-play-041326",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

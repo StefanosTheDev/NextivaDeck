@@ -197,6 +197,7 @@
     "senthil-bespoke-at-scale-041126",
     "tomas-trustworthy-041126",
     "tomas-global-footprint-041126",
+    "drew-carl-incumbent-trust-v3",
     "customer-use-case-sb-foxy",
     "customer-use-case-sb-vision-wheel",
     "customer-use-case-sb-renascent",
@@ -204,8 +205,15 @@
     "customer-tata-play-041226",
     "customer-shasta-041226",
     "customer-aeg-vision-041226",
-    "drew-carl-incumbent-trust-v3",
-    "drew-carl-incumbent-trust"
+    "drew-carl-incumbent-trust",
+    "customer-use-case-sb-sage",
+    "customer-use-case-sb-cocoa-lofts",
+    "customer-use-case-sb-kalley-flooring",
+    "customer-use-case-sb-southeast-diabetes",
+    "customer-use-case-sb-handyman-hub",
+    "customer-use-case-sb-renegade-roofing",
+    "customer-use-case-sb-walker-river-resort",
+    "customer-tata-play-041326"
   ],
   "categories": {
     "world-moving-thomas": "from Tomas",
@@ -285,10 +293,10 @@
     "tomas-human-ai-harmony-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
     "tomas-trustworthy-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
     "tomas-global-footprint-041126": "TOMAS / SENTHIL PPT SLIDES 041126",
-    "customer-use-case-sb-foxy": "SEKSOM SLIDES 041226",
-    "customer-use-case-sb-vision-wheel": "SEKSOM SLIDES 041226",
-    "customer-use-case-sb-renascent": "SEKSOM SLIDES 041226",
-    "customer-use-case-sb-sage": "SEKSOM SLIDES 041226",
+    "customer-use-case-sb-foxy": "SEKSOM SLIDES 041326",
+    "customer-use-case-sb-vision-wheel": "SEKSOM SLIDES 041326",
+    "customer-use-case-sb-renascent": "SEKSOM SLIDES 041326",
+    "customer-use-case-sb-sage": "SEKSOM SLIDES 041326",
     "customer-suzuki-041226": "SEKSOM SLIDES 041226",
     "customer-tata-play-041226": "SEKSOM SLIDES 041226",
     "customer-shasta-041226": "SEKSOM SLIDES 041226",
@@ -296,7 +304,14 @@
     "drew-healthcare-glance-v3": "Drew Schulz HealthCare",
     "drew-healthcare-strategy-v3": "Drew Schulz HealthCare",
     "drew-lead-velocity-buckets-v3": "Drew Schulz",
-    "drew-carl-incumbent-trust-v3": "Drew Schulz"
+    "drew-carl-incumbent-trust-v3": "Drew Schulz",
+    "customer-use-case-sb-cocoa-lofts": "SEKSOM SLIDES 041326",
+    "customer-use-case-sb-kalley-flooring": "SEKSOM SLIDES 041326",
+    "customer-use-case-sb-southeast-diabetes": "SEKSOM SLIDES 041326",
+    "customer-use-case-sb-handyman-hub": "SEKSOM SLIDES 041326",
+    "customer-use-case-sb-renegade-roofing": "SEKSOM SLIDES 041326",
+    "customer-use-case-sb-walker-river-resort": "SEKSOM SLIDES 041326",
+    "customer-tata-play-041326": "SEKSOM SLIDES 041326"
   },
   "categoryNames": [
     "Drew 041226 Incumbent Trust",
@@ -307,6 +322,7 @@
     "Drew Schulz Velocity 041226",
     "Finance-Demo-Branch",
     "SEKSOM SLIDES 041226",
+    "SEKSOM SLIDES 041326",
     "SENTHIL PPTX Slides",
     "Seksom-Branch-040926",
     "TOMAS / SENTHIL PPT SLIDES 041126",
@@ -458,6 +474,7 @@
     "customer-suzuki",
     "customer-tata-play",
     "customer-shasta",
-    "customer-aeg-vision"
+    "customer-aeg-vision",
+    "customer-tata-play-041226"
   ]
 }
