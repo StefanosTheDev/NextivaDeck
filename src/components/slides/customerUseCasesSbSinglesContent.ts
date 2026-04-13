@@ -221,4 +221,35 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
     heroObjectFit: "cover",
     heroObjectPosition: "center 40%",
   },
+  {
+    name: "Handyman Hub",
+    industry: "Handyman · Home repair & remodeling",
+    size:
+      "Broomfield, CO · 4 employees · multi-state (Denver hub) · $287 MRR · XBert AI Pro + 500 sessions",
+    /** Logo PNG from deck discussion transcripts (sheilapaxton form asset). */
+    photo: "/images/customer-handyman-hub.png",
+    accent: "#D4A03A",
+    problems: [
+      "Incumbent AI ceiling: prior solution was too limited on customization and tuning for their workflows.",
+      "Coverage strategy: needed reliable after-hours answering first, with a path to expand into daytime coverage.",
+      "Growth roadmap: interest in Salesforce appointment booking and AI-powered chat on the website.",
+      "Multi-state ops: centralized communications through one HQ without adding manual load on a small team.",
+    ],
+    solutions: [
+      "XBert AI Pro improves after-hours call handling while keeping room to grow into broader coverage.",
+      "Roadmap alignment: daytime expansion, Salesforce booking, and web chat as the program matures.",
+      "Replacement story: upgraded from a weaker incumbent AI to a more capable, tunable experience.",
+      "Early snapshot: ~72 interactions with 72 resolved by AI (100% containment, 0 escalations).",
+    ],
+    metrics: [
+      { stat: "100%", label: "AI containment" },
+      { stat: "72", label: "Interactions (early)" },
+      { stat: "$287", label: "MRR" },
+    ],
+    layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "contain",
+    heroObjectPosition: "center center",
+  },
 ];

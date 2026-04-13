@@ -383,3 +383,7 @@ export function CustomerUseCaseSbKalleyFlooringSlide({ slideNumber }: { slideNum
 export function CustomerUseCaseSbSoutheastDiabetesSlide({ slideNumber }: { slideNumber: number }) {
   return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[6]} />;
 }
+
+export function CustomerUseCaseSbHandymanHubSlide({ slideNumber }: { slideNumber: number }) {
+  return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[7]} />;
+}

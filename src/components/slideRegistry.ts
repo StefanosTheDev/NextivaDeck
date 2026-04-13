@@ -120,6 +120,7 @@ import CustomerUseCasesDarkV2Slide from "./slides/CustomerUseCasesDarkV2Slide";
 import {
   CustomerUseCaseSbCocoaLoftsSlide,
   CustomerUseCaseSbFoxySlide,
+  CustomerUseCaseSbHandymanHubSlide,
   CustomerUseCaseSbKalleyFlooringSlide,
   CustomerUseCaseSbRenascentSlide,
   CustomerUseCaseSbSageSlide,
@@ -306,6 +307,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "customer-use-case-sb-southeast-diabetes",
     label: "Customer: Southeast Diabetes Inc (NEXT Scale + XBERT — healthcare)",
     component: CustomerUseCaseSbSoutheastDiabetesSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-handyman-hub": {
+    id: "customer-use-case-sb-handyman-hub",
+    label: "Customer: Handyman Hub (XBert AI Pro — multi-state / Denver hub)",
+    component: CustomerUseCaseSbHandymanHubSlide,
     theme: "dark",
     isNew: true,
   },
