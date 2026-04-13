@@ -120,6 +120,7 @@ import CustomerUseCasesDarkV2Slide from "./slides/CustomerUseCasesDarkV2Slide";
 import {
   CustomerUseCaseSbCocoaLoftsSlide,
   CustomerUseCaseSbFoxySlide,
+  CustomerUseCaseSbKalleyFlooringSlide,
   CustomerUseCaseSbRenascentSlide,
   CustomerUseCaseSbSageSlide,
   CustomerUseCaseSbVisionWheelSlide,
@@ -290,6 +291,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "customer-use-case-sb-cocoa-lofts",
     label: "Customer: Cocoa Lofts LLC (XBert pilot — hospitality)",
     component: CustomerUseCaseSbCocoaLoftsSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-kalley-flooring": {
+    id: "customer-use-case-sb-kalley-flooring",
+    label: "Customer: Kalley Flooring (XBert — hardwood / LA)",
+    component: CustomerUseCaseSbKalleyFlooringSlide,
     theme: "dark",
     isNew: true,
   },

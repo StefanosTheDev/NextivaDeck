@@ -161,4 +161,33 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
     heroObjectFit: "cover",
     heroObjectPosition: "center 35%",
   },
+  {
+    name: "Kalley Flooring",
+    industry: "Hardwood · Refinishing",
+    size: "Los Angeles, CA · 4 team members · $99 MRR · XBert AI Pro",
+    /** Hero sourced from public marketing imagery on kalleyflooring.com (Webflow CDN). */
+    photo: "/images/customer-kalley-flooring.jpeg",
+    accent: "#C17000",
+    problems: [
+      "Inbound overload: ~20 calls and texts per day exceeded what a 4-person team could answer consistently.",
+      "Manual handling risk: delayed or missed follow-ups on high-value flooring inquiries.",
+      "Omnichannel gap: needed AI on voice and SMS—not voice alone—within a budget-sensitive starter package.",
+    ],
+    solutions: [
+      "XBert AI Pro fields inbound calls and texts so every lead gets an immediate, professional response.",
+      "Information capture and routing: AI gathers details and routes messages to the right contact (e.g. David).",
+      "Scaled on a smaller interaction package first, with room to grow as volume and budget allow.",
+      "Usage snapshot: ~1,308 interactions with ~1,307 resolved by AI (~100% containment, 1 escalation).",
+    ],
+    metrics: [
+      { stat: "~100%", label: "AI containment" },
+      { stat: "1,308", label: "Interactions (2 mo.)" },
+      { stat: "$99", label: "MRR" },
+    ],
+    layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "cover",
+    heroObjectPosition: "center 45%",
+  },
 ];
