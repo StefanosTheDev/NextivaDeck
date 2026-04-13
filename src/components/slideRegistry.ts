@@ -90,7 +90,9 @@ import CustomerSuzukiSlide from "./slides/CustomerSuzukiSlide";
 import CustomerTataPlaySlide from "./slides/CustomerTataPlaySlide";
 import CustomerShastaSlide from "./slides/CustomerShastaSlide";
 import CustomerAEGVisionSlide from "./slides/CustomerAEGVisionSlide";
+import CustomerUseCasesCocoaWalkerShastaSlide from "./slides/CustomerUseCasesCocoaWalkerShastaSlide";
 import CustomerUseCasesSlide from "./slides/CustomerUseCasesSlide";
+import CustomerUseCasesXbertQuartetSlide from "./slides/CustomerUseCasesXbertQuartetSlide";
 import {
   EnterpriseUseCasesSeksomSlide04,
   EnterpriseUseCasesSeksomSlide07,
@@ -338,6 +340,20 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-shasta": { id: "customer-shasta", label: "Customer: Shasta Community Health", component: CustomerShastaSlide, theme: "dark" },
   "customer-aeg-vision": { id: "customer-aeg-vision", label: "Customer: AEG Vision", component: CustomerAEGVisionSlide, theme: "dark" },
   "customer-use-cases": { id: "customer-use-cases", label: "Customer Use Cases (4-card)", component: CustomerUseCasesSlide, theme: "dark" },
+  "customer-use-cases-xbert-quartet": {
+    id: "customer-use-cases-xbert-quartet",
+    label: "Customer Use Cases — XBert quartet (Kalley, Southeast, Handyman, Renegade)",
+    component: CustomerUseCasesXbertQuartetSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-cases-cocoa-walker-shasta": {
+    id: "customer-use-cases-cocoa-walker-shasta",
+    label: "Customer Use Cases — Cocoa Lofts, Walker River, Shasta",
+    component: CustomerUseCasesCocoaWalkerShastaSlide,
+    theme: "dark",
+    isNew: true,
+  },
   "enterprise-use-cases-seksom-04": {
     id: "enterprise-use-cases-seksom-04",
     label: "Enterprise Use Cases — Tata Play (single-slide layout)",

@@ -14,10 +14,16 @@ export type CustomerCaseCardData = {
   solutions: string[];
   metrics: CustomerCaseMetric[];
   accent: string;
+  /** Thumbnail `object-fit`; default `cover` (logos often need `contain`). */
+  photoObjectFit?: "cover" | "contain";
+  /** Background behind thumbnail (e.g. dark panel for white logos with `contain`). */
+  photoThumbBackground?: string;
 };
 
 export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCaseCardData }) {
   const Icon = c.icon;
+  const photoFit = c.photoObjectFit ?? "cover";
+  const thumbBg = c.photoThumbBackground;
   return (
     <article
       style={{
@@ -77,6 +83,10 @@ export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCas
             overflow: "hidden",
             flexShrink: 0,
             border: `2px solid ${c.accent}40`,
+            background: thumbBg ?? "transparent",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -86,7 +96,8 @@ export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCas
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: photoFit,
+              objectPosition: "center center",
             }}
           />
         </div>
@@ -235,42 +246,85 @@ export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCas
         style={{
           borderTop: "1px solid rgba(255,255,255,0.08)",
           marginTop: "auto",
-          paddingTop: 8,
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "8px 20px",
+          paddingTop: 3,
+          flexShrink: 0,
+          ...(c.metrics.length === 3
+            ? {
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr 1fr",
+                gap: 8,
+                alignItems: "center",
+              }
+            : {
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "6px 16px",
+                alignItems: "center",
+              }),
         }}
       >
-        {c.metrics.map((m) => (
-          <div key={m.label}>
-            <p
-              className="font-heading"
+        {c.metrics.map((m, i) => {
+          const packJustify =
+            c.metrics.length === 3
+              ? i === 0
+                ? "flex-start"
+                : i === 1
+                  ? "center"
+                  : "flex-end"
+              : "flex-start";
+          return (
+            <div
+              key={m.label}
               style={{
-                fontSize: 22,
-                fontWeight: 700,
-                color: "#FFFFFF",
-                margin: 0,
-                lineHeight: 1.1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: packJustify,
+                minWidth: 0,
+                width: c.metrics.length === 3 ? "100%" : "auto",
               }}
             >
-              {m.stat}
-            </p>
-            <p
-              style={{
-                fontSize: 10,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "0.04em",
-                color: "rgba(255,255,255,0.4)",
-                margin: "2px 0 0",
-                maxWidth: 140,
-                lineHeight: 1.2,
-              }}
-            >
-              {m.label}
-            </p>
-          </div>
-        ))}
+              <div
+                style={{
+                  display: "inline-flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 6,
+                  maxWidth: "100%",
+                }}
+              >
+                <p
+                  className="font-heading"
+                  style={{
+                    fontSize: 19,
+                    fontWeight: 700,
+                    color: "#FFFFFF",
+                    margin: 0,
+                    lineHeight: 1,
+                    whiteSpace: "nowrap",
+                    flexShrink: 0,
+                  }}
+                >
+                  {m.stat}
+                </p>
+                <p
+                  style={{
+                    fontSize: 9,
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.03em",
+                    color: "rgba(255,255,255,0.42)",
+                    margin: 0,
+                    lineHeight: 1.15,
+                    maxWidth: c.metrics.length === 3 ? "min(100%, 7.5rem)" : 140,
+                    textAlign: "left",
+                  }}
+                >
+                  {m.label}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </article>
   );
