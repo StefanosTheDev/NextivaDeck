@@ -23,6 +23,8 @@ export type SbCustomerCaseSpec = {
   heroObjectFit?: "contain" | "cover";
   /** `object-position` for the hero image (e.g. focal point when using `cover`). */
   heroObjectPosition?: string;
+  /** CSS background behind the hero `<img>` (e.g. darker panel for white logos on `contain`). */
+  heroImageBackdrop?: string;
 };
 
 export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
@@ -251,5 +253,67 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
     heroSymmetricMetaBands: true,
     heroObjectFit: "contain",
     heroObjectPosition: "center center",
+  },
+  {
+    name: "Renegade Roofing Co.",
+    industry: "Roofing · Residential & commercial",
+    size: "Deerfield Beach, FL · 5 employees · $99 MRR · XBert AI Pro · 100 interactions (starter)",
+    /** White logo PNG from deck discussion transcripts (reads on dark hero). */
+    photo: "/images/customer-renegade-roofing.png",
+    heroImageBackdrop: "rgba(6, 10, 18, 0.94)",
+    accent: "#C45C3E",
+    problems: [
+      "Stack preservation: add AI receptionist on the existing VoIP phone system instead of replacing the phone stack.",
+      "Right-sized start: needed a lightweight starter package while call volume and fit were still being validated.",
+      "Operational visibility: wanted clearer insight into call activity and monthly reporting.",
+      "Experience fit: tune conversational style, pacing, scheduling behavior, and lead capture to match how they sell.",
+    ],
+    solutions: [
+      "XBert AI Pro layers AI receptionist coverage onto the current number with a small 100-interaction starter footprint.",
+      "Room to expand credibly after proving volume and workflow fit—land-and-expand SMB motion.",
+      "Team continues refining flow, scheduling, and reporting output as usage grows.",
+      "Early snapshot: 184 customer interactions with 184 resolved by AI (100% containment, 0 escalations).",
+    ],
+    metrics: [
+      { stat: "100%", label: "AI containment" },
+      { stat: "184", label: "Interactions (early)" },
+      { stat: "$99", label: "MRR" },
+    ],
+    layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "contain",
+    heroObjectPosition: "center center",
+  },
+  {
+    name: "Walker River Resort",
+    industry: "Hospitality · Resort",
+    size:
+      "Smith Valley, NV · 10 employees · $96 MRR · NEXT Launch + Grow · toll-free DID · hardware/setup",
+    /** Typographic placeholder — swap for licensed property or brand imagery when available. */
+    photo: "/images/customer-walker-river-resort.svg",
+    accent: "#5A9A8A",
+    problems: [
+      "Guest-facing operations: needed modern communications coverage for a resort spanning lodging and outdoor recreation workflows.",
+      "Scale of access: multiple phones and toll-free reachability to support how guests and staff connect.",
+      "Go-live friction: porting, setup, and number-assignment challenges during early deployment.",
+      "Continuity: resort operations depend on reliable, reachable lines—downtime is not an option.",
+    ],
+    solutions: [
+      "Nextiva modernizes voice and guest-facing comms with a package suited to a live hospitality environment.",
+      "NEXT Launch and NEXT Grow plus an additional toll-free DID and setup/phone hardware components.",
+      "Despite onboarding complexity, usage shows the platform containing the majority of guest interactions.",
+      "Snapshot: ~815 interactions with ~709 resolved by AI (~87% effective containment), ~106 escalated—a credible mixed live signal.",
+    ],
+    metrics: [
+      { stat: "~87%", label: "AI containment" },
+      { stat: "815", label: "Interactions (snapshot)" },
+      { stat: "$96", label: "MRR" },
+    ],
+    layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "cover",
+    heroObjectPosition: "center 40%",
   },
 ];

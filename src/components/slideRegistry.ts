@@ -123,9 +123,11 @@ import {
   CustomerUseCaseSbHandymanHubSlide,
   CustomerUseCaseSbKalleyFlooringSlide,
   CustomerUseCaseSbRenascentSlide,
+  CustomerUseCaseSbRenegadeRoofingSlide,
   CustomerUseCaseSbSageSlide,
   CustomerUseCaseSbSoutheastDiabetesSlide,
   CustomerUseCaseSbVisionWheelSlide,
+  CustomerUseCaseSbWalkerRiverResortSlide,
 } from "./slides/CustomerUseCasesSbSingleSlides";
 import AIAgentsInActionV2Slide from "./slides/AIAgentsInActionV2Slide";
 import {
@@ -314,6 +316,20 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "customer-use-case-sb-handyman-hub",
     label: "Customer: Handyman Hub (XBert AI Pro — multi-state / Denver hub)",
     component: CustomerUseCaseSbHandymanHubSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-renegade-roofing": {
+    id: "customer-use-case-sb-renegade-roofing",
+    label: "Customer: Renegade Roofing Co. (XBert AI Pro — VoIP overlay / starter)",
+    component: CustomerUseCaseSbRenegadeRoofingSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-walker-river-resort": {
+    id: "customer-use-case-sb-walker-river-resort",
+    label: "Customer: Walker River Resort (NEXT Launch + Grow — hospitality)",
+    component: CustomerUseCaseSbWalkerRiverResortSlide,
     theme: "dark",
     isNew: true,
   },

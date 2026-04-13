@@ -51,6 +51,7 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
   const heroImageH = Math.max(0, heroSymmetricBands ? heroH - 2 * bandH : heroH - bandH);
   const heroObjectFit = c.heroObjectFit ?? "contain";
   const heroObjectPosition = c.heroObjectPosition ?? "center center";
+  const heroImageBackdrop = c.heroImageBackdrop ?? "rgba(0,0,0,0.35)";
 
   return (
     <div className="slide" style={{ background: BG }}>
@@ -123,7 +124,7 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
                 borderRadius: cardRadius,
                 overflow: "hidden",
                 position: "relative",
-                background: "rgba(0,0,0,0.35)",
+                background: heroImageBackdrop,
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -386,4 +387,12 @@ export function CustomerUseCaseSbSoutheastDiabetesSlide({ slideNumber }: { slide
 
 export function CustomerUseCaseSbHandymanHubSlide({ slideNumber }: { slideNumber: number }) {
   return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[7]} />;
+}
+
+export function CustomerUseCaseSbRenegadeRoofingSlide({ slideNumber }: { slideNumber: number }) {
+  return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[8]} />;
+}
+
+export function CustomerUseCaseSbWalkerRiverResortSlide({ slideNumber }: { slideNumber: number }) {
+  return <SbSingleCustomerShell slideNumber={slideNumber} c={SB_CUSTOMER_CASES[9]} />;
 }

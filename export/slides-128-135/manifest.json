@@ -10,10 +10,12 @@
     { "position": 133, "id": "customer-use-case-sb-kalley-flooring", "export": "CustomerUseCaseSbKalleyFlooringSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
     { "position": 134, "id": "customer-use-case-sb-southeast-diabetes", "export": "CustomerUseCaseSbSoutheastDiabetesSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
     { "position": 135, "id": "customer-use-case-sb-handyman-hub", "export": "CustomerUseCaseSbHandymanHubSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
-    { "position": 136, "id": "customer-suzuki", "export": "default", "file": "CustomerSuzukiSlide.tsx" },
-    { "position": 137, "id": "customer-tata-play", "export": "default", "file": "CustomerTataPlaySlide.tsx" },
-    { "position": 138, "id": "customer-shasta", "export": "default", "file": "CustomerShastaSlide.tsx" },
-    { "position": 139, "id": "customer-aeg-vision", "export": "default", "file": "CustomerAEGVisionSlide.tsx" }
+    { "position": 136, "id": "customer-use-case-sb-renegade-roofing", "export": "CustomerUseCaseSbRenegadeRoofingSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 137, "id": "customer-use-case-sb-walker-river-resort", "export": "CustomerUseCaseSbWalkerRiverResortSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 138, "id": "customer-suzuki", "export": "default", "file": "CustomerSuzukiSlide.tsx" },
+    { "position": 139, "id": "customer-tata-play", "export": "default", "file": "CustomerTataPlaySlide.tsx" },
+    { "position": 140, "id": "customer-shasta", "export": "default", "file": "CustomerShastaSlide.tsx" },
+    { "position": 141, "id": "customer-aeg-vision", "export": "default", "file": "CustomerAEGVisionSlide.tsx" }
   ],
   "typescriptFiles": [
     "src/components/SlideFooter.tsx",
@@ -34,6 +36,8 @@
     "public/images/customer-kalley-flooring.jpeg",
     "public/images/customer-southeast-diabetes.svg",
     "public/images/customer-handyman-hub.png",
+    "public/images/customer-renegade-roofing.png",
+    "public/images/customer-walker-river-resort.svg",
     "public/images/pptx-slides/slide4-img0.png",
     "public/images/pptx-slides/seksom-slide7-tata-play.png",
     "public/images/pptx-slides/slide9-img0.png",
@@ -44,7 +48,7 @@
     "framer-motion": "^12.36.0 (from NextivaDeck package.json at export time)"
   },
   "notes": [
-    "SB single slides use SB_CUSTOMER_CASES from customerUseCasesSbSinglesContent.ts (Foxy, Vision Wheel, Renascent, Sage, Cocoa Lofts LLC, Kalley Flooring, Southeast Diabetes Inc, Handyman Hub).",
+    "SB single slides use SB_CUSTOMER_CASES from customerUseCasesSbSinglesContent.ts (Foxy, Vision Wheel, Renascent, Sage, Cocoa Lofts LLC, Kalley Flooring, Southeast Diabetes Inc, Handyman Hub, Renegade Roofing Co., Walker River Resort).",
     "Place `public/images` under the consuming app’s `public/` (Next.js) so paths like `/images/customer-foxy.png` resolve.",
     "Cocoa Lofts hero is customer-cocoa-lofts.webp (from deck discussion transcripts); Kalley hero JPEG is from kalleyflooring.com marketing CDN—confirm license for external decks.",
     "Slides expect CSS classes `.slide` and `.font-heading`; see deps/slide-minimal.css."
