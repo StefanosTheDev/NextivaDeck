@@ -2,6 +2,127 @@
 
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 
+/** Enterprise customer slides (132+): matches SMB Foxy hero — symmetric black bands, accent pill on image, meta on black below, cover fill. */
+export type CustomerEnterpriseHeroColumnProps = {
+  scale: number;
+  heroHPx: number;
+  cardRadiusPx: number;
+  imageSrc: string;
+  imageAlt: string;
+  industryPillLabel: string;
+  pillBackground: string;
+  metaLine: string;
+  objectFit?: "contain" | "cover";
+  objectPosition?: string;
+};
+
+export function CustomerEnterpriseHeroColumn({
+  scale,
+  heroHPx: heroH,
+  cardRadiusPx: cardRadius,
+  imageSrc,
+  imageAlt,
+  industryPillLabel,
+  pillBackground,
+  metaLine,
+  objectFit = "cover",
+  objectPosition = "center center",
+}: CustomerEnterpriseHeroColumnProps) {
+  const fsHeroBadge = Math.round(11 * scale);
+  const fsHeroMeta = Math.round(11 * scale);
+  const heroMetaBelowPadTop = Math.round(6 * scale);
+  const bandH = Math.round(heroMetaBelowPadTop + fsHeroMeta * 1.35 + Math.round(4 * scale));
+  const heroImageH = Math.max(0, heroH - 2 * bandH);
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: heroH,
+        flexShrink: 0,
+        display: "flex",
+        flexDirection: "column",
+        minHeight: 0,
+      }}
+    >
+      <div aria-hidden style={{ flexShrink: 0, width: "100%", height: bandH, background: "#000000" }} />
+      <div
+        style={{
+          width: "100%",
+          height: heroImageH,
+          flexShrink: 0,
+          borderRadius: cardRadius,
+          overflow: "hidden",
+          position: "relative",
+          background: "rgba(0,0,0,0.35)",
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit,
+            objectPosition,
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "42%",
+            background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: Math.round(12 * scale),
+            left: Math.round(12 * scale),
+            right: Math.round(12 * scale),
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              padding: `${Math.round(4 * scale)}px ${Math.round(12 * scale)}px`,
+              borderRadius: Math.round(20 * scale),
+              background: pillBackground,
+              fontSize: fsHeroBadge,
+              fontWeight: 700,
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              color: "#FFFFFF",
+            }}
+          >
+            {industryPillLabel}
+          </span>
+        </div>
+      </div>
+      <div
+        style={{
+          flexShrink: 0,
+          width: "100%",
+          height: bandH,
+          boxSizing: "border-box",
+          paddingTop: heroMetaBelowPadTop,
+          background: "#000000",
+        }}
+      >
+        <p style={{ fontSize: fsHeroMeta, color: "rgba(255,255,255,0.75)", margin: 0, lineHeight: 1.35 }}>{metaLine}</p>
+      </div>
+    </div>
+  );
+}
+
 /**
  * Top padding under the slide header/title for SB-style customer slides.
  * Previously 240px; shifted hero+cards up by ⅓ of that gap (80px) toward the title.

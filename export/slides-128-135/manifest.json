@@ -6,10 +6,11 @@
     { "position": 129, "id": "customer-use-case-sb-vision-wheel", "export": "CustomerUseCaseSbVisionWheelSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
     { "position": 130, "id": "customer-use-case-sb-renascent", "export": "CustomerUseCaseSbRenascentSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
     { "position": 131, "id": "customer-use-case-sb-sage", "export": "CustomerUseCaseSbSageSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
-    { "position": 132, "id": "customer-suzuki", "export": "default", "file": "CustomerSuzukiSlide.tsx" },
-    { "position": 133, "id": "customer-tata-play", "export": "default", "file": "CustomerTataPlaySlide.tsx" },
-    { "position": 134, "id": "customer-shasta", "export": "default", "file": "CustomerShastaSlide.tsx" },
-    { "position": 135, "id": "customer-aeg-vision", "export": "default", "file": "CustomerAEGVisionSlide.tsx" }
+    { "position": 132, "id": "customer-use-case-sb-cocoa-lofts", "export": "CustomerUseCaseSbCocoaLoftsSlide", "file": "CustomerUseCasesSbSingleSlides.tsx" },
+    { "position": 133, "id": "customer-suzuki", "export": "default", "file": "CustomerSuzukiSlide.tsx" },
+    { "position": 134, "id": "customer-tata-play", "export": "default", "file": "CustomerTataPlaySlide.tsx" },
+    { "position": 135, "id": "customer-shasta", "export": "default", "file": "CustomerShastaSlide.tsx" },
+    { "position": 136, "id": "customer-aeg-vision", "export": "default", "file": "CustomerAEGVisionSlide.tsx" }
   ],
   "typescriptFiles": [
     "src/components/SlideFooter.tsx",
@@ -26,6 +27,7 @@
     "public/images/customer-vision.png",
     "public/images/customer-renascent.png",
     "public/images/customer-sage.png",
+    "public/images/customer-cocoa-lofts.svg",
     "public/images/pptx-slides/slide4-img0.png",
     "public/images/pptx-slides/seksom-slide7-tata-play.png",
     "public/images/pptx-slides/slide9-img0.png",
@@ -36,8 +38,9 @@
     "framer-motion": "^12.36.0 (from NextivaDeck package.json at export time)"
   },
   "notes": [
-    "SB single slides (128–131) use SB_CUSTOMER_CASES from customerUseCasesSbSinglesContent.ts (Foxy, Vision Wheel, Renascent, Sage).",
+    "SB single slides use SB_CUSTOMER_CASES from customerUseCasesSbSinglesContent.ts (Foxy, Vision Wheel, Renascent, Sage, Cocoa Lofts LLC).",
     "Place `public/images` under the consuming app’s `public/` (Next.js) so paths like `/images/customer-foxy.png` resolve.",
+    "Cocoa Lofts hero ships as placeholder SVG; replace with a licensed property photo if needed.",
     "Slides expect CSS classes `.slide` and `.font-heading`; see deps/slide-minimal.css."
   ]
 }

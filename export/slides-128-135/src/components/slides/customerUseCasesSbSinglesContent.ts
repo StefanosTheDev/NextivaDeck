@@ -13,7 +13,7 @@ export type SbCustomerCaseSpec = {
   problems: string[];
   solutions: string[];
   metrics: SbCustomerCaseMetric[];
-  /** Multiplier for hero frame height + Problem/Solution/metrics sizing (slides 128–131: larger footprint). */
+  /** Multiplier for hero frame height + Problem/Solution/metrics sizing (SB singles: larger footprint). */
   layoutScale?: number;
   /** Shorter black strip under the photo (single-line meta). */
   heroMetaCompact?: boolean;
@@ -74,6 +74,10 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
       { stat: "1K", label: "AI Sessions/Mo" },
     ],
     layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "cover",
+    heroObjectPosition: "center 36%",
   },
   {
     name: "Renascent Protection",
@@ -97,6 +101,10 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
       { stat: "50", label: "AI Keywords" },
     ],
     layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "cover",
+    heroObjectPosition: "center 36%",
   },
   {
     name: "Sage Surfaces",
@@ -119,5 +127,38 @@ export const SB_CUSTOMER_CASES: SbCustomerCaseSpec[] = [
       { stat: "12 yr", label: "Displacement" },
     ],
     layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "cover",
+    heroObjectPosition: "center 38%",
+  },
+  {
+    name: "Cocoa Lofts LLC",
+    industry: "Hospitality · Lodging",
+    size: "Cocoa, FL · Pilot property · $99 MRR · XBert AI Pro",
+    /** Placeholder SVG — swap for a licensed property photo (e.g. cocoalofts.com) when available. */
+    photo: "/images/customer-cocoa-lofts.svg",
+    accent: "#B8956A",
+    problems: [
+      "Call routing gap: needed AI on an existing business number with correct handoff to the right live agent.",
+      "Scheduling friction: wanted AI-assisted meeting booking through Outlook, not manual-only workflows.",
+      "Rollout risk: first-property pilot before committing to a broader multi-property footprint.",
+    ],
+    solutions: [
+      "XBert AI Pro answers inbound on the existing number and routes callers to the appropriate agent.",
+      "Outlook scheduling integrated into the AI workflow with guided setup support.",
+      "Pilot live on property one with a clear expansion path as performance proves out.",
+      "Usage snapshot: ~476 interactions with ~434 resolved by AI (~91% containment).",
+    ],
+    metrics: [
+      { stat: "~91%", label: "AI containment" },
+      { stat: "476", label: "Interactions (snapshot)" },
+      { stat: "$99", label: "MRR" },
+    ],
+    layoutScale: 1.33,
+    heroMetaCompact: true,
+    heroSymmetricMetaBands: true,
+    heroObjectFit: "cover",
+    heroObjectPosition: "center 35%",
   },
 ];

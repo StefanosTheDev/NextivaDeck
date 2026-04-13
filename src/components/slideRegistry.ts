@@ -118,6 +118,7 @@ import SlideCashFlowTrendsQuarterlyDark from "./slides/SlideCashFlowTrendsQuarte
 import SlideTargetModelDark from "./slides/SlideTargetModelDark";
 import CustomerUseCasesDarkV2Slide from "./slides/CustomerUseCasesDarkV2Slide";
 import {
+  CustomerUseCaseSbCocoaLoftsSlide,
   CustomerUseCaseSbFoxySlide,
   CustomerUseCaseSbRenascentSlide,
   CustomerUseCaseSbSageSlide,
@@ -282,6 +283,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "customer-use-case-sb-sage",
     label: "Customer: Sage Surfaces (SB — from dark v2)",
     component: CustomerUseCaseSbSageSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "customer-use-case-sb-cocoa-lofts": {
+    id: "customer-use-case-sb-cocoa-lofts",
+    label: "Customer: Cocoa Lofts LLC (XBert pilot — hospitality)",
+    component: CustomerUseCaseSbCocoaLoftsSlide,
     theme: "dark",
     isNew: true,
   },

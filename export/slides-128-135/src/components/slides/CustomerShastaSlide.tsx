@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import {
+  CustomerEnterpriseHeroColumn,
   CustomerSlideSbStyleHeroCardsRow,
   SB_CUSTOMER_MAIN_TOP_OFFSET_PX,
   SB_HERO_PROBLEM_SOLUTION_GAP_PX,
@@ -33,13 +34,6 @@ const LAYOUT_SCALE = 1.33;
 const HERO_HEIGHT_BASE_PX = 400;
 const METRICS_TOP_GAP_BASE_PX = 16;
 
-/**
- * Hero is portrait (~1055×1122). We use a short frame + contain so nothing is clipped.
- * Bias toward the upper band where façade / building signage usually sits so the
- * Shasta Community Health logo on the building stays prominent in the frame.
- */
-const HERO_OBJECT_POSITION = "center 22%";
-
 export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?: number }) {
   const scale = LAYOUT_SCALE;
   const heroH = Math.round(HERO_HEIGHT_BASE_PX * scale);
@@ -58,8 +52,6 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
   const fsBody = Math.round(13 * scale);
   const fsStat = Math.round(28 * scale);
   const fsLabel = Math.round(11 * scale);
-  const fsHeroIndustry = Math.round(12 * scale);
-  const fsHeroMeta = Math.round(11 * scale);
 
   return (
     <div
@@ -99,64 +91,18 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
         <CustomerSlideSbStyleHeroCardsRow
           rowGapPx={gap}
           hero={
-            <div
-              style={{
-                width: "100%",
-                height: heroH,
-                flexShrink: 0,
-                borderRadius: cardRadius,
-                overflow: "hidden",
-                position: "relative",
-                background: "rgba(0,0,0,0.35)",
-              }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/pptx-slides/slide9-img0.png"
-                alt="Shasta Community Health"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  objectPosition: HERO_OBJECT_POSITION,
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: "42%",
-                  background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
-                  pointerEvents: "none",
-                }}
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: Math.round(14 * scale),
-                  left: Math.round(16 * scale),
-                  right: Math.round(16 * scale),
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: fsHeroIndustry,
-                    fontWeight: 700,
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                    color: "#7BB3E0",
-                    margin: 0,
-                  }}
-                >
-                  Community Healthcare
-                </p>
-                <p style={{ fontSize: fsHeroMeta, color: "rgba(255,255,255,0.75)", margin: `${Math.round(4 * scale)}px 0 0`, lineHeight: 1.3 }}>
-                  7 Clinical Locations · 100 Providers across 10+ practices
-                </p>
-              </div>
-            </div>
+            <CustomerEnterpriseHeroColumn
+              scale={scale}
+              heroHPx={heroH}
+              cardRadiusPx={cardRadius}
+              imageSrc="/images/pptx-slides/slide9-img0.png"
+              imageAlt="Shasta Community Health"
+              industryPillLabel="Community Healthcare"
+              pillBackground="#3D8A85"
+              metaLine="7 Clinical Locations · 100 Providers across 10+ practices"
+              objectFit="cover"
+              objectPosition="center 24%"
+            />
           }
           cards={
             <div

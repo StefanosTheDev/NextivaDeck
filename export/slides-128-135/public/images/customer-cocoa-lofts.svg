@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Cocoa Lofts placeholder hero">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6BA3D4"/>
+      <stop offset="55%" stop-color="#B8D4EE"/>
+      <stop offset="100%" stop-color="#E8D4B8"/>
+    </linearGradient>
+    <linearGradient id="pool" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A9BB8"/>
+      <stop offset="100%" stop-color="#2D7A92"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <!-- Palm -->
+  <path fill="#3D5C3A" d="M920 520 Q940 380 900 300 Q880 260 910 240 Q950 220 960 280 Q970 340 940 400 Q930 460 920 520 Z"/>
+  <path fill="#2D4A2D" d="M905 520 L935 520 L930 620 L910 620 Z"/>
+  <!-- Building -->
+  <rect x="80" y="320" width="1040" height="380" rx="12" fill="#F2E8DC" stroke="#C4A882" stroke-width="3"/>
+  <rect x="100" y="340" width="1000" height="56" fill="#8B6914" opacity="0.35"/>
+  <!-- Windows row 1 -->
+  <g fill="#5A7FA6" opacity="0.45">
+    <rect x="130" y="420" width="88" height="110" rx="4"/>
+    <rect x="248" y="420" width="88" height="110" rx="4"/>
+    <rect x="366" y="420" width="88" height="110" rx="4"/>
+    <rect x="484" y="420" width="88" height="110" rx="4"/>
+    <rect x="602" y="420" width="88" height="110" rx="4"/>
+    <rect x="720" y="420" width="88" height="110" rx="4"/>
+    <rect x="838" y="420" width="88" height="110" rx="4"/>
+    <rect x="956" y="420" width="88" height="110" rx="4"/>
+  </g>
+  <!-- Windows row 2 -->
+  <g fill="#5A7FA6" opacity="0.35">
+    <rect x="130" y="560" width="88" height="100" rx="4"/>
+    <rect x="248" y="560" width="88" height="100" rx="4"/>
+    <rect x="366" y="560" width="88" height="100" rx="4"/>
+    <rect x="484" y="560" width="88" height="100" rx="4"/>
+    <rect x="602" y="560" width="88" height="100" rx="4"/>
+    <rect x="720" y="560" width="88" height="100" rx="4"/>
+    <rect x="838" y="560" width="88" height="100" rx="4"/>
+    <rect x="956" y="560" width="88" height="100" rx="4"/>
+  </g>
+  <!-- Pool -->
+  <ellipse cx="420" cy="720" rx="200" ry="48" fill="url(#pool)" opacity="0.85"/>
+  <ellipse cx="420" cy="712" rx="180" ry="32" fill="#87CEEB" opacity="0.4"/>
+  <!-- Brand block (typographic; replace hero with property photo when available) -->
+  <rect x="0" y="0" width="1200" height="200" fill="rgba(0,0,0,0.25)"/>
+  <text x="600" y="95" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="56" font-weight="700" fill="#FFFFFF">Cocoa Lofts</text>
+  <text x="600" y="145" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="600" fill="rgba(255,255,255,0.92)">900 Friday Rd · Cocoa, Florida</text>
+</svg>
