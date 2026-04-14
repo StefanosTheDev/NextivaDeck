@@ -185,6 +185,8 @@
     "drew-competitor-decagon",
     "drew-competitor-decagon-alt",
     "drew-lead-velocity-curves",
+    "drew-lead-velocity-buckets-v4",
+    "drew-hybrid-gtm-excellence",
     "drew-lead-velocity-buckets-v3",
     "drew-lead-velocity-buckets",
     "platform-roadmap-investor",
@@ -304,6 +306,8 @@
     "drew-healthcare-glance-v3": "Drew Schulz HealthCare",
     "drew-healthcare-strategy-v3": "Drew Schulz HealthCare",
     "drew-lead-velocity-buckets-v3": "Drew Schulz",
+    "drew-lead-velocity-buckets-v4": "Drew Schulz",
+    "drew-hybrid-gtm-excellence": "Drew Schulz",
     "drew-carl-incumbent-trust-v3": "Drew Schulz",
     "customer-use-case-sb-cocoa-lofts": "SEKSOM SLIDES 041326",
     "customer-use-case-sb-kalley-flooring": "SEKSOM SLIDES 041326",
@@ -479,6 +483,7 @@
     "gtm-engine",
     "ai-tailwind",
     "customer-use-cases-dark-v2",
-    "customer-use-cases-v2"
+    "customer-use-cases-v2",
+    "drew-lead-velocity-buckets-v3"
   ]
 }

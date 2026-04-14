@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { MessageCircle, Route, Users, DollarSign } from "lucide-react";
 
-const ACCENT = "#0070F3";
+const ACCENT = "#7EB3E8";
 
 const steps = [
   {
@@ -71,23 +71,25 @@ export default function ConversationalCommerceSlide({ slideNumber = 40 }: { slid
       <motion.main
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
         style={{
-          flex: 1, display: "flex", alignItems: "center", gap: 0,
-          padding: "32px 80px 0", position: "relative", zIndex: 1,
+          flex: 1, display: "flex", alignItems: "center", justifyContent: "center",
+          padding: "0 100px", position: "relative", zIndex: 1, marginTop: -40,
         }}
       >
+        <div style={{ display: "flex", alignItems: "stretch", justifyContent: "center", gap: 0, width: "100%" }}>
         {steps.map((s, i) => {
           const Icon = s.icon;
           return (
-            <div key={s.label} style={{ display: "flex", alignItems: "center", flex: 1 }}>
+            <div key={s.label} style={{ display: "flex", alignItems: "stretch" }}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.3 + i * 0.12 }}
                 style={{
-                  flex: 1,
+                  flex: "1 1 0",
+                  maxWidth: 350,
                   background: "rgba(255,255,255,0.03)",
                   border: "1px solid rgba(255,255,255,0.08)",
-                  borderTop: `3px solid ${ACCENT}`,
+                  borderTop: `4px solid ${ACCENT}`,
                   borderRadius: 16,
                   padding: "40px 28px",
                   textAlign: "center",
@@ -110,7 +112,7 @@ export default function ConversationalCommerceSlide({ slideNumber = 40 }: { slid
                 </p>
               </motion.div>
               {i < steps.length - 1 && (
-                <div style={{ flexShrink: 0, padding: "0 12px", display: "flex", alignItems: "center" }}>
+                <div style={{ display: "flex", alignItems: "center", padding: "0 10px" }}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                     <path d="M5 12h14M13 6l6 6-6 6" stroke={ACCENT} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -119,6 +121,7 @@ export default function ConversationalCommerceSlide({ slideNumber = 40 }: { slid
             </div>
           );
         })}
+        </div>
       </motion.main>
 
       {/* Bottom tagline */}
@@ -127,12 +130,13 @@ export default function ConversationalCommerceSlide({ slideNumber = 40 }: { slid
         style={{ padding: "16px 80px 24px", flexShrink: 0, position: "relative", zIndex: 1 }}
       >
         <div style={{
-          background: "linear-gradient(135deg, rgba(0,112,243,0.1), rgba(0,194,255,0.06))",
+          background: "linear-gradient(135deg, rgba(126,179,232,0.1), rgba(126,179,232,0.06))",
           border: `1px solid ${ACCENT}20`,
           borderRadius: 14, padding: "20px 40px", textAlign: "center",
         }}>
-          <p style={{ fontSize: 18, fontWeight: 600, color: "rgba(255,255,255,0.7)", margin: 0 }}>
-            Reduce friction to engage and transact — turning every interaction into commerce.
+          <p style={{ fontSize: 20, fontWeight: 600, color: "#FFFFFF", margin: 0, lineHeight: 1.5 }}>
+            Reduce friction to engage and transact —{" "}
+            <span style={{ color: "#2860B2", fontWeight: 700 }}>turning every interaction into commerce.</span>
           </p>
         </div>
       </motion.div>

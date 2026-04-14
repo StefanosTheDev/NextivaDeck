@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { Radio, Database, Brain } from "lucide-react";
 
-const ACCENT = "#0070F3";
+const ACCENT = "#2860B2";
 
 const layers = [
   {
@@ -11,21 +11,21 @@ const layers = [
     label: "Infrastructure Layer",
     title: "Communications Network",
     desc: "Voice, chat, email, video — every channel on a single owned network.",
-    color: "#0070F3",
+    color: "#7EB3E8",
   },
   {
     icon: Database,
     label: "Data Layer",
     title: "Customer Journal",
     desc: "Real-time + historical interaction data unified in one model.",
-    color: "#00C2FF",
+    color: "#7EB3E8",
   },
   {
     icon: Brain,
     label: "Intelligence Layer",
     title: "AI Orchestration",
     desc: "Listens, decides, and acts across every conversation automatically.",
-    color: "#7B61FF",
+    color: "#7EB3E8",
   },
 ];
 
@@ -83,9 +83,9 @@ export default function UnifiedPlatformMoatsSlide({ slideNumber = 42 }: { slideN
               transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}
               style={{
                 display: "flex", alignItems: "center", gap: 28,
-                background: `linear-gradient(135deg, ${l.color}08, ${l.color}04)`,
+                background: "rgba(255,255,255,0.03)",
                 border: "1px solid rgba(255,255,255,0.08)",
-                borderLeft: `5px solid ${l.color}`,
+                borderLeft: `4px solid ${l.color}`,
                 borderRadius: 16,
                 padding: "28px 36px",
               }}

@@ -10,6 +10,14 @@ export interface SegmentHeaderBoxProps {
   arrPct: string;
   /** "compact" = tight spacing (default). "standard" = +2px on every text element. */
   size?: "compact" | "standard";
+  /** Optional third metric — when present, the metric grid expands to 3
+   *  columns. Used by the Lead Velocity Buckets slide to surface lead-to-sale
+   *  conversion rates alongside customers/ARR. */
+  conversion?: {
+    value: string;
+    label: string;
+    sub?: string;
+  };
 }
 
 export default function SegmentHeaderBox({
@@ -21,11 +29,13 @@ export default function SegmentHeaderBox({
   arr,
   arrPct,
   size = "compact",
+  conversion,
 }: SegmentHeaderBoxProps) {
   const bump = size === "standard" ? 2 : 0;
   const headerPadY = size === "standard" ? 16 : 14;
   const headerPadX = size === "standard" ? 22 : 20;
   const metricPad = size === "standard" ? 14 : 12;
+  const metricCols = conversion ? "1fr 1fr 1fr" : "1fr 1fr";
 
   return (
     <div
@@ -99,11 +109,11 @@ export default function SegmentHeaderBox({
         </div>
       </div>
 
-      {/* Metrics row — Customers / ARR */}
+      {/* Metrics row — Customers / ARR / [Lead → Sale] */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
+          gridTemplateColumns: metricCols,
           gap: 0,
         }}
       >
@@ -148,7 +158,14 @@ export default function SegmentHeaderBox({
             {custPct}
           </p>
         </div>
-        <div style={{ padding: `${metricPad}px ${headerPadX}px` }}>
+        <div
+          style={{
+            padding: `${metricPad}px ${headerPadX}px`,
+            borderRight: conversion
+              ? "1px solid rgba(255,255,255,0.06)"
+              : "none",
+          }}
+        >
           <p
             className="font-heading"
             style={{
@@ -184,6 +201,46 @@ export default function SegmentHeaderBox({
             {arrPct}
           </p>
         </div>
+        {conversion && (
+          <div style={{ padding: `${metricPad}px ${headerPadX}px` }}>
+            <p
+              className="font-heading"
+              style={{
+                fontSize: 26 + bump,
+                fontWeight: 700,
+                color: "#FFFFFF",
+                margin: 0,
+                lineHeight: 1,
+              }}
+            >
+              {conversion.value}
+            </p>
+            <p
+              style={{
+                fontSize: 11 + bump,
+                fontWeight: 600,
+                letterSpacing: "0.05em",
+                color: "rgba(255,255,255,0.55)",
+                margin: "4px 0 0",
+                textTransform: "uppercase",
+              }}
+            >
+              {conversion.label}
+            </p>
+            {conversion.sub && (
+              <p
+                style={{
+                  fontSize: 12 + bump,
+                  color: "#5B9CF5",
+                  margin: "2px 0 0",
+                  fontWeight: 500,
+                }}
+              >
+                {conversion.sub}
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
