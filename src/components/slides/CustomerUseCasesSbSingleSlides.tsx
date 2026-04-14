@@ -5,11 +5,19 @@ import SlideFooter from "../SlideFooter";
 import { SB_CUSTOMER_CASES, type SbCustomerCaseSpec } from "./customerUseCasesSbSinglesContent";
 import {
   CustomerSlideSbStyleHeroCardsRow,
-  SB_CUSTOMER_MAIN_TOP_OFFSET_PX,
   SB_HERO_PROBLEM_SOLUTION_GAP_PX,
+  SB_MAIN_BODY_SHIFT_RIGHT_PX,
   SB_PROBLEM_CARD_WIDTH_PX,
   SB_SOLUTION_CARD_WIDTH_PX,
 } from "./CustomerSlideSbStyleHeroCardsRow";
+
+/** Matches `motion.main` horizontal padding (80px) + hero row `marginLeft`. */
+const SB_HEADER_ALIGN_LEFT_PX = 80 + SB_MAIN_BODY_SHIFT_RIGHT_PX;
+
+/** Space below the customer name (e.g. Foxy Coatings) before the hero + Problem/Solution row. */
+const SB_SINGLE_HEADER_TO_BODY_GAP_PX = 88;
+/** Space above the footer below the cards block. */
+const SB_SINGLE_BODY_TO_FOOTER_GAP_PX = 48;
 
 const BG =
   "radial-gradient(ellipse 90% 80% at 50% 20%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 45%, #000208 100%)";
@@ -44,7 +52,11 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "40px 80px 0", flexShrink: 0 }}
+        style={{
+          padding: "40px 80px 0",
+          paddingLeft: SB_HEADER_ALIGN_LEFT_PX,
+          flexShrink: 0,
+        }}
       >
         <p style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 4px" }}>
           SMB Customer Use Case
@@ -62,12 +74,21 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          padding: `${SB_CUSTOMER_MAIN_TOP_OFFSET_PX}px 80px 28px`,
+          padding: `${SB_SINGLE_HEADER_TO_BODY_GAP_PX}px 80px ${SB_SINGLE_BODY_TO_FOOTER_GAP_PX}px`,
           overflow: "hidden",
           minHeight: 0,
           alignItems: "stretch",
         }}
       >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flexShrink: 0,
+            minHeight: 0,
+            marginBottom: "auto",
+          }}
+        >
         <CustomerSlideSbStyleHeroCardsRow
           rowGapPx={gap}
           hero={
@@ -253,6 +274,7 @@ function SbSingleCustomerShell({ slideNumber, c }: { slideNumber: number; c: SbC
             </div>
           }
         />
+        </div>
       </motion.main>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />
