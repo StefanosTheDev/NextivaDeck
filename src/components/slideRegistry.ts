@@ -228,7 +228,7 @@ export type SlideTheme = "light" | "dark";
 export interface SlideDef {
   id: string;
   label: string;
-  component: React.ComponentType<{ slideNumber: number }>;
+  component: React.ComponentType<{ slideNumber: number; slideId?: string }>;
   theme: SlideTheme;
   isNew?: boolean;
 }
@@ -390,6 +390,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "agentic-cx-platform": { id: "agentic-cx-platform", label: "Agentic CX Platform", component: AgenticCXPlatformSlide, theme: "dark" },
   "market-tam-lovable-yaniv-vh": { id: "market-tam-lovable-yaniv-vh", label: "Market TAM (Yaniv-VH)", component: MarketTAMLovableYanivVHSlide, theme: "dark" },
   "agentic-opp-yaniv-vh": { id: "agentic-opp-yaniv-vh", label: "Agentic Opportunity (Yaniv-VH)", component: AgenticOpportunityYanivVHSlide, theme: "dark" },
+  "agentic-opp-yaniv-vh-end": {
+    id: "agentic-opp-yaniv-vh-end",
+    label: "Agentic Opportunity (Yaniv-VH) — copy at end",
+    component: AgenticOpportunityYanivVHSlide,
+    theme: "dark",
+    isNew: true,
+  },
   "ai-expands-nextiva": { id: "ai-expands-nextiva", label: "AI Expands Nextiva", component: AIExpandsNextivaSlide, theme: "dark" },
   "ai-in-action-v2": { id: "ai-in-action-v2", label: "AI In Action V2", component: AIInActionV2Slide, theme: "dark" },
   "ai-tailwind-tomas-branch": { id: "ai-tailwind-tomas-branch", label: "AI Tailwind (Tomas)", component: AiTailwindTomasBranchSlide, theme: "dark" },
@@ -623,6 +630,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "customer-use-case-sb-renegade-roofing",
   "customer-use-case-sb-walker-river-resort",
   "customer-tata-play-041326",
+  "agentic-opp-yaniv-vh-end",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

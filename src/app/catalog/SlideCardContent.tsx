@@ -37,7 +37,7 @@ export default function SlideCardContent({ slide, index, category, categoryColor
             left: 0,
           }}
         >
-          <Slide slideNumber={index + 1} />
+          <Slide slideNumber={index + 1} slideId={slide.id} />
         </div>
         {/* Category pill overlay on thumbnail */}
         {category && categoryColor && (

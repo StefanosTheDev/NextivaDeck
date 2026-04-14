@@ -231,7 +231,7 @@ export default function InvestorDeck() {
           transition: "opacity 0.3s ease-in-out",
         }}
       >
-        <Slide slideNumber={safeCur + 1} />
+        <Slide slideNumber={safeCur + 1} slideId={currentSlide.id} />
       </div>
 
       {/* Navigation overlay */}

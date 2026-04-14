@@ -215,7 +215,8 @@
     "customer-use-case-sb-handyman-hub",
     "customer-use-case-sb-renegade-roofing",
     "customer-use-case-sb-walker-river-resort",
-    "customer-tata-play-041326"
+    "customer-tata-play-041326",
+    "agentic-opp-yaniv-vh-end"
   ],
   "categories": {
     "world-moving-thomas": "from Tomas",
@@ -231,6 +232,7 @@
     "agentic-cx-platform": "Yaniv-VersionH Slides",
     "market-tam-lovable-yaniv-vh": "Yaniv-VersionH Slides",
     "agentic-opp-yaniv-vh": "Yaniv-VersionH Slides",
+    "agentic-opp-yaniv-vh-end": "Yaniv-VersionH Slides",
     "ai-expands-nextiva": "Yaniv-VersionH Slides",
     "ai-in-action-v2": "Yaniv-VersionH Slides",
     "ai-tailwind-tomas-branch": "Yaniv-VersionH Slides",

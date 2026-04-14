@@ -60,7 +60,7 @@ export default function PrintRawPage() {
               flexShrink: 0,
             }}
           >
-            <Slide slideNumber={startNum + i} />
+            <Slide slideNumber={startNum + i} slideId={s.id} />
           </div>
         );
       })}
