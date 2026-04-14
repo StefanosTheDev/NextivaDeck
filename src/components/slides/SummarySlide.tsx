@@ -17,7 +17,7 @@ const columns = [
   },
   {
     title: "Disciplined",
-    stats: ["Founder-led since 2006", "$250M bootstrapped", "Goldman Sachs invested"],
+    stats: ["Deep Bench since 2006", "$250M bootstrapped", "Goldman Sachs invested"],
   },
 ];
 

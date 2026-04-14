@@ -254,23 +254,6 @@ export default function CarlIncumbentTrustV3Slide({
                   opacity: 0.85,
                 }}
               >
-                {/* Thoma Bravo — real SVG (Wikimedia public domain), recolored white */}
-                <img
-                  src="/logos/thoma-bravo-white.svg"
-                  alt="Thoma Bravo"
-                  style={{
-                    height: 16,
-                    width: "auto",
-                    display: "block",
-                  }}
-                />
-                <span
-                  style={{
-                    width: 1,
-                    height: 16,
-                    background: "rgba(255,255,255,0.18)",
-                  }}
-                />
                 {/* Avenir — text wordmark (matches their actual text-based brand identity) */}
                 <span
                   style={{

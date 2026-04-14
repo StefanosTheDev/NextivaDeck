@@ -367,6 +367,18 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
   "appendix-divider": { id: "appendix-divider", label: "Appendix", component: AppendixDividerSlide, theme: "dark" },
   "architecture-divider": { id: "architecture-divider", label: "Architecture", component: ArchitectureDividerSlide, theme: "dark" },
+  "gtm-efficiency-divider": {
+    id: "gtm-efficiency-divider",
+    label: "GTM Efficiency",
+    component: ArchitectureDividerSlide,
+    theme: "dark",
+  },
+  "sam-tam-divider": {
+    id: "sam-tam-divider",
+    label: "SAM / TAM.",
+    component: ArchitectureDividerSlide,
+    theme: "dark",
+  },
   "marketing-divider": { id: "marketing-divider", label: "Marketing", component: MarketingDividerSlide, theme: "dark" },
   "ai-divider": { id: "ai-divider", label: "AI", component: AIDividerSlide, theme: "dark" },
   "verticals-divider": { id: "verticals-divider", label: "Verticals", component: VerticalsDividerSlide, theme: "dark" },

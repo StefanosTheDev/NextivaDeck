@@ -11,7 +11,7 @@ const cards = [
   {
     label: "Headquarters",
     stat: "Scottsdale, AZ",
-    detail: "Founded 2006 · Founder-led",
+    detail: "Founded 2006 · Deep Bench",
   },
   {
     label: "Next Steps",

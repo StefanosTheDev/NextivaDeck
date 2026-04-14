@@ -17,7 +17,7 @@ const pillars = [
   {
     icon: Users,
     title: "Operator\nDNA",
-    stat: "Founder-led",
+    stat: "Deep Bench",
     statLabel: "execution-first",
     desc: "Proven leaders, not hired theory. Lean teams that move fast.",
     color: "#7EB3E8",

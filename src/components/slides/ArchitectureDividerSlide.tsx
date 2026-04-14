@@ -2,7 +2,20 @@
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 
-export default function ArchitectureDividerSlide({ slideNumber = 0 }: { slideNumber?: number }) {
+function headingForSlideId(slideId?: string): string {
+  if (slideId === "gtm-efficiency-divider") return "GTM Efficiency.";
+  if (slideId === "sam-tam-divider") return "SAM / TAM.";
+  return "Architecture.";
+}
+
+export default function ArchitectureDividerSlide({
+  slideNumber = 0,
+  slideId,
+}: {
+  slideNumber?: number;
+  slideId?: string;
+}) {
+  const heading = headingForSlideId(slideId);
   return (
     <div
       className="slide"
@@ -34,7 +47,7 @@ export default function ArchitectureDividerSlide({ slideNumber = 0 }: { slideNum
             zIndex: 1,
           }}
         >
-          Architecture.
+          {heading}
         </motion.h1>
       </div>
 

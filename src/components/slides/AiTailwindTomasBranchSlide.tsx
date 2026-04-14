@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import { Layers, TrendingUp, DollarSign, Shield } from "lucide-react";
 
+/** Same accent as the left/first card — headline gradient anchor blue. */
 const ACCENT = "#0070F3";
 
 const cards = [
@@ -10,25 +11,21 @@ const cards = [
     icon: Layers,
     title: "Embedded across the entire platform",
     body: "AI ships inside every product — not bolted on. Customers get smarter without switching tools.",
-    accent: "#0070F3",
   },
   {
     icon: TrendingUp,
     title: "More interactions → more usage",
     body: "AI increases throughput per customer, driving higher engagement and expanding revenue per account.",
-    accent: "#00C2FF",
   },
   {
     icon: DollarSign,
     title: "New monetization models",
     body: "Per-interaction, per-resolution, per-outcome pricing — unlocking revenue beyond seat-based subscriptions.",
-    accent: "#7B61FF",
   },
   {
     icon: Shield,
     title: "Increases switching costs",
     body: "AI learns from every conversation. The longer customers stay, the smarter it gets — deepening the moat over time.",
-    accent: "#00D68F",
   },
 ];
 
@@ -96,7 +93,7 @@ export default function AiTailwindTomasBranchSlide({ slideNumber = 13 }: { slide
                 flex: 1,
                 background: "rgba(255,255,255,0.03)",
                 border: "1px solid rgba(255,255,255,0.08)",
-                borderTop: `3px solid ${c.accent}`,
+                borderTop: `3px solid ${ACCENT}`,
                 borderRadius: 14,
                 padding: "28px 24px",
                 display: "flex", flexDirection: "column",
@@ -108,15 +105,15 @@ export default function AiTailwindTomasBranchSlide({ slideNumber = 13 }: { slide
               <div style={{
                 position: "absolute", top: -30, right: -30,
                 width: 100, height: 100, borderRadius: "50%",
-                background: `radial-gradient(circle, ${c.accent}15, transparent 70%)`,
+                background: `radial-gradient(circle, ${ACCENT}15, transparent 70%)`,
                 pointerEvents: "none",
               }} />
               <div style={{
                 width: 48, height: 48, borderRadius: 12,
-                background: `${c.accent}18`, border: `1px solid ${c.accent}40`,
+                background: `${ACCENT}18`, border: `1px solid ${ACCENT}40`,
                 display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 18,
               }}>
-                <Icon size={24} color={c.accent} strokeWidth={1.75} />
+                <Icon size={24} color={ACCENT} strokeWidth={1.75} />
               </div>
               <h3 className="font-heading" style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: "0 0 10px", lineHeight: 1.25 }}>
                 {c.title}
@@ -136,8 +133,8 @@ export default function AiTailwindTomasBranchSlide({ slideNumber = 13 }: { slide
       >
         <div style={{
           display: "flex",
-          background: "linear-gradient(135deg, rgba(0,112,243,0.1), rgba(0,194,255,0.08))",
-          border: "1px solid rgba(0,112,243,0.2)",
+          background: "linear-gradient(135deg, rgba(0,112,243,0.1), rgba(0,112,243,0.06))",
+          border: "1px solid rgba(0,112,243,0.22)",
           borderRadius: 14, overflow: "hidden",
         }}>
           {bottomStats.map((s, i) => (

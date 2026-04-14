@@ -25,7 +25,7 @@ export default function FounderSlide({ slideNumber = 4 }: { slideNumber?: number
             TOMAS GORNY
           </p>
           <h1 className="font-heading" style={{ fontSize: 76, fontWeight: 500, color: "#FFFFFF", margin: "16px 0 0", lineHeight: 1.2 }}>
-            Founder-led.<br />
+            Deep Bench.<br />
             Repeat execution.<br />
             Proven through cycles.
           </h1>
