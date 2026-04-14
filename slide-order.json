@@ -214,9 +214,9 @@
     "customer-use-case-sb-southeast-diabetes",
     "customer-use-case-sb-handyman-hub",
     "customer-use-case-sb-renegade-roofing",
-    "agentic-opp-yaniv-vh",
     "customer-use-case-sb-walker-river-resort",
-    "customer-tata-play-041326"
+    "customer-tata-play-041326",
+    "agentic-opp-yaniv-vh"
   ],
   "categories": {
     "world-moving-thomas": "from Tomas",
@@ -486,6 +486,7 @@
     "ai-tailwind",
     "customer-use-cases-dark-v2",
     "customer-use-cases-v2",
-    "drew-lead-velocity-buckets-v3"
+    "drew-lead-velocity-buckets-v3",
+    "customer-aeg-vision-041226"
   ]
 }

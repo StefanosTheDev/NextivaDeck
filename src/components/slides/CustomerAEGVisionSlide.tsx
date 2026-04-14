@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import {
   CustomerSlideSbStyleHeroCardsRow,
-  SB_CUSTOMER_MAIN_TOP_OFFSET_PX,
+  SB_CUSTOMER_BODY_TO_FOOTER_GAP_PX,
+  SB_CUSTOMER_HEADER_PADDING_LEFT_PX,
+  SB_CUSTOMER_HEADER_TO_BODY_GAP_PX,
   SB_HERO_PROBLEM_SOLUTION_GAP_PX,
   SB_PROBLEM_CARD_WIDTH_PX,
   SB_SOLUTION_CARD_WIDTH_PX,
@@ -89,12 +91,21 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          padding: `${SB_CUSTOMER_MAIN_TOP_OFFSET_PX}px 80px 28px`,
+          padding: `${SB_CUSTOMER_HEADER_TO_BODY_GAP_PX}px 80px ${SB_CUSTOMER_BODY_TO_FOOTER_GAP_PX}px`,
           overflow: "hidden",
           minHeight: 0,
           alignItems: "stretch",
         }}
       >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flexShrink: 0,
+            minHeight: 0,
+            marginBottom: "auto",
+          }}
+        >
         <CustomerSlideSbStyleHeroCardsRow
           rowGapPx={gap}
           hero={
@@ -280,6 +291,7 @@ export default function CustomerAEGVisionSlide({ slideNumber = 12 }: { slideNumb
             </div>
           }
         />
+        </div>
       </motion.main>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />

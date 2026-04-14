@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
 import {
   CustomerSlideSbStyleHeroCardsRow,
-  SB_CUSTOMER_MAIN_TOP_OFFSET_PX,
+  SB_CUSTOMER_BODY_TO_FOOTER_GAP_PX,
+  SB_CUSTOMER_HEADER_PADDING_LEFT_PX,
+  SB_CUSTOMER_HEADER_TO_BODY_GAP_PX,
   SB_HERO_PROBLEM_SOLUTION_GAP_PX,
   SB_PROBLEM_CARD_WIDTH_PX,
   SB_SOLUTION_CARD_WIDTH_PX,
@@ -73,7 +75,11 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "40px 80px 0", flexShrink: 0 }}
+        style={{
+          padding: "40px 80px 0",
+          paddingLeft: SB_CUSTOMER_HEADER_PADDING_LEFT_PX,
+          flexShrink: 0,
+        }}
       >
         <p style={{ fontWeight: 700, fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: "#CCC7C3", margin: "0 0 4px" }}>
           Enterprise Customer Use Case
@@ -91,12 +97,21 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
           flex: 1,
           display: "flex",
           flexDirection: "column",
-          padding: `${SB_CUSTOMER_MAIN_TOP_OFFSET_PX}px 80px 28px`,
+          padding: `${SB_CUSTOMER_HEADER_TO_BODY_GAP_PX}px 80px ${SB_CUSTOMER_BODY_TO_FOOTER_GAP_PX}px`,
           overflow: "hidden",
           minHeight: 0,
           alignItems: "stretch",
         }}
       >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flexShrink: 0,
+            minHeight: 0,
+            marginBottom: "auto",
+          }}
+        >
         <CustomerSlideSbStyleHeroCardsRow
           rowGapPx={gap}
           hero={
@@ -282,6 +297,7 @@ export default function CustomerShastaSlide({ slideNumber = 12 }: { slideNumber?
             </div>
           }
         />
+        </div>
       </motion.main>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />

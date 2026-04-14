@@ -122,9 +122,19 @@ export function CustomerEnterpriseHeroColumn({
   );
 }
 
+/** Legacy vertical offset for a few enterprise customer slides not yet on the SMB shell spacing. */
 export const SB_CUSTOMER_MAIN_TOP_OFFSET_PX = 140;
 
 export const SB_MAIN_BODY_SHIFT_RIGHT_PX = 80;
+
+/** `motion.main` horizontal padding (80) + hero row `marginLeft` — aligns header with `CustomerSlideSbStyleHeroCardsRow`. */
+export const SB_CUSTOMER_HEADER_PADDING_LEFT_PX = 80 + SB_MAIN_BODY_SHIFT_RIGHT_PX;
+
+/** Space below the title before the hero + Problem/Solution row (SMB Foxy-style shell). */
+export const SB_CUSTOMER_HEADER_TO_BODY_GAP_PX = 88;
+
+/** Space above the footer below the cards block. */
+export const SB_CUSTOMER_BODY_TO_FOOTER_GAP_PX = 48;
 
 export const SB_HERO_PROBLEM_SOLUTION_GAP_PX = 16;
 
