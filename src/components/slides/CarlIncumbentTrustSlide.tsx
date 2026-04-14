@@ -138,7 +138,7 @@ export default function CarlIncumbentTrustSlide({
             lineHeight: 1.15,
           }}
         >
-          Nextiva is seeing AI wins as a trusted incumbent for 100K businesses.
+          Nextiva is seeing AI wins as a trusted incumbent for 92K+ businesses.
         </h1>
         <p
           style={{
@@ -149,8 +149,8 @@ export default function CarlIncumbentTrustSlide({
             lineHeight: 1.5,
           }}
         >
-          The market expects incumbents to win AI. Our data shows we already
-          are.
+          Nextiva has seen this behavior emerge in an extraordinarily short
+          period of time.
         </p>
       </motion.header>
 

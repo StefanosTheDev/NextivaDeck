@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import SlideFooter from "../SlideFooter";
-import { Server, Database, Layers, ShieldCheck } from "lucide-react";
+import { Server, Database, ShieldCheck } from "lucide-react";
 import type { ReactNode } from "react";
 
 const cards: { icon: typeof Server; title: string; body: ReactNode }[] = [
@@ -14,11 +14,6 @@ const cards: { icon: typeof Server; title: string; body: ReactNode }[] = [
     icon: Database,
     title: "Proprietary real-time data on the edge",
     body: "Billions of always-fresh conversations generate a data moat that static models cannot reproduce. Our AI is trained on live interaction data, not synthetic benchmarks.",
-  },
-  {
-    icon: Layers,
-    title: "AI embedded, not bolted on",
-    body: "AI ships inside the platform across every product. It deepens switching costs with every interaction — customers get smarter tools without changing vendors.",
   },
   {
     icon: ShieldCheck,
@@ -54,11 +49,11 @@ export default function AiTailwind3Slide({ slideNumber = 13 }: { slideNumber?: n
           Why AI Strengthens — Not Threatens — Our Business.
         </h1>
         <p style={{ fontSize: 18, color: "rgba(255,255,255,0.45)", margin: "10px 0 0", lineHeight: 1.5 }}>
-          Four structural defenses that put us on the right side of the AI divide.
+          Three structural defenses that put us on the right side of the AI divide.
         </p>
       </motion.header>
 
-      {/* Four cards */}
+      {/* Three cards */}
       <motion.main
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
         style={{ display: "flex", gap: 16, padding: "28px 80px 0", alignItems: "stretch" }}
