@@ -112,6 +112,11 @@ import MonetizationEvolutionCopySlide from "./slides/MonetizationEvolutionCopySl
 import AITailwindVisualSlide from "./slides/AITailwindVisualSlide";
 import SystemOfActionVisualCopySlide from "./slides/SystemOfActionVisualCopySlide";
 import AppendixDividerSlide from "./slides/AppendixDividerSlide";
+import ArchitectureDividerSlide from "./slides/ArchitectureDividerSlide";
+import MarketingDividerSlide from "./slides/MarketingDividerSlide";
+import AIDividerSlide from "./slides/AIDividerSlide";
+import VerticalsDividerSlide from "./slides/VerticalsDividerSlide";
+import UseCasesDividerSlide from "./slides/UseCasesDividerSlide";
 import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
 import InvestorSummarySlide from "./slides/InvestorSummarySlide";
 import SystemOfActionCombinedSlide from "./slides/SystemOfActionCombinedSlide";
@@ -361,6 +366,11 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "monetization-evolution-copy": { id: "monetization-evolution-copy", label: "Monetization Evolution", component: MonetizationEvolutionCopySlide, theme: "dark" },
   "ai-tailwind-visual": { id: "ai-tailwind-visual", label: "AI Tailwind Visual", component: AITailwindVisualSlide, theme: "dark" },
   "appendix-divider": { id: "appendix-divider", label: "Appendix", component: AppendixDividerSlide, theme: "dark" },
+  "architecture-divider": { id: "architecture-divider", label: "Architecture", component: ArchitectureDividerSlide, theme: "dark" },
+  "marketing-divider": { id: "marketing-divider", label: "Marketing", component: MarketingDividerSlide, theme: "dark" },
+  "ai-divider": { id: "ai-divider", label: "AI", component: AIDividerSlide, theme: "dark" },
+  "verticals-divider": { id: "verticals-divider", label: "Verticals", component: VerticalsDividerSlide, theme: "dark" },
+  "use-cases-divider": { id: "use-cases-divider", label: "Use Cases", component: UseCasesDividerSlide, theme: "dark" },
   "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture", component: CXPortfolioArchSlide, theme: "dark" },
   "investor-summary": { id: "investor-summary", label: "Investor Summary", component: InvestorSummarySlide, theme: "dark" },
   "system-of-action-combined": { id: "system-of-action-combined", label: "System of Action (Combined)", component: SystemOfActionCombinedSlide, theme: "dark" },
