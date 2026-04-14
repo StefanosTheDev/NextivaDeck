@@ -474,6 +474,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "drew-carl-incumbent-trust": { id: "drew-carl-incumbent-trust", label: "Drew: CARL + AI Incumbent Trust", component: CarlIncumbentTrustSlide, theme: "dark", isNew: true },
   "drew-lead-velocity-buckets-v3": { id: "drew-lead-velocity-buckets-v3", label: "Drew: Lead Velocity Buckets (V3)", component: LeadVelocityBucketsV3Slide, theme: "dark", isNew: true },
   "drew-carl-incumbent-trust-v3": { id: "drew-carl-incumbent-trust-v3", label: "Drew: CARL + AI Incumbent Trust (V3)", component: CarlIncumbentTrustV3Slide, theme: "dark", isNew: true },
+  "drew-carl-incumbent-trust-v3-slide50": {
+    id: "drew-carl-incumbent-trust-v3-slide50",
+    label: "Drew: CARL + AI Incumbent Trust (V3) — deck pos. 50",
+    component: CarlIncumbentTrustV3Slide,
+    theme: "dark",
+    isNew: true,
+  },
   "drew-lead-velocity-buckets-v4": { id: "drew-lead-velocity-buckets-v4", label: "Drew: Lead Velocity Buckets (V4)", component: LeadVelocityBucketsV4Slide, theme: "dark", isNew: true },
   "drew-hybrid-gtm-excellence": { id: "drew-hybrid-gtm-excellence", label: "Drew: Hybrid GTM Excellence", component: HybridGtmExcellenceSlide, theme: "dark", isNew: true },
   "platform-roadmap-horizon": {
