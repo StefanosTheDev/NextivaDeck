@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
 
 import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "./slideRegistry";
+import NextivaSiteHeaderLogo from "./NextivaSiteHeaderLogo";
 
 
 export default function InvestorDeck() {
@@ -136,8 +137,25 @@ export default function InvestorDeck() {
   const Slide = currentSlide.component;
   const navTheme = currentSlide.theme === "dark" ? "nav-dark" : "nav-light";
 
+  const headerLogoTop = isPreview ? 52 : 20;
+  const headerLogoLeft = fromCatalog && !isPreview ? 200 : 24;
+  const headerLogoVariant = currentSlide.theme === "dark" ? "light" : "dark";
+
   return (
     <div ref={containerRef} className="deck-viewport">
+      <div
+        style={{
+          position: "absolute",
+          top: headerLogoTop,
+          left: headerLogoLeft,
+          zIndex: 55,
+          pointerEvents: "none",
+        }}
+        aria-hidden
+      >
+        <NextivaSiteHeaderLogo variant={headerLogoVariant} />
+      </div>
+
       {/* Back to Catalog button */}
       {fromCatalog && !isPreview && (
         <a
