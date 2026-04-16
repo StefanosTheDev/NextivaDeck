@@ -1,0 +1,22 @@
+name: Check slide order (Demo-BranchV3)
+
+on:
+  pull_request:
+    branches: [Demo-BranchV3, main, master]
+  push:
+    branches: [Demo-BranchV3, main, master]
+
+jobs:
+  slide-order:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify slide-order.json vs origin/Demo-BranchV3
+        run: npm run check:slide-order
