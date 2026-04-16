@@ -227,14 +227,6 @@ import LeadVelocityBucketsV3Slide from "./slides/LeadVelocityBucketsV3Slide";
 import CarlIncumbentTrustV3Slide from "./slides/CarlIncumbentTrustV3Slide";
 import LeadVelocityBucketsV4Slide from "./slides/LeadVelocityBucketsV4Slide";
 import HybridGtmExcellenceSlide from "./slides/HybridGtmExcellenceSlide";
-import SelectingTargetsMatrixSlide from "./slides/SelectingTargetsMatrixSlide";
-import AIIncreasesHumanTrustSlide from "./slides/AIIncreasesHumanTrustSlide";
-import DefensibleAdvantageUneasyMiddleSlide from "./slides/DefensibleAdvantageUneasyMiddleSlide";
-import MiddleMarketDifficultProfitablySlide from "./slides/MiddleMarketDifficultProfitablySlide";
-import MiddleOpportunityUneasyMiddleSlide from "./slides/MiddleOpportunityUneasyMiddleSlide";
-import MissionCriticalHumanTrustSlide from "./slides/MissionCriticalHumanTrustSlide";
-import NextivaBuiltUneasyMiddleSlide from "./slides/NextivaBuiltUneasyMiddleSlide";
-import ProvenCapabilityScaleMiddleSlide from "./slides/ProvenCapabilityScaleMiddleSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -503,69 +495,6 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   },
   "drew-lead-velocity-buckets-v4": { id: "drew-lead-velocity-buckets-v4", label: "Drew: Lead Velocity Buckets (V4)", component: LeadVelocityBucketsV4Slide, theme: "dark", isNew: true },
   "drew-hybrid-gtm-excellence": { id: "drew-hybrid-gtm-excellence", label: "Drew: Hybrid GTM Excellence", component: HybridGtmExcellenceSlide, theme: "dark", isNew: true },
-  "drew-hybrid-gtm-excellence-end": {
-    id: "drew-hybrid-gtm-excellence-end",
-    label: "Drew: Hybrid GTM Excellence",
-    component: HybridGtmExcellenceSlide,
-    theme: "dark",
-    isNew: true,
-  },
-  "selecting-targets-matrix": {
-    id: "selecting-targets-matrix",
-    label: "Selecting your target(s)",
-    component: SelectingTargetsMatrixSlide,
-    theme: "dark",
-    isNew: true,
-  },
-  "middle-opportunity-uneasy-middle": {
-    id: "middle-opportunity-uneasy-middle",
-    label: "Largest opportunity: uneasy middle",
-    component: MiddleOpportunityUneasyMiddleSlide,
-    theme: "dark",
-    isNew: true,
-  },
-  "middle-market-difficult-profitably": {
-    id: "middle-market-difficult-profitably",
-    label: "Middle market: difficult to serve",
-    component: MiddleMarketDifficultProfitablySlide,
-    theme: "dark",
-    isNew: true,
-  },
-  "mission-critical-human-trust": {
-    id: "mission-critical-human-trust",
-    label: "Mission-critical tech & human trust",
-    component: MissionCriticalHumanTrustSlide,
-    theme: "dark",
-    isNew: true,
-  },
-  "nextiva-built-uneasy-middle": {
-    id: "nextiva-built-uneasy-middle",
-    label: "Nextiva built for uneasy middle",
-    component: NextivaBuiltUneasyMiddleSlide,
-    theme: "dark",
-    isNew: true,
-  },
-  "defensible-advantage-uneasy-middle": {
-    id: "defensible-advantage-uneasy-middle",
-    label: "Defensible advantage: uneasy middle",
-    component: DefensibleAdvantageUneasyMiddleSlide,
-    theme: "dark",
-    isNew: true,
-  },
-  "ai-increases-human-trust": {
-    id: "ai-increases-human-trust",
-    label: "AI increases importance of human trust",
-    component: AIIncreasesHumanTrustSlide,
-    theme: "dark",
-    isNew: true,
-  },
-  "proven-capability-scale-middle": {
-    id: "proven-capability-scale-middle",
-    label: "Proven capability to execute at scale",
-    component: ProvenCapabilityScaleMiddleSlide,
-    theme: "dark",
-    isNew: true,
-  },
   "platform-roadmap-horizon": {
     id: "platform-roadmap-horizon",
     label: "Platform horizons (1 of 2 — CX, AI, scale)",
