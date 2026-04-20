@@ -17,6 +17,11 @@ const points = [
     headline: "Only platform fusing AI, comms & data — 50+ CX & AI patents 2014+",
   },
   {
+    icon: Zap,
+    stat: "AI - Expanding Moat",
+    headline: "Expands every deal — not replaces it",
+  },
+  {
     icon: Users,
     stat: "Massive, Durable Market",
     headline: "Underserved mid-market — wide open",
@@ -25,11 +30,6 @@ const points = [
     icon: TrendingUp,
     stat: "Multi Growth Factor 2X+",
     headline: "Usage & outcome pricing unlocks growth",
-  },
-  {
-    icon: Zap,
-    stat: "AI - Expanding Moat",
-    headline: "Expands every deal — not replaces it",
   },
 ];
 

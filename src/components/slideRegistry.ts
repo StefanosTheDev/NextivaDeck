@@ -235,6 +235,12 @@ import MiddleOpportunityUneasyMiddleSlide from "./slides/MiddleOpportunityUneasy
 import MissionCriticalHumanTrustSlide from "./slides/MissionCriticalHumanTrustSlide";
 import NextivaBuiltUneasyMiddleSlide from "./slides/NextivaBuiltUneasyMiddleSlide";
 import ProvenCapabilityScaleMiddleSlide from "./slides/ProvenCapabilityScaleMiddleSlide";
+import {
+  CustomerCaseStudyPlaceholder1,
+  CustomerCaseStudyPlaceholder2,
+  CustomerCaseStudyPlaceholder3,
+  FinancialSummaryPlaceholder,
+} from "./slides/placeholders";
 
 export type SlideTheme = "light" | "dark";
 
@@ -597,6 +603,11 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "tomas-human-ai-harmony-041126": { id: "tomas-human-ai-harmony-041126", label: "Tomas 13: Human + AI in Harmony", component: TomasHumanAIHarmonySlide, theme: "dark", isNew: true },
   "tomas-trustworthy-041126": { id: "tomas-trustworthy-041126", label: "Tomas 14: Trustworthy", component: TomasTrustworthySlide, theme: "dark", isNew: true },
   "tomas-global-footprint-041126": { id: "tomas-global-footprint-041126", label: "Tomas 15: Global Footprint", component: TomasGlobalFootprintSlide, theme: "dark", isNew: true },
+  // PLACEHOLDER SLIDES
+  "customer-case-study-placeholder-1": { id: "customer-case-study-placeholder-1", label: "Customer Case Study (Placeholder 1)", component: CustomerCaseStudyPlaceholder1, theme: "dark", isNew: true },
+  "customer-case-study-placeholder-2": { id: "customer-case-study-placeholder-2", label: "Customer Case Study (Placeholder 2)", component: CustomerCaseStudyPlaceholder2, theme: "dark", isNew: true },
+  "customer-case-study-placeholder-3": { id: "customer-case-study-placeholder-3", label: "Customer Case Study (Placeholder 3)", component: CustomerCaseStudyPlaceholder3, theme: "dark", isNew: true },
+  "financial-summary-placeholder": { id: "financial-summary-placeholder", label: "Financial Highlights/Summary (Placeholder)", component: FinancialSummaryPlaceholder, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
