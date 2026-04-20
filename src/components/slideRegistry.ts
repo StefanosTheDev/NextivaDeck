@@ -118,6 +118,7 @@ import AIDividerSlide from "./slides/AIDividerSlide";
 import VerticalsDividerSlide from "./slides/VerticalsDividerSlide";
 import UseCasesDividerSlide from "./slides/UseCasesDividerSlide";
 import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
+import CXPortfolioIntelligenceLayerSlide from "./slides/CXPortfolioIntelligenceLayerSlide";
 import InvestorSummarySlide from "./slides/InvestorSummarySlide";
 import SystemOfActionCombinedSlide from "./slides/SystemOfActionCombinedSlide";
 import ClosingCopySlide from "./slides/ClosingCopySlide";
@@ -392,6 +393,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "verticals-divider": { id: "verticals-divider", label: "Verticals", component: VerticalsDividerSlide, theme: "dark" },
   "use-cases-divider": { id: "use-cases-divider", label: "Use Cases", component: UseCasesDividerSlide, theme: "dark" },
   "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture", component: CXPortfolioArchSlide, theme: "dark" },
+  "cx-portfolio-intelligence-layer": {
+    id: "cx-portfolio-intelligence-layer",
+    label: "CX Portfolio — Data + Intelligence + Three Pillars",
+    component: CXPortfolioIntelligenceLayerSlide,
+    theme: "dark",
+    isNew: true,
+  },
   "investor-summary": { id: "investor-summary", label: "Investor Summary", component: InvestorSummarySlide, theme: "dark" },
   "system-of-action-combined": { id: "system-of-action-combined", label: "System of Action (Combined)", component: SystemOfActionCombinedSlide, theme: "dark" },
   "closing-copy": { id: "closing-copy", label: "Closing (3-card)", component: ClosingCopySlide, theme: "dark" },
