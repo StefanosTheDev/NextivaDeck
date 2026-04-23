@@ -87,7 +87,7 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
         <p
           style={{
             fontWeight: 700,
-            fontSize: 13,
+            fontSize: 14,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             color: "#CCC7C3",
@@ -129,11 +129,11 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
         >
           <p
             style={{
-              fontSize: 20,
+              fontSize: 24,
               fontStyle: "italic",
               fontWeight: 600,
               color: "#FFFFFF",
-              margin: "0 0 4px",
+              margin: "0 0 6px",
               letterSpacing: "0.01em",
               textAlign: "center",
             }}
@@ -142,9 +142,9 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
           </p>
           <p
             style={{
-              fontSize: 13,
-              color: "rgba(255,255,255,0.55)",
-              margin: "0 0 14px",
+              fontSize: 15,
+              color: "rgba(255,255,255,0.6)",
+              margin: "0 0 16px",
               lineHeight: 1.4,
               textAlign: "center",
             }}
@@ -158,13 +158,13 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
               <span
                 key={t}
                 style={{
-                  padding: "10px 14px",
+                  padding: "11px 16px",
                   borderRadius: 999,
                   background: "rgba(0,0,0,0.42)",
                   border: "1px solid rgba(255,255,255,0.1)",
-                  fontSize: 12.5,
+                  fontSize: 15,
                   fontWeight: 600,
-                  color: "rgba(255,255,255,0.9)",
+                  color: "rgba(255,255,255,0.92)",
                   textAlign: "center",
                 }}
               >
@@ -188,13 +188,13 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
           >
             <span
               style={{
-                fontSize: 22,
+                fontSize: 28,
                 fontWeight: 800,
                 letterSpacing: "0.02em",
                 color: "#FFFFFF",
                 display: "flex",
                 alignItems: "baseline",
-                gap: 8,
+                gap: 10,
               }}
             >
               <span style={{ color: "rgba(255,255,255,0.55)", fontWeight: 500 }}>+</span>
@@ -202,11 +202,11 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
             </span>
             <span
               style={{
-                padding: "5px 12px",
+                padding: "6px 14px",
                 borderRadius: 6,
                 background: TEAL_BG,
                 color: TEAL,
-                fontSize: 10,
+                fontSize: 12,
                 fontWeight: 800,
                 letterSpacing: "0.1em",
               }}
@@ -254,19 +254,19 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
                 </div>
                 <h2
                   className="font-heading"
-                  style={{ fontSize: 24, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
+                  style={{ fontSize: 28, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.15 }}
                 >
                   {p.name}
                 </h2>
                 <span
                   style={{
                     alignSelf: "flex-start",
-                    marginTop: 6,
-                    padding: "4px 10px",
+                    marginTop: 8,
+                    padding: "5px 12px",
                     borderRadius: 6,
                     background: p.badgeBg,
                     color: p.badgeColor,
-                    fontSize: 9,
+                    fontSize: 11,
                     fontWeight: 800,
                     letterSpacing: "0.08em",
                     lineHeight: 1.25,
@@ -276,10 +276,10 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
                 </span>
                 <p
                   style={{
-                    fontSize: 15,
+                    fontSize: 17,
                     fontWeight: 700,
                     color: "rgba(255,255,255,0.94)",
-                    margin: "12px 0 10px",
+                    margin: "14px 0 12px",
                     lineHeight: 1.3,
                   }}
                 >
@@ -290,11 +290,11 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
                     <li
                       key={b}
                       style={{
-                        fontSize: 13,
-                        color: "rgba(255,255,255,0.68)",
-                        lineHeight: 1.45,
-                        marginBottom: 6,
-                        paddingLeft: 12,
+                        fontSize: 15,
+                        color: "rgba(255,255,255,0.72)",
+                        lineHeight: 1.5,
+                        marginBottom: 8,
+                        paddingLeft: 14,
                         position: "relative",
                       }}
                     >
@@ -302,9 +302,9 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
                         style={{
                           position: "absolute",
                           left: 0,
-                          top: 7,
-                          width: 4,
-                          height: 4,
+                          top: 9,
+                          width: 5,
+                          height: 5,
                           borderRadius: "50%",
                           background: TEAL,
                         }}
@@ -320,7 +320,7 @@ export default function CXPortfolioIntelligenceLayerSlide({ slideNumber = 0 }: {
       </motion.main>
 
       <div style={{ padding: "14px 72px 18px", position: "relative", zIndex: 1, textAlign: "center" }}>
-        <p style={{ fontSize: 15, color: "rgba(255,255,255,0.72)", margin: 0, lineHeight: 1.45 }}>
+        <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", margin: 0, lineHeight: 1.5 }}>
           Our innovation leading with AI are built once and delivered across the entire product portfolio.
         </p>
       </div>

@@ -117,6 +117,7 @@ import MarketingDividerSlide from "./slides/MarketingDividerSlide";
 import AIDividerSlide from "./slides/AIDividerSlide";
 import VerticalsDividerSlide from "./slides/VerticalsDividerSlide";
 import UseCasesDividerSlide from "./slides/UseCasesDividerSlide";
+import SMMoatDividerSlide from "./slides/SMMoatDividerSlide";
 import CXPortfolioArchSlide from "./slides/CXPortfolioArchSlide";
 import CXPortfolioIntelligenceLayerSlide from "./slides/CXPortfolioIntelligenceLayerSlide";
 import InvestorSummarySlide from "./slides/InvestorSummarySlide";
@@ -392,6 +393,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "ai-divider": { id: "ai-divider", label: "AI", component: AIDividerSlide, theme: "dark" },
   "verticals-divider": { id: "verticals-divider", label: "Verticals", component: VerticalsDividerSlide, theme: "dark" },
   "use-cases-divider": { id: "use-cases-divider", label: "Use Cases", component: UseCasesDividerSlide, theme: "dark" },
+  "sm-moat-divider": { id: "sm-moat-divider", label: "S&M Moat", component: SMMoatDividerSlide, theme: "dark", isNew: true },
   "cx-portfolio-arch": { id: "cx-portfolio-arch", label: "CX Portfolio Architecture", component: CXPortfolioArchSlide, theme: "dark" },
   "cx-portfolio-intelligence-layer": {
     id: "cx-portfolio-intelligence-layer",

@@ -224,8 +224,7 @@
     "agentic-opp-yaniv-vh",
     "customer-use-cases-dark-v2",
     "customer-use-cases-v2",
-    "drew-hybrid-gtm-excellence-end",
-    "selecting-targets-matrix",
+    "sm-moat-divider",
     "middle-opportunity-uneasy-middle",
     "middle-market-difficult-profitably",
     "mission-critical-human-trust",
@@ -233,7 +232,9 @@
     "defensible-advantage-uneasy-middle",
     "ai-increases-human-trust",
     "proven-capability-scale-middle",
-    "cx-portfolio-intelligence-layer"
+    "cx-portfolio-intelligence-layer",
+    "selecting-targets-matrix",
+    "drew-hybrid-gtm-excellence-end"
   ],
   "categories": {
     "world-moving-thomas": "from Tomas",
@@ -347,6 +348,7 @@
     "customer-tata-play-041326": "SEKSOM SLIDES 041326"
   },
   "categoryNames": [
+    "CX Portfolio",
     "Drew 041226 Incumbent Trust",
     "Drew Schulz",
     "Drew Schulz 041126 Slides",
@@ -360,7 +362,6 @@
     "Seksom-Branch-040926",
     "TOMAS / SENTHIL PPT SLIDES 041126",
     "Yaniv-VersionH Slides",
-    "CX Portfolio",
     "dividers",
     "from Tomas"
   ],
