@@ -151,7 +151,9 @@
     "products-roadmap-apr26-6",
     "customer-use-cases-xbert-quartet",
     "customer-use-cases-cocoa-walker-shasta",
-    "investment-thesis"
+    "investment-thesis",
+    "healthcare-vertical",
+    "verticals-strategy"
   ],
   "categories": {
     "customer-use-case-sb-foxy": "SB use cases",
@@ -171,13 +173,15 @@
     "cx-portfolio-thomas": "From Tomas",
     "agentic-opp-v2-thomas": "From Tomas",
     "cx-portfolio-arch": "From Yaniv",
-    "cx-portfolio-arch-yaniv-v1": "From Yaniv"
+    "cx-portfolio-arch-yaniv-v1": "From Yaniv",
+    "verticals-strategy": "Verticals Strategy"
   },
   "categoryNames": [
     "From Tomas",
     "From Yaniv",
     "SB use cases",
-    "dividers"
+    "dividers",
+    "Verticals Strategy"
   ],
   "hiddenSlides": [
     "cx-market-sizing",

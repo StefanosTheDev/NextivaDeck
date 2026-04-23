@@ -40,6 +40,8 @@ import TargetModelSlide from "./slides/TargetModelSlide";
 import OperatingLeverageSlide from "./slides/OperatingLeverageSlide";
 import OperatingLeverageDatedSlide from "./slides/OperatingLeverageDatedSlide";
 import CustomerBaseSlide from "./slides/CustomerBaseSlide";
+import HealthcareVerticalSlide from "./slides/HealthcareVerticalSlide";
+import VerticalsStrategySlide from "./slides/VerticalsStrategySlide";
 import RevenueVisibilitySlide from "./slides/RevenueVisibilitySlide";
 import CashFlowTrendsSlide from "./slides/CashFlowTrendsSlide";
 import AgenticOpportunity2Slide from "./slides/AgenticOpportunity2Slide";
@@ -456,6 +458,20 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     theme: "dark",
     isNew: true,
   },
+  "healthcare-vertical": {
+    id: "healthcare-vertical",
+    label: "Healthcare Vertical",
+    component: HealthcareVerticalSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "verticals-strategy": {
+    id: "verticals-strategy",
+    label: "Verticals Strategy",
+    component: VerticalsStrategySlide,
+    theme: "dark",
+    isNew: true,
+  },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -523,6 +539,8 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "executive-summary-stack",
   "executive-summary-2-stack",
   "executive-summary-cards-copy",
+  "healthcare-vertical",
+  "verticals-strategy",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
