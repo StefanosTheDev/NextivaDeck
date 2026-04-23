@@ -273,7 +273,7 @@ export default function MiddleOpportunityUneasyMiddleSlide({ slideNumber = 0 }: 
             marginRight: "auto",
           }}
         >
-          The largest underserved segment in software sits between self-serve and enterprise sales
+          The largest underserved segment in software sits between self-serve and sales motion
         </h1>
 
         <motion.div
