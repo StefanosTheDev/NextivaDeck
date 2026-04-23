@@ -9,22 +9,22 @@ const BG =
 
 const proofMetrics = [
   {
-    value: "100K+",
-    unit: "customers / month",
-    label: "Acquisition scale",
-    note: "Across prior operator businesses",
-  },
-  {
-    value: "10M+",
-    unit: "customers served",
-    label: "Cumulative reach",
-    note: "Communications · hosting · security",
-  },
-  {
     value: "Digital + human",
     unit: "motion",
     label: "Hybrid playbook",
     note: "Demand gen blended with conversion support",
+  },
+  {
+    value: "Partner",
+    unit: "ecosystem",
+    label: "Channel leverage",
+    note: "Sales and integration partners",
+  },
+  {
+    value: "92K+ / 1M",
+    unit: "customers / users served",
+    label: "Cumulative reach",
+    note: "Land and expand motion",
   },
 ];
 

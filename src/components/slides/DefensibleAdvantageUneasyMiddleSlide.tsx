@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Plane } from "lucide-react";
+import { CheckCircle2, TrendingUp } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
 const BG =
@@ -226,52 +226,111 @@ export default function DefensibleAdvantageUneasyMiddleSlide({ slideNumber = 0 }
           transition={{ duration: 0.5, delay: 0.16 }}
           style={{
             borderRadius: 18,
-            padding: "28px 30px",
+            padding: "24px 26px",
             background:
               "linear-gradient(195deg, rgba(0, 112, 243, 0.14) 0%, rgba(255,255,255,0.03) 50%, rgba(0,0,0,0.1) 100%)",
             border: "1px solid rgba(126,179,232,0.3)",
             boxShadow: "0 24px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06)",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
           }}
         >
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 12 }}>
+            <div
+              style={{
+                width: 52,
+                height: 52,
+                borderRadius: 14,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "rgba(0, 112, 243, 0.18)",
+                border: "1px solid rgba(0, 112, 243, 0.4)",
+                flexShrink: 0,
+              }}
+            >
+              <TrendingUp size={26} color="#7EB3E8" strokeWidth={1.75} />
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "#7EB3E8",
+                }}
+              >
+                The proof point
+              </p>
+              <p
+                className="font-heading"
+                style={{ fontSize: 22, fontWeight: 600, color: "#FFFFFF", margin: "4px 0 0", lineHeight: 1.22 }}
+              >
+                HubSpot: the hybrid mid-market playbook, already at scale.
+              </p>
+            </div>
+          </div>
+
+          <p style={{ margin: "4px 0 14px", fontSize: 14, color: "rgba(255,255,255,0.72)", lineHeight: 1.5 }}>
+            Freemium → inside-sales assist → multi-product attach — the same motion we are compounding, validated
+            by a public mid-market SaaS.
+          </p>
+
           <div
             style={{
-              width: 58,
-              height: 58,
-              borderRadius: 16,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "rgba(0, 112, 243, 0.18)",
-              border: "1px solid rgba(0, 112, 243, 0.4)",
-              marginBottom: 18,
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 10,
+              marginBottom: 14,
             }}
           >
-            <Plane size={30} color="#7EB3E8" strokeWidth={1.75} />
+            {[
+              { value: "~$11.7K", label: "ARPA", note: "Q4 FY25" },
+              { value: "105%", label: "NRR", note: "Q4 FY25" },
+              { value: "62%", label: "Multi-hub attach", note: "New Pro+ lands" },
+            ].map((m) => (
+              <div
+                key={m.label}
+                style={{
+                  borderRadius: 10,
+                  padding: "10px 10px",
+                  background: "rgba(0, 112, 243, 0.12)",
+                  border: "1px solid rgba(126, 179, 232, 0.28)",
+                  textAlign: "center",
+                }}
+              >
+                <p
+                  className="font-heading"
+                  style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.1 }}
+                >
+                  {m.value}
+                </p>
+                <p
+                  style={{
+                    margin: "4px 0 2px",
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: "#7EB3E8",
+                  }}
+                >
+                  {m.label}
+                </p>
+                <p style={{ margin: 0, fontSize: 10.5, color: "rgba(255,255,255,0.55)" }}>{m.note}</p>
+              </div>
+            ))}
           </div>
-          <p
-            style={{
-              margin: 0,
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "#7EB3E8",
-            }}
-          >
-            The analogy
-          </p>
-          <p
-            className="font-heading"
-            style={{ fontSize: 30, fontWeight: 600, color: "#FFFFFF", margin: "8px 0 16px", lineHeight: 1.22 }}
-          >
-            The Southwest Airlines model for mission-critical software + AI.
-          </p>
-          <p style={{ margin: 0, fontSize: 17, color: "rgba(255,255,255,0.78)", lineHeight: 1.55 }}>
-            Operating discipline, scale demand generation, and a low-cost structure — engineered into a single
-            operating system that competitors can&apos;t easily replicate.
+
+          <p style={{ margin: 0, fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>
+            $3.1B revenue growing ~19% with ~23% non-GAAP operating margin — mid-market is profitable when the
+            motion is productized. Gross dollar retention runs in the high-80s; expansion comes from seat attach
+            and multi-hub cross-sell.
+            <span style={{ display: "block", marginTop: 6, fontSize: 10.5, color: "rgba(255,255,255,0.38)" }}>
+              Source: HubSpot FY25 results — ARPA, NRR, and customer metrics (Q4 2025).
+            </span>
           </p>
         </motion.section>
       </main>
