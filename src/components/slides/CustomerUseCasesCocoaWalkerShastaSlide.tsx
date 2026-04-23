@@ -99,17 +99,18 @@ export default function CustomerUseCasesCocoaWalkerShastaSlide({ slideNumber = 0
         transition={{ duration: 0.6, delay: 0.2 }}
         style={{
           flex: 1,
-          padding: "20px 80px 0",
+          padding: "28px 80px 16px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
-          gridTemplateRows: "1fr",
+          gridTemplateRows: "auto",
           gap: 16,
           alignContent: "center",
+          alignItems: "start",
           overflow: "hidden",
         }}
       >
         {customers.map((c) => (
-          <CustomerUseCaseCaseCard key={c.name} data={c} />
+          <CustomerUseCaseCaseCard key={c.name} data={c} bodyLayout="hug" />
         ))}
       </motion.main>
 

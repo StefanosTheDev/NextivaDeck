@@ -20,10 +20,23 @@ export type CustomerCaseCardData = {
   photoThumbBackground?: string;
 };
 
-export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCaseCardData }) {
+type CustomerUseCaseCaseCardProps = {
+  data: CustomerCaseCardData;
+  /**
+   * `fill` (default): middle column grows and metrics pin to the bottom of a tall card.
+   * `hug`: problem/solution height follows copy; small gap above metrics (three-across slide).
+   */
+  bodyLayout?: "fill" | "hug";
+};
+
+export default function CustomerUseCaseCaseCard({
+  data: c,
+  bodyLayout = "fill",
+}: CustomerUseCaseCaseCardProps) {
   const Icon = c.icon;
   const photoFit = c.photoObjectFit ?? "cover";
   const thumbBg = c.photoThumbBackground;
+  const hug = bodyLayout === "hug";
   return (
     <article
       style={{
@@ -144,8 +157,9 @@ export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCas
         style={{
           display: "flex",
           gap: 14,
-          flex: 1,
-          overflow: "hidden",
+          ...(hug
+            ? { flex: "none", overflow: "visible" }
+            : { flex: 1, overflow: "hidden" }),
         }}
       >
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -169,7 +183,8 @@ export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCas
                   fontSize: 14,
                   color: "rgba(255,255,255,0.55)",
                   lineHeight: 1.4,
-                  marginBottom: 5,
+                  marginBottom:
+                    hug && i === c.problems.length - 1 ? 0 : 5,
                   paddingLeft: 16,
                   position: "relative",
                 }}
@@ -220,7 +235,8 @@ export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCas
                   fontSize: 14,
                   color: "rgba(255,255,255,0.55)",
                   lineHeight: 1.4,
-                  marginBottom: 5,
+                  marginBottom:
+                    hug && i === c.solutions.length - 1 ? 0 : 5,
                   paddingLeft: 16,
                   position: "relative",
                 }}
@@ -245,7 +261,7 @@ export default function CustomerUseCaseCaseCard({ data: c }: { data: CustomerCas
       <div
         style={{
           borderTop: "1px solid rgba(255,255,255,0.08)",
-          marginTop: "auto",
+          marginTop: hug ? 8 : "auto",
           paddingTop: 3,
           flexShrink: 0,
           ...(c.metrics.length === 3
