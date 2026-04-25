@@ -154,7 +154,8 @@
     "investment-thesis",
     "healthcare-vertical",
     "verticals-strategy",
-    "customer-use-cases-new-2026-04"
+    "customer-use-cases-new-2026-04",
+    "customer-use-cases-followup-2026-04"
   ],
   "categories": {
     "customer-use-case-sb-foxy": "SB use cases",
@@ -176,7 +177,8 @@
     "cx-portfolio-arch": "From Yaniv",
     "cx-portfolio-arch-yaniv-v1": "From Yaniv",
     "verticals-strategy": "Verticals Strategy",
-    "customer-use-cases-new-2026-04": "customer use cases"
+    "customer-use-cases-new-2026-04": "customer use cases",
+    "customer-use-cases-followup-2026-04": "customer use cases"
   },
   "categoryNames": [
     "From Tomas",
