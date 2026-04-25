@@ -97,6 +97,7 @@ import CustomerUseCasesSlide from "./slides/CustomerUseCasesSlide";
 import CustomerUseCasesXbertQuartetSlide from "./slides/CustomerUseCasesXbertQuartetSlide";
 import CustomerUseCasesNewSlide from "./slides/CustomerUseCasesNewSlide";
 import CustomerUseCasesNewFollowupSlide from "./slides/CustomerUseCasesNewFollowupSlide";
+import CustomerUseCasesNextPlaceholderSlide from "./slides/CustomerUseCasesNextPlaceholderSlide";
 import {
   EnterpriseUseCasesSeksomSlide04,
   EnterpriseUseCasesSeksomSlide07,
@@ -372,6 +373,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     theme: "dark",
     isNew: true,
   },
+  "customer-use-cases-next-2026-05": {
+    id: "customer-use-cases-next-2026-05",
+    label: "Customer Use Cases — Vertical market opportunities (14 verticals)",
+    component: CustomerUseCasesNextPlaceholderSlide,
+    theme: "dark",
+    isNew: true,
+  },
   "enterprise-use-cases-seksom-04": {
     id: "enterprise-use-cases-seksom-04",
     label: "Enterprise Use Cases — Tata Play (single-slide layout)",
@@ -559,6 +567,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "verticals-strategy",
   "customer-use-cases-new-2026-04",
   "customer-use-cases-followup-2026-04",
+  "customer-use-cases-next-2026-05",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {
