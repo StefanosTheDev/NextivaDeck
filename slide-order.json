@@ -153,7 +153,8 @@
     "customer-use-cases-cocoa-walker-shasta",
     "investment-thesis",
     "healthcare-vertical",
-    "verticals-strategy"
+    "verticals-strategy",
+    "customer-use-cases-new-2026-04"
   ],
   "categories": {
     "customer-use-case-sb-foxy": "SB use cases",
@@ -174,14 +175,16 @@
     "agentic-opp-v2-thomas": "From Tomas",
     "cx-portfolio-arch": "From Yaniv",
     "cx-portfolio-arch-yaniv-v1": "From Yaniv",
-    "verticals-strategy": "Verticals Strategy"
+    "verticals-strategy": "Verticals Strategy",
+    "customer-use-cases-new-2026-04": "customer use cases"
   },
   "categoryNames": [
     "From Tomas",
     "From Yaniv",
     "SB use cases",
-    "dividers",
-    "Verticals Strategy"
+    "Verticals Strategy",
+    "customer use cases",
+    "dividers"
   ],
   "hiddenSlides": [
     "cx-market-sizing",
@@ -318,8 +321,9 @@
     "products-roadmap-apr26-5",
     "products-roadmap-apr26-4",
     "products-roadmap-apr26-3",
-    "customer-suzuki",
-    "customer-tata-play",
-    "customer-aeg-vision"
+    "healthcare-vertical",
+    "verticals-strategy",
+    "customer-use-cases-xbert-quartet",
+    "customer-use-cases-cocoa-walker-shasta"
   ]
 }
