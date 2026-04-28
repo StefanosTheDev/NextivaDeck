@@ -235,6 +235,7 @@ import MiddleOpportunityUneasyMiddleSlide from "./slides/MiddleOpportunityUneasy
 import MissionCriticalHumanTrustSlide from "./slides/MissionCriticalHumanTrustSlide";
 import NextivaBuiltUneasyMiddleSlide from "./slides/NextivaBuiltUneasyMiddleSlide";
 import ProvenCapabilityScaleMiddleSlide from "./slides/ProvenCapabilityScaleMiddleSlide";
+import CXFirstSystemOfActionVisualSlide from "./slides/CXFirstSystemOfActionVisualSlide";
 import {
   CustomerCaseStudyPlaceholder1,
   CustomerCaseStudyPlaceholder2,
@@ -608,6 +609,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "customer-case-study-placeholder-2": { id: "customer-case-study-placeholder-2", label: "Customer Case Study (Placeholder 2)", component: CustomerCaseStudyPlaceholder2, theme: "dark", isNew: true },
   "customer-case-study-placeholder-3": { id: "customer-case-study-placeholder-3", label: "Customer Case Study (Placeholder 3)", component: CustomerCaseStudyPlaceholder3, theme: "dark", isNew: true },
   "financial-summary-placeholder": { id: "financial-summary-placeholder", label: "Financial Highlights/Summary (Placeholder)", component: FinancialSummaryPlaceholder, theme: "dark", isNew: true },
+  "cx-first-system-of-action-visual": {
+    id: "cx-first-system-of-action-visual",
+    label: "CX First System of Action (Visual)",
+    component: CXFirstSystemOfActionVisualSlide,
+    theme: "dark",
+    isNew: true,
+  },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
@@ -742,6 +750,7 @@ export const DEFAULT_SLIDE_ORDER: string[] = [
   "customer-use-case-sb-walker-river-resort",
   "customer-tata-play-041326",
   "agentic-opp-yaniv-vh-end",
+  "cx-first-system-of-action-visual",
 ];
 
 export function resolveSlides(order: string[]): SlideDef[] {

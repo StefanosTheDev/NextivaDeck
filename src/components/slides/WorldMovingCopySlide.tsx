@@ -32,7 +32,7 @@ const eras = [
   },
   {
     icon: Bot,
-    era: "TOMORROW",
+    era: "RIGHT NOW",
     title: "Agentic",
     subtitle: "Autonomous outcomes",
     points: [
