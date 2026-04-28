@@ -177,6 +177,7 @@ export default function MiddleMarketDifficultProfitablySlide({ slideNumber = 0 }
           padding: "28px 80px 36px",
           minHeight: 0,
           alignItems: "stretch",
+          justifyContent: "center",
           position: "relative",
           zIndex: 1,
         }}
@@ -186,7 +187,8 @@ export default function MiddleMarketDifficultProfitablySlide({ slideNumber = 0 }
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           style={{
-            flex: 1,
+            flex: "1 1 0",
+            maxWidth: 640,
             borderRadius: 18,
             padding: "26px 28px 28px",
             background: "linear-gradient(165deg, rgba(245, 158, 11, 0.07) 0%, rgba(255,255,255,0.03) 42%, rgba(0,0,0,0.12) 100%)",
@@ -271,7 +273,8 @@ export default function MiddleMarketDifficultProfitablySlide({ slideNumber = 0 }
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.14 }}
           style={{
-            flex: 1,
+            flex: "1 1 0",
+            maxWidth: 640,
             borderRadius: 18,
             padding: "26px 28px 28px",
             background: "linear-gradient(195deg, rgba(0, 112, 243, 0.1) 0%, rgba(255,255,255,0.03) 45%, rgba(0,0,0,0.1) 100%)",

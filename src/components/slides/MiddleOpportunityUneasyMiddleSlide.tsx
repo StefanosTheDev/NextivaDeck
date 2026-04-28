@@ -200,14 +200,14 @@ function BulletBlock({ items }: { items: string[] }) {
           key={t}
           style={{
             position: "relative",
-            paddingLeft: 18,
-            marginBottom: 12,
-            fontSize: 15,
+            paddingLeft: 22,
+            marginBottom: 14,
+            fontSize: 17,
             lineHeight: 1.5,
-            color: "rgba(255,255,255,0.78)",
+            color: "rgba(255,255,255,0.82)",
           }}
         >
-          <span style={{ position: "absolute", left: 0, top: 2, color: "#7EB3E8", fontWeight: 700 }}>&rsaquo;</span>
+          <span style={{ position: "absolute", left: 0, top: 2, color: "#7EB3E8", fontWeight: 700, fontSize: 18 }}>&rsaquo;</span>
           {t}
         </li>
       ))}
