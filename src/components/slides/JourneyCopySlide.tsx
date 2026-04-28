@@ -18,7 +18,7 @@ const chapters = [
   },
   {
     number: "02",
-    dates: "2018–2023",
+    dates: "2021-2023",
     title: "Unified customer experience",
     milestone: MILESTONES.ch2Revenue,
     bullets: [
