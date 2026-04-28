@@ -6,7 +6,7 @@ import { MILESTONES } from "../financialData";
 const chapters = [
   {
     number: "01",
-    dates: "2008–2018",
+    dates: "2008-2021",
     title: "Cloud communications",
     milestone: MILESTONES.ch1Revenue,
     bullets: [
