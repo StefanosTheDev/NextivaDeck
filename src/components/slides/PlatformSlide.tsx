@@ -42,7 +42,7 @@ export default function PlatformSlide({ slideNumber = 10 }: { slideNumber?: numb
           Nextiva&apos;s Agentic CX Platform.
         </h1>
         <p style={{ fontSize: 22, color: "rgba(255,255,255,0.5)", margin: "16px auto 0", lineHeight: 1.55, maxWidth: 740 }}>
-          Communications, data, and AI — unified into a single architecture that turns every conversation into an outcome.
+          AI advantage built on proprietary infrastructure and real-time data.
         </p>
       </motion.header>
 
