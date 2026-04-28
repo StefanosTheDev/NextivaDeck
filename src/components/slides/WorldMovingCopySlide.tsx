@@ -6,7 +6,7 @@ import { ArrowRight, Phone, MessageCircle, Bot } from "lucide-react";
 const eras = [
   {
     icon: Phone,
-    era: "YESTERDAY",
+    era: "SOME TIME AGO",
     title: "Transactional",
     subtitle: "One-way notifications",
     points: [
@@ -19,7 +19,7 @@ const eras = [
   },
   {
     icon: MessageCircle,
-    era: "TODAY",
+    era: "YESTERDAY",
     title: "Conversational",
     subtitle: "Two-way engagement",
     points: [
@@ -32,7 +32,7 @@ const eras = [
   },
   {
     icon: Bot,
-    era: "TOMORROW",
+    era: "TODAY",
     title: "Agentic",
     subtitle: "Autonomous outcomes",
     points: [
