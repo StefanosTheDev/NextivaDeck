@@ -6,7 +6,7 @@ const quotes = [
   {
     stat: "$41.4B",
     text: "Conversational AI market by 2030",
-    subtext: "23.7% CAGR",
+    subtext: "",
   },
   {
     stat: "44.5%",
@@ -60,9 +60,11 @@ export default function MarketSlide({ slideNumber = 13 }: { slideNumber?: number
             <p style={{ fontSize: 20, color: "rgba(255,255,255,0.7)", margin: 0, lineHeight: 1.45 }}>
               {quotes[0].text}
             </p>
-            <p style={{ fontSize: 16, color: "#5BA0E0", margin: "8px 0 0", fontWeight: 700, letterSpacing: "0.03em" }}>
-              {quotes[0].subtext}
-            </p>
+            {quotes[0].subtext && (
+              <p style={{ fontSize: 16, color: "#5BA0E0", margin: "8px 0 0", fontWeight: 700, letterSpacing: "0.03em" }}>
+                {quotes[0].subtext}
+              </p>
+            )}
           </div>
         </motion.div>
 
