@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
+import NextivaSiteHeaderLogo from "@/components/NextivaSiteHeaderLogo";
 
 export default function PrintRawPage() {
   const [slides, setSlides] = useState<SlideDef[]>([]);
@@ -61,6 +62,18 @@ export default function PrintRawPage() {
             }}
           >
             <Slide slideNumber={startNum + i} slideId={s.id} />
+            <div
+              style={{
+                position: "absolute",
+                top: 20,
+                left: 24,
+                zIndex: 55,
+                pointerEvents: "none",
+              }}
+              aria-hidden
+            >
+              <NextivaSiteHeaderLogo variant={s.theme === "dark" ? "light" : "dark"} />
+            </div>
           </div>
         );
       })}
