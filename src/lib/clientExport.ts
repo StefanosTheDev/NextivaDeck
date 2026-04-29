@@ -14,6 +14,9 @@ const BOSS_SCALE = 2;          // 2x Retina devicePixelRatio
 const BOSS_OUTPUT_WIDTH = 3434;  // Final pixel width
 const BOSS_OUTPUT_HEIGHT = 1844; // Final pixel height
 
+/** JPEG quality for hi-res single-PDF export: strong size reduction, still visually clean on slides */
+const HI_RES_PDF_PAGE_JPEG_QUALITY = 0.93;
+
 // Standard export dimensions
 const STANDARD_CSS_WIDTH = 1920;
 const STANDARD_CSS_HEIGHT = 1080;
@@ -438,17 +441,22 @@ async function captureSingleSlidePng(
   return dataUrl;
 }
 
+type SlideRasterEncoding =
+  | { type: "image/png" }
+  | { type: "image/jpeg"; quality: number };
+
 /**
- * Capture a SINGLE slide as PNG and return ArrayBuffer (memory efficient).
- * Uses Blob instead of data URL to avoid large string allocations.
+ * Capture one slide to a raster blob (PNG or JPEG) for pdf-lib embedding.
+ * JPEG keeps the same snapdom render path but yields much smaller PDFs than raw PNG pages.
  */
-async function captureSlideAsPngArrayBuffer(
+async function captureSlideAsRasterArrayBuffer(
   iframe: HTMLIFrameElement,
   slideIndex: number,
   cssWidth: number,
   cssHeight: number,
   scale: number,
-  animationDelay: number
+  animationDelay: number,
+  encoding: SlideRasterEncoding
 ): Promise<ArrayBuffer> {
   const { snapdom } = await import("@zumer/snapdom");
   const doc = iframe.contentDocument;
@@ -456,8 +464,7 @@ async function captureSlideAsPngArrayBuffer(
 
   const slideEls = doc.querySelectorAll<HTMLElement>(".print-slide");
   const el = slideEls[slideIndex];
-  
-  // Show only this slide
+
   for (let j = 0; j < slideEls.length; j++) {
     const s = slideEls[j] as HTMLElement;
     if (j === slideIndex) {
@@ -468,11 +475,8 @@ async function captureSlideAsPngArrayBuffer(
       s.style.display = "none";
     }
   }
-  
-  // Wait for layout
+
   await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
-  
-  // Wait for animations to complete
   await new Promise((r) => setTimeout(r, animationDelay));
 
   const result = await snapdom(el, {
@@ -482,33 +486,29 @@ async function captureSlideAsPngArrayBuffer(
     embedFonts: true,
   });
   const canvas = await result.toCanvas();
-  
-  // Use Blob instead of data URL (much more memory efficient)
+
+  const mime = encoding.type;
   const blob = await new Promise<Blob>((resolve, reject) => {
     canvas.toBlob(
       (b) => {
         if (b) resolve(b);
-        else reject(new Error("Failed to create PNG blob"));
+        else reject(new Error(`Failed to create ${mime} blob`));
       },
-      "image/png"
+      mime,
+      encoding.type === "image/jpeg" ? encoding.quality : undefined
     );
   });
-  
-  // Clear canvas to free memory immediately
+
   canvas.width = 0;
   canvas.height = 0;
-  
-  // Return ArrayBuffer for pdf-lib
+
   return blob.arrayBuffer();
 }
 
 /**
- * Generate a lossless PNG-based PDF using boss's exact screenshot specs.
- * Client-side implementation using pdf-lib with ArrayBuffer (memory efficient).
- * 
- * - Each page: 3434 × 1844 pixels (PNG format, lossless)
- * - Processes ONE slide at a time to avoid memory issues
- * - Uses the same /print/raw route as Hi-Res PDF for correct chart rendering
+ * Hi-res single PDF (3434 × 1844 per page) from the same /print/raw + snapdom pipeline as before.
+ * Pages are stored as high-quality JPEG inside the PDF so the download is email-friendly without
+ * running Ghostscript or another tool (browser/serverless cannot reliably run gs on huge buffers).
  */
 export async function generatePngPdfClient(
   slideIds: string[],
@@ -516,45 +516,44 @@ export async function generatePngPdfClient(
 ) {
   onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
 
-  // Import pdf-lib for PNG embedding
   const { PDFDocument } = await import("pdf-lib");
   const pdfDoc = await PDFDocument.create();
 
-  // Use boss's exact dimensions
   const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT);
-  
+
   try {
     await waitForIframeReady(iframe);
-    
+
     const doc = iframe.contentDocument;
     if (!doc) throw new Error("Cannot access iframe document");
     const slideEls = doc.querySelectorAll<HTMLElement>(".print-slide");
     const total = slideEls.length;
 
-    // Process ONE slide at a time to avoid memory buildup
+    const jpegEncoding: SlideRasterEncoding = {
+      type: "image/jpeg",
+      quality: HI_RES_PDF_PAGE_JPEG_QUALITY,
+    };
+
     for (let i = 0; i < total; i++) {
       const el = slideEls[i];
       const label = el.getAttribute("data-slide-label") || `Slide ${i + 1}`;
       onProgress?.({ phase: "rendering", current: i + 1, total, slideLabel: label });
 
-      // Capture this single slide as PNG ArrayBuffer
-      const pngBuffer = await captureSlideAsPngArrayBuffer(
+      const jpgBuffer = await captureSlideAsRasterArrayBuffer(
         iframe,
         i,
         BOSS_CSS_WIDTH,
         BOSS_CSS_HEIGHT,
         BOSS_SCALE,
-        5000 // 5 seconds for animations
+        5000,
+        jpegEncoding
       );
-      
-      // Embed PNG directly into PDF (no base64 conversion)
-      const pngImage = await pdfDoc.embedPng(pngBuffer);
-      
-      // Add page with exact pixel dimensions
+
+      const jpgImage = await pdfDoc.embedJpg(jpgBuffer);
+
       const page = pdfDoc.addPage([BOSS_OUTPUT_WIDTH, BOSS_OUTPUT_HEIGHT]);
-      
-      // Draw PNG filling the entire page
-      page.drawImage(pngImage, {
+
+      page.drawImage(jpgImage, {
         x: 0,
         y: 0,
         width: BOSS_OUTPUT_WIDTH,
@@ -562,18 +561,21 @@ export async function generatePngPdfClient(
       });
     }
 
-    onProgress?.({ phase: "assembling", current: total, total, slideLabel: "Saving PDF..." });
-
-    // Generate PDF bytes with optimizations for faster rendering
-    const pdfBytes = await pdfDoc.save({
-      useObjectStreams: true,  // Better compression, faster loading
+    onProgress?.({
+      phase: "assembling",
+      current: total,
+      total,
+      slideLabel: "Saving optimized PDF…",
     });
-    
-    // Create blob and download (cast to ArrayBuffer for TypeScript compatibility)
+
+    const pdfBytes = await pdfDoc.save({
+      useObjectStreams: true,
+    });
+
     const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
     const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-    triggerDownload(blob, `Nextiva-Deck-PNG-Lossless_${timestamp}.pdf`);
-    
+    triggerDownload(blob, `Nextiva-Deck-HiRes-Sharing_${timestamp}.pdf`);
+
     onProgress?.({ phase: "done", current: total, total });
   } finally {
     iframe.remove();

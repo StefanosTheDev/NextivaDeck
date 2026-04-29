@@ -268,7 +268,7 @@ export default function CatalogPage() {
     );
   }, []);
 
-  const [exportFormat, setExportFormat] = useState<"pdf" | "pptx" | "png" | "pdf-hires" | "png-zip" | null>(null);
+  const [exportFormat, setExportFormat] = useState<"pdf" | "pptx" | null>(null);
 
   const gridSensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -422,20 +422,12 @@ export default function CatalogPage() {
             Generate PPTX
           </button>
           <button
-            onClick={() => setExportFormat("png")}
+            onClick={() => setExportFormat("pdf")}
             className="catalog-btn-outline"
-            title="Hi-Res PDF with JPEG images (98% quality, fast rendering)"
+            title="Hi-res PDF (3434×1844 per page), sharing-optimized — one download, no extra tools"
           >
             <Download size={15} style={{ flexShrink: 0 }} />
-            Generate PDF (JPEG)
-          </button>
-          <button
-            onClick={() => setExportFormat("png-zip")}
-            className="catalog-btn-outline"
-            title="Hi-Res PDF with lossless PNG images (pixel-perfect)"
-          >
-            <Download size={15} style={{ flexShrink: 0 }} />
-            Generate PDF (PNG)
+            Export PDF
           </button>
           {hasChanges && (
             <button onClick={() => { if (window.confirm("Undo all unsaved changes? This will revert slide order and visibility back to the last saved state.")) resetAll(); }} className="catalog-btn-outline">

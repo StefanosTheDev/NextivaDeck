@@ -1,10 +1,36 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
-import { X, Check, Download, FileDown, Loader2, CheckSquare, Square, StopCircle } from "lucide-react";
+import { useState, useCallback, useRef, useMemo } from "react";
+import { X, Check, Download, FileDown, Loader2, CheckSquare, Square, StopCircle, Layers, BookMarked } from "lucide-react";
 import type { SlideDef } from "@/components/slideRegistry";
 
-type ExportFormat = "pdf" | "pptx" | "png" | "pdf-hires" | "png-zip";
+type ExportFormat = "pdf" | "pptx";
+
+/**
+ * Published order: main deck runs through Thank you (`closing`), appendix is everything after.
+ * Matches current deck (e.g. slides 1–38 main, 39+ appendix). If `closing` is hidden, falls back
+ * to splitting at `appendix-divider`.
+ */
+function mainDeckAndAppendixSlideIds(publishedIds: string[]): {
+  mainIds: string[];
+  appendixIds: string[];
+} {
+  const closingIdx = publishedIds.indexOf("closing");
+  if (closingIdx >= 0) {
+    return {
+      mainIds: publishedIds.slice(0, closingIdx + 1),
+      appendixIds: publishedIds.slice(closingIdx + 1),
+    };
+  }
+  const appendixIdx = publishedIds.indexOf("appendix-divider");
+  if (appendixIdx >= 0) {
+    return {
+      mainIds: publishedIds.slice(0, appendixIdx),
+      appendixIds: publishedIds.slice(appendixIdx),
+    };
+  }
+  return { mainIds: [...publishedIds], appendixIds: [] };
+}
 
 interface Props {
   format: ExportFormat;
@@ -54,6 +80,20 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
     setSelected(new Set());
   }, []);
 
+  const publishedIds = useMemo(() => publishedSlides.map((s) => s.id), [publishedSlides]);
+  const { mainIds, appendixIds } = useMemo(
+    () => mainDeckAndAppendixSlideIds(publishedIds),
+    [publishedIds]
+  );
+
+  const selectMainDeck = useCallback(() => {
+    setSelected(new Set(mainIds));
+  }, [mainIds]);
+
+  const selectAppendix = useCallback(() => {
+    setSelected(new Set(appendixIds));
+  }, [appendixIds]);
+
   const selectedSlides = publishedSlides.filter((s) => selected.has(s.id));
 
   const handleGenerate = useCallback(async () => {
@@ -87,60 +127,17 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
         }
       };
 
-      // PNG-based Hi-Res PDF - client-side with pdf-lib (true PNG, lossless, Tomas's exact specs)
-      // Uses same iframe/snapdom approach as Hi-Res JPEG but with PNG format
-      if (format === "png-zip") {
+      if (format === "pdf") {
         const { generatePngPdfClient } = await import("@/lib/clientExport");
         await generatePngPdfClient(slideIds, createProgressHandler());
-        if (cancelRef.current) return; // Don't set done if cancelled
+        if (cancelRef.current) return;
         setState({ status: "done" });
         return;
       }
 
-      // PNG and PDF-HiRes use client-side generation (boss's exact specs, JPEG internally - faster)
-      if (format === "png" || format === "pdf-hires") {
-        const { generatePngZipClient, generatePdfBossSpecClient } = await import("@/lib/clientExport");
-        if (format === "png") {
-          await generatePngZipClient(slideIds, createProgressHandler());
-        } else {
-          await generatePdfBossSpecClient(slideIds, createProgressHandler());
-        }
-        if (cancelRef.current) return; // Don't set done if cancelled
-        setState({ status: "done" });
-        return;
-      }
-
-      // PPTX uses client-side hi-res generation (same quality as PNG PDF)
-      if (format === "pptx") {
-        const { generatePptxHiResClient } = await import("@/lib/clientExport");
-        await generatePptxHiResClient(slideIds, createProgressHandler());
-        if (cancelRef.current) return; // Don't set done if cancelled
-        setState({ status: "done" });
-        return;
-      }
-
-      // Standard PDF uses server-side generation
-      const endpoint = "/api/generate-pdf";
-      const params = new URLSearchParams({ slides: slideIds.join(",") });
-      const response = await fetch(`${endpoint}?${params}`);
-
-      if (!response.ok) {
-        const err = await response.json().catch(() => ({ error: "Generation failed" }));
-        throw new Error(err.details || err.error || "Generation failed");
-      }
-
-      const blob = await response.blob();
-      const filename = "Nextiva-Investor-Deck-2026.pdf";
-
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-
+      const { generatePptxHiResClient } = await import("@/lib/clientExport");
+      await generatePptxHiResClient(slideIds, createProgressHandler());
+      if (cancelRef.current) return;
       setState({ status: "done" });
     } catch (err) {
       // Don't show error if user cancelled
@@ -187,10 +184,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
         }}>
           <div>
             <h2 style={{ fontSize: 18, fontWeight: 600, color: "#fff", margin: 0 }}>
-              {format === "pptx" ? "Generate PowerPoint (Hi-Res)" :
-               format === "png-zip" ? "Generate PDF (PNG)" :
-               format === "png" ? "Generate PDF (JPEG)" :
-               "Generate PDF"}
+              {format === "pptx" ? "Generate PowerPoint (Hi-Res)" : "Export PDF"}
             </h2>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: "4px 0 0" }}>
               {state.status === "picking"
@@ -214,8 +208,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
           )}
         </div>
 
-        {/* Note for PDF formats */}
-        {(format === "png" || format === "png-zip") && state.status === "picking" && (
+        {format === "pdf" && state.status === "picking" && (
           <div style={{
             padding: "12px 24px",
             background: "rgba(40,96,178,0.08)",
@@ -227,10 +220,86 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
               margin: 0,
               lineHeight: 1.5,
             }}>
-              <span style={{ color: "#5b9cf5", fontWeight: 600 }}>Note:</span> Both PNG and JPEG options produce excellent results at 3434×1844 resolution. 
-              PNG is lossless (pixel-perfect), JPEG is 98% quality (faster PDF rendering). 
-              Both have been battle-tested. — Stefanos
+              <span style={{ color: "#5b9cf5", fontWeight: 600 }}>Note:</span> One hi-res PDF (3434×1844 per page). Each page is stored as a high-quality JPEG inside the PDF so the download is easy to email without a separate compression step.
             </p>
+          </div>
+        )}
+
+        {format === "pdf" && (state.status === "picking" || state.status === "error") && (
+          <div
+            style={{
+              padding: "12px 24px",
+              borderBottom: "1px solid rgba(255,255,255,0.05)",
+            }}
+          >
+            <p
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.35)",
+                margin: "0 0 10px",
+              }}
+            >
+              Quick select
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              <button
+                type="button"
+                onClick={selectMainDeck}
+                disabled={mainIds.length === 0}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                  padding: "10px 14px",
+                  borderRadius: 8,
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  background: "rgba(255,255,255,0.04)",
+                  color: mainIds.length === 0 ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.85)",
+                  fontSize: 13,
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  cursor: mainIds.length === 0 ? "default" : "pointer",
+                }}
+              >
+                <Layers size={16} color="#5b9cf5" style={{ flexShrink: 0 }} />
+                <span style={{ textAlign: "left" }}>
+                  <span style={{ display: "block", fontWeight: 600 }}>Main deck</span>
+                  <span style={{ display: "block", fontSize: 11, color: "rgba(255,255,255,0.4)", fontWeight: 400 }}>
+                    Slides 1–{mainIds.length} · through Thank you (Closing)
+                  </span>
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={selectAppendix}
+                disabled={appendixIds.length === 0}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8,
+                  padding: "10px 14px",
+                  borderRadius: 8,
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  background: "rgba(255,255,255,0.04)",
+                  color: appendixIds.length === 0 ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.85)",
+                  fontSize: 13,
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  cursor: appendixIds.length === 0 ? "default" : "pointer",
+                }}
+              >
+                <BookMarked size={16} color="#34d399" style={{ flexShrink: 0 }} />
+                <span style={{ textAlign: "left" }}>
+                  <span style={{ display: "block", fontWeight: 600 }}>Appendix</span>
+                  <span style={{ display: "block", fontSize: 11, color: "rgba(255,255,255,0.4)", fontWeight: 400 }}>
+                    {appendixIds.length === 0
+                      ? "Nothing after Closing in the published list"
+                      : `Slides ${mainIds.length + 1}–${publishedIds.length} · ${appendixIds.length} slide${appendixIds.length === 1 ? "" : "s"}`}
+                  </span>
+                </span>
+              </button>
+            </div>
           </div>
         )}
 
@@ -367,10 +436,9 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
               {state.slideLabel}
             </p>
             <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13, margin: 0, textAlign: "center", lineHeight: 1.5 }}>
-              {format === "png-zip" || format === "pptx"
-                ? <>Capturing lossless PNGs and building {format === "pptx" ? "PPTX" : "PDF"}.</>
-                : <>Each slide is rendered pixel-perfect.</>
-              }
+              {format === "pdf"
+                ? <>Rendering each slide, then building a sharing-optimized PDF.</>
+                : <>Capturing slides and building PPTX.</>}
             </p>
           </div>
         )}
@@ -416,12 +484,8 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
               Download complete!
             </p>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, margin: 0 }}>
-              {selected.size} slides exported as {
-                format === "png-zip" ? "PDF (PNG, 3434×1844)" :
-                format === "pptx" ? "PPTX (PNG, 3434×1844)" :
-                format === "png" ? "PDF (JPEG, 3434×1844)" :
-                "PDF"
-              }
+              {selected.size} slides exported as{" "}
+              {format === "pptx" ? "PPTX (3434×1844)" : "PDF (3434×1844, sharing-optimized)"}
             </p>
           </div>
         )}
@@ -463,12 +527,8 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
               >
                 {format === "pptx" ? (
                   <><FileDown size={15} /> Generate PPTX ({selected.size} slides)</>
-                ) : format === "png-zip" ? (
-                  <><Download size={15} /> Generate PDF · PNG ({selected.size} slides)</>
-                ) : format === "png" ? (
-                  <><Download size={15} /> Generate PDF · JPEG ({selected.size} slides)</>
                 ) : (
-                  <><Download size={15} /> Generate ({selected.size} slides)</>
+                  <><Download size={15} /> Export PDF ({selected.size} slides)</>
                 )}
               </button>
             </>
