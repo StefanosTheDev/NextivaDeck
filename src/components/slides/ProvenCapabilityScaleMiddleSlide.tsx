@@ -12,7 +12,7 @@ const proofMetrics = [
     value: "Digital + human",
     unit: "motion",
     label: "Hybrid playbook",
-    note: "Demand gen blended with conversion support",
+    note: "Demand gen blended with ecommerce, lead gen and sales",
   },
   {
     value: "Partner",

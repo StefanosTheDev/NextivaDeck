@@ -332,6 +332,71 @@ export default function DefensibleAdvantageUneasyMiddleSlide({ slideNumber = 0 }
               Source: HubSpot FY25 results — ARPA, NRR, and customer metrics (Q4 2025).
             </span>
           </p>
+
+          <div
+            style={{
+              marginTop: 14,
+              paddingTop: 12,
+              borderTop: "1px solid rgba(126, 179, 232, 0.28)",
+            }}
+          >
+            <p
+              style={{
+                margin: "0 0 10px",
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "#7EB3E8",
+              }}
+            >
+              Nextiva&apos;s proof points
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: 10,
+              }}
+            >
+              {[
+                { value: "$9K", label: "ARPA", note: "Q4 FY25" },
+                { value: "100%", label: "NRR", note: "Q4 FY25" },
+                { value: "80%", label: "Multi prod attach", note: "Land and expand" },
+              ].map((m) => (
+                <div
+                  key={m.label}
+                  style={{
+                    borderRadius: 10,
+                    padding: "10px 10px",
+                    background: "rgba(0, 112, 243, 0.12)",
+                    border: "1px solid rgba(126, 179, 232, 0.28)",
+                    textAlign: "center",
+                  }}
+                >
+                  <p
+                    className="font-heading"
+                    style={{ fontSize: 22, fontWeight: 700, color: "#FFFFFF", margin: 0, lineHeight: 1.1 }}
+                  >
+                    {m.value}
+                  </p>
+                  <p
+                    style={{
+                      margin: "4px 0 2px",
+                      fontSize: 11,
+                      fontWeight: 700,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      color: "#7EB3E8",
+                    }}
+                  >
+                    {m.label}
+                  </p>
+                  <p style={{ margin: 0, fontSize: 10.5, color: "rgba(255,255,255,0.55)" }}>{m.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.section>
       </main>
 
