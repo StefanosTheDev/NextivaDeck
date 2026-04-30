@@ -158,7 +158,7 @@ export default function DefensibleAdvantageUneasyMiddleSlide({ slideNumber = 0 }
             className="font-heading"
             style={{ fontSize: 26, fontWeight: 700, color: "#FFFFFF", margin: "6px 0 18px", lineHeight: 1.2 }}
           >
-            What it takes to win the middle market
+            What it takes to win in SME and the middle market
           </h2>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 0, flex: 1, justifyContent: "space-between" }}>
