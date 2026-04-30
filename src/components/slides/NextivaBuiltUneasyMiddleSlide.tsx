@@ -9,16 +9,16 @@ const BG =
 
 const requirements = [
   "Fast response and human reassurance at the point of decision",
-  "Trusted guidance on mission-critical communications",
+  "Trusted guidance on mission-critical purchases",
   "Simplicity and speed without enterprise complexity",
-  "A vendor of record customers can bet the business on",
+  "Incumbent, trusted brands carry an edge on mission-critical decisions",
 ];
 
 const nextivaWins = [
-  "Hybrid digital + sales-assisted motion — low CAC, high conversion",
-  "Tightly tuned, metrics-driven execution model with SLAs at every step of the sales process",
+  "Hybrid digital + sales-assisted motion — low CAC, high conversion. Cost structure that supports profitable human engagement",
   "Comms + AI expertise at mid-market price points",
-  "Cost structure that supports profitable human engagement",
+  "Tightly tuned, metrics-driven execution model with SLAs at every step of the sales process",
+  "Trusted, referenceable brand and market leader",
 ];
 
 function FrameworkRows({
