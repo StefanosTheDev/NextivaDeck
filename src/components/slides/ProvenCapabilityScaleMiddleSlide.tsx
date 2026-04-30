@@ -149,6 +149,11 @@ export default function ProvenCapabilityScaleMiddleSlide({ slideNumber = 0 }: { 
           gap: 14,
           padding: "18px 80px 10px",
           minHeight: 0,
+          width: "100%",
+          maxWidth: 1320,
+          marginLeft: "auto",
+          marginRight: "auto",
+          boxSizing: "border-box",
           position: "relative",
           zIndex: 1,
         }}
@@ -280,7 +285,7 @@ export default function ProvenCapabilityScaleMiddleSlide({ slideNumber = 0 }: { 
         </motion.section>
       </main>
 
-      <div style={{ padding: "0 80px 14px", position: "relative", zIndex: 1 }}>
+      <div style={{ padding: "0 80px 14px", width: "100%", maxWidth: 1320, marginLeft: "auto", marginRight: "auto", boxSizing: "border-box", position: "relative", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}

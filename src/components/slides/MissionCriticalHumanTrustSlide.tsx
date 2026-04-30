@@ -11,7 +11,7 @@ const points = [
   "Customers are comfortable buying non-critical tools online",
   "Communications and AI directly impact revenue, service quality, and business continuity",
   "Buyers want confidence that the vendor is real, credible, and capable of supporting them",
-  "Human interaction increases trust and conversion rates in mission-critical categories",
+  "Human availability and interaction increases trust and conversion rates in mission-critical categories",
 ];
 
 const marketProofPoints: { source: string; body: string }[] = [
@@ -147,7 +147,7 @@ export default function MissionCriticalHumanTrustSlide({ slideNumber = 0 }: { sl
             marginRight: "auto",
           }}
         >
-          When technology becomes mission-critical, buyers want people—not just software
+          When technology becomes mission-critical, buyers want vendor reassurance — not just software
         </h1>
 
         <motion.div
