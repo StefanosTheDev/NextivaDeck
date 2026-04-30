@@ -236,8 +236,9 @@ export default function SelectingTargetsMatrixSlide({
                   style={{
                     ...tdBase,
                     background:
-                      "linear-gradient(165deg, rgba(245, 158, 11, 0.12) 0%, rgba(255,255,255,0.03) 45%, rgba(0,0,0,0.12) 100%)",
-                    boxShadow: "inset 0 0 0 2px rgba(245, 158, 11, 0.45)",
+                      "linear-gradient(165deg, rgba(40, 96, 178, 0.55) 0%, rgba(40, 96, 178, 0.35) 50%, rgba(8, 30, 66, 0.55) 100%)",
+                    boxShadow:
+                      "inset 0 0 0 2px rgba(126, 179, 232, 0.7), 0 8px 24px rgba(0, 112, 243, 0.18)",
                     color: "#FFFFFF",
                     fontWeight: 700,
                   }}
@@ -269,7 +270,7 @@ export default function SelectingTargetsMatrixSlide({
                     fontWeight: 600,
                   }}
                 >
-                  Lead gen of small team in large org
+                  Target small teams in large orgs
                   <br />— leads to land and expand
                 </td>
                 <td
