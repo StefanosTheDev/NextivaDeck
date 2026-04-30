@@ -37,7 +37,7 @@ const cornerLabel: React.CSSProperties = {
   color: "#FFFFFF",
 };
 
-export default function SelectingTargetsMatrixSlide({
+export default function SelectingTargetsMatrixEndSlide({
   slideNumber = 0,
 }: {
   slideNumber?: number;
@@ -70,7 +70,7 @@ export default function SelectingTargetsMatrixSlide({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         style={{
-          padding: "64px 72px 12px",
+          padding: "28px 72px 12px",
           flexShrink: 0,
           position: "relative",
           zIndex: 1,
@@ -192,6 +192,10 @@ export default function SelectingTargetsMatrixSlide({
                   }}
                 >
                   <span style={{ fontWeight: 700 }}>Low touch</span>
+                  <span style={{ fontWeight: 400, color: headerMuted }}>
+                    {" "}
+                    (Atlassian, Mailchimp, Basecamp…)
+                  </span>
                 </th>
                 <td
                   colSpan={2}
@@ -214,7 +218,7 @@ export default function SelectingTargetsMatrixSlide({
                     fontWeight: 600,
                   }}
                 >
-                  Partners and lead gen
+                  Doesn&apos;t work
                 </td>
               </tr>
               <tr>
@@ -242,7 +246,7 @@ export default function SelectingTargetsMatrixSlide({
                     fontWeight: 700,
                   }}
                 >
-                  Uneasy middle — Nextiva&apos;s secret sauce
+                  Uneasy middle
                 </td>
               </tr>
               <tr>
@@ -258,6 +262,10 @@ export default function SelectingTargetsMatrixSlide({
                   }}
                 >
                   <span style={{ fontWeight: 700 }}>High touch</span>
+                  <span style={{ fontWeight: 400, color: headerMuted }}>
+                    {" "}
+                    (Microsoft, SAP, Oracle, IBM…)
+                  </span>
                 </th>
                 <td
                   colSpan={2}
@@ -269,8 +277,7 @@ export default function SelectingTargetsMatrixSlide({
                     fontWeight: 600,
                   }}
                 >
-                  Lead gen of small team in large org
-                  <br />— leads to land and expand
+                  Not worth it
                 </td>
                 <td
                   style={{

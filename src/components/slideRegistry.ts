@@ -127,6 +127,7 @@ import ConversationalCommerceSlide from "./slides/ConversationalCommerceSlide";
 import ThreeMoatsSlide from "./slides/ThreeMoatsSlide";
 import InvestorSummaryCopySlide from "./slides/InvestorSummaryCopySlide";
 import InvestorSummaryEndSlide from "./slides/InvestorSummaryEndSlide";
+import SelectingTargetsMatrixEndSlide from "./slides/SelectingTargetsMatrixEndSlide";
 import UnifiedPlatformMoatsSlide from "./slides/UnifiedPlatformMoatsSlide";
 import StructuralAdvantagesSlide from "./slides/StructuralAdvantagesSlide";
 import JourneyCopySlide, { JourneyCopySlideEnhanced } from "./slides/JourneyCopySlide";
@@ -410,6 +411,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "three-moats": { id: "three-moats", label: "Three Moats", component: ThreeMoatsSlide, theme: "dark" },
   "investor-summary-copy": { id: "investor-summary-copy", label: "Investor Summary (simplified)", component: InvestorSummaryCopySlide, theme: "dark" },
   "investor-summary-end": { id: "investor-summary-end", label: "Investor Summary (end)", component: InvestorSummaryEndSlide, theme: "dark" },
+  "selecting-targets-matrix-end": { id: "selecting-targets-matrix-end", label: "Selecting your target(s) (end)", component: SelectingTargetsMatrixEndSlide, theme: "dark" },
   "unified-platform-moats": { id: "unified-platform-moats", label: "Unified Platform Moats", component: UnifiedPlatformMoatsSlide, theme: "dark" },
   "structural-advantages": { id: "structural-advantages", label: "Three Structural Advantages", component: StructuralAdvantagesSlide, theme: "dark" },
   "journey-copy": { id: "journey-copy", label: "Journey (copy)", component: JourneyCopySlide, theme: "dark" },
