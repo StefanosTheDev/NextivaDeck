@@ -127,6 +127,11 @@ export default function AIIncreasesHumanTrustSlide({ slideNumber = 0 }: { slideN
           gap: 16,
           padding: "20px 80px 12px",
           minHeight: 0,
+          width: "100%",
+          maxWidth: 1480,
+          marginLeft: "auto",
+          marginRight: "auto",
+          boxSizing: "border-box",
           position: "relative",
           zIndex: 1,
         }}
@@ -239,7 +244,7 @@ export default function AIIncreasesHumanTrustSlide({ slideNumber = 0 }: { slideN
         </motion.div>
       </main>
 
-      <div style={{ padding: "0 80px 14px", position: "relative", zIndex: 1 }}>
+      <div style={{ padding: "0 80px 14px", width: "100%", maxWidth: 1480, marginLeft: "auto", marginRight: "auto", boxSizing: "border-box", position: "relative", zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
