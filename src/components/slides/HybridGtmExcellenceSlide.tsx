@@ -157,7 +157,7 @@ const PILLARS: readonly Pillar[] = [
         maxW: 130,
       },
       {
-        src: "/logos/competitors/agentic/TL__nice.png",
+        src: "/logos/hybrid-gtm/nice.svg",
         alt: "NICE",
         maxH: 30,
         maxW: 100,

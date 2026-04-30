@@ -16,7 +16,7 @@ const requirements = [
 
 const nextivaWins = [
   "Hybrid digital + sales-assisted motion — low CAC, high conversion",
-  "< 90-second response SLA on qualified inbound",
+  "Tightly tuned, metrics-driven execution model with SLAs at every step of the sales process",
   "Comms + AI expertise at mid-market price points",
   "Cost structure that supports profitable human engagement",
 ];

@@ -14,7 +14,7 @@ const HORIZONS = [
   {
     key: "next",
     label: "Near term",
-    sub: "12–24 months",
+    sub: "3–6 months",
     accent: "#E8B84D",
     glow: "rgba(232,184,77,0.2)",
   },
