@@ -153,8 +153,8 @@ const PILLARS: readonly Pillar[] = [
       {
         src: "/logos/hybrid-gtm/servicenow.svg",
         alt: "ServiceNow",
-        maxH: 32,
-        maxW: 130,
+        maxH: 38,
+        maxW: 140,
       },
       {
         src: "/logos/hybrid-gtm/nice.svg",
@@ -165,8 +165,8 @@ const PILLARS: readonly Pillar[] = [
       {
         src: "/logos/hybrid-gtm/genesys.svg",
         alt: "Genesys",
-        maxH: 28,
-        maxW: 115,
+        maxH: 44,
+        maxW: 140,
       },
     ],
   },
