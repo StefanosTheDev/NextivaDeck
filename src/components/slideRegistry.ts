@@ -234,6 +234,7 @@ import HybridGtmExcellenceSlide from "./slides/HybridGtmExcellenceSlide";
 import SelectingTargetsMatrixSlide from "./slides/SelectingTargetsMatrixSlide";
 import AIIncreasesHumanTrustSlide from "./slides/AIIncreasesHumanTrustSlide";
 import DefensibleAdvantageUneasyMiddleSlide from "./slides/DefensibleAdvantageUneasyMiddleSlide";
+import MiddleMarketBothEndsSlide from "./slides/MiddleMarketBothEndsSlide";
 import MiddleMarketDifficultProfitablySlide from "./slides/MiddleMarketDifficultProfitablySlide";
 import MiddleOpportunityUneasyMiddleSlide from "./slides/MiddleOpportunityUneasyMiddleSlide";
 import MissionCriticalHumanTrustSlide from "./slides/MissionCriticalHumanTrustSlide";
@@ -412,6 +413,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "investor-summary-copy": { id: "investor-summary-copy", label: "Investor Summary (simplified)", component: InvestorSummaryCopySlide, theme: "dark" },
   "investor-summary-end": { id: "investor-summary-end", label: "Investor Summary (end)", component: InvestorSummaryEndSlide, theme: "dark" },
   "selecting-targets-matrix-end": { id: "selecting-targets-matrix-end", label: "Selecting your target(s) (end)", component: SelectingTargetsMatrixEndSlide, theme: "dark" },
+  "middle-market-both-ends": { id: "middle-market-both-ends", label: "Middle market: locked out from both ends", component: MiddleMarketBothEndsSlide, theme: "dark" },
   "unified-platform-moats": { id: "unified-platform-moats", label: "Unified Platform Moats", component: UnifiedPlatformMoatsSlide, theme: "dark" },
   "structural-advantages": { id: "structural-advantages", label: "Three Structural Advantages", component: StructuralAdvantagesSlide, theme: "dark" },
   "journey-copy": { id: "journey-copy", label: "Journey (copy)", component: JourneyCopySlide, theme: "dark" },
