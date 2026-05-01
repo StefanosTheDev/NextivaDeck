@@ -165,8 +165,8 @@ const PILLARS: readonly Pillar[] = [
       {
         src: "/logos/hybrid-gtm/genesys.svg",
         alt: "Genesys",
-        maxH: 44,
-        maxW: 140,
+        maxH: 80,
+        maxW: 280,
       },
     ],
   },
