@@ -39,9 +39,9 @@ const nextivaWins = [
   },
   {
     icon: Gauge,
-    label: "<90-second lead-to-contact",
+    label: "Brand identity aligned with the buyer",
     detail:
-      "Trust delivered at the point of decision — first to the buyer wins the deal.",
+      "Trust delivered at the point of decision through human and digital touch points.",
   },
   {
     icon: ShieldCheck,
