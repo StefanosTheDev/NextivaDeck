@@ -17,17 +17,15 @@ const BG =
 
 // Pure self-serve / PLG: structurally cannot serve this buyer.
 const plgLockedOut = [
-  "No human in the loop when buyers need reassurance",
+  "Architecturally no-touch — no human in the loop when buyers need reassurance",
   "No sales motion for regulated, complex, or outcome-sensitive use cases",
-  "Built for no-touch onboarding — no mechanism to intervene mid-funnel",
   "Lack the human infrastructure to convert or retain elevated-risk buyers",
 ];
 
 // Enterprise sales-led: unit economics simply don't reach this segment.
 const enterpriseLockedOut = [
-  "Deal sizes do not support a dedicated field sales force",
-  "Coverage economics break before you reach mid-market density",
-  "Procurement, RFPs, and bespoke solutioning add cost, not value, here",
+  "Coverage economics break — deal sizes don't support a dedicated field sales force",
+  "Procurement, RFPs, and bespoke solutioning add cost, not value, in this ACV band",
   "Margins assume six-figure ACVs that this segment will not pay",
 ];
 
