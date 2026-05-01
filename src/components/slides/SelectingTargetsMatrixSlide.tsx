@@ -236,11 +236,11 @@ export default function SelectingTargetsMatrixSlide({
                   style={{
                     ...tdBase,
                     background:
-                      "linear-gradient(165deg, rgba(40, 96, 178, 0.55) 0%, rgba(40, 96, 178, 0.35) 50%, rgba(8, 30, 66, 0.55) 100%)",
+                      "linear-gradient(165deg, rgba(245, 158, 11, 0.55) 0%, rgba(245, 158, 11, 0.32) 50%, rgba(120, 73, 5, 0.55) 100%)",
                     boxShadow:
-                      "inset 0 0 0 2px rgba(126, 179, 232, 0.7), 0 8px 24px rgba(0, 112, 243, 0.18)",
+                      "inset 0 0 0 3px rgba(245, 158, 11, 0.85), 0 10px 28px rgba(245, 158, 11, 0.22)",
                     color: "#FFFFFF",
-                    fontWeight: 700,
+                    fontWeight: 800,
                   }}
                 >
                   Uneasy middle — Nextiva&apos;s secret sauce

@@ -34,6 +34,15 @@ interface LogoItem {
   // into the asset, so the visible logo mark ends up tiny inside its bounding
   // box. A CSS transform scale crops the padding visually without clipping.
   zoom?: number;
+  // Caption shown beneath logos that are icon-only (no wordmark in the mark
+  // itself), so unfamiliar viewers can still identify the company.
+  name?: string;
+  // Some assets ship as black-on-transparent (e.g. official NICE wordmark);
+  // invert tonal values on dark backgrounds while preserving accent color.
+  invert?: boolean;
+  // Per-logo horizontal padding override (e.g. ServiceNow has a wide bounding
+  // box that benefits from extra left breathing room inside its tile).
+  paddingLeft?: number;
 }
 
 interface Bullet {
@@ -61,49 +70,60 @@ const PILLARS: readonly Pillar[] = [
     bullets: [
       { icon: Sparkles, text: "Brand pulls demand" },
       { icon: Zap, text: "Freemium → paid funnel" },
-      { icon: CreditCard, text: "Self-checkout, low ACV" },
+      { icon: CreditCard, text: "Self-checkout, low initial ACV" },
     ],
     logos: [
-      { src: "/logos/hybrid-gtm/canva.svg", alt: "Canva", maxH: 38, maxW: 38 },
+      {
+        src: "/logos/hybrid-gtm/canva.svg",
+        alt: "Canva",
+        maxH: 30,
+        maxW: 30,
+        name: "Canva",
+      },
       {
         src: "/logos/hybrid-gtm/calendly.svg",
         alt: "Calendly",
-        maxH: 38,
-        maxW: 38,
+        maxH: 30,
+        maxW: 30,
+        name: "Calendly",
       },
       {
         src: "/logos/hybrid-gtm/monday.svg",
         alt: "monday.com",
-        maxH: 28,
+        maxH: 26,
         maxW: 110,
+        name: "Monday.com",
       },
       {
         src: "/logos/hybrid-gtm/shopify.svg",
         alt: "Shopify",
-        maxH: 38,
-        maxW: 38,
+        maxH: 30,
+        maxW: 30,
+        name: "Shopify",
       },
       {
         src: "/logos/hybrid-gtm/zoom.svg",
         alt: "Zoom",
-        maxH: 38,
-        maxW: 38,
+        maxH: 30,
+        maxW: 30,
+        name: "Zoom",
       },
       {
         src: "/logos/hybrid-gtm/dropbox.svg",
         alt: "Dropbox",
-        maxH: 38,
-        maxW: 38,
+        maxH: 30,
+        maxW: 30,
+        name: "Dropbox",
       },
     ],
   },
   {
     label: "HYBRID",
-    tagline: "Nextiva lives here",
+    tagline: "Nextiva's center of gravity",
     gridCols: 3,
     bullets: [
-      { icon: Rocket, text: "Buy online or call sales" },
-      { icon: Users, text: "Buyers opt into the motion" },
+      { icon: Rocket, text: "Website-led conversion" },
+      { icon: Users, text: "Self-serve to assisted close" },
       { icon: Layers, text: "SMB simplicity, enterprise depth" },
     ],
     isHero: true,
@@ -117,20 +137,23 @@ const PILLARS: readonly Pillar[] = [
       {
         src: "/logos/hybrid-gtm/hubspot.svg",
         alt: "HubSpot",
-        maxH: 38,
-        maxW: 38,
+        maxH: 30,
+        maxW: 30,
+        name: "HubSpot",
       },
       {
         src: "/logos/hybrid-gtm/zendesk.svg",
         alt: "Zendesk",
-        maxH: 38,
-        maxW: 38,
+        maxH: 30,
+        maxW: 30,
+        name: "Zendesk",
       },
       {
         src: "/logos/hybrid-gtm/intercom.svg",
         alt: "Intercom",
-        maxH: 38,
-        maxW: 38,
+        maxH: 30,
+        maxW: 30,
+        name: "Intercom",
       },
     ],
   },
@@ -147,26 +170,32 @@ const PILLARS: readonly Pillar[] = [
       {
         src: "/logos/hybrid-gtm/salesforce.svg",
         alt: "Salesforce",
-        maxH: 38,
-        maxW: 38,
+        maxH: 30,
+        maxW: 30,
+        name: "Salesforce",
       },
       {
         src: "/logos/hybrid-gtm/servicenow.svg",
         alt: "ServiceNow",
-        maxH: 38,
-        maxW: 140,
+        maxH: 44,
+        maxW: 150,
+        name: "ServiceNow",
+        paddingLeft: 50,
       },
       {
         src: "/logos/hybrid-gtm/nice.svg",
         alt: "NICE",
-        maxH: 30,
-        maxW: 100,
+        maxH: 32,
+        maxW: 90,
+        name: "NICE",
+        paddingLeft: 28,
       },
       {
         src: "/logos/hybrid-gtm/genesys.svg",
         alt: "Genesys",
         maxH: 80,
         maxW: 280,
+        name: "Genesys",
       },
     ],
   },
@@ -394,9 +423,10 @@ export default function HybridGtmExcellenceSlide({
                       key={logo.alt}
                       style={{
                         display: "flex",
+                        flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        height: 60,
+                        height: 70,
                         padding: "4px 6px",
                         background: "rgba(255,255,255,0.03)",
                         border: "1px solid rgba(255,255,255,0.06)",
@@ -404,23 +434,52 @@ export default function HybridGtmExcellenceSlide({
                         overflow: "hidden",
                       }}
                     >
-                      <img
-                        src={logo.src}
-                        alt={logo.alt}
+                      <div
                         style={{
-                          maxHeight: logo.maxH ?? 40,
-                          maxWidth: logo.maxW ?? 130,
-                          width: "auto",
-                          height: "auto",
-                          objectFit: "contain",
-                          display: "block",
-                          opacity: 0.95,
-                          transform: logo.zoom
-                            ? `scale(${logo.zoom})`
-                            : undefined,
-                          transformOrigin: "center",
+                          flex: 1,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          minHeight: 0,
+                          width: "100%",
+                          paddingLeft: logo.paddingLeft ?? 0,
                         }}
-                      />
+                      >
+                        <img
+                          src={logo.src}
+                          alt={logo.alt}
+                          style={{
+                            maxHeight: logo.maxH ?? 40,
+                            maxWidth: logo.maxW ?? 130,
+                            width: "auto",
+                            height: "auto",
+                            objectFit: "contain",
+                            display: "block",
+                            opacity: 0.95,
+                            transform: logo.zoom
+                              ? `scale(${logo.zoom})`
+                              : undefined,
+                            transformOrigin: "center",
+                            filter: logo.invert
+                              ? "invert(1) hue-rotate(180deg)"
+                              : undefined,
+                          }}
+                        />
+                      </div>
+                      <span
+                        style={{
+                          height: 12,
+                          lineHeight: "12px",
+                          marginTop: 2,
+                          fontSize: 9.5,
+                          fontWeight: 500,
+                          letterSpacing: "0.04em",
+                          color: "rgba(255,255,255,0.55)",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {logo.name ?? ""}
+                      </span>
                     </div>
                   ))}
                 </div>
