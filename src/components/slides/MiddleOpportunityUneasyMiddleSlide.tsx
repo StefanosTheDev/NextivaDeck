@@ -46,7 +46,7 @@ const columns: {
     bullets: [
       "Mission-critical buyers who still want human reassurance",
       "Too small for classic enterprise coverage economics",
-      "Too complex, regulated, or outcome-sensitive for unattended PLG alone",
+      "Buyers who need a human in the loop before committing",
     ],
     highlight: true,
     accent: MIDDLE,
@@ -333,6 +333,11 @@ export default function MiddleOpportunityUneasyMiddleSlide({ slideNumber = 0 }: 
           alignItems: "stretch",
           position: "relative",
           zIndex: 1,
+          maxWidth: 1480,
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         {columns.map((col, i) => (
