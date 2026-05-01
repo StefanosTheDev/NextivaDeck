@@ -218,7 +218,7 @@ export default function MiddleMarketBothEndsSlide({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.12 }}
           style={{
-            maxWidth: 1040,
+            maxWidth: 1480,
             margin: "18px auto 0",
             padding: "16px 22px",
             textAlign: "left",
