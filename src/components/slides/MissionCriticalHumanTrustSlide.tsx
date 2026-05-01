@@ -8,20 +8,28 @@ const BG =
   "radial-gradient(ellipse 90% 80% at 50% 22%, rgba(15,44,89,0.45) 0%, rgba(6,26,55,0.7) 48%, #000208 100%)";
 
 const points = [
-  "Customers are comfortable buying non-critical tools online",
-  "Communications and AI directly impact revenue, service quality, and business continuity",
-  "Buyers want confidence that the vendor is real, credible, and capable of supporting them",
   "Human availability and interaction increases trust and conversion rates in mission-critical categories",
+  "Communications and AI directly impact revenue, service quality, and business continuity",
+  "Mid-market buyers want confidence that the vendor is real, credible, and capable of supporting them",
+  "Customers are comfortable buying non-critical tools online — but draw the line at mission-critical",
 ];
 
-const marketProofPoints: { source: string; body: string }[] = [
+const marketProofPoints: {
+  source: string;
+  headline: string;
+  body: string;
+}[] = [
   {
     source: "SMB Group, U.S. SMB Technology Buying Journey (2024, n=738)",
-    body: "When technology affects operations, mainstream SMBs lean on people first — they validate through experts and conversations with the vendor, not a shopping cart alone.",
+    headline:
+      "~74% of mid-market and mainstream SMB buyers validate mission-critical tech through vendor conversations and experts — not a shopping cart alone.",
+    body: "When the technology affects operations, buyers in this segment lean on people first.",
   },
   {
     source: "TrustRadius & Pavilion, 2024 B2B Buying Disconnect (n=2,164 buyers)",
-    body: "Demos, free trials, and conversations with current users rank among the most influential resources in technology purchases — buyers want to experience the product and talk with people tied to the vendor before they commit when the decision is consequential.",
+    headline:
+      "Demos and conversations with current users rank in the top 3 most-influential resources for consequential B2B tech purchases.",
+    body: "Buyers want to experience the product and talk with people tied to the vendor before they commit.",
   },
 ];
 
@@ -147,7 +155,7 @@ export default function MissionCriticalHumanTrustSlide({ slideNumber = 0 }: { sl
             marginRight: "auto",
           }}
         >
-          When technology becomes mission-critical, buyers want vendor reassurance — not just software
+          When technology becomes mission-critical, middle-market buyers want vendor reassurance — not just software
         </h1>
 
         <motion.div
@@ -167,7 +175,7 @@ export default function MissionCriticalHumanTrustSlide({ slideNumber = 0 }: { sl
           }}
         >
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.68)", margin: 0, lineHeight: 1.55, fontWeight: 400 }}>
-            SMB Customers prefer to buy simple software online, but when the technology affects mission-critical operations, buyers want reassurance from a trusted advisor.
+            Middle-market customers prefer to buy simple software online, but when the technology affects mission-critical operations, buyers want reassurance from a trusted advisor.
           </p>
         </motion.div>
       </motion.header>
@@ -325,7 +333,7 @@ export default function MissionCriticalHumanTrustSlide({ slideNumber = 0 }: { sl
               <div
                 key={row.source}
                 style={{
-                  padding: "14px 16px 15px",
+                  padding: "14px 16px 14px",
                   borderRadius: 12,
                   background: "rgba(255,255,255,0.045)",
                   border: "1px solid rgba(255,255,255,0.09)",
@@ -333,28 +341,40 @@ export default function MissionCriticalHumanTrustSlide({ slideNumber = 0 }: { sl
                 }}
               >
                 <p
+                  className="font-heading"
                   style={{
                     margin: 0,
-                    fontSize: 11,
+                    fontSize: 16,
+                    lineHeight: 1.4,
+                    color: "#FFFFFF",
                     fontWeight: 700,
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                    color: "#7EB3E8",
-                    lineHeight: 1.35,
                   }}
                 >
-                  {row.source}
+                  {row.headline}
                 </p>
                 <p
                   style={{
-                    margin: "10px 0 0",
-                    fontSize: 14,
-                    lineHeight: 1.55,
-                    color: "rgba(255,255,255,0.82)",
+                    margin: "8px 0 0",
+                    fontSize: 13,
+                    lineHeight: 1.5,
+                    color: "rgba(255,255,255,0.7)",
                     fontWeight: 400,
                   }}
                 >
                   {row.body}
+                </p>
+                <p
+                  style={{
+                    margin: "10px 0 0",
+                    fontSize: 10.5,
+                    fontWeight: 600,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    color: "rgba(126, 179, 232, 0.85)",
+                    lineHeight: 1.35,
+                  }}
+                >
+                  {row.source}
                 </p>
               </div>
             ))}
