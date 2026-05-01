@@ -276,6 +276,31 @@ export default function MiddleOpportunityUneasyMiddleSlide({ slideNumber = 0 }: 
           The largest underserved segment in software sits between self-serve and sales motion
         </h1>
 
+        <motion.p
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.06 }}
+          className="font-heading"
+          style={{
+            fontSize: 24,
+            fontWeight: 600,
+            lineHeight: 1.25,
+            margin: "16px auto 0",
+            maxWidth: 980,
+            textAlign: "center",
+            background:
+              "linear-gradient(90deg, #00C2FF 0%, #0070F3 50%, #5BD0FF 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            textShadow: "0 0 24px rgba(0,112,243,0.35)",
+            letterSpacing: "-0.005em",
+          }}
+        >
+          Nextiva has cracked the unit economics that make this segment viable
+          at scale.
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -314,21 +339,30 @@ export default function MiddleOpportunityUneasyMiddleSlide({ slideNumber = 0 }: 
           <motion.article
             key={col.title}
             initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{
+              opacity: col.highlight ? 1 : 0.82,
+              y: 0,
+            }}
             transition={{ duration: 0.5, delay: 0.12 + i * 0.08 }}
             style={{
-              flex: 1,
+              flex: col.highlight ? 1.18 : 0.94,
               borderRadius: 18,
-              padding: "22px 22px 24px",
-              background: col.highlight
-                ? "linear-gradient(165deg, rgba(245, 158, 11, 0.12) 0%, rgba(255,255,255,0.03) 45%, rgba(0,0,0,0.12) 100%)"
-                : "linear-gradient(165deg, rgba(40, 96, 178, 0.08) 0%, rgba(255,255,255,0.03) 45%, rgba(0,0,0,0.1) 100%)",
-              border: col.highlight ? "2px solid rgba(245, 158, 11, 0.45)" : "1px solid rgba(255,255,255,0.1)",
+              padding: col.highlight ? "26px 24px 28px" : "20px 18px 22px",
+              background:
+                "linear-gradient(165deg, rgba(40, 96, 178, 0.05) 0%, rgba(255,255,255,0.02) 45%, rgba(0,0,0,0.08) 100%)",
+              border: col.highlight
+                ? "2px solid rgba(245, 158, 11, 0.6)"
+                : "1px solid rgba(255,255,255,0.07)",
               borderTop: `3px solid ${col.accent}`,
-              boxShadow: "0 20px 50px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.05)",
+              boxShadow: col.highlight
+                ? "0 28px 72px rgba(245, 158, 11, 0.18), 0 16px 44px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)"
+                : "0 12px 30px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.04)",
               display: "flex",
               flexDirection: "column",
               alignItems: "stretch",
+              transform: col.highlight ? "translateY(-4px)" : "none",
+              zIndex: col.highlight ? 2 : 1,
+              position: "relative",
             }}
           >
             <p
