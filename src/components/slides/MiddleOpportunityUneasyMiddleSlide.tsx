@@ -52,7 +52,7 @@ const columns: {
     accent: MIDDLE,
   },
   {
-    title: "Outsource sales",
+    title: "Direct enterprise sales motion",
     eyebrow: "Motion archetype",
     compactLogos: true,
     logos: [
