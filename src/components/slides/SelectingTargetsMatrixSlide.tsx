@@ -156,24 +156,24 @@ export default function SelectingTargetsMatrixSlide({
                   </div>
                 </th>
                 <th style={{ ...thBase, width: "26%" }}>
-                  <span style={{ fontWeight: 600 }}>Very Small Businesses</span>
+                  <span style={{ fontWeight: 600 }}>VSB</span>
                   <br />
                   <span style={{ fontWeight: 400, color: headerMuted, fontSize: 17 }}>
-                    (≈20% of revenue)
+                    (41% of revenue)
                   </span>
                 </th>
                 <th style={{ ...thBase, width: "26%" }}>
-                  <span style={{ fontWeight: 600 }}>Small / Medium Sized Businesses</span>
+                  <span style={{ fontWeight: 600 }}>SMB</span>
                   <br />
                   <span style={{ fontWeight: 400, color: headerMuted, fontSize: 17 }}>
-                    (≈40% of revenue)
+                    (30% of revenue)
                   </span>
                 </th>
                 <th style={{ ...thBase, width: "26%" }}>
-                  <span style={{ fontWeight: 600 }}>Big Customers</span>
+                  <span style={{ fontWeight: 600 }}>Mid-Market</span>
                   <br />
                   <span style={{ fontWeight: 400, color: headerMuted, fontSize: 17 }}>
-                    (≈40% of revenue)
+                    (29% of revenue)
                   </span>
                 </th>
               </tr>
