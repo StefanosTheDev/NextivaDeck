@@ -240,6 +240,22 @@ import MiddleOpportunityUneasyMiddleSlide from "./slides/MiddleOpportunityUneasy
 import MissionCriticalHumanTrustSlide from "./slides/MissionCriticalHumanTrustSlide";
 import NextivaBuiltUneasyMiddleSlide from "./slides/NextivaBuiltUneasyMiddleSlide";
 import ProvenCapabilityScaleMiddleSlide from "./slides/ProvenCapabilityScaleMiddleSlide";
+// Verticals PDF deck (nextiva-verticals-slides) — 15 slides
+import VerticalsStrategyOverviewSlide from "./slides/VerticalsStrategyOverviewSlide";
+import VerticalsCredibilitySlide from "./slides/VerticalsCredibilitySlide";
+import DistributedOrgsSecretWeaponSlide from "./slides/DistributedOrgsSecretWeaponSlide";
+import VerticalsSixPillarsSlide from "./slides/VerticalsSixPillarsSlide";
+import VerticalHealthcareSlide from "./slides/VerticalHealthcareSlide";
+import VerticalHealthcareCompetitiveSlide from "./slides/VerticalHealthcareCompetitiveSlide";
+import VerticalFinancialServicesSlide from "./slides/VerticalFinancialServicesSlide";
+import VerticalFinancialServicesCompetitiveSlide from "./slides/VerticalFinancialServicesCompetitiveSlide";
+import VerticalLegalSlide from "./slides/VerticalLegalSlide";
+import VerticalLegalCompetitiveSlide from "./slides/VerticalLegalCompetitiveSlide";
+import VerticalsGTMExcellenceSlide from "./slides/VerticalsGTMExcellenceSlide";
+import LandExpandCustomersSlide from "./slides/LandExpandCustomersSlide";
+import VerticalsGTMStrategyStagesSlide from "./slides/VerticalsGTMStrategyStagesSlide";
+import VerticalsAppendixDividerSlide from "./slides/VerticalsAppendixDividerSlide";
+import AEGVisionUseCaseSlide from "./slides/AEGVisionUseCaseSlide";
 
 export type SlideTheme = "light" | "dark";
 
@@ -613,6 +629,22 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "tomas-human-ai-harmony-041126": { id: "tomas-human-ai-harmony-041126", label: "Tomas 13: Human + AI in Harmony", component: TomasHumanAIHarmonySlide, theme: "dark", isNew: true },
   "tomas-trustworthy-041126": { id: "tomas-trustworthy-041126", label: "Tomas 14: Trustworthy", component: TomasTrustworthySlide, theme: "dark", isNew: true },
   "tomas-global-footprint-041126": { id: "tomas-global-footprint-041126", label: "Tomas 15: Global Footprint", component: TomasGlobalFootprintSlide, theme: "dark", isNew: true },
+  // VERTICALS PDF DECK (nextiva-verticals-slides) — 15 slides
+  "verticals-strategy-overview": { id: "verticals-strategy-overview", label: "Verticals: Agentic CX Strategy", component: VerticalsStrategyOverviewSlide, theme: "dark", isNew: true },
+  "verticals-credibility": { id: "verticals-credibility", label: "Verticals: Credibility & Retention", component: VerticalsCredibilitySlide, theme: "dark", isNew: true },
+  "verticals-distributed-orgs": { id: "verticals-distributed-orgs", label: "Verticals: Distributed Orgs (Secret Weapon)", component: DistributedOrgsSecretWeaponSlide, theme: "dark", isNew: true },
+  "verticals-six-pillars": { id: "verticals-six-pillars", label: "Verticals: Six Pillars Platform Economics", component: VerticalsSixPillarsSlide, theme: "dark", isNew: true },
+  "vertical-healthcare": { id: "vertical-healthcare", label: "Vertical: Healthcare (pillars)", component: VerticalHealthcareSlide, theme: "dark", isNew: true },
+  "vertical-healthcare-competitive": { id: "vertical-healthcare-competitive", label: "Vertical: Healthcare (competitive)", component: VerticalHealthcareCompetitiveSlide, theme: "dark", isNew: true },
+  "vertical-financial-services": { id: "vertical-financial-services", label: "Vertical: Financial Services (pillars)", component: VerticalFinancialServicesSlide, theme: "dark", isNew: true },
+  "vertical-financial-services-competitive": { id: "vertical-financial-services-competitive", label: "Vertical: Financial Services (competitive)", component: VerticalFinancialServicesCompetitiveSlide, theme: "dark", isNew: true },
+  "vertical-legal": { id: "vertical-legal", label: "Vertical: Legal (pillars)", component: VerticalLegalSlide, theme: "dark", isNew: true },
+  "vertical-legal-competitive": { id: "vertical-legal-competitive", label: "Vertical: Legal (competitive)", component: VerticalLegalCompetitiveSlide, theme: "dark", isNew: true },
+  "verticals-gtm-excellence": { id: "verticals-gtm-excellence", label: "Verticals: GTM Excellence (where we play)", component: VerticalsGTMExcellenceSlide, theme: "dark", isNew: true },
+  "verticals-land-expand-customers": { id: "verticals-land-expand-customers", label: "Verticals: Land & Expand (customer cases)", component: LandExpandCustomersSlide, theme: "dark", isNew: true },
+  "verticals-gtm-strategy-stages": { id: "verticals-gtm-strategy-stages", label: "Verticals: GTM Strategy Stages", component: VerticalsGTMStrategyStagesSlide, theme: "dark", isNew: true },
+  "verticals-appendix-divider": { id: "verticals-appendix-divider", label: "Verticals: Appendix", component: VerticalsAppendixDividerSlide, theme: "dark", isNew: true },
+  "verticals-aeg-vision-use-case": { id: "verticals-aeg-vision-use-case", label: "Verticals: AEG Vision Use Case", component: AEGVisionUseCaseSlide, theme: "dark", isNew: true },
 };
 
 export const DEFAULT_SLIDE_ORDER: string[] = [
