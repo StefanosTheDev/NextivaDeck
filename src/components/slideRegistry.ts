@@ -20,6 +20,7 @@ import FinancialsSlide from "./slides/FinancialsSlide";
 import LeadershipSlide from "./slides/LeadershipSlide";
 import SummarySlide from "./slides/SummarySlide";
 import ClosingSlide from "./slides/ClosingSlide";
+import ClosingEndSlide from "./slides/ClosingEndSlide";
 import ProductPortfolioSlide from "./slides/ProductPortfolioSlide";
 import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
 import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
@@ -299,6 +300,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   leadership:          { id: "leadership",           label: "Leadership",          component: LeadershipSlide,          theme: "light" },
   summary:             { id: "summary",              label: "Summary",             component: SummarySlide,             theme: "dark" },
   closing:             { id: "closing",              label: "Closing",             component: ClosingSlide,             theme: "dark" },
+  "closing-end":       { id: "closing-end",          label: "Closing (End)",       component: ClosingEndSlide,          theme: "dark" },
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
