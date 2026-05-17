@@ -21,6 +21,17 @@ const HI_RES_PDF_PAGE_JPEG_QUALITY = 0.93;
 const STANDARD_CSS_WIDTH = 1920;
 const STANDARD_CSS_HEIGHT = 1080;
 
+function resolveProjectPrintRawPath(projectId: string): string {
+  if (projectId === "investor-deck") return "/print/raw";
+  return `/projects/${encodeURIComponent(projectId)}/print/raw`;
+}
+
+function projectExportNameStem(projectId: string): string {
+  return projectId === "investor-deck"
+    ? "Nextiva-Investor-Deck-2026"
+    : `Nextiva-Deck-${projectId}`;
+}
+
 function triggerDownload(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -35,10 +46,12 @@ function triggerDownload(blob: Blob, filename: string) {
 async function loadPrintIframe(
   slideIds: string[],
   cssWidth: number = STANDARD_CSS_WIDTH,
-  cssHeight: number = STANDARD_CSS_HEIGHT
+  cssHeight: number = STANDARD_CSS_HEIGHT,
+  projectId: string = "investor-deck"
 ): Promise<HTMLIFrameElement> {
   const slidesParam = encodeURIComponent(slideIds.join(","));
-  const url = `/print/raw?slides=${slidesParam}`;
+  const printRawPath = resolveProjectPrintRawPath(projectId);
+  const url = `${printRawPath}?slides=${slidesParam}`;
 
   return new Promise((resolve, reject) => {
     const iframe = document.createElement("iframe");
@@ -169,11 +182,12 @@ async function captureFromIframe(
 
 export async function generatePdfClient(
   slideIds: string[],
-  onProgress?: ProgressCallback
+  onProgress?: ProgressCallback,
+  projectId: string = "investor-deck"
 ) {
   onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
 
-  const iframe = await loadPrintIframe(slideIds);
+  const iframe = await loadPrintIframe(slideIds, STANDARD_CSS_WIDTH, STANDARD_CSS_HEIGHT, projectId);
   try {
     await waitForIframeReady(iframe);
 
@@ -191,7 +205,7 @@ export async function generatePdfClient(
     }
 
     const blob = pdf.output("blob");
-    triggerDownload(blob, "Nextiva-Investor-Deck-2026.pdf");
+    triggerDownload(blob, `${projectExportNameStem(projectId)}.pdf`);
     onProgress?.({ phase: "done", current: images.length, total: images.length });
   } finally {
     iframe.remove();
@@ -200,11 +214,12 @@ export async function generatePdfClient(
 
 export async function generatePptxClient(
   slideIds: string[],
-  onProgress?: ProgressCallback
+  onProgress?: ProgressCallback,
+  projectId: string = "investor-deck"
 ) {
   onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
 
-  const iframe = await loadPrintIframe(slideIds);
+  const iframe = await loadPrintIframe(slideIds, STANDARD_CSS_WIDTH, STANDARD_CSS_HEIGHT, projectId);
   try {
     await waitForIframeReady(iframe);
 
@@ -227,7 +242,7 @@ export async function generatePptxClient(
 
     const output = await pptx.write({ outputType: "blob" });
     const blob = output instanceof Blob ? output : new Blob([output as ArrayBuffer]);
-    triggerDownload(blob, "Nextiva-Investor-Deck-2026.pptx");
+    triggerDownload(blob, `${projectExportNameStem(projectId)}.pptx`);
     onProgress?.({ phase: "done", current: images.length, total: images.length });
   } finally {
     iframe.remove();
@@ -244,12 +259,13 @@ export async function generatePptxClient(
  */
 export async function generatePptxHiResClient(
   slideIds: string[],
-  onProgress?: ProgressCallback
+  onProgress?: ProgressCallback,
+  projectId: string = "investor-deck"
 ) {
   onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
 
   // Use boss's exact dimensions
-  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT);
+  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT, projectId);
   
   try {
     await waitForIframeReady(iframe);
@@ -304,7 +320,7 @@ export async function generatePptxHiResClient(
     const output = await pptx.write({ outputType: "blob" });
     const blob = output instanceof Blob ? output : new Blob([output as ArrayBuffer]);
     const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-    triggerDownload(blob, `Nextiva-Deck-HiRes_${timestamp}.pptx`);
+    triggerDownload(blob, `${projectExportNameStem(projectId)}-HiRes_${timestamp}.pptx`);
     onProgress?.({ phase: "done", current: total, total });
   } finally {
     iframe.remove();
@@ -335,12 +351,13 @@ export const BOSS_EXPORT_SPECS = {
  */
 export async function generatePngZipClient(
   slideIds: string[],
-  onProgress?: ProgressCallback
+  onProgress?: ProgressCallback,
+  projectId: string = "investor-deck"
 ) {
   onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
 
   // Use boss's exact dimensions
-  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT);
+  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT, projectId);
   try {
     await waitForIframeReady(iframe);
 
@@ -376,7 +393,7 @@ export async function generatePngZipClient(
     const pdfOutput = pdf.output("arraybuffer");
     const blob = new Blob([pdfOutput], { type: "application/pdf" });
     const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-    triggerDownload(blob, `Nextiva-Deck-HiRes_${timestamp}.pdf`);
+    triggerDownload(blob, `${projectExportNameStem(projectId)}-HiRes_${timestamp}.pdf`);
     onProgress?.({ phase: "done", current: images.length, total: images.length });
   } finally {
     iframe.remove();
@@ -512,14 +529,15 @@ async function captureSlideAsRasterArrayBuffer(
  */
 export async function generatePngPdfClient(
   slideIds: string[],
-  onProgress?: ProgressCallback
+  onProgress?: ProgressCallback,
+  projectId: string = "investor-deck"
 ) {
   onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
 
   const { PDFDocument } = await import("pdf-lib");
   const pdfDoc = await PDFDocument.create();
 
-  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT);
+  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT, projectId);
 
   try {
     await waitForIframeReady(iframe);
@@ -574,7 +592,10 @@ export async function generatePngPdfClient(
 
     const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
     const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-    triggerDownload(blob, `Nextiva-Deck-HiRes-Sharing_${timestamp}.pdf`);
+    triggerDownload(
+      blob,
+      `${projectExportNameStem(projectId)}-HiRes-Sharing_${timestamp}.pdf`
+    );
 
     onProgress?.({ phase: "done", current: total, total });
   } finally {
@@ -593,7 +614,8 @@ export async function generatePngPdfClient(
  */
 export async function generatePngZipActual(
   slideIds: string[],
-  onProgress?: ProgressCallback
+  onProgress?: ProgressCallback,
+  projectId: string = "investor-deck"
 ) {
   onProgress?.({ phase: "rendering", current: 0, total: slideIds.length, slideLabel: "Loading slides..." });
 
@@ -601,7 +623,7 @@ export async function generatePngZipActual(
   const zip = new JSZip();
 
   // Use boss's exact dimensions
-  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT);
+  const iframe = await loadPrintIframe(slideIds, BOSS_CSS_WIDTH, BOSS_CSS_HEIGHT, projectId);
   
   try {
     await waitForIframeReady(iframe);
@@ -646,7 +668,7 @@ export async function generatePngZipActual(
     });
     
     const timestamp = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-    triggerDownload(blob, `Nextiva-Deck-PNGs_${timestamp}.zip`);
+    triggerDownload(blob, `${projectExportNameStem(projectId)}-PNGs_${timestamp}.zip`);
     onProgress?.({ phase: "done", current: total, total });
   } finally {
     iframe.remove();

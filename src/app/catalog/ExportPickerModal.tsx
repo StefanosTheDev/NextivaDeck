@@ -35,6 +35,7 @@ function mainDeckAndAppendixSlideIds(publishedIds: string[]): {
 interface Props {
   format: ExportFormat;
   slides: { id: string; slide: SlideDef; isHidden: boolean }[];
+  projectId?: string;
   onClose: () => void;
 }
 
@@ -45,7 +46,12 @@ type GenerationState =
   | { status: "cancelled"; current: number; total: number }
   | { status: "error"; message: string };
 
-export default function ExportPickerModal({ format, slides, onClose }: Props) {
+export default function ExportPickerModal({
+  format,
+  slides,
+  projectId = "investor-deck",
+  onClose,
+}: Props) {
   const publishedSlides = slides.filter((s) => !s.isHidden);
   const [selected, setSelected] = useState<Set<string>>(
     () => new Set(publishedSlides.map((s) => s.id))
@@ -129,14 +135,14 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
 
       if (format === "pdf") {
         const { generatePngPdfClient } = await import("@/lib/clientExport");
-        await generatePngPdfClient(slideIds, createProgressHandler());
+        await generatePngPdfClient(slideIds, createProgressHandler(), projectId);
         if (cancelRef.current) return;
         setState({ status: "done" });
         return;
       }
 
       const { generatePptxHiResClient } = await import("@/lib/clientExport");
-      await generatePptxHiResClient(slideIds, createProgressHandler());
+      await generatePptxHiResClient(slideIds, createProgressHandler(), projectId);
       if (cancelRef.current) return;
       setState({ status: "done" });
     } catch (err) {
@@ -149,7 +155,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
         message: err instanceof Error ? err.message : "Generation failed",
       });
     }
-  }, [format, selectedSlides]);
+  }, [format, projectId, selectedSlides]);
 
   const allSelected = selected.size === publishedSlides.length;
   const noneSelected = selected.size === 0;

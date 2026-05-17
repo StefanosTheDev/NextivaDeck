@@ -15,11 +15,15 @@ interface Props {
   onToggleHide: () => void;
   onRemoveCategory?: () => void;
   categoryAssignDropdown?: React.ReactNode;
+  deckPath?: string;
+  scrollTargetKey?: string;
 }
 
 export default function SidebarSlideRow({
   id, slide, position, savedPosition, isHidden, color,
   onToggleHide, onRemoveCategory, categoryAssignDropdown,
+  deckPath = "/",
+  scrollTargetKey = "catalogScrollTarget",
 }: Props) {
   const {
     attributes, listeners, setNodeRef, transform, transition, isDragging,
@@ -84,8 +88,8 @@ export default function SidebarSlideRow({
       {/* Slide name */}
       <span
         onDoubleClick={() => {
-          localStorage.setItem("catalogScrollTarget", id);
-          window.location.href = `/?slideId=${id}&from=catalog`;
+          localStorage.setItem(scrollTargetKey, id);
+          window.location.href = `${deckPath}?slideId=${id}&from=catalog`;
         }}
         style={{
           overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",

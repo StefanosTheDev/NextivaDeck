@@ -9,10 +9,29 @@ const SCALE = 2;          // 2x Retina
 const OUTPUT_WIDTH = 3434;  // Final pixel width (1717 * 2)
 const OUTPUT_HEIGHT = 1844; // Final pixel height (922 * 2)
 
+function projectExportStem(projectId: string): string {
+  return projectId === "investor-deck"
+    ? "Nextiva-Investor-Deck-2026"
+    : `Nextiva-Deck-${projectId}`;
+}
+
+function projectSlidesApiPath(projectId: string): string {
+  if (projectId === "investor-deck") return "/api/slides";
+  return `/api/projects/${encodeURIComponent(projectId)}/slides`;
+}
+
+function projectViewerUrl(baseUrl: string, projectId: string, slideId: string): string {
+  const slideQuery = `slideId=${encodeURIComponent(slideId)}`;
+  if (projectId === "investor-deck") return `${baseUrl}/?${slideQuery}`;
+  return `${baseUrl}/projects/${encodeURIComponent(projectId)}?${slideQuery}`;
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const baseUrl =
     searchParams.get("baseUrl") || new URL(request.url).origin;
+  const projectId = searchParams.get("projectId") || "investor-deck";
+  const exportStem = projectExportStem(projectId);
 
   let browser;
   try {
@@ -40,7 +59,7 @@ export async function GET(request: Request) {
     if (slidesParam) {
       slideIds = slidesParam.split(",").map((s) => s.trim()).filter(Boolean);
     } else {
-      const apiRes = await fetch(`${baseUrl}/api/slides`);
+      const apiRes = await fetch(`${baseUrl}${projectSlidesApiPath(projectId)}`);
       const data = await apiRes.json();
       const hidden: string[] = Array.isArray(data.hiddenSlides) ? data.hiddenSlides : [];
       slideIds = (data.order as string[]).filter((id) => !hidden.includes(id));
@@ -52,7 +71,7 @@ export async function GET(request: Request) {
     const pngBuffers: Buffer[] = [];
 
     for (let i = 0; i < slideIds.length; i++) {
-      const slideUrl = `${baseUrl}/?slideId=${encodeURIComponent(slideIds[i])}`;
+      const slideUrl = projectViewerUrl(baseUrl, projectId, slideIds[i]);
       await page.goto(slideUrl, {
         waitUntil: "networkidle2",
         timeout: 60_000,
@@ -128,7 +147,7 @@ export async function GET(request: Request) {
       headers: {
         "Content-Type": "application/pdf",
         "Content-Disposition":
-          `attachment; filename="Nextiva-Deck-HiRes-PNG_${new Date().toISOString().slice(0, 10).replace(/-/g, "")}.pdf"`,
+          `attachment; filename="${exportStem}-HiRes-PNG_${new Date().toISOString().slice(0, 10).replace(/-/g, "")}.pdf"`,
         "Cache-Control": "no-store",
       },
     });

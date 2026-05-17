@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import {
   DndContext,
@@ -19,7 +20,7 @@ import {
   rectSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Save, Check, RotateCcw, ArrowLeft, Download, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
+import { Save, Check, RotateCcw, Download, Plus, X, Eye, ArrowRight, FileDown, LayoutGrid, Play, Lightbulb } from "lucide-react";
 
 import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
 import SortableSlideCard from "./SortableSlideCard";
@@ -27,6 +28,7 @@ import SlideCardContent from "./SlideCardContent";
 import SidebarSlideRow from "./SidebarSlideRow";
 import CategoryInput from "./CategoryInput";
 import ExportPickerModal from "./ExportPickerModal";
+import PromptTipsModal from "./PromptTipsModal";
 
 const CATEGORY_COLORS = [
   { bg: "rgba(40,96,178,0.18)",  text: "#5b9cf5", dot: "#2860B2"  },
@@ -53,9 +55,34 @@ function dedupe(arr: string[]): string[] {
   });
 }
 
-export default function CatalogPage() {
-  const [order, setOrder] = useState<string[]>(DEFAULT_SLIDE_ORDER);
-  const [savedOrder, setSavedOrder] = useState<string[]>(DEFAULT_SLIDE_ORDER);
+interface CatalogPageProps {
+  projectId?: string;
+}
+
+export default function CatalogPage({ projectId = "investor-deck" }: CatalogPageProps = {}) {
+  const isDefaultProject = projectId === "investor-deck";
+  const initialOrder = isDefaultProject ? DEFAULT_SLIDE_ORDER : [];
+  const slidesApiPath = isDefaultProject
+    ? "/api/slides"
+    : `/api/projects/${projectId}/slides`;
+  const hubPath = "/";
+  const deckPath = `/projects/${projectId}`;
+  const pendingChangesKey = isDefaultProject
+    ? "catalogPendingChanges"
+    : `catalogPendingChanges:${projectId}`;
+  const viewFilterKey = isDefaultProject
+    ? "catalogViewFilter"
+    : `catalogViewFilter:${projectId}`;
+  const scrollTargetKey = isDefaultProject
+    ? "catalogScrollTarget"
+    : `catalogScrollTarget:${projectId}`;
+  const previewStorageKey = isDefaultProject
+    ? "previewDeckData"
+    : `previewDeckData:${projectId}`;
+
+  const [order, setOrder] = useState<string[]>(initialOrder);
+  const [savedOrder, setSavedOrder] = useState<string[]>(initialOrder);
+  const [projectName, setProjectName] = useState<string | null>(null);
   const [categories, setCategories] = useState<Record<string, string>>({});
   const [savedCategories, setSavedCategories] = useState<Record<string, string>>({});
   const [categoryNames, setCategoryNames] = useState<string[]>([]);
@@ -68,7 +95,7 @@ export default function CatalogPage() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [viewFilter, setViewFilter] = useState<"all" | "published" | "hidden">(() => {
     if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("catalogViewFilter");
+      const stored = localStorage.getItem(viewFilterKey);
       if (stored === "all" || stored === "published" || stored === "hidden") return stored;
     }
     return "all";
@@ -78,9 +105,12 @@ export default function CatalogPage() {
   const savedTimeout = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
-    fetch("/api/slides")
+    fetch(slidesApiPath)
       .then((r) => r.json())
       .then((data) => {
+        if (typeof data.projectName === "string" && data.projectName.trim()) {
+          setProjectName(data.projectName.trim());
+        }
         if (Array.isArray(data.order)) {
           data.order = dedupe(data.order);
           setSavedOrder(data.order);
@@ -96,7 +126,7 @@ export default function CatalogPage() {
           setSavedHiddenSlides(data.hiddenSlides);
         }
 
-        const pending = localStorage.getItem("catalogPendingChanges");
+        const pending = localStorage.getItem(pendingChangesKey);
         if (pending) {
           try {
             const p = JSON.parse(pending);
@@ -112,14 +142,17 @@ export default function CatalogPage() {
             setCategories(p.categories && typeof p.categories === "object" ? p.categories : (data.categories || {}));
             setCategoryNames(Array.isArray(p.categoryNames) ? p.categoryNames : merged);
             if (newSlides.length > 0) {
-              localStorage.setItem("catalogPendingChanges", JSON.stringify({ ...p, order: cleanedOrder }));
+              localStorage.setItem(
+                pendingChangesKey,
+                JSON.stringify({ ...p, order: cleanedOrder })
+              );
             }
           } catch {
             setOrder(data.order);
             setHiddenSlides(data.hiddenSlides || []);
             setCategories(data.categories || {});
             setCategoryNames(merged);
-            localStorage.removeItem("catalogPendingChanges");
+            localStorage.removeItem(pendingChangesKey);
           }
         } else {
           setOrder(data.order);
@@ -130,25 +163,31 @@ export default function CatalogPage() {
 
         setLoaded(true);
       })
-      .catch(() => setLoaded(true));
-  }, []);
+      .catch(() => {
+        if (!isDefaultProject) {
+          setOrder([]);
+          setSavedOrder([]);
+        }
+        setLoaded(true);
+      });
+  }, [pendingChangesKey, slidesApiPath, isDefaultProject]);
 
   useEffect(() => {
-    localStorage.setItem("catalogViewFilter", viewFilter);
-  }, [viewFilter]);
+    localStorage.setItem(viewFilterKey, viewFilter);
+  }, [viewFilter, viewFilterKey]);
 
   useEffect(() => {
     if (!loaded) return;
-    const target = localStorage.getItem("catalogScrollTarget");
+    const target = localStorage.getItem(scrollTargetKey);
     if (!target) return;
-    localStorage.removeItem("catalogScrollTarget");
+    localStorage.removeItem(scrollTargetKey);
     requestAnimationFrame(() => {
       const el = document.querySelector(`[data-slide-id="${target}"]`);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     });
-  }, [loaded]);
+  }, [loaded, scrollTargetKey]);
 
   // Persist all pending changes to localStorage so they survive refreshes
   useEffect(() => {
@@ -158,11 +197,25 @@ export default function CatalogPage() {
     const catsChanged = JSON.stringify(categories) !== JSON.stringify(savedCategories);
     const catNamesChanged = JSON.stringify(categoryNames) !== JSON.stringify(savedCategoryNames);
     if (orderChanged || hiddenChanged || catsChanged || catNamesChanged) {
-      localStorage.setItem("catalogPendingChanges", JSON.stringify({ order, hiddenSlides, categories, categoryNames }));
+      localStorage.setItem(
+        pendingChangesKey,
+        JSON.stringify({ order, hiddenSlides, categories, categoryNames })
+      );
     } else {
-      localStorage.removeItem("catalogPendingChanges");
+      localStorage.removeItem(pendingChangesKey);
     }
-  }, [order, hiddenSlides, categories, categoryNames, savedOrder, savedHiddenSlides, savedCategories, savedCategoryNames, loaded]);
+  }, [
+    order,
+    hiddenSlides,
+    categories,
+    categoryNames,
+    savedOrder,
+    savedHiddenSlides,
+    savedCategories,
+    savedCategoryNames,
+    loaded,
+    pendingChangesKey,
+  ]);
 
   const uniqueCategories = categoryNames;
 
@@ -177,7 +230,7 @@ export default function CatalogPage() {
   const saveAll = useCallback(async () => {
     setSaving(true);
     try {
-      const res = await fetch("/api/slides", {
+      const res = await fetch(slidesApiPath, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ order, categories, categoryNames, hiddenSlides }),
@@ -187,7 +240,7 @@ export default function CatalogPage() {
         setSavedCategories({ ...categories });
         setSavedCategoryNames([...categoryNames]);
         setSavedHiddenSlides([...hiddenSlides]);
-        localStorage.removeItem("catalogPendingChanges");
+        localStorage.removeItem(pendingChangesKey);
         setSaved(true);
         clearTimeout(savedTimeout.current);
         savedTimeout.current = setTimeout(() => setSaved(false), 2000);
@@ -195,7 +248,7 @@ export default function CatalogPage() {
     } finally {
       setSaving(false);
     }
-  }, [order, categories, categoryNames, hiddenSlides]);
+  }, [order, categories, categoryNames, hiddenSlides, pendingChangesKey, slidesApiPath]);
 
   const resetToDefault = useCallback(async () => {
     const defaultData = {
@@ -204,7 +257,7 @@ export default function CatalogPage() {
       categoryNames: [],
       hiddenSlides: [],
     };
-    const res = await fetch("/api/slides", {
+    const res = await fetch(slidesApiPath, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(defaultData),
@@ -218,20 +271,20 @@ export default function CatalogPage() {
       setSavedCategoryNames([]);
       setHiddenSlides([]);
       setSavedHiddenSlides([]);
-      localStorage.removeItem("catalogPendingChanges");
+      localStorage.removeItem(pendingChangesKey);
       setSaved(true);
       clearTimeout(savedTimeout.current);
       savedTimeout.current = setTimeout(() => setSaved(false), 2000);
     }
-  }, []);
+  }, [pendingChangesKey, slidesApiPath]);
 
   const resetAll = useCallback(() => {
     setOrder([...savedOrder]);
     setCategories({ ...savedCategories });
     setCategoryNames([...savedCategoryNames]);
     setHiddenSlides([...savedHiddenSlides]);
-    localStorage.removeItem("catalogPendingChanges");
-  }, [savedOrder, savedCategories, savedCategoryNames, savedHiddenSlides]);
+    localStorage.removeItem(pendingChangesKey);
+  }, [pendingChangesKey, savedOrder, savedCategories, savedCategoryNames, savedHiddenSlides]);
 
   const assignCategory = useCallback((slideId: string, category: string | null) => {
     setCategories((prev) => {
@@ -269,6 +322,7 @@ export default function CatalogPage() {
   }, []);
 
   const [exportFormat, setExportFormat] = useState<"pdf" | "pptx" | null>(null);
+  const [showPromptTips, setShowPromptTips] = useState(false);
 
   const gridSensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -392,28 +446,47 @@ export default function CatalogPage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <a
-            href="/"
-            style={{
-              display: "flex", alignItems: "center", gap: 8,
-              color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: 14,
-              transition: "color 0.2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
-          >
-            <ArrowLeft size={16} />
-            Back to Deck
-          </a>
+          <nav style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <Link href={hubPath} className="catalog-nav-link">
+              <LayoutGrid size={16} />
+              Project Hub
+            </Link>
+            <Link href={deckPath} className="catalog-nav-link">
+              <Play size={16} />
+              View Deck
+            </Link>
+          </nav>
           <div style={{ width: 1, height: 24, background: "rgba(255,255,255,0.1)" }} />
           <div>
-            <h1 style={{ fontSize: 20, fontWeight: 600, color: "#fff", margin: 0 }}>Slide Catalog</h1>
+            <p
+              style={{
+                margin: 0,
+                fontSize: 11,
+                letterSpacing: "0.08em",
+                color: "rgba(91,156,245,0.9)",
+                textTransform: "uppercase",
+                fontWeight: 600,
+              }}
+            >
+              You are in
+            </p>
+            <h1 style={{ fontSize: 20, fontWeight: 600, color: "#fff", margin: "2px 0 0" }}>
+              {projectName ?? "Slide Catalog"}
+            </h1>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: 0, marginTop: 2 }}>
-              {order.length} slides · Drag to reorder
+              Slide Catalog · {order.length} slides · Drag to reorder
             </p>
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <button
+            onClick={() => setShowPromptTips(true)}
+            className="catalog-btn-outline"
+            title="Pre-built Cursor prompts for this project — copy and paste into Cursor chat"
+          >
+            <Lightbulb size={15} style={{ flexShrink: 0, color: "#fbbf24" }} />
+            Prompt Tips
+          </button>
           <button
             onClick={() => setExportFormat("pptx")}
             className="catalog-btn-outline"
@@ -570,6 +643,8 @@ export default function CatalogPage() {
                       key={id}
                       id={id}
                       slide={slide}
+                      deckPath={deckPath}
+                      scrollTargetKey={scrollTargetKey}
                       position={pos}
                       savedPosition={savedPos > 0 ? savedPos : null}
                       isHidden={hiddenSlides.includes(id)}
@@ -677,6 +752,8 @@ export default function CatalogPage() {
                     <SortableSlideCard
                       key={id}
                       slide={slide}
+                      deckPath={deckPath}
+                      scrollTargetKey={scrollTargetKey}
                       index={displayIndex}
                       isActive={activeId === id}
                       isHidden={isHidden}
@@ -894,8 +971,11 @@ export default function CatalogPage() {
             }}>
               <button
                 onClick={() => {
-                  localStorage.setItem("previewDeckData", JSON.stringify({ order, hiddenSlides }));
-                  window.open("/?preview=true", "_blank");
+                  localStorage.setItem(
+                    previewStorageKey,
+                    JSON.stringify({ order, hiddenSlides })
+                  );
+                  window.open(`${deckPath}?preview=true`, "_blank");
                 }}
                 className="catalog-btn-outline"
                 style={{ marginRight: "auto" }}
@@ -926,6 +1006,7 @@ export default function CatalogPage() {
       {exportFormat && (
         <ExportPickerModal
           format={exportFormat}
+          projectId={projectId}
           slides={order.map((id) => ({
             id,
             slide: SLIDE_COMPONENTS[id],
@@ -935,8 +1016,28 @@ export default function CatalogPage() {
         />
       )}
 
+      {/* Prompt Tips Modal */}
+      {showPromptTips && (
+        <PromptTipsModal
+          projectId={projectId}
+          projectName={projectName ?? projectId}
+          publishedCount={order.length - hiddenSlides.length}
+          hiddenCount={hiddenSlides.length}
+          totalCount={order.length}
+          onClose={() => setShowPromptTips(false)}
+        />
+      )}
+
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .catalog-nav-link {
+          display: flex; align-items: center; gap: 8px;
+          color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px;
+          transition: color 0.2s; white-space: nowrap;
+        }
+        .catalog-nav-link:hover {
+          color: rgba(255,255,255,0.85);
+        }
         .catalog-btn-outline {
           display: flex; align-items: center; gap: 10px;
           padding: 9px 20px; border-radius: 8px;

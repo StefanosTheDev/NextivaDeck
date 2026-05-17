@@ -1,0 +1,29 @@
+{
+  "defaultProjectId": "investor-deck",
+  "projects": [
+    {
+      "id": "investor-deck",
+      "name": "Nextiva Investor Deck",
+      "createdAt": "2026-05-17T04:23:05.334Z",
+      "updatedAt": "2026-05-17T04:23:05.334Z",
+      "status": "active",
+      "deletedAt": null
+    },
+    {
+      "id": "as",
+      "name": "as",
+      "createdAt": "2026-05-17T04:38:43.090Z",
+      "updatedAt": "2026-05-17T21:13:29.354Z",
+      "status": "active",
+      "deletedAt": null
+    },
+    {
+      "id": "sdasdadsads",
+      "name": "sdasdADSads",
+      "createdAt": "2026-05-17T21:14:42.665Z",
+      "updatedAt": "2026-05-17T21:14:42.665Z",
+      "status": "active",
+      "deletedAt": null
+    }
+  ]
+}
