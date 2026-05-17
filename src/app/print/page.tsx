@@ -3,13 +3,22 @@
 import { useState, useCallback } from "react";
 import { Download, ArrowLeft, FileText, Loader2 } from "lucide-react";
 
-export default function PrintPage() {
+interface PrintPageProps {
+  projectId?: string;
+}
+
+export default function PrintPage({ projectId = "investor-deck" }: PrintPageProps = {}) {
+  const isDefaultProject = projectId === "investor-deck";
+  const deckPath = isDefaultProject ? "/" : `/projects/${projectId}`;
+  const pdfApiPath = isDefaultProject
+    ? "/api/generate-pdf"
+    : `/api/generate-pdf?projectId=${encodeURIComponent(projectId)}`;
   const [status, setStatus] = useState<"idle" | "generating" | "done" | "error">("idle");
 
   const handleDownload = useCallback(async () => {
     setStatus("generating");
     try {
-      const res = await fetch("/api/generate-pdf");
+      const res = await fetch(pdfApiPath);
       if (!res.ok) throw new Error("PDF generation failed");
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
@@ -26,7 +35,7 @@ export default function PrintPage() {
       setStatus("error");
       setTimeout(() => setStatus("idle"), 4000);
     }
-  }, []);
+  }, [pdfApiPath]);
 
   return (
     <div
@@ -42,7 +51,7 @@ export default function PrintPage() {
       }}
     >
       <a
-        href="/"
+        href={deckPath}
         style={{
           position: "absolute",
           top: 24,
@@ -91,7 +100,7 @@ export default function PrintPage() {
             Download PDF
           </h1>
           <p style={{ fontSize: 16, color: "rgba(255,255,255,0.45)", marginTop: 8 }}>
-            Generate a high-quality PDF of the full Nextiva Investor Deck with all slides in their current order.
+            Generate a high-quality PDF for this project with slides in their current order.
           </p>
         </div>
 

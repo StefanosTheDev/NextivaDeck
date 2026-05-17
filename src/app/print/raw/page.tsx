@@ -4,18 +4,29 @@ import { useState, useEffect } from "react";
 import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
 import NextivaSiteHeaderLogo from "@/components/NextivaSiteHeaderLogo";
 
-export default function PrintRawPage() {
+interface PrintRawPageProps {
+  projectId?: string;
+}
+
+export default function PrintRawPage({ projectId = "investor-deck" }: PrintRawPageProps = {}) {
+  const slidesApiPath =
+    projectId === "investor-deck"
+      ? "/api/slides"
+      : `/api/projects/${projectId}/slides`;
   const [slides, setSlides] = useState<SlideDef[]>([]);
   const [loaded, setLoaded] = useState(false);
-  const [startNum, setStartNum] = useState(1);
+  const [startNum] = useState(() => {
+    if (typeof window === "undefined") return 1;
+    const params = new URLSearchParams(window.location.search);
+    const sn = parseInt(params.get("startNumber") || "1", 10);
+    return !Number.isNaN(sn) && sn >= 1 ? sn : 1;
+  });
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const slidesParam = params.get("slides");
-    const sn = parseInt(params.get("startNumber") || "1", 10);
-    if (!isNaN(sn) && sn >= 1) setStartNum(sn);
 
-    fetch("/api/slides")
+    fetch(slidesApiPath)
       .then((r) => r.json())
       .then((data) => {
         if (slidesParam) {
@@ -38,7 +49,7 @@ export default function PrintRawPage() {
         }
         setLoaded(true);
       });
-  }, []);
+  }, [slidesApiPath]);
 
   if (!loaded) return null;
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
@@ -8,8 +9,26 @@ import { resolveSlides, DEFAULT_SLIDE_ORDER, type SlideDef } from "./slideRegist
 import NextivaSiteHeaderLogo from "./NextivaSiteHeaderLogo";
 
 
-export default function InvestorDeck() {
-  const [slides, setSlides] = useState<SlideDef[]>(() => resolveSlides(DEFAULT_SLIDE_ORDER));
+interface InvestorDeckProps {
+  projectId?: string;
+}
+
+export default function InvestorDeck({ projectId = "investor-deck" }: InvestorDeckProps = {}) {
+  const isDefaultProject = projectId === "investor-deck";
+  const slidesApiPath = isDefaultProject
+    ? "/api/slides"
+    : `/api/projects/${projectId}/slides`;
+  const catalogPath = isDefaultProject
+    ? "/catalog"
+    : `/projects/${projectId}/catalog`;
+  const previewStorageKey = isDefaultProject
+    ? "previewDeckData"
+    : `previewDeckData:${projectId}`;
+  const [slides, setSlides] = useState<SlideDef[]>(() =>
+    isDefaultProject ? resolveSlides(DEFAULT_SLIDE_ORDER) : []
+  );
+  const [deckLoaded, setDeckLoaded] = useState(isDefaultProject);
+  const [projectName, setProjectName] = useState<string | null>(null);
   const [isPreview, setIsPreview] = useState(false);
   const [fromCatalog, setFromCatalog] = useState(false);
   const [cur, setCur] = useState(() => {
@@ -38,7 +57,7 @@ export default function InvestorDeck() {
     setFromCatalog(from === "catalog");
 
     if (preview) {
-      const stored = localStorage.getItem("previewDeckData");
+      const stored = localStorage.getItem(previewStorageKey);
       if (stored) {
         try {
           const data = JSON.parse(stored);
@@ -49,6 +68,7 @@ export default function InvestorDeck() {
           if (resolved.length > 0) {
             setSlides(resolved);
             if (cur >= resolved.length) setCur(0);
+            setDeckLoaded(true);
             return;
           }
         } catch {
@@ -57,9 +77,12 @@ export default function InvestorDeck() {
       }
     }
 
-    fetch("/api/slides")
+    fetch(slidesApiPath)
       .then((r) => r.json())
       .then((data) => {
+        if (typeof data.projectName === "string") {
+          setProjectName(data.projectName);
+        }
         if (Array.isArray(data.order)) {
           const hidden: string[] = Array.isArray(data.hiddenSlides) ? data.hiddenSlides : [];
           const displayOrder = data.order.filter((id: string) => !hidden.includes(id));
@@ -74,9 +97,12 @@ export default function InvestorDeck() {
           }
         }
       })
-      .catch(() => {});
+      .catch(() => {
+        if (!isDefaultProject) setSlides([]);
+      })
+      .finally(() => setDeckLoaded(true));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [previewStorageKey, slidesApiPath, isDefaultProject]);
 
   const go = useCallback((i: number) => {
     if (i < 0 || i >= slides.length || i === cur || transitioning) return;
@@ -132,7 +158,91 @@ export default function InvestorDeck() {
   const safeCur = slides.length > 0 ? Math.min(cur, slides.length - 1) : 0;
   const currentSlide = slides[safeCur];
 
-  if (!currentSlide) return null;
+  if (!deckLoaded) {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "linear-gradient(180deg, #0a0f1a 0%, #111827 100%)",
+          fontFamily: "'Space Grotesk', sans-serif",
+          color: "rgba(255,255,255,0.55)",
+        }}
+      >
+        Loading project…
+      </div>
+    );
+  }
+
+  if (!currentSlide) {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "linear-gradient(180deg, #0a0f1a 0%, #111827 100%)",
+          fontFamily: "'Space Grotesk', sans-serif",
+          color: "#fff",
+          padding: 24,
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 620,
+            width: "100%",
+            borderRadius: 14,
+            border: "1px solid rgba(255,255,255,0.1)",
+            background: "rgba(255,255,255,0.04)",
+            padding: 28,
+          }}
+        >
+          <p style={{ margin: 0, color: "#5b9cf5", fontSize: 13, letterSpacing: "0.04em" }}>
+            {projectName ?? projectId}
+          </p>
+          <h1 style={{ margin: "8px 0 0", fontSize: 28, lineHeight: 1.2 }}>
+            No slides in this project yet
+          </h1>
+          <p style={{ margin: "10px 0 0", color: "rgba(255,255,255,0.65)", fontSize: 15 }}>
+            Add slide IDs to <code style={{ color: "#93c5fd" }}>data/projects/{projectId}.json</code> via
+            your Cursor workflow, then open the catalog to organize and present.
+          </p>
+          <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
+            <a
+              href={catalogPath}
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+                background: "#2860B2",
+                borderRadius: 8,
+                padding: "10px 14px",
+                fontSize: 14,
+                fontWeight: 600,
+              }}
+            >
+              Open Catalog
+            </a>
+            <Link
+              href="/"
+              style={{
+                textDecoration: "none",
+                color: "rgba(255,255,255,0.8)",
+                border: "1px solid rgba(255,255,255,0.2)",
+                borderRadius: 8,
+                padding: "10px 14px",
+                fontSize: 14,
+              }}
+            >
+              Back to Hub
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const Slide = currentSlide.component;
   const navTheme = currentSlide.theme === "dark" ? "nav-dark" : "nav-light";
@@ -159,7 +269,7 @@ export default function InvestorDeck() {
       {/* Back to Catalog button */}
       {fromCatalog && !isPreview && (
         <a
-          href="/catalog"
+          href={catalogPath}
           style={{
             position: "absolute",
             top: 16,
@@ -224,7 +334,7 @@ export default function InvestorDeck() {
             Slide {safeCur + 1} of {slides.length}
           </span>
           <a
-            href="/catalog"
+            href={catalogPath}
             style={{
               marginLeft: "auto",
               display: "flex", alignItems: "center", gap: 6,

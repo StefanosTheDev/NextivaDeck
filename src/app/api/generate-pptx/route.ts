@@ -5,10 +5,29 @@ import PptxGenJS from "pptxgenjs";
 const SLIDE_WIDTH = 1920;
 const SLIDE_HEIGHT = 1080;
 
+function projectExportStem(projectId: string): string {
+  return projectId === "investor-deck"
+    ? "Nextiva-Investor-Deck-2026"
+    : `Nextiva-Deck-${projectId}`;
+}
+
+function projectSlidesApiPath(projectId: string): string {
+  if (projectId === "investor-deck") return "/api/slides";
+  return `/api/projects/${encodeURIComponent(projectId)}/slides`;
+}
+
+function projectViewerUrl(baseUrl: string, projectId: string, slideId: string): string {
+  const slideQuery = `slideId=${encodeURIComponent(slideId)}`;
+  if (projectId === "investor-deck") return `${baseUrl}/?${slideQuery}`;
+  return `${baseUrl}/projects/${encodeURIComponent(projectId)}?${slideQuery}`;
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const baseUrl =
     searchParams.get("baseUrl") || new URL(request.url).origin;
+  const projectId = searchParams.get("projectId") || "investor-deck";
+  const exportStem = projectExportStem(projectId);
 
   let browser;
   try {
@@ -36,7 +55,7 @@ export async function GET(request: Request) {
     if (slidesParam) {
       slideIds = slidesParam.split(",").map((s) => s.trim()).filter(Boolean);
     } else {
-      const apiRes = await fetch(`${baseUrl}/api/slides`);
+      const apiRes = await fetch(`${baseUrl}${projectSlidesApiPath(projectId)}`);
       const data = await apiRes.json();
       const hidden: string[] = Array.isArray(data.hiddenSlides) ? data.hiddenSlides : [];
       slideIds = (data.order as string[]).filter((id) => !hidden.includes(id));
@@ -47,7 +66,7 @@ export async function GET(request: Request) {
     const screenshots: Buffer[] = [];
 
     for (let i = 0; i < slideIds.length; i++) {
-      const slideUrl = `${baseUrl}/?slideId=${encodeURIComponent(slideIds[i])}`;
+      const slideUrl = projectViewerUrl(baseUrl, projectId, slideIds[i]);
       await page.goto(slideUrl, {
         waitUntil: "networkidle2",
         timeout: 30_000,
@@ -91,7 +110,7 @@ export async function GET(request: Request) {
     pptx.defineLayout({ name: "CUSTOM", width: 10, height: 5.625 });
     pptx.layout = "CUSTOM";
     pptx.author = "Nextiva";
-    pptx.title = "Nextiva Investor Deck 2026";
+    pptx.title = exportStem;
 
     for (const screenshotBuf of screenshots) {
       const slide = pptx.addSlide();
@@ -114,7 +133,7 @@ export async function GET(request: Request) {
         "Content-Type":
           "application/vnd.openxmlformats-officedocument.presentationml.presentation",
         "Content-Disposition":
-          'attachment; filename="Nextiva-Investor-Deck-2026.pptx"',
+          `attachment; filename="${exportStem}.pptx"`,
         "Cache-Control": "no-store",
       },
     });

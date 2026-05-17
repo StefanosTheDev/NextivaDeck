@@ -17,12 +17,16 @@ interface Props {
   categoryColor: { bg: string; text: string; dot: string } | null;
   allCategories: string[];
   onAssignCategory: (category: string | null) => void;
+  deckPath?: string;
+  scrollTargetKey?: string;
 }
 
 export default function SortableSlideCard({
   slide, index, isActive, isHidden, onToggleHide,
   category, categoryColor,
   allCategories, onAssignCategory,
+  deckPath = "/",
+  scrollTargetKey = "catalogScrollTarget",
 }: Props) {
   const {
     attributes, listeners, setNodeRef, transform, transition, isDragging,
@@ -53,8 +57,8 @@ export default function SortableSlideCard({
       data-slide-id={slide.id}
       onDoubleClick={() => {
         if (!didDrag.current) {
-          localStorage.setItem("catalogScrollTarget", slide.id);
-          window.location.href = `/?slideId=${slide.id}&from=catalog`;
+          localStorage.setItem(scrollTargetKey, slide.id);
+          window.location.href = `${deckPath}?slideId=${slide.id}&from=catalog`;
         }
       }}
     >
