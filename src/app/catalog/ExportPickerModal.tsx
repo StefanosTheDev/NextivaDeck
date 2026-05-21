@@ -2,13 +2,13 @@
 
 import { useState, useCallback, useRef } from "react";
 import { X, Check, Download, FileDown, Loader2, CheckSquare, Square, StopCircle } from "lucide-react";
-import type { SlideDef } from "@/components/slideRegistry";
+import type { SlideCatalogMeta } from "@/types/slideCatalog";
 
 type ExportFormat = "pdf" | "pptx" | "png" | "pdf-hires" | "png-zip";
 
 interface Props {
   format: ExportFormat;
-  slides: { id: string; slide: SlideDef; isHidden: boolean }[];
+  slides: { id: string; meta: SlideCatalogMeta; isHidden: boolean }[];
   onClose: () => void;
 }
 
@@ -343,7 +343,7 @@ export default function ExportPickerModal({ format, slides, onClose }: Props) {
                       color: isChecked ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.35)",
                       flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
                     }}>
-                      {s.slide.label}
+                      {s.meta.label}
                     </span>
                   </label>
                 );

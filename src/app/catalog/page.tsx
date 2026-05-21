@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import {
   DndContext,
@@ -20,13 +21,36 @@ import {
 } from "@dnd-kit/sortable";
 import { Save, Check, RotateCcw, ArrowLeft, Download, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
 
-import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
 import CatalogManageRow from "./CatalogManageRow";
-import CatalogSlidePreviewPanel from "./CatalogSlidePreviewPanel";
 import CatalogSlidePlaceholder from "./CatalogSlidePlaceholder";
 import SidebarSlideRow from "./SidebarSlideRow";
 import CategoryInput from "./CategoryInput";
-import ExportPickerModal from "./ExportPickerModal";
+import type { SlideCatalogMeta, SlideCatalogApiResponse } from "@/types/slideCatalog";
+
+const CatalogSlidePreviewPanel = dynamic(() => import("./CatalogSlidePreviewPanel"), {
+  ssr: false,
+  loading: () => (
+    <aside
+      style={{
+        width: 420,
+        minWidth: 420,
+        borderLeft: "1px solid rgba(255,255,255,0.08)",
+        background: "rgba(0,0,0,0.2)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+        color: "rgba(255,255,255,0.35)",
+        fontFamily: "'Space Grotesk', sans-serif",
+        fontSize: 14,
+      }}
+    >
+      Loading preview…
+    </aside>
+  ),
+});
+
+const ExportPickerModal = dynamic(() => import("./ExportPickerModal"), { ssr: false });
 
 const CATEGORY_COLORS = [
   { bg: "rgba(40,96,178,0.18)",  text: "#5b9cf5", dot: "#2860B2"  },
@@ -54,8 +78,10 @@ function dedupe(arr: string[]): string[] {
 }
 
 export default function CatalogPage() {
-  const [order, setOrder] = useState<string[]>(DEFAULT_SLIDE_ORDER);
-  const [savedOrder, setSavedOrder] = useState<string[]>(DEFAULT_SLIDE_ORDER);
+  const [order, setOrder] = useState<string[]>([]);
+  const [savedOrder, setSavedOrder] = useState<string[]>([]);
+  const [slideMeta, setSlideMeta] = useState<Record<string, SlideCatalogMeta>>({});
+  const [defaultOrder, setDefaultOrder] = useState<string[]>([]);
   const [categories, setCategories] = useState<Record<string, string>>({});
   const [savedCategories, setSavedCategories] = useState<Record<string, string>>({});
   const [categoryNames, setCategoryNames] = useState<string[]>([]);
@@ -81,7 +107,13 @@ export default function CatalogPage() {
   useEffect(() => {
     fetch("/api/slides")
       .then((r) => r.json())
-      .then((data) => {
+      .then((data: SlideCatalogApiResponse) => {
+        if (data.meta && typeof data.meta === "object") {
+          setSlideMeta(data.meta);
+        }
+        if (Array.isArray(data.defaultOrder)) {
+          setDefaultOrder(data.defaultOrder);
+        }
         if (Array.isArray(data.order)) {
           data.order = dedupe(data.order);
           setSavedOrder(data.order);
@@ -141,13 +173,13 @@ export default function CatalogPage() {
       if (viewFilter === "published" && hiddenSet.has(id)) return false;
       if (viewFilter === "hidden" && !hiddenSet.has(id)) return false;
       if (selectedCategory && categories[id] !== selectedCategory) return false;
-      return !!SLIDE_COMPONENTS[id];
+      return !!slideMeta[id];
     };
     setSelectedSlideId((current) => {
       if (current && isInFilter(current)) return current;
       return order.find(isInFilter) ?? null;
     });
-  }, [loaded, order, hiddenSlides, viewFilter, selectedCategory, categories]);
+  }, [loaded, order, hiddenSlides, viewFilter, selectedCategory, categories, slideMeta]);
 
   useEffect(() => {
     localStorage.setItem("catalogViewFilter", viewFilter);
@@ -214,8 +246,9 @@ export default function CatalogPage() {
   }, [order, categories, categoryNames, hiddenSlides]);
 
   const resetToDefault = useCallback(async () => {
+    const fallbackOrder = defaultOrder.length > 0 ? defaultOrder : order;
     const defaultData = {
-      order: DEFAULT_SLIDE_ORDER,
+      order: fallbackOrder,
       categories: {},
       categoryNames: [],
       hiddenSlides: [],
@@ -226,8 +259,8 @@ export default function CatalogPage() {
       body: JSON.stringify(defaultData),
     });
     if (res.ok) {
-      setOrder([...DEFAULT_SLIDE_ORDER]);
-      setSavedOrder([...DEFAULT_SLIDE_ORDER]);
+      setOrder([...fallbackOrder]);
+      setSavedOrder([...fallbackOrder]);
       setCategories({});
       setSavedCategories({});
       setCategoryNames([]);
@@ -239,7 +272,7 @@ export default function CatalogPage() {
       clearTimeout(savedTimeout.current);
       savedTimeout.current = setTimeout(() => setSaved(false), 2000);
     }
-  }, []);
+  }, [defaultOrder, order]);
 
   const resetAll = useCallback(() => {
     setOrder([...savedOrder]);
@@ -351,7 +384,7 @@ export default function CatalogPage() {
     reorderFiltered(active.id as string, over.id as string);
   }
 
-  const activeSlide = activeId ? SLIDE_COMPONENTS[activeId] : null;
+  const activeSlide = activeId ? slideMeta[activeId] ?? null : null;
 
   const sidebarOrder = useMemo(() => {
     let filtered = order;
@@ -386,7 +419,7 @@ export default function CatalogPage() {
   }, []);
 
   const selectedSlideIndex = selectedSlideId ? sidebarOrder.indexOf(selectedSlideId) : -1;
-  const selectedSlide = selectedSlideId ? SLIDE_COMPONENTS[selectedSlideId] ?? null : null;
+  const selectedSlide = selectedSlideId ? slideMeta[selectedSlideId] ?? null : null;
 
   const goToAdjacentSlide = useCallback(
     (delta: number) => {
@@ -607,7 +640,7 @@ export default function CatalogPage() {
             >
               <SortableContext items={sidebarOrder} strategy={verticalListSortingStrategy}>
                 {sidebarOrder.map((id, filteredIdx) => {
-                  const slide = SLIDE_COMPONENTS[id];
+                  const slide = slideMeta[id];
                   if (!slide) return null;
                   const pos = viewFilter === "all" ? order.indexOf(id) + 1 : filteredIdx + 1;
                   const savedPos = savedSidebarOrder.indexOf(id) + 1;
@@ -714,7 +747,7 @@ export default function CatalogPage() {
             <SortableContext items={sidebarOrder} strategy={verticalListSortingStrategy}>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {sidebarOrder.map((id, filteredIdx) => {
-                  const slide = SLIDE_COMPONENTS[id];
+                  const slide = slideMeta[id];
                   if (!slide) return null;
                   const isHidden = hiddenSlides.includes(id);
                   const displayIndex = viewFilter === "all" ? order.indexOf(id) : filteredIdx;
@@ -862,7 +895,7 @@ export default function CatalogPage() {
               {/* New order with change indicators */}
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {order.map((id, newIdx) => {
-                  const slide = SLIDE_COMPONENTS[id];
+                  const slide = slideMeta[id];
                   if (!slide) return null;
                   const oldIdx = savedOrder.indexOf(id);
                   const moved = oldIdx !== newIdx;
@@ -983,11 +1016,13 @@ export default function CatalogPage() {
       {exportFormat && (
         <ExportPickerModal
           format={exportFormat}
-          slides={order.map((id) => ({
-            id,
-            slide: SLIDE_COMPONENTS[id],
-            isHidden: hiddenSlides.includes(id),
-          })).filter((s) => s.slide != null) as { id: string; slide: SlideDef; isHidden: boolean }[]}
+          slides={order
+            .map((id) => ({
+              id,
+              meta: slideMeta[id],
+              isHidden: hiddenSlides.includes(id),
+            }))
+            .filter((s): s is { id: string; meta: SlideCatalogMeta; isHidden: boolean } => s.meta != null)}
           onClose={() => setExportFormat(null)}
         />
       )}
@@ -1033,7 +1068,7 @@ export default function CatalogPage() {
 }
 
 function SlideCardOverlay({ slide, index, category, categoryColor }: {
-  slide: SlideDef;
+  slide: SlideCatalogMeta;
   index: number;
   category: string | null;
   categoryColor: { bg: string; text: string; dot: string } | null;

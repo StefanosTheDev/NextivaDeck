@@ -129,6 +129,7 @@ import InvestorSummaryCopySlide from "./slides/InvestorSummaryCopySlide";
 import UnifiedPlatformMoatsSlide from "./slides/UnifiedPlatformMoatsSlide";
 import StructuralAdvantagesSlide from "./slides/StructuralAdvantagesSlide";
 import JourneyCopySlide, { JourneyCopySlideEnhanced } from "./slides/JourneyCopySlide";
+import NewTamSlide from "./slides/NewTamSlide";
 import StructuralAdvantagesCopySlide from "./slides/StructuralAdvantagesCopySlide";
 import CustomerBaseBroadSlide from "./slides/CustomerBaseBroadSlide";
 import GTMEngineSlide from "./slides/GTMEngineSlide";
@@ -411,6 +412,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "unified-platform-moats": { id: "unified-platform-moats", label: "Unified Platform Moats", component: UnifiedPlatformMoatsSlide, theme: "dark" },
   "structural-advantages": { id: "structural-advantages", label: "Three Structural Advantages", component: StructuralAdvantagesSlide, theme: "dark" },
   "journey-copy": { id: "journey-copy", label: "Journey (copy)", component: JourneyCopySlide, theme: "dark" },
+  "new-tam": { id: "new-tam", label: "New TAM", component: NewTamSlide, theme: "dark", isNew: true },
   "journey-copy-enhanced": {
     id: "journey-copy-enhanced",
     label: "Journey (copy, enhanced connectors)",

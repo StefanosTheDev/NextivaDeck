@@ -1,0 +1,1308 @@
+{
+  "cover": {
+    "id": "cover",
+    "label": "Cover",
+    "theme": "dark"
+  },
+  "safe-harbor": {
+    "id": "safe-harbor",
+    "label": "Safe Harbor",
+    "theme": "dark"
+  },
+  "better-outcomes": {
+    "id": "better-outcomes",
+    "label": "Our Mission",
+    "theme": "dark"
+  },
+  "better-outcomes-copy": {
+    "id": "better-outcomes-copy",
+    "label": "Our Mission (copy)",
+    "theme": "dark"
+  },
+  "glance": {
+    "id": "glance",
+    "label": "At a Glance",
+    "theme": "dark"
+  },
+  "founder": {
+    "id": "founder",
+    "label": "Founder",
+    "theme": "dark"
+  },
+  "who": {
+    "id": "who",
+    "label": "Who We Serve",
+    "theme": "dark"
+  },
+  "journey": {
+    "id": "journey",
+    "label": "Journey",
+    "theme": "dark"
+  },
+  "problem": {
+    "id": "problem",
+    "label": "Problem",
+    "theme": "dark"
+  },
+  "platform": {
+    "id": "platform",
+    "label": "Platform",
+    "theme": "dark"
+  },
+  "platform-copy": {
+    "id": "platform-copy",
+    "label": "Platform (copy)",
+    "theme": "dark"
+  },
+  "platform-copy-2": {
+    "id": "platform-copy-2",
+    "label": "Platform (defensive)",
+    "theme": "dark"
+  },
+  "solution": {
+    "id": "solution",
+    "label": "Solution",
+    "theme": "dark"
+  },
+  "solution-copy": {
+    "id": "solution-copy",
+    "label": "Solution (copy)",
+    "theme": "dark"
+  },
+  "market": {
+    "id": "market",
+    "label": "Market",
+    "theme": "dark"
+  },
+  "agentic-opp": {
+    "id": "agentic-opp",
+    "label": "AI Opportunity",
+    "theme": "dark"
+  },
+  "agentic-opp-copy": {
+    "id": "agentic-opp-copy",
+    "label": "AI Opportunity (copy)",
+    "theme": "dark"
+  },
+  "agentic-opp-copy-2": {
+    "id": "agentic-opp-copy-2",
+    "label": "AI Opportunity (copy 2)",
+    "theme": "dark"
+  },
+  "agentic-opp-copy-3": {
+    "id": "agentic-opp-copy-3",
+    "label": "Tomorrow's Agentic Workforce (copy)",
+    "theme": "dark"
+  },
+  "agentic-opp-copy-4": {
+    "id": "agentic-opp-copy-4",
+    "label": "The Next Workforce is a Gen Tech (copy)",
+    "theme": "dark"
+  },
+  "agentic-opp-copy-5": {
+    "id": "agentic-opp-copy-5",
+    "label": "AI Opportunity (simplified)",
+    "theme": "dark"
+  },
+  "agentic-opp-3": {
+    "id": "agentic-opp-3",
+    "label": "AI Opportunity (defensive)",
+    "theme": "dark"
+  },
+  "ai-tandem": {
+    "id": "ai-tandem",
+    "label": "AI + Human",
+    "theme": "dark"
+  },
+  "cx-market-sizing": {
+    "id": "cx-market-sizing",
+    "label": "CX Market Sizing",
+    "theme": "dark"
+  },
+  "labor-cost-savings": {
+    "id": "labor-cost-savings",
+    "label": "Labor Cost Savings",
+    "theme": "dark"
+  },
+  "ai-tailwind": {
+    "id": "ai-tailwind",
+    "label": "AI Tailwind",
+    "theme": "dark"
+  },
+  "win": {
+    "id": "win",
+    "label": "Right to Win",
+    "theme": "dark"
+  },
+  "financials": {
+    "id": "financials",
+    "label": "Financials",
+    "theme": "light"
+  },
+  "leadership": {
+    "id": "leadership",
+    "label": "Leadership",
+    "theme": "light"
+  },
+  "summary": {
+    "id": "summary",
+    "label": "Summary",
+    "theme": "dark"
+  },
+  "closing": {
+    "id": "closing",
+    "label": "Closing",
+    "theme": "dark"
+  },
+  "appendix-customers": {
+    "id": "appendix-customers",
+    "label": "Customers",
+    "theme": "dark"
+  },
+  "appendix-products": {
+    "id": "appendix-products",
+    "label": "Products",
+    "theme": "light"
+  },
+  "ai-gateways-revenue": {
+    "id": "ai-gateways-revenue",
+    "label": "(30) AI Gateways Revenue",
+    "theme": "dark"
+  },
+  "financial-divider": {
+    "id": "financial-divider",
+    "label": "Financial Overview",
+    "theme": "dark",
+    "isNew": true
+  },
+  "customer-use-cases-divider": {
+    "id": "customer-use-cases-divider",
+    "label": "Customer Use Cases",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio": {
+    "id": "cx-portfolio",
+    "label": "CX Platform Portfolio",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-opt-a": {
+    "id": "cx-portfolio-opt-a",
+    "label": "CX Portfolio (A: Clip-path)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-opt-b": {
+    "id": "cx-portfolio-opt-b",
+    "label": "CX Portfolio (B: Overlapping)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-opt-c": {
+    "id": "cx-portfolio-opt-c",
+    "label": "CX Portfolio (C: Grid + Divider)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-puzzle-cross": {
+    "id": "cx-portfolio-puzzle-cross",
+    "label": "CX Portfolio (Puzzle Cross)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "arr-gross-margin": {
+    "id": "arr-gross-margin",
+    "label": "Revenue & Margin",
+    "theme": "dark",
+    "isNew": true
+  },
+  "ebitda": {
+    "id": "ebitda",
+    "label": "EBITDA",
+    "theme": "dark",
+    "isNew": true
+  },
+  "nrr-churn": {
+    "id": "nrr-churn",
+    "label": "(35) Retention Trends",
+    "theme": "dark",
+    "isNew": true
+  },
+  "nrr-churn-copy": {
+    "id": "nrr-churn-copy",
+    "label": "Retention Trends (Copy)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "expansion-retention": {
+    "id": "expansion-retention",
+    "label": "(34) Customer Expansion",
+    "theme": "dark",
+    "isNew": true
+  },
+  "target-model": {
+    "id": "target-model",
+    "label": "Target Model",
+    "theme": "dark",
+    "isNew": true
+  },
+  "operating-leverage": {
+    "id": "operating-leverage",
+    "label": "Operating Leverage",
+    "theme": "dark",
+    "isNew": true
+  },
+  "operating-leverage-dated": {
+    "id": "operating-leverage-dated",
+    "label": "(32) Operating Leverage (0315)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "customer-base": {
+    "id": "customer-base",
+    "label": "Customer Base",
+    "theme": "dark",
+    "isNew": true
+  },
+  "revenue-visibility": {
+    "id": "revenue-visibility",
+    "label": "(31) Revenue Visibility",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cash-flow-trends": {
+    "id": "cash-flow-trends",
+    "label": "Cash Flow Trends",
+    "theme": "dark",
+    "isNew": true
+  },
+  "agentic-opp-2": {
+    "id": "agentic-opp-2",
+    "label": "AI Opportunity (2)",
+    "theme": "dark"
+  },
+  "ai-tailwind-2": {
+    "id": "ai-tailwind-2",
+    "label": "AI Tailwind (2)",
+    "theme": "dark"
+  },
+  "durable-edge": {
+    "id": "durable-edge",
+    "label": "Durable Edge",
+    "theme": "light"
+  },
+  "market-tam": {
+    "id": "market-tam",
+    "label": "Market TAM",
+    "theme": "dark"
+  },
+  "competitive-moat": {
+    "id": "competitive-moat",
+    "label": "Competitive Moat",
+    "theme": "dark"
+  },
+  "competitive-moat-2": {
+    "id": "competitive-moat-2",
+    "label": "Competitive Moat (defensive)",
+    "theme": "dark"
+  },
+  "unified-data-model": {
+    "id": "unified-data-model",
+    "label": "Unified Data Model",
+    "theme": "dark"
+  },
+  "ai-tailwind-opt-a": {
+    "id": "ai-tailwind-opt-a",
+    "label": "AI Tailwind Option A",
+    "theme": "dark"
+  },
+  "ai-tailwind-opt-b": {
+    "id": "ai-tailwind-opt-b",
+    "label": "AI Tailwind Option B",
+    "theme": "dark"
+  },
+  "ai-tailwind-opt-c": {
+    "id": "ai-tailwind-opt-c",
+    "label": "AI Tailwind Option C",
+    "theme": "dark"
+  },
+  "ai-tailwind-opt-d": {
+    "id": "ai-tailwind-opt-d",
+    "label": "AI Tailwind Option D",
+    "theme": "dark"
+  },
+  "ai-tailwind-opt-e": {
+    "id": "ai-tailwind-opt-e",
+    "label": "AI Tailwind Option E",
+    "theme": "dark"
+  },
+  "ai-tailwind-copy": {
+    "id": "ai-tailwind-copy",
+    "label": "AI Tailwind (copy)",
+    "theme": "dark"
+  },
+  "ai-tailwind-4": {
+    "id": "ai-tailwind-4",
+    "label": "Why AI Strengthens Our Business (copy)",
+    "theme": "dark"
+  },
+  "ai-tailwind-3": {
+    "id": "ai-tailwind-3",
+    "label": "Why AI Strengthens Our Business",
+    "theme": "dark"
+  },
+  "ai-defensibility-matrix": {
+    "id": "ai-defensibility-matrix",
+    "label": "AI Defensibility 2×2 Matrix",
+    "theme": "dark"
+  },
+  "customer-base-lovable": {
+    "id": "customer-base-lovable",
+    "label": "Customer Base (Lovable)",
+    "theme": "dark"
+  },
+  "customer-base-lovable-pie": {
+    "id": "customer-base-lovable-pie",
+    "label": "Customer Base (Lovable, industry pie)",
+    "theme": "dark"
+  },
+  "cx-tam-nested-focus": {
+    "id": "cx-tam-nested-focus",
+    "label": "CX TAM & Nextiva focus (nested)",
+    "theme": "dark"
+  },
+  "market-tam-lovable": {
+    "id": "market-tam-lovable",
+    "label": "Market TAM (Lovable)",
+    "theme": "dark"
+  },
+  "world-moving-thomas": {
+    "id": "world-moving-thomas",
+    "label": "#4 World Moving to Unified CX (Thomas · SlideWorldMoving)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "what-we-are-close-thomas": {
+    "id": "what-we-are-close-thomas",
+    "label": "#6 What We Are Close (Thomas · SlideWhatWeAreClose)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-thomas": {
+    "id": "cx-portfolio-thomas",
+    "label": "#15 CX Platform Portfolio (Thomas · SlideCXPortfolio)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "ai-agents-in-action": {
+    "id": "ai-agents-in-action",
+    "label": "AI Agents in Action",
+    "theme": "dark",
+    "isNew": true
+  },
+  "agentic-opp-v2-thomas": {
+    "id": "agentic-opp-v2-thomas",
+    "label": "AI Opportunity (Thomas · SlideAgenticOpportunity)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-thomas-a": {
+    "id": "cx-portfolio-thomas-a",
+    "label": "#15 CX Portfolio (A: Puzzle-Tab Connectors)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-thomas-b": {
+    "id": "cx-portfolio-thomas-b",
+    "label": "#15 CX Portfolio (B: Connection Bridges)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-thomas-c": {
+    "id": "cx-portfolio-thomas-c",
+    "label": "#15 CX Portfolio (C: Shared Foundation)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-thomas-d": {
+    "id": "cx-portfolio-thomas-d",
+    "label": "#15 CX Portfolio (D: Puzzle 2x2 Grid)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "agentic-opp-lovable": {
+    "id": "agentic-opp-lovable",
+    "label": "AI Opportunity (Lovable)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "contact-center-market-opportunity": {
+    "id": "contact-center-market-opportunity",
+    "label": "Contact Center Market Opportunity",
+    "theme": "dark",
+    "isNew": true
+  },
+  "executive-summary": {
+    "id": "executive-summary",
+    "label": "Executive Summary (Option 1, cards)",
+    "theme": "dark"
+  },
+  "executive-summary-cards": {
+    "id": "executive-summary-cards",
+    "label": "Executive Summary (Option 1, slide 8 style)",
+    "theme": "dark"
+  },
+  "executive-summary-cards-copy": {
+    "id": "executive-summary-cards-copy",
+    "label": "Executive Summary (copy)",
+    "theme": "dark"
+  },
+  "executive-summary-2": {
+    "id": "executive-summary-2",
+    "label": "Executive Summary (Option 2, cards)",
+    "theme": "dark"
+  },
+  "executive-summary-stack": {
+    "id": "executive-summary-stack",
+    "label": "Executive Summary (Option 1, stack)",
+    "theme": "dark"
+  },
+  "executive-summary-2-stack": {
+    "id": "executive-summary-2-stack",
+    "label": "Executive Summary (Option 2, stack)",
+    "theme": "dark"
+  },
+  "ai-agents-by-industry": {
+    "id": "ai-agents-by-industry",
+    "label": "AI Agents by Industry",
+    "theme": "dark"
+  },
+  "customer-suzuki": {
+    "id": "customer-suzuki",
+    "label": "Customer: Suzuki",
+    "theme": "dark"
+  },
+  "customer-tata-play": {
+    "id": "customer-tata-play",
+    "label": "Customer: Tata Play",
+    "theme": "dark"
+  },
+  "customer-shasta": {
+    "id": "customer-shasta",
+    "label": "Customer: Shasta Community Health",
+    "theme": "dark"
+  },
+  "customer-aeg-vision": {
+    "id": "customer-aeg-vision",
+    "label": "Customer: AEG Vision",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-foxy": {
+    "id": "customer-use-case-sb-foxy",
+    "label": "Customer: Foxy Coatings (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-vision-wheel": {
+    "id": "customer-use-case-sb-vision-wheel",
+    "label": "Customer: Vision Wheel (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-renascent": {
+    "id": "customer-use-case-sb-renascent",
+    "label": "Customer: Renascent Protection (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-sage": {
+    "id": "customer-use-case-sb-sage",
+    "label": "Customer: Sage Surfaces (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-cocoa-lofts": {
+    "id": "customer-use-case-sb-cocoa-lofts",
+    "label": "Customer: Cocoa Lofts (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-kalley-flooring": {
+    "id": "customer-use-case-sb-kalley-flooring",
+    "label": "Customer: Kalley Flooring (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-southeast-diabetes": {
+    "id": "customer-use-case-sb-southeast-diabetes",
+    "label": "Customer: Southeast Diabetes (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-handyman-hub": {
+    "id": "customer-use-case-sb-handyman-hub",
+    "label": "Customer: Handyman Hub (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-renegade-roofing": {
+    "id": "customer-use-case-sb-renegade-roofing",
+    "label": "Customer: Renegade Roofing (SB)",
+    "theme": "dark"
+  },
+  "customer-use-case-sb-walker-river-resort": {
+    "id": "customer-use-case-sb-walker-river-resort",
+    "label": "Customer: Walker River Resort (SB)",
+    "theme": "dark"
+  },
+  "customer-tata-play-041326": {
+    "id": "customer-tata-play-041326",
+    "label": "Customer: Tata Play (041326)",
+    "theme": "dark"
+  },
+  "customer-suzuki-041226": {
+    "id": "customer-suzuki-041226",
+    "label": "Customer: Suzuki (041226)",
+    "theme": "dark"
+  },
+  "customer-tata-play-041226": {
+    "id": "customer-tata-play-041226",
+    "label": "Customer: Tata Play (041226)",
+    "theme": "dark"
+  },
+  "customer-shasta-041226": {
+    "id": "customer-shasta-041226",
+    "label": "Customer: Shasta (041226)",
+    "theme": "dark"
+  },
+  "customer-aeg-vision-041226": {
+    "id": "customer-aeg-vision-041226",
+    "label": "Customer: AEG Vision (041226)",
+    "theme": "dark"
+  },
+  "customer-use-cases": {
+    "id": "customer-use-cases",
+    "label": "Customer Use Cases (4-card)",
+    "theme": "dark"
+  },
+  "system-of-action": {
+    "id": "system-of-action",
+    "label": "System of Action",
+    "theme": "dark"
+  },
+  "system-of-action-copy": {
+    "id": "system-of-action-copy",
+    "label": "System of Action (copy)",
+    "theme": "dark"
+  },
+  "system-of-action-visual-copy": {
+    "id": "system-of-action-visual-copy",
+    "label": "System of Action Visual (Understand → Decide → Act)",
+    "theme": "dark"
+  },
+  "ai-defensibility-v2-copy-2": {
+    "id": "ai-defensibility-v2-copy-2",
+    "label": "AI Defensibility (3 Pillars)",
+    "theme": "dark"
+  },
+  "monetization-evolution-copy": {
+    "id": "monetization-evolution-copy",
+    "label": "Monetization Evolution",
+    "theme": "dark"
+  },
+  "ai-tailwind-visual": {
+    "id": "ai-tailwind-visual",
+    "label": "AI Tailwind Visual",
+    "theme": "dark"
+  },
+  "appendix-divider": {
+    "id": "appendix-divider",
+    "label": "Appendix",
+    "theme": "dark"
+  },
+  "architecture-divider": {
+    "id": "architecture-divider",
+    "label": "Architecture",
+    "theme": "dark"
+  },
+  "gtm-efficiency-divider": {
+    "id": "gtm-efficiency-divider",
+    "label": "GTM Efficiency",
+    "theme": "dark"
+  },
+  "sam-tam-divider": {
+    "id": "sam-tam-divider",
+    "label": "SAM / TAM.",
+    "theme": "dark"
+  },
+  "marketing-divider": {
+    "id": "marketing-divider",
+    "label": "Marketing",
+    "theme": "dark"
+  },
+  "ai-divider": {
+    "id": "ai-divider",
+    "label": "AI",
+    "theme": "dark"
+  },
+  "verticals-divider": {
+    "id": "verticals-divider",
+    "label": "Verticals",
+    "theme": "dark"
+  },
+  "use-cases-divider": {
+    "id": "use-cases-divider",
+    "label": "Use Cases",
+    "theme": "dark"
+  },
+  "sm-moat-divider": {
+    "id": "sm-moat-divider",
+    "label": "S&M Moat",
+    "theme": "dark",
+    "isNew": true
+  },
+  "cx-portfolio-arch": {
+    "id": "cx-portfolio-arch",
+    "label": "CX Portfolio Architecture",
+    "theme": "dark"
+  },
+  "cx-portfolio-intelligence-layer": {
+    "id": "cx-portfolio-intelligence-layer",
+    "label": "CX Portfolio — Data + Intelligence + Three Pillars",
+    "theme": "dark",
+    "isNew": true
+  },
+  "investor-summary": {
+    "id": "investor-summary",
+    "label": "Investor Summary",
+    "theme": "dark"
+  },
+  "system-of-action-combined": {
+    "id": "system-of-action-combined",
+    "label": "System of Action (Combined)",
+    "theme": "dark"
+  },
+  "closing-copy": {
+    "id": "closing-copy",
+    "label": "Closing (3-card)",
+    "theme": "dark"
+  },
+  "conversational-commerce": {
+    "id": "conversational-commerce",
+    "label": "Conversational Commerce",
+    "theme": "dark"
+  },
+  "three-moats": {
+    "id": "three-moats",
+    "label": "Three Moats",
+    "theme": "dark"
+  },
+  "investor-summary-copy": {
+    "id": "investor-summary-copy",
+    "label": "Investor Summary (simplified)",
+    "theme": "dark"
+  },
+  "unified-platform-moats": {
+    "id": "unified-platform-moats",
+    "label": "Unified Platform Moats",
+    "theme": "dark"
+  },
+  "structural-advantages": {
+    "id": "structural-advantages",
+    "label": "Three Structural Advantages",
+    "theme": "dark"
+  },
+  "journey-copy": {
+    "id": "journey-copy",
+    "label": "Journey (copy)",
+    "theme": "dark"
+  },
+  "new-tam": {
+    "id": "new-tam",
+    "label": "New TAM",
+    "theme": "dark",
+    "isNew": true
+  },
+  "journey-copy-enhanced": {
+    "id": "journey-copy-enhanced",
+    "label": "Journey (copy, enhanced connectors)",
+    "theme": "dark"
+  },
+  "structural-advantages-copy": {
+    "id": "structural-advantages-copy",
+    "label": "Structural Advantages (copy)",
+    "theme": "dark"
+  },
+  "customer-base-broad": {
+    "id": "customer-base-broad",
+    "label": "Customer Base (Broad, Tenured, Durable)",
+    "theme": "dark"
+  },
+  "gtm-engine": {
+    "id": "gtm-engine",
+    "label": "GTM Engine",
+    "theme": "dark"
+  },
+  "gtm-engine-copy": {
+    "id": "gtm-engine-copy",
+    "label": "GTM Engine (Investor)",
+    "theme": "dark"
+  },
+  "better-outcomes-yaniv-vh": {
+    "id": "better-outcomes-yaniv-vh",
+    "label": "Better Outcomes (Yaniv-VH)",
+    "theme": "dark"
+  },
+  "opportunity": {
+    "id": "opportunity",
+    "label": "The Opportunity",
+    "theme": "dark"
+  },
+  "customer-base-broad-tomas": {
+    "id": "customer-base-broad-tomas",
+    "label": "Customer Base Broad (Tomas)",
+    "theme": "dark"
+  },
+  "the-shift": {
+    "id": "the-shift",
+    "label": "The Shift",
+    "theme": "dark"
+  },
+  "world-moving-tomas-branch": {
+    "id": "world-moving-tomas-branch",
+    "label": "World Moving (Tomas)",
+    "theme": "dark"
+  },
+  "platform-yaniv-vh": {
+    "id": "platform-yaniv-vh",
+    "label": "Platform (Yaniv-VH)",
+    "theme": "dark"
+  },
+  "agentic-cx-platform": {
+    "id": "agentic-cx-platform",
+    "label": "Agentic CX Platform",
+    "theme": "dark"
+  },
+  "market-tam-lovable-yaniv-vh": {
+    "id": "market-tam-lovable-yaniv-vh",
+    "label": "Market TAM (Yaniv-VH)",
+    "theme": "dark"
+  },
+  "agentic-opp-yaniv-vh": {
+    "id": "agentic-opp-yaniv-vh",
+    "label": "Agentic Opportunity (Yaniv-VH)",
+    "theme": "dark"
+  },
+  "agentic-opp-yaniv-vh-end": {
+    "id": "agentic-opp-yaniv-vh-end",
+    "label": "Agentic Opportunity (Yaniv-VH) — copy at end",
+    "theme": "dark",
+    "isNew": true
+  },
+  "ai-expands-nextiva": {
+    "id": "ai-expands-nextiva",
+    "label": "AI Expands Nextiva",
+    "theme": "dark"
+  },
+  "ai-in-action-v2": {
+    "id": "ai-in-action-v2",
+    "label": "AI In Action V2",
+    "theme": "dark"
+  },
+  "ai-tailwind-tomas-branch": {
+    "id": "ai-tailwind-tomas-branch",
+    "label": "AI Tailwind (Tomas)",
+    "theme": "dark"
+  },
+  "monetization-critical": {
+    "id": "monetization-critical",
+    "label": "Monetization (Critical)",
+    "theme": "dark"
+  },
+  "defensibility-structural": {
+    "id": "defensibility-structural",
+    "label": "Defensibility (Structural)",
+    "theme": "dark"
+  },
+  "customer-use-cases-dark-yaniv-vh": {
+    "id": "customer-use-cases-dark-yaniv-vh",
+    "label": "Customer Use Cases Dark (Yaniv-VH)",
+    "theme": "dark"
+  },
+  "who-copy": {
+    "id": "who-copy",
+    "label": "Who We Serve (Built for Operators)",
+    "theme": "dark"
+  },
+  "world-moving-copy": {
+    "id": "world-moving-copy",
+    "label": "The Shift (Alt)",
+    "theme": "dark"
+  },
+  "structural-advantages-copy-2": {
+    "id": "structural-advantages-copy-2",
+    "label": "Structural Advantages (Copy 2)",
+    "theme": "dark"
+  },
+  "ai-defensibility-v2-copy-3": {
+    "id": "ai-defensibility-v2-copy-3",
+    "label": "AI Accelerator (Copy 3)",
+    "theme": "dark"
+  },
+  "leadership-copy": {
+    "id": "leadership-copy",
+    "label": "Leadership (Copy)",
+    "theme": "dark"
+  },
+  "gtm-motion": {
+    "id": "gtm-motion",
+    "label": "GTM Motion",
+    "theme": "dark"
+  },
+  "conversational-commerce-copy": {
+    "id": "conversational-commerce-copy",
+    "label": "Conversational Commerce (Copy)",
+    "theme": "dark"
+  },
+  "opportunity-copy": {
+    "id": "opportunity-copy",
+    "label": "Our Market (Copy)",
+    "theme": "dark"
+  },
+  "ai-disruption-risk": {
+    "id": "ai-disruption-risk",
+    "label": "AI Disruption Risk",
+    "theme": "dark"
+  },
+  "ai-disruption-nextiva": {
+    "id": "ai-disruption-nextiva",
+    "label": "AI Disruption - Nextiva Position",
+    "theme": "dark"
+  },
+  "ai-disruption-nextiva-copy": {
+    "id": "ai-disruption-nextiva-copy",
+    "label": "AI Disruption - Nextiva Position (Copy)",
+    "theme": "dark"
+  },
+  "ebitda-quarterly-dark": {
+    "id": "ebitda-quarterly-dark",
+    "label": "(28) EBITDA (Quarterly Dark)",
+    "theme": "dark"
+  },
+  "arr-gross-margin-quarterly-dark": {
+    "id": "arr-gross-margin-quarterly-dark",
+    "label": "(29) ARR & Gross Margin (Quarterly Dark)",
+    "theme": "dark"
+  },
+  "cash-flow-trends-quarterly-dark": {
+    "id": "cash-flow-trends-quarterly-dark",
+    "label": "(33) Cash Flow Trends (Quarterly Dark)",
+    "theme": "dark"
+  },
+  "target-model-dark": {
+    "id": "target-model-dark",
+    "label": "(36) Target Model (Dark)",
+    "theme": "dark"
+  },
+  "senthil-roadmap-cover": {
+    "id": "senthil-roadmap-cover",
+    "label": "Senthil: Products Roadmap Cover",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-roadmap-divider": {
+    "id": "senthil-roadmap-divider",
+    "label": "Senthil: Roadmap Divider",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-next-agentic-cx-roadmap": {
+    "id": "senthil-next-agentic-cx-roadmap",
+    "label": "Senthil: NEXT Agentic CX Roadmap",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-next-agentic-cx-delivered": {
+    "id": "senthil-next-agentic-cx-delivered",
+    "label": "Senthil: NEXT Agentic CX (Delivered)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-ncc-roadmap": {
+    "id": "senthil-ncc-roadmap",
+    "label": "Senthil: NCC Roadmap",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-nextos-roadmap": {
+    "id": "senthil-nextos-roadmap",
+    "label": "Senthil: NextOS Roadmap",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-technology-divider": {
+    "id": "senthil-technology-divider",
+    "label": "Senthil: Technology Divider",
+    "theme": "dark",
+    "isNew": true
+  },
+  "brand-trust-overview": {
+    "id": "brand-trust-overview",
+    "label": "Drew: Brand Trust Overview",
+    "theme": "dark",
+    "isNew": true
+  },
+  "brand-trust-channels": {
+    "id": "brand-trust-channels",
+    "label": "Drew: Brand Trust Channels",
+    "theme": "dark",
+    "isNew": true
+  },
+  "three-paths-pre-trust": {
+    "id": "three-paths-pre-trust",
+    "label": "Drew: Three Paths Pre-Trust",
+    "theme": "dark",
+    "isNew": true
+  },
+  "customer-use-cases-dark-v2": {
+    "id": "customer-use-cases-dark-v2",
+    "label": "Customer Use Cases (Dark v2 — Business Value)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "customer-use-cases-v2": {
+    "id": "customer-use-cases-v2",
+    "label": "Customer Use Cases V2 (4-card, updated)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-healthcare-glance": {
+    "id": "drew-healthcare-glance",
+    "label": "Drew: Healthcare At a Glance (040126)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-healthcare-solutions": {
+    "id": "drew-healthcare-solutions",
+    "label": "Drew: Healthcare Solutions (040126)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-healthcare-strategy": {
+    "id": "drew-healthcare-strategy",
+    "label": "Drew: Healthcare Strategy (040126)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-healthcare-glance-v3": {
+    "id": "drew-healthcare-glance-v3",
+    "label": "Drew: Healthcare At a Glance (V3)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-healthcare-strategy-v3": {
+    "id": "drew-healthcare-strategy-v3",
+    "label": "Drew: Healthcare Strategy (V3)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-cover": {
+    "id": "drew-briefing-cover",
+    "label": "Drew: Briefing Cover",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-exec-summary": {
+    "id": "drew-briefing-exec-summary",
+    "label": "Drew: Briefing Exec Summary",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-platform-divider": {
+    "id": "drew-briefing-platform-divider",
+    "label": "Drew: Briefing Platform Divider",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-cx-first-system": {
+    "id": "drew-briefing-cx-first-system",
+    "label": "Drew: Briefing CX-First System",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-human-ai-tandem": {
+    "id": "drew-briefing-human-ai-tandem",
+    "label": "Drew: Briefing Human+AI Tandem",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-trustworthy-pillar": {
+    "id": "drew-briefing-trustworthy-pillar",
+    "label": "Drew: Briefing Trustworthy Pillar",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-bespoke-at-scale": {
+    "id": "drew-briefing-bespoke-at-scale",
+    "label": "Drew: Briefing Bespoke at Scale",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-conversational-commerce": {
+    "id": "drew-briefing-conversational-commerce",
+    "label": "Drew: Briefing Conversational Commerce",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-data-intelligence": {
+    "id": "drew-briefing-data-intelligence",
+    "label": "Drew: Briefing Data Intelligence",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-ai-models": {
+    "id": "drew-briefing-ai-models",
+    "label": "Drew: Briefing AI Models",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-cxpaas-arch": {
+    "id": "drew-briefing-cxpaas-arch",
+    "label": "Drew: Briefing CXPaaS Architecture",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-global-footprint": {
+    "id": "drew-briefing-global-footprint",
+    "label": "Drew: Briefing Global Footprint",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-briefing-closing-recap": {
+    "id": "drew-briefing-closing-recap",
+    "label": "Drew: Briefing Closing Recap",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-agentic-competitive-landscape": {
+    "id": "drew-agentic-competitive-landscape",
+    "label": "Drew: Agentic Competitive Landscape (Firehorse)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-competitor-podium": {
+    "id": "drew-competitor-podium",
+    "label": "Drew: Podium vs Nextiva (framework)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-competitor-podium-alt": {
+    "id": "drew-competitor-podium-alt",
+    "label": "Drew: Podium vs Nextiva (Tomas framework)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-competitor-intercom": {
+    "id": "drew-competitor-intercom",
+    "label": "Drew: Intercom vs Nextiva (framework)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-competitor-intercom-alt": {
+    "id": "drew-competitor-intercom-alt",
+    "label": "Drew: Intercom vs Nextiva (Tomas framework)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-competitor-sierra": {
+    "id": "drew-competitor-sierra",
+    "label": "Drew: Sierra vs Nextiva (framework)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-competitor-sierra-alt": {
+    "id": "drew-competitor-sierra-alt",
+    "label": "Drew: Sierra vs Nextiva (Tomas framework)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-competitor-decagon": {
+    "id": "drew-competitor-decagon",
+    "label": "Drew: Decagon vs Nextiva (framework)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-competitor-decagon-alt": {
+    "id": "drew-competitor-decagon-alt",
+    "label": "Drew: Decagon vs Nextiva (Tomas framework)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-lead-velocity-curves": {
+    "id": "drew-lead-velocity-curves",
+    "label": "Drew: Lead Velocity Curves (VSB/SMB)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-lead-velocity-buckets": {
+    "id": "drew-lead-velocity-buckets",
+    "label": "Drew: Lead Velocity Buckets (VSB/SMB)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-carl-incumbent-trust": {
+    "id": "drew-carl-incumbent-trust",
+    "label": "Drew: CARL + AI Incumbent Trust",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-lead-velocity-buckets-v3": {
+    "id": "drew-lead-velocity-buckets-v3",
+    "label": "Drew: Lead Velocity Buckets (V3)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-carl-incumbent-trust-v3": {
+    "id": "drew-carl-incumbent-trust-v3",
+    "label": "Drew: CARL + AI Incumbent Trust (V3)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-carl-incumbent-trust-v3-slide50": {
+    "id": "drew-carl-incumbent-trust-v3-slide50",
+    "label": "Drew: CARL + AI Incumbent Trust (V3) — deck pos. 50",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-lead-velocity-buckets-v4": {
+    "id": "drew-lead-velocity-buckets-v4",
+    "label": "Drew: Lead Velocity Buckets (V4)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-hybrid-gtm-excellence": {
+    "id": "drew-hybrid-gtm-excellence",
+    "label": "Drew: Hybrid GTM Excellence",
+    "theme": "dark",
+    "isNew": true
+  },
+  "drew-hybrid-gtm-excellence-end": {
+    "id": "drew-hybrid-gtm-excellence-end",
+    "label": "Drew: Hybrid GTM Excellence",
+    "theme": "dark",
+    "isNew": true
+  },
+  "selecting-targets-matrix": {
+    "id": "selecting-targets-matrix",
+    "label": "Selecting your target(s)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "middle-opportunity-uneasy-middle": {
+    "id": "middle-opportunity-uneasy-middle",
+    "label": "Largest opportunity: uneasy middle",
+    "theme": "dark",
+    "isNew": true
+  },
+  "middle-market-difficult-profitably": {
+    "id": "middle-market-difficult-profitably",
+    "label": "Middle market: difficult to serve",
+    "theme": "dark",
+    "isNew": true
+  },
+  "mission-critical-human-trust": {
+    "id": "mission-critical-human-trust",
+    "label": "Mission-critical tech & human trust",
+    "theme": "dark",
+    "isNew": true
+  },
+  "nextiva-built-uneasy-middle": {
+    "id": "nextiva-built-uneasy-middle",
+    "label": "Nextiva built for uneasy middle",
+    "theme": "dark",
+    "isNew": true
+  },
+  "defensible-advantage-uneasy-middle": {
+    "id": "defensible-advantage-uneasy-middle",
+    "label": "Defensible advantage: uneasy middle",
+    "theme": "dark",
+    "isNew": true
+  },
+  "ai-increases-human-trust": {
+    "id": "ai-increases-human-trust",
+    "label": "AI increases importance of human trust",
+    "theme": "dark",
+    "isNew": true
+  },
+  "proven-capability-scale-middle": {
+    "id": "proven-capability-scale-middle",
+    "label": "Proven capability to execute at scale",
+    "theme": "dark",
+    "isNew": true
+  },
+  "platform-roadmap-horizon": {
+    "id": "platform-roadmap-horizon",
+    "label": "Platform horizons (1 of 2 — CX, AI, scale)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "platform-roadmap-horizon-2": {
+    "id": "platform-roadmap-horizon-2",
+    "label": "Platform horizons (2 of 2 — trust, PLG, segments)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "platform-roadmap-investor": {
+    "id": "platform-roadmap-investor",
+    "label": "Platform roadmap — Investor (three horizons)",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-model-agnostic-platform-041126": {
+    "id": "senthil-model-agnostic-platform-041126",
+    "label": "Senthil 6: Model Agnostic Platform",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-data-intelligence-platform-041126": {
+    "id": "senthil-data-intelligence-platform-041126",
+    "label": "Senthil 8: Data & Intelligence Platform",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-cxpaas-arch-041126": {
+    "id": "senthil-cxpaas-arch-041126",
+    "label": "Senthil 9: CXPaaS Architecture",
+    "theme": "dark",
+    "isNew": true
+  },
+  "senthil-bespoke-at-scale-041126": {
+    "id": "senthil-bespoke-at-scale-041126",
+    "label": "Senthil 13: Bespoke at Scale",
+    "theme": "dark",
+    "isNew": true
+  },
+  "tomas-democratized-platform-041126": {
+    "id": "tomas-democratized-platform-041126",
+    "label": "Tomas 11: Democratized Platform",
+    "theme": "dark",
+    "isNew": true
+  },
+  "tomas-cx-first-system-041126": {
+    "id": "tomas-cx-first-system-041126",
+    "label": "Tomas 12: CX-First System",
+    "theme": "dark",
+    "isNew": true
+  },
+  "tomas-human-ai-harmony-041126": {
+    "id": "tomas-human-ai-harmony-041126",
+    "label": "Tomas 13: Human + AI in Harmony",
+    "theme": "dark",
+    "isNew": true
+  },
+  "tomas-trustworthy-041126": {
+    "id": "tomas-trustworthy-041126",
+    "label": "Tomas 14: Trustworthy",
+    "theme": "dark",
+    "isNew": true
+  },
+  "tomas-global-footprint-041126": {
+    "id": "tomas-global-footprint-041126",
+    "label": "Tomas 15: Global Footprint",
+    "theme": "dark",
+    "isNew": true
+  }
+}

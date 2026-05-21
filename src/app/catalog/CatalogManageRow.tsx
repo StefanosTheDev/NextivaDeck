@@ -4,11 +4,11 @@ import { useRef } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { GripVertical, Eye, EyeOff } from "lucide-react";
-import type { SlideDef } from "@/components/slideRegistry";
+import type { SlideCatalogMeta } from "@/types/slideCatalog";
 import CatalogSlidePlaceholder from "./CatalogSlidePlaceholder";
 
 interface Props {
-  slide: SlideDef;
+  slide: SlideCatalogMeta;
   index: number;
   isActive: boolean;
   isSelected: boolean;

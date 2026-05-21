@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink, X } from "lucide-react";
-import type { SlideDef } from "@/components/slideRegistry";
+import { useEffect, useCallback, useState, type ComponentType } from "react";
+import { ChevronLeft, ChevronRight, ExternalLink, X, Loader2 } from "lucide-react";
+import type { SlideCatalogMeta } from "@/types/slideCatalog";
 
 interface Props {
-  slide: SlideDef | null;
+  slide: SlideCatalogMeta | null;
   slideIndex: number;
   totalCount: number;
   onPrevious: () => void;
@@ -23,6 +23,33 @@ export default function CatalogSlidePreviewPanel({
   onClose,
   onEditInDeck,
 }: Props) {
+  const [SlideComponent, setSlideComponent] = useState<ComponentType<{
+    slideNumber: number;
+    slideId?: string;
+  }> | null>(null);
+  const [previewLoading, setPreviewLoading] = useState(false);
+
+  useEffect(() => {
+    if (!slide) {
+      setSlideComponent(null);
+      return;
+    }
+    let cancelled = false;
+    setPreviewLoading(true);
+    import("@/components/slideRegistry")
+      .then((mod) => {
+        if (cancelled) return;
+        const def = mod.SLIDE_COMPONENTS[slide.id];
+        setSlideComponent(() => def?.component ?? null);
+      })
+      .finally(() => {
+        if (!cancelled) setPreviewLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [slide?.id]);
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (!slide) return;
@@ -72,7 +99,6 @@ export default function CatalogSlidePreviewPanel({
     );
   }
 
-  const Slide = slide.component;
   const canGoPrev = slideIndex > 0;
   const canGoNext = slideIndex < totalCount - 1;
 
@@ -146,7 +172,7 @@ export default function CatalogSlidePreviewPanel({
           overflow: "auto",
           padding: 16,
           display: "flex",
-          alignItems: "flex-start",
+          alignItems: "center",
           justifyContent: "center",
         }}
       >
@@ -163,20 +189,56 @@ export default function CatalogSlidePreviewPanel({
             flexShrink: 0,
           }}
         >
-          <div
-            style={{
-              width: 1920,
-              height: 1080,
-              transform: "scale(0.1875)",
-              transformOrigin: "top left",
-              pointerEvents: "none",
-              position: "absolute",
-              top: 0,
-              left: 0,
-            }}
-          >
-            <Slide slideNumber={slideIndex + 1} slideId={slide.id} />
-          </div>
+          {previewLoading && (
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 2,
+                background: "rgba(0,2,8,0.85)",
+              }}
+            >
+              <Loader2
+                size={28}
+                style={{ color: "#5b9cf5", animation: "spin 1s linear infinite" }}
+              />
+            </div>
+          )}
+          {SlideComponent && (
+            <div
+              style={{
+                width: 1920,
+                height: 1080,
+                transform: "scale(0.1875)",
+                transformOrigin: "top left",
+                pointerEvents: "none",
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
+            >
+              <SlideComponent slideNumber={slideIndex + 1} slideId={slide.id} />
+            </div>
+          )}
+          {!previewLoading && !SlideComponent && (
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "rgba(255,255,255,0.4)",
+                fontSize: 13,
+                fontFamily: "'Space Grotesk', sans-serif",
+              }}
+            >
+              Preview unavailable
+            </div>
+          )}
         </div>
       </div>
 

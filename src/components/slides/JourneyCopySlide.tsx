@@ -38,7 +38,7 @@ const chapters = [
       "Native to our infra and data — not bolted on.",
       "Assist → autopilot → full autonomy.",
     ],
-    badge: "Balanced growth.",
+    badge: "AI-driven growth",
   },
 ];
 

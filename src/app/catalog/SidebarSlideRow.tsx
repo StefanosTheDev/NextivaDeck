@@ -3,11 +3,11 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { GripVertical, Eye, EyeOff, X } from "lucide-react";
-import type { SlideDef } from "@/components/slideRegistry";
+import type { SlideCatalogMeta } from "@/types/slideCatalog";
 
 interface Props {
   id: string;
-  slide: SlideDef;
+  slide: SlideCatalogMeta;
   position: number;
   savedPosition: number | null;
   isHidden: boolean;

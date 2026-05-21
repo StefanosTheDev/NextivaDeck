@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
+import type { SlideCatalogMeta } from "@/types/slideCatalog";
+import slideMetaJson from "@/data/slide-meta.json";
+import defaultOrderJson from "@/data/default-slide-order.json";
+
+const SLIDE_META = slideMetaJson as Record<string, SlideCatalogMeta>;
+const DEFAULT_SLIDE_ORDER = defaultOrderJson as string[];
 
 const DATA_FILE = path.join(process.cwd(), "slide-order.json");
 const IS_VERCEL = !!process.env.VERCEL;
@@ -83,7 +89,11 @@ async function writeData(data: SlideData): Promise<void> {
 
 export async function GET() {
   const data = await readData();
-  return NextResponse.json(data);
+  return NextResponse.json({
+    ...data,
+    meta: SLIDE_META,
+    defaultOrder: DEFAULT_SLIDE_ORDER,
+  });
 }
 
 export async function PUT(request: Request) {

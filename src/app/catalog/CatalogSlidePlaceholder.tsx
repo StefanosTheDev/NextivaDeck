@@ -1,10 +1,10 @@
 "use client";
 
 import { GripVertical, EyeOff, ImageIcon } from "lucide-react";
-import type { SlideDef } from "@/components/slideRegistry";
+import type { SlideCatalogMeta } from "@/types/slideCatalog";
 
 interface Props {
-  slide: SlideDef;
+  slide: SlideCatalogMeta;
   index: number;
   category?: string | null;
   categoryColor?: { bg: string; text: string; dot: string } | null;
