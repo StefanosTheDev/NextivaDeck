@@ -16,14 +16,14 @@ import {
   arrayMove,
   SortableContext,
   sortableKeyboardCoordinates,
-  rectSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { Save, Check, RotateCcw, ArrowLeft, Download, Plus, X, Eye, ArrowRight, FileDown } from "lucide-react";
 
 import { SLIDE_COMPONENTS, DEFAULT_SLIDE_ORDER, type SlideDef } from "@/components/slideRegistry";
-import SortableSlideCard from "./SortableSlideCard";
-import SlideCardContent from "./SlideCardContent";
+import CatalogManageRow from "./CatalogManageRow";
+import CatalogSlidePreviewPanel from "./CatalogSlidePreviewPanel";
+import CatalogSlidePlaceholder from "./CatalogSlidePlaceholder";
 import SidebarSlideRow from "./SidebarSlideRow";
 import CategoryInput from "./CategoryInput";
 import ExportPickerModal from "./ExportPickerModal";
@@ -75,6 +75,7 @@ export default function CatalogPage() {
   });
   const [showPreview, setShowPreview] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedSlideId, setSelectedSlideId] = useState<string | null>(null);
   const savedTimeout = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
@@ -132,6 +133,21 @@ export default function CatalogPage() {
       })
       .catch(() => setLoaded(true));
   }, []);
+
+  useEffect(() => {
+    if (!loaded) return;
+    const hiddenSet = new Set(hiddenSlides);
+    const isInFilter = (id: string) => {
+      if (viewFilter === "published" && hiddenSet.has(id)) return false;
+      if (viewFilter === "hidden" && !hiddenSet.has(id)) return false;
+      if (selectedCategory && categories[id] !== selectedCategory) return false;
+      return !!SLIDE_COMPONENTS[id];
+    };
+    setSelectedSlideId((current) => {
+      if (current && isInFilter(current)) return current;
+      return order.find(isInFilter) ?? null;
+    });
+  }, [loaded, order, hiddenSlides, viewFilter, selectedCategory, categories]);
 
   useEffect(() => {
     localStorage.setItem("catalogViewFilter", viewFilter);
@@ -357,6 +373,31 @@ export default function CatalogPage() {
 
   const uncategorizedSlides = order.filter((id) => !categories[id]);
 
+  const selectSlide = useCallback((id: string) => {
+    setSelectedSlideId(id);
+    requestAnimationFrame(() => {
+      document.querySelector(`[data-slide-id="${id}"]`)?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  }, []);
+
+  const openSlideInDeck = useCallback((id: string) => {
+    localStorage.setItem("catalogScrollTarget", id);
+    window.location.href = `/?slideId=${id}&from=catalog`;
+  }, []);
+
+  const selectedSlideIndex = selectedSlideId ? sidebarOrder.indexOf(selectedSlideId) : -1;
+  const selectedSlide = selectedSlideId ? SLIDE_COMPONENTS[selectedSlideId] ?? null : null;
+
+  const goToAdjacentSlide = useCallback(
+    (delta: number) => {
+      if (selectedSlideIndex < 0) return;
+      const nextIdx = selectedSlideIndex + delta;
+      if (nextIdx < 0 || nextIdx >= sidebarOrder.length) return;
+      selectSlide(sidebarOrder[nextIdx]);
+    },
+    [selectedSlideIndex, sidebarOrder, selectSlide]
+  );
+
   if (!loaded) {
     return (
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", background: "#0a0f1a" }}>
@@ -409,7 +450,7 @@ export default function CatalogPage() {
           <div>
             <h1 style={{ fontSize: 20, fontWeight: 600, color: "#fff", margin: 0 }}>Slide Catalog</h1>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", margin: 0, marginTop: 2 }}>
-              {order.length} slides · Drag to reorder
+              {order.length} slides · Click to preview · Double-click to edit in deck
             </p>
           </div>
         </div>
@@ -581,6 +622,8 @@ export default function CatalogPage() {
                       position={pos}
                       savedPosition={savedPos > 0 ? savedPos : null}
                       isHidden={hiddenSlides.includes(id)}
+                      isSelected={selectedSlideId === id}
+                      onSelect={() => selectSlide(id)}
                       color={catColor}
                       onToggleHide={() => toggleHideSlide(id)}
                       onRemoveCategory={cat ? () => {
@@ -617,12 +660,12 @@ export default function CatalogPage() {
           </div>
         </aside>
 
-        {/* Main grid — scrolls independently */}
-        <main style={{ flex: 1, overflowY: "auto", height: "100%", display: "flex", flexDirection: "column" }}>
+        {/* Main list — lightweight rows, no live slide thumbnails */}
+        <main style={{ flex: 1, minWidth: 0, overflowY: "auto", height: "100%", display: "flex", flexDirection: "column" }}>
           {/* View filter tabs */}
           <div style={{
             display: "flex", alignItems: "center", gap: 6,
-            padding: "20px 32px 0",
+            padding: "20px 24px 0",
             flexShrink: 0,
           }}>
             {([
@@ -661,33 +704,29 @@ export default function CatalogPage() {
             ))}
           </div>
 
-          <div style={{ padding: "20px 32px 60px", flex: 1 }}>
+          <div style={{ padding: "16px 24px 60px", flex: 1 }}>
           <DndContext
             sensors={gridSensors}
             collisionDetection={closestCenter}
             onDragStart={handleDragStart}
             onDragEnd={handleGridDragEnd}
           >
-            <SortableContext items={sidebarOrder} strategy={rectSortingStrategy}>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-                  gap: 24,
-                }}
-              >
+            <SortableContext items={sidebarOrder} strategy={verticalListSortingStrategy}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {sidebarOrder.map((id, filteredIdx) => {
                   const slide = SLIDE_COMPONENTS[id];
                   if (!slide) return null;
                   const isHidden = hiddenSlides.includes(id);
                   const displayIndex = viewFilter === "all" ? order.indexOf(id) : filteredIdx;
                   return (
-                    <SortableSlideCard
+                    <CatalogManageRow
                       key={id}
                       slide={slide}
                       index={displayIndex}
                       isActive={activeId === id}
+                      isSelected={selectedSlideId === id}
                       isHidden={isHidden}
+                      onSelect={() => selectSlide(id)}
                       onToggleHide={() => toggleHideSlide(id)}
                       category={categories[id] || null}
                       categoryColor={categories[id] ? getColorForCategory(categories[id], uniqueCategories) : null}
@@ -712,6 +751,16 @@ export default function CatalogPage() {
           </DndContext>
           </div>
         </main>
+
+        <CatalogSlidePreviewPanel
+          slide={selectedSlide}
+          slideIndex={selectedSlideIndex >= 0 ? selectedSlideIndex : 0}
+          totalCount={sidebarOrder.length}
+          onPrevious={() => goToAdjacentSlide(-1)}
+          onNext={() => goToAdjacentSlide(1)}
+          onClose={() => setSelectedSlideId(null)}
+          onEditInDeck={openSlideInDeck}
+        />
       </div>
 
       {/* Preview Changes Modal */}
@@ -992,13 +1041,17 @@ function SlideCardOverlay({ slide, index, category, categoryColor }: {
   return (
     <div
       style={{
-        borderRadius: 12, overflow: "hidden",
+        borderRadius: 10,
+        overflow: "hidden",
         border: "2px solid #2860B2",
-        boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(40,96,178,0.3)",
-        background: "#111827", cursor: "grabbing", transform: "scale(1.03)",
+        boxShadow: "0 12px 40px rgba(0,0,0,0.5)",
+        background: "#111827",
+        cursor: "grabbing",
+        width: 360,
+        opacity: 0.95,
       }}
     >
-      <SlideCardContent slide={slide} index={index} category={category} categoryColor={categoryColor} />
+      <CatalogSlidePlaceholder slide={slide} index={index} category={category} categoryColor={categoryColor} />
     </div>
   );
 }

@@ -11,15 +11,17 @@ interface Props {
   position: number;
   savedPosition: number | null;
   isHidden: boolean;
+  isSelected?: boolean;
   color: { text: string; dot: string } | null;
+  onSelect?: () => void;
   onToggleHide: () => void;
   onRemoveCategory?: () => void;
   categoryAssignDropdown?: React.ReactNode;
 }
 
 export default function SidebarSlideRow({
-  id, slide, position, savedPosition, isHidden, color,
-  onToggleHide, onRemoveCategory, categoryAssignDropdown,
+  id, slide, position, savedPosition, isHidden, isSelected = false, color,
+  onSelect, onToggleHide, onRemoveCategory, categoryAssignDropdown,
 }: Props) {
   const {
     attributes, listeners, setNodeRef, transform, transition, isDragging,
@@ -47,12 +49,19 @@ export default function SidebarSlideRow({
         borderRadius: 6,
         background: isDragging
           ? "rgba(40,96,178,0.15)"
+          : isSelected
+            ? "rgba(40,96,178,0.12)"
+            : moved
+              ? "rgba(217,119,6,0.08)"
+              : "transparent",
+        borderLeft: isSelected
+          ? "3px solid #2860B2"
           : moved
-            ? "rgba(217,119,6,0.08)"
-            : "transparent",
-        borderLeft: moved ? "3px solid #d97706" : "3px solid transparent",
+            ? "3px solid #d97706"
+            : "3px solid transparent",
         opacity: resolvedOpacity,
       }}
+      onClick={() => onSelect?.()}
     >
       {/* Drag handle */}
       <div
