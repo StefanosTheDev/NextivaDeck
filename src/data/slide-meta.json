@@ -716,6 +716,12 @@
     "theme": "dark",
     "isNew": true
   },
+  "new-competition": {
+    "id": "new-competition",
+    "label": "New Competition slide",
+    "theme": "dark",
+    "isNew": true
+  },
   "journey-copy-enhanced": {
     "id": "journey-copy-enhanced",
     "label": "Journey (copy, enhanced connectors)",
