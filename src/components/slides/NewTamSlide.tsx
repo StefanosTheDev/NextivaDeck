@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import SlideFooter from "../SlideFooter";
 
 /** Uniform scale — preserves proportions while filling the slide */
@@ -12,6 +12,19 @@ const CUSHION = s(20);
 
 /** Matches the divider under NEXTIVA'S OPPORTUNITY so left callouts align with the right two */
 const FALSE_LINE = "1px solid rgba(91,160,224,0.25)";
+
+/** Crowded market — faint reddish “negative” tone, receded vs Nextiva opportunity */
+const CROWDED_CARD_STYLE: CSSProperties = {
+  border: "1px solid rgba(160,55,55,0.32)",
+  borderRadius: 12,
+  overflow: "hidden",
+  display: "flex",
+  flexDirection: "column",
+  height: "100%",
+  background: "rgba(90,28,28,0.12)",
+  opacity: 0.68,
+};
+const CROWDED_FALSE_LINE = "1px solid rgba(160,55,55,0.2)";
 
 /** Top metric cards ~2/3 taller (padding); hero / sub-hero / label / foot hierarchy from reference slide */
 const TOP_METRIC_BOOST = 5 / 3;
@@ -350,7 +363,7 @@ export default function NewTamSlide({
             marginRight: "auto",
           }}
         >
-          A massive market at the moment of its fastest acceleration.
+          A Massive Market at a Clear Inflection Point.
         </h1>
         <p
           style={{
@@ -394,19 +407,9 @@ export default function NewTamSlide({
             minHeight: 0,
           }}
         >
-            {/* Crowded market */}
-            <div
-              style={{
-                border: "1px solid rgba(160,55,55,0.55)",
-                borderRadius: 12,
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                background: "rgba(255,255,255,0.02)",
-              }}
-            >
-              <StatusRibbon compact bg="rgba(120,35,35,0.92)" color="#FFFFFF">
+            {/* Crowded market — de-emphasized */}
+            <div style={CROWDED_CARD_STYLE}>
+              <StatusRibbon compact bg="rgba(120,35,35,0.55)" color="rgba(255,210,200,0.65)">
                 CROWDED MARKET
               </StatusRibbon>
               <div
@@ -415,30 +418,30 @@ export default function NewTamSlide({
                   minHeight: 0,
                   display: "flex",
                   flexDirection: "column",
-                  borderTop: FALSE_LINE,
+                  borderTop: CROWDED_FALSE_LINE,
                 }}
               >
                 <MiddleColumn
                   seat="6M"
-                  seatColor="rgba(255,255,255,0.38)"
+                  seatColor="rgba(220,140,130,0.45)"
                   title="Enterprise"
-                  titleColor="rgba(255,255,255,0.55)"
+                  titleColor="rgba(255,200,190,0.5)"
                   subtitle="250+ agents"
-                  subtitleColor="rgba(255,255,255,0.38)"
+                  subtitleColor="rgba(200,150,140,0.42)"
                   titleLineSpacer
                   bodyLineSpacer
                   callout={
                     <StatusRibbon
                       middleCompact
-                      bg="rgba(52,58,38,0.95)"
-                      color="#D4A574"
-                      border="1px solid rgba(90,80,50,0.4)"
+                      bg="rgba(70,32,32,0.55)"
+                      color="rgba(212,165,116,0.6)"
+                      border="1px solid rgba(140,60,50,0.3)"
                     >
                       WHERE COMPETITORS FOCUS
                     </StatusRibbon>
                   }
                   body={
-                    <p style={{ fontSize: MID_BODY, color: "rgba(255,255,255,0.42)", margin: 0, lineHeight: 1.45 }}>
+                    <p style={{ fontSize: MID_BODY, color: "rgba(220,170,160,0.45)", margin: 0, lineHeight: 1.45 }}>
                       Crowded. Field sales, six-figure deploys, 12–18 month cycles. Every major competitor is fighting
                       here.
                     </p>
