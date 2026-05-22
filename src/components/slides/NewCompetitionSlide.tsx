@@ -65,6 +65,8 @@ const CAT_RIBBON_PAD_V = catSize(4);
 const CAT_RIBBON_PAD_H = catSize(10);
 const CAT_RIBBON_INSET_X = catSize(16);
 const CAT_RIBBON_MIN_H = CAT_RIBBON_PAD_V * 2 + Math.ceil(CAT_RIBBON * 1.35);
+/** Cushion above and below call-out ribbon (matches strength → ribbon gap) */
+const CAT_CALLOUT_CUSHION = catSize(38);
 
 type Category = {
   num: string;
@@ -226,7 +228,7 @@ function BlindSpotRibbon({ children }: { children: ReactNode }) {
         alignSelf: "center",
         width: "max-content",
         maxWidth: `calc(100% - ${CAT_RIBBON_INSET_X * 2}px)`,
-        margin: `0 ${CAT_RIBBON_INSET_X}px ${catSize(4)}px`,
+        margin: `0 ${CAT_RIBBON_INSET_X}px 0`,
       }}
     >
       <span
@@ -344,11 +346,13 @@ function CategoryColumn({
         </ul>
         </div>
 
-        {/* Small gap after strengths — keeps weakness + call-out visible (not pinned to card foot) */}
-        <div style={{ flex: "0 0 auto", height: catSize(10) }} />
+        {/* Cushion above call-outs */}
+        <div style={{ flex: "0 0 auto", height: CAT_CALLOUT_CUSHION }} />
 
-        {/* Weaknesses + call-out; tops align via shared blind height */}
+        {/* Call-out above weakness bullets; weakness tops align via shared blind height */}
         <div style={{ flexShrink: 0, display: "flex", flexDirection: "column" }}>
+          <BlindSpotRibbon>{cat.ribbon}</BlindSpotRibbon>
+          <div style={{ flex: "0 0 auto", height: CAT_CALLOUT_CUSHION }} />
           <div
             style={{
               height: CAT_BLIND_BLOCK_H,
@@ -379,7 +383,6 @@ function CategoryColumn({
               ))}
             </ul>
           </div>
-          <BlindSpotRibbon>{cat.ribbon}</BlindSpotRibbon>
         </div>
     </div>
   );
