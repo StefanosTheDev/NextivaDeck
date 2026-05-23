@@ -131,6 +131,8 @@ import StructuralAdvantagesSlide from "./slides/StructuralAdvantagesSlide";
 import JourneyCopySlide, { JourneyCopySlideEnhanced } from "./slides/JourneyCopySlide";
 import NewTamSlide from "./slides/NewTamSlide";
 import NewCompetitionSlide from "./slides/NewCompetitionSlide";
+import XbertTractionProofPointsSlide from "./slides/XbertTractionProofPointsSlide";
+import XbertOpportunitySlide from "./slides/XbertOpportunitySlide";
 import StructuralAdvantagesCopySlide from "./slides/StructuralAdvantagesCopySlide";
 import CustomerBaseBroadSlide from "./slides/CustomerBaseBroadSlide";
 import GTMEngineSlide from "./slides/GTMEngineSlide";
@@ -418,6 +420,20 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "new-competition",
     label: "New Competition slide",
     component: NewCompetitionSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "xbert-traction-proof-points": {
+    id: "xbert-traction-proof-points",
+    label: "XBert Traction Proof Points",
+    component: XbertTractionProofPointsSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "xbert-opportunity": {
+    id: "xbert-opportunity",
+    label: "XBert Opportunity",
+    component: XbertOpportunitySlide,
     theme: "dark",
     isNew: true,
   },
