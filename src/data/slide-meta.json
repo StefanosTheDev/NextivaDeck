@@ -169,6 +169,12 @@
     "label": "(30) AI Gateways Revenue",
     "theme": "dark"
   },
+  "financial-thumbnail": {
+    "id": "financial-thumbnail",
+    "label": "Financial Overview — Profitable and Scaled",
+    "theme": "dark",
+    "isNew": true
+  },
   "financial-divider": {
     "id": "financial-divider",
     "label": "Financial Overview",

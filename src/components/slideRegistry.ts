@@ -25,6 +25,7 @@ import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
 import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
 import LaborCostSavingsSlide from "./slides/LaborCostSavingsSlide";
 import FinancialDividerSlide from "./slides/FinancialDividerSlide";
+import FinancialThumbnailSlide from "./slides/FinancialThumbnailSlide";
 import CustomerUseCasesDividerSlide from "./slides/CustomerUseCasesDividerSlide";
 import CXPortfolioSlide from "./slides/CXPortfolioSlide";
 import CXPortfolioOptionASlide from "./slides/CXPortfolioOptionASlide";
@@ -287,6 +288,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
+  "financial-thumbnail": {
+    id: "financial-thumbnail",
+    label: "Financial Overview — Profitable and Scaled",
+    component: FinancialThumbnailSlide,
+    theme: "dark",
+    isNew: true,
+  },
   "financial-divider":  { id: "financial-divider",   label: "Financial Overview",  component: FinancialDividerSlide,    theme: "dark", isNew: true },
   "customer-use-cases-divider": { id: "customer-use-cases-divider", label: "Customer Use Cases", component: CustomerUseCasesDividerSlide, theme: "dark", isNew: true },
   "cx-portfolio": { id: "cx-portfolio", label: "CX Platform Portfolio", component: CXPortfolioSlide, theme: "dark", isNew: true },
