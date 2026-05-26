@@ -9,7 +9,10 @@ const s = (n: number) => Math.round(n * S);
 /** Bottom band — larger type; wins stay single-line via nowrap + width bias to right panel */
 const BOT_SCALE = 1.24;
 const botSize = (n: number) => s(Math.round(n * BOT_SCALE));
-const BOTTOM_BAND_MIN_H = botSize(210);
+/** Reserved height for open-market band — keeps copy off the footer */
+const BOTTOM_BAND_MIN_H = botSize(212);
+/** Slight cushion between category cards and open-market band */
+const MAIN_GAP = s(8);
 const BOT_LABEL = botSize(12);
 const BOT_METRIC = botSize(68);
 const BOT_DESC = botSize(15);
@@ -22,51 +25,43 @@ const BOT_PAD_V = botSize(22);
 const BOT_PAD_H = botSize(24);
 /** One-line cushion between wins label and checklist (matches BOT_WIN line height) */
 const BOT_WINS_LABEL_GAP = Math.ceil(BOT_WIN * 1.35);
-const CAT_SCALE = 1.68;
+/** Category cards — slightly reduced from 1.68 so wrapped copy stays inside fixed slots */
+const CAT_SCALE = 1.52;
 const catSize = (n: number) => s(Math.round(n * CAT_SCALE));
 const CAT_LABEL = catSize(11);
-const CAT_TITLE = catSize(18);
-const CAT_COMPANIES = catSize(13);
-/** Shared size for green (+) and red (−) bullets — one step smaller than prior body */
-const CAT_BULLET_BODY = catSize(12);
-const CAT_STRENGTH_ICON = catSize(20);
-const CAT_STRENGTH_CHECK = catSize(11);
-const CAT_STRENGTH_ITEM_GAP = catSize(8);
+const CAT_TITLE = catSize(17);
+const CAT_COMPANIES = catSize(12);
+/** Shared size for green (+) and red (−) bullets */
+const CAT_BULLET_BODY = catSize(11);
+const CAT_BULLET_LINE_H = Math.ceil(CAT_BULLET_BODY * 1.38);
+const CAT_STRENGTH_ICON = catSize(18);
+const CAT_STRENGTH_CHECK = catSize(10);
+const CAT_STRENGTH_ITEM_GAP = catSize(7);
 const CAT_RIBBON = catSize(11);
-const CAT_PAD = catSize(12);
-const CAT_PAD_INNER = catSize(10);
+const CAT_PAD = catSize(11);
+const CAT_PAD_INNER = catSize(9);
 const CAT_RULE = "1px solid rgba(91,160,224,0.2)";
-/** Fixed slots so single-line titles/companies still align dividers + STRENGTH across cards */
+/** Fixed slots — aligned across columns; sized to real copy, not extra whitespace */
 const CAT_TITLE_SLOT_H = Math.ceil(CAT_TITLE * 1.28 * 2);
-const CAT_COMPANIES_SLOT_H = Math.ceil(CAT_COMPANIES * 1.42 * 2);
-/** Strength bullets — up to 2 items × 2 lines each */
+const CAT_COMPANIES_LINES = 2;
+const CAT_COMPANIES_SLOT_H = CAT_COMPANIES_LINES * Math.ceil(CAT_COMPANIES * 1.38);
+const CAT_STRENGTH_LINES_PER_ITEM = 2;
 const CAT_STRENGTH_BODY_SLOT_H =
-  2 * Math.ceil(CAT_BULLET_BODY * 1.48 * 2) + CAT_STRENGTH_ITEM_GAP;
-/** Top block — category through strength (call-outs live in bottom stack) */
-const CAT_TOP_BLOCK_H =
-  CAT_PAD +
-  Math.ceil(CAT_LABEL * 1.2) +
-  catSize(6) +
-  CAT_TITLE_SLOT_H +
-  catSize(8) +
-  CAT_COMPANIES_SLOT_H +
-  catSize(10) +
-  1 +
-  catSize(10) +
-  CAT_STRENGTH_BODY_SLOT_H;
-/** Weakness block — fixed height; 4 lines/bullet so copy is not clipped */
-const CAT_WEAKNESS_LINES = 4;
+  2 * CAT_STRENGTH_LINES_PER_ITEM * CAT_BULLET_LINE_H + CAT_STRENGTH_ITEM_GAP;
+/** Weakness block — 3 lines/bullet (tight but fits longest column-03 copy) */
+const CAT_WEAKNESS_LINES = 3;
 const CAT_BLIND_BLOCK_H =
   CAT_PAD_INNER * 2 +
-  2 * Math.ceil(CAT_BULLET_BODY * 1.48 * CAT_WEAKNESS_LINES) +
+  2 * CAT_WEAKNESS_LINES * CAT_BULLET_LINE_H +
   CAT_STRENGTH_ITEM_GAP;
-/** Call-out ribbon — compact footprint; font size unchanged */
+/** Call-out ribbon */
 const CAT_RIBBON_PAD_V = catSize(4);
 const CAT_RIBBON_PAD_H = catSize(10);
 const CAT_RIBBON_INSET_X = catSize(16);
 const CAT_RIBBON_MIN_H = CAT_RIBBON_PAD_V * 2 + Math.ceil(CAT_RIBBON * 1.35);
-/** Cushion above and below call-out ribbon (matches strength → ribbon gap) */
-const CAT_CALLOUT_CUSHION = catSize(38);
+/** Gap strength block → red ribbon, and ribbon → weakness block */
+const CAT_RIBBON_GAP_ABOVE = catSize(10);
+const CAT_RIBBON_GAP_BELOW = catSize(8);
 
 type Category = {
   num: string;
@@ -150,7 +145,7 @@ function CatWeaknessBulletItem({ children }: { children: ReactNode }) {
         gap: CAT_STRENGTH_ITEM_GAP,
         fontSize: CAT_BULLET_BODY,
         color: "rgba(255,255,255,0.55)",
-        lineHeight: 1.48,
+        lineHeight: 1.38,
       }}
     >
       <span
@@ -186,7 +181,7 @@ function CatStrengthCheckItem({ children }: { children: ReactNode }) {
         gap: CAT_STRENGTH_ITEM_GAP,
         fontSize: CAT_BULLET_BODY,
         color: "rgba(255,255,255,0.55)",
-        lineHeight: 1.48,
+        lineHeight: 1.38,
       }}
     >
       <span
@@ -265,7 +260,7 @@ function CategoryColumn({
         flexDirection: "column",
         height: "100%",
         minHeight: 0,
-        overflow: "visible",
+        overflow: "hidden",
         background: "rgba(255,255,255,0.02)",
       }}
     >
@@ -274,7 +269,6 @@ function CategoryColumn({
           style={{
             padding: `${CAT_PAD}px ${CAT_PAD}px 0`,
             flexShrink: 0,
-            height: CAT_TOP_BLOCK_H,
             boxSizing: "border-box",
             display: "flex",
             flexDirection: "column",
@@ -315,7 +309,14 @@ function CategoryColumn({
             <div style={{ borderTop: CAT_RULE, marginTop: "auto", flexShrink: 0 }} />
           ) : null}
         </div>
-        <div style={{ minHeight: CAT_COMPANIES_SLOT_H, marginBottom: catSize(10) }}>
+        <div
+          style={{
+            minHeight: CAT_COMPANIES_SLOT_H,
+            maxHeight: CAT_COMPANIES_SLOT_H,
+            marginBottom: catSize(10),
+            overflow: "hidden",
+          }}
+        >
           <p
             style={{
               fontSize: CAT_COMPANIES,
@@ -333,11 +334,13 @@ function CategoryColumn({
             margin: 0,
             padding: 0,
             listStyle: "none",
-            height: CAT_STRENGTH_BODY_SLOT_H,
+            minHeight: CAT_STRENGTH_BODY_SLOT_H,
+            maxHeight: CAT_STRENGTH_BODY_SLOT_H,
             display: "flex",
             flexDirection: "column",
             gap: CAT_STRENGTH_ITEM_GAP,
             flexShrink: 0,
+            overflow: "hidden",
           }}
         >
           {cat.strengths.map((item) => (
@@ -346,24 +349,29 @@ function CategoryColumn({
         </ul>
         </div>
 
-        {/* Cushion above call-outs */}
-        <div style={{ flex: "0 0 auto", height: CAT_CALLOUT_CUSHION }} />
-
-        {/* Call-out above weakness bullets; weakness tops align via shared blind height */}
-        <div style={{ flexShrink: 0, display: "flex", flexDirection: "column" }}>
+        {/* Ribbon + weakness — weakness block grows to card bottom */}
+        <div
+          style={{
+            flex: "1 1 0",
+            minHeight: 0,
+            display: "flex",
+            flexDirection: "column",
+            paddingTop: CAT_RIBBON_GAP_ABOVE,
+          }}
+        >
           <BlindSpotRibbon>{cat.ribbon}</BlindSpotRibbon>
-          <div style={{ flex: "0 0 auto", height: CAT_CALLOUT_CUSHION }} />
           <div
             style={{
-              height: CAT_BLIND_BLOCK_H,
+              flex: "1 1 0",
+              minHeight: CAT_BLIND_BLOCK_H,
+              marginTop: CAT_RIBBON_GAP_BELOW,
               padding: `${CAT_PAD_INNER}px ${CAT_PAD}px ${CAT_PAD_INNER}px`,
               background: "rgba(0,0,0,0.12)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-start",
               boxSizing: "border-box",
-              flexShrink: 0,
-              overflow: "visible",
+              overflow: "hidden",
             }}
           >
             <ul
@@ -448,21 +456,24 @@ export default function NewCompetitionSlide({
         style={{
           flex: 1,
           minHeight: 0,
-          padding: `${s(12)}px 72px ${s(8)}px`,
+          padding: `${s(12)}px 72px ${s(10)}px`,
           display: "flex",
           flexDirection: "column",
-          gap: s(10),
+          gap: MAIN_GAP,
+          overflow: "hidden",
         }}
       >
-        {/* Category row — ~58% of main */}
+        {/* Category row — stretches to just above open-market band */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             gap: s(10),
-            flex: "1 1 72%",
+            flex: "1 1 0",
             minHeight: 0,
-            overflow: "visible",
+            maxHeight: `calc(100% - ${BOTTOM_BAND_MIN_H + MAIN_GAP}px)`,
+            alignItems: "stretch",
+            overflow: "hidden",
           }}
         >
           {CATEGORIES.map((cat) => (
@@ -474,17 +485,20 @@ export default function NewCompetitionSlide({
           ))}
         </div>
 
-        {/* Bottom band — full width, ~32% of main */}
+        {/* Bottom band — fixed slice of main so open-market copy stays above footer */}
         <div
           style={{
             flex: `0 0 ${BOTTOM_BAND_MIN_H}px`,
             minHeight: BOTTOM_BAND_MIN_H,
+            maxHeight: BOTTOM_BAND_MIN_H,
+            flexShrink: 0,
             border: "1px solid rgba(91,160,224,0.45)",
             borderRadius: 10,
             overflow: "hidden",
             display: "grid",
             gridTemplateColumns: "minmax(240px, 22%) 1fr",
             background: "rgba(40,96,178,0.05)",
+            boxSizing: "border-box",
           }}
         >
           <div
@@ -493,7 +507,9 @@ export default function NewCompetitionSlide({
               padding: `${BOT_PAD_V}px ${BOT_PAD_H}px`,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "flex-start",
+              justifyContent: "center",
+              minHeight: 0,
+              overflow: "hidden",
             }}
           >
             <p
@@ -525,7 +541,7 @@ export default function NewCompetitionSlide({
                 fontSize: BOT_DESC,
                 color: "rgba(200,220,255,0.75)",
                 margin: 0,
-                lineHeight: 1.45,
+                lineHeight: 1.38,
               }}
             >
               Mid-market seats left behind by every category above — the largest untapped opportunity in CX.
@@ -537,8 +553,10 @@ export default function NewCompetitionSlide({
               padding: `${BOT_PAD_V}px ${BOT_PAD_H}px`,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "flex-start",
+              justifyContent: "center",
               minWidth: 0,
+              minHeight: 0,
+              overflow: "hidden",
             }}
           >
             <p
@@ -549,6 +567,7 @@ export default function NewCompetitionSlide({
                 textTransform: "uppercase",
                 color: "#7EB3E8",
                 margin: 0,
+                flexShrink: 0,
               }}
             >
               WHY NEXTIVA STRUCTURALLY WINS
@@ -561,6 +580,9 @@ export default function NewCompetitionSlide({
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
                 gap: `${BOT_WIN_GAP_ROW}px ${BOT_WIN_GAP_COL}px`,
+                flex: 1,
+                minHeight: 0,
+                alignContent: "center",
               }}
             >
               {NEXTIVA_WINS.map((item) => (
