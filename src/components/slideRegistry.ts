@@ -26,6 +26,7 @@ import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
 import LaborCostSavingsSlide from "./slides/LaborCostSavingsSlide";
 import FinancialDividerSlide from "./slides/FinancialDividerSlide";
 import FinancialThumbnailSlide from "./slides/FinancialThumbnailSlide";
+import FiveThingsWorthRememberingSlide from "./slides/FiveThingsWorthRememberingSlide";
 import CustomerUseCasesDividerSlide from "./slides/CustomerUseCasesDividerSlide";
 import CXPortfolioSlide from "./slides/CXPortfolioSlide";
 import CXPortfolioOptionASlide from "./slides/CXPortfolioOptionASlide";
@@ -442,6 +443,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "xbert-opportunity",
     label: "XBert Opportunity",
     component: XbertOpportunitySlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "five-things-worth-remembering": {
+    id: "five-things-worth-remembering",
+    label: "Five Things Worth Remembering",
+    component: FiveThingsWorthRememberingSlide,
     theme: "dark",
     isNew: true,
   },

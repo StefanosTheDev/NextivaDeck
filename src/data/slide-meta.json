@@ -740,6 +740,12 @@
     "theme": "dark",
     "isNew": true
   },
+  "five-things-worth-remembering": {
+    "id": "five-things-worth-remembering",
+    "label": "Five Things Worth Remembering",
+    "theme": "dark",
+    "isNew": true
+  },
   "journey-copy-enhanced": {
     "id": "journey-copy-enhanced",
     "label": "Journey (copy, enhanced connectors)",
