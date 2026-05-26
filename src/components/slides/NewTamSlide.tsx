@@ -68,30 +68,55 @@ const MID_CALLOUT_MIN_H = MID_RIBBON_PAD_V * 2 + Math.ceil(MID_RIBBON_FONT * 1.2
 /** Body block fits 3 lines; cols 1 & 3 (2 lines) get a 1-line spacer */
 const MID_BODY_BLOCK_MIN = MID_BODY_PAD_TOP + MID_BODY_PAD_BOTTOM + MID_BODY_LINE_H * 3;
 
+const SOURCE_PILL_STYLES = {
+  blue: {
+    color: "#7EB3E8",
+    background: "rgba(91,160,224,0.18)",
+    border: "1px solid rgba(91,160,224,0.45)",
+  },
+  green: {
+    color: "#6EE7B7",
+    background: "rgba(52,211,153,0.18)",
+    border: "1px solid rgba(52,211,153,0.45)",
+  },
+} as const;
+
 function TopMetricCard({
   primary,
   secondary,
   label,
   foot,
+  sourcePill,
+  sourcePillTone = "green",
   border,
   footColor,
 }: {
   primary: ReactNode;
   secondary: ReactNode;
   label: string;
-  foot: string;
+  foot?: string;
+  sourcePill?: string;
+  sourcePillTone?: keyof typeof SOURCE_PILL_STYLES;
   border: string;
   footColor?: string;
 }) {
+  const pillStyle = SOURCE_PILL_STYLES[sourcePillTone];
   return (
     <div
       style={{
         border: `1px solid ${border}`,
         borderRadius: 12,
-        padding: `${TOP_METRIC_PAD_V}px ${TOP_METRIC_PAD_H}px`,
+        padding: sourcePill
+          ? `${TOP_METRIC_PAD_V}px ${TOP_METRIC_PAD_H}px ${s(8)}px`
+          : `${TOP_METRIC_PAD_V}px ${TOP_METRIC_PAD_H}px`,
         background: "rgba(255,255,255,0.03)",
         textAlign: "center",
         flexShrink: 0,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        height: "100%",
+        boxSizing: "border-box",
       }}
     >
       <p
@@ -116,22 +141,51 @@ function TopMetricCard({
           fontSize: METRIC_LABEL,
           fontWeight: 600,
           color: "#FFFFFF",
-          margin: `${s(14)}px 0 ${s(6)}px`,
+          margin: `${s(14)}px 0 0`,
           lineHeight: 1.35,
         }}
       >
         {label}
       </p>
-      <p
-        style={{
-          fontSize: METRIC_FOOT,
-          color: footColor ?? "rgba(126,179,232,0.85)",
-          margin: 0,
-          lineHeight: 1.35,
-        }}
-      >
-        {foot}
-      </p>
+      {foot ? (
+        <p
+          style={{
+            fontSize: METRIC_FOOT,
+            color: footColor ?? "rgba(126,179,232,0.85)",
+            margin: `${s(6)}px 0 0`,
+            lineHeight: 1.35,
+            flexShrink: 0,
+          }}
+        >
+          {foot}
+        </p>
+      ) : null}
+      {sourcePill ? (
+        <div
+          style={{
+            marginTop: "auto",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            paddingTop: s(16),
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              padding: `${s(5)}px ${s(14)}px`,
+              borderRadius: 999,
+              fontSize: METRIC_FOOT,
+              fontWeight: 600,
+              letterSpacing: "0.04em",
+              lineHeight: 1.2,
+              ...pillStyle,
+            }}
+          >
+            {sourcePill}
+          </span>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -294,27 +348,31 @@ const topMetrics = [
     ),
     label: "Total CX market",
     foot: "CY26 to CY29 · 14% CAGR",
+    sourcePill: "Industry Analysts",
+    sourcePillTone: "blue",
     border: "rgba(126,179,232,0.45)",
   },
   {
     primary: <span style={{ color: "#5BA0E0" }}>45%</span>,
     secondary: <span style={{ color: "#FFFFFF" }}>CAGR</span>,
-    label: "AI agents market growth",
+    label: "AI Agents Market Growth Through 2030",
     foot: "Over the next five years",
+    sourcePill: "BCG",
+    sourcePillTone: "blue",
     border: "rgba(91,160,224,0.55)",
   },
   {
     primary: <span style={{ color: "#34D399" }}>80%</span>,
     secondary: <span style={{ color: "#FFFFFF" }}>by 2029</span>,
-    label: "Customer issues resolved autonomously by AI",
-    foot: "Industry consensus projection",
+    label: "Autonomous AI customer issue resolution",
+    sourcePill: "Gartner",
+    sourcePillTone: "green",
     border: "rgba(52,211,153,0.45)",
-    footColor: "#34D399",
   },
 ];
 
 const NARRATIVE_RIBBON =
-  "The 45% CAGR is being driven by operator adoption — and mid-market operators don't self-serve AI. They need a partner embedded in how they run their business. Nextiva is that partner. No one else is in the room.";
+  "45% CAGR is driven by operator adoption — mid-market operators won't self-serve AI. They need a partner embedded in how they run. Nextiva is that partner. No one else is in the room.";
 
 const FOOTNOTE =
   "Note: CX Market data — Grand View Research, MarketsandMarkets, Statista, IBISWorld. AI Agent Market — BCG. AI issue resolution — Gartner. CC seats — Industry estimates.";
@@ -390,7 +448,15 @@ export default function NewTamSlide({
         }}
       >
         {/* Top metrics — taller fixed row; middle row flexes smaller */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: s(16), flexShrink: 0 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: s(16),
+            flexShrink: 0,
+            alignItems: "stretch",
+          }}
+        >
           {topMetrics.map((m) => (
             <TopMetricCard key={m.label} {...m} />
           ))}
