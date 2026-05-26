@@ -434,7 +434,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   },
   "xbert-traction-proof-points": {
     id: "xbert-traction-proof-points",
-    label: "XBert Traction Proof Points",
+    label: "XBert AI Launch Traction",
     component: XbertTractionProofPointsSlide,
     theme: "dark",
     isNew: true,

@@ -167,7 +167,7 @@ export default function XbertTractionProofPointsSlide({
             lineHeight: 1.12,
           }}
         >
-          $0 to $3M ARR in 9 months.
+          XBert AI Launch Traction — $0 to $3M ARR within three quarters.
         </h1>
         <p
           style={{
@@ -178,7 +178,7 @@ export default function XbertTractionProofPointsSlide({
             fontStyle: "italic",
           }}
         >
-          And 91,000+ accounts still untouched.
+          Opportunity to penetrate 91,000+ additional accounts.
         </p>
       </header>
 

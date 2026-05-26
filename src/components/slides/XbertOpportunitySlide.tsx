@@ -192,7 +192,7 @@ export default function XbertOpportunitySlide({
             maxWidth: 1100,
           }}
         >
-          The Projected Growth Doesn&apos;t Require a Single Customer
+          Anticipated growth requires no additional customers.
         </h1>
         <p
           style={{
