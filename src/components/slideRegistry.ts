@@ -1,6 +1,7 @@
 import CoverSlide from "./slides/CoverSlide";
 import SafeHarborSlide from "./slides/SafeHarborSlide";
 import AtAGlanceSlide from "./slides/AtAGlanceSlide";
+import AtAGlanceAsSlide from "./slides/AtAGlanceAsSlide";
 import FounderSlide from "./slides/FounderSlide";
 import WhoWeServeSlide from "./slides/WhoWeServeSlide";
 import ScaleSlide from "./slides/ScaleSlide";
@@ -21,6 +22,29 @@ import LeadershipSlide from "./slides/LeadershipSlide";
 import SummarySlide from "./slides/SummarySlide";
 import ClosingSlide from "./slides/ClosingSlide";
 import ClosingEndSlide from "./slides/ClosingEndSlide";
+import RulesOfEngagementSlide from "./slides/RulesOfEngagementSlide";
+import FutureReframingPillarsCleanSlide from "./slides/FutureReframingPillarsCleanSlide";
+import FutureGrowTheBaseCleanSlide from "./slides/FutureGrowTheBaseCleanSlide";
+import FutureGrowBaseProductBetsSlide from "./slides/FutureGrowBaseProductBetsSlide";
+import FutureICPCustomerFirstSlide from "./slides/FutureICPCustomerFirstSlide";
+import FutureICPClarityCoverSlide from "./slides/FutureICPClarityCoverSlide";
+import FutureCustomerFirstCoverSlide from "./slides/FutureCustomerFirstCoverSlide";
+import FutureInternalPrioritiesSlide from "./slides/FutureInternalPrioritiesSlide";
+import FutureLeadingLaggingDividerSlide from "./slides/FutureLeadingLaggingDividerSlide";
+import FutureLeadingLaggingIndicatorsSlide from "./slides/FutureLeadingLaggingIndicatorsSlide";
+import FutureInvestorWatchCoverSlide from "./slides/FutureInvestorWatchCoverSlide";
+import FutureARRGrossMarginCopySlide from "./slides/FutureARRGrossMarginCopySlide";
+import FutureAIGatewaysRevenueCopySlide from "./slides/FutureAIGatewaysRevenueCopySlide";
+import FutureOperatingLeverageCopySlide from "./slides/FutureOperatingLeverageCopySlide";
+import FutureCashFlowTrendsCopySlide from "./slides/FutureCashFlowTrendsCopySlide";
+import FutureExpansionRetentionCopySlide from "./slides/FutureExpansionRetentionCopySlide";
+import FutureNRRChurnCopyCopySlide from "./slides/FutureNRRChurnCopyCopySlide";
+import FutureGrowTheBaseCoverSlide from "./slides/FutureGrowTheBaseCoverSlide";
+import FutureProductiveOrganizationCoverSlide from "./slides/FutureProductiveOrganizationCoverSlide";
+import FutureAccelerationGrowthCoverSlide from "./slides/FutureAccelerationGrowthCoverSlide";
+import FutureStrategicPlanningCoverSlide from "./slides/FutureStrategicPlanningCoverSlide";
+import FutureProductiveOrganizationSummarySlide from "./slides/FutureProductiveOrganizationSummarySlide";
+import FutureOpportunityPortfolioSlide from "./slides/FutureOpportunityPortfolioSlide";
 import ProductPortfolioSlide from "./slides/ProductPortfolioSlide";
 import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
 import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
@@ -145,6 +169,9 @@ import PlatformYanivVHSlide from "./slides/PlatformYanivVHSlide";
 import AgenticCXPlatformSlide from "./slides/AgenticCXPlatformSlide";
 import MarketTAMLovableYanivVHSlide from "./slides/MarketTAMLovableYanivVHSlide";
 import AgenticOpportunityYanivVHSlide from "./slides/AgenticOpportunityYanivVHSlide";
+import AgenticOpportunityYanivVHInvestorSlide from "./slides/AgenticOpportunityYanivVHInvestorSlide";
+import FutureReframingPillarsSlide from "./slides/FutureReframingPillarsSlide";
+import FutureGrowTheBaseSlide from "./slides/FutureGrowTheBaseSlide";
 import AIExpandsNextivaSlide from "./slides/AIExpandsNextivaSlide";
 import AIInActionV2Slide from "./slides/AIInActionV2Slide";
 import AiTailwindTomasBranchSlide from "./slides/AiTailwindTomasBranchSlide";
@@ -152,6 +179,29 @@ import MonetizationCriticalSlide from "./slides/MonetizationCriticalSlide";
 import DefensibilityStructuralSlide from "./slides/DefensibilityStructuralSlide";
 import CustomerUseCasesDarkYanivVHSlide from "./slides/CustomerUseCasesDarkYanivVHSlide";
 import WhoWeServeCopySlide from "./slides/WhoWeServeCopySlide";
+import WhoWeServeCopy2Slide from "./slides/WhoWeServeCopy2Slide";
+import CRMIsDeadSlide from "./slides/CRMIsDeadSlide";
+import BestTimeCustomerSlide from "./slides/BestTimeCustomerSlide";
+import VisionTwoRealitiesSlide from "./slides/VisionTwoRealitiesSlide";
+import VisionUnifiedPlatformSlide from "./slides/VisionUnifiedPlatformSlide";
+import SaaSApocalypseSlide from "./slides/SaaSApocalypseSlide";
+import WhyNextivaDifferentSlide from "./slides/WhyNextivaDifferentSlide";
+import InvestorSummaryVisionSlide from "./slides/InvestorSummaryVisionSlide";
+import SaaSApocalypseEndSlide from "./slides/SaaSApocalypseEndSlide";
+import VisionAIWaveLayersSlide from "./slides/VisionAIWaveLayersSlide";
+import VisionSystemOfActionSlide from "./slides/VisionSystemOfActionSlide";
+import VisionFourLayersSlide from "./slides/VisionFourLayersSlide";
+import VisionMoatDeepensSlide from "./slides/VisionMoatDeepensSlide";
+import VisionGuideTransitionsSlide from "./slides/VisionGuideTransitionsSlide";
+import VisionMainStreetSlide from "./slides/VisionMainStreetSlide";
+import VisionEverySpeedSlide from "./slides/VisionEverySpeedSlide";
+import VisionMassiveMiddleSlide from "./slides/VisionMassiveMiddleSlide";
+import VisionWindowOpenSlide from "./slides/VisionWindowOpenSlide";
+import VisionDiffusionGapSlide from "./slides/VisionDiffusionGapSlide";
+import VisionClockStatsSlide from "./slides/VisionClockStatsSlide";
+import VisionSnoozeLoseSlide from "./slides/VisionSnoozeLoseSlide";
+import VisionWhatNextSlide from "./slides/VisionWhatNextSlide";
+import VisionSystemOfActionEndSlide from "./slides/VisionSystemOfActionEndSlide";
 import WorldMovingCopySlide from "./slides/WorldMovingCopySlide";
 import StructuralAdvantagesCopy2Slide from "./slides/StructuralAdvantagesCopy2Slide";
 import AIDefensibilityV2Copy3Slide from "./slides/AIDefensibilityV2Copy3Slide";
@@ -275,6 +325,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "better-outcomes":   { id: "better-outcomes",     label: "Our Mission",         component: BetterOutcomesSlide,      theme: "dark" },
   "better-outcomes-copy": { id: "better-outcomes-copy", label: "Our Mission (copy)", component: BetterOutcomesCopySlide, theme: "dark" },
   glance:              { id: "glance",               label: "At a Glance",         component: AtAGlanceSlide,           theme: "dark" },
+  "glance-as":         { id: "glance-as",            label: "At a Glance (as copy)", component: AtAGlanceAsSlide,         theme: "dark" },
   founder:             { id: "founder",              label: "Founder",             component: FounderSlide,             theme: "dark" },
   who:                 { id: "who",                  label: "Who We Serve",        component: WhoWeServeSlide,          theme: "dark" },
   journey:             { id: "journey",              label: "Journey",             component: JourneySlide,             theme: "dark" },
@@ -302,6 +353,29 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   summary:             { id: "summary",              label: "Summary",             component: SummarySlide,             theme: "dark" },
   closing:             { id: "closing",              label: "Closing",             component: ClosingSlide,             theme: "dark" },
   "closing-end":       { id: "closing-end",          label: "Closing (End)",       component: ClosingEndSlide,          theme: "dark" },
+  "rules-of-engagement": { id: "rules-of-engagement", label: "Rules of Engagement", component: RulesOfEngagementSlide, theme: "light", isNew: true },
+  "future-reframing-pillars-clean": { id: "future-reframing-pillars-clean", label: "Reframing Strategic Pillars (Clean)", component: FutureReframingPillarsCleanSlide, theme: "light", isNew: true },
+  "future-grow-the-base-clean": { id: "future-grow-the-base-clean", label: "Grow the Base (Clean)", component: FutureGrowTheBaseCleanSlide, theme: "light", isNew: true },
+  "future-grow-base-product-bets": { id: "future-grow-base-product-bets", label: "Grow the Base — Key Product Levers", component: FutureGrowBaseProductBetsSlide, theme: "light", isNew: true },
+  "future-icp-customer-first": { id: "future-icp-customer-first", label: "ICP & Customer-First Culture", component: FutureICPCustomerFirstSlide, theme: "light", isNew: true },
+  "future-icp-clarity-cover": { id: "future-icp-clarity-cover", label: "Crystal-Clear ICP (Cover)", component: FutureICPClarityCoverSlide, theme: "light", isNew: true },
+  "future-customer-first-cover": { id: "future-customer-first-cover", label: "Customer First (Cover)", component: FutureCustomerFirstCoverSlide, theme: "light", isNew: true },
+  "future-internal-priorities": { id: "future-internal-priorities", label: "Internal Priorities & Strategy", component: FutureInternalPrioritiesSlide, theme: "light", isNew: true },
+  "future-leading-lagging-divider": { id: "future-leading-lagging-divider", label: "Financial Indicators · Leading & Lagging (Divider)", component: FutureLeadingLaggingDividerSlide, theme: "light", isNew: true },
+  "future-leading-lagging-indicators": { id: "future-leading-lagging-indicators", label: "Leading & Lagging Indicators", component: FutureLeadingLaggingIndicatorsSlide, theme: "light", isNew: true },
+  "future-investor-watch-cover": { id: "future-investor-watch-cover", label: "What Investors, Lenders & Bankers Will Watch", component: FutureInvestorWatchCoverSlide, theme: "light", isNew: true },
+  "future-arr-gross-margin-copy": { id: "future-arr-gross-margin-copy", label: "ARR & Gross Margin (Future)", component: FutureARRGrossMarginCopySlide, theme: "light", isNew: true },
+  "future-ai-gateways-revenue-copy": { id: "future-ai-gateways-revenue-copy", label: "AI Gateways Revenue (Future)", component: FutureAIGatewaysRevenueCopySlide, theme: "light", isNew: true },
+  "future-operating-leverage-copy": { id: "future-operating-leverage-copy", label: "Operating Leverage (Future)", component: FutureOperatingLeverageCopySlide, theme: "light", isNew: true },
+  "future-cash-flow-trends-copy": { id: "future-cash-flow-trends-copy", label: "Cash Flow Trends (Future)", component: FutureCashFlowTrendsCopySlide, theme: "light", isNew: true },
+  "future-expansion-retention-copy": { id: "future-expansion-retention-copy", label: "Customer Expansion (Future)", component: FutureExpansionRetentionCopySlide, theme: "light", isNew: true },
+  "future-nrr-churn-copy-copy": { id: "future-nrr-churn-copy-copy", label: "NRR & Churn (Future)", component: FutureNRRChurnCopyCopySlide, theme: "light", isNew: true },
+  "future-grow-the-base-cover": { id: "future-grow-the-base-cover", label: "Pillar 01 · Grow the Base (Cover)", component: FutureGrowTheBaseCoverSlide, theme: "light", isNew: true },
+  "future-productive-organization-cover": { id: "future-productive-organization-cover", label: "Pillar 02 · More Productive Organization (Cover)", component: FutureProductiveOrganizationCoverSlide, theme: "light", isNew: true },
+  "future-acceleration-growth-cover": { id: "future-acceleration-growth-cover", label: "Pillar 03 · Acceleration of Growth (Cover)", component: FutureAccelerationGrowthCoverSlide, theme: "light", isNew: true },
+  "future-strategic-planning-cover": { id: "future-strategic-planning-cover", label: "Strategic Planning · Nextiva FY27 (Cover)", component: FutureStrategicPlanningCoverSlide, theme: "light", isNew: true },
+  "future-productive-organization-summary": { id: "future-productive-organization-summary", label: "Pillar 02 · Productive Organization (Summary)", component: FutureProductiveOrganizationSummarySlide, theme: "light", isNew: true },
+  "future-opportunity-portfolio": { id: "future-opportunity-portfolio", label: "Opportunity Portfolio · Test / Expand / Harvest / Drop", component: FutureOpportunityPortfolioSlide, theme: "light", isNew: true },
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
@@ -462,6 +536,27 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     theme: "dark",
     isNew: true,
   },
+  "agentic-opp-yaniv-vh-end-investor": {
+    id: "agentic-opp-yaniv-vh-end-investor",
+    label: "Agentic Opportunity (Yaniv-VH) — copy at end (Investor)",
+    component: AgenticOpportunityYanivVHInvestorSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "future-reframing-pillars": {
+    id: "future-reframing-pillars",
+    label: "Reframing Strategic Pillars (Future)",
+    component: FutureReframingPillarsSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "future-grow-the-base": {
+    id: "future-grow-the-base",
+    label: "Grow the Base (Future)",
+    component: FutureGrowTheBaseSlide,
+    theme: "dark",
+    isNew: true,
+  },
   "ai-expands-nextiva": { id: "ai-expands-nextiva", label: "AI Expands Nextiva", component: AIExpandsNextivaSlide, theme: "dark" },
   "ai-in-action-v2": { id: "ai-in-action-v2", label: "AI In Action V2", component: AIInActionV2Slide, theme: "dark" },
   "ai-tailwind-tomas-branch": { id: "ai-tailwind-tomas-branch", label: "AI Tailwind (Tomas)", component: AiTailwindTomasBranchSlide, theme: "dark" },
@@ -469,6 +564,29 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "defensibility-structural": { id: "defensibility-structural", label: "Defensibility (Structural)", component: DefensibilityStructuralSlide, theme: "dark" },
   "customer-use-cases-dark-yaniv-vh": { id: "customer-use-cases-dark-yaniv-vh", label: "Customer Use Cases Dark (Yaniv-VH)", component: CustomerUseCasesDarkYanivVHSlide, theme: "dark" },
   "who-copy": { id: "who-copy", label: "Who We Serve (Built for Operators)", component: WhoWeServeCopySlide, theme: "dark" },
+  "who-copy-2": { id: "who-copy-2", label: "Who We Serve (Built for Operators) (2)", component: WhoWeServeCopy2Slide, theme: "dark" },
+  "crm-is-dead": { id: "crm-is-dead", label: "CRM is dead.", component: CRMIsDeadSlide, theme: "dark" },
+  "best-time-customer": { id: "best-time-customer", label: "Customer's golden age.", component: BestTimeCustomerSlide, theme: "dark", isNew: true },
+  "vision-two-realities": { id: "vision-two-realities", label: "Two realities (customer vs business)", component: VisionTwoRealitiesSlide, theme: "dark", isNew: true },
+  "vision-unified-platform": { id: "vision-unified-platform", label: "Unified platform (Communications · Data · AI)", component: VisionUnifiedPlatformSlide, theme: "dark", isNew: true },
+  "saas-apocalypse": { id: "saas-apocalypse", label: "SaaS apocalypse is real", component: SaaSApocalypseSlide, theme: "dark" },
+  "why-nextiva-different": { id: "why-nextiva-different", label: "Why Nextiva", component: WhyNextivaDifferentSlide, theme: "dark" },
+  "investor-summary-vision": { id: "investor-summary-vision", label: "Why Nextiva (Vision Deck)", component: InvestorSummaryVisionSlide, theme: "dark" },
+  "saas-apocalypse-end": { id: "saas-apocalypse-end", label: "SaaS apocalypse (closer)", component: SaaSApocalypseEndSlide, theme: "dark" },
+  "vision-ai-wave-layers": { id: "vision-ai-wave-layers", label: "Where the AI wave is hitting", component: VisionAIWaveLayersSlide, theme: "dark" },
+  "vision-system-of-action": { id: "vision-system-of-action", label: "System of Record vs System of Action", component: VisionSystemOfActionSlide, theme: "dark" },
+  "vision-four-layers": { id: "vision-four-layers", label: "Four layers, one platform", component: VisionFourLayersSlide, theme: "dark" },
+  "vision-moat-deepens": { id: "vision-moat-deepens", label: "Three advantages that compound", component: VisionMoatDeepensSlide, theme: "dark" },
+  "vision-guide-transitions": { id: "vision-guide-transitions", label: "Guide through every transition", component: VisionGuideTransitionsSlide, theme: "dark" },
+  "vision-main-street": { id: "vision-main-street", label: "Main Street is our home", component: VisionMainStreetSlide, theme: "dark" },
+  "vision-every-speed": { id: "vision-every-speed", label: "One platform, every speed", component: VisionEverySpeedSlide, theme: "dark" },
+  "vision-massive-middle": { id: "vision-massive-middle", label: "12M operators (the massive middle)", component: VisionMassiveMiddleSlide, theme: "dark" },
+  "vision-window-open": { id: "vision-window-open", label: "The window is open", component: VisionWindowOpenSlide, theme: "dark" },
+  "vision-diffusion-gap": { id: "vision-diffusion-gap", label: "The diffusion gap", component: VisionDiffusionGapSlide, theme: "dark" },
+  "vision-clock-stats": { id: "vision-clock-stats", label: "The math is settled (4 stats)", component: VisionClockStatsSlide, theme: "dark" },
+  "vision-snooze-lose": { id: "vision-snooze-lose", label: "You snooze, you lose", component: VisionSnoozeLoseSlide, theme: "dark" },
+  "vision-what-next": { id: "vision-what-next", label: "What we do next", component: VisionWhatNextSlide, theme: "dark" },
+  "vision-system-of-action-end": { id: "vision-system-of-action-end", label: "System of Record vs Action (closer)", component: VisionSystemOfActionEndSlide, theme: "dark" },
   "world-moving-copy": { id: "world-moving-copy", label: "The Shift (Alt)", component: WorldMovingCopySlide, theme: "dark" },
   "structural-advantages-copy-2": { id: "structural-advantages-copy-2", label: "Structural Advantages (Copy 2)", component: StructuralAdvantagesCopy2Slide, theme: "dark" },
   "ai-defensibility-v2-copy-3": { id: "ai-defensibility-v2-copy-3", label: "AI Accelerator (Copy 3)", component: AIDefensibilityV2Copy3Slide, theme: "dark" },

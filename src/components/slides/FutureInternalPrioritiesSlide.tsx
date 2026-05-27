@@ -1,0 +1,271 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  Anchor,
+  Sparkles,
+  Gauge,
+  Calendar,
+  FlaskConical,
+} from "lucide-react";
+
+const NAVY = "#1A447C";
+const NAVY_DARK = "#061A37";
+const BLUE = "#2860B2";
+const BLUE_SOFT = "#E8EEF7";
+const BODY = "#4A4846";
+const CARD_BG = "#F8F6F2";
+const CARD_BORDER = "#E0DEDA";
+const MUTED = "#A29E9B";
+
+type Priority = {
+  key: string;
+  title: string;
+  icon: typeof Anchor;
+  description: React.ReactNode;
+};
+
+const HIGHLIGHTS: Priority[] = [
+  {
+    key: "core-business",
+    title: "Focus on core business",
+    icon: Anchor,
+    description: (
+      <>
+        Strengthen the existing customer base — especially the{" "}
+        <strong style={{ color: NAVY_DARK }}>$30–$40M NextOS platform</strong>{" "}
+        — and drive AI adoption internally.
+      </>
+    ),
+  },
+  {
+    key: "ai-acceleration",
+    title: "AI acceleration",
+    icon: Sparkles,
+    description: (
+      <>
+        Accelerate the AI business by{" "}
+        <strong style={{ color: NAVY_DARK }}>cross-selling</strong> into our
+        existing customer base.
+      </>
+    ),
+  },
+  {
+    key: "productivity",
+    title: "Productivity",
+    icon: Gauge,
+    description: (
+      <>
+        Compound efficiencies that deliver{" "}
+        <strong style={{ color: NAVY_DARK }}>more value</strong> to customers
+        and <strong style={{ color: NAVY_DARK }}>lower our cost</strong> — at
+        the same time.
+      </>
+    ),
+  },
+];
+
+const SECONDARY: Priority[] = [
+  {
+    key: "strategic-meeting",
+    title: "Strategic meeting",
+    icon: Calendar,
+    description: (
+      <>
+        The upcoming meeting will focus on{" "}
+        <strong style={{ color: NAVY_DARK }}>growth objectives</strong> and
+        defining{" "}
+        <strong style={{ color: NAVY_DARK }}>future acquisition criteria</strong>.
+      </>
+    ),
+  },
+  {
+    key: "hypothesis-driven",
+    title: "Hypothesis-driven growth",
+    icon: FlaskConical,
+    description: (
+      <>
+        Every partnership, deal, and market opportunity is tested against a{" "}
+        <strong style={{ color: NAVY_DARK }}>clear hypothesis</strong>.
+      </>
+    ),
+  },
+];
+
+function PriorityCard({
+  p,
+  delay,
+  gridColumn,
+}: {
+  p: Priority;
+  delay: number;
+  gridColumn?: string;
+}) {
+  const Icon = p.icon;
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      style={{
+        background: CARD_BG,
+        border: `1px solid ${CARD_BORDER}`,
+        borderTop: `4px solid ${BLUE}`,
+        borderRadius: 8,
+        padding: "28px 30px 30px",
+        display: "flex",
+        flexDirection: "column",
+        gap: 18,
+        gridColumn,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <span
+          style={{
+            width: 48,
+            height: 48,
+            borderRadius: 11,
+            background: BLUE_SOFT,
+            border: `1px solid ${BLUE}`,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+          }}
+        >
+          <Icon size={24} color={BLUE} strokeWidth={2} />
+        </span>
+        <h3
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 26,
+            fontWeight: 700,
+            color: NAVY_DARK,
+            lineHeight: 1.2,
+            letterSpacing: "-0.005em",
+            margin: 0,
+          }}
+        >
+          {p.title}
+        </h3>
+      </div>
+
+      <p
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: 18,
+          fontWeight: 400,
+          color: BODY,
+          lineHeight: 1.5,
+          margin: 0,
+        }}
+      >
+        {p.description}
+      </p>
+    </motion.article>
+  );
+}
+
+export default function FutureInternalPrioritiesSlide({
+  slideNumber: _sn,
+}: {
+  slideNumber?: number;
+}) {
+  return (
+    <div className="slide" style={{ background: "#FFFFFF", color: NAVY_DARK }}>
+      <div style={{ height: 3, background: BLUE, flexShrink: 0 }} />
+
+      <motion.header
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        style={{ padding: "48px 100px 0", flexShrink: 0 }}
+      >
+        <p className="eyebrow" style={{ color: BLUE, margin: 0 }}>
+          Strategic Operating Focus
+        </p>
+        <h1
+          className="font-heading"
+          style={{
+            fontSize: 64,
+            fontWeight: 700,
+            color: NAVY,
+            lineHeight: 1.1,
+            marginTop: 14,
+          }}
+        >
+          Internal priorities &amp; strategy
+        </h1>
+        <p
+          style={{
+            marginTop: 12,
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 22,
+            fontWeight: 400,
+            color: BODY,
+            lineHeight: 1.4,
+            maxWidth: 1320,
+          }}
+        >
+          Where we focus — and{" "}
+          <strong style={{ color: NAVY_DARK, fontWeight: 700 }}>
+            how we evaluate every next move
+          </strong>
+          .
+        </p>
+        <div
+          style={{
+            width: 88,
+            height: 4,
+            background: BLUE,
+            marginTop: 22,
+            borderRadius: 2,
+          }}
+        />
+      </motion.header>
+
+      <main
+        style={{
+          flex: 1,
+          padding: "32px 100px 28px",
+          display: "grid",
+          gridTemplateColumns: "repeat(6, 1fr)",
+          gridTemplateRows: "1fr 1fr",
+          gap: 22,
+        }}
+      >
+        {HIGHLIGHTS.map((p, idx) => (
+          <PriorityCard
+            key={p.key}
+            p={p}
+            delay={0.15 + idx * 0.07}
+            gridColumn="span 2"
+          />
+        ))}
+        {SECONDARY.map((p, idx) => (
+          <PriorityCard
+            key={p.key}
+            p={p}
+            delay={0.4 + idx * 0.07}
+            gridColumn={idx === 0 ? "1 / span 2" : "3 / span 2"}
+          />
+        ))}
+      </main>
+
+      <footer
+        style={{
+          padding: "10px 100px 24px",
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: 13,
+          fontWeight: 600,
+          color: MUTED,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          flexShrink: 0,
+        }}
+      >
+        Strategic Operating Focus
+      </footer>
+    </div>
+  );
+}
