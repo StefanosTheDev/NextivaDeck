@@ -45,6 +45,9 @@ import FutureAccelerationGrowthCoverSlide from "./slides/FutureAccelerationGrowt
 import FutureStrategicPlanningCoverSlide from "./slides/FutureStrategicPlanningCoverSlide";
 import FutureProductiveOrganizationSummarySlide from "./slides/FutureProductiveOrganizationSummarySlide";
 import FutureOpportunityPortfolioSlide from "./slides/FutureOpportunityPortfolioSlide";
+import FutureMonetizationCriticalCopySlide from "./slides/FutureMonetizationCriticalCopySlide";
+import FutureAIDisruptionNextivaCopySlide from "./slides/FutureAIDisruptionNextivaCopySlide";
+import FutureBookingCommitsByFunctionSlide from "./slides/FutureBookingCommitsByFunctionSlide";
 import ProductPortfolioSlide from "./slides/ProductPortfolioSlide";
 import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
 import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
@@ -376,6 +379,9 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-strategic-planning-cover": { id: "future-strategic-planning-cover", label: "Strategic Planning · Nextiva FY27 (Cover)", component: FutureStrategicPlanningCoverSlide, theme: "light", isNew: true },
   "future-productive-organization-summary": { id: "future-productive-organization-summary", label: "Pillar 02 · Productive Organization (Summary)", component: FutureProductiveOrganizationSummarySlide, theme: "light", isNew: true },
   "future-opportunity-portfolio": { id: "future-opportunity-portfolio", label: "Opportunity Portfolio · Test / Expand / Harvest / Drop", component: FutureOpportunityPortfolioSlide, theme: "light", isNew: true },
+  "future-monetization-critical-copy": { id: "future-monetization-critical-copy", label: "Monetization (Future · Light)", component: FutureMonetizationCriticalCopySlide, theme: "light", isNew: true },
+  "future-ai-disruption-nextiva-copy": { id: "future-ai-disruption-nextiva-copy", label: "AI Disruption Spectrum (Future · Light)", component: FutureAIDisruptionNextivaCopySlide, theme: "light", isNew: true },
+  "future-booking-commits-by-function": { id: "future-booking-commits-by-function", label: "Booking Commits by Function", component: FutureBookingCommitsByFunctionSlide, theme: "light", isNew: true },
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },

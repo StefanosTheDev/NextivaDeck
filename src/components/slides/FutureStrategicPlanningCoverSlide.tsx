@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Compass } from "lucide-react";
+import Image from "next/image";
 
 const NAVY = "#1A447C";
 const NAVY_DARK = "#061A37";
@@ -73,7 +73,19 @@ export default function FutureStrategicPlanningCoverSlide({
             boxShadow: "0 14px 44px rgba(40,96,178,0.22)",
           }}
         >
-          <Compass size={52} color={BLUE} strokeWidth={2} />
+          <Image
+            src="/images/nextiva-header-xbert-icon.svg"
+            alt="Nextiva XBert"
+            width={44}
+            height={44}
+            style={{
+              width: 44,
+              height: "auto",
+              filter:
+                "brightness(0) saturate(100%) invert(27%) sepia(54%) saturate(1376%) hue-rotate(192deg) brightness(92%) contrast(94%)",
+            }}
+            priority
+          />
         </motion.div>
 
         <motion.p

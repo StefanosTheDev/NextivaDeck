@@ -345,8 +345,11 @@ export default function FutureExpansionRetentionCopySlide({
                   fontSize: 12,
                   color: NAVY_DARK,
                 }}
-                formatter={(value: number, name: string) => [`${value.toFixed(1)}%`, name]}
-                labelFormatter={(label: number) => `Month ${label}`}
+                formatter={(value, name) => [
+                  `${typeof value === "number" ? value.toFixed(1) : value}%`,
+                  name,
+                ]}
+                labelFormatter={(label) => `Month ${label}`}
               />
               {(["2020", "2021", "2022", "2023"] as const).map((year) => (
                 <Line
