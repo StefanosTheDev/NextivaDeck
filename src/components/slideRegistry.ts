@@ -48,6 +48,28 @@ import FutureOpportunityPortfolioSlide from "./slides/FutureOpportunityPortfolio
 import FutureMonetizationCriticalCopySlide from "./slides/FutureMonetizationCriticalCopySlide";
 import FutureAIDisruptionNextivaCopySlide from "./slides/FutureAIDisruptionNextivaCopySlide";
 import FutureBookingCommitsByFunctionSlide from "./slides/FutureBookingCommitsByFunctionSlide";
+import FuturePillar01PrioritiesSlide from "./slides/FuturePillar01PrioritiesSlide";
+import FuturePillar02PrioritiesSlide from "./slides/FuturePillar02PrioritiesSlide";
+import FuturePillar03PrioritiesSlide from "./slides/FuturePillar03PrioritiesSlide";
+import FuturePillarsSummarySlide from "./slides/FuturePillarsSummarySlide";
+import FutureStrategicSummaryCoverSlide from "./slides/FutureStrategicSummaryCoverSlide";
+import FutureWhatToProveCoverSlide from "./slides/FutureWhatToProveCoverSlide";
+import FutureCXPortfolioIntelligenceLayerCopySlide from "./slides/FutureCXPortfolioIntelligenceLayerCopySlide";
+import FutureLeadVelocityBucketsV4CopySlide from "./slides/FutureLeadVelocityBucketsV4CopySlide";
+import FutureCarlIncumbentTrustV3CopySlide from "./slides/FutureCarlIncumbentTrustV3CopySlide";
+import FutureReadingMaterialsCoverSlide from "./slides/FutureReadingMaterialsCoverSlide";
+import FutureReadingMaterialsInstructionSlide from "./slides/FutureReadingMaterialsInstructionSlide";
+import FutureAdditionalMaterialsTOCSlide from "./slides/FutureAdditionalMaterialsTOCSlide";
+import FutureStrategyWorksheetSlide from "./slides/FutureStrategyWorksheetSlide";
+import FutureWorksheetCoverSlide from "./slides/FutureWorksheetCoverSlide";
+import FutureWorksheetDepartmentSlide from "./slides/FutureWorksheetDepartmentSlide";
+import FutureWorksheetOpportunitiesSlide from "./slides/FutureWorksheetOpportunitiesSlide";
+import FutureWorksheetDecisionMatrixSlide from "./slides/FutureWorksheetDecisionMatrixSlide";
+import FutureWorksheetSWOTSlide from "./slides/FutureWorksheetSWOTSlide";
+import FutureWorksheetMatchupSlide from "./slides/FutureWorksheetMatchupSlide";
+import FutureWorksheetActionPlanSlide from "./slides/FutureWorksheetActionPlanSlide";
+import FutureWorksheetImpactEffortSlide from "./slides/FutureWorksheetImpactEffortSlide";
+import FutureWorksheetImportantTimeSlide from "./slides/FutureWorksheetImportantTimeSlide";
 import ProductPortfolioSlide from "./slides/ProductPortfolioSlide";
 import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
 import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
@@ -289,6 +311,8 @@ import HybridGtmExcellenceSlide from "./slides/HybridGtmExcellenceSlide";
 import SelectingTargetsMatrixSlide from "./slides/SelectingTargetsMatrixSlide";
 import AIIncreasesHumanTrustSlide from "./slides/AIIncreasesHumanTrustSlide";
 import DefensibleAdvantageUneasyMiddleSlide from "./slides/DefensibleAdvantageUneasyMiddleSlide";
+import DefensibleAdvantageUneasyMiddleEndSlide from "./slides/DefensibleAdvantageUneasyMiddleEndSlide";
+import InvestorDefensibleAdvantageUneasyMiddleSlide from "./slides/InvestorDefensibleAdvantageUneasyMiddleSlide";
 import MiddleMarketBothEndsSlide from "./slides/MiddleMarketBothEndsSlide";
 import MiddleMarketDifficultProfitablySlide from "./slides/MiddleMarketDifficultProfitablySlide";
 import MiddleOpportunityUneasyMiddleSlide from "./slides/MiddleOpportunityUneasyMiddleSlide";
@@ -382,6 +406,28 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-monetization-critical-copy": { id: "future-monetization-critical-copy", label: "Monetization (Future · Light)", component: FutureMonetizationCriticalCopySlide, theme: "light", isNew: true },
   "future-ai-disruption-nextiva-copy": { id: "future-ai-disruption-nextiva-copy", label: "AI Disruption Spectrum (Future · Light)", component: FutureAIDisruptionNextivaCopySlide, theme: "light", isNew: true },
   "future-booking-commits-by-function": { id: "future-booking-commits-by-function", label: "Booking Commits by Function", component: FutureBookingCommitsByFunctionSlide, theme: "light", isNew: true },
+  "future-pillar-01-priorities": { id: "future-pillar-01-priorities", label: "Pillar 01 · Grow the Base (Priorities)", component: FuturePillar01PrioritiesSlide, theme: "light", isNew: true },
+  "future-pillar-02-priorities": { id: "future-pillar-02-priorities", label: "Pillar 02 · More Productive Organization (Priorities)", component: FuturePillar02PrioritiesSlide, theme: "light", isNew: true },
+  "future-pillar-03-priorities": { id: "future-pillar-03-priorities", label: "Pillar 03 · Acceleration of Growth (Priorities)", component: FuturePillar03PrioritiesSlide, theme: "light", isNew: true },
+  "future-pillars-summary": { id: "future-pillars-summary", label: "Pillars 01–03 · Internal Priorities Summary", component: FuturePillarsSummarySlide, theme: "light", isNew: true },
+  "future-strategic-summary-cover": { id: "future-strategic-summary-cover", label: "Strategic Summary (Cover)", component: FutureStrategicSummaryCoverSlide, theme: "light", isNew: true },
+  "future-what-to-prove-cover": { id: "future-what-to-prove-cover", label: "What We Need to Prove Out (Cover)", component: FutureWhatToProveCoverSlide, theme: "light", isNew: true },
+  "future-cx-portfolio-intelligence-layer-copy": { id: "future-cx-portfolio-intelligence-layer-copy", label: "CX Portfolio · Intelligence Layer (Light)", component: FutureCXPortfolioIntelligenceLayerCopySlide, theme: "light", isNew: true },
+  "future-lead-velocity-buckets-v4-copy": { id: "future-lead-velocity-buckets-v4-copy", label: "Lead Velocity Buckets V4 (Light)", component: FutureLeadVelocityBucketsV4CopySlide, theme: "light", isNew: true },
+  "future-carl-incumbent-trust-v3-copy": { id: "future-carl-incumbent-trust-v3-copy", label: "Incumbent Trust V3 (Light)", component: FutureCarlIncumbentTrustV3CopySlide, theme: "light", isNew: true },
+  "future-reading-materials-cover": { id: "future-reading-materials-cover", label: "Reading Materials and Prep (Cover)", component: FutureReadingMaterialsCoverSlide, theme: "light", isNew: true },
+  "future-reading-materials-instruction": { id: "future-reading-materials-instruction", label: "Reading Materials · How to Read", component: FutureReadingMaterialsInstructionSlide, theme: "light", isNew: true },
+  "future-additional-materials-toc": { id: "future-additional-materials-toc", label: "Additional Materials · Reading List (TOC)", component: FutureAdditionalMaterialsTOCSlide, theme: "light", isNew: true },
+  "future-strategy-worksheet": { id: "future-strategy-worksheet", label: "Strategy Worksheet · Team Exercise (PDF)", component: FutureStrategyWorksheetSlide, theme: "light", isNew: true },
+  "future-worksheet-1-cover": { id: "future-worksheet-1-cover", label: "Worksheet 1 · Cover", component: FutureWorksheetCoverSlide, theme: "light", isNew: true },
+  "future-worksheet-2-department": { id: "future-worksheet-2-department", label: "Worksheet 2 · Department Setup", component: FutureWorksheetDepartmentSlide, theme: "light", isNew: true },
+  "future-worksheet-3-opportunities": { id: "future-worksheet-3-opportunities", label: "Worksheet 3 · Opportunities / Roadblocks / KSF", component: FutureWorksheetOpportunitiesSlide, theme: "light", isNew: true },
+  "future-worksheet-4-decision-matrix": { id: "future-worksheet-4-decision-matrix", label: "Worksheet 4 · Achieve / Preserve / Avoid / Eliminate", component: FutureWorksheetDecisionMatrixSlide, theme: "light", isNew: true },
+  "future-worksheet-5-swot": { id: "future-worksheet-5-swot", label: "Worksheet 5 · SWOT", component: FutureWorksheetSWOTSlide, theme: "light", isNew: true },
+  "future-worksheet-6-matchup": { id: "future-worksheet-6-matchup", label: "Worksheet 6 · Strategy Matchup", component: FutureWorksheetMatchupSlide, theme: "light", isNew: true },
+  "future-worksheet-7-action-plan": { id: "future-worksheet-7-action-plan", label: "Worksheet 7 · Action Plan / OKRs", component: FutureWorksheetActionPlanSlide, theme: "light", isNew: true },
+  "future-worksheet-8-impact-effort": { id: "future-worksheet-8-impact-effort", label: "Worksheet 8 · Impact × Effort", component: FutureWorksheetImpactEffortSlide, theme: "light", isNew: true },
+  "future-worksheet-9-important-time": { id: "future-worksheet-9-important-time", label: "Worksheet 9 · Important × Time-sensitive", component: FutureWorksheetImportantTimeSlide, theme: "light", isNew: true },
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
@@ -709,6 +755,20 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "defensible-advantage-uneasy-middle",
     label: "Defensible advantage: uneasy middle",
     component: DefensibleAdvantageUneasyMiddleSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "defensible-advantage-uneasy-middle-end": {
+    id: "defensible-advantage-uneasy-middle-end",
+    label: "Defensible advantage: uneasy middle (End)",
+    component: DefensibleAdvantageUneasyMiddleEndSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "investor-defensible-advantage-uneasy-middle": {
+    id: "investor-defensible-advantage-uneasy-middle",
+    label: "Defensible advantage: uneasy middle (Investor · ServiceTitan)",
+    component: InvestorDefensibleAdvantageUneasyMiddleSlide,
     theme: "dark",
     isNew: true,
   },
