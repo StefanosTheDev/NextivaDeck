@@ -174,7 +174,7 @@ export default function FutureCustomerFirstCenteredSlide({
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr",
-            gap: 20,
+            gap: 28,
           }}
         >
           {FACETS.map((f, idx) => {
@@ -188,21 +188,22 @@ export default function FutureCustomerFirstCenteredSlide({
                 style={{
                   background: CARD_BG,
                   border: `1px solid ${CARD_BORDER}`,
-                  borderTop: `4px solid ${BLUE}`,
-                  borderRadius: 8,
-                  padding: "22px 24px 22px",
+                  borderTop: `5px solid ${BLUE}`,
+                  borderRadius: 12,
+                  padding: "34px 34px 32px",
                   display: "flex",
                   flexDirection: "column",
-                  gap: 12,
+                  gap: 18,
                   textAlign: "left",
+                  boxShadow: "0 8px 24px rgba(6,26,55,0.05)",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
                   <span
                     style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 10,
+                      width: 60,
+                      height: 60,
+                      borderRadius: 14,
                       background: BLUE_SOFT,
                       border: `1px solid ${BLUE}`,
                       display: "inline-flex",
@@ -211,15 +212,15 @@ export default function FutureCustomerFirstCenteredSlide({
                       flexShrink: 0,
                     }}
                   >
-                    <Icon size={22} color={BLUE} strokeWidth={2} />
+                    <Icon size={30} color={BLUE} strokeWidth={2} />
                   </span>
                   <h3
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: 26,
+                      fontSize: 34,
                       fontWeight: 700,
                       color: NAVY_DARK,
-                      lineHeight: 1.2,
+                      lineHeight: 1.15,
                       letterSpacing: "-0.005em",
                       margin: 0,
                     }}
@@ -230,7 +231,7 @@ export default function FutureCustomerFirstCenteredSlide({
                 <p
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 17,
+                    fontSize: 20,
                     fontWeight: 400,
                     color: BODY,
                     lineHeight: 1.45,
