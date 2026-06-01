@@ -108,34 +108,34 @@ export default function VerticalsSixPillarsSlide({
         <p
           style={{
             fontWeight: 700,
-            fontSize: 12,
+            fontSize: 14,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             color: "#CCC7C3",
-            margin: "0 0 10px",
+            margin: "0 0 12px",
           }}
         >
           Vertical approach · Platform economics
         </p>
         <div
           style={{
-            width: 48,
+            width: 52,
             height: 3,
             borderRadius: 2,
             background: "linear-gradient(90deg, #2860B2, #0070F3)",
-            margin: "0 auto 18px",
+            margin: "0 auto 16px",
             opacity: 0.9,
           }}
         />
         <h1
           className="font-heading"
           style={{
-            fontSize: 38,
+            fontSize: 42,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
-            lineHeight: 1.16,
-            maxWidth: 1140,
+            lineHeight: 1.15,
+            maxWidth: 1320,
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -149,7 +149,7 @@ export default function VerticalsSixPillarsSlide({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.12 }}
           style={{
-            maxWidth: 1140,
+            maxWidth: 1320,
             margin: "16px auto 0",
             padding: "14px 22px",
             textAlign: "left",
@@ -162,8 +162,8 @@ export default function VerticalsSixPillarsSlide({
         >
           <p
             style={{
-              fontSize: 16,
-              color: "rgba(255,255,255,0.72)",
+              fontSize: 18,
+              color: "rgba(255,255,255,0.75)",
               margin: 0,
               lineHeight: 1.5,
               fontWeight: 400,
@@ -182,13 +182,13 @@ export default function VerticalsSixPillarsSlide({
       <main
         style={{
           flex: 1,
-          padding: "22px 80px 28px",
+          padding: "22px 70px 26px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gridTemplateRows: "1fr 1fr",
           gap: 14,
           minHeight: 0,
-          maxWidth: 1640,
+          maxWidth: 1720,
           marginLeft: "auto",
           marginRight: "auto",
           width: "100%",
@@ -206,7 +206,7 @@ export default function VerticalsSixPillarsSlide({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.12 + i * 0.04 }}
               style={{
-                padding: "16px 18px",
+                padding: "18px 20px",
                 borderRadius: 14,
                 background:
                   "linear-gradient(165deg, rgba(40, 96, 178, 0.07) 0%, rgba(255,255,255,0.025) 100%)",
@@ -215,21 +215,21 @@ export default function VerticalsSixPillarsSlide({
                   "0 12px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04)",
                 display: "flex",
                 flexDirection: "column",
-                gap: 8,
+                gap: 10,
               }}
             >
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 10,
+                  gap: 12,
                 }}
               >
                 <div
                   style={{
-                    width: 36,
-                    height: 36,
-                    borderRadius: 10,
+                    width: 44,
+                    height: 44,
+                    borderRadius: 11,
                     flexShrink: 0,
                     display: "flex",
                     alignItems: "center",
@@ -239,16 +239,16 @@ export default function VerticalsSixPillarsSlide({
                     color: "#7EB3E8",
                   }}
                 >
-                  <Icon size={17} strokeWidth={2} />
+                  <Icon size={21} strokeWidth={2} />
                 </div>
                 <h2
                   className="font-heading"
                   style={{
                     margin: 0,
-                    fontSize: 18,
+                    fontSize: 21,
                     fontWeight: 700,
                     color: "#FFFFFF",
-                    lineHeight: 1.1,
+                    lineHeight: 1.14,
                   }}
                 >
                   {p.name}
@@ -257,9 +257,9 @@ export default function VerticalsSixPillarsSlide({
               <p
                 style={{
                   margin: 0,
-                  fontSize: 13.5,
+                  fontSize: 15.5,
                   lineHeight: 1.45,
-                  color: "rgba(255,255,255,0.78)",
+                  color: "rgba(255,255,255,0.8)",
                 }}
               >
                 {p.description}
@@ -267,11 +267,11 @@ export default function VerticalsSixPillarsSlide({
               <div
                 style={{
                   marginTop: "auto",
-                  padding: "8px 10px",
-                  borderRadius: 8,
+                  padding: "10px 13px",
+                  borderRadius: 9,
                   background: "rgba(0,0,0,0.22)",
                   border: "1px solid rgba(126,179,232,0.25)",
-                  fontSize: 12,
+                  fontSize: 13.5,
                   lineHeight: 1.4,
                   color: "#7EB3E8",
                   fontWeight: 600,

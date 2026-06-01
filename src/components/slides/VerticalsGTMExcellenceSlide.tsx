@@ -108,7 +108,7 @@ export default function VerticalsGTMExcellenceSlide({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         style={{
-          padding: "30px 80px 0",
+          padding: "40px 80px 0",
           flexShrink: 0,
           textAlign: "center",
           position: "relative",
@@ -118,34 +118,34 @@ export default function VerticalsGTMExcellenceSlide({
         <p
           style={{
             fontWeight: 700,
-            fontSize: 12,
+            fontSize: 18,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             color: "#CCC7C3",
-            margin: "0 0 10px",
+            margin: "0 0 14px",
           }}
         >
           GTM motion — vertical excellence
         </p>
         <div
           style={{
-            width: 48,
-            height: 3,
+            width: 64,
+            height: 4,
             borderRadius: 2,
             background: "linear-gradient(90deg, #2860B2, #0070F3)",
-            margin: "0 auto 16px",
+            margin: "0 auto 18px",
             opacity: 0.9,
           }}
         />
         <h1
           className="font-heading"
           style={{
-            fontSize: 36,
+            fontSize: 52,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
-            lineHeight: 1.16,
-            maxWidth: 1200,
+            lineHeight: 1.14,
+            maxWidth: 1400,
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -154,11 +154,11 @@ export default function VerticalsGTMExcellenceSlide({
         </h1>
         <p
           style={{
-            margin: "10px auto 0",
-            fontSize: 15,
-            color: "rgba(255,255,255,0.72)",
-            maxWidth: 1080,
-            lineHeight: 1.5,
+            margin: "16px auto 0",
+            fontSize: 22,
+            color: "rgba(255,255,255,0.78)",
+            maxWidth: 1240,
+            lineHeight: 1.45,
             fontWeight: 400,
           }}
         >
@@ -169,12 +169,12 @@ export default function VerticalsGTMExcellenceSlide({
       <main
         style={{
           flex: 1,
-          padding: "22px 80px 22px",
+          padding: "30px 70px 26px",
           display: "flex",
           flexDirection: "column",
-          gap: 16,
+          gap: 22,
           minHeight: 0,
-          maxWidth: 1700,
+          maxWidth: 1820,
           marginLeft: "auto",
           marginRight: "auto",
           width: "100%",
@@ -201,8 +201,8 @@ export default function VerticalsGTMExcellenceSlide({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.14 + i * 0.06 }}
                 style={{
-                  padding: m.highlight ? "16px 18px" : "14px 16px",
-                  borderRadius: 14,
+                  padding: m.highlight ? "22px 24px" : "20px 22px",
+                  borderRadius: 16,
                   background: m.highlight
                     ? "linear-gradient(165deg, rgba(245,158,11,0.16) 0%, rgba(245,158,11,0.05) 100%)"
                     : "linear-gradient(165deg, rgba(40,96,178,0.05) 0%, rgba(255,255,255,0.02) 100%)",
@@ -214,8 +214,8 @@ export default function VerticalsGTMExcellenceSlide({
                     : "0 10px 28px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.04)",
                   display: "flex",
                   flexDirection: "column",
-                  gap: 8,
-                  transform: m.highlight ? "translateY(-4px)" : undefined,
+                  gap: 14,
+                  transform: m.highlight ? "translateY(-6px)" : undefined,
                   opacity: m.highlight ? 1 : 0.92,
                   zIndex: m.highlight ? 2 : 1,
                 }}
@@ -224,14 +224,14 @@ export default function VerticalsGTMExcellenceSlide({
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 10,
+                    gap: 14,
                   }}
                 >
                   <div
                     style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 10,
+                      width: 52,
+                      height: 52,
+                      borderRadius: 12,
                       flexShrink: 0,
                       display: "flex",
                       alignItems: "center",
@@ -245,17 +245,17 @@ export default function VerticalsGTMExcellenceSlide({
                       color: m.highlight ? "#FBBF24" : "#7EB3E8",
                     }}
                   >
-                    <Icon size={17} strokeWidth={2} />
+                    <Icon size={26} strokeWidth={2} />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <p
                       style={{
                         margin: 0,
-                        fontSize: 10.5,
+                        fontSize: 14,
                         fontWeight: 700,
                         letterSpacing: "0.16em",
                         textTransform: "uppercase",
-                        color: m.highlight ? "#FBBF24" : "rgba(255,255,255,0.5)",
+                        color: m.highlight ? "#FBBF24" : "rgba(255,255,255,0.55)",
                       }}
                     >
                       {m.eyebrow}
@@ -263,11 +263,11 @@ export default function VerticalsGTMExcellenceSlide({
                     <h2
                       className="font-heading"
                       style={{
-                        margin: "2px 0 0",
-                        fontSize: m.highlight ? 18 : 16,
+                        margin: "4px 0 0",
+                        fontSize: m.highlight ? 26 : 23,
                         fontWeight: 700,
                         color: "#FFFFFF",
-                        lineHeight: 1.15,
+                        lineHeight: 1.18,
                       }}
                     >
                       {m.title}
@@ -282,7 +282,7 @@ export default function VerticalsGTMExcellenceSlide({
                     listStyle: "none",
                     display: "flex",
                     flexDirection: "column",
-                    gap: 5,
+                    gap: 10,
                     flex: 1,
                   }}
                 >
@@ -291,21 +291,21 @@ export default function VerticalsGTMExcellenceSlide({
                       key={bi}
                       style={{
                         display: "flex",
-                        gap: 7,
+                        gap: 12,
                         alignItems: "flex-start",
-                        fontSize: 12.5,
-                        lineHeight: 1.4,
-                        color: "rgba(255,255,255,0.78)",
+                        fontSize: 18,
+                        lineHeight: 1.45,
+                        color: "rgba(255,255,255,0.82)",
                       }}
                     >
                       <span
                         style={{
                           flexShrink: 0,
-                          width: 4,
-                          height: 4,
+                          width: 7,
+                          height: 7,
                           borderRadius: "50%",
                           background: m.highlight ? "#FBBF24" : "#7EB3E8",
-                          marginTop: 7,
+                          marginTop: 10,
                         }}
                       />
                       <span>{b}</span>
@@ -315,16 +315,16 @@ export default function VerticalsGTMExcellenceSlide({
 
                 <div
                   style={{
-                    marginTop: 4,
-                    padding: "7px 10px",
-                    borderRadius: 8,
+                    marginTop: 6,
+                    padding: "12px 14px",
+                    borderRadius: 10,
                     background: m.highlight
                       ? "rgba(245,158,11,0.15)"
                       : "rgba(0,0,0,0.22)",
                     border: m.highlight
                       ? "1px solid rgba(245,158,11,0.4)"
                       : "1px solid rgba(126,179,232,0.22)",
-                    fontSize: 11.5,
+                    fontSize: 16,
                     fontWeight: 600,
                     color: m.highlight ? "#FBBF24" : "#7EB3E8",
                     textAlign: "center",
@@ -354,28 +354,28 @@ export default function VerticalsGTMExcellenceSlide({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.3 + i * 0.04 }}
                 style={{
-                  padding: "12px 14px",
-                  borderRadius: 12,
+                  padding: "18px 20px",
+                  borderRadius: 14,
                   background: "rgba(255,255,255,0.03)",
                   border: "1px solid rgba(255,255,255,0.09)",
                   boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
                   display: "flex",
                   flexDirection: "column",
-                  gap: 6,
+                  gap: 10,
                 }}
               >
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 8,
+                    gap: 10,
                   }}
                 >
-                  <Icon size={14} color="#7EB3E8" strokeWidth={2} />
+                  <Icon size={20} color="#7EB3E8" strokeWidth={2} />
                   <p
                     style={{
                       margin: 0,
-                      fontSize: 10,
+                      fontSize: 14,
                       fontWeight: 700,
                       letterSpacing: "0.14em",
                       textTransform: "uppercase",
@@ -388,9 +388,9 @@ export default function VerticalsGTMExcellenceSlide({
                 <p
                   style={{
                     margin: 0,
-                    fontSize: 12,
-                    lineHeight: 1.4,
-                    color: "rgba(255,255,255,0.78)",
+                    fontSize: 16,
+                    lineHeight: 1.45,
+                    color: "rgba(255,255,255,0.82)",
                   }}
                 >
                   {w.body}

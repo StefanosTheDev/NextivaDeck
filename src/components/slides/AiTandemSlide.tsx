@@ -4,9 +4,9 @@ import SlideFooter from "../SlideFooter";
 import { BrainCog, Plane, Briefcase } from "lucide-react";
 
 const modes = [
-  { icon: BrainCog, title: "Agent Assist", line: "AI supports. Humans lead." },
-  { icon: Plane, title: "Autopilot", line: "AI drives. Humans oversee." },
   { icon: Briefcase, title: "Autonomous", line: "AI handles end-to-end." },
+  { icon: Plane, title: "Autopilot", line: "AI drives. Humans oversee." },
+  { icon: BrainCog, title: "Agent Assist", line: "AI supports. Humans lead." },
 ];
 
 export default function AiTandemSlide({ slideNumber = 11 }: { slideNumber?: number }) {

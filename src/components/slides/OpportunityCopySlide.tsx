@@ -34,17 +34,17 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           style={{
-            fontSize: 62,
+            fontSize: 84,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: "24px 0 0",
-            lineHeight: 1.2,
+            lineHeight: 1.15,
             textAlign: "center",
           }}
         >
-          A unified, AI-driven customer experience
+          Turning every customer interaction
           <br />
-          platform powering every interaction.
+          into real-time outcomes.
         </motion.h1>
 
         <motion.div
@@ -55,26 +55,11 @@ export default function OpportunityCopySlide({ slideNumber = 7 }: { slideNumber?
             width: 56,
             height: 3,
             background: "#2860B2",
-            margin: "44px 0 36px",
+            margin: "44px 0 0",
             borderRadius: 2,
             transformOrigin: "center",
           }}
         />
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          style={{
-            fontSize: 26,
-            color: "rgba(255,255,255,0.5)",
-            margin: 0,
-            textAlign: "center",
-            lineHeight: 1.5,
-          }}
-        >
-          Turning every customer interaction into real-time outcomes
-        </motion.p>
       </div>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />

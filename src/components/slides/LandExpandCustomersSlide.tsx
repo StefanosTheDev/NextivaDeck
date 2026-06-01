@@ -23,7 +23,7 @@ const customers: {
 }[] = [
   {
     icon: Heart,
-    name: "Shasta Community Health",
+    name: "Shasta Health",
     meta: "7 locations · 100 providers",
     metrics: [
       { value: "2 min", label: "avg wait time" },
@@ -109,7 +109,7 @@ export default function LandExpandCustomersSlide({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         style={{
-          padding: "30px 80px 0",
+          padding: "40px 80px 0",
           flexShrink: 0,
           textAlign: "center",
           position: "relative",
@@ -119,34 +119,34 @@ export default function LandExpandCustomersSlide({
         <p
           style={{
             fontWeight: 700,
-            fontSize: 12,
+            fontSize: 18,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             color: "#CCC7C3",
-            margin: "0 0 10px",
+            margin: "0 0 14px",
           }}
         >
           Customer use cases
         </p>
         <div
           style={{
-            width: 48,
-            height: 3,
+            width: 64,
+            height: 4,
             borderRadius: 2,
             background: "linear-gradient(90deg, #2860B2, #0070F3)",
-            margin: "0 auto 16px",
+            margin: "0 auto 18px",
             opacity: 0.9,
           }}
         />
         <h1
           className="font-heading"
           style={{
-            fontSize: 36,
+            fontSize: 52,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
-            lineHeight: 1.16,
-            maxWidth: 1200,
+            lineHeight: 1.14,
+            maxWidth: 1400,
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -155,11 +155,11 @@ export default function LandExpandCustomersSlide({
         </h1>
         <p
           style={{
-            margin: "10px auto 0",
-            fontSize: 15,
-            color: "rgba(255,255,255,0.72)",
-            maxWidth: 1100,
-            lineHeight: 1.5,
+            margin: "16px auto 0",
+            fontSize: 22,
+            color: "rgba(255,255,255,0.78)",
+            maxWidth: 1240,
+            lineHeight: 1.45,
             fontWeight: 400,
           }}
         >
@@ -171,13 +171,13 @@ export default function LandExpandCustomersSlide({
       <main
         style={{
           flex: 1,
-          padding: "20px 80px 26px",
+          padding: "28px 70px 28px",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gridTemplateRows: "1fr 1fr",
-          gap: 14,
+          gap: 20,
           minHeight: 0,
-          maxWidth: 1700,
+          maxWidth: 1820,
           marginLeft: "auto",
           marginRight: "auto",
           width: "100%",
@@ -195,16 +195,16 @@ export default function LandExpandCustomersSlide({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.14 + i * 0.05 }}
               style={{
-                padding: "16px 18px",
-                borderRadius: 14,
+                padding: "24px 26px",
+                borderRadius: 16,
                 background:
                   "linear-gradient(165deg, rgba(40,96,178,0.07) 0%, rgba(255,255,255,0.025) 100%)",
                 border: "1px solid rgba(255,255,255,0.09)",
                 boxShadow:
                   "0 12px 30px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04)",
                 display: "grid",
-                gridTemplateColumns: "1fr 1.3fr",
-                gap: 16,
+                gridTemplateColumns: "1fr 1.25fr",
+                gap: 22,
                 minHeight: 0,
               }}
             >
@@ -213,19 +213,19 @@ export default function LandExpandCustomersSlide({
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: 10,
-                  paddingRight: 14,
+                  gap: 16,
+                  paddingRight: 20,
                   borderRight: "1px solid rgba(255,255,255,0.08)",
                 }}
               >
                 <div
-                  style={{ display: "flex", alignItems: "center", gap: 10 }}
+                  style={{ display: "flex", alignItems: "center", gap: 14 }}
                 >
                   <div
                     style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 10,
+                      width: 52,
+                      height: 52,
+                      borderRadius: 12,
                       flexShrink: 0,
                       display: "flex",
                       alignItems: "center",
@@ -235,26 +235,26 @@ export default function LandExpandCustomersSlide({
                       color: "#7EB3E8",
                     }}
                   >
-                    <Icon size={17} strokeWidth={2} />
+                    <Icon size={26} strokeWidth={2} />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <h2
                       className="font-heading"
                       style={{
                         margin: 0,
-                        fontSize: 16.5,
+                        fontSize: 24,
                         fontWeight: 700,
                         color: "#FFFFFF",
-                        lineHeight: 1.1,
+                        lineHeight: 1.15,
                       }}
                     >
                       {c.name}
                     </h2>
                     <p
                       style={{
-                        margin: "2px 0 0",
-                        fontSize: 11.5,
-                        color: "rgba(255,255,255,0.55)",
+                        margin: "4px 0 0",
+                        fontSize: 16,
+                        color: "rgba(255,255,255,0.6)",
                       }}
                     >
                       {c.meta}
@@ -265,11 +265,11 @@ export default function LandExpandCustomersSlide({
                 <p
                   style={{
                     margin: 0,
-                    fontSize: 10,
+                    fontSize: 14,
                     fontWeight: 700,
                     letterSpacing: "0.14em",
                     textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.5)",
+                    color: "rgba(255,255,255,0.55)",
                   }}
                 >
                   Entry metrics
@@ -278,15 +278,15 @@ export default function LandExpandCustomersSlide({
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
-                    gap: 10,
+                    gap: 12,
                   }}
                 >
                   {c.metrics.map((m) => (
                     <div
                       key={m.label}
                       style={{
-                        padding: "10px 12px",
-                        borderRadius: 10,
+                        padding: "14px 16px",
+                        borderRadius: 12,
                         background: "rgba(0,0,0,0.25)",
                         border: "1px solid rgba(126,179,232,0.22)",
                       }}
@@ -295,7 +295,7 @@ export default function LandExpandCustomersSlide({
                         className="font-heading"
                         style={{
                           margin: 0,
-                          fontSize: 22,
+                          fontSize: 34,
                           fontWeight: 700,
                           color: "#FBBF24",
                           lineHeight: 1.05,
@@ -305,9 +305,9 @@ export default function LandExpandCustomersSlide({
                       </p>
                       <p
                         style={{
-                          margin: "2px 0 0",
-                          fontSize: 11,
-                          color: "rgba(255,255,255,0.65)",
+                          margin: "6px 0 0",
+                          fontSize: 15,
+                          color: "rgba(255,255,255,0.7)",
                           lineHeight: 1.3,
                         }}
                       >
@@ -319,19 +319,19 @@ export default function LandExpandCustomersSlide({
               </div>
 
               {/* Right — next potential use cases */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 8,
+                    gap: 10,
                   }}
                 >
-                  <ArrowRight size={14} color="#7EB3E8" strokeWidth={2.2} />
+                  <ArrowRight size={20} color="#7EB3E8" strokeWidth={2.2} />
                   <p
                     style={{
                       margin: 0,
-                      fontSize: 10,
+                      fontSize: 14,
                       fontWeight: 700,
                       letterSpacing: "0.14em",
                       textTransform: "uppercase",
@@ -349,7 +349,7 @@ export default function LandExpandCustomersSlide({
                     counterReset: "step",
                     display: "flex",
                     flexDirection: "column",
-                    gap: 7,
+                    gap: 12,
                   }}
                 >
                   {c.nextUseCases.map((u, ui) => (
@@ -358,22 +358,22 @@ export default function LandExpandCustomersSlide({
                       style={{
                         display: "flex",
                         alignItems: "flex-start",
-                        gap: 10,
-                        fontSize: 13,
-                        lineHeight: 1.4,
-                        color: "rgba(255,255,255,0.82)",
+                        gap: 14,
+                        fontSize: 18,
+                        lineHeight: 1.45,
+                        color: "rgba(255,255,255,0.85)",
                       }}
                     >
                       <span
                         style={{
                           flexShrink: 0,
-                          minWidth: 20,
-                          height: 20,
+                          minWidth: 28,
+                          height: 28,
                           borderRadius: "50%",
                           background: "rgba(126,179,232,0.18)",
                           border: "1px solid rgba(126,179,232,0.4)",
                           color: "#7EB3E8",
-                          fontSize: 11,
+                          fontSize: 15,
                           fontWeight: 700,
                           display: "inline-flex",
                           alignItems: "center",

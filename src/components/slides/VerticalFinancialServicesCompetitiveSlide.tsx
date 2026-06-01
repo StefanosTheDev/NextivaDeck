@@ -85,7 +85,13 @@ export default function VerticalFinancialServicesCompetitiveSlide({
     <CompetitiveTable
       slideNumber={slideNumber}
       eyebrow="Vertical · Financial Services — Competitive positioning"
-      title="Financial Services CX is contested. Nextiva is the only platform that spans the full stack."
+      title={
+        <>
+          Financial Services CX is contested.
+          <br />
+          Nextiva is the only platform that spans the full stack.
+        </>
+      }
       subtitle="Unified UC + CCaaS + AI with financial-grade compliance — from SMB advisory firms to multi-site financial institutions."
       columns={columns}
       rows={rows}

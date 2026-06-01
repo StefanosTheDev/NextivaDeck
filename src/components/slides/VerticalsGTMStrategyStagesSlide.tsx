@@ -117,7 +117,7 @@ export default function VerticalsGTMStrategyStagesSlide({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         style={{
-          padding: "30px 80px 0",
+          padding: "40px 80px 0",
           flexShrink: 0,
           textAlign: "center",
           position: "relative",
@@ -127,34 +127,34 @@ export default function VerticalsGTMStrategyStagesSlide({
         <p
           style={{
             fontWeight: 700,
-            fontSize: 12,
+            fontSize: 18,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             color: "#CCC7C3",
-            margin: "0 0 10px",
+            margin: "0 0 14px",
           }}
         >
           GTM motion · Healthcare illustration
         </p>
         <div
           style={{
-            width: 48,
-            height: 3,
+            width: 64,
+            height: 4,
             borderRadius: 2,
             background: "linear-gradient(90deg, #2860B2, #0070F3)",
-            margin: "0 auto 16px",
+            margin: "0 auto 18px",
             opacity: 0.9,
           }}
         />
         <h1
           className="font-heading"
           style={{
-            fontSize: 34,
+            fontSize: 50,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
-            lineHeight: 1.16,
-            maxWidth: 1200,
+            lineHeight: 1.14,
+            maxWidth: 1400,
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -163,11 +163,11 @@ export default function VerticalsGTMStrategyStagesSlide({
         </h1>
         <p
           style={{
-            margin: "10px auto 0",
-            fontSize: 15,
-            color: "rgba(255,255,255,0.72)",
-            maxWidth: 1100,
-            lineHeight: 1.5,
+            margin: "16px auto 0",
+            fontSize: 22,
+            color: "rgba(255,255,255,0.78)",
+            maxWidth: 1240,
+            lineHeight: 1.45,
             fontWeight: 400,
           }}
         >
@@ -179,12 +179,12 @@ export default function VerticalsGTMStrategyStagesSlide({
       <main
         style={{
           flex: 1,
-          padding: "20px 80px 22px",
+          padding: "28px 70px 28px",
           display: "flex",
           flexDirection: "column",
-          gap: 12,
+          gap: 18,
           minHeight: 0,
-          maxWidth: 1700,
+          maxWidth: 1820,
           marginLeft: "auto",
           marginRight: "auto",
           width: "100%",
@@ -198,7 +198,7 @@ export default function VerticalsGTMStrategyStagesSlide({
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 10,
+            gap: 14,
           }}
         >
           {themes.map((t, i) => (
@@ -208,8 +208,8 @@ export default function VerticalsGTMStrategyStagesSlide({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.04 }}
               style={{
-                padding: "10px 14px",
-                borderRadius: 10,
+                padding: "16px 18px",
+                borderRadius: 12,
                 background: "rgba(126,179,232,0.06)",
                 border: "1px solid rgba(126,179,232,0.22)",
               }}
@@ -217,7 +217,7 @@ export default function VerticalsGTMStrategyStagesSlide({
               <p
                 style={{
                   margin: 0,
-                  fontSize: 10,
+                  fontSize: 13,
                   fontWeight: 700,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
@@ -228,10 +228,10 @@ export default function VerticalsGTMStrategyStagesSlide({
               </p>
               <p
                 style={{
-                  margin: "4px 0 0",
-                  fontSize: 12.5,
-                  lineHeight: 1.4,
-                  color: "rgba(255,255,255,0.78)",
+                  margin: "8px 0 0",
+                  fontSize: 17,
+                  lineHeight: 1.45,
+                  color: "rgba(255,255,255,0.82)",
                 }}
               >
                 {t.body}
@@ -246,7 +246,7 @@ export default function VerticalsGTMStrategyStagesSlide({
             position: "relative",
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 12,
+            gap: 18,
             flex: 1,
             minHeight: 0,
             alignItems: "stretch",
@@ -262,8 +262,8 @@ export default function VerticalsGTMStrategyStagesSlide({
                 transition={{ duration: 0.45, delay: 0.18 + i * 0.07 }}
                 style={{
                   position: "relative",
-                  padding: "16px 16px",
-                  borderRadius: 14,
+                  padding: "22px 22px",
+                  borderRadius: 16,
                   background: `linear-gradient(165deg, rgba(0,112,243,${
                     0.05 + s.intensity * 0.12
                   }) 0%, rgba(255,255,255,${
@@ -277,7 +277,7 @@ export default function VerticalsGTMStrategyStagesSlide({
                   }), inset 0 1px 0 rgba(255,255,255,0.04)`,
                   display: "flex",
                   flexDirection: "column",
-                  gap: 8,
+                  gap: 14,
                   minHeight: 0,
                 }}
               >
@@ -287,13 +287,13 @@ export default function VerticalsGTMStrategyStagesSlide({
                     style={{
                       position: "absolute",
                       top: "50%",
-                      right: -18,
+                      right: -22,
                       transform: "translateY(-50%)",
-                      width: 24,
-                      height: 24,
+                      width: 32,
+                      height: 32,
                       borderRadius: "50%",
-                      background: "rgba(0,112,243,0.18)",
-                      border: "1px solid rgba(0,112,243,0.5)",
+                      background: "rgba(0,112,243,0.2)",
+                      border: "1px solid rgba(0,112,243,0.55)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -301,7 +301,7 @@ export default function VerticalsGTMStrategyStagesSlide({
                     }}
                   >
                     <ChevronsRight
-                      size={14}
+                      size={18}
                       color="#7EB3E8"
                       strokeWidth={2.4}
                     />
@@ -309,13 +309,13 @@ export default function VerticalsGTMStrategyStagesSlide({
                 ) : null}
 
                 <div
-                  style={{ display: "flex", alignItems: "center", gap: 10 }}
+                  style={{ display: "flex", alignItems: "center", gap: 14 }}
                 >
                   <div
                     style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 10,
+                      width: 52,
+                      height: 52,
+                      borderRadius: 12,
                       flexShrink: 0,
                       display: "flex",
                       alignItems: "center",
@@ -329,17 +329,17 @@ export default function VerticalsGTMStrategyStagesSlide({
                       color: "#7EB3E8",
                     }}
                   >
-                    <Icon size={17} strokeWidth={2} />
+                    <Icon size={26} strokeWidth={2} />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <p
                       style={{
                         margin: 0,
-                        fontSize: 10,
+                        fontSize: 13,
                         fontWeight: 700,
                         letterSpacing: "0.16em",
                         textTransform: "uppercase",
-                        color: "rgba(255,255,255,0.5)",
+                        color: "rgba(255,255,255,0.55)",
                       }}
                     >
                       {s.stage}
@@ -347,8 +347,8 @@ export default function VerticalsGTMStrategyStagesSlide({
                     <h2
                       className="font-heading"
                       style={{
-                        margin: "2px 0 0",
-                        fontSize: 20,
+                        margin: "4px 0 0",
+                        fontSize: 28,
                         fontWeight: 700,
                         color: "#FFFFFF",
                         lineHeight: 1.1,
@@ -366,7 +366,7 @@ export default function VerticalsGTMStrategyStagesSlide({
                     listStyle: "none",
                     display: "flex",
                     flexDirection: "column",
-                    gap: 6,
+                    gap: 10,
                     flex: 1,
                   }}
                 >
@@ -375,21 +375,21 @@ export default function VerticalsGTMStrategyStagesSlide({
                       key={bi}
                       style={{
                         display: "flex",
-                        gap: 8,
+                        gap: 12,
                         alignItems: "flex-start",
-                        fontSize: 12.5,
-                        lineHeight: 1.4,
-                        color: "rgba(255,255,255,0.78)",
+                        fontSize: 17,
+                        lineHeight: 1.45,
+                        color: "rgba(255,255,255,0.82)",
                       }}
                     >
                       <span
                         style={{
                           flexShrink: 0,
-                          width: 4,
-                          height: 4,
+                          width: 6,
+                          height: 6,
                           borderRadius: "50%",
                           background: "#7EB3E8",
-                          marginTop: 7,
+                          marginTop: 9,
                         }}
                       />
                       <span>{b}</span>
@@ -400,13 +400,13 @@ export default function VerticalsGTMStrategyStagesSlide({
                 <div
                   style={{
                     marginTop: 4,
-                    padding: "8px 10px",
-                    borderRadius: 8,
+                    padding: "12px 14px",
+                    borderRadius: 10,
                     background: "rgba(0,0,0,0.25)",
                     border: "1px solid rgba(126,179,232,0.25)",
-                    fontSize: 11.5,
-                    lineHeight: 1.38,
-                    color: "rgba(255,255,255,0.86)",
+                    fontSize: 15,
+                    lineHeight: 1.42,
+                    color: "rgba(255,255,255,0.88)",
                     fontWeight: 500,
                   }}
                 >

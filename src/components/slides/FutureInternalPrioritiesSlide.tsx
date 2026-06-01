@@ -5,8 +5,8 @@ import {
   Anchor,
   Sparkles,
   Gauge,
-  Calendar,
   FlaskConical,
+  Plus,
 } from "lucide-react";
 
 const NAVY = "#1A447C";
@@ -33,7 +33,7 @@ const HIGHLIGHTS: Priority[] = [
     description: (
       <>
         Strengthen the existing customer base — especially the{" "}
-        <strong style={{ color: NAVY_DARK }}>$30–$40M NextOS platform</strong>{" "}
+        <strong style={{ color: NAVY_DARK }}>$350M NextOS platform</strong>{" "}
         — and drive AI adoption internally.
       </>
     ),
@@ -67,19 +67,6 @@ const HIGHLIGHTS: Priority[] = [
 
 const SECONDARY: Priority[] = [
   {
-    key: "strategic-meeting",
-    title: "Strategic meeting",
-    icon: Calendar,
-    description: (
-      <>
-        The upcoming meeting will focus on{" "}
-        <strong style={{ color: NAVY_DARK }}>growth objectives</strong> and
-        defining{" "}
-        <strong style={{ color: NAVY_DARK }}>future acquisition criteria</strong>.
-      </>
-    ),
-  },
-  {
     key: "hypothesis-driven",
     title: "Hypothesis-driven growth",
     icon: FlaskConical,
@@ -89,6 +76,21 @@ const SECONDARY: Priority[] = [
         <strong style={{ color: NAVY_DARK }}>clear hypothesis</strong>.
       </>
     ),
+  },
+];
+
+const PLACEHOLDERS: Priority[] = [
+  {
+    key: "tbd-1",
+    title: "TBD by the team",
+    icon: Plus,
+    description: <></>,
+  },
+  {
+    key: "tbd-2",
+    title: "TBD by the team",
+    icon: Plus,
+    description: <></>,
   },
 ];
 
@@ -162,6 +164,66 @@ function PriorityCard({
       >
         {p.description}
       </p>
+    </motion.article>
+  );
+}
+
+function PlaceholderCard({
+  p,
+  delay,
+  gridColumn,
+}: {
+  p: Priority;
+  delay: number;
+  gridColumn?: string;
+}) {
+  const Icon = p.icon;
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      style={{
+        background: "transparent",
+        border: `2px dashed ${BLUE}55`,
+        borderRadius: 8,
+        padding: "28px 30px 30px",
+        display: "flex",
+        flexDirection: "column",
+        gap: 18,
+        gridColumn,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <span
+          style={{
+            width: 48,
+            height: 48,
+            borderRadius: 11,
+            background: "transparent",
+            border: `2px dashed ${BLUE}55`,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+          }}
+        >
+          <Icon size={24} color={BLUE} strokeWidth={2} />
+        </span>
+        <h3
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 26,
+            fontWeight: 700,
+            color: MUTED,
+            lineHeight: 1.2,
+            letterSpacing: "-0.005em",
+            margin: 0,
+          }}
+        >
+          {p.title}
+        </h3>
+      </div>
     </motion.article>
   );
 }
@@ -247,7 +309,15 @@ export default function FutureInternalPrioritiesSlide({
             key={p.key}
             p={p}
             delay={0.4 + idx * 0.07}
-            gridColumn={idx === 0 ? "1 / span 2" : "3 / span 2"}
+            gridColumn="1 / span 2"
+          />
+        ))}
+        {PLACEHOLDERS.map((p, idx) => (
+          <PlaceholderCard
+            key={p.key}
+            p={p}
+            delay={0.5 + idx * 0.07}
+            gridColumn={idx === 0 ? "3 / span 2" : "5 / span 2"}
           />
         ))}
       </main>

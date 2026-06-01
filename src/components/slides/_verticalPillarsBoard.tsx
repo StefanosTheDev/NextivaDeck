@@ -113,7 +113,7 @@ export default function VerticalPillarsBoard({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         style={{
-          padding: "30px 80px 0",
+          padding: "32px 80px 0",
           flexShrink: 0,
           textAlign: "center",
           position: "relative",
@@ -123,34 +123,34 @@ export default function VerticalPillarsBoard({
         <p
           style={{
             fontWeight: 700,
-            fontSize: 12,
+            fontSize: 14,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             color: "#CCC7C3",
-            margin: "0 0 10px",
+            margin: "0 0 12px",
           }}
         >
           {eyebrow}
         </p>
         <div
           style={{
-            width: 48,
+            width: 52,
             height: 3,
             borderRadius: 2,
             background: accentGradient,
-            margin: "0 auto 14px",
+            margin: "0 auto 16px",
             opacity: 0.9,
           }}
         />
         <h1
           className="font-heading"
           style={{
-            fontSize: 34,
+            fontSize: 42,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
-            lineHeight: 1.16,
-            maxWidth: 1180,
+            lineHeight: 1.15,
+            maxWidth: 1280,
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -159,11 +159,11 @@ export default function VerticalPillarsBoard({
         </h1>
         <p
           style={{
-            margin: "10px auto 0",
-            fontSize: 15,
-            color: "rgba(255,255,255,0.72)",
-            maxWidth: 1100,
-            lineHeight: 1.5,
+            margin: "12px auto 0",
+            fontSize: 18,
+            color: "rgba(255,255,255,0.75)",
+            maxWidth: 1180,
+            lineHeight: 1.45,
             fontWeight: 400,
           }}
         >
@@ -174,13 +174,13 @@ export default function VerticalPillarsBoard({
       <main
         style={{
           flex: 1,
-          padding: "20px 80px 26px",
+          padding: "26px 70px 26px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gridTemplateRows: "1fr 1fr",
-          gap: 12,
+          gap: 14,
           minHeight: 0,
-          maxWidth: 1640,
+          maxWidth: 1720,
           marginLeft: "auto",
           marginRight: "auto",
           width: "100%",
@@ -199,7 +199,7 @@ export default function VerticalPillarsBoard({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.12 + i * 0.04 }}
               style={{
-                padding: "14px 16px",
+                padding: "16px 18px",
                 borderRadius: 14,
                 background:
                   "linear-gradient(165deg, rgba(40, 96, 178, 0.07) 0%, rgba(255,255,255,0.025) 100%)",
@@ -208,18 +208,18 @@ export default function VerticalPillarsBoard({
                   "0 12px 28px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.04)",
                 display: "flex",
                 flexDirection: "column",
-                gap: 8,
+                gap: 10,
                 minHeight: 0,
               }}
             >
               <div
-                style={{ display: "flex", alignItems: "center", gap: 10 }}
+                style={{ display: "flex", alignItems: "center", gap: 12 }}
               >
                 <div
                   style={{
-                    width: 34,
-                    height: 34,
-                    borderRadius: 10,
+                    width: 42,
+                    height: 42,
+                    borderRadius: 11,
                     flexShrink: 0,
                     display: "flex",
                     alignItems: "center",
@@ -229,16 +229,16 @@ export default function VerticalPillarsBoard({
                     color: "#7EB3E8",
                   }}
                 >
-                  <Icon size={16} strokeWidth={2} />
+                  <Icon size={20} strokeWidth={2} />
                 </div>
                 <h2
                   className="font-heading"
                   style={{
                     margin: 0,
-                    fontSize: 16.5,
+                    fontSize: 21,
                     fontWeight: 700,
                     color: "#FFFFFF",
-                    lineHeight: 1.1,
+                    lineHeight: 1.14,
                   }}
                 >
                   {meta.name}
@@ -252,7 +252,7 @@ export default function VerticalPillarsBoard({
                   listStyle: "none",
                   display: "flex",
                   flexDirection: "column",
-                  gap: 5,
+                  gap: 7,
                   flex: 1,
                 }}
               >
@@ -261,21 +261,21 @@ export default function VerticalPillarsBoard({
                     key={bi}
                     style={{
                       display: "flex",
-                      gap: 7,
+                      gap: 9,
                       alignItems: "flex-start",
-                      fontSize: 12.5,
-                      lineHeight: 1.4,
-                      color: "rgba(255,255,255,0.78)",
+                      fontSize: 15,
+                      lineHeight: 1.42,
+                      color: "rgba(255,255,255,0.8)",
                     }}
                   >
                     <span
                       style={{
                         flexShrink: 0,
-                        width: 4,
-                        height: 4,
+                        width: 5,
+                        height: 5,
                         borderRadius: "50%",
                         background: "#7EB3E8",
-                        marginTop: 7,
+                        marginTop: 8,
                       }}
                     />
                     <span>{b}</span>
@@ -286,12 +286,12 @@ export default function VerticalPillarsBoard({
               <div
                 style={{
                   marginTop: "auto",
-                  padding: "8px 10px",
-                  borderRadius: 8,
+                  padding: "10px 13px",
+                  borderRadius: 9,
                   background: "rgba(0,0,0,0.22)",
                   border: "1px solid rgba(126,179,232,0.22)",
-                  fontSize: 11.5,
-                  lineHeight: 1.38,
+                  fontSize: 13.5,
+                  lineHeight: 1.4,
                   color: "#7EB3E8",
                   fontWeight: 600,
                 }}
@@ -306,12 +306,12 @@ export default function VerticalPillarsBoard({
       {integrations ? (
         <div
           style={{
-            padding: "0 80px 12px",
-            fontSize: 11,
+            padding: "0 80px 14px",
+            fontSize: 13,
             fontWeight: 700,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.45)",
+            color: "rgba(255,255,255,0.5)",
             textAlign: "center",
           }}
         >

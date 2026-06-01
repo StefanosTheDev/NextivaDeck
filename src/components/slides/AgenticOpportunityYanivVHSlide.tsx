@@ -59,54 +59,6 @@ function getSegments(slideId?: string): Segment[] {
   ];
 }
 
-const bottomCards = [
-  {
-    flex: 6,
-    label: "COMPETITIVE SOLUTIONS",
-    labelColor: "#E07E7E",
-    bg: "rgba(180,60,60,0.06)",
-    border: "rgba(200,80,80,0.15)",
-    bulletColor: "#E07E7E",
-    bulletChar: "✗",
-    items: [
-      "Require large IT teams",
-      "6-figure implementation costs",
-      "12–18 month deploy cycles",
-      "Not built for self-service",
-    ],
-  },
-  {
-    flex: 12,
-    label: "THE UNDERSERVED MIDDLE",
-    labelColor: "#CCC7C3",
-    bg: "rgba(255,255,255,0.03)",
-    border: "rgba(255,255,255,0.08)",
-    bulletColor: "#CCC7C3",
-    bulletChar: "•",
-    items: [
-      "CX built for enterprise, not the middle",
-      "Millions of businesses left behind",
-      "Expensive and complex to deploy",
-      "No AI-native CX platform exists",
-    ],
-  },
-  {
-    flex: 7,
-    label: "WHY NEXTIVA WINS",
-    labelColor: "#7EB3E8",
-    bg: "rgba(40,96,178,0.06)",
-    border: "rgba(40,96,178,0.15)",
-    bulletColor: "#7EB3E8",
-    bulletChar: "›",
-    items: [
-      "Unified Customer Interactions & Data",
-      "Agentic & Human in Tandem",
-      "Go-to-Market Moat",
-      "Product-led, fast time to value",
-    ],
-  },
-];
-
 export default function AgenticOpportunityYanivVHSlide({
   slideNumber = 12,
   slideId,
@@ -127,16 +79,16 @@ export default function AgenticOpportunityYanivVHSlide({
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        style={{ padding: "52px 100px 0", flexShrink: 0, textAlign: "center" }}
+        style={{ padding: "64px 100px 0", flexShrink: 0, textAlign: "center" }}
       >
         <p
           style={{
             fontWeight: 700,
-            fontSize: 18,
+            fontSize: 22,
             letterSpacing: "0.05em",
             textTransform: "uppercase",
             color: "#CCC7C3",
-            margin: "0 0 10px",
+            margin: "0 0 14px",
           }}
         >
           THE AGENTIC AI OPPORTUNITY
@@ -144,20 +96,20 @@ export default function AgenticOpportunityYanivVHSlide({
         <h1
           className="font-heading"
           style={{
-            fontSize: 56,
+            fontSize: 72,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
-            lineHeight: 1.2,
+            lineHeight: 1.15,
           }}
         >
           Built for the market others can&apos;t serve.
         </h1>
         <p
           style={{
-            fontSize: 22,
-            color: "rgba(255,255,255,0.5)",
-            margin: "12px 0 0",
+            fontSize: 28,
+            color: "rgba(255,255,255,0.55)",
+            margin: "18px 0 0",
             lineHeight: 1.5,
           }}
         >
@@ -172,7 +124,6 @@ export default function AgenticOpportunityYanivVHSlide({
           flexDirection: "column",
           justifyContent: "center",
           padding: "0 100px",
-          marginTop: -30,
         }}
       >
         <motion.div
@@ -197,7 +148,7 @@ export default function AgenticOpportunityYanivVHSlide({
               style={{
                 flex: seg.flex,
                 background: seg.bg,
-                padding: "32px 20px",
+                padding: "60px 28px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -210,7 +161,7 @@ export default function AgenticOpportunityYanivVHSlide({
               <p
                 className="font-heading"
                 style={{
-                  fontSize: 60,
+                  fontSize: 104,
                   fontWeight: 700,
                   color: seg.muted ? "rgba(255,255,255,0.4)" : "#FFFFFF",
                   margin: 0,
@@ -222,12 +173,12 @@ export default function AgenticOpportunityYanivVHSlide({
               </p>
               <p
                 style={{
-                  fontSize: 17,
+                  fontSize: 26,
                   fontWeight: 600,
                   color: seg.muted
                     ? "rgba(255,255,255,0.28)"
-                    : "rgba(255,255,255,0.7)",
-                  margin: "12px 0 3px",
+                    : "rgba(255,255,255,0.78)",
+                  margin: "20px 0 4px",
                   lineHeight: 1.3,
                 }}
               >
@@ -236,7 +187,7 @@ export default function AgenticOpportunityYanivVHSlide({
               {seg.middleTiers ? (
                 <div
                   style={{
-                    marginTop: 10,
+                    marginTop: 22,
                     width: "100%",
                     display: "flex",
                     flexDirection: "row",
@@ -255,16 +206,16 @@ export default function AgenticOpportunityYanivVHSlide({
                         alignItems: "center",
                         justifyContent: "flex-start",
                         textAlign: "center",
-                        padding: "8px 10px 4px",
+                        padding: "12px 12px 6px",
                         borderLeft:
                           ti === 0 ? "none" : "1px solid rgba(255,255,255,0.12)",
                       }}
                     >
                       <p
                         style={{
-                          fontSize: 13,
+                          fontSize: 18,
                           fontWeight: 700,
-                          color: "rgba(255,255,255,0.75)",
+                          color: "rgba(255,255,255,0.85)",
                           margin: 0,
                           lineHeight: 1.35,
                         }}
@@ -273,10 +224,10 @@ export default function AgenticOpportunityYanivVHSlide({
                       </p>
                       <p
                         style={{
-                          fontSize: 12,
+                          fontSize: 16,
                           fontWeight: 600,
-                          color: "rgba(255,255,255,0.45)",
-                          margin: "6px 0 0",
+                          color: "rgba(255,255,255,0.55)",
+                          margin: "8px 0 0",
                           lineHeight: 1.35,
                         }}
                       >
@@ -291,11 +242,11 @@ export default function AgenticOpportunityYanivVHSlide({
                 <>
                   <p
                     style={{
-                      fontSize: 14,
+                      fontSize: 20,
                       color: seg.muted
-                        ? "rgba(255,255,255,0.18)"
-                        : "rgba(255,255,255,0.4)",
-                      margin: "10px 0 0",
+                        ? "rgba(255,255,255,0.22)"
+                        : "rgba(255,255,255,0.5)",
+                      margin: "14px 0 0",
                       lineHeight: 1.3,
                     }}
                   >
@@ -304,12 +255,12 @@ export default function AgenticOpportunityYanivVHSlide({
                   {seg.sublabelExtra ? (
                     <p
                       style={{
-                        fontSize: 14,
+                        fontSize: 20,
                         fontWeight: 600,
                         color: seg.muted
-                          ? "rgba(255,255,255,0.14)"
-                          : "rgba(255,255,255,0.4)",
-                        margin: "6px 0 0",
+                          ? "rgba(255,255,255,0.18)"
+                          : "rgba(255,255,255,0.5)",
+                        margin: "8px 0 0",
                         lineHeight: 1.3,
                       }}
                     >
@@ -321,10 +272,10 @@ export default function AgenticOpportunityYanivVHSlide({
               {seg.tag && (
                 <p
                   style={{
-                    fontSize: 12,
+                    fontSize: 16,
                     fontWeight: 600,
                     color: seg.tagColor,
-                    margin: "14px 0 0",
+                    margin: "22px 0 0",
                     letterSpacing: "0.03em",
                     textTransform: "uppercase",
                   }}
@@ -346,49 +297,16 @@ export default function AgenticOpportunityYanivVHSlide({
             alignItems: "center",
             marginLeft: "24%",
             width: "76%",
-            marginTop: 14,
+            marginTop: 28,
           }}
         >
-          <div style={{ width: "80%", height: 2, background: "#7EB3E8", borderRadius: 1 }} />
-          <div style={{ width: 2, height: 8, background: "#7EB3E8", borderRadius: 1 }} />
-          <p className="font-heading" style={{ fontSize: 20, fontWeight: 600, color: "#7EB3E8", margin: "6px 0 0", letterSpacing: "0.02em" }}>
+          <div style={{ width: "80%", height: 3, background: "#7EB3E8", borderRadius: 1.5 }} />
+          <div style={{ width: 3, height: 14, background: "#7EB3E8", borderRadius: 1.5 }} />
+          <p className="font-heading" style={{ fontSize: 30, fontWeight: 600, color: "#7EB3E8", margin: "12px 0 0", letterSpacing: "0.02em" }}>
             Nextiva&apos;s opportunity
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          style={{ display: "flex", gap: 0, marginTop: 38 }}
-        >
-          {bottomCards.map((card, i) => (
-            <div key={card.label} style={{
-              flex: card.flex,
-              background: card.bg,
-              border: `1px solid ${card.border}`,
-              borderRadius: 0,
-              borderTopLeftRadius: i === 0 ? 12 : 0,
-              borderBottomLeftRadius: i === 0 ? 12 : 0,
-              borderTopRightRadius: i === bottomCards.length - 1 ? 12 : 0,
-              borderBottomRightRadius: i === bottomCards.length - 1 ? 12 : 0,
-              borderRight: i < bottomCards.length - 1 ? "none" : undefined,
-              padding: "18px 22px",
-            }}>
-              <p style={{ fontSize: 15, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: card.labelColor, margin: "0 0 10px" }}>
-                {card.label}
-              </p>
-              <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-                {card.items.map((item) => (
-                  <li key={item} style={{ fontSize: 18, color: "rgba(255,255,255,0.55)", lineHeight: 1.5, marginBottom: 5, paddingLeft: 18, position: "relative" }}>
-                    <span style={{ position: "absolute", left: 0, color: card.bulletColor, fontWeight: 700 }}>{card.bulletChar}</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </motion.div>
       </main>
 
       <SlideFooter slideNumber={slideNumber} variant="dark" />

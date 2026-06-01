@@ -94,7 +94,7 @@ export default function DistributedOrgsSecretWeaponSlide({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         style={{
-          padding: "32px 80px 0",
+          padding: "30px 80px 0",
           flexShrink: 0,
           textAlign: "center",
           position: "relative",
@@ -104,34 +104,34 @@ export default function DistributedOrgsSecretWeaponSlide({
         <p
           style={{
             fontWeight: 700,
-            fontSize: 12,
+            fontSize: 14,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             color: "#CCC7C3",
-            margin: "0 0 10px",
+            margin: "0 0 12px",
           }}
         >
           Distributed franchise &amp; organizations — cross-vertical lens
         </p>
         <div
           style={{
-            width: 48,
+            width: 52,
             height: 3,
             borderRadius: 2,
             background: "linear-gradient(90deg, #FBBF24, #F59E0B)",
-            margin: "0 auto 18px",
+            margin: "0 auto 16px",
             opacity: 0.9,
           }}
         />
         <h1
           className="font-heading"
           style={{
-            fontSize: 38,
+            fontSize: 44,
             fontWeight: 500,
             color: "#FFFFFF",
             margin: 0,
-            lineHeight: 1.16,
-            maxWidth: 1140,
+            lineHeight: 1.15,
+            maxWidth: 1280,
             marginLeft: "auto",
             marginRight: "auto",
           }}
@@ -144,7 +144,7 @@ export default function DistributedOrgsSecretWeaponSlide({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.12 }}
           style={{
-            maxWidth: 1140,
+            maxWidth: 1280,
             margin: "16px auto 0",
             padding: "14px 22px",
             textAlign: "left",
@@ -157,8 +157,8 @@ export default function DistributedOrgsSecretWeaponSlide({
         >
           <p
             style={{
-              fontSize: 16,
-              color: "rgba(255,255,255,0.72)",
+              fontSize: 18,
+              color: "rgba(255,255,255,0.75)",
               margin: 0,
               lineHeight: 1.5,
               fontWeight: 400,
@@ -182,17 +182,17 @@ export default function DistributedOrgsSecretWeaponSlide({
             gap: 8,
             justifyContent: "center",
             margin: "14px auto 0",
-            maxWidth: 1140,
+            maxWidth: 1280,
           }}
         >
           {verticals.map((v) => (
             <span
               key={v}
               style={{
-                fontSize: 12,
+                fontSize: 13,
                 fontWeight: 600,
                 letterSpacing: "0.06em",
-                padding: "5px 12px",
+                padding: "6px 14px",
                 borderRadius: 999,
                 background: "rgba(126,179,232,0.1)",
                 border: "1px solid rgba(126,179,232,0.35)",
@@ -208,12 +208,12 @@ export default function DistributedOrgsSecretWeaponSlide({
       <main
         style={{
           flex: 1,
-          padding: "20px 80px 28px",
+          padding: "22px 70px 26px",
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: 16,
           minHeight: 0,
-          maxWidth: 1640,
+          maxWidth: 1720,
           marginLeft: "auto",
           marginRight: "auto",
           width: "100%",
@@ -231,7 +231,7 @@ export default function DistributedOrgsSecretWeaponSlide({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.15 + i * 0.06 }}
               style={{
-                padding: "18px 18px 18px",
+                padding: "20px 20px",
                 borderRadius: 16,
                 background: c.highlight
                   ? "linear-gradient(165deg, rgba(245,158,11,0.16) 0%, rgba(245,158,11,0.05) 100%)"
@@ -244,22 +244,22 @@ export default function DistributedOrgsSecretWeaponSlide({
                   : "0 14px 36px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.04)",
                 display: "flex",
                 flexDirection: "column",
-                gap: 10,
+                gap: 12,
               }}
             >
               <div
                 style={{
                   display: "flex",
                   alignItems: "flex-start",
-                  gap: 12,
-                  marginBottom: 4,
+                  gap: 13,
+                  marginBottom: 2,
                 }}
               >
                 <div
                   style={{
-                    width: 38,
-                    height: 38,
-                    borderRadius: 11,
+                    width: 44,
+                    height: 44,
+                    borderRadius: 12,
                     flexShrink: 0,
                     display: "flex",
                     alignItems: "center",
@@ -273,13 +273,13 @@ export default function DistributedOrgsSecretWeaponSlide({
                     color: c.highlight ? "#FBBF24" : "#7EB3E8",
                   }}
                 >
-                  <Icon size={18} strokeWidth={2} />
+                  <Icon size={21} strokeWidth={2} />
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <p
                     style={{
                       margin: 0,
-                      fontSize: 10.5,
+                      fontSize: 11.5,
                       fontWeight: 700,
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
@@ -293,11 +293,11 @@ export default function DistributedOrgsSecretWeaponSlide({
                   <h2
                     className="font-heading"
                     style={{
-                      fontSize: 18,
+                      fontSize: 21,
                       fontWeight: 700,
                       color: "#FFFFFF",
                       margin: "4px 0 0",
-                      lineHeight: 1.22,
+                      lineHeight: 1.2,
                     }}
                   >
                     {c.title}
@@ -312,7 +312,7 @@ export default function DistributedOrgsSecretWeaponSlide({
                   listStyle: "none",
                   display: "flex",
                   flexDirection: "column",
-                  gap: 8,
+                  gap: 9,
                   flex: 1,
                 }}
               >
@@ -321,11 +321,11 @@ export default function DistributedOrgsSecretWeaponSlide({
                     key={bi}
                     style={{
                       display: "flex",
-                      gap: 8,
+                      gap: 9,
                       alignItems: "flex-start",
-                      fontSize: 13,
+                      fontSize: 14.5,
                       lineHeight: 1.45,
-                      color: "rgba(255,255,255,0.78)",
+                      color: "rgba(255,255,255,0.8)",
                     }}
                   >
                     <span
@@ -335,7 +335,7 @@ export default function DistributedOrgsSecretWeaponSlide({
                         height: 5,
                         borderRadius: "50%",
                         background: c.highlight ? "#FBBF24" : "#7EB3E8",
-                        marginTop: 7,
+                        marginTop: 8,
                       }}
                     />
                     <span>{b}</span>
@@ -345,15 +345,15 @@ export default function DistributedOrgsSecretWeaponSlide({
 
               <div
                 style={{
-                  marginTop: 6,
-                  padding: "10px 12px",
-                  borderRadius: 9,
+                  marginTop: 4,
+                  padding: "11px 14px",
+                  borderRadius: 10,
                   background: "rgba(0,0,0,0.22)",
                   border: c.highlight
                     ? "1px solid rgba(245,158,11,0.3)"
                     : "1px solid rgba(126,179,232,0.22)",
-                  fontSize: 12.5,
-                  lineHeight: 1.4,
+                  fontSize: 13.5,
+                  lineHeight: 1.42,
                   color: "rgba(255,255,255,0.9)",
                   fontWeight: 500,
                 }}

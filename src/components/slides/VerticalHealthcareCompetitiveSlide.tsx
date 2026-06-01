@@ -73,6 +73,7 @@ export default function VerticalHealthcareCompetitiveSlide({
       subtitle="Nextiva uniquely delivers unified UC + CX + AI with direct EHR integration and HIPAA compliance — suitable for solo practices to a 500-site health system."
       columns={columns}
       rows={rows}
+      compact
     />
   );
 }

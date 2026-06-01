@@ -70,6 +70,32 @@ import FutureWorksheetMatchupSlide from "./slides/FutureWorksheetMatchupSlide";
 import FutureWorksheetActionPlanSlide from "./slides/FutureWorksheetActionPlanSlide";
 import FutureWorksheetImpactEffortSlide from "./slides/FutureWorksheetImpactEffortSlide";
 import FutureWorksheetImportantTimeSlide from "./slides/FutureWorksheetImportantTimeSlide";
+import FutureDay1DeliverablesSlide from "./slides/FutureDay1DeliverablesSlide";
+import FutureDay2DeliverablesSlide from "./slides/FutureDay2DeliverablesSlide";
+import FutureDay3DeliverablesSlide from "./slides/FutureDay3DeliverablesSlide";
+import FutureSessionAgendaSlide from "./slides/FutureSessionAgendaSlide";
+import FutureStrategicDriversSlide from "./slides/FutureStrategicDriversSlide";
+import FutureStrategicDirectionSlide from "./slides/FutureStrategicDirectionSlide";
+import FutureFY27ScorecardSlide from "./slides/FutureFY27ScorecardSlide";
+import FutureWhatWeLearnedSlide from "./slides/FutureWhatWeLearnedSlide";
+import FutureWhatWeNeedFromRoomSlide from "./slides/FutureWhatWeNeedFromRoomSlide";
+import FutureDecisionsRoadmapSlide from "./slides/FutureDecisionsRoadmapSlide";
+import FutureDecisionLessonsLearnedFramingSlide from "./slides/FutureDecisionLessonsLearnedFramingSlide";
+import FutureDecisionLessonsLearnedCaptureSlide from "./slides/FutureDecisionLessonsLearnedCaptureSlide";
+import FutureDecisionICPFramingSlide from "./slides/FutureDecisionICPFramingSlide";
+import FutureDecisionICPCaptureSlide from "./slides/FutureDecisionICPCaptureSlide";
+import FutureDecisionGrowBaseFramingSlide from "./slides/FutureDecisionGrowBaseFramingSlide";
+import FutureDecisionGrowBaseCaptureSlide from "./slides/FutureDecisionGrowBaseCaptureSlide";
+import FutureDecisionExpandFramingSlide from "./slides/FutureDecisionExpandFramingSlide";
+import FutureDecisionExpandCaptureSlide from "./slides/FutureDecisionExpandCaptureSlide";
+import FutureDecisionDropFramingSlide from "./slides/FutureDecisionDropFramingSlide";
+import FutureDecisionDropCaptureSlide from "./slides/FutureDecisionDropCaptureSlide";
+import FutureDecisionExecutionFramingSlide from "./slides/FutureDecisionExecutionFramingSlide";
+import FutureDecisionExecutionCaptureSlide from "./slides/FutureDecisionExecutionCaptureSlide";
+import FutureDecisionNarrativeFramingSlide from "./slides/FutureDecisionNarrativeFramingSlide";
+import FutureDecisionNarrativeCaptureSlide from "./slides/FutureDecisionNarrativeCaptureSlide";
+import FutureDecisionMoreProductiveOrgFramingSlide from "./slides/FutureDecisionMoreProductiveOrgFramingSlide";
+import FutureDecisionMoreProductiveOrgCaptureSlide from "./slides/FutureDecisionMoreProductiveOrgCaptureSlide";
 import ProductPortfolioSlide from "./slides/ProductPortfolioSlide";
 import AIGatewaysRevenueSlide from "./slides/AIGatewaysRevenueSlide";
 import CXMarketSizingSlide from "./slides/CXMarketSizingSlide";
@@ -313,6 +339,7 @@ import AIIncreasesHumanTrustSlide from "./slides/AIIncreasesHumanTrustSlide";
 import DefensibleAdvantageUneasyMiddleSlide from "./slides/DefensibleAdvantageUneasyMiddleSlide";
 import DefensibleAdvantageUneasyMiddleEndSlide from "./slides/DefensibleAdvantageUneasyMiddleEndSlide";
 import InvestorDefensibleAdvantageUneasyMiddleSlide from "./slides/InvestorDefensibleAdvantageUneasyMiddleSlide";
+import InvestorMidMarketPeersComparisonSlide from "./slides/InvestorMidMarketPeersComparisonSlide";
 import MiddleMarketBothEndsSlide from "./slides/MiddleMarketBothEndsSlide";
 import MiddleMarketDifficultProfitablySlide from "./slides/MiddleMarketDifficultProfitablySlide";
 import MiddleOpportunityUneasyMiddleSlide from "./slides/MiddleOpportunityUneasyMiddleSlide";
@@ -428,6 +455,32 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-worksheet-7-action-plan": { id: "future-worksheet-7-action-plan", label: "Worksheet 7 · Action Plan / OKRs", component: FutureWorksheetActionPlanSlide, theme: "light", isNew: true },
   "future-worksheet-8-impact-effort": { id: "future-worksheet-8-impact-effort", label: "Worksheet 8 · Impact × Effort", component: FutureWorksheetImpactEffortSlide, theme: "light", isNew: true },
   "future-worksheet-9-important-time": { id: "future-worksheet-9-important-time", label: "Worksheet 9 · Important × Time-sensitive", component: FutureWorksheetImportantTimeSlide, theme: "light", isNew: true },
+  "future-day-1-deliverables": { id: "future-day-1-deliverables", label: "Day 1 · Who we serve, what's working", component: FutureDay1DeliverablesSlide, theme: "light", isNew: true },
+  "future-day-2-deliverables": { id: "future-day-2-deliverables", label: "Day 2 · Expand and Drop", component: FutureDay2DeliverablesSlide, theme: "light", isNew: true },
+  "future-day-3-deliverables": { id: "future-day-3-deliverables", label: "Day 3 · How we ship", component: FutureDay3DeliverablesSlide, theme: "light", isNew: true },
+  "future-session-agenda": { id: "future-session-agenda", label: "Session Agenda · FY27 Strategic Planning", component: FutureSessionAgendaSlide, theme: "light", isNew: true },
+  "future-strategic-drivers": { id: "future-strategic-drivers", label: "FY27 Strategic Drivers", component: FutureStrategicDriversSlide, theme: "light", isNew: true },
+  "future-strategic-direction": { id: "future-strategic-direction", label: "02 · Strategic Direction", component: FutureStrategicDirectionSlide, theme: "light", isNew: true },
+  "future-fy27-scorecard": { id: "future-fy27-scorecard", label: "03 · FY27 Scorecard", component: FutureFY27ScorecardSlide, theme: "light", isNew: true },
+  "future-what-we-learned": { id: "future-what-we-learned", label: "04 · What Have We Learned?", component: FutureWhatWeLearnedSlide, theme: "light", isNew: true },
+  "future-what-room-needs": { id: "future-what-room-needs", label: "05 · What We Need From the Room", component: FutureWhatWeNeedFromRoomSlide, theme: "light", isNew: true },
+  "future-decisions-roadmap": { id: "future-decisions-roadmap", label: "06 · Decisions We Must Leave With", component: FutureDecisionsRoadmapSlide, theme: "light", isNew: true },
+  "future-decision-lessons-framing": { id: "future-decision-lessons-framing", label: "Decision Area 00 · Lessons Learned · Framing", component: FutureDecisionLessonsLearnedFramingSlide, theme: "light", isNew: true },
+  "future-decision-lessons-capture": { id: "future-decision-lessons-capture", label: "Decision Area 00 · Lessons Learned · Capture", component: FutureDecisionLessonsLearnedCaptureSlide, theme: "light", isNew: true },
+  "future-decision-icp-framing": { id: "future-decision-icp-framing", label: "Decision Area 01 · ICP · Framing", component: FutureDecisionICPFramingSlide, theme: "light", isNew: true },
+  "future-decision-icp-capture": { id: "future-decision-icp-capture", label: "Decision Area 01 · ICP · Capture", component: FutureDecisionICPCaptureSlide, theme: "light", isNew: true },
+  "future-decision-grow-base-framing": { id: "future-decision-grow-base-framing", label: "Decision Area 02 · Grow the Base · Framing", component: FutureDecisionGrowBaseFramingSlide, theme: "light", isNew: true },
+  "future-decision-grow-base-capture": { id: "future-decision-grow-base-capture", label: "Decision Area 02 · Grow the Base · Capture", component: FutureDecisionGrowBaseCaptureSlide, theme: "light", isNew: true },
+  "future-decision-expand-framing": { id: "future-decision-expand-framing", label: "Decision Area 03 · Acceleration of Growth · Framing", component: FutureDecisionExpandFramingSlide, theme: "light", isNew: true },
+  "future-decision-expand-capture": { id: "future-decision-expand-capture", label: "Decision Area 03 · Acceleration of Growth · Capture", component: FutureDecisionExpandCaptureSlide, theme: "light", isNew: true },
+  "future-decision-drop-framing": { id: "future-decision-drop-framing", label: "Decision Area 04 · Drop · Framing", component: FutureDecisionDropFramingSlide, theme: "light", isNew: true },
+  "future-decision-drop-capture": { id: "future-decision-drop-capture", label: "Decision Area 04 · Drop · Capture", component: FutureDecisionDropCaptureSlide, theme: "light", isNew: true },
+  "future-decision-execution-framing": { id: "future-decision-execution-framing", label: "Decision Area 05 · Execution Requirements · Framing", component: FutureDecisionExecutionFramingSlide, theme: "light", isNew: true },
+  "future-decision-execution-capture": { id: "future-decision-execution-capture", label: "Decision Area 05 · Execution Requirements · Capture", component: FutureDecisionExecutionCaptureSlide, theme: "light", isNew: true },
+  "future-decision-narrative-framing": { id: "future-decision-narrative-framing", label: "Decision Area 06 · Strategic Narrative · Framing", component: FutureDecisionNarrativeFramingSlide, theme: "light", isNew: true },
+  "future-decision-narrative-capture": { id: "future-decision-narrative-capture", label: "Decision Area 06 · Strategic Narrative · Capture", component: FutureDecisionNarrativeCaptureSlide, theme: "light", isNew: true },
+  "future-decision-more-productive-org-framing": { id: "future-decision-more-productive-org-framing", label: "Decision Area 07 · More Productive Organization · Framing", component: FutureDecisionMoreProductiveOrgFramingSlide, theme: "light", isNew: true },
+  "future-decision-more-productive-org-capture": { id: "future-decision-more-productive-org-capture", label: "Decision Area 07 · More Productive Organization · Capture", component: FutureDecisionMoreProductiveOrgCaptureSlide, theme: "light", isNew: true },
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
@@ -769,6 +822,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
     id: "investor-defensible-advantage-uneasy-middle",
     label: "Defensible advantage: uneasy middle (Investor · ServiceTitan)",
     component: InvestorDefensibleAdvantageUneasyMiddleSlide,
+    theme: "dark",
+    isNew: true,
+  },
+  "investor-mid-market-peers-comparison": {
+    id: "investor-mid-market-peers-comparison",
+    label: "Mid-market peers comparison (HubSpot · ServiceTitan · Monday)",
+    component: InvestorMidMarketPeersComparisonSlide,
     theme: "dark",
     isNew: true,
   },
