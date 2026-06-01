@@ -102,6 +102,16 @@ import FutureProductiveOrgExpandFramingSlide from "./slides/FutureProductiveOrgE
 import FutureProductiveOrgExpandCaptureSlide from "./slides/FutureProductiveOrgExpandCaptureSlide";
 import FutureProductiveOrgDropFramingSlide from "./slides/FutureProductiveOrgDropFramingSlide";
 import FutureProductiveOrgDropCaptureSlide from "./slides/FutureProductiveOrgDropCaptureSlide";
+import FutureBoardConcernCounterMovesSlide from "./slides/FutureBoardConcernCounterMovesSlide";
+import FutureBoardConcernAIActivationSlide from "./slides/FutureBoardConcernAIActivationSlide";
+import FutureBoardConcernTrustSlide from "./slides/FutureBoardConcernTrustSlide";
+import FutureCompetitorCounterMovesSlide from "./slides/FutureCompetitorCounterMovesSlide";
+import FutureOffensiveMovesSlide from "./slides/FutureOffensiveMovesSlide";
+import FutureCorporateStrategyCoverSlide from "./slides/FutureCorporateStrategyCoverSlide";
+import FutureCorporateOKRsSlide from "./slides/FutureCorporateOKRsSlide";
+import FutureCorporateObjectiveEVSlide from "./slides/FutureCorporateObjectiveEVSlide";
+import FutureCorporateComparablesSlide from "./slides/FutureCorporateComparablesSlide";
+import FutureCorporateReferenceSetsSlide from "./slides/FutureCorporateReferenceSetsSlide";
 import FutureGrowBaseExpandFramingSlide from "./slides/FutureGrowBaseExpandFramingSlide";
 import FutureGrowBaseExpandCaptureSlide from "./slides/FutureGrowBaseExpandCaptureSlide";
 import FutureGrowBaseDropFramingSlide from "./slides/FutureGrowBaseDropFramingSlide";
@@ -450,6 +460,13 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-opportunity-portfolio": { id: "future-opportunity-portfolio", label: "Opportunity Portfolio · Test / Expand / Harvest / Drop", component: FutureOpportunityPortfolioSlide, theme: "light", isNew: true },
   "future-monetization-critical-copy": { id: "future-monetization-critical-copy", label: "Monetization (Future · Light)", component: FutureMonetizationCriticalCopySlide, theme: "light", isNew: true },
   "future-ai-disruption-nextiva-copy": { id: "future-ai-disruption-nextiva-copy", label: "AI Disruption Spectrum (Future · Light)", component: FutureAIDisruptionNextivaCopySlide, theme: "light", isNew: true },
+  "future-competitor-counter-moves": { id: "future-competitor-counter-moves", label: "Competitor Counter-Moves · 3 Types", component: FutureCompetitorCounterMovesSlide, theme: "light", isNew: true },
+  "future-offensive-moves": { id: "future-offensive-moves", label: "Offensive Moves · First-Mover Playbook", component: FutureOffensiveMovesSlide, theme: "light", isNew: true },
+  "future-corporate-strategy-cover": { id: "future-corporate-strategy-cover", label: "Corporate Strategy · FY26 (Cover)", component: FutureCorporateStrategyCoverSlide, theme: "light", isNew: true },
+  "future-corporate-okrs": { id: "future-corporate-okrs", label: "FY26 Commitments · 3 OKRs + 3 KPIs", component: FutureCorporateOKRsSlide, theme: "light", isNew: true },
+  "future-corporate-objective-ev": { id: "future-corporate-objective-ev", label: "Corporate Objective · Double Enterprise Value", component: FutureCorporateObjectiveEVSlide, theme: "light", isNew: true },
+  "future-corporate-comparables": { id: "future-corporate-comparables", label: "Public Comparables · Proof in the Tape", component: FutureCorporateComparablesSlide, theme: "light", isNew: true },
+  "future-corporate-reference-sets": { id: "future-corporate-reference-sets", label: "Reference Sets · 2026 Public Comparables", component: FutureCorporateReferenceSetsSlide, theme: "light", isNew: true },
   "future-booking-commits-by-function": { id: "future-booking-commits-by-function", label: "Booking Commits by Function", component: FutureBookingCommitsByFunctionSlide, theme: "light", isNew: true },
   "future-pillar-01-priorities": { id: "future-pillar-01-priorities", label: "Pillar 01 · Grow the Base (Priorities)", component: FuturePillar01PrioritiesSlide, theme: "light", isNew: true },
   "future-pillar-02-priorities": { id: "future-pillar-02-priorities", label: "Pillar 02 · More Productive Organization (Priorities)", component: FuturePillar02PrioritiesSlide, theme: "light", isNew: true },
@@ -517,6 +534,9 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-productive-org-expand-capture": { id: "future-productive-org-expand-capture", label: "Decision Area 04a · Productive Organization · Expand · Capture", component: FutureProductiveOrgExpandCaptureSlide, theme: "light", isNew: true },
   "future-productive-org-drop-framing": { id: "future-productive-org-drop-framing", label: "Decision Area 04b · Productive Organization · Drop · Framing", component: FutureProductiveOrgDropFramingSlide, theme: "light", isNew: true },
   "future-productive-org-drop-capture": { id: "future-productive-org-drop-capture", label: "Decision Area 04b · Productive Organization · Drop · Capture", component: FutureProductiveOrgDropCaptureSlide, theme: "light", isNew: true },
+  "future-board-concern-counter-moves": { id: "future-board-concern-counter-moves", label: "Board Concern 01 · Counter-moves", component: FutureBoardConcernCounterMovesSlide, theme: "light", isNew: true },
+  "future-board-concern-ai-activation": { id: "future-board-concern-ai-activation", label: "Board Concern 02 · AI Activation Ownership", component: FutureBoardConcernAIActivationSlide, theme: "light", isNew: true },
+  "future-board-concern-trust": { id: "future-board-concern-trust", label: "Board Concern 03 · Trust is the Product", component: FutureBoardConcernTrustSlide, theme: "light", isNew: true },
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },
