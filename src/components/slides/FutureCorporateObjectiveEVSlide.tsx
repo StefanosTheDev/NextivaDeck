@@ -45,7 +45,7 @@ const PRIORITIES = [
     num: "01",
     label: "Priority #1",
     icon: TrendingUp,
-    title: "Expand the base",
+    title: "Grow the base",
     body: "AI-enable and agentify the majority of existing customers. Move NRR from the low 90s to 100% \u2014 the engine of the year.",
   },
   {

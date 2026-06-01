@@ -112,6 +112,7 @@ import FutureCorporateOKRsSlide from "./slides/FutureCorporateOKRsSlide";
 import FutureCorporateObjectiveEVSlide from "./slides/FutureCorporateObjectiveEVSlide";
 import FutureCorporateComparablesSlide from "./slides/FutureCorporateComparablesSlide";
 import FutureCorporateReferenceSetsSlide from "./slides/FutureCorporateReferenceSetsSlide";
+import FutureBookingsCommitsTableSlide from "./slides/FutureBookingsCommitsTableSlide";
 import FutureGrowBaseExpandFramingSlide from "./slides/FutureGrowBaseExpandFramingSlide";
 import FutureGrowBaseExpandCaptureSlide from "./slides/FutureGrowBaseExpandCaptureSlide";
 import FutureGrowBaseDropFramingSlide from "./slides/FutureGrowBaseDropFramingSlide";
@@ -467,6 +468,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-corporate-objective-ev": { id: "future-corporate-objective-ev", label: "Corporate Objective · Double Enterprise Value", component: FutureCorporateObjectiveEVSlide, theme: "light", isNew: true },
   "future-corporate-comparables": { id: "future-corporate-comparables", label: "Public Comparables · Proof in the Tape", component: FutureCorporateComparablesSlide, theme: "light", isNew: true },
   "future-corporate-reference-sets": { id: "future-corporate-reference-sets", label: "Reference Sets · 2026 Public Comparables", component: FutureCorporateReferenceSetsSlide, theme: "light", isNew: true },
+  "future-bookings-commits-table": { id: "future-bookings-commits-table", label: "Bookings Commits Table · By Function", component: FutureBookingsCommitsTableSlide, theme: "light", isNew: true },
   "future-booking-commits-by-function": { id: "future-booking-commits-by-function", label: "Booking Commits by Function", component: FutureBookingCommitsByFunctionSlide, theme: "light", isNew: true },
   "future-pillar-01-priorities": { id: "future-pillar-01-priorities", label: "Pillar 01 · Grow the Base (Priorities)", component: FuturePillar01PrioritiesSlide, theme: "light", isNew: true },
   "future-pillar-02-priorities": { id: "future-pillar-02-priorities", label: "Pillar 02 · More Productive Organization (Priorities)", component: FuturePillar02PrioritiesSlide, theme: "light", isNew: true },

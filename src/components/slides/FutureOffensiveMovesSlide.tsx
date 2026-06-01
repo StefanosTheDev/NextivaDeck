@@ -133,9 +133,10 @@ export default function FutureOffensiveMovesSlide({
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
           gap: 20,
-          alignItems: "start",
+          alignItems: "stretch",
           position: "relative",
           zIndex: 1,
+          minHeight: 0,
         }}
       >
         {moves.map((m, i) => {
@@ -256,27 +257,33 @@ export default function FutureOffensiveMovesSlide({
 
               <div
                 style={{
-                  marginTop: 36,
-                  background: "rgba(40,96,178,0.08)",
-                  border: `1px solid ${BLUE}33`,
-                  borderRadius: 10,
-                  padding: "14px 20px",
-                  textAlign: "center",
+                  marginTop: "auto",
+                  paddingTop: 36,
                 }}
               >
-                <span
+                <div
                   style={{
-                    fontSize: 16,
-                    fontWeight: 700,
-                    color: NAVY_DARK,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.04em",
-                    whiteSpace: "pre-line",
-                    lineHeight: 1.5,
+                    background: "rgba(40,96,178,0.08)",
+                    border: `1px solid ${BLUE}33`,
+                    borderRadius: 10,
+                    padding: "14px 20px",
+                    textAlign: "center",
                   }}
                 >
-                  {m.takeaway}
-                </span>
+                  <span
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 700,
+                      color: NAVY_DARK,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.04em",
+                      whiteSpace: "pre-line",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {m.takeaway}
+                  </span>
+                </div>
               </div>
             </motion.article>
           );

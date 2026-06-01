@@ -24,21 +24,48 @@ const ANCHORS = [
     icon: Landmark,
     title: "Board",
     body: "Approved strategic direction and capital allocation.",
+    bullets: [
+      "A faster growth rate.",
+      "Platform economics in line with SB.",
+      "Introduction of new AI billing models.",
+      "Hitting the numbers, every quarter.",
+      "New avenues: partnerships, channel, e-commerce.",
+    ],
   },
   {
     icon: Banknote,
     title: "Lenders",
     body: "Covenants and growth assumptions baked into terms.",
+    bullets: [
+      "Committed growth to ~$369M.",
+      "EBITDA 26% / ~$100M annualized.",
+      "AI story unfolding on plan.",
+    ],
   },
   {
     icon: TrendingUp,
     title: "Investors",
     body: "Narrative and return expectations already set.",
+    bullets: [
+      "NRR 100%+.",
+      "Reframing Nextiva from a UCaaS, CCaaS, CX-only company to a \u201CConversational AI\u201D company.",
+      "Path to the AI-compounder re-rating.",
+    ],
   },
   {
     icon: Calculator,
     title: "FY27 Plan",
     body: "Strategic direction, financial model, and scorecard assumptions embedded.",
+    bullets: [
+      <>
+        Grow the base &mdash; audacious goal of{" "}
+        <strong style={{ color: NAVY_DARK, fontWeight: 700 }}>100% NRR</strong>
+        .
+      </>,
+      "Demonstrate growth acceleration.",
+      "Continue building the muscle for both top- and bottom-line accountability.",
+      "Build the muscle to take a product from idea \u2192 launch \u2192 successful commercialization.",
+    ],
   },
 ];
 
@@ -267,6 +294,44 @@ export default function FutureStrategicDriversSlide({
                 >
                   {a.body}
                 </p>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: "24px 0 0",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                  }}
+                >
+                  {a.bullets.map((b, bi) => (
+                    <li
+                      key={bi}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: 8,
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: 12.5,
+                        color: BODY,
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      <span
+                        aria-hidden
+                        style={{
+                          width: 5,
+                          height: 5,
+                          borderRadius: "50%",
+                          background: BLUE,
+                          marginTop: 7,
+                          flexShrink: 0,
+                        }}
+                      />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.article>
             );
           })}
