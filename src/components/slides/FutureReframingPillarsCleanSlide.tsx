@@ -44,7 +44,7 @@ const PILLARS: Pillar[] = [
   },
   {
     num: "03",
-    title: "Acceleration of Growth",
+    title: "Accelerate Growth",
     description: (
       <>
         Drive{" "}

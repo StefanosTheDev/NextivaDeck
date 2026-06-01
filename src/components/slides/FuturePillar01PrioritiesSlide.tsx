@@ -56,7 +56,7 @@ const PLACEHOLDERS: Priority[] = [
   { key: "ph-1", title: "More productive organization", icon: Plus, description: <></> },
   { key: "ph-2", title: "More productive organization", icon: Plus, description: <></> },
   { key: "ph-3", title: "More productive organization", icon: Plus, description: <></> },
-  { key: "ph-4", title: "Acceleration of Growth", icon: Plus, description: <></> },
+  { key: "ph-4", title: "Accelerate Growth", icon: Plus, description: <></> },
 ];
 
 function PriorityCard({

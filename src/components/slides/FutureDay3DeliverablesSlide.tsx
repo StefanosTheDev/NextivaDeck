@@ -45,7 +45,7 @@ const DELIVERABLES = [
   },
   {
     icon: CalendarClock,
-    title: "Quarterly review cadence",
+    title: "Review cadence",
     body: "Named owners per metric — what gets reviewed, escalated, and reallocated. No dashboards, only decisions.",
   },
   {
@@ -229,7 +229,7 @@ export default function FutureDay3DeliverablesSlide({
             >
               <strong>The strategy becomes the operating model.</strong> Four
               strategic definitions locked, booking commits owned by name, SB
-              and Platform capacity plans signed off by finance, a quarterly
+              and Platform capacity plans signed off by finance, a review
               cadence set — and the org-design follow-up honestly scoped.{" "}
               <em>Revenue is the operating model of the company — not a sales
               line.</em>

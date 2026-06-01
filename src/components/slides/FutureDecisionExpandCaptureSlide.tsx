@@ -4,7 +4,7 @@ import DecisionCaptureTemplate from "./strategic-truths/DecisionCaptureTemplate"
 
 const TOPIC = {
   areaNum: "03",
-  title: "Acceleration of Growth",
+  title: "Accelerate Growth",
   storageKey: "fy27-acceleration-of-growth",
 };
 

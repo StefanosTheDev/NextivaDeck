@@ -38,8 +38,8 @@ const DELIVERABLES = [
   },
   {
     icon: LineChart,
-    title: "Platform → SB GM convergence POV",
-    body: "Defensible POV with drivers named — AI productivity, platform mix, cost discipline — and residual gap named, not waved away.",
+    title: "Platform & SB GM convergence POV",
+    body: "A clear view on how Platform and SB gross margins come together — what's driving it, and what gap still needs to close.",
   },
 ];
 

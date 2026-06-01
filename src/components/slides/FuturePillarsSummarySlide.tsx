@@ -218,7 +218,7 @@ export default function FuturePillarsSummarySlide({
         >
           All six priorities across{" "}
           <strong style={{ color: NAVY_DARK, fontWeight: 700 }}>
-            Grow the base · More productive organization · Acceleration of Growth
+            Grow the base · More productive organization · Accelerate Growth
           </strong>
           .
         </p>

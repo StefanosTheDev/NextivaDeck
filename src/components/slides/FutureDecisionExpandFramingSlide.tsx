@@ -4,7 +4,7 @@ import DecisionFramingTemplate from "./strategic-truths/DecisionFramingTemplate"
 
 const TOPIC = {
   areaNum: "03",
-  title: "Acceleration of Growth",
+  title: "Accelerate Growth",
   questions: [
     "Where do we have the right to win — and earn the next dollar of investment?",
     "Which growth motions have demonstrated the right to scale (PLG, direct, partnerships)?",

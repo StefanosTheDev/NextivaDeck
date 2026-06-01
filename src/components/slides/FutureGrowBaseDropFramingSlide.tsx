@@ -3,7 +3,7 @@
 import DecisionFramingTemplate from "./strategic-truths/DecisionFramingTemplate";
 
 const TOPIC = {
-  areaNum: "03b",
+  areaNum: "02b",
   title: "Drop",
   questions: [
     "What should stop — and why?",
@@ -18,7 +18,7 @@ const TOPIC = {
   ],
 };
 
-export default function FutureDecisionDropFramingSlide(props: {
+export default function FutureGrowBaseDropFramingSlide(props: {
   slideNumber?: number;
 }) {
   return <DecisionFramingTemplate topic={TOPIC} slideNumber={props.slideNumber} />;

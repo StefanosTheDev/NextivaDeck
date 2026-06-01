@@ -3,12 +3,12 @@
 import DecisionCaptureTemplate from "./strategic-truths/DecisionCaptureTemplate";
 
 const TOPIC = {
-  areaNum: "03b",
-  title: "Drop",
-  storageKey: "fy27-drop",
+  areaNum: "03a",
+  title: "Expand",
+  storageKey: "fy27-expand-list",
 };
 
-export default function FutureDecisionDropCaptureSlide(props: {
+export default function FutureDecisionExpandListCaptureSlide(props: {
   slideNumber?: number;
 }) {
   return <DecisionCaptureTemplate topic={TOPIC} slideNumber={props.slideNumber} />;

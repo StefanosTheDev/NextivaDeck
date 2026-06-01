@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, TrendingUp, Gauge } from "lucide-react";
+import { CalendarRange, Target, Scale, Rocket } from "lucide-react";
 
 const NAVY = "#1A447C";
 const NAVY_DARK = "#061A37";
@@ -12,37 +12,39 @@ const MUTED = "#A29E9B";
 const CARD_BG = "#F8F6F2";
 const CARD_BORDER = "#E0DEDA";
 
-type Pillar = {
+type Day = {
   num: string;
+  label: string;
   title: string;
-  tagline: string;
-  icon: typeof Sparkles;
+  posture: string;
+  icon: typeof Target;
 };
 
-const PILLARS: Pillar[] = [
+const DAYS: Day[] = [
   {
     num: "01",
-    title: "Grow the base",
-    tagline: "Protect, expand and monetize the customer base we already have.",
-    icon: Sparkles,
+    label: "Day 1",
+    title: "Who we serve, what's working.",
+    posture: "Ground truth before commitments.",
+    icon: Target,
   },
   {
     num: "02",
-    title: "More productive organization",
-    tagline:
-      "Compound efficiency — more value to customers, lower cost to serve.",
-    icon: Gauge,
+    label: "Day 2",
+    title: "Expand and Drop.",
+    posture: "Hard choices.",
+    icon: Scale,
   },
   {
     num: "03",
-    title: "Accelerate Growth",
-    tagline:
-      "Win new markets through disciplined, hypothesis-driven bets.",
-    icon: TrendingUp,
+    label: "Day 3",
+    title: "How we ship.",
+    posture: "Operating model — strategy becomes the how.",
+    icon: Rocket,
   },
 ];
 
-export default function FutureStrategicSummaryCoverSlide({
+export default function FutureStrategicMeetingStructureCoverSlide({
   slideNumber: _sn,
 }: {
   slideNumber?: number;
@@ -70,7 +72,7 @@ export default function FutureStrategicSummaryCoverSlide({
           height: 1400,
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(40,96,178,0.06) 0%, transparent 55%)",
+            "radial-gradient(circle, rgba(40,96,178,0.07) 0%, transparent 55%)",
           pointerEvents: "none",
         }}
       />
@@ -86,13 +88,32 @@ export default function FutureStrategicSummaryCoverSlide({
           textAlign: "center",
           position: "relative",
           zIndex: 1,
-          gap: 28,
+          gap: 26,
         }}
       >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.88 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          style={{
+            width: 96,
+            height: 96,
+            borderRadius: "50%",
+            background: BLUE_SOFT,
+            border: `2px solid ${BLUE}`,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "0 12px 36px rgba(40,96,178,0.20)",
+          }}
+        >
+          <CalendarRange size={42} color={BLUE} strokeWidth={2} />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
           className="eyebrow"
           style={{
             color: BLUE,
@@ -101,16 +122,16 @@ export default function FutureStrategicSummaryCoverSlide({
             letterSpacing: "0.22em",
           }}
         >
-          Where we&apos;re going
+          FY27 · Three-day session
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
           className="font-heading"
           style={{
-            fontSize: 132,
+            fontSize: 116,
             fontWeight: 700,
             color: NAVY,
             lineHeight: 0.98,
@@ -119,16 +140,16 @@ export default function FutureStrategicSummaryCoverSlide({
             whiteSpace: "nowrap",
           }}
         >
-          Strategic Summary.
+          Strategic Meeting Structure.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: 24,
+            fontSize: 22,
             fontWeight: 400,
             color: BODY,
             lineHeight: 1.4,
@@ -136,17 +157,17 @@ export default function FutureStrategicSummaryCoverSlide({
             margin: 0,
           }}
         >
-          Three pillars · one direction —{" "}
+          Three days — ground truth, hard choices, operating model.
+          <br />
           <strong style={{ color: NAVY_DARK, fontWeight: 700 }}>
-            protect the base, compound productivity, accelerate growth
+            How the room moves from observation to commitment.
           </strong>
-          .
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
           style={{
             width: 128,
             height: 5,
@@ -162,34 +183,54 @@ export default function FutureStrategicSummaryCoverSlide({
             gap: 22,
             width: "100%",
             maxWidth: 1280,
-            marginTop: 16,
+            marginTop: 8,
           }}
         >
-          {PILLARS.map((p, idx) => {
-            const Icon = p.icon;
+          {DAYS.map((d, idx) => {
+            const Icon = d.icon;
             return (
               <motion.article
-                key={p.num}
+                key={d.num}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.55 + idx * 0.1 }}
                 style={{
                   background: CARD_BG,
                   border: `1px solid ${CARD_BORDER}`,
                   borderTop: `4px solid ${BLUE}`,
                   borderRadius: 10,
-                  padding: "24px 24px 26px",
+                  padding: "22px 22px 24px",
                   display: "flex",
                   flexDirection: "column",
-                  gap: 12,
+                  gap: 10,
                   textAlign: "left",
+                  position: "relative",
                 }}
               >
+                <span
+                  className="font-heading"
+                  style={{
+                    position: "absolute",
+                    top: 12,
+                    right: 18,
+                    fontSize: 56,
+                    fontWeight: 700,
+                    color: BLUE,
+                    opacity: 0.12,
+                    letterSpacing: "-0.04em",
+                    lineHeight: 1,
+                    pointerEvents: "none",
+                    fontVariantNumeric: "tabular-nums",
+                  }}
+                >
+                  {d.num}
+                </span>
+
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   <span
                     style={{
-                      width: 44,
-                      height: 44,
+                      width: 42,
+                      height: 42,
                       borderRadius: 10,
                       background: BLUE_SOFT,
                       border: `1px solid ${BLUE}`,
@@ -199,7 +240,7 @@ export default function FutureStrategicSummaryCoverSlide({
                       flexShrink: 0,
                     }}
                   >
-                    <Icon size={22} color={BLUE} strokeWidth={2} />
+                    <Icon size={20} color={BLUE} strokeWidth={2} />
                   </span>
                   <span
                     style={{
@@ -211,33 +252,33 @@ export default function FutureStrategicSummaryCoverSlide({
                       textTransform: "uppercase",
                     }}
                   >
-                    Pillar {p.num}
+                    {d.label}
                   </span>
                 </div>
                 <h3
+                  className="font-heading"
                   style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 24,
+                    fontSize: 22,
                     fontWeight: 700,
                     color: NAVY_DARK,
                     lineHeight: 1.2,
-                    letterSpacing: "-0.01em",
+                    letterSpacing: "-0.005em",
                     margin: 0,
                   }}
                 >
-                  {p.title}
+                  {d.title}
                 </h3>
                 <p
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 16,
+                    fontSize: 14.5,
                     fontWeight: 400,
                     color: BODY,
                     lineHeight: 1.45,
                     margin: 0,
                   }}
                 >
-                  {p.tagline}
+                  {d.posture}
                 </p>
               </motion.article>
             );
@@ -247,7 +288,7 @@ export default function FutureStrategicSummaryCoverSlide({
 
       <footer
         style={{
-          padding: "12px 100px 24px",
+          padding: "16px 100px 24px",
           fontFamily: "'Space Grotesk', sans-serif",
           fontSize: 13,
           fontWeight: 600,
@@ -259,7 +300,7 @@ export default function FutureStrategicSummaryCoverSlide({
           zIndex: 1,
         }}
       >
-        Strategic Summary · Nextiva FY27
+        Strategic Meeting Structure · Nextiva FY27
       </footer>
     </div>
   );

@@ -96,7 +96,7 @@ const REAL: Priority[] = [
 ];
 
 const PLACEHOLDERS: Priority[] = [
-  { key: "ph-last", title: "Acceleration of Growth", icon: Plus, description: <></> },
+  { key: "ph-last", title: "Accelerate Growth", icon: Plus, description: <></> },
 ];
 
 function PriorityCard({

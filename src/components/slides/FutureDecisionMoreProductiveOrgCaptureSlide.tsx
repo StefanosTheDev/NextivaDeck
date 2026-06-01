@@ -3,7 +3,7 @@
 import DecisionCaptureTemplate from "./strategic-truths/DecisionCaptureTemplate";
 
 const TOPIC = {
-  areaNum: "07",
+  areaNum: "04",
   title: "More Productive Organization",
   storageKey: "fy27-more-productive-org",
 };

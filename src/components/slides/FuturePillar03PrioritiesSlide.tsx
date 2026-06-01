@@ -196,7 +196,7 @@ export default function FuturePillar03PrioritiesSlide({
         style={{ padding: "48px 100px 0", flexShrink: 0 }}
       >
         <p className="eyebrow" style={{ color: BLUE, margin: 0 }}>
-          Pillar 03 · Acceleration of Growth
+          Pillar 03 · Accelerate Growth
         </p>
         <h1
           className="font-heading"
@@ -270,7 +270,7 @@ export default function FuturePillar03PrioritiesSlide({
           flexShrink: 0,
         }}
       >
-        Pillar 03 · Acceleration of Growth
+        Pillar 03 · Accelerate Growth
       </footer>
     </div>
   );

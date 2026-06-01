@@ -64,7 +64,7 @@ const pillars: Pillar[] = [
   {
     number: "3",
     icon: Rocket,
-    title: "Acceleration of Growth",
+    title: "Accelerate Growth",
     description: <>Driving new bookings through various initiatives.</>,
     accent: "#FFFFFF",
     accentDeep: "#CCC7C3",

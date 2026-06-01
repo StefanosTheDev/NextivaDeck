@@ -250,7 +250,7 @@ export default function FutureBookingCommitsByFunctionSlide({
         style={{ padding: "40px 100px 0", flexShrink: 0 }}
       >
         <p className="eyebrow" style={{ color: BLUE, margin: 0 }}>
-          Acceleration of Growth · Commercial Plan
+          Accelerate Growth · Commercial Plan
         </p>
         <h1
           className="font-heading"

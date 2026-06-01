@@ -3,7 +3,7 @@
 import DecisionFramingTemplate from "./strategic-truths/DecisionFramingTemplate";
 
 const TOPIC = {
-  areaNum: "07",
+  areaNum: "04",
   title: "More Productive Organization",
   questions: [
     "Where does operating leverage live today — and where does it need to live by FY27 Q4 exit?",

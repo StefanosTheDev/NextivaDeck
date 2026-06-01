@@ -13,7 +13,7 @@ const MUTED = "#A29E9B";
 
 const PILLAR_NUM = "03";
 const PILLAR_LABEL = "Strategic Pillar 03";
-const PILLAR_TITLE = "Acceleration of Growth";
+const PILLAR_TITLE = "Accelerate Growth";
 
 const SUPPORTING = [
   {

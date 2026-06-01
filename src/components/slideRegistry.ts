@@ -43,6 +43,8 @@ import FutureGrowTheBaseCoverSlide from "./slides/FutureGrowTheBaseCoverSlide";
 import FutureProductiveOrganizationCoverSlide from "./slides/FutureProductiveOrganizationCoverSlide";
 import FutureAccelerationGrowthCoverSlide from "./slides/FutureAccelerationGrowthCoverSlide";
 import FutureStrategicPlanningCoverSlide from "./slides/FutureStrategicPlanningCoverSlide";
+import FutureStrategicMeetingStructureCoverSlide from "./slides/FutureStrategicMeetingStructureCoverSlide";
+import FutureSessionAgendaCoverSlide from "./slides/FutureSessionAgendaCoverSlide";
 import FutureProductiveOrganizationSummarySlide from "./slides/FutureProductiveOrganizationSummarySlide";
 import FutureOpportunityPortfolioSlide from "./slides/FutureOpportunityPortfolioSlide";
 import FutureMonetizationCriticalCopySlide from "./slides/FutureMonetizationCriticalCopySlide";
@@ -88,6 +90,22 @@ import FutureDecisionGrowBaseFramingSlide from "./slides/FutureDecisionGrowBaseF
 import FutureDecisionGrowBaseCaptureSlide from "./slides/FutureDecisionGrowBaseCaptureSlide";
 import FutureDecisionExpandFramingSlide from "./slides/FutureDecisionExpandFramingSlide";
 import FutureDecisionExpandCaptureSlide from "./slides/FutureDecisionExpandCaptureSlide";
+import FutureDecisionExpandListFramingSlide from "./slides/FutureDecisionExpandListFramingSlide";
+import FutureDecisionExpandListCaptureSlide from "./slides/FutureDecisionExpandListCaptureSlide";
+import FutureDecisionICPDividerSlide from "./slides/FutureDecisionICPDividerSlide";
+import FutureDecisionGrowBaseDividerSlide from "./slides/FutureDecisionGrowBaseDividerSlide";
+import FutureDecisionAccelerateGrowthDividerSlide from "./slides/FutureDecisionAccelerateGrowthDividerSlide";
+import FutureDecisionMoreProductiveOrgDividerSlide from "./slides/FutureDecisionMoreProductiveOrgDividerSlide";
+import FutureDecisionExecutionDividerSlide from "./slides/FutureDecisionExecutionDividerSlide";
+import FutureDecisionNarrativeDividerSlide from "./slides/FutureDecisionNarrativeDividerSlide";
+import FutureProductiveOrgExpandFramingSlide from "./slides/FutureProductiveOrgExpandFramingSlide";
+import FutureProductiveOrgExpandCaptureSlide from "./slides/FutureProductiveOrgExpandCaptureSlide";
+import FutureProductiveOrgDropFramingSlide from "./slides/FutureProductiveOrgDropFramingSlide";
+import FutureProductiveOrgDropCaptureSlide from "./slides/FutureProductiveOrgDropCaptureSlide";
+import FutureGrowBaseExpandFramingSlide from "./slides/FutureGrowBaseExpandFramingSlide";
+import FutureGrowBaseExpandCaptureSlide from "./slides/FutureGrowBaseExpandCaptureSlide";
+import FutureGrowBaseDropFramingSlide from "./slides/FutureGrowBaseDropFramingSlide";
+import FutureGrowBaseDropCaptureSlide from "./slides/FutureGrowBaseDropCaptureSlide";
 import FutureDecisionDropFramingSlide from "./slides/FutureDecisionDropFramingSlide";
 import FutureDecisionDropCaptureSlide from "./slides/FutureDecisionDropCaptureSlide";
 import FutureDecisionExecutionFramingSlide from "./slides/FutureDecisionExecutionFramingSlide";
@@ -426,7 +444,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-nrr-churn-copy-copy": { id: "future-nrr-churn-copy-copy", label: "NRR & Churn (Future)", component: FutureNRRChurnCopyCopySlide, theme: "light", isNew: true },
   "future-grow-the-base-cover": { id: "future-grow-the-base-cover", label: "Pillar 01 · Grow the Base (Cover)", component: FutureGrowTheBaseCoverSlide, theme: "light", isNew: true },
   "future-productive-organization-cover": { id: "future-productive-organization-cover", label: "Pillar 02 · More Productive Organization (Cover)", component: FutureProductiveOrganizationCoverSlide, theme: "light", isNew: true },
-  "future-acceleration-growth-cover": { id: "future-acceleration-growth-cover", label: "Pillar 03 · Acceleration of Growth (Cover)", component: FutureAccelerationGrowthCoverSlide, theme: "light", isNew: true },
+  "future-acceleration-growth-cover": { id: "future-acceleration-growth-cover", label: "Pillar 03 · Accelerate Growth (Cover)", component: FutureAccelerationGrowthCoverSlide, theme: "light", isNew: true },
   "future-strategic-planning-cover": { id: "future-strategic-planning-cover", label: "Strategic Planning · Nextiva FY27 (Cover)", component: FutureStrategicPlanningCoverSlide, theme: "light", isNew: true },
   "future-productive-organization-summary": { id: "future-productive-organization-summary", label: "Pillar 02 · Productive Organization (Summary)", component: FutureProductiveOrganizationSummarySlide, theme: "light", isNew: true },
   "future-opportunity-portfolio": { id: "future-opportunity-portfolio", label: "Opportunity Portfolio · Test / Expand / Harvest / Drop", component: FutureOpportunityPortfolioSlide, theme: "light", isNew: true },
@@ -435,7 +453,7 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-booking-commits-by-function": { id: "future-booking-commits-by-function", label: "Booking Commits by Function", component: FutureBookingCommitsByFunctionSlide, theme: "light", isNew: true },
   "future-pillar-01-priorities": { id: "future-pillar-01-priorities", label: "Pillar 01 · Grow the Base (Priorities)", component: FuturePillar01PrioritiesSlide, theme: "light", isNew: true },
   "future-pillar-02-priorities": { id: "future-pillar-02-priorities", label: "Pillar 02 · More Productive Organization (Priorities)", component: FuturePillar02PrioritiesSlide, theme: "light", isNew: true },
-  "future-pillar-03-priorities": { id: "future-pillar-03-priorities", label: "Pillar 03 · Acceleration of Growth (Priorities)", component: FuturePillar03PrioritiesSlide, theme: "light", isNew: true },
+  "future-pillar-03-priorities": { id: "future-pillar-03-priorities", label: "Pillar 03 · Accelerate Growth (Priorities)", component: FuturePillar03PrioritiesSlide, theme: "light", isNew: true },
   "future-pillars-summary": { id: "future-pillars-summary", label: "Pillars 01–03 · Internal Priorities Summary", component: FuturePillarsSummarySlide, theme: "light", isNew: true },
   "future-strategic-summary-cover": { id: "future-strategic-summary-cover", label: "Strategic Summary (Cover)", component: FutureStrategicSummaryCoverSlide, theme: "light", isNew: true },
   "future-what-to-prove-cover": { id: "future-what-to-prove-cover", label: "What We Need to Prove Out (Cover)", component: FutureWhatToProveCoverSlide, theme: "light", isNew: true },
@@ -455,9 +473,11 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-worksheet-7-action-plan": { id: "future-worksheet-7-action-plan", label: "Worksheet 7 · Action Plan / OKRs", component: FutureWorksheetActionPlanSlide, theme: "light", isNew: true },
   "future-worksheet-8-impact-effort": { id: "future-worksheet-8-impact-effort", label: "Worksheet 8 · Impact × Effort", component: FutureWorksheetImpactEffortSlide, theme: "light", isNew: true },
   "future-worksheet-9-important-time": { id: "future-worksheet-9-important-time", label: "Worksheet 9 · Important × Time-sensitive", component: FutureWorksheetImportantTimeSlide, theme: "light", isNew: true },
+  "future-strategic-meeting-structure-cover": { id: "future-strategic-meeting-structure-cover", label: "Strategic Meeting Structure · FY27 (Cover)", component: FutureStrategicMeetingStructureCoverSlide, theme: "light", isNew: true },
   "future-day-1-deliverables": { id: "future-day-1-deliverables", label: "Day 1 · Who we serve, what's working", component: FutureDay1DeliverablesSlide, theme: "light", isNew: true },
   "future-day-2-deliverables": { id: "future-day-2-deliverables", label: "Day 2 · Expand and Drop", component: FutureDay2DeliverablesSlide, theme: "light", isNew: true },
   "future-day-3-deliverables": { id: "future-day-3-deliverables", label: "Day 3 · How we ship", component: FutureDay3DeliverablesSlide, theme: "light", isNew: true },
+  "future-session-agenda-cover": { id: "future-session-agenda-cover", label: "Session Agenda · FY27 (Cover)", component: FutureSessionAgendaCoverSlide, theme: "light", isNew: true },
   "future-session-agenda": { id: "future-session-agenda", label: "Session Agenda · FY27 Strategic Planning", component: FutureSessionAgendaSlide, theme: "light", isNew: true },
   "future-strategic-drivers": { id: "future-strategic-drivers", label: "FY27 Strategic Drivers", component: FutureStrategicDriversSlide, theme: "light", isNew: true },
   "future-strategic-direction": { id: "future-strategic-direction", label: "02 · Strategic Direction", component: FutureStrategicDirectionSlide, theme: "light", isNew: true },
@@ -467,20 +487,36 @@ const SLIDE_COMPONENTS: Record<string, SlideDef> = {
   "future-decisions-roadmap": { id: "future-decisions-roadmap", label: "06 · Decisions We Must Leave With", component: FutureDecisionsRoadmapSlide, theme: "light", isNew: true },
   "future-decision-lessons-framing": { id: "future-decision-lessons-framing", label: "Decision Area 00 · Lessons Learned · Framing", component: FutureDecisionLessonsLearnedFramingSlide, theme: "light", isNew: true },
   "future-decision-lessons-capture": { id: "future-decision-lessons-capture", label: "Decision Area 00 · Lessons Learned · Capture", component: FutureDecisionLessonsLearnedCaptureSlide, theme: "light", isNew: true },
+  "future-decision-icp-divider": { id: "future-decision-icp-divider", label: "Decision Area 01 · ICP (Divider)", component: FutureDecisionICPDividerSlide, theme: "light", isNew: true },
   "future-decision-icp-framing": { id: "future-decision-icp-framing", label: "Decision Area 01 · ICP · Framing", component: FutureDecisionICPFramingSlide, theme: "light", isNew: true },
   "future-decision-icp-capture": { id: "future-decision-icp-capture", label: "Decision Area 01 · ICP · Capture", component: FutureDecisionICPCaptureSlide, theme: "light", isNew: true },
+  "future-decision-grow-base-divider": { id: "future-decision-grow-base-divider", label: "Decision Area 02 · Grow the Base (Divider)", component: FutureDecisionGrowBaseDividerSlide, theme: "light", isNew: true },
   "future-decision-grow-base-framing": { id: "future-decision-grow-base-framing", label: "Decision Area 02 · Grow the Base · Framing", component: FutureDecisionGrowBaseFramingSlide, theme: "light", isNew: true },
+  "future-grow-base-expand-framing": { id: "future-grow-base-expand-framing", label: "Decision Area 02a · Grow the Base · Expand · Framing", component: FutureGrowBaseExpandFramingSlide, theme: "light", isNew: true },
+  "future-grow-base-expand-capture": { id: "future-grow-base-expand-capture", label: "Decision Area 02a · Grow the Base · Expand · Capture", component: FutureGrowBaseExpandCaptureSlide, theme: "light", isNew: true },
+  "future-grow-base-drop-framing": { id: "future-grow-base-drop-framing", label: "Decision Area 02b · Grow the Base · Drop · Framing", component: FutureGrowBaseDropFramingSlide, theme: "light", isNew: true },
+  "future-grow-base-drop-capture": { id: "future-grow-base-drop-capture", label: "Decision Area 02b · Grow the Base · Drop · Capture", component: FutureGrowBaseDropCaptureSlide, theme: "light", isNew: true },
   "future-decision-grow-base-capture": { id: "future-decision-grow-base-capture", label: "Decision Area 02 · Grow the Base · Capture", component: FutureDecisionGrowBaseCaptureSlide, theme: "light", isNew: true },
-  "future-decision-expand-framing": { id: "future-decision-expand-framing", label: "Decision Area 03 · Acceleration of Growth · Framing", component: FutureDecisionExpandFramingSlide, theme: "light", isNew: true },
-  "future-decision-expand-capture": { id: "future-decision-expand-capture", label: "Decision Area 03 · Acceleration of Growth · Capture", component: FutureDecisionExpandCaptureSlide, theme: "light", isNew: true },
+  "future-decision-accelerate-growth-divider": { id: "future-decision-accelerate-growth-divider", label: "Decision Area 03 · Accelerate Growth (Divider)", component: FutureDecisionAccelerateGrowthDividerSlide, theme: "light", isNew: true },
+  "future-decision-expand-framing": { id: "future-decision-expand-framing", label: "Decision Area 03 · Accelerate Growth · Framing", component: FutureDecisionExpandFramingSlide, theme: "light", isNew: true },
+  "future-decision-expand-capture": { id: "future-decision-expand-capture", label: "Decision Area 03 · Accelerate Growth · Capture", component: FutureDecisionExpandCaptureSlide, theme: "light", isNew: true },
+  "future-decision-expand-list-framing": { id: "future-decision-expand-list-framing", label: "Decision Area 03 · Expand · Framing", component: FutureDecisionExpandListFramingSlide, theme: "light", isNew: true },
+  "future-decision-expand-list-capture": { id: "future-decision-expand-list-capture", label: "Decision Area 03 · Expand · Capture", component: FutureDecisionExpandListCaptureSlide, theme: "light", isNew: true },
   "future-decision-drop-framing": { id: "future-decision-drop-framing", label: "Decision Area 04 · Drop · Framing", component: FutureDecisionDropFramingSlide, theme: "light", isNew: true },
   "future-decision-drop-capture": { id: "future-decision-drop-capture", label: "Decision Area 04 · Drop · Capture", component: FutureDecisionDropCaptureSlide, theme: "light", isNew: true },
+  "future-decision-execution-divider": { id: "future-decision-execution-divider", label: "Decision Area 05 · Execution Requirements (Divider)", component: FutureDecisionExecutionDividerSlide, theme: "light", isNew: true },
   "future-decision-execution-framing": { id: "future-decision-execution-framing", label: "Decision Area 05 · Execution Requirements · Framing", component: FutureDecisionExecutionFramingSlide, theme: "light", isNew: true },
   "future-decision-execution-capture": { id: "future-decision-execution-capture", label: "Decision Area 05 · Execution Requirements · Capture", component: FutureDecisionExecutionCaptureSlide, theme: "light", isNew: true },
+  "future-decision-narrative-divider": { id: "future-decision-narrative-divider", label: "Decision Area 06 · Strategic Narrative (Divider)", component: FutureDecisionNarrativeDividerSlide, theme: "light", isNew: true },
   "future-decision-narrative-framing": { id: "future-decision-narrative-framing", label: "Decision Area 06 · Strategic Narrative · Framing", component: FutureDecisionNarrativeFramingSlide, theme: "light", isNew: true },
   "future-decision-narrative-capture": { id: "future-decision-narrative-capture", label: "Decision Area 06 · Strategic Narrative · Capture", component: FutureDecisionNarrativeCaptureSlide, theme: "light", isNew: true },
-  "future-decision-more-productive-org-framing": { id: "future-decision-more-productive-org-framing", label: "Decision Area 07 · More Productive Organization · Framing", component: FutureDecisionMoreProductiveOrgFramingSlide, theme: "light", isNew: true },
-  "future-decision-more-productive-org-capture": { id: "future-decision-more-productive-org-capture", label: "Decision Area 07 · More Productive Organization · Capture", component: FutureDecisionMoreProductiveOrgCaptureSlide, theme: "light", isNew: true },
+  "future-decision-more-productive-org-divider": { id: "future-decision-more-productive-org-divider", label: "Decision Area 04 · More Productive Organization (Divider)", component: FutureDecisionMoreProductiveOrgDividerSlide, theme: "light", isNew: true },
+  "future-decision-more-productive-org-framing": { id: "future-decision-more-productive-org-framing", label: "Decision Area 04 · More Productive Organization · Framing", component: FutureDecisionMoreProductiveOrgFramingSlide, theme: "light", isNew: true },
+  "future-decision-more-productive-org-capture": { id: "future-decision-more-productive-org-capture", label: "Decision Area 04 · More Productive Organization · Capture", component: FutureDecisionMoreProductiveOrgCaptureSlide, theme: "light", isNew: true },
+  "future-productive-org-expand-framing": { id: "future-productive-org-expand-framing", label: "Decision Area 04a · Productive Organization · Expand · Framing", component: FutureProductiveOrgExpandFramingSlide, theme: "light", isNew: true },
+  "future-productive-org-expand-capture": { id: "future-productive-org-expand-capture", label: "Decision Area 04a · Productive Organization · Expand · Capture", component: FutureProductiveOrgExpandCaptureSlide, theme: "light", isNew: true },
+  "future-productive-org-drop-framing": { id: "future-productive-org-drop-framing", label: "Decision Area 04b · Productive Organization · Drop · Framing", component: FutureProductiveOrgDropFramingSlide, theme: "light", isNew: true },
+  "future-productive-org-drop-capture": { id: "future-productive-org-drop-capture", label: "Decision Area 04b · Productive Organization · Drop · Capture", component: FutureProductiveOrgDropCaptureSlide, theme: "light", isNew: true },
   "appendix-customers":{ id: "appendix-customers",   label: "Customers",           component: ScaleSlide,               theme: "dark" },
   "appendix-products": { id: "appendix-products",    label: "Products",            component: ProductPortfolioSlide,    theme: "light" },
   "ai-gateways-revenue":{ id: "ai-gateways-revenue", label: "(30) AI Gateways Revenue", component: AIGatewaysRevenueSlide,   theme: "dark" },

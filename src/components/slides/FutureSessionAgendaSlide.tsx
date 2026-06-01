@@ -48,7 +48,7 @@ const DAYS: Day[] = [
     topics: [
       "Grow the Base (continued)",
       "More Productive Organization",
-      "Acceleration of Growth",
+      "Accelerate Growth",
       "Expand",
       "Drop",
       "Execution Requirements",

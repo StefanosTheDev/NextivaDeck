@@ -21,7 +21,7 @@ const DELIVERABLES = [
   {
     icon: Users,
     title: "Customer profiles ranked by economics",
-    body: "Who drives 1.48× MRR expansion, 72.5% expansion rate, and net-positive churn above $500 cohorts — and who doesn't. The base is the model.",
+    body: "Who drives MRR expansion, and net-positive churn below and above $500 cohorts — and who doesn't. Establishing a base is the model.",
   },
   {
     icon: Gauge,
@@ -205,12 +205,10 @@ export default function FutureDay1DeliverablesSlide({
             >
               <strong>Ground truth before commitments.</strong> The room walks
               out aligned on <em>who</em> Nextiva is built to serve — named
-              ICP, named personas, named exclusions — and on the profiles that
-              already prove the model:{" "}
-              <strong>1.48× MRR expansion</strong>,{" "}
-              <strong>72.5% expand</strong>, and{" "}
-              <strong>net-positive churn above $500</strong>. The base is the
-              model, and the model is named.
+              ICP, named personas, named exclusions — and on the customer
+              profiles that prove the model below and above the{" "}
+              <strong>$500</strong> cohorts.{" "}
+              <strong>Establishing the base is the model.</strong>
             </p>
           </div>
         </motion.div>

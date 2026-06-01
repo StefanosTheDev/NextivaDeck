@@ -8,7 +8,7 @@ const TOPIC = {
   questions: [
     "How do we protect the base from churn?",
     "How do we expand revenue and AI within existing accounts?",
-    "How do we monetize the base to drive NRR from 91% to 94%?",
+    "How do we monetize the base to drive NRR to 100%?",
     "What are the highest-leverage drivers?",
   ],
   output: [
